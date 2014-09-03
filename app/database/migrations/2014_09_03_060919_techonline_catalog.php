@@ -93,6 +93,7 @@ class TechonlineCatalog extends Migration {
             $catalog_base = new \Model\General\TechOnline\CatalogBase();
 
             $catalog_base->name = 'Сдам в аренду кран №'.$i;
+            $catalog_base->rate = $i*98 . ' руб/ч';
 
             $catalog_base->description =
                 'Длинное описание Test Drive Крана '. $i*11 .
@@ -107,8 +108,14 @@ class TechonlineCatalog extends Migration {
                   3:{name:"Big Japan Car",src:"bigcar.jpg"},
                   4:{name:"Big Japan Car",src:"bigcar.jpg"}}';
 
-            $catalog_base->params_set_id=$i;
-            $catalog_base->brand_id=$i;
+            $catalog_base->model_id=$i;
+            $catalog_base->category_id=$i;
+            $catalog_base->admin_id=$i;
+            $catalog_base->region_id=$i;
+
+            $catalog_base->status_id=2;
+            $catalog_base->opacity_id=2;
+            $catalog_base->active=true;
             $catalog_base->save();
         }
 
@@ -138,6 +145,36 @@ class TechonlineCatalog extends Migration {
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
         });
+
+        for($i=1;$i<30;$i++){
+            $catalog_base = new \Model\General\TechOnline\CatalogBase();
+
+            $catalog_base->name = 'Запчасть для крана '.$i;
+            $catalog_base->price = $i*98 . ' руб.';
+
+            $catalog_base->description =
+                'Длинное описание Test Drive запчасти для Крана '. $i*11 .
+                'Длинное описание Test Drive запчасти для Крана '. $i*11 .
+                'Длинное описание Test Drive запчасти для Крана '. $i*11 .
+                'Длинное описание Test Drive запчасти для Крана '. $i*11;
+
+            $catalog_base->photos =
+                '{0:{name:"Big Japan Car",src:"bigcar.jpg"},
+                  1:{name:"Big Japan Car",src:"bigcar.jpg"},
+                  2:{name:"Big Japan Car",src:"bigcar.jpg"},
+                  3:{name:"Big Japan Car",src:"bigcar.jpg"},
+                  4:{name:"Big Japan Car",src:"bigcar.jpg"}}';
+
+            $catalog_base->model_id=$i;
+            $catalog_base->category_id=$i;
+            $catalog_base->admin_id=$i;
+            $catalog_base->region_id=$i;
+
+            $catalog_base->status_id=2;
+            $catalog_base->opacity_id=2;
+            $catalog_base->active=true;
+            $catalog_base->save();
+        }
 
         /*** АДМИНИСТРАТОР ***/
         Schema::create('catalog_admin', function($table)

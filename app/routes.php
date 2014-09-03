@@ -17,20 +17,22 @@
  */
 
 /* Маршруты из таблицы routes*/
-$routes_db=\Model\Backend\Routes::get()->toArray();
+/*$routes_db=\Model\Backend\Routes::get()->toArray();*/
 
 /* Временные маршруты*/
-$routes_static = [
+/*$routes_static = [
     ['path'=>'/as2','controller'=>'MainPageController','function'=>'showWelcome3']
-];
+];*/
 /* Слияние маршрутов */
-$routes = array_merge($routes_db,$routes_static);
+/*$routes = array_merge($routes_db,$routes_static);*/
 
 /* Перебор маршрутов и инициализация */
-foreach($routes as $route){
+/*foreach($routes as $route){
     Route::get($route['path'], $route['controller'].'@'.$route['function']);
-}
+}*/
 
 
 /*** FRONTEND::CATALOG ***/
-Route::get('/catalog','Controller\Frontend\TechOnline\CatalogController@actionIndex');
+Route::get('/','MainPageController@showWelcome');
+
+//Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogController@actionIndex');
