@@ -1,0 +1,42 @@
+code {
+  background-color: $clr-grey-light;
+  border-left: $size solid $clr-grey;
+  font-family: "Courier New", monospace;
+  display: block;
+  padding: $size-s $size;
+}
+code.Inline {
+  display: inline-block;
+}
+
+.Node .Section-Header.Ribbon {
+  background-color: $clr-blue;
+  color: #fff;
+
+  position: relative;
+  display: block;
+  height: $size-xl;
+  margin: (-$size-l) (-$size-xl) 0;
+}
+.Node header.Ribbon h3 {
+  padding: $size-s $size-l 0;
+}
+.Node .Section-Header.Ribbon:after  ,
+.Node .Section-Header.Ribbon:before {
+  content: ' ';
+  position: absolute;
+  display: block;
+  border: $size-n solid $clr-main-dark;
+  border-bottom-color: transparent;
+  top: $size-xl;
+  z-index: 1;
+  border-bottom-color: transparent;
+}
+.Node .Section-Header.Ribbon:before {
+  border-left-color: transparent;
+  left: 0;
+}
+.Node .Section-Header.Ribbon:after {
+  border-right-color: transparent;
+  right: 0;
+}

@@ -1,0 +1,83 @@
+@import "upf-variables.scss";
+@import "upf-reset.scss";
+@import "upf-grid.scss";
+@import "upf-typography.scss";
+@import "upf-forms.scss";
+@import "upf-messages.scss";
+@import "custom.scss";
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.dev {
+	outline: 1px red solid!important;
+}
+.visible {
+	display: block;
+}
+.fix,
+.Node,
+.Grid,
+.Grid-Row,
+.Control-Group,
+.Tab-Set ,
+.Tab-Buttons {
+	display: table;
+}
+.fix:after			 ,
+.Node:after			 ,
+.Grid:after			 ,
+.Grid-Row:after		 ,
+.Control-Group:after ,
+.Tab-Set			 ,
+.Tab-Buttons    {
+	content: '. .';
+    display: block;
+    word-spacing: 99in;
+    height: 0;
+    overflow: hidden;
+}
+.Node {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Node + .Node {
+    margin-top: 50px;
+}
+
+/* ТАБЫ > ////////////////////////////////////////////////////////////////////////////////////*/
+.Tab-Buttons > li {
+	float: left;
+}
+[class*='Tab-Node'] {
+	display: none;
+}
+.Tab-Node:first-child {
+	display: block;
+}
+
+/* ТАБЫ < ////////////////////////////////////////////////////////////////////////////////////*/
+table.Stripped tr:nth-child(even) td {
+	background-color: #f0f0f0;
+}
+table.Stripped {
+	border-spacing: 0;
+}
+table > tr > td {
+    padding: 20px;
+}
+table.Big > tr > td {
+    padding: 30px;
+}
+table.Small > tr > td {
+    padding: 5px;
+}
+
+
+
+
+
+

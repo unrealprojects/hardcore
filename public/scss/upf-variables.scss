@@ -1,0 +1,41 @@
+// Color Scheme
+$clr-red: #ec0000;
+$clr-red-dark:  darken($clr-red,5%);
+$clr-red-light: lighten($clr-red,50%);
+
+$clr-yellow: #d18200;
+$clr-yellow-dark:  darken($clr-yellow,5%);
+$clr-yellow-light: lighten($clr-yellow,55%);
+
+$clr-green: #0da900;
+$clr-green-dark:  darken($clr-green,5%);
+$clr-green-light: lighten($clr-green,60%);
+
+
+$clr-blue: #00bff3;
+$clr-blue-dark:  darken($clr-blue,5%);
+$clr-blue-light: lighten($clr-blue,45%);
+
+$clr-grey: #ccc;
+$clr-grey-light: lighten($clr-grey,17%);
+
+$clr-main:  $clr-blue;
+$clr-main-dark: $clr-blue-dark;
+$clr-main-light: $clr-blue-light;
+// Color Scheme
+
+
+// Sizes
+$size-xxs: 2px;
+$size-xs:  5px;
+$size-s:   10px;
+$size-n:   15px;
+$size:     20px;
+$size-l:   30px;
+$size-xl:  50px;
+$size-xxl: 100px;
+
+$Control-Group-Input-Width: 50%;
+$Control-Group-Label-Width: 30%;
+$Control-Group-Label2-Width: (100% - $Control-Group-Input-Width - $Control-Group-Label-Width);
+// Sizes

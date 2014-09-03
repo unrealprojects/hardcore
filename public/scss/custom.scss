@@ -1,0 +1,15 @@
+body {
+    font-family: 'Open Sans';
+    background: $clr-grey-light;
+}
+.Node {
+  background-color: white;
+  border: 1px solid $clr-grey;
+  padding: $size;
+}
+.Node > * {
+  margin-top: 10px;
+}
+.Node > *:first-child {
+  margin-top: 0;
+}

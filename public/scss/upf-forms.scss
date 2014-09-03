@@ -1,0 +1,157 @@
+/* ФОРМЫ > ///////////////////////////////////////////////////////////////////////////////////*/
+form h3.Form-Header {
+  font-size: 150%;
+  font-weight: 100;
+  margin-bottom: 30px;
+  padding: 0 $size-s;
+}
+
+// Отступ между областями формы
+.Form-Section + .Form-Section {
+  margin-top: $size-xl;
+}
+.Message-Error {
+  display: block;
+  float: right;
+  width: 100%;
+  padding: 10px 0;
+}
+.Control-Group.Error {
+  border: 1px solid $clr-red;
+  padding-bottom: 10px;
+  background-color: $clr-red-light;
+  color: $clr-red-dark;
+}
+.Control-Group.Error input {
+  border-color: $clr-red;
+  color: $clr-red;
+}
+.Control-Group  ,
+.Checkbox-Group {
+  padding: 0 $size-s;
+}
+
+/* DOES NOT LOOK GOOD! */
+.Control-Group + .Checkbox-Group ,
+.Checkbox-Group + .Control-Group ,
+.Control-Group + .Control-Group {
+  margin-top: $size;
+}
+
+.Control-Group select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
+.Control-Group input,
+.Control-Group select {
+  float: left;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+.Control-Group label,
+.Control-Group select,
+.Control-Group input {
+  line-height: 30px;
+  padding: 5px $size-s;
+  font-size: 100%;
+  display: block;
+  vertical-align: middle;
+}
+.Control-Group label {
+  float: left;
+  width: $Control-Group-Label2-Width;
+  border: 1px $clr-grey solid;
+  box-shadow: 0 0 1px white inset;
+  background-color: $clr-grey-light;
+  color: $clr-grey;
+  font-size: 85%;
+  cursor: pointer;
+  display: block;
+}
+.Control-Group label:first-of-type {
+  width: $Control-Group-Label-Width;
+  border-right: 0;
+  color: #000;
+}
+.Control-Group select,
+.Control-Group input[type='text'],
+.Control-Group input[type='password'] {
+   border: 1px solid $clr-grey;
+   outline: 0;
+   width: 100%;
+ }
+.Control-Group label + select             ,
+.Control-Group label + input[type='text'],
+.Control-Group label + input[type='password'] {
+  width: $Control-Group-Input-Width;
+}
+
+.Control-Group select:focus ,
+.Control-Group input:focus  {
+  border-color: $clr-blue;
+  color: $clr-blue-dark;
+}
+.Control-Group label + select:last-child ,
+.Control-Group label + input[type='text']:last-child ,
+.Control-Group label + input[type='password']:last-child {
+  width: (100% - $Control-Group-Label-Width);
+}
+.Control-Group select + label ,
+.Control-Group input[type='text'] + label ,
+.Control-Group input[type='password'] + label {
+  border-left: 0;
+}
+.Control-Group input[disabled][type='text'] {
+  background-color: #f3f3f3;
+  cursor: not-allowed;
+}
+.Control-Group.Disabled label {
+  color: #777;
+}
+// Кнопка
+.Control-Group input[type='submit'] {
+  float: right;
+  padding: $size-n;
+  background-color: $clr-blue;
+  font-size: 120%;
+  font-weight: 100;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+// Кнопка (Отключенная)
+.Control-Group input[type='submit'][disabled]         ,
+.Control-Group input[type='submit'][disabled]:hover   {
+  background-color: $clr-grey;
+  cursor: not-allowed;
+}
+.Control-Group input[type='submit'][disabled]:hover {}
+
+.Control-Group input[type='submit']:hover {
+  background-color: $clr-blue-dark;
+}
+
+.Checkbox-Group input[type='checkbox'] {
+  border: 1px $clr-grey solid;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: $size-s;
+}
+body.RoundUI .Control-Group.Error {
+   border-radius: $size-xs
+}
+body.RoundUI .Control-Group label:first-of-type {
+  border-top-left-radius: $size-xs;
+  border-bottom-left-radius: $size-xs;
+}
+body.RoundUI .Control-Group input[type='text'] + label,
+body.RoundUI .Control-Group label + input[type='text']:last-child {
+  border-top-right-radius: $size-xs;
+  border-bottom-right-radius: $size-xs;
+}
+body.RoundUI .Control-Group input[type='submit'] {
+  border-radius: $size-xs;
+}
+/* ФОРМЫ < ///////////////////////////////////////////////////////////////////////////////////*/
