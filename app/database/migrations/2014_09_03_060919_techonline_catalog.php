@@ -89,6 +89,30 @@ class TechonlineCatalog extends Migration {
             $table->dateTime('updated_at');
         });
 
+        for($i=1;$i<30;$i++){
+            $catalog_base = new \Model\General\TechOnline\CatalogBase();
+
+            $catalog_base->name = 'Сдам в аренду кран №'.$i;
+
+            $catalog_base->description =
+                'Длинное описание Test Drive Крана '. $i*11 .
+                'Длинное описание Test Drive Крана '. $i*11 .
+                'Длинное описание Test Drive Крана '. $i*11 .
+                'Длинное описание Test Drive Крана '. $i*11;
+
+            $catalog_base->photos =
+                '{0:{name:"Big Japan Car",src:"bigcar.jpg"},
+                  1:{name:"Big Japan Car",src:"bigcar.jpg"},
+                  2:{name:"Big Japan Car",src:"bigcar.jpg"},
+                  3:{name:"Big Japan Car",src:"bigcar.jpg"},
+                  4:{name:"Big Japan Car",src:"bigcar.jpg"}}';
+
+            $catalog_base->params_set_id=$i;
+            $catalog_base->brand_id=$i;
+            $catalog_base->save();
+        }
+
+
         /*** КАТАЛОГ ЗАПЧАСТЕЙ***/
         Schema::create('catalog_parts', function($table)
         {
@@ -172,21 +196,21 @@ class TechonlineCatalog extends Migration {
         });
 
         /*** СОСТОЯНИЕ ***/
-        Schema::create('hardcore_catalog_opacity', function($table)
+        Schema::create('catalog_opacity', function($table)
         {
             $table->increments('id');
             $table->string('name')->nullable();
         });
 
         /*** СТАТУСЫ ***/
-        Schema::create('hardcore_catalog_statuses', function($table)
+        Schema::create('catalog_statuses', function($table)
         {
             $table->increments('id');
             $table->string('name')->nullable();
         });
 
         /*** ПАРАМЕТРЫ ДЛЯ ТЕХНИКИ ***/
-        Schema::create('hardcore_catalog_params', function($table)
+        Schema::create('catalog_params', function($table)
         {
             $table->increments('id');
             $table->string('name')->nullable();
@@ -198,7 +222,7 @@ class TechonlineCatalog extends Migration {
         });
 
         /*** ПАРАМЕТРЫ ДЛЯ ТЕХНИКИ ***/
-        Schema::create('hardcore_catalog_params_values', function($table)
+        Schema::create('catalog_params_values', function($table)
         {
             $table->increments('id');
 
@@ -210,7 +234,7 @@ class TechonlineCatalog extends Migration {
         });
 
         /*** ОТНОШЕНИЕ ПАРАМЕТРОВ К КАТЕГОРИИ ТЕХНИКИ ***/
-        Schema::create('hardcore_catalog_tech_categories_to_params', function($table)
+        Schema::create('catalog_tech_categories_to_params', function($table)
         {
             $table->increments('id');
 
