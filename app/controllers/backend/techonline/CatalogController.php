@@ -30,11 +30,43 @@ class CatalogController extends \Controller{
 
     static public function categoryBaseCreate()
     {
+//        if (Input::has('model') && Input::has('description')) {
+//            $model = Input::get('model');
+//            $description = Input::get('description');
+//
+//            $item_create=new \Model\General\TechOnline\CatalogBase;
+//            $item_create->model= $model;
+//            $item_create->description= $description;
+//            $item_create->save();
+//        }
+
+
+        if ($_GET["model"] && $_GET["description"]) {
+            $model = $_GET["model"];
+            $description = $_GET["description"];
+
+            $item_create=new \Model\General\TechOnline\CatalogBase;
+            $item_create->model= $model;
+            $item_create->description= $description;
+            $item_create->save();
+        }
+
+
         /* Добавление элемента catalog_base */
     }
 
     static public function categoryBaseUpdate()
     {
+        if ($_GET["id"]) {
+            $id = $_GET["id"];
+            $model = $_GET["model"];
+            $description = $_GET["description"];
+
+            $item_create= \Model\General\TechOnline\CatalogBase::find($id);
+            $item_create->model= $model;
+            $item_create->description= $description;
+            $item_create->save();
+        }
         /* Обновление элемента catalog_base */
     }
 
