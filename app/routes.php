@@ -35,4 +35,4 @@
 /*** FRONTEND::CATALOG ***/
 Route::get('/','MainPageController@showWelcome');
 
-//Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogController@actionIndex');
+Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogController@actionIndex');
