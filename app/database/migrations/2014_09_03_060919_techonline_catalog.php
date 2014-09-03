@@ -90,9 +90,9 @@ class TechonlineCatalog extends Migration {
         });
 
         for($i=1;$i<30;$i++){
-            $catalog_base = new \Model\General\TechOnline\CatalogBase();
+            $catalog_base = new \Model\General\TechOnline\CatalogTech();
 
-            $catalog_base->name = 'Сдам в аренду кран №'.$i;
+            $catalog_base->model = 'Сдам в аренду кран №'.$i;
             $catalog_base->rate = $i*98 . ' руб/ч';
 
             $catalog_base->description =
@@ -147,7 +147,7 @@ class TechonlineCatalog extends Migration {
         });
 
         for($i=1;$i<30;$i++){
-            $catalog_base = new \Model\General\TechOnline\CatalogBase();
+            $catalog_base = new \Model\General\TechOnline\CatalogParts();
 
             $catalog_base->name = 'Запчасть для крана '.$i;
             $catalog_base->price = $i*98 . ' руб.';
@@ -165,7 +165,6 @@ class TechonlineCatalog extends Migration {
                   3:{name:"Big Japan Car",src:"bigcar.jpg"},
                   4:{name:"Big Japan Car",src:"bigcar.jpg"}}';
 
-            $catalog_base->model_id=$i;
             $catalog_base->category_id=$i;
             $catalog_base->admin_id=$i;
             $catalog_base->region_id=$i;
@@ -195,14 +194,48 @@ class TechonlineCatalog extends Migration {
 
             $table->integer('region_id')->nullable();
 
-            $table->integer('status_id')->nullable();
-            $table->integer('opacity_id')->nullable();
-
             $table->boolean('active')->default(false);
 
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
         });
+
+
+        for($i=1;$i<30;$i++){
+            $catalog_base = new \Model\General\TechOnline\CatalogAdmin();
+
+            $catalog_base->name = 'Транспортная кампания  №'.$i;
+
+            $catalog_base->description =
+                'Длинное описание Транспортной кампании '. $i*11 .
+                'Длинное описание Транспортной кампании '. $i*11 .
+                'Длинное описание Транспортной кампании '. $i*11 .
+                'Длинное описание Транспортной кампании '. $i*11 ;
+
+            $catalog_base->logo = 'bigcar.jpg';
+            $catalog_base->adress = 'г. Москва,пр. Ленина д. 31, оф. 3';
+            $catalog_base->phone = '7900'. $i*11 . $i*23 . $i*11 . $i*23;
+            $catalog_base->skype = 'skypecompany'. $i;
+            $catalog_base->email = 'company'. $i . '@gmail.com';
+            $catalog_base->website = 'http://company'. $i . '.com';
+
+
+            $catalog_base->photos =
+                '{0:{name:"Big Japan Car",src:"bigcar.jpg"},
+                  1:{name:"Big Japan Car",src:"bigcar.jpg"},
+                  2:{name:"Big Japan Car",src:"bigcar.jpg"},
+                  3:{name:"Big Japan Car",src:"bigcar.jpg"},
+                  4:{name:"Big Japan Car",src:"bigcar.jpg"}}';
+
+            $catalog_base->category_id=$i;
+            $catalog_base->admin_id=$i;
+            $catalog_base->region_id=$i;
+
+            $catalog_base->status_id=2;
+            $catalog_base->opacity_id=2;
+            $catalog_base->active=true;
+            $catalog_base->save();
+        }
 
         /*** БРЕНД ***/
         Schema::create('catalog_brand', function($table)
@@ -210,13 +243,86 @@ class TechonlineCatalog extends Migration {
             $table->increments('id');
             $table->string('name')->nullable();
         });
+    
+    $brands = [
+                'Mercedes-Benz',
+                'КамАЗ',
+                'КрАЗ',
+                'MAN',
+                'Foton',
+                'Carmix',
+                'МТЗ',
+                'Putzmeister',
+                'Brinkmann',
+                'Zettelmeyer',
+                'УРБ',
+                'Vicon'
+            ];
 
+        foreach($brands as $brand){
+            $catalog_brand = new \Model\General\TechOnline\CatalogAdmin();
+            $catalog_brand->name=$brand;
+            $catalog_brand->save();
+        }
+        
         /*** РЕГИОНЫ ***/
         Schema::create('catalog_region', function($table)
         {
             $table->increments('id');
             $table->string('name')->nullable();
         });
+
+        $regions = [
+            'Москва',
+            'Московская область',
+            'Санкт-Петербург',
+            'Волгоград',
+            'Екатеринбург',
+            'Казань',
+            'Краснодар',
+            'Нижний Новгород',
+            'Пермь',
+            'Ростов-на-Дону',
+            'Самара',
+            'Уфа',
+            'Челябинск',
+            'Адыгея',
+            'Архангельская обл.',
+            'Астраханская обл',
+            'Башкортостан',
+            'Белгородская обл.',
+            'Брянская обл. обл.',
+            'Владимирская обл.',
+            'Волгоградская обл.',
+            'Вологодская обл.',
+            'Владимирская обл.',
+            'Воронежская обл.',
+            'Дагестан',
+            'Ивановская обл.',
+            'Ингушетия',
+            'Кабардино-Балкария',
+            'Калининградская обл.',
+            'Калмыкия Калужская обл.',
+            'Карачаево-Черкесия',
+            'Карелия',
+            'Кировская обл.',
+            'Коми',
+            'Костромская обл.',
+            'Краснодарский край',
+            'Крым',
+            'Курганская обл.',
+            'Курская обл.',
+            'Ленинградская обл.',
+            'Липецкая обл.',
+            'Марий Эл',
+            'Марий Эл',
+        ];
+
+        foreach($regions as $region){
+            $catalog_region = new \Model\General\TechOnline\CatalogAdmin();
+            $catalog_region->name=$regions;
+            $catalog_region->save();
+        }
 
         /*** КАТЕГОРИИ ЗАПЧАСТЕЙ ***/
         Schema::create('catalog_parts_categories', function($table)

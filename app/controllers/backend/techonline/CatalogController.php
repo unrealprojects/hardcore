@@ -14,13 +14,15 @@ class CatalogController extends \Controller{
 
     static public function categoryBaseList()
     {
-         $category_list= \Model\General\TechOnline\CatalogBase::paginate(5);
+         $category_list = \Model\General\TechOnline\CatalogBase::paginate(5);
 
-         foreach ($category_list as $cat_item){
-            echo $cat_item['model'].'<br>';
+        $pagination = $category_list->links();
+        $category_list = $category_list->toArray();
+         foreach ($category_list['data'] as $cat_item){
+             echo $cat_item['model'].'<br>';
          }
 
-        echo $category_list->links();
+        echo $pagination;
 
 
         /* Вывести список техники из catalog_base */
