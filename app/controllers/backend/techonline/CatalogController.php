@@ -63,8 +63,8 @@ class CatalogController extends \Controller{
             $description = $_GET["description"];
 
             $item_create= \Model\General\TechOnline\CatalogBase::find($id);
-            $item_create->model= $model;
-            $item_create->description= $description;
+            $item_create->model = $model;
+            $item_create->description = $description;
             $item_create->save();
         }
         /* Обновление элемента catalog_base */
