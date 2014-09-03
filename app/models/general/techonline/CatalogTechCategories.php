@@ -5,6 +5,6 @@
  */
 namespace Model\General\TechOnline;
 
-class CatalogPartsCategories extends TechOnline {
+class CatalogTechCategories extends TechOnline {
     protected $table = 'catalog_tech_categories';
 }
