@@ -8,6 +8,25 @@ class TechonlineCatalog extends Migration {
     /*** КАТАЛОГ ***/
 	public function up()
 	{
+
+        Schema::dropIfExists('catalog_base');
+        Schema::dropIfExists('catalog_tech');
+        Schema::dropIfExists('catalog_parts');
+
+        Schema::dropIfExists('catalog_admin');
+
+        Schema::dropIfExists('catalog_brand');
+        Schema::dropIfExists('catalog_region');
+
+        Schema::dropIfExists('catalog_parts_categories');
+        Schema::dropIfExists('catalog_tech_categories');
+
+        Schema::dropIfExists('hardcore_catalog_opacity');
+        Schema::dropIfExists('hardcore_catalog_statuses');
+
+        Schema::dropIfExists('hardcore_catalog_params');
+        Schema::dropIfExists('hardcore_catalog_params_values');
+        Schema::dropIfExists('hardcore_catalog_tech_categories_to_params');
         /*** БАЗОВЫЙ КАТАЛОГ ***/
         Schema::create('catalog_base', function($table)
         {
@@ -33,7 +52,7 @@ class TechonlineCatalog extends Migration {
                 'Длинное описание Test Drive Крана '. $i*11 .
                 'Длинное описание Test Drive Крана '. $i*11;
 
-            $catalog_base->photoes =
+            $catalog_base->photos =
                 '{0:{name:"Big Japan Car",src:"bigcar.jpg"},
                   1:{name:"Big Japan Car",src:"bigcar.jpg"},
                   2:{name:"Big Japan Car",src:"bigcar.jpg"},
@@ -42,6 +61,7 @@ class TechonlineCatalog extends Migration {
 
             $catalog_base->params_set_id=$i;
             $catalog_base->brand_id=$i;
+            $catalog_base->save();
         }
 
         /*** КАТАЛОГ ТЕХНИКИ***/
@@ -77,7 +97,7 @@ class TechonlineCatalog extends Migration {
             $table->string('name')->nullable();
             $table->text('description')->nullable();
 
-            $table->strint('brand')->nullable();
+            $table->string('brand')->nullable();
             $table->string('price')->nullable();
 
             $table->text('photos')->nullable();
@@ -103,7 +123,7 @@ class TechonlineCatalog extends Migration {
             $table->string('name')->nullable();
             $table->text('description')->nullable();
 
-            $table->strint('logo')->nullable();
+            $table->string('logo')->nullable();
             $table->string('adress')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();

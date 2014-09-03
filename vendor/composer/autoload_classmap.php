@@ -423,7 +423,7 @@ return array(
     'Math_BigInteger' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Math/BigInteger.php',
     'Model\\Backend\\Backend' => $baseDir . '/app/models/backend/Backend.php',
     'Model\\Backend\\Routes' => $baseDir . '/app/models/backend/Routes.php',
-    'Model\\General\\Frontend' => $baseDir . '/app/models/general/General.php',
+    'Model\\General\\General' => $baseDir . '/app/models/general/General.php',
     'Model\\General\\TechOnline\\CatalogBase' => $baseDir . '/app/models/general/techonline/CatalogBase.php',
     'Model\\General\\TechOnline\\TechOnline' => $baseDir . '/app/models/general/techonline/TechOnline.php',
     'Monolog\\ErrorHandler' => $vendorDir . '/monolog/monolog/src/Monolog/ErrorHandler.php',
