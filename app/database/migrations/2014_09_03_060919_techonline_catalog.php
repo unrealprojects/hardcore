@@ -27,6 +27,7 @@ class TechonlineCatalog extends Migration {
         Schema::dropIfExists('hardcore_catalog_params');
         Schema::dropIfExists('hardcore_catalog_params_values');
         Schema::dropIfExists('hardcore_catalog_tech_categories_to_params');
+
         /*** БАЗОВЫЙ КАТАЛОГ ***/
         Schema::create('catalog_base', function($table)
         {
@@ -92,7 +93,7 @@ class TechonlineCatalog extends Migration {
         for($i=1;$i<30;$i++){
             $catalog_base = new \Model\General\TechOnline\CatalogTech();
 
-            $catalog_base->model = 'Сдам в аренду кран №'.$i;
+            $catalog_base->name = 'Сдам в аренду кран №'.$i;
             $catalog_base->rate = $i*98 . ' руб/ч';
 
             $catalog_base->description =
@@ -227,12 +228,8 @@ class TechonlineCatalog extends Migration {
                   3:{name:"Big Japan Car",src:"bigcar.jpg"},
                   4:{name:"Big Japan Car",src:"bigcar.jpg"}}';
 
-            $catalog_base->category_id=$i;
-            $catalog_base->admin_id=$i;
             $catalog_base->region_id=$i;
 
-            $catalog_base->status_id=2;
-            $catalog_base->opacity_id=2;
             $catalog_base->active=true;
             $catalog_base->save();
         }
@@ -243,8 +240,8 @@ class TechonlineCatalog extends Migration {
             $table->increments('id');
             $table->string('name')->nullable();
         });
-    
-    $brands = [
+
+        $brands = [
                 'Mercedes-Benz',
                 'КамАЗ',
                 'КрАЗ',
@@ -260,11 +257,11 @@ class TechonlineCatalog extends Migration {
             ];
 
         foreach($brands as $brand){
-            $catalog_brand = new \Model\General\TechOnline\CatalogAdmin();
+            $catalog_brand = new \Model\General\TechOnline\CatalogBrand();
             $catalog_brand->name=$brand;
             $catalog_brand->save();
         }
-        
+
         /*** РЕГИОНЫ ***/
         Schema::create('catalog_region', function($table)
         {
@@ -315,12 +312,40 @@ class TechonlineCatalog extends Migration {
             'Ленинградская обл.',
             'Липецкая обл.',
             'Марий Эл',
-            'Марий Эл',
+            'Мордовия',
+            'Московская обл.',
+            'Мурманская обл.',
+            'Ненецкий АО',
+            'Нижегородская обл.',
+            'Новгородская обл.',
+            'Оренбургская обл.',
+            'Орловская обл.',
+            'Пензенская обл.',
+            'Пермский край',
+            'Псковская обл.',
+            'Ростовская обл.',
+            'Рязанская обл.',
+            'Самарская обл.',
+            'Саратовская обл.',
+            'Свердловская обл.',
+            'Северная Осетия',
+            'Смоленская обл.',
+            'Ставропольский край',
+            'Тамбовская обл',
+            'Татарстан',
+            'Тверская обл.',
+            'Тульская обл.',
+            'Удмуртия',
+            'Ульяновская обл.',
+            'Челябинская обл.',
+            'Чеченская республика',
+            'Чувашия',
+            'Ярославская обл.'
         ];
 
         foreach($regions as $region){
             $catalog_region = new \Model\General\TechOnline\CatalogAdmin();
-            $catalog_region->name=$regions;
+            $catalog_region->name=$region;
             $catalog_region->save();
         }
 
@@ -338,6 +363,20 @@ class TechonlineCatalog extends Migration {
             $table->string('name')->nullable();
         });
 
+        $categories = [
+            'Фронтальные погрузчики',
+            'Дорожные катки',
+            'Автогрейдеры',
+            'Бульдозеры',
+            'Тягачи'
+        ];
+
+        foreach($categories as $category){
+            $catalog_category = new \Model\General\TechOnline\CatalogTechCategories();
+            $catalog_category->name=$category;
+            $catalog_category->save();
+        }
+
         /*** СОСТОЯНИЕ ***/
         Schema::create('catalog_opacity', function($table)
         {
@@ -345,12 +384,36 @@ class TechonlineCatalog extends Migration {
             $table->string('name')->nullable();
         });
 
+        $opacity = [
+            'Плохое',
+            'Среднее',
+            'Хорошее',
+            'Новый'
+        ];
+
+        foreach($opacity as $opacity_elem){
+            $catalog_opacity = new \Model\General\TechOnline\CatalogOpacity();
+            $catalog_opacity->name=$opacity_elem;
+            $catalog_opacity->save();
+        }
+
         /*** СТАТУСЫ ***/
         Schema::create('catalog_statuses', function($table)
         {
             $table->increments('id');
             $table->string('name')->nullable();
         });
+
+        $statuses = [
+            'Занято',
+            'Свободно'
+        ];
+
+        foreach($statuses as $status){
+            $catalog_opacity = new \Model\General\TechOnline\CatalogStatuses();
+            $catalog_opacity->name=$status;
+            $catalog_opacity->save();
+        }
 
         /*** ПАРАМЕТРЫ ДЛЯ ТЕХНИКИ ***/
         Schema::create('catalog_params', function($table)
@@ -376,6 +439,8 @@ class TechonlineCatalog extends Migration {
 
         });
 
+
+
         /*** ОТНОШЕНИЕ ПАРАМЕТРОВ К КАТЕГОРИИ ТЕХНИКИ ***/
         Schema::create('catalog_tech_categories_to_params', function($table)
         {
@@ -400,11 +465,11 @@ class TechonlineCatalog extends Migration {
         Schema::dropIfExists('catalog_parts_categories');
         Schema::dropIfExists('catalog_tech_categories');
 
-        Schema::dropIfExists('hardcore_catalog_opacity');
-        Schema::dropIfExists('hardcore_catalog_statuses');
+        Schema::dropIfExists('catalog_opacity');
+        Schema::dropIfExists('catalog_statuses');
 
-        Schema::dropIfExists('hardcore_catalog_params');
-        Schema::dropIfExists('hardcore_catalog_params_values');
-        Schema::dropIfExists('hardcore_catalog_tech_categories_to_params');
+        Schema::dropIfExists('catalog_params');
+        Schema::dropIfExists('catalog_params_values');
+        Schema::dropIfExists('catalog_tech_categories_to_params');
 	}
 }

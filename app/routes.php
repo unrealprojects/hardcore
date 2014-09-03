@@ -39,3 +39,7 @@ Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogController@actionI
 
 /*** BACKEND::CATALOG ***/
 Route::get('/backend/catalog/list','\Controller\Backend\TechOnline\CatalogController@categoryBaseList');
+
+Route::get('/backend/catalog/create','\Controller\Backend\TechOnline\CatalogController@categoryBaseCreate');
+
+Route::get('/backend/catalog/update','\Controller\Backend\TechOnline\CatalogController@categoryBaseUpdate');
