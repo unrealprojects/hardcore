@@ -3,7 +3,7 @@
 /**
  *  БАЗОВЫЙ КАТАЛОГ
  */
-namespace Model\Frontend\TechOnline;
+namespace Model\General\TechOnline;
 
 class CatalogBase extends TechOnline {
     protected $table = 'catalog_base';

@@ -1,6 +1,6 @@
 <?php
 
-namespace Model\Frontend;
+namespace Model\General;
 
 class Frontend extends \Eloquent {
     public $timestamps = false;
