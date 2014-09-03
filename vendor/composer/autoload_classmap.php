@@ -7,12 +7,14 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
+    'Controller\\Backend\\TechOnline\\CatalogController' => $baseDir . '/app/controllers/backend/techonline/CatalogController.php',
     'Controller\\Frontend\\TechOnline\\CatalogController' => $baseDir . '/app/controllers/frontend/techonline/CatalogController.php',
     'CreateHardcoreRoutes' => $baseDir . '/app/database/migrations/2014_08_22_100050_create_hardcore_routes.php',
     'DatabaseSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
     'MainPageController' => $baseDir . '/app/controllers/frontend/MainPageController.php',
     'Model\\Backend\\Backend' => $baseDir . '/app/models/backend/Backend.php',
+    'Model\\Backend\\CatalogBase' => $baseDir . '/app/models/backend/CatalogBase.php',
     'Model\\Backend\\Routes' => $baseDir . '/app/models/backend/Routes.php',
     'Model\\General\\General' => $baseDir . '/app/models/general/General.php',
     'Model\\General\\TechOnline\\CatalogAdmin' => $baseDir . '/app/models/general/techonline/CatalogAdmin.php',
@@ -30,7 +32,6 @@ return array(
     'Model\\General\\TechOnline\\CatalogTechCategories' => $baseDir . '/app/models/general/techonline/CatalogTechCategories.php',
     'Model\\General\\TechOnline\\TechOnline' => $baseDir . '/app/models/general/techonline/TechOnline.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
-    'Symfony\\Component\\HttpFoundation\\Resources\\stubs\\FakeFile' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/FakeFile.php',
     'TechonlineCatalog' => $baseDir . '/app/database/migrations/2014_09_03_060919_techonline_catalog.php',
     'TestCase' => $baseDir . '/app/tests/TestCase.php',
     'User' => $baseDir . '/app/models/User.php',

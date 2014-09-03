@@ -36,3 +36,4 @@
 Route::get('/','MainPageController@showWelcome');
 
 Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogController@actionIndex');
+Route::get('/catalog_back','\Controller\Backend\TechOnline\CatalogController@categoryBaseList');

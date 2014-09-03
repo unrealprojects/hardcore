@@ -1,6 +1,8 @@
 <?php
 namespace Controller\Backend\TechOnline;
 
+use Model\Backend\CatalogBase;
+
 class CatalogController extends \Controller{
 
 	static public function actionIndex()
@@ -12,6 +14,15 @@ class CatalogController extends \Controller{
 
     static public function categoryBaseList()
     {
+         $category_list= \Model\General\TechOnline\CatalogBase::paginate(5);
+
+         foreach ($category_list as $cat_item){
+            echo $cat_item['model'].'<br>';
+         }
+
+        echo $category_list->links();
+
+
         /* Вывести список техники из catalog_base */
     }
 
