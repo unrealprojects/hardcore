@@ -17,7 +17,7 @@
  */
 
 /* Маршруты из таблицы routes*/
-$routes_db=Routes::get()->toArray();
+$routes_db=\Model\Backend\Routes::get()->toArray();
 
 /* Временные маршруты*/
 $routes_static = [
@@ -30,3 +30,7 @@ $routes = array_merge($routes_db,$routes_static);
 foreach($routes as $route){
     Route::get($route['path'], $route['controller'].'@'.$route['function']);
 }
+
+
+/*** FRONTEND::CATALOG ***/
+Route::get('/catalog','Controller\Frontend\TechOnline\CatalogController@actionIndex');

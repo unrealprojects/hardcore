@@ -1,8 +1,7 @@
 <?php
 
-/**
- * Class Routes - получение списка основных маршрутов frontend сайта
- */
-class Routes extends Eloquent {
+namespace Model\Backend;
+
+class Routes extends Backend {
     protected $table = 'routes';
 }
