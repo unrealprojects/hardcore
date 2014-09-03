@@ -57,10 +57,10 @@ class CatalogController extends \Controller{
 
     static public function categoryBaseUpdate()
     {
-        if ($_GET["id"]) {
-            $id = $_GET["id"];
-            $model = $_GET["model"];
-            $description = $_GET["description"];
+        if (\Input::has('id')) {
+            $id = \Input::get('id');
+            $model = \Input::get('model');;
+            $description = \Input::get('description');;
 
             $item_create= \Model\General\TechOnline\CatalogBase::find($id);
             $item_create->model = $model;
@@ -73,8 +73,8 @@ class CatalogController extends \Controller{
     static public function categoryBaseDelete()
     {
 
-        if ($_GET["id"]) {
-            $id = $_GET["id"];
+        if (\Input::has('id')) {
+            $id = \Input::get('id');
 
             $item_create= \Model\General\TechOnline\CatalogBase::find($id);
 
