@@ -23,13 +23,13 @@ error_reporting(-1);
 | bail from here. Otherwise, Composer will crazily fall back code.
 |
 */
-/*
+
 if ( ! extension_loaded('mcrypt'))
 {
 	echo 'Mcrypt PHP extension required.'.PHP_EOL;
 
 	exit(1);
-}*/
+}
 
 /*
 |--------------------------------------------------------------------------
