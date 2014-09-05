@@ -62,7 +62,18 @@ body {
       @extend .Right;
     }
 
-
+.Lot {
+  @extend .Grid-Row;
+}
+.Lot-Gallery {
+}
+.Lot-Gallery > li {
+  display: block;
+}
+.Lot-Gallery > li > img {
+  width: 100%;
+  display: block;
+}
 footer[role='contentinfo'] {
   margin-top: -$footer-height;
   height: $footer-height;
