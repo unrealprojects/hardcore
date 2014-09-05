@@ -1,158 +1,153 @@
-/* ФОРМЫ > ///////////////////////////////////////////////////////////////////////////////////*/
-form h3.Form-Header {
-  font-size: 150%;
-  font-weight: 100;
-  margin-bottom: 30px;
-  padding: 0 $size-s;
+.Control-Group {
+  margin-top: $size-s;
 }
-
-// Отступ между областями формы
-.Form-Section + .Form-Section {
-  margin-top: $size-xl;
+.Control-Group:first-child {
+  margin-top: 0;
 }
-.Message-Error {
-  display: block;
-  float: right;
-  width: 100%;
-  padding: 10px 0;
-}
-.Control-Group.Error {
-  border: 1px solid $clr-red;
-  padding-bottom: 10px;
-  background-color: $clr-red-light;
-  color: $clr-red-dark;
-}
-.Control-Group.Error input {
-  border-color: $clr-red;
-  color: $clr-red;
-}
-.Control-Group  ,
-.Checkbox-Group {
-  padding: 0 $size-s;
-}
-
-/* DOES NOT LOOK GOOD! */
-.Control-Group + .Checkbox-Group ,
-.Checkbox-Group + .Control-Group ,
-.Control-Group + .Control-Group {
+.Form-Vertical .Control-Group {
   margin-top: $size;
 }
-
-.Control-Group select {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
+.Form-Vertical .Control-Group:first-child {
+  margin-top: 0;
 }
-
-.Control-Group input,
-.Control-Group select {
-  float: left;
-  -webkit-appearance: none;
-  -webkit-border-radius: 0px;
+.Control-Group textarea {
+  resize: vertical;
 }
-.Control-Group label,
-.Control-Group select,
-.Control-Group input {
-  line-height: 30px;
-  padding: 5px $size-s;
-  font-size: 100%;
+.Control-Group input[type='submit'] + input[type='submit'] {
+  margin-left: $size-n;
+}
+.Control-Group input  ,
+.Control-Group select {
+  font-weight: 900;
+}
+// Вертикальная форма
+.Form-Vertical label   ,
+.Form-Vertical input   ,
+.Form-Vertical select  ,
+.Form-Vertical textarea {
   display: block;
+  width: 100%;
+  border: 1px solid;
+}
+.Form-Vertical label {
+  padding: $size-s 0;
+  border-color: transparent;
+}
+.Form-Vertical input     ,
+.Form-Vertical select    {
+  padding: $size-s;
+}
+// Горизонтальная форма
+.Form-Horizontal label    ,
+.Form-Horizontal input    ,
+.Form-Horizontal select   ,
+.Form-Horizontal textarea {
+  display: block;
+  line-height: $line-height;
+  float: left;
+  border: 1px solid;
+}
+.Form-Horizontal label   {
+  width: 30%;
+  border-color: transparent;
+}
+.Form-Horizontal input   ,
+.Form-Horizontal select  ,
+.Form-Horizontal textarea{
+  padding: $size-xs $size-s;
+  width: 70%;
+}
+label.Checkbox ,
+label.Radio    {
+  display: block;
+  width: 100%;
+}
+
+// Чекбокс и радио-кнопка
+input[type='checkbox']  ,
+input[type='radio']     {
+  width: auto;
+  display: inline;
+  float: none;
   vertical-align: middle;
-}
-.Control-Group label {
-  float: left;
-  width: $Control-Group-Label2-Width;
-  border: 1px $clr-grey solid;
-  box-shadow: 0 0 1px white inset;
-  background-color: $clr-grey-light;
-  color: $clr-grey;
-  font-size: 85%;
-  cursor: pointer;
-  display: block;
-}
-.Control-Group label:first-of-type {
-  width: $Control-Group-Label-Width;
-  border-right: 0;
-  color: #000;
-}
-.Control-Group select,
-.Control-Group input[type='text'],
-.Control-Group input[type='password'] {
-   border: 1px solid $clr-grey;
-   outline: 0;
-   width: 100%;
- }
-.Control-Group label + select             ,
-.Control-Group label + input[type='text'],
-.Control-Group label + input[type='password'] {
-  width: $Control-Group-Input-Width;
+  margin: -2px $size-s 0 0;
+  border: 0;
 }
 
-.Control-Group select:focus ,
-.Control-Group input:focus  {
-  border-color: $clr-blue;
-  color: $clr-blue-dark;
-}
-.Control-Group label + select:last-child ,
-.Control-Group label + input[type='text']:last-child ,
-.Control-Group label + input[type='password']:last-child {
-  width: (100% - $Control-Group-Label-Width);
-}
-.Control-Group select + label ,
-.Control-Group input[type='text'] + label ,
-.Control-Group input[type='password'] + label {
-  border-left: 0;
-}
-.Control-Group input[disabled][type='text'] {
-  background-color: #f3f3f3;
-  cursor: not-allowed;
-}
-.Control-Group.Disabled label {
-  color: #777;
-}
-// Кнопка
-.Control-Group input[type='submit'] {
-  float: right;
-  padding: $size-n;
-  background-color: $clr-blue;
-  font-size: 120%;
-  font-weight: 100;
+// КНОПКА
+input[type='submit'] {
+  width: inherit;
+  background-color: $clr-main;
   color: #fff;
   border: 0;
   cursor: pointer;
+  padding: $size-s $size-l!important;
+  font-size: 110%;
 }
-// Кнопка (Отключенная)
-.Control-Group input[type='submit'][disabled]         ,
-.Control-Group input[type='submit'][disabled]:hover   {
+
+// КНОПКА (НАВЕДЕНИЕ)
+input[type='submit']:hover {
+  background-color: $clr-main-dark;
+}
+
+// КНОПКА (ОТКЛЮЧЕНА)
+input[type='submit'][disabled] {
   background-color: $clr-grey;
   cursor: not-allowed;
 }
-.Control-Group input[type='submit'][disabled]:hover {}
-
-.Control-Group input[type='submit']:hover {
-  background-color: $clr-blue-dark;
+.Control-Group input        ,
+.Control-Group select       ,
+.Control-Group textarea     {
+  border-color: $clr-grey!important;
 }
-
-.Checkbox-Group input[type='checkbox'] {
-  border: 1px $clr-grey solid;
-  vertical-align: middle;
-  display: inline-block;
-  margin-right: $size-s;
+.Control-Group input:focus   ,
+.Control-Group select:focus  ,
+.Control-Group textarea:focus{
+  outline: 0;
+  border-color: $clr-main!important;
 }
-body.RoundUI .Control-Group.Error {
-   border-radius: $size-xs
+.Input-Smart {
+  min-height: $line-height + ($size-xs * 2) + 2px;
+  position: relative;
 }
-body.RoundUI .Control-Group label:first-of-type {
-  border-top-left-radius: $size-xs;
-  border-bottom-left-radius: $size-xs;
+.Input-Smart input {
+  // Высота строки + 2 Внутренних отступа + 2 пикселы рамки
+  min-height: $line-height + ($size-xs * 2) + 2px;
+  line-height: $line-height;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  padding: $size-xs $size-s;
 }
-body.RoundUI .Control-Group input[type='text'] + label,
-body.RoundUI .Control-Group label + input[type='text']:last-child {
-  border-top-right-radius: $size-xs;
-  border-bottom-right-radius: $size-xs;
+.Input-Smart .before + input ,
+.Input-Smart .before + .after + input {
+  padding-left: 50px;
 }
-body.RoundUI .Control-Group input[type='submit'] {
-  border-radius: $size-xs;
+.Input-Smart .after input {
+  padding-right: 50px;
 }
-/* ФОРМЫ < ///////////////////////////////////////////////////////////////////////////////////*/
-
+.Input-Smart .before  ,
+.Input-Smart .after   {
+  position: absolute;
+  z-index: 2;
+  width: 40px;
+  display: block;
+  text-align: center;
+  padding: $size-xs ($size-s) $size-xs;
+  line-height: $line-height;
+  background-color: $clr-grey-light;
+  border-right: 1px solid $clr-grey;
+  border-left: 1px solid $clr-grey;
+  box-shadow: 0 0 2px white inset;
+  font-size: 80%;
+}
+.Input-Smart .before {
+  left: 1px;
+  top: 1px;
+  border-left: 0;
+}
+.Input-Smart .after {
+  top: 1px;
+  right: 1px;
+  border-right: 0;
+}

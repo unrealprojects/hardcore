@@ -8,7 +8,6 @@
 }
 
 // Строка грида
-.Control-Group  ,
 .Grid-Row 		{
   width: 100%;
 }
@@ -34,11 +33,11 @@
   display: block;
   float: left;
   min-height: 1px;
-  padding: 30px;
+  padding: 0 $size;
 }
-.Grid-Row [class*='Grid-Node-']:first-of-type {
+.Grid [class*='Grid-Node-']:first-of-type {
   padding-left: 0;
 }
-.Grid-Row [class*='Grid-Node-']:last-of-type {
+.Grid [class*='Grid-Node-']:last-of-type {
   padding-right: 0;
 }

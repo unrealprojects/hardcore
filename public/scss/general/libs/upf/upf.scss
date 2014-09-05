@@ -47,7 +47,30 @@
 .Node + .Node {
     margin-top: 50px;
 }
+.Node {
+  padding: 20px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 40%;
 
+}
+.Node:first-child {
+  margin-top: 0;
+}
+// Внутренние элементы нода отступают друг от друга
+.Node > * {
+  margin-top: $size;
+}
+// Убирает отступ у первого элемента в ноде
+.Node > *:first-child {
+  margin-top: 0;
+}
+// Если нод является сеткой - выключаем отступ
+.Node [class*='Grid-Node-'] {
+  margin-top: 0
+}
 /* ТАБЫ > ////////////////////////////////////////////////////////////////////////////////////*/
 .Tab-Buttons > li {
 	float: left;
