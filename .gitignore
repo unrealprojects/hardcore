@@ -1,11 +1,10 @@
 /bootstrap/compiled.php
-/app/config/database.php
 composer.phar
 composer.lock
 .env.*.php
 .env.php
 .DS_Store
 Thumbs.db
-/scss/general/frontend/techonline/main.css
-/scss/general/frontend/techonline/main.css.map
+/public/scss/general/frontend/techonline/main.css
+/public/scss/general/frontend/techonline/main.css.map
 /app/config/database.php
