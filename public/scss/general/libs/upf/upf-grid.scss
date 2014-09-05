@@ -35,9 +35,11 @@
   min-height: 1px;
   padding: 0 $size;
 }
+
 .Grid [class*='Grid-Node-']:first-of-type {
   padding-left: 0;
 }
+
 .Grid [class*='Grid-Node-']:last-of-type {
   padding-right: 0;
 }
