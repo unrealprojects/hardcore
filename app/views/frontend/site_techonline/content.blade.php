@@ -1,10 +1,8 @@
 @extends('frontend.standard.start')
 
-
 @section('head')
-<link rel="stylesheet" href="/scss/general/frontend/techonline/main.css"/>
+    @include('frontend.site_techonline.head')
 @endsection
-
 
 @section('content')
 <header>
@@ -21,5 +19,6 @@
 </footer>
 @endsection
 
-@include('frontend.site_techonline.head')
-@include('frontend.site_techonline.script')
+@section('scripts')
+    @include('frontend.site_techonline.script')
+@endsection

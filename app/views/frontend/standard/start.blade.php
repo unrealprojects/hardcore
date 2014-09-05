@@ -11,6 +11,7 @@
 
         @include('general.scripts')
         @yield('scripts')
+        @yield('scripts_ie8')
     </body>
 
 </html>
