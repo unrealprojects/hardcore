@@ -330,7 +330,7 @@ body.RoundUI .Message {
   margin-left: auto;
   margin-right: auto; }
 
-.fix, .Page-Header > div.Centrate,
+.fix, .Page-Header > div.Centrate, .Lot-Gallery,
 .Node,
 .Grid,
 .Grid-Row,
@@ -340,7 +340,7 @@ body.RoundUI .Message {
 .Tab-Buttons {
   display: table; }
 
-.fix:after, .Page-Header > div.Centrate:after,
+.fix:after, .Page-Header > div.Centrate:after, .Lot-Gallery:after,
 .Node:after,
 .Grid:after,
 .Grid-Row:after,
@@ -474,7 +474,12 @@ a.Sign-In {
   padding: 5px 0; }
 
 .Lot-Gallery > li {
-  display: block; }
+  display: block;
+  float: left !important;
+  width: 33.3%; }
+
+.Lot-Gallery > li:first-child {
+  width: 100%; }
 
 .Lot-Gallery > li > img {
   width: 100%;
