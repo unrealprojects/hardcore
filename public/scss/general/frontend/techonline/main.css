@@ -15,7 +15,7 @@ body {
 .Grid {
   width: 100%; }
 
-.Grid-Row {
+.Grid-Row, .Lot {
   width: 100%; }
 
 .Grid-Node-1-2 {
@@ -334,6 +334,7 @@ body.RoundUI .Message {
 .Node,
 .Grid,
 .Grid-Row,
+.Lot,
 .Control-Group,
 .Tab-Set,
 .Tab-Buttons {
@@ -343,6 +344,7 @@ body.RoundUI .Message {
 .Node:after,
 .Grid:after,
 .Grid-Row:after,
+.Lot:after,
 .Control-Group:after,
 .Tab-Set,
 .Tab-Buttons {
@@ -365,8 +367,7 @@ body.RoundUI .Message {
   background-color: white;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
-  width: 40%; }
+  margin-top: 50px; }
 
 .Node:first-child {
   margin-top: 0; }
@@ -416,6 +417,13 @@ a:visited {
   color: #ec6700;
   text-decoration: none; }
 
+html, body, #wrap {
+  height: 100%; }
+
+body > #wrap {
+  height: auto;
+  min-height: 100%; }
+
 body {
   background: #eeeeee;
   /* Old browsers */
@@ -464,5 +472,23 @@ a.Sign-In {
 
 .Page-Auth > p {
   padding: 5px 0; }
+
+.Lot-Gallery > li {
+  display: block; }
+
+.Lot-Gallery > li > img {
+  width: 100%;
+  display: block; }
+
+footer[role='contentinfo'] {
+  margin-top: -50px;
+  height: 50px;
+  background: #272727;
+  color: white;
+  border-top: 2px solid #ec6700;
+  font-size: 90%; }
+
+footer > .Copyright {
+  margin: 15px; }
 
 /*# sourceMappingURL=main.css.map */

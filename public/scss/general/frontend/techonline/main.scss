@@ -6,6 +6,9 @@ a:visited {
   text-decoration: none;
   @extend .Animate;
 }
+html, body, #wrap { height: 100%; }
+body > #wrap {height: auto; min-height: 100%;}
+
 body {
   background: #eeeeee; /* Old browsers */
   background: -moz-linear-gradient(left,  #eeeeee 0%, #ffffff 50%, #eeeeee 100%); /* FF3.6+ */
@@ -58,3 +61,29 @@ body {
       padding: $size-xs 0;
       @extend .Right;
     }
+
+.Lot {
+  @extend .Grid-Row;
+}
+.Lot-Gallery {
+}
+.Lot-Gallery > li {
+  display: block;
+}
+.Lot-Gallery > li > img {
+  width: 100%;
+  display: block;
+}
+footer[role='contentinfo'] {
+  margin-top: -$footer-height;
+  height: $footer-height;
+
+  background:#272727;
+  color: white;
+  border-top: $size-xxs solid $clr-main;
+
+  font-size: 90%;
+}
+footer > .Copyright {
+  margin: $size-n;
+}
