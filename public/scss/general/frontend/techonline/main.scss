@@ -4,6 +4,7 @@ a:link,
 a:visited {
   color: $clr-main;
   text-decoration: none;
+  @extend .Animate;
 }
 body {
   background: #eeeeee; /* Old browsers */

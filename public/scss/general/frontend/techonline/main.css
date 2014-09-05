@@ -92,7 +92,7 @@ code.Inline {
   content: ' ';
   position: absolute;
   display: block;
-  border: 15px solid #00abd9;
+  border: 15px solid #d30000;
   border-bottom-color: transparent;
   top: 50px;
   z-index: 1; }
@@ -178,7 +178,7 @@ input[type='radio'] {
 
 input[type='submit'] {
   width: inherit;
-  background-color: #00bff3;
+  background-color: #ec6700;
   color: #fff;
   border: 0;
   cursor: pointer;
@@ -186,7 +186,7 @@ input[type='submit'] {
   font-size: 110%; }
 
 input[type='submit']:hover {
-  background-color: #00abd9; }
+  background-color: #d30000; }
 
 input[type='submit'][disabled] {
   background-color: #ccc;
@@ -201,7 +201,7 @@ input[type='submit'][disabled] {
 .Control-Group select:focus,
 .Control-Group textarea:focus {
   outline: 0;
-  border-color: #00bff3 !important; }
+  border-color: #ec6700 !important; }
 
 .Input-Smart {
   min-height: 36px;
@@ -287,9 +287,9 @@ input[type='submit'][disabled] {
   background-image: url(../img/icon-error.png); }
 
 .Message.Warning {
-  background-color: #fff7ea;
-  border-color: #d18200;
-  color: #b77200; }
+  background-color: #fffaea;
+  border-color: #d1a300;
+  color: #b78f00; }
 
 .Message.Icon.Warning {
   background-image: url(../img/icon-warning.png); }
@@ -314,10 +314,10 @@ body.RoundUI .Message {
   border-radius: 5px; }
 
 /* ╨б╨╛╨╛╨▒╤Й╨╡╨╜╨╕╤П < ///////////////////////////////////////////////////////////////////////////////*/
-.left {
+.Left, .Site-Logo, a.Sign-In {
   float: left; }
 
-.right {
+.Right, .Page-Auth, .Page-Auth > p {
   float: right; }
 
 .dev {
@@ -326,7 +326,11 @@ body.RoundUI .Message {
 .visible {
   display: block; }
 
-.fix,
+.Centrate {
+  margin-left: auto;
+  margin-right: auto; }
+
+.fix, .Page-Header > div.Centrate,
 .Node,
 .Grid,
 .Grid-Row,
@@ -335,7 +339,7 @@ body.RoundUI .Message {
 .Tab-Buttons {
   display: table; }
 
-.fix:after,
+.fix:after, .Page-Header > div.Centrate:after,
 .Node:after,
 .Grid:after,
 .Grid-Row:after,
@@ -376,7 +380,7 @@ body.RoundUI .Message {
 .Node [class*='Grid-Node-'] {
   margin-top: 0; }
 
-/* ╨в╨Р╨С╨л > ////////////////////////////////////////////////////////////////////////////////////*/
+/* ТАБЫ > ////////////////////////////////////////////////////////////////////////////////////*/
 .Tab-Buttons > li {
   float: left; }
 
@@ -386,7 +390,7 @@ body.RoundUI .Message {
 .Tab-Node:first-child {
   display: block; }
 
-/* ╨в╨Р╨С╨л < ////////////////////////////////////////////////////////////////////////////////////*/
+/* ТАБЫ < ////////////////////////////////////////////////////////////////////////////////////*/
 table.Stripped tr:nth-child(even) td {
   background-color: #f0f0f0; }
 
@@ -402,5 +406,63 @@ table.Big > tr > td {
 
 table.Small > tr > td {
   padding: 5px; }
+
+.Animate, a:link,
+a:visited, .Site-Logo {
+  transition: 0.3s ease; }
+
+a:link,
+a:visited {
+  color: #ec6700;
+  text-decoration: none; }
+
+body {
+  background: #eeeeee;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #eeeeee 0%, #ffffff 50%, #eeeeee 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #eeeeee), color-stop(50%, #ffffff), color-stop(100%, #eeeeee));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #eeeeee 0%, #ffffff 50%, #eeeeee 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #eeeeee 0%, #ffffff 50%, #eeeeee 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #eeeeee 0%, #ffffff 50%, #eeeeee 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #eeeeee 0%, #ffffff 50%, #eeeeee 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=1 );
+  /* IE6-9 */ }
+
+.Page-Header {
+  background: #272727;
+  color: white;
+  border-bottom: 2px solid #ec6700; }
+
+.Page-Header > div.Centrate {
+  padding: 15px 0;
+  width: 1200px; }
+
+.Site-Logo {
+  background-image: url("../../../../img/techonline/logo-sprite.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+  display: block;
+  width: 479px;
+  height: 50px; }
+
+.Site-Logo:hover {
+  background-position: left -45px; }
+
+a.Sign-In {
+  display: block;
+  padding: 10px;
+  margin-right: 20px;
+  border: 2px solid;
+  text-align: center;
+  color: #fff; }
+
+.Page-Auth > p {
+  padding: 5px 0; }
 
 /*# sourceMappingURL=main.css.map */
