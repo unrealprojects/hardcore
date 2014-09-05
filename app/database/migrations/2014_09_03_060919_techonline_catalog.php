@@ -54,11 +54,8 @@ class TechonlineCatalog extends Migration {
                 'Длинное описание Test Drive Крана '. $i*11;
 
             $catalog_base->photos =
-                '{0:{name:"Big Japan Car",src:"bigcar.jpg"},
-                  1:{name:"Big Japan Car",src:"bigcar.jpg"},
-                  2:{name:"Big Japan Car",src:"bigcar.jpg"},
-                  3:{name:"Big Japan Car",src:"bigcar.jpg"},
-                  4:{name:"Big Japan Car",src:"bigcar.jpg"}}';
+                '{"0":{"name":"Big Japan Car","src":"bigcar.jpg"},"1":{"name":"Big Japan Car","src":"bigcar.jpg"},"2":{"name":"Big Japan Car","src":"bigcar.jpg"},"3":{"name":"Big Japan Car","src":"bigcar.jpg"}}';
+
 
             $catalog_base->params_set_id=$i;
             $catalog_base->brand_id=$i;
