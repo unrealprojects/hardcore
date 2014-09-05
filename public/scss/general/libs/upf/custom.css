@@ -15,7 +15,6 @@ body {
 .Grid {
   width: 100%; }
 
-.Control-Group,
 .Grid-Row {
   width: 100%; }
 
@@ -59,12 +58,12 @@ body {
   display: block;
   float: left;
   min-height: 1px;
-  padding: 30px; }
+  padding: 0 20px; }
 
-.Grid-Row [class*='Grid-Node-']:first-of-type {
+.Grid [class*='Grid-Node-']:first-of-type {
   padding-left: 0; }
 
-.Grid-Row [class*='Grid-Node-']:last-of-type {
+.Grid [class*='Grid-Node-']:last-of-type {
   padding-right: 0; }
 
 code {
@@ -77,7 +76,7 @@ code {
 code.Inline {
   display: inline-block; }
 
-.Node .Section-Header.Ribbon {
+.Section-Header.Ribbon {
   background-color: #00bff3;
   color: #fff;
   position: relative;
@@ -88,170 +87,166 @@ code.Inline {
 .Node header.Ribbon h3 {
   padding: 10px 30px 0; }
 
-.Node .Section-Header.Ribbon:after,
-.Node .Section-Header.Ribbon:before {
+.Section-Header.Ribbon:after,
+.Section-Header.Ribbon:before {
   content: ' ';
   position: absolute;
   display: block;
-  border: 15px solid #00abd9;
+  border: 15px solid #d30000;
   border-bottom-color: transparent;
   top: 50px;
   z-index: 1; }
 
-.Node .Section-Header.Ribbon:before {
+.Section-Header.Ribbon:before {
   border-left-color: transparent;
   left: 0; }
 
-.Node .Section-Header.Ribbon:after {
+.Section-Header.Ribbon:after {
   border-right-color: transparent;
   right: 0; }
 
-/* ╨д╨Ю╨а╨Ь╨л > ///////////////////////////////////////////////////////////////////////////////////*/
-form h3.Form-Header {
-  font-size: 150%;
-  font-weight: 100;
-  margin-bottom: 30px;
-  padding: 0 10px; }
+.Control-Group {
+  margin-top: 10px; }
 
-.Form-Section + .Form-Section {
-  margin-top: 50px; }
+.Control-Group:first-child {
+  margin-top: 0; }
 
-.Message-Error {
-  display: block;
-  float: right;
-  width: 100%;
-  padding: 10px 0; }
-
-.Control-Group.Error {
-  border: 1px solid #ec0000;
-  padding-bottom: 10px;
-  background-color: #ffecec;
-  color: #d30000; }
-
-.Control-Group.Error input {
-  border-color: #ec0000;
-  color: #ec0000; }
-
-.Control-Group,
-.Checkbox-Group {
-  padding: 0 10px; }
-
-/* DOES NOT LOOK GOOD! */
-.Control-Group + .Checkbox-Group,
-.Checkbox-Group + .Control-Group,
-.Control-Group + .Control-Group {
+.Form-Vertical .Control-Group {
   margin-top: 20px; }
 
-.Control-Group select {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -webkit-border-radius: 0; }
+.Form-Vertical .Control-Group:first-child {
+  margin-top: 0; }
+
+.Control-Group textarea {
+  resize: vertical; }
+
+.Control-Group input[type='submit'] + input[type='submit'] {
+  margin-left: 15px; }
 
 .Control-Group input,
 .Control-Group select {
-  float: left;
-  -webkit-appearance: none;
-  -webkit-border-radius: 0px; }
+  font-weight: 900; }
 
-.Control-Group label,
-.Control-Group select,
-.Control-Group input {
-  line-height: 30px;
-  padding: 5px 10px;
-  font-size: 100%;
+.Form-Vertical label,
+.Form-Vertical input,
+.Form-Vertical select,
+.Form-Vertical textarea {
   display: block;
-  vertical-align: middle; }
+  width: 100%;
+  border: 1px solid; }
 
-.Control-Group label {
+.Form-Vertical label {
+  padding: 10px 0;
+  border-color: transparent; }
+
+.Form-Vertical input,
+.Form-Vertical select {
+  padding: 10px; }
+
+.Form-Horizontal label,
+.Form-Horizontal input,
+.Form-Horizontal select,
+.Form-Horizontal textarea {
+  display: block;
+  line-height: 24px;
   float: left;
-  width: 20%;
-  border: 1px #ccc solid;
-  box-shadow: 0 0 1px white inset;
-  background-color: #f7f7f7;
-  color: #ccc;
-  font-size: 85%;
-  cursor: pointer;
-  display: block; }
+  border: 1px solid; }
 
-.Control-Group label:first-of-type {
+.Form-Horizontal label {
   width: 30%;
-  border-right: 0;
-  color: #000; }
+  border-color: transparent; }
 
-.Control-Group select,
-.Control-Group input[type='text'],
-.Control-Group input[type='password'] {
-  border: 1px solid #ccc;
-  outline: 0;
-  width: 100%; }
-
-.Control-Group label + select,
-.Control-Group label + input[type='text'],
-.Control-Group label + input[type='password'] {
-  width: 50%; }
-
-.Control-Group select:focus,
-.Control-Group input:focus {
-  border-color: #00bff3;
-  color: #00abd9; }
-
-.Control-Group label + select:last-child,
-.Control-Group label + input[type='text']:last-child,
-.Control-Group label + input[type='password']:last-child {
+.Form-Horizontal input,
+.Form-Horizontal select,
+.Form-Horizontal textarea {
+  padding: 5px 10px;
   width: 70%; }
 
-.Control-Group select + label,
-.Control-Group input[type='text'] + label,
-.Control-Group input[type='password'] + label {
-  border-left: 0; }
+label.Checkbox,
+label.Radio {
+  display: block;
+  width: 100%; }
 
-.Control-Group input[disabled][type='text'] {
-  background-color: #f3f3f3;
-  cursor: not-allowed; }
+input[type='checkbox'],
+input[type='radio'] {
+  width: auto;
+  display: inline;
+  float: none;
+  vertical-align: middle;
+  margin: -2px 10px 0 0;
+  border: 0; }
 
-.Control-Group.Disabled label {
-  color: #777; }
-
-.Control-Group input[type='submit'] {
-  float: right;
-  padding: 15px;
-  background-color: #00bff3;
-  font-size: 120%;
-  font-weight: 100;
+input[type='submit'] {
+  width: inherit;
+  background-color: #ec6700;
   color: #fff;
   border: 0;
-  cursor: pointer; }
+  cursor: pointer;
+  padding: 10px 30px !important;
+  font-size: 110%; }
 
-.Control-Group input[type='submit'][disabled],
-.Control-Group input[type='submit'][disabled]:hover {
+input[type='submit']:hover {
+  background-color: #d30000; }
+
+input[type='submit'][disabled] {
   background-color: #ccc;
   cursor: not-allowed; }
 
-.Control-Group input[type='submit']:hover {
-  background-color: #00abd9; }
+.Control-Group input,
+.Control-Group select,
+.Control-Group textarea {
+  border-color: #ccc !important; }
 
-.Checkbox-Group input[type='checkbox'] {
-  border: 1px #ccc solid;
-  vertical-align: middle;
-  display: inline-block;
-  margin-right: 10px; }
+.Control-Group input:focus,
+.Control-Group select:focus,
+.Control-Group textarea:focus {
+  outline: 0;
+  border-color: #ec6700 !important; }
 
-body.RoundUI .Control-Group.Error {
-  border-radius: 5px; }
+.Input-Smart {
+  min-height: 36px;
+  position: relative; }
 
-body.RoundUI .Control-Group label:first-of-type {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px; }
+.Input-Smart input {
+  min-height: 36px;
+  line-height: 24px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  padding: 5px 10px; }
 
-body.RoundUI .Control-Group input[type='text'] + label,
-body.RoundUI .Control-Group label + input[type='text']:last-child {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px; }
+.Input-Smart .before + input,
+.Input-Smart .before + .after + input {
+  padding-left: 50px; }
 
-body.RoundUI .Control-Group input[type='submit'] {
-  border-radius: 5px; }
+.Input-Smart .after input {
+  padding-right: 50px; }
 
-/* ╨д╨Ю╨а╨Ь╨л < ///////////////////////////////////////////////////////////////////////////////////*/
+.Input-Smart .before,
+.Input-Smart .after {
+  position: absolute;
+  z-index: 2;
+  width: 40px;
+  display: block;
+  text-align: center;
+  padding: 5px 10px 5px;
+  line-height: 24px;
+  background-color: #f7f7f7;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  box-shadow: 0 0 2px white inset;
+  font-size: 80%; }
+
+.Input-Smart .before {
+  left: 1px;
+  top: 1px;
+  border-left: 0; }
+
+.Input-Smart .after {
+  top: 1px;
+  right: 1px;
+  border-right: 0; }
+
 /* ╨б╨╛╨╛╨▒╤Й╨╡╨╜╨╕╤П > ///////////////////////////////////////////////////////////////////////////////*/
 .Message {
   font-size: 90%;
@@ -292,9 +287,9 @@ body.RoundUI .Control-Group input[type='submit'] {
   background-image: url(../img/icon-error.png); }
 
 .Message.Warning {
-  background-color: #fff7ea;
-  border-color: #d18200;
-  color: #b77200; }
+  background-color: #fffaea;
+  border-color: #d1a300;
+  color: #b78f00; }
 
 .Message.Icon.Warning {
   background-image: url(../img/icon-warning.png); }
@@ -319,10 +314,10 @@ body.RoundUI .Message {
   border-radius: 5px; }
 
 /* ╨б╨╛╨╛╨▒╤Й╨╡╨╜╨╕╤П < ///////////////////////////////////////////////////////////////////////////////*/
-.left {
+.Left {
   float: left; }
 
-.right {
+.Right {
   float: right; }
 
 .dev {
@@ -330,6 +325,10 @@ body.RoundUI .Message {
 
 .visible {
   display: block; }
+
+.Centrate {
+  margin-left: auto;
+  margin-right: auto; }
 
 .fix,
 .Node,
@@ -361,7 +360,27 @@ body.RoundUI .Message {
 .Node + .Node {
   margin-top: 50px; }
 
-/* ╨в╨Р╨С╨л > ////////////////////////////////////////////////////////////////////////////////////*/
+.Node {
+  padding: 20px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 40%; }
+
+.Node:first-child {
+  margin-top: 0; }
+
+.Node > * {
+  margin-top: 20px; }
+
+.Node > *:first-child {
+  margin-top: 0; }
+
+.Node [class*='Grid-Node-'] {
+  margin-top: 0; }
+
+/* ТАБЫ > ////////////////////////////////////////////////////////////////////////////////////*/
 .Tab-Buttons > li {
   float: left; }
 
@@ -371,7 +390,7 @@ body.RoundUI .Message {
 .Tab-Node:first-child {
   display: block; }
 
-/* ╨в╨Р╨С╨л < ////////////////////////////////////////////////////////////////////////////////////*/
+/* ТАБЫ < ////////////////////////////////////////////////////////////////////////////////////*/
 table.Stripped tr:nth-child(even) td {
   background-color: #f0f0f0; }
 
@@ -386,6 +405,9 @@ table.Big > tr > td {
 
 table.Small > tr > td {
   padding: 5px; }
+
+.Animate {
+  transition: 0.3s ease; }
 
 body {
   font-family: 'Open Sans';

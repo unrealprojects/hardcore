@@ -3,7 +3,11 @@ $clr-red: #ec0000;
 $clr-red-dark:  darken($clr-red,5%);
 $clr-red-light: lighten($clr-red,50%);
 
-$clr-yellow: #d18200;
+$clr-orange: #ec6700;
+$clr-orange-dark:  darken($clr-red,5%);
+$clr-orange-light: lighten($clr-red,50%);
+
+$clr-yellow: #d1a300;
 $clr-yellow-dark:  darken($clr-yellow,5%);
 $clr-yellow-light: lighten($clr-yellow,55%);
 
@@ -19,9 +23,9 @@ $clr-blue-light: lighten($clr-blue,45%);
 $clr-grey: #ccc;
 $clr-grey-light: lighten($clr-grey,17%);
 
-$clr-main:  $clr-blue;
-$clr-main-dark: $clr-blue-dark;
-$clr-main-light: $clr-blue-light;
+$clr-main:  $clr-orange;
+$clr-main-dark: $clr-orange-dark;
+$clr-main-light: $clr-orange-light;
 // Color Scheme
 
 
@@ -39,5 +43,6 @@ $Control-Group-Input-Width: 50%;
 $Control-Group-Label-Width: 30%;
 $Control-Group-Label2-Width: (100% - $Control-Group-Input-Width - $Control-Group-Label-Width);
 
+$node-width: 1200px;
 $line-height: 24px;
 // Sizes

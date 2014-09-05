@@ -7,10 +7,10 @@
 @import "upf-forms";
 @import "upf-messages";
 
-.left {
+.Left {
 	float: left;
 }
-.right {
+.Right {
 	float: right;
 }
 .dev {
@@ -18,6 +18,10 @@
 }
 .visible {
 	display: block;
+}
+.Centrate {
+  margin-left: auto;
+  margin-right: auto;
 }
 .fix,
 .Node,
@@ -100,6 +104,10 @@ table.Big > tr > td {
 }
 table.Small > tr > td {
     padding: 5px;
+}
+
+.Animate {
+  transition: 0.3s ease;
 }
 
 

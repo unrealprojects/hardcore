@@ -1,17 +1,17 @@
 <header>
     <!-- СЕКЦИЯ: Верхнее меню сайта (Логотип + Вход) -->
-    <section class="top-bar">
+    <section class="Page-Header">
 
-        <div class="push-center" role="banner">
+        <div class="Centrate" role="banner">
 
-            <a href="index-2.html" class="logo"></a>
+            <a href="#" class="Site-Logo"></a>
 
-            <div class="user-entry">
-                <a class="sign-in" href="#">
+            <div class="Page-Auth">
+                <a class="Sign-In" href="#">
                     Войти на сайт
                 </a>
                 <p>Впервые на сайте?<br>
-                    <a class="on-dark" href="#">Регистрация</a>
+                    <a href="#">Регистрация</a>
                 </p>
             </div>
 
