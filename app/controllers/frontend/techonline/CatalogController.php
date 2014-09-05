@@ -1,21 +1,19 @@
 <?php
 namespace Controller\Frontend\TechOnline;
 
-class CatalogController extends \Controller{
+class CatalogController extends TechonlineController{
+    public function actionIndex()
+    {
+        /* ПОЛУЧЕНИЕ СПИСКА ДАННЫХ ИЗ КАТАЛОГА */
+        $CatalogBase = new \Model\General\TechOnline\CatalogBase;
+        $CatalogBaseList=$CatalogBase->getList();
+//print_r($CatalogBaseList->toArray()['data']);exit;
+        $this->viewData['content'] = [
+            'pagination' => $CatalogBaseList->links(),
+            'list' => $CatalogBaseList->toArray()['data'],
+            'template' => 'content'
+        ];
 
-	static public function actionIndex()
-	{
-        $category_list = \Model\General\TechOnline\CatalogBase::paginate(5);
-
-        $pagination = $category_list->links();
-
-        $category_list = $category_list->toArray();
-        foreach ($category_list['data'] as $cat_item){
-            echo $cat_item['model'].'<br>';
-        }
-
-        echo $pagination;
-	}
-
-
+        return \View::make($this->siteViewPath.'/layouts/CatalogTech',$this->viewData);
+    }
 }

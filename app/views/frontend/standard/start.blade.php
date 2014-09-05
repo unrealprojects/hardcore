@@ -10,7 +10,6 @@
         @yield('content')
 
         @include('general.scripts')
-        @include('general.scripts_ie8')
         @yield('scripts')
     </body>
 
