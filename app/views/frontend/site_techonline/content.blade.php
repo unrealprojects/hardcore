@@ -2,7 +2,7 @@
 
 
 @section('head')
-
+<link rel="stylesheet" href="/scss/general/frontend/techonline/main.css"/>
 @endsection
 
 
