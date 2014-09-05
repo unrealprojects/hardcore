@@ -19,5 +19,7 @@
         </ul>
     </div>
 @endforeach
+    {{$content['pagination']}}
 </section>
+
 @endsection
