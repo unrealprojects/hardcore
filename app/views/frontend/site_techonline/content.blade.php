@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<div id="wrap">
 <header>
     @include('frontend.site_techonline.parts.header')
     @yield('header1')
@@ -13,6 +14,7 @@
 <main>
     @yield('main')
 </main>
+</div>
 
 <footer>
     @include('frontend.site_techonline.parts.footer')
