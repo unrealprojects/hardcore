@@ -1,8 +1,15 @@
 @extends('frontend.standard.start')
 
+
+@section('head')
+
+@endsection
+
+
 @section('content')
 <header>
     @include('frontend.site_techonline.parts.header')
+    @yield('header1')
 </header>
 
 <main>
