@@ -9,8 +9,8 @@ class CatalogBase extends TechOnline {
     protected $table = 'catalog_base';
 
     protected static function boot() {
-        static::addGlobalScope(new Model\General\TechOnline\CatalogBrand);
-        parent::boot();
+       /* static::addGlobalScope(new Model\General\TechOnline\CatalogBrand);
+        parent::boot();*/
     }
     /* Связи */
     public function brand()
