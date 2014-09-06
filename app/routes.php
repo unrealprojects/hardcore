@@ -32,10 +32,9 @@
 }*/
 
 
-/*** FRONTEND::CATALOG ***/
-Route::get('/','MainPageController@showWelcome');
-Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogController@actionList');
-Route::get('/catalog/{alias}','\Controller\Frontend\TechOnline\CatalogController@actionElement');
+/*** FRONTEND::CATALOG_BASE ***/
+Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogBaseController@actionList');
+Route::get('/catalog/{alias}','\Controller\Frontend\TechOnline\CatalogBaseController@actionElement');
 
 
 /*** BACKEND::CATALOG ***/

@@ -42,6 +42,7 @@ class TechonlineCatalog extends Migration {
             $table->text('photos')->nullable();
 
             $table->integer('params_set_id')->nullable();
+            $table->integer('category_id')->nullable();
             $table->integer('brand_id')->nullable();
         });
 
@@ -64,6 +65,7 @@ class TechonlineCatalog extends Migration {
 
             $catalog_base->params_set_id=$i;
             $catalog_base->brand_id=$i;
+            $catalog_base->category_id=$i;
             $catalog_base->save();
         }
 
@@ -361,7 +363,7 @@ class TechonlineCatalog extends Migration {
         ];
 
         foreach($regions as $region){
-            $catalog_region = new \Model\General\TechOnline\CatalogAdmin();
+            $catalog_region = new \Model\General\TechOnline\CatalogRegion();
             $catalog_region->name=$region;
             $catalog_region->alias = Mascame\Urlify::filter($catalog_region->name);
             $catalog_region->save();

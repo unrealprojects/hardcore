@@ -1,19 +1,25 @@
 <?php
 namespace Controller\Frontend\TechOnline;
 
-class CatalogController extends TechonlineController{
+class CatalogBaseController extends TechonlineController{
     public function actionList()
     {
-        /* ПОЛУЧЕНИЕ СПИСКА ДАННЫХ ИЗ КАТАЛОГА */
+        /* ФИЛЬТРАЦИЯ */
+        $filterCategory = \Input::get('category');
+        $filterRegion = \Input::get('region');
+        $filterBrand = \Input::get('brand');
+
+        /* МОДЕЛЬ */
         $CatalogBase = new \Model\General\TechOnline\CatalogBase;
         $CatalogBaseList=$CatalogBase->getList();
 
+        /* ДАННЫЕ ВИД */
         $this->viewData['content'] = [
             'pagination' => $CatalogBaseList->links(),
             'list' => $CatalogBaseList->toArray()['data'],
             'template' => 'content'
         ];
-
+        print_r($CatalogBaseList->toArray()['data']);exit;
         return \View::make($this->siteViewPath.'/layouts/CatalogTech',$this->viewData);
     }
 
