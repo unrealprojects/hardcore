@@ -5,21 +5,24 @@ class CatalogBaseController extends TechonlineController{
     public function actionList()
     {
         /* ФИЛЬТРАЦИЯ */
-        $filterCategory = \Input::get('category');
-        $filterRegion = \Input::get('region');
-        $filterBrand = \Input::get('brand');
+        $filter = [
+            'category' => \Input::get('category')?:false,
+            'brand' => \Input::get('brand')?:false
+        ];
 
         /* МОДЕЛЬ */
         $CatalogBase = new \Model\General\TechOnline\CatalogBase;
-        $CatalogBaseList=$CatalogBase->getList();
+        $CatalogBaseList=$CatalogBase->getList($filter);
 
         /* ДАННЫЕ ВИД */
         $this->viewData['content'] = [
             'pagination' => $CatalogBaseList->links(),
             'list' => $CatalogBaseList->toArray()['data'],
-            'template' => 'content'
+            'template' => 'content',
+            'categories' => \Model\General\TechOnline\CatalogTechCategories::all()->toArray(),
+            'brands' => \Model\General\TechOnline\CatalogBrand::all()->toArray()
         ];
-        print_r($CatalogBaseList->toArray()['data']);exit;
+//        print_r($CatalogBaseList->toArray()['data']);exit;
         return \View::make($this->siteViewPath.'/layouts/CatalogTech',$this->viewData);
     }
 

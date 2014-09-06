@@ -19,7 +19,23 @@
         </ul>
     </div>
 @endforeach
-    {{$content['pagination']}}
+
+<!-- Пагинация -->
+{{$content['pagination']}}
+
+
+
+<!-- Фильтрация :: По брендам -->
+@foreach($content['brands'] as $brand)
+    <a href="/category/?brand={{$brand['name']}}">{{$brand['name']}}</a>
+@endforeach
+
+<!-- Фильтрация :: По категориям -->
+@foreach($content['categories'] as $category)
+    <a href="/category/?category={{$category['name']}}">{{$category['name']}}</a>
+@endforeach
+
+
 </section>
 
 @endsection
