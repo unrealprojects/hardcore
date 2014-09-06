@@ -1,1 +1,95 @@
 @import "../../../general/libs/upf/upf";
+
+a:link,
+a:visited {
+  color: $clr-main;
+  text-decoration: none;
+  @extend .Animate;
+}
+html, body, #wrap { height: 100%; }
+body > #wrap {height: auto; min-height: 100%;}
+
+body {
+  background: #eeeeee; /* Old browsers */
+  background: -moz-linear-gradient(left,  #eeeeee 0%, #ffffff 50%, #eeeeee 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#eeeeee), color-stop(50%,#ffffff), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #eeeeee 0%,#ffffff 50%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  #eeeeee 0%,#ffffff 50%,#eeeeee 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  #eeeeee 0%,#ffffff 50%,#eeeeee 100%); /* IE10+ */
+  background: linear-gradient(to right,  #eeeeee 0%,#ffffff 50%,#eeeeee 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=1 ); /* IE6-9 */
+
+}
+// Шапка сайта
+.Page-Header {
+  background:#272727;
+  color: white;
+  border-bottom: $size-xxs solid $clr-main;
+
+}
+.Page-Header > div.Centrate {
+  padding: $size-n 0;
+  width: $node-width;
+  @extend .fix;
+}
+  .Site-Logo {
+    background-image: url('../../../../img/techonline/logo-sprite.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    display: block;
+    width: 479px;
+    height: 50px;
+    @extend .Left;
+    @extend .Animate;
+  }
+  .Site-Logo:hover {
+    background-position: left -45px;
+  }
+  .Page-Auth {
+    @extend .Right;
+  }
+    a.Sign-In {
+      display: block;
+      padding: $size-s;
+      margin-right: $size;
+      border: 2px solid;
+      text-align: center;
+      color: #fff;
+      @extend .Left;
+    }
+    .Page-Auth > p {
+      padding: $size-xs 0;
+      @extend .Right;
+    }
+
+.Lot {
+  @extend .Grid-Row;
+}
+.Lot-Gallery {
+  @extend .fix;
+}
+.Lot-Gallery > li {
+  display: block;
+  float: left!important;
+  width: 33.3%;
+}
+.Lot-Gallery > li:first-child {
+  width: 100%;
+}
+.Lot-Gallery > li > img {
+  width: 100%;
+  display: block;
+}
+footer[role='contentinfo'] {
+  margin-top: -$footer-height;
+  height: $footer-height;
+
+  background:#272727;
+  color: white;
+  border-top: $size-xxs solid $clr-main;
+
+  font-size: 90%;
+}
+footer > .Copyright {
+  margin: $size-n;
+}

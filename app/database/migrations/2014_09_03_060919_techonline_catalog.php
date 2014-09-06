@@ -32,8 +32,11 @@ class TechonlineCatalog extends Migration {
         Schema::create('catalog_base', function($table)
         {
             $table->increments('id');
+            $table->string('alias')->nullable();
 
             $table->string('model')->nullable();
+            $table->string('logo')->nullable();
+
             $table->text('description')->nullable();
 
             $table->text('photos')->nullable();
@@ -46,6 +49,8 @@ class TechonlineCatalog extends Migration {
             $catalog_base = new \Model\General\TechOnline\CatalogBase();
 
             $catalog_base->model = 'Test Drive Кран '.$i*11;
+            $catalog_base->alias =Mascame\Urlify::filter($catalog_base->model);
+            $catalog_base->logo  = 'logo.jpg';
 
             $catalog_base->description =
                 'Длинное описание Test Drive Крана '. $i*11 .
@@ -66,8 +71,10 @@ class TechonlineCatalog extends Migration {
         Schema::create('catalog_tech', function($table)
         {
             $table->increments('id');
+            $table->string('alias')->nullable();
 
             $table->string('name')->nullable();
+            $table->string('logo')->nullable();
             $table->text('description')->nullable();
             $table->string('rate')->nullable();
 
@@ -92,6 +99,8 @@ class TechonlineCatalog extends Migration {
 
             $catalog_base->name = 'Сдам в аренду кран №'.$i;
             $catalog_base->rate = $i*98 . ' руб/ч';
+            $catalog_base->alias = Mascame\Urlify::filter($catalog_base->name);
+            $catalog_base->logo  = 'logo.jpg';
 
             $catalog_base->description =
                 'Длинное описание Test Drive Крана '. $i*11 .
@@ -122,8 +131,10 @@ class TechonlineCatalog extends Migration {
         Schema::create('catalog_parts', function($table)
         {
             $table->increments('id');
+            $table->string('alias')->nullable();
 
             $table->string('name')->nullable();
+            $table->string('logo')->nullable();
             $table->text('description')->nullable();
 
             $table->string('brand')->nullable();
@@ -149,6 +160,9 @@ class TechonlineCatalog extends Migration {
 
             $catalog_base->name = 'Запчасть для крана '.$i;
             $catalog_base->price = $i*98 . ' руб.';
+
+            $catalog_base->alias = Mascame\Urlify::filter($catalog_base->name);
+            $catalog_base->logo  = 'logo.jpg';
 
             $catalog_base->description =
                 'Длинное описание Test Drive запчасти для Крана '. $i*11 .
@@ -177,11 +191,12 @@ class TechonlineCatalog extends Migration {
         Schema::create('catalog_admin', function($table)
         {
             $table->increments('id');
+            $table->string('alias')->nullable();
 
             $table->string('name')->nullable();
+            $table->string('logo')->nullable();
             $table->text('description')->nullable();
 
-            $table->string('logo')->nullable();
             $table->string('adress')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
@@ -204,13 +219,15 @@ class TechonlineCatalog extends Migration {
 
             $catalog_base->name = 'Транспортная кампания  №'.$i;
 
+            $catalog_base->alias = Mascame\Urlify::filter($catalog_base->name);
+            $catalog_base->logo  = 'logo.jpg';
+
             $catalog_base->description =
                 'Длинное описание Транспортной кампании '. $i*11 .
                 'Длинное описание Транспортной кампании '. $i*11 .
                 'Длинное описание Транспортной кампании '. $i*11 .
                 'Длинное описание Транспортной кампании '. $i*11 ;
 
-            $catalog_base->logo = 'bigcar.jpg';
             $catalog_base->adress = 'г. Москва,пр. Ленина д. 31, оф. 3';
             $catalog_base->phone = '7900'. $i*11 . $i*23 . $i*11 . $i*23;
             $catalog_base->skype = 'skypecompany'. $i;
@@ -235,6 +252,7 @@ class TechonlineCatalog extends Migration {
         Schema::create('catalog_brand', function($table)
         {
             $table->increments('id');
+            $table->string('alias')->nullable();
             $table->string('name')->nullable();
         });
 
@@ -256,6 +274,7 @@ class TechonlineCatalog extends Migration {
         foreach($brands as $brand){
             $catalog_brand = new \Model\General\TechOnline\CatalogBrand();
             $catalog_brand->name=$brand;
+            $catalog_brand->alias = Mascame\Urlify::filter($catalog_brand->name);
             $catalog_brand->save();
         }
 
@@ -263,6 +282,7 @@ class TechonlineCatalog extends Migration {
         Schema::create('catalog_region', function($table)
         {
             $table->increments('id');
+            $table->string('alias')->nullable();
             $table->string('name')->nullable();
         });
 
@@ -343,6 +363,7 @@ class TechonlineCatalog extends Migration {
         foreach($regions as $region){
             $catalog_region = new \Model\General\TechOnline\CatalogAdmin();
             $catalog_region->name=$region;
+            $catalog_region->alias = Mascame\Urlify::filter($catalog_region->name);
             $catalog_region->save();
         }
 
@@ -350,6 +371,7 @@ class TechonlineCatalog extends Migration {
         Schema::create('catalog_parts_categories', function($table)
         {
             $table->increments('id');
+            $table->string('alias')->nullable();
             $table->string('name')->nullable();
         });
 
@@ -357,6 +379,7 @@ class TechonlineCatalog extends Migration {
         Schema::create('catalog_tech_categories', function($table)
         {
             $table->increments('id');
+            $table->string('alias')->nullable();
             $table->string('name')->nullable();
         });
 
@@ -371,6 +394,7 @@ class TechonlineCatalog extends Migration {
         foreach($categories as $category){
             $catalog_category = new \Model\General\TechOnline\CatalogTechCategories();
             $catalog_category->name=$category;
+            $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
             $catalog_category->save();
         }
 

@@ -14,6 +14,10 @@ class CatalogBase extends TechOnline {
     }
 
     public function getList(){
-        return $this->with('brand')->paginate(10);
+        return $this->with('brand')->paginate(5);
+    }
+
+    public function getElement($alias){
+        return $this->with('brand')->where('alias','=',$alias)->first();
     }
 }

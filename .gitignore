@@ -5,3 +5,6 @@ composer.lock
 .env.php
 .DS_Store
 Thumbs.db
+/public/scss/general/frontend/techonline/main.css
+/public/scss/general/frontend/techonline/main.css.map
+/app/config/database.php

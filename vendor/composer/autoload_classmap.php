@@ -423,6 +423,7 @@ return array(
     'Jeremeamia\\SuperClosure\\Visitor\\ClosureFinderVisitor' => $vendorDir . '/jeremeamia/SuperClosure/src/Jeremeamia/SuperClosure/Visitor/ClosureFinderVisitor.php',
     'Jeremeamia\\SuperClosure\\Visitor\\MagicConstantVisitor' => $vendorDir . '/jeremeamia/SuperClosure/src/Jeremeamia/SuperClosure/Visitor/MagicConstantVisitor.php',
     'MainPageController' => $baseDir . '/app/controllers/frontend/MainPageController.php',
+    'Mascame\\Urlify\\UrlifyServiceProvider' => $vendorDir . '/mascame/urlify/src/Mascame/Urlify/UrlifyServiceProvider.php',
     'Math_BigInteger' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Math/BigInteger.php',
     'Model\\Backend\\Backend' => $baseDir . '/app/models/backend/Backend.php',
     'Model\\Backend\\Routes' => $baseDir . '/app/models/backend/Routes.php',

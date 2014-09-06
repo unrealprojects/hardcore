@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 @import "upf-variables";
 @import "upf-reset";
 @import "upf-grid";
@@ -5,10 +7,10 @@
 @import "upf-forms";
 @import "upf-messages";
 
-.left {
+.Left {
 	float: left;
 }
-.right {
+.Right {
 	float: right;
 }
 .dev {
@@ -16,6 +18,10 @@
 }
 .visible {
 	display: block;
+}
+.Centrate {
+  margin-left: auto;
+  margin-right: auto;
 }
 .fix,
 .Node,
@@ -26,6 +32,7 @@
 .Tab-Buttons {
 	display: table;
 }
+
 .fix:after			 ,
 .Node:after			 ,
 .Grid:after			 ,
@@ -47,7 +54,29 @@
 .Node + .Node {
     margin-top: 50px;
 }
+.Node {
+  padding: 20px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
 
+}
+.Node:first-child {
+  margin-top: 0;
+}
+// Внутренние элементы нода отступают друг от друга
+.Node > * {
+  margin-top: $size;
+}
+// Убирает отступ у первого элемента в ноде
+.Node > *:first-child {
+  margin-top: 0;
+}
+// Если нод является сеткой - выключаем отступ
+.Node [class*='Grid-Node-'] {
+  margin-top: 0
+}
 /* ТАБЫ > ////////////////////////////////////////////////////////////////////////////////////*/
 .Tab-Buttons > li {
 	float: left;
@@ -71,9 +100,14 @@ table > tr > td {
 }
 table.Big > tr > td {
     padding: 30px;
+    margin: 30px;
 }
 table.Small > tr > td {
     padding: 5px;
+}
+
+.Animate {
+  transition: 0.3s ease;
 }
 
 

@@ -1,0 +1,421 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* Android Fix */ }
+
+a img {
+  border: 0; }
+
+body {
+  font-family: sans-serif; }
+
+.Grid {
+  width: 100%; }
+
+.Grid-Row {
+  width: 100%; }
+
+.Grid-Node-1-2 {
+  width: 50.00%; }
+
+.Grid-Node-1-3 {
+  width: 33.33%; }
+
+.Grid-Node-2-3 {
+  width: 66.66%; }
+
+.Grid-Node-1-4 {
+  width: 25.00%; }
+
+.Grid-Node-2-4 {
+  width: 50.00%; }
+
+.Grid-Node-3-4 {
+  width: 75.00%; }
+
+.Grid-Node-1-5 {
+  width: 20.00%; }
+
+.Grid-Node-2-5 {
+  width: 40.00%; }
+
+.Grid-Node-3-5 {
+  width: 60.00%; }
+
+.Grid-Node-4-5 {
+  width: 80.00%; }
+
+.Grid-No-Padding {
+  padding: 0 !important; }
+
+.Grid-No-Padding > * {
+  padding: 0 !important; }
+
+[class*='Grid-Node-'] {
+  display: block;
+  float: left;
+  min-height: 1px;
+  padding: 0 20px; }
+
+.Grid [class*='Grid-Node-']:first-of-type {
+  padding-left: 0; }
+
+.Grid [class*='Grid-Node-']:last-of-type {
+  padding-right: 0; }
+
+code {
+  background-color: #f7f7f7;
+  border-left: 20px solid #ccc;
+  font-family: "Courier New", monospace;
+  display: block;
+  padding: 10px 20px; }
+
+code.Inline {
+  display: inline-block; }
+
+.Section-Header.Ribbon {
+  background-color: #00bff3;
+  color: #fff;
+  position: relative;
+  display: block;
+  height: 50px;
+  margin: -30px -50px 0; }
+
+.Node header.Ribbon h3 {
+  padding: 10px 30px 0; }
+
+.Section-Header.Ribbon:after,
+.Section-Header.Ribbon:before {
+  content: ' ';
+  position: absolute;
+  display: block;
+  border: 15px solid #00abd9;
+  border-bottom-color: transparent;
+  top: 50px;
+  z-index: 1; }
+
+.Section-Header.Ribbon:before {
+  border-left-color: transparent;
+  left: 0; }
+
+.Section-Header.Ribbon:after {
+  border-right-color: transparent;
+  right: 0; }
+
+.Control-Group {
+  margin-top: 10px; }
+
+.Control-Group:first-child {
+  margin-top: 0; }
+
+.Form-Vertical .Control-Group {
+  margin-top: 20px; }
+
+.Form-Vertical .Control-Group:first-child {
+  margin-top: 0; }
+
+.Control-Group textarea {
+  resize: vertical; }
+
+.Control-Group input[type='submit'] + input[type='submit'] {
+  margin-left: 15px; }
+
+.Control-Group input,
+.Control-Group select {
+  font-weight: 900; }
+
+.Form-Vertical label,
+.Form-Vertical input,
+.Form-Vertical select,
+.Form-Vertical textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid; }
+
+.Form-Vertical label {
+  padding: 10px 0;
+  border-color: transparent; }
+
+.Form-Vertical input,
+.Form-Vertical select {
+  padding: 10px; }
+
+.Form-Horizontal label,
+.Form-Horizontal input,
+.Form-Horizontal select,
+.Form-Horizontal textarea {
+  display: block;
+  line-height: 24px;
+  float: left;
+  border: 1px solid; }
+
+.Form-Horizontal label {
+  width: 30%;
+  border-color: transparent; }
+
+.Form-Horizontal input,
+.Form-Horizontal select,
+.Form-Horizontal textarea {
+  padding: 5px 10px;
+  width: 70%; }
+
+label.Checkbox,
+label.Radio {
+  display: block;
+  width: 100%; }
+
+input[type='checkbox'],
+input[type='radio'] {
+  width: auto;
+  display: inline;
+  float: none;
+  vertical-align: middle;
+  margin: -2px 10px 0 0;
+  border: 0; }
+
+input[type='submit'] {
+  width: inherit;
+  background-color: #00bff3;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  padding: 10px 30px !important;
+  font-size: 110%; }
+
+input[type='submit']:hover {
+  background-color: #00abd9; }
+
+input[type='submit'][disabled] {
+  background-color: #ccc;
+  cursor: not-allowed; }
+
+.Control-Group input,
+.Control-Group select,
+.Control-Group textarea {
+  border-color: #ccc !important; }
+
+.Control-Group input:focus,
+.Control-Group select:focus,
+.Control-Group textarea:focus {
+  outline: 0;
+  border-color: #00bff3 !important; }
+
+.Input-Smart {
+  min-height: 36px;
+  position: relative; }
+
+.Input-Smart input {
+  min-height: 36px;
+  line-height: 24px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  padding: 5px 10px; }
+
+.Input-Smart .before + input,
+.Input-Smart .before + .after + input {
+  padding-left: 50px; }
+
+.Input-Smart .after input {
+  padding-right: 50px; }
+
+.Input-Smart .before,
+.Input-Smart .after {
+  position: absolute;
+  z-index: 2;
+  width: 40px;
+  display: block;
+  text-align: center;
+  padding: 5px 10px 5px;
+  line-height: 24px;
+  background-color: #f7f7f7;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  box-shadow: 0 0 2px white inset;
+  font-size: 80%; }
+
+.Input-Smart .before {
+  left: 1px;
+  top: 1px;
+  border-left: 0; }
+
+.Input-Smart .after {
+  top: 1px;
+  right: 1px;
+  border-right: 0; }
+
+/* ╨б╨╛╨╛╨▒╤Й╨╡╨╜╨╕╤П > ///////////////////////////////////////////////////////////////////////////////*/
+.Message {
+  font-size: 90%;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 0 0 2px white inset;
+  margin-bottom: 20px; }
+
+.Message h3,
+.Message h4,
+.Message h5,
+.Message h6 {
+  margin-bottom: 5px; }
+
+.Message h3 {
+  font-size: 120%; }
+
+.Message h4 {
+  font-size: 110%; }
+
+.Message h5 {
+  font-size: 100%; }
+
+.Message h6 {
+  font-size: 90%; }
+
+.Message.Icon {
+  padding-left: 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center; }
+
+.Message.Error {
+  background-color: #ffecec;
+  border-color: #ec0000;
+  color: #d30000; }
+
+.Message.Icon.Error {
+  background-image: url(../img/icon-error.png); }
+
+.Message.Warning {
+  background-color: #fff7ea;
+  border-color: #d18200;
+  color: #b77200; }
+
+.Message.Icon.Warning {
+  background-image: url(../img/icon-warning.png); }
+
+.Message.Success {
+  background-color: #dfffdc;
+  border-color: #0da900;
+  color: #0b8f00; }
+
+.Message.Icon.Success {
+  background-image: url(../img/icon-success.png); }
+
+.Message.Info {
+  background-color: #daf7ff;
+  border-color: #00bff3;
+  color: #00abd9; }
+
+.Message.Icon.Info {
+  background-image: url(../img/icon-info.png); }
+
+body.RoundUI .Message {
+  border-radius: 5px; }
+
+/* ╨б╨╛╨╛╨▒╤Й╨╡╨╜╨╕╤П < ///////////////////////////////////////////////////////////////////////////////*/
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.dev {
+  outline: 1px red solid !important; }
+
+.visible {
+  display: block; }
+
+.fix,
+.Node,
+.Grid,
+.Grid-Row,
+.Control-Group,
+.Tab-Set,
+.Tab-Buttons {
+  display: table; }
+
+.fix:after,
+.Node:after,
+.Grid:after,
+.Grid-Row:after,
+.Control-Group:after,
+.Tab-Set,
+.Tab-Buttons {
+  content: '. .';
+  display: block;
+  word-spacing: 99in;
+  height: 0;
+  overflow: hidden; }
+
+.Node {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.Node + .Node {
+  margin-top: 50px; }
+
+.Node {
+  padding: 20px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 40%; }
+
+.Node:first-child {
+  margin-top: 0; }
+
+.Node > * {
+  margin-top: 20px; }
+
+.Node > *:first-child {
+  margin-top: 0; }
+
+.Node [class*='Grid-Node-'] {
+  margin-top: 0; }
+
+/* ╨в╨Р╨С╨л > ////////////////////////////////////////////////////////////////////////////////////*/
+.Tab-Buttons > li {
+  float: left; }
+
+[class*='Tab-Node'] {
+  display: none; }
+
+.Tab-Node:first-child {
+  display: block; }
+
+/* ╨в╨Р╨С╨л < ////////////////////////////////////////////////////////////////////////////////////*/
+table.Stripped tr:nth-child(even) td {
+  background-color: #f0f0f0; }
+
+table.Stripped {
+  border-spacing: 0; }
+
+table > tr > td {
+  padding: 20px; }
+
+table.Big > tr > td {
+  padding: 30px;
+  margin: 30px; }
+
+table.Small > tr > td {
+  padding: 5px; }
+
+body {
+  font-family: 'Open Sans';
+  background: #f7f7f7; }
+
+.Node {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px; }
+
+.Node > * {
+  margin-top: 10px; }
+
+.Node > *:first-child {
+  margin-top: 0; }
+
+/*# sourceMappingURL=custom.css.map */
