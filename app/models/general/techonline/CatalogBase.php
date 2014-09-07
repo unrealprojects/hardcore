@@ -21,10 +21,19 @@ class CatalogBase extends TechOnline {
         return $this->hasOne('Model\General\TechOnline\CatalogTechCategories','id','category_id');
     }
 
+   public function params_values()
+    {
+        return $this->hasMany('Model\General\TechOnline\CatalogParamsValues','model_id','id');
+       // return $this->belongsToMany('Model\General\TechOnline\CatalogParams','catalog_params_values','param_id','model_id','id');
+    //    return $this->hasManyThrough('Model\General\TechOnline\CatalogParams','Model\General\TechOnline\CatalogParamsValues','model_id','id');
+    }
+
+
+    /* Запросы */
     public function getList($filter){
        $this->filter = $filter;
 
-       return $this->with('category','brand')
+       return $this->with('category','brand','params_values','params_values.paramData')
             ->whereHas('category', function($query) {
                  if($this->filter['category']){
                      $query->where('alias', $this->filter['category']);
@@ -39,7 +48,7 @@ class CatalogBase extends TechOnline {
     }
 
     public function getElement($alias){
-        return $this->with('category','brand')
+        return $this->with('category','brand','params_values','params_values.paramData')
                     ->where('alias','=',$alias)
                     ->first();
     }

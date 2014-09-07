@@ -8,15 +8,22 @@
         <h4>{{$list_elem['model']}}</h4>
 
     {{$list_elem['description']}}
+    {{$list_elem['logo']}}
     {{$list_elem['brand']['name']}}
 
         <ul class="Lot-Gallery Grid-Node-1-3">
         @foreach(json_decode($list_elem['photos'],true) as $photo)
-
+            {{Route::getCurrentRoute()->getPath()}}
             <li><img src="/photo/techonline/{{$photo['src']}}" alt="{{$photo['name']}}"></li>
 
         @endforeach
         </ul>
+        <!-- Параметры товара -->
+        @foreach($list_elem['params_values'] as $param)
+            {{$param['param_data']['name']}}
+            {{$param['value']}}
+            {{$param['param_data']['dimension']}}
+        @endforeach
     </div>
 @endforeach
 
@@ -27,12 +34,12 @@
 
 <!-- Фильтрация :: По брендам -->
 @foreach($content['brands'] as $brand)
-    <a href="/category/?brand={{$brand['name']}}">{{$brand['name']}}</a>
+    <a href="/catalog/?brand={{$brand['name']}}&{{\Input::getQueryString()}}">{{$brand['name']}}</a>
 @endforeach
 
 <!-- Фильтрация :: По категориям -->
 @foreach($content['categories'] as $category)
-    <a href="/category/?category={{$category['name']}}">{{$category['name']}}</a>
+    <a href="/catalog/?category={{$category['name']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a>
 @endforeach
 
 
