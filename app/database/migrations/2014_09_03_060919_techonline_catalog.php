@@ -41,7 +41,6 @@ class TechonlineCatalog extends Migration {
 
             $table->text('photos')->nullable();
 
-            $table->integer('params_set_id')->nullable();
             $table->integer('category_id')->nullable();
             $table->integer('brand_id')->nullable();
         });
@@ -50,8 +49,8 @@ class TechonlineCatalog extends Migration {
             $catalog_base = new \Model\General\TechOnline\CatalogBase();
 
             $catalog_base->model = 'Test Drive Кран '.$i*11;
-            $catalog_base->alias =Mascame\Urlify::filter($catalog_base->model);
-            $catalog_base->logo  = 'logo.jpg';
+            $catalog_base->alias = Mascame\Urlify::filter($catalog_base->model);
+            $catalog_base->logo = 'logo.jpg';
 
             $catalog_base->description = 'Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.';
 
@@ -59,9 +58,17 @@ class TechonlineCatalog extends Migration {
                 '{"0":{"name":"Big Japan Car","src":"bigcar.jpg"},"1":{"name":"Big Japan Car","src":"bigcar.jpg"},"2":{"name":"Big Japan Car","src":"bigcar.jpg"},"3":{"name":"Big Japan Car","src":"bigcar.jpg"}}';
 
 
-            $catalog_base->params_set_id=$i;
-            $catalog_base->brand_id=$i;
-            $catalog_base->category_id=$i;
+            if($i<10){
+                $catalog_base->brand_id=$i;
+                $catalog_base->category_id=$i;
+            }elseif($i>=10){
+                $catalog_base->brand_id=round($i/2);
+                $catalog_base->category_id=round($i/2);
+
+            }else{
+                $catalog_base->brand_id=round($i/3);
+                $catalog_base->category_id=round($i/3);
+            }
             $catalog_base->save();
         }
 

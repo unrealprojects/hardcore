@@ -28,7 +28,7 @@
                 <li class="Lot">
 
 
-                    <h4><img src="/photo/techonline/{{$list_elem['logo']}}">{{$list_elem['brand']['name']}}
+                    <h4><img src="/photo/techonline/{{$list_elem['logo']}}">{{$list_elem['brand']['name']}} {{$list_elem['category']['name']}}
                     {{$list_elem['model']}}</h4>
                     <ul class="Lot-Gallery Grid-Node-1-3">
                     @foreach(json_decode($list_elem['photos'],true) as $photo)
