@@ -26,6 +26,11 @@ class CatalogBase extends TechOnline {
         return $this->hasMany('Model\General\TechOnline\CatalogParamsValues','model_id','id');
     }
 
+    public function comments()
+    {
+        return $this->hasMany('Model\General\Comments','list_id','comments_id');
+    }
+
 
     /* Запросы */
     public function getList($filter){
@@ -46,7 +51,7 @@ class CatalogBase extends TechOnline {
     }
 
     public function getElement($alias){
-        return $this->with('category','brand','params_values','params_values.paramData')
+        return $this->with('category','brand','params_values','params_values.paramData','comments')
                     ->where('alias','=',$alias)
                     ->first();
     }

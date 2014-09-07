@@ -43,6 +43,7 @@ class TechonlineCatalog extends Migration {
 
             $table->integer('category_id')->nullable();
             $table->integer('brand_id')->nullable();
+            $table->integer('comments_id')->nullable();
         });
 
         for($i=1;$i<30;$i++){
@@ -69,6 +70,7 @@ class TechonlineCatalog extends Migration {
                 $catalog_base->brand_id=round($i/3);
                 $catalog_base->category_id=round($i/3);
             }
+            $catalog_base->comments_id=$i;
             $catalog_base->save();
         }
 
@@ -92,6 +94,8 @@ class TechonlineCatalog extends Migration {
 
             $table->integer('status_id')->nullable();
             $table->integer('opacity_id')->nullable();
+
+            $table->integer('comments_id')->nullable();
 
             $table->boolean('active')->default(false);
 
@@ -121,6 +125,7 @@ class TechonlineCatalog extends Migration {
             $catalog_base->category_id=$i;
             $catalog_base->admin_id=$i;
             $catalog_base->region_id=$i;
+            $catalog_base->comments_id=$i;
 
             $catalog_base->status_id=2;
             $catalog_base->opacity_id=2;
@@ -151,6 +156,8 @@ class TechonlineCatalog extends Migration {
             $table->integer('status_id')->nullable();
             $table->integer('opacity_id')->nullable();
 
+            $table->integer('comments_id')->nullable();
+
             $table->boolean('active')->default(false);
 
             $table->dateTime('created_at');
@@ -179,6 +186,7 @@ class TechonlineCatalog extends Migration {
             $catalog_base->category_id=$i;
             $catalog_base->admin_id=$i;
             $catalog_base->region_id=$i;
+            $catalog_base->comments_id=$i;
 
             $catalog_base->status_id=2;
             $catalog_base->opacity_id=2;
@@ -208,6 +216,8 @@ class TechonlineCatalog extends Migration {
 
             $table->boolean('active')->default(false);
 
+            $table->integer('comments_id')->nullable();
+
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
         });
@@ -229,6 +239,7 @@ class TechonlineCatalog extends Migration {
             $catalog_base->skype = 'skypecompany'. $i;
             $catalog_base->email = 'company'. $i . '@gmail.com';
             $catalog_base->website = 'http://company'. $i . '.com';
+            $catalog_base->comments_id=$i;
 
 
             $catalog_base->photos =
@@ -551,6 +562,34 @@ class TechonlineCatalog extends Migration {
             $params_rel->category_id=$rel['category_id'];
             $params_rel->save();
         }
+
+
+        /*** КОММЕНТАРИИ ***/
+        Schema::create('comments', function($table)
+        {
+            $table->increments('id');
+
+            $table->string('name')->nullable();
+            $table->text('comment')->nullable();
+
+            $table->integer('level')->nullable();
+            $table->integer('parent_id')->nullable();
+
+            $table->integer('list_id')->nullable();
+
+            $table->dateTime('created_at');
+            $table->dateTime('updated_at');
+        });
+
+        $faker = Faker\Factory::create();
+        for($i=0;$i<500;$i++){
+            $comments = new \Model\General\Comments();
+            $comments->name = $faker->name;
+            $comments->comment = $faker->paragraph();
+            $comments->parent_id = 0;
+            $comments->list_id = $i%100;
+            $comments->save();
+        }
 	}
 
 	public function down()
@@ -573,5 +612,7 @@ class TechonlineCatalog extends Migration {
         Schema::dropIfExists('catalog_params');
         Schema::dropIfExists('catalog_params_values');
         Schema::dropIfExists('catalog_tech_categories_to_params');
+
+        Schema::dropIfExists('comments');
 	}
 }

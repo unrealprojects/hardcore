@@ -17,6 +17,7 @@ return array(
     'MainPageController' => $baseDir . '/app/controllers/frontend/MainPageController.php',
     'Model\\Backend\\Backend' => $baseDir . '/app/models/backend/Backend.php',
     'Model\\Backend\\Routes' => $baseDir . '/app/models/backend/Routes.php',
+    'Model\\General\\Comments' => $baseDir . '/app/models/general/Comments.php',
     'Model\\General\\General' => $baseDir . '/app/models/general/General.php',
     'Model\\General\\TechOnline\\CatalogAdmin' => $baseDir . '/app/models/general/techonline/CatalogAdmin.php',
     'Model\\General\\TechOnline\\CatalogBase' => $baseDir . '/app/models/general/techonline/CatalogBase.php',

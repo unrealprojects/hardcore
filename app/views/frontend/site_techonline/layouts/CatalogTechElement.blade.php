@@ -28,6 +28,13 @@
             @endforeach
         </table>
     </div>
+
+        <!-- Комментарии -->
+        @foreach($content['element']['comments'] as $comment)
+           {{$comment['name']}}
+           {{$comment['comment']}}
+           {{$comment['created_at']}}
+        @endforeach
 </section>
 
 
