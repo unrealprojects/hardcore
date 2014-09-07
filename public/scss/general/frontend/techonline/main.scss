@@ -123,3 +123,27 @@ footer > .Copyright {
     }
   }
 }
+.Sidebar-Filter {
+  & > h4 {
+    padding: $size-s;
+    margin-top: $size;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+.List-Filter {
+  @extend .No-Bullets;
+  & > li {
+    margin-right: $size;
+    & > a {
+      display: block;
+      font-size: $font-size-xs;
+      padding: $size-xs $size-s;
+      &:hover {
+        background-color: $clr-main;
+        color: #fff;
+      }
+    }
+  }
+}

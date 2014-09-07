@@ -108,6 +108,9 @@ code.Inline, code.pagination {
 .Inline > li, .pagination > li {
   float: left; }
 
+.No-Bullets, .List-Filter {
+  list-style: none; }
+
 .Control-Group {
   margin-top: 10px; }
 
@@ -516,5 +519,21 @@ footer > .Copyright {
       color: #bfbfbf; }
     .pagination > li.active > span {
       background-color: #ec6700; }
+
+.Sidebar-Filter > h4 {
+  padding: 10px;
+  margin-top: 20px; }
+  .Sidebar-Filter > h4:first-child {
+    margin-top: 0; }
+
+.List-Filter > li {
+  margin-right: 20px; }
+  .List-Filter > li > a {
+    display: block;
+    font-size: 80%;
+    padding: 5px 10px; }
+    .List-Filter > li > a:hover {
+      background-color: #ec6700;
+      color: #fff; }
 
 /*# sourceMappingURL=main.css.map */
