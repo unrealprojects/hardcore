@@ -27,9 +27,14 @@
             @foreach($content['list'] as $list_elem)
                 <li class="Lot">
 
-
-                    <h4><img src="/photo/techonline/{{$list_elem['logo']}}"><a href="/catalog/{{$list_elem['alias']}}">{{$list_elem['brand']['name']}} {{$list_elem['category']['name']}}
+                    <header>
+                    <img src="/photo/techonline/{{$list_elem['logo']}}">
+                    <div>
+                        <h4><a href="/catalog/{{$list_elem['alias']}}">{{$list_elem['brand']['name']}}
                     {{$list_elem['model']}}</a></h4>
+                        <p>{{$list_elem['category']['name']}}</p>
+                    </div>
+                    </header>
                     <ul class="Lot-Gallery Grid-Node-1-3">
                     @foreach(json_decode($list_elem['photos'],true) as $photo)
                         <li><img src="/photo/techonline/{{$photo['src']}}" alt="{{$photo['name']}}"></li>

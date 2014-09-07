@@ -69,15 +69,22 @@ body {
   &:first-child {
     margin-top: 0;
   }
-  & > h4 {
+  &  header {
     margin-bottom: $size-l;
-    & > img {
+    & h4 {
+      font-size: $font-size-l;
+    }
+    & img {
       display: block;
       height: 30px;
       float: left;
-      vertical-align: middle;
       margin-right: $size-n;
+      margin-top: $size-xs;
     }
+    & p {
+      font-size: $font-size-s;
+    }
+
   }
   .Lot-Gallery {
     & > li {
