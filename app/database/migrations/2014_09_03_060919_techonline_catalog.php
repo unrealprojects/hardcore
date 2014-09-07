@@ -21,12 +21,12 @@ class TechonlineCatalog extends Migration {
         Schema::dropIfExists('catalog_parts_categories');
         Schema::dropIfExists('catalog_tech_categories');
 
-        Schema::dropIfExists('hardcore_catalog_opacity');
-        Schema::dropIfExists('hardcore_catalog_statuses');
+        Schema::dropIfExists('catalog_opacity');
+        Schema::dropIfExists('catalog_statuses');
 
-        Schema::dropIfExists('hardcore_catalog_params');
-        Schema::dropIfExists('hardcore_catalog_params_values');
-        Schema::dropIfExists('hardcore_catalog_tech_categories_to_params');
+        Schema::dropIfExists('catalog_params');
+        Schema::dropIfExists('catalog_params_values');
+        Schema::dropIfExists('catalog_tech_categories_to_params');
 
         /*** БАЗОВЫЙ КАТАЛОГ ***/
         Schema::create('catalog_base', function($table)
@@ -377,6 +377,26 @@ class TechonlineCatalog extends Migration {
             $table->string('name')->nullable();
         });
 
+        $categories = [
+            'Категория запчастей 1',
+            'Категория запчастей 2',
+            'Категория запчастей 3',
+            'Категория запчастей 4',
+            'Категория запчастей 5',
+            'Категория запчастей 6',
+            'Категория запчастей 7',
+            'Категория запчастей 8',
+            'Категория запчастей 9',
+            'Категория запчастей 10',
+        ];
+
+        foreach($categories as $category){
+            $catalog_category = new \Model\General\TechOnline\CatalogPartsCategories();
+            $catalog_category->name=$category;
+            $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
+            $catalog_category->save();
+        }
+
         /*** КАТЕГОРИИ ТЕХНИКИ ***/
         Schema::create('catalog_tech_categories', function($table)
         {
@@ -390,7 +410,12 @@ class TechonlineCatalog extends Migration {
             'Дорожные катки',
             'Автогрейдеры',
             'Бульдозеры',
-            'Тягачи'
+            'Тягачи',
+            'Фронтальные погрузчики 1',
+            'Дорожные катки 1',
+            'Автогрейдеры 1',
+            'Бульдозеры 1',
+            'Тягачи 1'
         ];
 
         foreach($categories as $category){
@@ -439,18 +464,38 @@ class TechonlineCatalog extends Migration {
         }
 
         /*** ПАРАМЕТРЫ ДЛЯ ТЕХНИКИ ***/
-        Schema::create('catalog_params', function($table)
-        {
+        Schema::create('catalog_params', function($table){
             $table->increments('id');
             $table->string('name')->nullable();
+            $table->string('alias')->nullable();
 
-            $table->integer('max_value')->nullable();
             $table->integer('min_value')->nullable();
+            $table->integer('max_value')->nullable();
+
 
             $table->string('dimension')->nullable();
         });
 
-        /*** ПАРАМЕТРЫ ДЛЯ ТЕХНИКИ ***/
+        $params = [
+            ['name'=>'Скорость','alias'=>'speed','min'=>10,'max'=>100,'dimension'=>'км/ч'],
+            ['name'=>'Мощьность','alias'=>'power','min'=>20,'max'=>200,'dimension'=>'лс'],
+            ['name'=>'Грузоподъемность','alias'=>'load','min'=>10,'max'=>50,'dimension'=>'т'],
+            ['name'=>'Объем двигателя','alias'=>'volume','min'=>10,'max'=>100,'dimension'=>'л'],
+            ['name'=>'Размер ковша','alias'=>'size','min'=>100,'max'=>500,'dimension'=>'дв.кв.']
+        ];
+
+        foreach($params as $param){
+            $catalog_param = new \Model\General\TechOnline\CatalogParams();
+            $catalog_param->name=$param['name'];
+            $catalog_param->alias=$param['alias'];
+            $catalog_param->min_value=$param['min'];
+            $catalog_param->max_value=$param['max'];
+            $catalog_param->dimension=$param['dimension'];
+            $catalog_param->save();
+        }
+
+
+        /*** ЗНАЧЕНИЯ ПАРАМЕТРОВ ДЛЯ ТЕХНИКИ ***/
         Schema::create('catalog_params_values', function($table)
         {
             $table->increments('id');
@@ -459,10 +504,28 @@ class TechonlineCatalog extends Migration {
             $table->integer('param_id')->nullable();
 
             $table->integer('value')->nullable();
-
         });
 
+        $params_values = [
+            ['model_id'=>1,'param_id'=>1,'value'=>30],
+            ['model_id'=>1,'param_id'=>2,'value'=>40],
+            ['model_id'=>1,'param_id'=>3,'value'=>50],
+            ['model_id'=>2,'param_id'=>1,'value'=>35],
+            ['model_id'=>2,'param_id'=>2,'value'=>45],
+            ['model_id'=>2,'param_id'=>3,'value'=>55],
+            ['model_id'=>2,'param_id'=>4,'value'=>60],
+            ['model_id'=>3,'param_id'=>1,'value'=>70],
+            ['model_id'=>3,'param_id'=>2,'value'=>65],
+            ['model_id'=>3,'param_id'=>3,'value'=>75],
+        ];
 
+        foreach($params_values as $param_value){
+            $catalog_param = new \Model\General\TechOnline\CatalogParamsValues();
+            $catalog_param->model_id=$param_value['model_id'];
+            $catalog_param->param_id=$param_value['param_id'];
+            $catalog_param->value=$param_value['value'];
+            $catalog_param->save();
+        }
 
         /*** ОТНОШЕНИЕ ПАРАМЕТРОВ К КАТЕГОРИИ ТЕХНИКИ ***/
         Schema::create('catalog_tech_categories_to_params', function($table)
@@ -472,6 +535,28 @@ class TechonlineCatalog extends Migration {
             $table->integer('category_id')->nullable();
             $table->integer('param_id')->nullable();
         });
+
+        $params_relations = [
+            ['param_id'=>1,'category_id'=>1],
+            ['param_id'=>1,'category_id'=>2],
+            ['param_id'=>1,'category_id'=>3],
+            ['param_id'=>1,'category_id'=>4],
+            ['param_id'=>2,'category_id'=>1],
+            ['param_id'=>2,'category_id'=>2],
+            ['param_id'=>2,'category_id'=>3],
+            ['param_id'=>3,'category_id'=>1],
+            ['param_id'=>3,'category_id'=>2],
+            ['param_id'=>4,'category_id'=>3],
+            ['param_id'=>4,'category_id'=>4]
+
+        ];
+
+        foreach($params_relations as $rel){
+            $params_rel = new \Model\General\TechOnline\CatalogPartsCategoriesToParams();
+            $params_rel->param_id=$rel['param_id'];
+            $params_rel->category_id=$rel['category_id'];
+            $params_rel->save();
+        }
 	}
 
 	public function down()

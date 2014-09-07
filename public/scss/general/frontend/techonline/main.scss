@@ -67,18 +67,19 @@ body {
 }
 .Lot-Gallery {
   @extend .fix;
-}
-.Lot-Gallery > li {
-  display: block;
-  float: left!important;
-  width: 33.3%;
-}
-.Lot-Gallery > li:first-child {
-  width: 100%;
-}
-.Lot-Gallery > li > img {
-  width: 100%;
-  display: block;
+
+  & > li {
+    display: block;
+    float: left!important;
+    width: 33.3%;
+    & > img {
+      width: 100%;
+      display: block;
+    }
+  }
+  & > li:first-child {
+    width: 100%;
+  }
 }
 footer[role='contentinfo'] {
   margin-top: -$footer-height;
@@ -92,4 +93,14 @@ footer[role='contentinfo'] {
 }
 footer > .Copyright {
   margin: $size-n;
+}
+
+.pagination {
+  @extend .Node;
+  @extend .Inline;
+  list-style: none;
+  & > li {
+    margin-top: 0;
+    margin-right: $size;
+  }
 }
