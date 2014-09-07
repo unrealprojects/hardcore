@@ -24,8 +24,6 @@ class CatalogBase extends TechOnline {
    public function params_values()
     {
         return $this->hasMany('Model\General\TechOnline\CatalogParamsValues','model_id','id');
-       // return $this->belongsToMany('Model\General\TechOnline\CatalogParams','catalog_params_values','param_id','model_id','id');
-    //    return $this->hasManyThrough('Model\General\TechOnline\CatalogParams','Model\General\TechOnline\CatalogParamsValues','model_id','id');
     }
 
 

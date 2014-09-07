@@ -11,8 +11,13 @@ class CatalogBaseController extends TechonlineController{
         ];
 
         /* МОДЕЛЬ */
-        $CatalogBase = new \Model\General\TechOnline\CatalogBase;
+        $CatalogBase = new \Model\General\TechOnline\CatalogBase();
         $CatalogBaseList=$CatalogBase->getList($filter);
+        $filters=false;
+        if($filter['category']){
+            $paramFilters = new \Model\General\TechOnline\CatalogTechCategories();
+            $filters = $paramFilters->getFilters($filter['category']);
+        }
 
         /* ДАННЫЕ ВИД */
         $this->viewData['content'] = [
@@ -20,9 +25,10 @@ class CatalogBaseController extends TechonlineController{
             'list' => $CatalogBaseList->toArray()['data'],
             'template' => 'content',
             'categories' => \Model\General\TechOnline\CatalogTechCategories::all()->toArray(),
-            'brands' => \Model\General\TechOnline\CatalogBrand::all()->toArray()
+            'brands' => \Model\General\TechOnline\CatalogBrand::all()->toArray(),
+            'filters' => $filters?:false
         ];
-//        print_r($CatalogBaseList->toArray()['data']);exit;
+//        print_r($filters->toArray());exit;
         return \View::make($this->siteViewPath.'/layouts/CatalogTech',$this->viewData);
     }
 
