@@ -8,6 +8,7 @@ a:visited {
 }
 html, body, #wrap { height: 100%; }
 body > #wrap {height: auto; min-height: 100%;clear:both}
+#wrap > #wrap-stop {height:$footer-height;}
 
 body {
   background: #eeeeee; /* Old browsers */
@@ -19,6 +20,7 @@ body {
   background: linear-gradient(to right,  #eeeeee 0%,#ffffff 50%,#eeeeee 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=1 ); /* IE6-9 */
 
+  font-family: 'Exo 2', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 // Шапка сайта
 .Page-Header {
@@ -63,21 +65,25 @@ body {
     }
 
 .Lot {
-  @extend .Grid-Row;
+  @extend .Grid;
+  @extend .Split;
 }
 .Lot-Gallery {
-  @extend .fix;
+  @extend .Grid;
+  @extend .Split;
 
   & > li {
     display: block;
     float: left!important;
-    width: 33.3%;
+    @extend .Grid-Node-1-3;
     & > img {
       width: 100%;
       display: block;
+      border: 1px solid $clr-main;
     }
   }
   & > li:first-child {
+    margin-bottom: $size-n;
     width: 100%;
   }
 }
@@ -125,7 +131,7 @@ footer > .Copyright {
 }
 .Sidebar-Filter {
   & > h4 {
-    padding: $size-s;
+    padding: 0 $size-s $size-s;
     margin-top: $size;
     &:first-child {
       margin-top: 0;

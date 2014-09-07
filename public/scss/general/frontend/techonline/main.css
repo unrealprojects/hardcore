@@ -12,16 +12,19 @@ a img {
 body {
   font-family: sans-serif; }
 
-.Grid {
+.Grid, .Lot, .Lot-Gallery {
   width: 100%; }
 
-.Grid-Row, .Lot {
-  width: 100%; }
+.Grid-Row {
+  width: 100%;
+  margin-top: 30px; }
+  .Grid-Row:first-child {
+    margin-top: 0; }
 
 .Grid-Node-1-2 {
   width: 50.00%; }
 
-.Grid-Node-1-3 {
+.Grid-Node-1-3, .Lot-Gallery > li {
   width: 33.33%; }
 
 .Grid-Node-2-3 {
@@ -60,10 +63,45 @@ body {
   min-height: 1px;
   padding: 0 20px; }
 
-.Grid [class*='Grid-Node-']:first-of-type {
+.Grid.Split [class*='Grid-Node-'], .Lot [class*='Grid-Node-'], .Lot-Gallery [class*='Grid-Node-'] {
+  margin-left: 5%; }
+  .Grid.Split [class*='Grid-Node-']:first-child, .Lot [class*='Grid-Node-']:first-child, .Lot-Gallery [class*='Grid-Node-']:first-child {
+    margin-left: 0; }
+
+.Grid.Split .Grid-Node-1-2, .Lot .Grid-Node-1-2, .Lot-Gallery .Grid-Node-1-2 {
+  width: 47.5%; }
+
+.Grid.Split .Grid-Node-1-3, .Lot .Grid-Node-1-3, .Lot-Gallery .Grid-Node-1-3, .Grid.Split .Lot-Gallery > li, .Lot-Gallery > li {
+  width: 30%; }
+
+.Grid.Split .Grid-Node-2-3, .Lot .Grid-Node-2-3, .Lot-Gallery .Grid-Node-2-3 {
+  width: 60%; }
+
+.Grid.Split .Grid-Node-1-4, .Lot .Grid-Node-1-4, .Lot-Gallery .Grid-Node-1-4 {
+  width: 21.25%; }
+
+.Grid.Split .Grid-Node-2-4, .Lot .Grid-Node-2-4, .Lot-Gallery .Grid-Node-2-4 {
+  width: 42.5%; }
+
+.Grid.Split .Grid-Node-3-4, .Lot .Grid-Node-3-4, .Lot-Gallery .Grid-Node-3-4 {
+  width: 63.75%; }
+
+.Grid.Split .Grid-Node-1-5, .Lot .Grid-Node-1-5, .Lot-Gallery .Grid-Node-1-5 {
+  width: 16%; }
+
+.Grid.Split .Grid-Node-2-5, .Lot .Grid-Node-2-5, .Lot-Gallery .Grid-Node-2-5 {
+  width: 32%; }
+
+.Grid.Split .Grid-Node-3-5, .Lot .Grid-Node-3-5, .Lot-Gallery .Grid-Node-3-5 {
+  width: 48%; }
+
+.Grid.Split .Grid-Node-4-5, .Lot .Grid-Node-4-5, .Lot-Gallery .Grid-Node-4-5 {
+  width: 64%; }
+
+.Grid [class*='Grid-Node-']:first-of-type, .Lot [class*='Grid-Node-']:first-of-type, .Lot-Gallery [class*='Grid-Node-']:first-of-type {
   padding-left: 0; }
 
-.Grid [class*='Grid-Node-']:last-of-type {
+.Grid [class*='Grid-Node-']:last-of-type, .Lot [class*='Grid-Node-']:last-of-type, .Lot-Gallery [class*='Grid-Node-']:last-of-type {
   padding-right: 0; }
 
 code {
@@ -336,23 +374,25 @@ body.RoundUI .Message {
   margin-left: auto;
   margin-right: auto; }
 
-.fix, .Page-Header > div.Centrate, .Lot-Gallery,
+.fix, .Page-Header > div.Centrate,
 .Node,
 .pagination,
 .Grid,
-.Grid-Row,
 .Lot,
+.Lot-Gallery,
+.Grid-Row,
 .Control-Group,
 .Tab-Set,
 .Tab-Buttons {
   display: table; }
 
-.fix:after, .Page-Header > div.Centrate:after, .Lot-Gallery:after,
+.fix:after, .Page-Header > div.Centrate:after,
 .Node:after,
 .pagination:after,
 .Grid:after,
-.Grid-Row:after,
 .Lot:after,
+.Lot-Gallery:after,
+.Grid-Row:after,
 .Control-Group:after,
 .Tab-Set,
 .Tab-Buttons {
@@ -363,10 +403,9 @@ body.RoundUI .Message {
   overflow: hidden; }
 
 .Node, .pagination {
-  width: 1200px;
+  width: 1100px;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
@@ -431,6 +470,9 @@ body > #wrap {
   min-height: 100%;
   clear: both; }
 
+#wrap > #wrap-stop {
+  height: 50px; }
+
 body {
   background: #eeeeee;
   /* Old browsers */
@@ -447,7 +489,8 @@ body {
   background: linear-gradient(to right, #eeeeee 0%, #ffffff 50%, #eeeeee 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=1 );
-  /* IE6-9 */ }
+  /* IE6-9 */
+  font-family: 'Exo 2', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 .Page-Header {
   background: #272727;
@@ -456,7 +499,7 @@ body {
 
 .Page-Header > div.Centrate {
   padding: 15px 0;
-  width: 1200px; }
+  width: 1100px; }
 
 .Site-Logo {
   background-image: url("../../../../img/techonline/logo-sprite.png");
@@ -482,12 +525,13 @@ a.Sign-In {
 
 .Lot-Gallery > li {
   display: block;
-  float: left !important;
-  width: 33.3%; }
+  float: left !important; }
   .Lot-Gallery > li > img {
     width: 100%;
-    display: block; }
+    display: block;
+    border: 1px solid #ec6700; }
 .Lot-Gallery > li:first-child {
+  margin-bottom: 15px;
   width: 100%; }
 
 footer[role='contentinfo'] {
@@ -521,7 +565,7 @@ footer > .Copyright {
       background-color: #ec6700; }
 
 .Sidebar-Filter > h4 {
-  padding: 10px;
+  padding: 0 10px 10px;
   margin-top: 20px; }
   .Sidebar-Filter > h4:first-child {
     margin-top: 0; }

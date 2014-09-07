@@ -4,7 +4,7 @@
 
         <div class="Centrate" role="banner">
 
-            <a href="#" class="Site-Logo"></a>
+            <a href="http://hardcore/catalog" class="Site-Logo"></a>
 
             <div class="Page-Auth">
                 <a class="Sign-In" href="#">

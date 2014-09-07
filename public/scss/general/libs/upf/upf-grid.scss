@@ -10,6 +10,10 @@
 // Строка грида
 .Grid-Row 		{
   width: 100%;
+  margin-top: $size-l;
+  &:first-child {
+    margin-top: 0;
+  }
 }
 .Grid-Node-1-2 {width: 50.00%}
 .Grid-Node-1-3 {width: 33.33%}
@@ -35,6 +39,23 @@
   min-height: 1px;
   padding: 0 $size;
 }
+.Grid.Split [class*='Grid-Node-'] {
+  margin-left: 5%;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+.Grid.Split .Grid-Node-1-2 {width: (100% - (1 * $grid-spacing)) / 2}
+.Grid.Split .Grid-Node-1-3 {width: (100% - (2 * $grid-spacing)) / 3}
+.Grid.Split .Grid-Node-2-3 {width: ((100% - (2 * $grid-spacing)) / 3) * 2}
+.Grid.Split .Grid-Node-1-4 {width: ((100% - (3 * $grid-spacing)) / 4) * 1}
+.Grid.Split .Grid-Node-2-4 {width: ((100% - (3 * $grid-spacing)) / 4) * 2}
+.Grid.Split .Grid-Node-3-4 {width: ((100% - (3 * $grid-spacing)) / 4) * 3}
+.Grid.Split .Grid-Node-1-5 {width: ((100% - (4 * $grid-spacing)) / 5) * 1}
+.Grid.Split .Grid-Node-2-5 {width: ((100% - (4 * $grid-spacing)) / 5) * 2}
+.Grid.Split .Grid-Node-3-5 {width: ((100% - (4 * $grid-spacing)) / 5) * 3}
+.Grid.Split .Grid-Node-4-5 {width: ((100% - (4 * $grid-spacing)) / 5) * 4}
+
 
 .Grid [class*='Grid-Node-']:first-of-type {
   padding-left: 0;
