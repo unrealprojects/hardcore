@@ -100,8 +100,8 @@ footer > .Copyright {
   @extend .Inline;
   list-style: none;
   & > li {
-    margin-top: 0!important;
-    margin-right: 1px;
+    margin-top: 0!important; // Наследование .Node подразумевает margin-top каждого вложенного элемента. Убираем
+    margin-right: 1px;       // Разлипаем прямоугольники страниц
     & > span  ,
     & > a     {
       color: #fff;
