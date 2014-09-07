@@ -7,7 +7,7 @@ a:visited {
   @extend .Animate;
 }
 html, body, #wrap { height: 100%; }
-body > #wrap {height: auto; min-height: 100%;}
+body > #wrap {height: auto; min-height: 100%;clear:both}
 
 body {
   background: #eeeeee; /* Old browsers */
@@ -100,7 +100,26 @@ footer > .Copyright {
   @extend .Inline;
   list-style: none;
   & > li {
-    margin-top: 0;
-    margin-right: $size;
+    margin-top: 0!important;
+    margin-right: 1px;
+    & > span  ,
+    & > a     {
+      color: #fff;
+      display: block;
+      padding: $size-s $size;
+      background-color: $clr-grey-darker;
+    }
+    &:hover > span {
+      cursor: default;
+    }
+    &:hover > a    {
+      background-color: $clr-grey-dark;
+    }
+    &.disabled > span {
+      color: $clr-grey-dark;
+    }
+    &.active > span {
+      background-color: $clr-main;
+    }
   }
 }

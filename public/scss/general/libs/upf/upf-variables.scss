@@ -23,7 +23,9 @@ $clr-blue-dark:  darken($clr-blue,5%);
 $clr-blue-light: lighten($clr-blue,45%);
 
 $clr-grey: #ccc;
-$clr-grey-light: lighten($clr-grey,17%);
+$clr-grey-light:  lighten($clr-grey, 17%);
+$clr-grey-dark:   darken($clr-grey,  5%);
+$clr-grey-darker: darken($clr-grey,  50%);
 
 $clr-main:  $clr-orange;
 $clr-main-dark: $clr-orange-dark;
