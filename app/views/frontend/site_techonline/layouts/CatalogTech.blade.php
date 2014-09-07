@@ -41,13 +41,16 @@
 @foreach($content['categories'] as $category)
     <a href="/catalog/?category={{$category['name']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a>
 @endforeach
+
 <!-- Фильтрация :: По параметрам -->
-@foreach($content['filters']['filters'] as $filter)
-    {{$filter['name']}}
-    {{$filter['dimension']}}
-    {{$filter['min_value']}}
-    {{$filter['max_value']}}
-@endforeach
+@if($content['filters'])
+    @foreach($content['filters']['filters'] as $filter)
+        {{$filter['name']}}
+        {{$filter['dimension']}}
+        {{$filter['min_value']}}
+        {{$filter['max_value']}}
+    @endforeach
+@endif
 </section>
 
 @endsection
