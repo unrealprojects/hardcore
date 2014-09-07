@@ -53,11 +53,7 @@ class TechonlineCatalog extends Migration {
             $catalog_base->alias =Mascame\Urlify::filter($catalog_base->model);
             $catalog_base->logo  = 'logo.jpg';
 
-            $catalog_base->description =
-                'Длинное описание Test Drive Крана '. $i*11 .
-                'Длинное описание Test Drive Крана '. $i*11 .
-                'Длинное описание Test Drive Крана '. $i*11 .
-                'Длинное описание Test Drive Крана '. $i*11;
+            $catalog_base->description = 'Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.';
 
             $catalog_base->photos =
                 '{"0":{"name":"Big Japan Car","src":"bigcar.jpg"},"1":{"name":"Big Japan Car","src":"bigcar.jpg"},"2":{"name":"Big Japan Car","src":"bigcar.jpg"},"3":{"name":"Big Japan Car","src":"bigcar.jpg"}}';
@@ -104,11 +100,8 @@ class TechonlineCatalog extends Migration {
             $catalog_base->alias = Mascame\Urlify::filter($catalog_base->name);
             $catalog_base->logo  = 'logo.jpg';
 
-            $catalog_base->description =
-                'Длинное описание Test Drive Крана '. $i*11 .
-                'Длинное описание Test Drive Крана '. $i*11 .
-                'Длинное описание Test Drive Крана '. $i*11 .
-                'Длинное описание Test Drive Крана '. $i*11;
+            $catalog_base->description ='Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.';
+
 
             $catalog_base->photos =
                 '{0:{name:"Big Japan Car",src:"bigcar.jpg"},
@@ -166,11 +159,8 @@ class TechonlineCatalog extends Migration {
             $catalog_base->alias = Mascame\Urlify::filter($catalog_base->name);
             $catalog_base->logo  = 'logo.jpg';
 
-            $catalog_base->description =
-                'Длинное описание Test Drive запчасти для Крана '. $i*11 .
-                'Длинное описание Test Drive запчасти для Крана '. $i*11 .
-                'Длинное описание Test Drive запчасти для Крана '. $i*11 .
-                'Длинное описание Test Drive запчасти для Крана '. $i*11;
+            $catalog_base->description ='Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.';
+
 
             $catalog_base->photos =
                 '{0:{name:"Big Japan Car",src:"bigcar.jpg"},
@@ -224,11 +214,8 @@ class TechonlineCatalog extends Migration {
             $catalog_base->alias = Mascame\Urlify::filter($catalog_base->name);
             $catalog_base->logo  = 'logo.jpg';
 
-            $catalog_base->description =
-                'Длинное описание Транспортной кампании '. $i*11 .
-                'Длинное описание Транспортной кампании '. $i*11 .
-                'Длинное описание Транспортной кампании '. $i*11 .
-                'Длинное описание Транспортной кампании '. $i*11 ;
+            $catalog_base->description ='Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.';
+
 
             $catalog_base->adress = 'г. Москва,пр. Ленина д. 31, оф. 3';
             $catalog_base->phone = '7900'. $i*11 . $i*23 . $i*11 . $i*23;
