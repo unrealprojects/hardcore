@@ -32,15 +32,18 @@
 }*/
 
 
-/*** FRONTEND::CATALOG_BASE ***/
-Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogBaseController@actionList');
-Route::get('/catalog/{alias}','\Controller\Frontend\TechOnline\CatalogBaseController@actionElement');
+/*** FRONTEND::CATALOG ***/
+Route::get('/','MainPageController@showWelcome');
+Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogController@actionList');
+Route::get('/catalog/{alias}','\Controller\Frontend\TechOnline\CatalogController@actionElement');
 
 
 /*** BACKEND::CATALOG ***/
+Route::get('/backend/catalog','\Controller\Backend\TechOnline\CatalogController@actionIndex');
+
 Route::get('/backend/catalog/list','\Controller\Backend\TechOnline\CatalogController@categoryBaseList');
 
 Route::get('/backend/catalog/create','\Controller\Backend\TechOnline\CatalogController@categoryBaseCreate');
 
-Route::get('/backend/catalog/update','\Controller\Backend\TechOnline\CatalogController@categoryBaseUpdate');
-Route::get('/backend/catalog/delete','\Controller\Backend\TechOnline\CatalogController@categoryBaseDelete');
+Route::get('/backend/catalog/update/{id}','\Controller\Backend\TechOnline\CatalogController@categoryBaseUpdate');
+Route::get('/backend/catalog/delete/{id}','\Controller\Backend\TechOnline\CatalogController@categoryBaseDelete');

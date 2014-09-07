@@ -18,6 +18,7 @@ class CatalogBaseController extends TechonlineController{
             'pagination' => $CatalogBaseList->links(),
             'list' => $CatalogBaseList->toArray()['data'],
             'template' => 'content'
+
         ];
         print_r($CatalogBaseList->toArray()['data']);exit;
         return \View::make($this->siteViewPath.'/layouts/CatalogTech',$this->viewData);

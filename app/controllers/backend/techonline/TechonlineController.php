@@ -1,10 +1,10 @@
 <?php
-namespace Controller\Frontend\TechOnline;
+namespace Controller\Backend\TechOnline;
 
 class TechonlineController extends \Controller{
 
     public $viewData;
-    public $siteViewPath='/frontend/site_techonline/';
+    public $siteViewPath='/backend/site_techonline/';
 
     public function __construct(){
         $this->getMetaData();

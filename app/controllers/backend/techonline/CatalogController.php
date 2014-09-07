@@ -1,18 +1,26 @@
 <?php
 namespace Controller\Backend\TechOnline;
 
-use Model\Backend\CatalogBase;
 
-class CatalogController extends \Controller{
+class CatalogController extends TechonlineController{
 
-	static public function actionIndex()
+	public function actionIndex()
 	{
 
+        $this->viewData['content'] = [
+            'category_list' => \Model\General\TechOnline\CatalogBase::all()->toArray(),
+            'template'=> 'content'
+        ];
+
+        return \View::make($this->siteViewPath.'/layouts/CatalogTech', $this->viewData);
 	}
+
+
+
 
     /*** Обработка category_base ***/
 
-    static public function categoryBaseList()
+    public function categoryBaseList()
     {
          $category_list = \Model\General\TechOnline\CatalogBase::paginate(5);
 
@@ -28,7 +36,7 @@ class CatalogController extends \Controller{
         /* Вывести список техники из catalog_base */
     }
 
-    static public function categoryBaseCreate()
+    public function categoryBaseCreate()
     {
         if (\Input::has('model') && \Input::has('description')) {
             $model = \Input::get('model');
@@ -55,12 +63,12 @@ class CatalogController extends \Controller{
         /* Добавление элемента catalog_base */
     }
 
-    static public function categoryBaseUpdate()
+    public function categoryBaseUpdate($id=false)
     {
-        if (\Input::has('id')) {
-            $id = \Input::get('id');
-            $model = \Input::get('model');;
-            $description = \Input::get('description');;
+        if ($id) {
+
+            $model = \Input::get('model');
+            $description = \Input::get('description');
 
             $item_create= \Model\General\TechOnline\CatalogBase::find($id);
             $item_create->model = $model;
@@ -70,11 +78,11 @@ class CatalogController extends \Controller{
         /* Обновление элемента catalog_base */
     }
 
-    static public function categoryBaseDelete()
+    public function categoryBaseDelete($id=false)
     {
 
-        if (\Input::has('id')) {
-            $id = \Input::get('id');
+        if ($id) {
+
 
             $item_create= \Model\General\TechOnline\CatalogBase::find($id);
 

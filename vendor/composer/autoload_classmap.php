@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Controller\\Backend\\TechOnline\\CatalogController' => $baseDir . '/app/controllers/backend/techonline/CatalogController.php',
+    'Controller\\Backend\\TechOnline\\TechonlineController' => $baseDir . '/app/controllers/backend/techonline/TechonlineController.php',
     'Controller\\Frontend\\TechOnline\\CatalogBaseController' => $baseDir . '/app/controllers/frontend/techonline/CatalogBaseController.php',
     'Controller\\Frontend\\TechOnline\\TechonlineController' => $baseDir . '/app/controllers/frontend/techonline/TechonlineController.php',
     'CreateHardcoreRoutes' => $baseDir . '/app/database/migrations/2014_08_22_100050_create_hardcore_routes.php',
