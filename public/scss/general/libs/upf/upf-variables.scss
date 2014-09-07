@@ -12,8 +12,10 @@ $clr-yellow-dark:  darken($clr-yellow,5%);
 $clr-yellow-light: lighten($clr-yellow,55%);
 
 $clr-green: #0da900;
-$clr-green-dark:  darken($clr-green,5%);
+$clr-green-lighter: lighten($clr-green,80%);
 $clr-green-light: lighten($clr-green,60%);
+$clr-green-dark:  darken($clr-green,5%);
+$clr-green-darker:  darken($clr-green,15%);
 
 
 $clr-blue: #00bff3;

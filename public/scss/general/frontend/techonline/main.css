@@ -73,7 +73,7 @@ code {
   display: block;
   padding: 10px 20px; }
 
-code.Inline {
+code.Inline, code.pagination {
   display: inline-block; }
 
 .Section-Header.Ribbon {
@@ -84,7 +84,7 @@ code.Inline {
   height: 50px;
   margin: -30px -50px 0; }
 
-.Node header.Ribbon h3 {
+.Node header.Ribbon h3, .pagination header.Ribbon h3 {
   padding: 10px 30px 0; }
 
 .Section-Header.Ribbon:after,
@@ -104,6 +104,9 @@ code.Inline {
 .Section-Header.Ribbon:after {
   border-right-color: transparent;
   right: 0; }
+
+.Inline > li, .pagination > li {
+  float: left; }
 
 .Control-Group {
   margin-top: 10px; }
@@ -332,6 +335,7 @@ body.RoundUI .Message {
 
 .fix, .Page-Header > div.Centrate, .Lot-Gallery,
 .Node,
+.pagination,
 .Grid,
 .Grid-Row,
 .Lot,
@@ -342,6 +346,7 @@ body.RoundUI .Message {
 
 .fix:after, .Page-Header > div.Centrate:after, .Lot-Gallery:after,
 .Node:after,
+.pagination:after,
 .Grid:after,
 .Grid-Row:after,
 .Lot:after,
@@ -354,31 +359,29 @@ body.RoundUI .Message {
   height: 0;
   overflow: hidden; }
 
-.Node {
+.Node, .pagination {
   width: 1200px;
   margin-left: auto;
-  margin-right: auto; }
-
-.Node + .Node {
-  margin-top: 50px; }
-
-.Node {
+  margin-right: auto;
   padding: 20px;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px; }
 
-.Node:first-child {
+.Node + .Node, .pagination + .Node, .Node + .pagination, .pagination + .pagination {
+  margin-top: 50px; }
+
+.Node:first-child, .pagination:first-child {
   margin-top: 0; }
 
-.Node > * {
+.Node > *, .pagination > * {
   margin-top: 20px; }
 
-.Node > *:first-child {
+.Node > *:first-child, .pagination > *:first-child {
   margin-top: 0; }
 
-.Node [class*='Grid-Node-'] {
+.Node [class*='Grid-Node-'], .pagination [class*='Grid-Node-'] {
   margin-top: 0; }
 
 /* ТАБЫ > ////////////////////////////////////////////////////////////////////////////////////*/
@@ -477,13 +480,11 @@ a.Sign-In {
   display: block;
   float: left !important;
   width: 33.3%; }
-
+  .Lot-Gallery > li > img {
+    width: 100%;
+    display: block; }
 .Lot-Gallery > li:first-child {
   width: 100%; }
-
-.Lot-Gallery > li > img {
-  width: 100%;
-  display: block; }
 
 footer[role='contentinfo'] {
   margin-top: -50px;
@@ -495,5 +496,11 @@ footer[role='contentinfo'] {
 
 footer > .Copyright {
   margin: 15px; }
+
+.pagination {
+  list-style: none; }
+  .pagination > li {
+    margin-top: 0;
+    margin-right: 20px; }
 
 /*# sourceMappingURL=main.css.map */
