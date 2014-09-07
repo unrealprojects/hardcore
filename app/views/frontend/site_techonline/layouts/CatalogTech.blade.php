@@ -2,47 +2,60 @@
 
 @section('main')
 <section class="Node Grid Split">
-    <aside class="Sidebar-Filter Grid-Node-1-5">
-        <!-- Фильтрация :: По брендам -->
-        <h4>Производители</h4>
-        <ul class="List-Filter">
-            @foreach($content['brands'] as $brand)
-            <li><a href="/catalog/?brand={{$brand['alias']}}&{{\Input::getQueryString()}}">{{$brand['name']}}</a></li>
-            @endforeach
-        </ul>
-        <!-- Фильтрация :: По категориям -->
-        <h4>Категории</h4>
-        <ul class="List-Filter">
-            @foreach($content['categories'] as $category)
-            <li><a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a></li>
-            @endforeach
-        </ul>
-    </aside>
-    <article class="Grid-Node-4-5">
-         <h3>Каталог строительной техники</h3>
-        @foreach($content['list'] as $list_elem)
-            <div class="Lot">
-                <h4>{{$list_elem['model']}}</h4>
 
-            {{$list_elem['description']}}
-            {{$list_elem['logo']}}
-            {{$list_elem['brand']['name']}}
-
-                <ul class="Lot-Gallery Grid-Node-1-3">
-                @foreach(json_decode($list_elem['photos'],true) as $photo)
-                    <li><img src="/photo/techonline/{{$photo['src']}}" alt="{{$photo['name']}}"></li>
-
+    <h3>Каталог строительной техники</h3>
+    <div class="Grid-Row">
+        <!-- Фильтрация :: Общий блок -->
+        <aside class="Sidebar-Filter Grid-Node-1-5">
+            <!-- Фильтрация :: По брендам -->
+            <h4>Производители</h4>
+            <ul class="List-Filter">
+                @foreach($content['brands'] as $brand)
+                <li><a href="/catalog/?brand={{$brand['alias']}}&{{\Input::getQueryString()}}">{{$brand['name']}}</a></li>
                 @endforeach
-                </ul>
-                <!-- Параметры товара -->
-                @foreach($list_elem['params_values'] as $param)
-                    {{$param['param_data']['name']}}
-                    {{$param['value']}}
-                    {{$param['param_data']['dimension']}}
+            </ul>
+            <!-- Фильтрация :: По категориям -->
+            <h4>Категории</h4>
+            <ul class="List-Filter">
+                @foreach($content['categories'] as $category)
+                <li><a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a></li>
                 @endforeach
-            </div>
-        @endforeach
-    </article>
+            </ul>
+        </aside>
+        <article class="Grid-Node-4-5">
+            <ul class="Lot-List">
+            @foreach($content['list'] as $list_elem)
+                <li class="Lot">
+
+
+                    <h4><img src="/photo/techonline/{{$list_elem['logo']}}">{{$list_elem['brand']['name']}}
+                    {{$list_elem['model']}}</h4>
+                    <ul class="Lot-Gallery Grid-Node-1-3">
+                    @foreach(json_decode($list_elem['photos'],true) as $photo)
+                        <li><img src="/photo/techonline/{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+                    @endforeach
+                    </ul>
+
+                    <div class="Lot-About Grid-Node-2-3">
+                        <p>{{$list_elem['description']}}</p>
+
+                        <!-- Параметры товара -->
+                        <h6>Характеристики</h6>
+                        <table class="Stripped">
+                            @foreach($list_elem['params_values'] as $param)
+                            <tr>
+                                <td>{{$param['param_data']['name']}}</td>
+                                <td>{{$param['value']}}</td>
+                                <td>{{$param['param_data']['dimension']}}</td>
+                            </tr>
+                            @endforeach
+                        </table>
+                    </div>
+                </li>
+            @endforeach
+            </ul>
+        </article>
+    </div>
 <!-- Пагинация -->
 {{$content['pagination']}}
 

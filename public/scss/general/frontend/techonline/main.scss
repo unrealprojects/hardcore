@@ -63,28 +63,57 @@ body {
       padding: $size-xs 0;
       @extend .Right;
     }
-
 .Lot {
-  @extend .Grid;
-  @extend .Split;
-}
-.Lot-Gallery {
-  @extend .Grid;
-  @extend .Split;
-
-  & > li {
-    display: block;
-    float: left!important;
-    @extend .Grid-Node-1-3;
+  margin-top: $size-l;
+  @extend .fix;
+  &:first-child {
+    margin-top: 0;
+  }
+  & > h4 {
+    margin-bottom: $size-l;
     & > img {
-      width: 100%;
       display: block;
-      border: 1px solid $clr-main;
+      height: 30px;
+      float: left;
+      vertical-align: middle;
+      margin-right: $size-n;
     }
   }
-  & > li:first-child {
-    margin-bottom: $size-n;
-    width: 100%;
+  .Lot-Gallery {
+    & > li {
+      display: block;
+      float: left!important;
+      width: 33.33%;
+      & > img {
+        width: 100%;
+        display: block;
+      }
+    }
+    & > li:first-child {
+      margin-bottom: $size-n;
+      width: 100%;
+    }
+  }
+  .Lot-About {
+    font-size: $font-size-s;
+    & > h6 {
+      margin-top: $size-n;
+      font-size: $font-size-xl;
+    }
+    & > table {
+      margin: 0 (-$size-s);
+      & tr {
+        & td {
+          padding: $size-s;
+        }
+      }
+    }
+  }
+}
+
+.Lot-List > li {
+  &:first-child {
+    margin-top: 0;
   }
 }
 footer[role='contentinfo'] {
@@ -131,7 +160,6 @@ footer > .Copyright {
 }
 .Sidebar-Filter {
   & > h4 {
-    padding: 0 $size-s $size-s;
     margin-top: $size;
     &:first-child {
       margin-top: 0;
@@ -144,8 +172,9 @@ footer > .Copyright {
     margin-right: $size;
     & > a {
       display: block;
-      font-size: $font-size-xs;
+      font-size: $font-size-s;
       padding: $size-xs $size-s;
+      margin: 0 (-$size-s);
       &:hover {
         background-color: $clr-main;
         color: #fff;
