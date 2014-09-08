@@ -7,9 +7,9 @@
             <a href="http://hardcore/catalog" class="Site-Logo"></a>
 
             <div class="Page-Auth">
-                <a class="Sign-In" href="#">
+                <button class="Sign-In" href="#">
                     Войти на сайт
-                </a>
+                </button>
                 <p>Впервые на сайте?<br>
                     <a href="#">Регистрация</a>
                 </p>

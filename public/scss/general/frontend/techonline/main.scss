@@ -1,3 +1,4 @@
+// Подключение библиотеки UPF
 @import "../../../general/libs/upf/upf";
 
 a:link,
@@ -6,186 +7,221 @@ a:visited {
   text-decoration: none;
   @extend .Animate;
 }
-html, body, #wrap { height: 100%; }
-body > #wrap {height: auto; min-height: 100%;clear:both}
-#wrap > #wrap-stop {height:$footer-height;}
+a:hover {
+  color: $clr-grey-darker;
+}
+html,
+body,
+#wrap {
+  height: 100%;
+}
+
+body > #wrap {
+  height: auto;
+  min-height: 100%;
+  clear: both
+}
+
+#wrap > #wrap-stop {
+  height: $footer-height;
+}
 
 body {
   background: #eeeeee; /* Old browsers */
-  background: -moz-linear-gradient(left,  #eeeeee 0%, #ffffff 50%, #eeeeee 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#eeeeee), color-stop(50%,#ffffff), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left,  #eeeeee 0%,#ffffff 50%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left,  #eeeeee 0%,#ffffff 50%,#eeeeee 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(left,  #eeeeee 0%,#ffffff 50%,#eeeeee 100%); /* IE10+ */
-  background: linear-gradient(to right,  #eeeeee 0%,#ffffff 50%,#eeeeee 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=1 ); /* IE6-9 */
+  background: -moz-linear-gradient(left, #eeeeee 0%, #ffffff 50%, #eeeeee 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #eeeeee), color-stop(50%, #ffffff), color-stop(100%, #eeeeee)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #eeeeee 0%, #ffffff 50%, #eeeeee 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #eeeeee 0%, #ffffff 50%, #eeeeee 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #eeeeee 0%, #ffffff 50%, #eeeeee 100%); /* IE10+ */
+  background: linear-gradient(to right, #eeeeee 0%, #ffffff 50%, #eeeeee 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#eeeeee', GradientType=1); /* IE6-9 */
 
   font-family: 'Exo 2', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
 // Шапка сайта
 .Page-Header {
-  background:#272727;
-  color: white;
-  border-bottom: $size-xxs solid $clr-main;
+	background: #272727;
+	color: white;
+	border-bottom: $size-xxs solid $clr-main;
 
+	& > div.Centrate {
+		padding: $size-n 0;
+		width: $node-width;
+		@extend .fix;
+
+		// Логотип сайта (ссылка на главную страницу)
+		.Site-Logo {
+			display: block;
+			width: 479px;
+			height: 50px;
+			background-image: url('../../../../img/techonline/logo-sprite.png');
+			background-repeat: no-repeat;
+			background-position: top left;
+			@extend .Left;
+			@extend .Animate;
+
+			&:hover {
+				background-position: left -45px;
+			}
+		}
+
+		// Блок авторизации
+		.Page-Auth {
+			@extend .Right;
+
+			button.Sign-In {
+				display: block;
+				padding: $size-s;
+				margin: $size-xs $size 0 0;
+				border: 1px solid;
+				text-align: center;
+				color: #fff;
+				background-color: transparent;
+				@extend .Left;
+				@extend .Animate;
+
+				&:hover {
+				  color: $clr-main;
+				}
+			}
+
+			& > p {
+				padding: $size-xs 0;
+				@extend .Right;
+			}
+		}
+	}
 }
-.Page-Header > div.Centrate {
-  padding: $size-n 0;
-  width: $node-width;
-  @extend .fix;
-}
-  .Site-Logo {
-    background-image: url('../../../../img/techonline/logo-sprite.png');
-    background-repeat: no-repeat;
-    background-position: top left;
-    display: block;
-    width: 479px;
-    height: 50px;
-    @extend .Left;
-    @extend .Animate;
-  }
-  .Site-Logo:hover {
-    background-position: left -45px;
-  }
-  .Page-Auth {
-    @extend .Right;
-  }
-    a.Sign-In {
-      display: block;
-      padding: $size-s;
-      margin-right: $size;
-      border: 2px solid;
-      text-align: center;
-      color: #fff;
-      @extend .Left;
-    }
-    .Page-Auth > p {
-      padding: $size-xs 0;
-      @extend .Right;
-    }
+
 .Lot {
   margin-top: $size-l;
   @extend .fix;
   &:first-child {
-    margin-top: 0;
+	margin-top: 0;
   }
-  &  header {
-    margin-bottom: $size-l;
-    & h4 {
-      font-size: $font-size-l;
-    }
-    & img {
-      display: block;
-      height: 30px;
-      float: left;
-      margin-right: $size-n;
-      margin-top: $size-xs;
-    }
-    & p {
-      font-size: $font-size-s;
-    }
+  & header {
+	margin-bottom: $size-l;
+	& h4 {
+	  font-size: $font-size-l;
+	}
+	& img {
+	  display: block;
+	  height: 30px;
+	  float: left;
+	  margin-right: $size-n;
+	  margin-top: $size-xs;
+	}
+	& p {
+	  font-size: $font-size-s;
+	}
 
   }
   .Lot-Gallery {
-    & > li {
-      display: block;
-      float: left!important;
-      width: 33.33%;
-      & > img {
-        width: 100%;
-        display: block;
-      }
-    }
-    & > li:first-child {
-      margin-bottom: $size-n;
-      width: 100%;
-    }
+	& > li {
+	  display: block;
+	  float: left !important;
+	  width: 33.33%;
+	  & > img {
+		width: 100%;
+		display: block;
+	  }
+	}
+	& > li:first-child {
+	  margin-bottom: $size-n;
+	  width: 100%;
+	}
   }
   .Lot-About {
-    font-size: $font-size-s;
-    & > h6 {
-      margin-top: $size-n;
-      font-size: $font-size-xl;
-    }
-    & > table {
-      margin: 0 (-$size-s);
-      & tr {
-        & td {
-          padding: $size-s;
-        }
-      }
-    }
+	font-size: $font-size-s;
+	& > h6 {
+	  margin-top: $size-n;
+	  font-size: $font-size-xl;
+	}
+	& > table {
+	  margin: 0 (-$size-s);
+	  & tr {
+		& td {
+		  padding: $size-s;
+		}
+	  }
+	}
   }
 }
 
 .Lot-List > li {
   &:first-child {
-    margin-top: 0;
+	margin-top: 0;
   }
 }
+
 footer[role='contentinfo'] {
   margin-top: -$footer-height;
   height: $footer-height;
 
-  background:#272727;
+  background: #272727;
   color: white;
   border-top: $size-xxs solid $clr-main;
 
   font-size: 90%;
 }
+
 footer > .Copyright {
   margin: $size-n;
 }
 
+// Блок Пагинации
 .pagination {
   @extend .Node;
   @extend .Inline;
   list-style: none;
   & > li {
-    margin-top: 0!important; // Наследование .Node подразумевает margin-top каждого вложенного элемента. Убираем
-    margin-right: 1px;       // Разлипаем прямоугольники страниц
-    & > span  ,
-    & > a     {
-      color: #fff;
-      display: block;
-      padding: $size-s $size;
-      background-color: $clr-grey-darker;
-    }
-    &:hover > span {
-      cursor: default;
-    }
-    &:hover > a    {
-      background-color: $clr-grey-dark;
-    }
-    &.disabled > span {
-      color: $clr-grey-dark;
-    }
-    &.active > span {
-      background-color: $clr-main;
-    }
+	margin-top: 0 !important; // Наследование .Node подразумевает margin-top каждого вложенного элемента. Убираем
+	margin-right: 1px; // Разлипаем прямоугольники страниц
+	& > span,
+	& > a {
+	  color: #fff;
+	  display: block;
+	  padding: $size-s $size;
+	  background-color: $clr-grey-darker;
+	}
+	&:hover > span {
+	  cursor: default;
+	}
+	&:hover > a {
+	  background-color: $clr-grey-dark;
+	}
+	&.disabled > span {
+	  color: $clr-grey-dark;
+	}
+	&.active > span {
+	  background-color: $clr-main;
+	}
   }
 }
+
 .Sidebar-Filter {
   & > h4 {
-    margin-top: $size;
-    &:first-child {
-      margin-top: 0;
-    }
+	margin-top: $size;
+	&:first-child {
+	  margin-top: 0;
+	}
   }
 }
+
 .List-Filter {
   @extend .No-Bullets;
   & > li {
-    margin-right: $size;
-    & > a {
-      display: block;
-      font-size: $font-size-s;
-      padding: $size-xs $size-s;
-      margin: 0 (-$size-s);
-      &:hover {
-        background-color: $clr-main;
-        color: #fff;
-      }
-    }
+	margin-right: $size;
+	& > a {
+	  display: block;
+	  font-size: $font-size-s;
+	  padding: $size-xs $size-s;
+	  margin: 0 (-$size-s);
+	  &:hover {
+		background-color: $clr-main;
+		color: #fff;
+	  }
+	}
   }
 }
