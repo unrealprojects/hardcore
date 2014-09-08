@@ -58,7 +58,7 @@
                             </tr>
                             <tr>
                                 <td>Арендодатель:</td>
-                                <td><a href="/admin/{{$list_elem['admin']['alias']}}">{{<0list_elem></0list_elem>['admin']['name']}}</a></td>
+                                <td><a href="/admin/{{$list_elem['admin']['alias']}}">{{$list_elem['admin']['name']}}</a></td>
                             </tr>
                             <tr>
                                 <td>Бренд:</td>
