@@ -37,6 +37,19 @@ Route::get('/','MainPageController@showWelcome');
 Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogController@actionList');
 Route::get('/catalog/{alias}','\Controller\Frontend\TechOnline\CatalogController@actionElement');
 
+/*** FRONTEND::CATALOG_TECH ***/
+Route::get('/rent','\Controller\Frontend\TechOnline\CatalogTechController@actionList');
+Route::get('/rent/{alias}','\Controller\Frontend\TechOnline\CatalogTechController@actionElement');
+
+/*** FRONTEND::CATALOG_PARTS ***/
+Route::get('/parts','\Controller\Frontend\TechOnline\CatalogPartsController@actionList');
+Route::get('/parts/{alias}','\Controller\Frontend\TechOnline\CatalogPartsController@actionElement');
+
+/*** FRONTEND::CATALOG_SELLERS ***/
+Route::get('/sellers','\Controller\Frontend\TechOnline\CatalogSellersController@actionList');
+Route::get('/sellers/{alias}','\Controller\Frontend\TechOnline\CatalogSellersController@actionElement');
+
+
 
 /*** BACKEND::CATALOG ***/
 Route::get('/backend/catalog','\Controller\Backend\TechOnline\CatalogController@actionIndex');

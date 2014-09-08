@@ -23,7 +23,9 @@ $clr-blue-dark:  darken($clr-blue,5%);
 $clr-blue-light: lighten($clr-blue,45%);
 
 $clr-grey: #ccc;
-$clr-grey-light: lighten($clr-grey,17%);
+$clr-grey-light:  lighten($clr-grey, 17%);
+$clr-grey-dark:   darken($clr-grey,  5%);
+$clr-grey-darker: darken($clr-grey,  50%);
 
 $clr-main:  $clr-orange;
 $clr-main-dark: $clr-orange-dark;
@@ -41,14 +43,23 @@ $size-l:   30px;
 $size-xl:  50px;
 $size-xxl: 100px;
 
+$font-size-xxs:   0.625em;
+$font-size-xs:    0.813em;
+$font-size-s:     0.875em;
+$font-size:       1.000em;
+$font-size-l:     1.125em;
+$font-size-xl:    1.250em;
+$font-size-xxl:   1.500em;
+$font-size-xxxl:  2.000em;
+
 $Control-Group-Input-Width: 50%;
 $Control-Group-Label-Width: 30%;
 $Control-Group-Label2-Width: (100% - $Control-Group-Input-Width - $Control-Group-Label-Width);
 
-$node-width: 1200px;
+$node-width: 1100px;
 $footer-height: 50px;
 $line-height: 24px;
-
+$grid-spacing: 5%;
 // Media screen sizes
 $screen-fhd:    1920px;
 $screen-mobile: 800px;

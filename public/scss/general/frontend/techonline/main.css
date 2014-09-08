@@ -15,8 +15,11 @@ body {
 .Grid {
   width: 100%; }
 
-.Grid-Row, .Lot {
-  width: 100%; }
+.Grid-Row {
+  width: 100%;
+  margin-top: 30px; }
+  .Grid-Row:first-child {
+    margin-top: 0; }
 
 .Grid-Node-1-2 {
   width: 50.00%; }
@@ -48,9 +51,6 @@ body {
 .Grid-Node-4-5 {
   width: 80.00%; }
 
-.Grid-No-Padding {
-  padding: 0 !important; }
-
 .Grid-No-Padding > * {
   padding: 0 !important; }
 
@@ -59,6 +59,41 @@ body {
   float: left;
   min-height: 1px;
   padding: 0 20px; }
+
+.Grid.Split [class*='Grid-Node-'] {
+  margin-left: 5%; }
+  .Grid.Split [class*='Grid-Node-']:first-child {
+    margin-left: 0; }
+
+.Grid.Split .Grid-Node-1-2 {
+  width: 47.5%; }
+
+.Grid.Split .Grid-Node-1-3 {
+  width: 30%; }
+
+.Grid.Split .Grid-Node-2-3 {
+  width: 60%; }
+
+.Grid.Split .Grid-Node-1-4 {
+  width: 21.25%; }
+
+.Grid.Split .Grid-Node-2-4 {
+  width: 42.5%; }
+
+.Grid.Split .Grid-Node-3-4 {
+  width: 63.75%; }
+
+.Grid.Split .Grid-Node-1-5 {
+  width: 16%; }
+
+.Grid.Split .Grid-Node-2-5 {
+  width: 32%; }
+
+.Grid.Split .Grid-Node-3-5 {
+  width: 48%; }
+
+.Grid.Split .Grid-Node-4-5 {
+  width: 64%; }
 
 .Grid [class*='Grid-Node-']:first-of-type {
   padding-left: 0; }
@@ -84,7 +119,7 @@ code.Inline, code.pagination {
   height: 50px;
   margin: -30px -50px 0; }
 
-.Node header.Ribbon h3, .pagination header.Ribbon h3 {
+.Node header.Ribbon h3 {
   padding: 10px 30px 0; }
 
 .Section-Header.Ribbon:after,
@@ -105,8 +140,11 @@ code.Inline, code.pagination {
   border-right-color: transparent;
   right: 0; }
 
-.Inline > li, .pagination > li {
+.Inline > li, nav.Page-Navigation ul > li, .pagination > li {
   float: left; }
+
+.No-Bullets, nav.Page-Navigation ul, .List-Filter {
+  list-style: none; }
 
 .Control-Group {
   margin-top: 10px; }
@@ -317,10 +355,11 @@ body.RoundUI .Message {
   border-radius: 5px; }
 
 /* ╨б╨╛╨╛╨▒╤Й╨╡╨╜╨╕╤П < ///////////////////////////////////////////////////////////////////////////////*/
-.Left, .Site-Logo, a.Sign-In {
+.Left, .Page-Header .Centrate .Site-Logo, .Page-Header .Centrate .Page-Auth button.Sign-In,
+.Page-Header .Centrate .Page-Auth .User-Exit {
   float: left; }
 
-.Right, .Page-Auth, .Page-Auth > p {
+.Right, .Page-Header .Centrate .Page-Auth, .Page-Header .Centrate .Page-Auth > p {
   float: right; }
 
 .dev {
@@ -333,23 +372,19 @@ body.RoundUI .Message {
   margin-left: auto;
   margin-right: auto; }
 
-.fix, .Page-Header > div.Centrate, .Lot-Gallery,
+.fix, .Page-Header .Centrate, nav.Page-Navigation ul, .Lot,
 .Node,
-.pagination,
 .Grid,
 .Grid-Row,
-.Lot,
 .Control-Group,
 .Tab-Set,
 .Tab-Buttons {
   display: table; }
 
-.fix:after, .Page-Header > div.Centrate:after, .Lot-Gallery:after,
+.fix:after, .Page-Header .Centrate:after, nav.Page-Navigation ul:after, .Lot:after,
 .Node:after,
-.pagination:after,
 .Grid:after,
 .Grid-Row:after,
-.Lot:after,
 .Control-Group:after,
 .Tab-Set,
 .Tab-Buttons {
@@ -359,29 +394,30 @@ body.RoundUI .Message {
   height: 0;
   overflow: hidden; }
 
-.Node, .pagination {
-  width: 1200px;
+.Node {
+  width: 1100px;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
+  padding: 30px;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 50px;
+  border: 1px solid #eaeaea; }
+
+.Node + .Node {
   margin-top: 50px; }
 
-.Node + .Node, .pagination + .Node, .Node + .pagination, .pagination + .pagination {
-  margin-top: 50px; }
-
-.Node:first-child, .pagination:first-child {
+.Node:first-child {
   margin-top: 0; }
 
-.Node > *, .pagination > * {
+.Node > * {
   margin-top: 20px; }
 
-.Node > *:first-child, .pagination > *:first-child {
+.Node > *:first-child {
   margin-top: 0; }
 
-.Node [class*='Grid-Node-'], .pagination [class*='Grid-Node-'] {
+.Node [class*='Grid-Node-'] {
   margin-top: 0; }
 
 /* ТАБЫ > ////////////////////////////////////////////////////////////////////////////////////*/
@@ -412,7 +448,8 @@ table.Small > tr > td {
   padding: 5px; }
 
 .Animate, a:link,
-a:visited, .Site-Logo {
+a:visited, .Page-Header .Centrate .Site-Logo, .Page-Header .Centrate .Page-Auth button.Sign-In,
+.Page-Header .Centrate .Page-Auth .User-Exit {
   transition: 0.3s ease; }
 
 a:link,
@@ -420,12 +457,21 @@ a:visited {
   color: #ec6700;
   text-decoration: none; }
 
-html, body, #wrap {
+a:hover {
+  color: #4d4d4d; }
+
+html,
+body,
+#wrap {
   height: 100%; }
 
 body > #wrap {
   height: auto;
-  min-height: 100%; }
+  min-height: 100%;
+  clear: both; }
+
+#wrap > #wrap-stop {
+  height: 50px; }
 
 body {
   background: #eeeeee;
@@ -442,49 +488,107 @@ body {
   /* IE10+ */
   background: linear-gradient(to right, #eeeeee 0%, #ffffff 50%, #eeeeee 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=1 );
-  /* IE6-9 */ }
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#eeeeee', GradientType=1);
+  /* IE6-9 */
+  font-family: 'Exo 2', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.00em;
+  line-height: 1.45; }
 
 .Page-Header {
   background: #272727;
   color: white;
   border-bottom: 2px solid #ec6700; }
+  .Page-Header .Centrate {
+    padding: 15px 0;
+    width: 1100px; }
+    .Page-Header .Centrate .Site-Logo {
+      display: block;
+      width: 479px;
+      height: 50px;
+      background-image: url("../../../../img/techonline/logo-sprite.png");
+      background-repeat: no-repeat;
+      background-position: top left; }
+      .Page-Header .Centrate .Site-Logo:hover {
+        background-position: left -45px; }
+    .Page-Header .Centrate .Page-Auth button.Sign-In,
+    .Page-Header .Centrate .Page-Auth .User-Exit {
+      display: block;
+      padding: 10px;
+      margin: 5px 20px 0 0;
+      border: 1px solid;
+      text-align: center;
+      color: #fff;
+      background-color: transparent; }
+      .Page-Header .Centrate .Page-Auth button.Sign-In:hover,
+      .Page-Header .Centrate .Page-Auth .User-Exit:hover {
+        color: #ec6700; }
+    .Page-Header .Centrate .Page-Auth > p {
+      padding: 5px 0; }
+    .Page-Header .Centrate .Page-Auth > a {
+      float: left;
+      margin: 15px 20px 0 0;
+      overflow: hidden;
+      display: block;
+      font-size: 0.875em; }
+    .Page-Header .Centrate .Page-Auth .User-Exit {
+      margin-right: 0; }
 
-.Page-Header > div.Centrate {
-  padding: 15px 0;
-  width: 1200px; }
+nav.Page-Navigation {
+  padding: 20px 0; }
+  nav.Page-Navigation ul {
+    width: 1100px;
+    margin-right: auto;
+    margin-left: auto; }
+    nav.Page-Navigation ul li {
+      margin-left: 50px; }
+      nav.Page-Navigation ul li > a {
+        display: block;
+        padding: 5px 15px;
+        font-size: 1.25em;
+        border: 1px solid transparent;
+        color: #000; }
+        nav.Page-Navigation ul li > a:hover {
+          color: #ec6700;
+          border-color: #ec6700; }
 
-.Site-Logo {
-  background-image: url("../../../../img/techonline/logo-sprite.png");
-  background-repeat: no-repeat;
-  background-position: top left;
-  display: block;
-  width: 479px;
-  height: 50px; }
+.Lot {
+  margin-top: 50px; }
+  .Lot:first-child {
+    margin-top: 0; }
+  .Lot header {
+    margin-bottom: 15px; }
+    .Lot header h4 {
+      font-size: 1.125em; }
+    .Lot header img {
+      display: block;
+      height: 30px;
+      float: left;
+      margin-right: 15px;
+      margin-top: 5px; }
+    .Lot header p {
+      font-size: 0.875em; }
+  .Lot .Lot-Gallery > li {
+    display: block;
+    float: left !important;
+    width: 33.33%; }
+    .Lot .Lot-Gallery > li > img {
+      width: 100%;
+      display: block; }
+  .Lot .Lot-Gallery > li:first-child {
+    margin-bottom: 15px;
+    width: 100%; }
+  .Lot .Lot-About {
+    font-size: 0.875em; }
+    .Lot .Lot-About > h6 {
+      margin-top: 15px;
+      font-size: 1.25em; }
+    .Lot .Lot-About > table {
+      margin: 0 -10px; }
+      .Lot .Lot-About > table tr td {
+        padding: 5px 10px; }
 
-.Site-Logo:hover {
-  background-position: left -45px; }
-
-a.Sign-In {
-  display: block;
-  padding: 10px;
-  margin-right: 20px;
-  border: 2px solid;
-  text-align: center;
-  color: #fff; }
-
-.Page-Auth > p {
-  padding: 5px 0; }
-
-.Lot-Gallery > li {
-  display: block;
-  float: left !important;
-  width: 33.3%; }
-  .Lot-Gallery > li > img {
-    width: 100%;
-    display: block; }
-.Lot-Gallery > li:first-child {
-  width: 100%; }
+.Lot-List > li:first-child {
+  margin-top: 0; }
 
 footer[role='contentinfo'] {
   margin-top: -50px;
@@ -500,7 +604,58 @@ footer > .Copyright {
 .pagination {
   list-style: none; }
   .pagination > li {
-    margin-top: 0;
-    margin-right: 20px; }
+    margin-top: 0 !important;
+    margin-right: 1px; }
+    .pagination > li > span, .pagination > li > a {
+      color: #fff;
+      display: block;
+      padding: 10px 20px;
+      background-color: #4d4d4d; }
+    .pagination > li:hover > span {
+      cursor: default; }
+    .pagination > li:hover > a {
+      background-color: #bfbfbf; }
+    .pagination > li.disabled > span {
+      color: #bfbfbf; }
+    .pagination > li.active > span {
+      background-color: #ec6700; }
+
+.Sidebar-Filter > h4 {
+  margin-top: 20px; }
+  .Sidebar-Filter > h4:first-child {
+    margin-top: 0; }
+
+.List-Filter > li {
+  margin-right: 20px; }
+  .List-Filter > li > a {
+    display: block;
+    font-size: 0.875em;
+    padding: 5px 10px;
+    margin: 0 -10px; }
+    .List-Filter > li > a:hover {
+      background-color: #ec6700;
+      color: #fff; }
+
+@media all and (max-width: 1024px) {
+  body {
+    font-size: 90%; }
+
+  .Node {
+    width: 90%; } }
+@media all and (min-width: 1024px) {
+  .Node {
+    width: 800px; } }
+@media all and (min-width: 1377px) {
+  .Node {
+    width: 1000px;
+    padding: 30px; } }
+@media all and (min-width: 1640px) {
+  .Node {
+    width: 1300px;
+    padding: 50px; } }
+@media all and (min-width: 1900px) {
+  .Node {
+    width: 1350px;
+    padding: 50px; } }
 
 /*# sourceMappingURL=main.css.map */

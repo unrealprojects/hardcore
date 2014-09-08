@@ -6,14 +6,12 @@
 
 @section('content')
 <div id="wrap">
-<header>
     @include('frontend.site_techonline.parts.header')
-    @yield('header1')
-</header>
-
-<main>
-    @yield('main')
-</main>
+    @include('frontend.site_techonline.parts.navigation')
+    <main>
+        @yield('main')
+    </main>
+    <div id="wrap-stop"></div>
 </div>
 
 <footer>
