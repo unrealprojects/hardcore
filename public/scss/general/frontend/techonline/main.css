@@ -119,7 +119,7 @@ code.Inline, code.pagination {
   height: 50px;
   margin: -30px -50px 0; }
 
-.Node header.Ribbon h3, .pagination header.Ribbon h3 {
+.Node header.Ribbon h3 {
   padding: 10px 30px 0; }
 
 .Section-Header.Ribbon:after,
@@ -140,10 +140,10 @@ code.Inline, code.pagination {
   border-right-color: transparent;
   right: 0; }
 
-.Inline > li, .pagination > li {
+.Inline > li, nav.Page-Navigation ul > li, .pagination > li {
   float: left; }
 
-.No-Bullets, .List-Filter {
+.No-Bullets, nav.Page-Navigation ul, .List-Filter {
   list-style: none; }
 
 .Control-Group {
@@ -355,10 +355,11 @@ body.RoundUI .Message {
   border-radius: 5px; }
 
 /* ╨б╨╛╨╛╨▒╤Й╨╡╨╜╨╕╤П < ///////////////////////////////////////////////////////////////////////////////*/
-.Left, .Page-Header > div.Centrate .Site-Logo, .Page-Header > div.Centrate .Page-Auth button.Sign-In {
+.Left, .Page-Header .Centrate .Site-Logo, .Page-Header .Centrate .Page-Auth button.Sign-In,
+.Page-Header .Centrate .Page-Auth .User-Exit {
   float: left; }
 
-.Right, .Page-Header > div.Centrate .Page-Auth, .Page-Header > div.Centrate .Page-Auth > p {
+.Right, .Page-Header .Centrate .Page-Auth, .Page-Header .Centrate .Page-Auth > p {
   float: right; }
 
 .dev {
@@ -371,9 +372,8 @@ body.RoundUI .Message {
   margin-left: auto;
   margin-right: auto; }
 
-.fix, .Page-Header > div.Centrate, .Lot,
+.fix, .Page-Header .Centrate, nav.Page-Navigation ul, .Lot,
 .Node,
-.pagination,
 .Grid,
 .Grid-Row,
 .Control-Group,
@@ -381,9 +381,8 @@ body.RoundUI .Message {
 .Tab-Buttons {
   display: table; }
 
-.fix:after, .Page-Header > div.Centrate:after, .Lot:after,
+.fix:after, .Page-Header .Centrate:after, nav.Page-Navigation ul:after, .Lot:after,
 .Node:after,
-.pagination:after,
 .Grid:after,
 .Grid-Row:after,
 .Control-Group:after,
@@ -395,7 +394,7 @@ body.RoundUI .Message {
   height: 0;
   overflow: hidden; }
 
-.Node, .pagination {
+.Node {
   width: 1100px;
   margin-left: auto;
   margin-right: auto;
@@ -403,21 +402,22 @@ body.RoundUI .Message {
   background-color: white;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 50px;
+  border: 1px solid #eaeaea; }
+
+.Node + .Node {
   margin-top: 50px; }
 
-.Node + .Node, .pagination + .Node, .Node + .pagination, .pagination + .pagination {
-  margin-top: 50px; }
-
-.Node:first-child, .pagination:first-child {
+.Node:first-child {
   margin-top: 0; }
 
-.Node > *, .pagination > * {
+.Node > * {
   margin-top: 20px; }
 
-.Node > *:first-child, .pagination > *:first-child {
+.Node > *:first-child {
   margin-top: 0; }
 
-.Node [class*='Grid-Node-'], .pagination [class*='Grid-Node-'] {
+.Node [class*='Grid-Node-'] {
   margin-top: 0; }
 
 /* ТАБЫ > ////////////////////////////////////////////////////////////////////////////////////*/
@@ -448,7 +448,8 @@ table.Small > tr > td {
   padding: 5px; }
 
 .Animate, a:link,
-a:visited, .Page-Header > div.Centrate .Site-Logo, .Page-Header > div.Centrate .Page-Auth button.Sign-In {
+a:visited, .Page-Header .Centrate .Site-Logo, .Page-Header .Centrate .Page-Auth button.Sign-In,
+.Page-Header .Centrate .Page-Auth .User-Exit {
   transition: 0.3s ease; }
 
 a:link,
@@ -489,25 +490,28 @@ body {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#eeeeee', GradientType=1);
   /* IE6-9 */
-  font-family: 'Exo 2', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  font-family: 'Exo 2', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.00em;
+  line-height: 1.45; }
 
 .Page-Header {
   background: #272727;
   color: white;
   border-bottom: 2px solid #ec6700; }
-  .Page-Header > div.Centrate {
+  .Page-Header .Centrate {
     padding: 15px 0;
     width: 1100px; }
-    .Page-Header > div.Centrate .Site-Logo {
+    .Page-Header .Centrate .Site-Logo {
       display: block;
       width: 479px;
       height: 50px;
       background-image: url("../../../../img/techonline/logo-sprite.png");
       background-repeat: no-repeat;
       background-position: top left; }
-      .Page-Header > div.Centrate .Site-Logo:hover {
+      .Page-Header .Centrate .Site-Logo:hover {
         background-position: left -45px; }
-    .Page-Header > div.Centrate .Page-Auth button.Sign-In {
+    .Page-Header .Centrate .Page-Auth button.Sign-In,
+    .Page-Header .Centrate .Page-Auth .User-Exit {
       display: block;
       padding: 10px;
       margin: 5px 20px 0 0;
@@ -515,19 +519,46 @@ body {
       text-align: center;
       color: #fff;
       background-color: transparent; }
-      .Page-Header > div.Centrate .Page-Auth button.Sign-In:hover {
+      .Page-Header .Centrate .Page-Auth button.Sign-In:hover,
+      .Page-Header .Centrate .Page-Auth .User-Exit:hover {
         color: #ec6700; }
-    .Page-Header > div.Centrate .Page-Auth > p {
+    .Page-Header .Centrate .Page-Auth > p {
       padding: 5px 0; }
+    .Page-Header .Centrate .Page-Auth > a {
+      float: left;
+      margin: 15px 20px 0 0;
+      overflow: hidden;
+      display: block;
+      font-size: 0.875em; }
+    .Page-Header .Centrate .Page-Auth .User-Exit {
+      margin-right: 0; }
+
+nav.Page-Navigation {
+  padding: 20px 0; }
+  nav.Page-Navigation ul {
+    width: 1100px;
+    margin-right: auto;
+    margin-left: auto; }
+    nav.Page-Navigation ul li {
+      margin-left: 50px; }
+      nav.Page-Navigation ul li > a {
+        display: block;
+        padding: 5px 15px;
+        font-size: 1.25em;
+        border: 1px solid transparent;
+        color: #000; }
+        nav.Page-Navigation ul li > a:hover {
+          color: #ec6700;
+          border-color: #ec6700; }
 
 .Lot {
-  margin-top: 30px; }
+  margin-top: 50px; }
   .Lot:first-child {
     margin-top: 0; }
   .Lot header {
-    margin-bottom: 30px; }
+    margin-bottom: 15px; }
     .Lot header h4 {
-      font-size: 110%; }
+      font-size: 1.125em; }
     .Lot header img {
       display: block;
       height: 30px;
@@ -535,7 +566,7 @@ body {
       margin-right: 15px;
       margin-top: 5px; }
     .Lot header p {
-      font-size: 90%; }
+      font-size: 0.875em; }
   .Lot .Lot-Gallery > li {
     display: block;
     float: left !important;
@@ -547,14 +578,14 @@ body {
     margin-bottom: 15px;
     width: 100%; }
   .Lot .Lot-About {
-    font-size: 90%; }
+    font-size: 0.875em; }
     .Lot .Lot-About > h6 {
       margin-top: 15px;
-      font-size: 120%; }
+      font-size: 1.25em; }
     .Lot .Lot-About > table {
       margin: 0 -10px; }
       .Lot .Lot-About > table tr td {
-        padding: 10px; }
+        padding: 5px 10px; }
 
 .Lot-List > li:first-child {
   margin-top: 0; }
@@ -598,11 +629,33 @@ footer > .Copyright {
   margin-right: 20px; }
   .List-Filter > li > a {
     display: block;
-    font-size: 90%;
+    font-size: 0.875em;
     padding: 5px 10px;
     margin: 0 -10px; }
     .List-Filter > li > a:hover {
       background-color: #ec6700;
       color: #fff; }
+
+@media all and (max-width: 1024px) {
+  body {
+    font-size: 90%; }
+
+  .Node {
+    width: 90%; } }
+@media all and (min-width: 1024px) {
+  .Node {
+    width: 800px; } }
+@media all and (min-width: 1377px) {
+  .Node {
+    width: 1000px;
+    padding: 30px; } }
+@media all and (min-width: 1640px) {
+  .Node {
+    width: 1300px;
+    padding: 50px; } }
+@media all and (min-width: 1900px) {
+  .Node {
+    width: 1350px;
+    padding: 50px; } }
 
 /*# sourceMappingURL=main.css.map */

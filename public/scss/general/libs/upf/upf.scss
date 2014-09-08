@@ -8,24 +8,24 @@
 @import "upf-messages";
 
 .Left {
-  float: left;
+	float: left;
 }
 
 .Right {
-  float: right;
+	float: right;
 }
 
 .dev {
-  outline: 1px red solid !important;
+	outline: 1px red solid !important;
 }
 
 .visible {
-  display: block;
+	display: block;
 }
 
 .Centrate {
-  margin-left: auto;
-  margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .fix,
@@ -35,7 +35,7 @@
 .Control-Group,
 .Tab-Set,
 .Tab-Buttons {
-  display: table;
+	display: table;
 }
 
 .fix:after,
@@ -45,88 +45,85 @@
 .Control-Group:after,
 .Tab-Set,
 .Tab-Buttons {
-  content: '. .';
-  display: block;
-  word-spacing: 99in;
-  height: 0;
-  overflow: hidden;
+	content: '. .';
+	display: block;
+	word-spacing: 99in;
+	height: 0;
+	overflow: hidden;
 }
 
 .Node {
-  width: $node-width;
-  margin-left: auto;
-  margin-right: auto;
-  padding: $size-l;
-  background-color: white;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
+	width: $node-width;
+	margin-left: auto;
+	margin-right: auto;
+	padding: $size-l;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	border: 1px solid #eaeaea;
 }
 
 .Node + .Node {
-  margin-top: 50px;
-}
-
-.Node {
-
+	margin-top: 50px;
 }
 
 .Node:first-child {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 // Внутренние элементы нода отступают друг от друга
 .Node > * {
-  margin-top: $size;
+	margin-top: $size;
 }
 
 // Убирает отступ у первого элемента в ноде
 .Node > *:first-child {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 // Если нод является сеткой - выключаем отступ
 .Node [class*='Grid-Node-'] {
-  margin-top: 0
+	margin-top: 0
 }
 
 /* ТАБЫ > ////////////////////////////////////////////////////////////////////////////////////*/
 .Tab-Buttons > li {
-  float: left;
+	float: left;
 }
 
 [class*='Tab-Node'] {
-  display: none;
+	display: none;
 }
 
 .Tab-Node:first-child {
-  display: block;
+	display: block;
 }
 
 /* ТАБЫ < ////////////////////////////////////////////////////////////////////////////////////*/
 table.Stripped tr:nth-child(even) td {
-  background-color: #f0f0f0;
+	background-color: #f0f0f0;
 }
 
 table.Stripped {
-  border-spacing: 0;
+	border-spacing: 0;
 }
 
 table > tr > td {
-  padding: 20px;
+	padding: 20px;
 }
 
 table.Big > tr > td {
-  padding: 30px;
-  margin: 30px;
+	padding: 30px;
+	margin: 30px;
 }
 
 table.Small > tr > td {
-  padding: 5px;
+	padding: 5px;
 }
 
 .Animate {
-  transition: 0.3s ease;
+	transition: 0.3s ease;
 }
 
 
