@@ -11,11 +11,11 @@ class CatalogPartsController extends TechonlineController{
         ];
 
         /* МОДЕЛЬ */
-        $CatalogBase = new \Model\General\TechOnline\CatalogBase();
-        $CatalogBaseList=$CatalogBase->getList($filter);
+        $CatalogParts = new \Model\General\TechOnline\CatalogParts();
+        $CatalogBaseList=$CatalogParts->getList($filter);
         $filters=false;
         if($filter['category']){
-            $paramFilters = new \Model\General\TechOnline\CatalogTechCategories();
+            $paramFilters = new \Model\General\TechOnline\CatalogPartsCategories();
             $filters = $paramFilters->getFilters($filter['category']);
         }
 

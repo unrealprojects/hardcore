@@ -14,8 +14,6 @@
         <div class="Lot-About Grid-Node-2-3">
             <p>{{$content['element']['description']}}</p>
 
-
-
             <!-- Параметры товара -->
             <h6>Характеристики</h6>
             <table class="Stripped">
@@ -65,14 +63,7 @@
                 </tr>
                 @endforeach
             </table>
-            <p>{{$content['element']['model']['description']}}</p>
 
-            <!-- Фото модели -->
-            <ul class="Lot-Gallery Grid-Node-1-3">
-                @foreach(json_decode($content['element']['model']['photos'],true) as $photo)
-                <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
-                @endforeach
-            </ul>
     </div>
 
         <!-- Комментарии -->
