@@ -36,6 +36,11 @@ class CatalogAdmin extends TechOnline {
         $this->filter = $filter;
 
         return $this->with('region')
+            ->whereHas('region', function($query) {
+                if($this->filter['region']){
+                    $query->where('alias', $this->filter['region']);
+                }
+            })
             ->where('active','=',1)
             ->paginate(5);
     }

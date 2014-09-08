@@ -6,7 +6,7 @@ class CatalogSellersController extends TechonlineController{
     {
         /* ФИЛЬТРАЦИЯ */
         $filter = [
-            'region' => \Input::get('brand')?:false
+            'region' => \Input::get('region')?:false
         ];
 
         /* МОДЕЛЬ */
