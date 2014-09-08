@@ -157,7 +157,6 @@ class TechonlineCatalog extends Migration {
 
             $table->integer('category_id')->nullable();
             $table->integer('admin_id')->nullable();
-            $table->integer('region_id')->nullable();
 
             $table->integer('status_id')->nullable();
             $table->integer('opacity_id')->nullable();
@@ -192,7 +191,6 @@ class TechonlineCatalog extends Migration {
 
             $catalog_base->category_id=$i;
             $catalog_base->admin_id=$i;
-            $catalog_base->region_id=$i;
             $catalog_base->comments_id=$i;
 
             $catalog_base->status_id=2;

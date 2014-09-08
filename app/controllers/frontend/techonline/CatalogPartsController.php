@@ -12,21 +12,14 @@ class CatalogPartsController extends TechonlineController{
 
         /* МОДЕЛЬ */
         $CatalogParts = new \Model\General\TechOnline\CatalogParts();
-        $CatalogBaseList=$CatalogParts->getList($filter);
-        $filters=false;
-        if($filter['category']){
-            $paramFilters = new \Model\General\TechOnline\CatalogPartsCategories();
-            $filters = $paramFilters->getFilters($filter['category']);
-        }
+        $CatalogPartsList=$CatalogParts->getList($filter);
 
         /* ДАННЫЕ ВИД */
         $this->viewData['content'] = [
-            'pagination' => $CatalogBaseList->links(),
-            'list' => $CatalogBaseList->toArray()['data'],
+            'pagination' => $CatalogPartsList->links(),
+            'list' => $CatalogPartsList->toArray()['data'],
             'template' => 'content',
-            'categories' => \Model\General\TechOnline\CatalogTechCategories::all()->toArray(),
-            'brands' => \Model\General\TechOnline\CatalogBrand::all()->toArray(),
-            'filters' => $filters?:false
+            'categories' => \Model\General\TechOnline\CatalogPartsCategories::all()->toArray(),
         ];
 //        print_r($filters->toArray());exit;
         return \View::make($this->siteViewPath.'/layouts/CatalogParts',$this->viewData);
@@ -35,11 +28,11 @@ class CatalogPartsController extends TechonlineController{
     public function actionElement($alias)
     {
         /* ПОЛУЧЕНИЕ СПИСКА ДАННЫХ ИЗ КАТАЛОГА */
-        $CatalogBase = new \Model\General\TechOnline\CatalogBase;
-        $CatalogBaseElement=$CatalogBase->getElement($alias);
+        $CatalogParts = new \Model\General\TechOnline\CatalogParts;
+        $CatalogPartsElement=$CatalogParts->getElement($alias);
 
         $this->viewData['content'] = [
-            'element' => $CatalogBaseElement->toArray(),
+            'element' => $CatalogPartsElement->toArray(),
             'template' => 'content'
         ];
 

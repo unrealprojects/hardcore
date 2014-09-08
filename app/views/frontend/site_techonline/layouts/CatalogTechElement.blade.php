@@ -3,7 +3,7 @@
 @section('main')
 <section class="Node">
     <div class="Lot">
-        <h4><!--<img src="/photo/techonline/{{$content['element']['logo']}}">--><a href="/catalog/{{$content['element']['alias']}}">
+        <h4><!--<img src="/photo/techonline/{{$content['element']['logo']}}">--><a href="/rent/{{$content['element']['alias']}}">
                 {{$content['element']['name']}}</a></h4>
         <ul class="Lot-Gallery Grid-Node-1-3">
             @foreach(json_decode($content['element']['photos'],true) as $photo)
@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
                     <td>Модель:</td>
-                    <td>{{$content['element']['model']['model']}}</td>
+                    <td><a href="/catalog/{{$content['element']['model']['alias']}}">{{$content['element']['model']['model']}}</a></td>
                 </tr>
                 <tr>
                     <td>Регион:</td>
