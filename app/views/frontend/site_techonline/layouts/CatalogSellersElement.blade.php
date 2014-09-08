@@ -29,9 +29,9 @@
     </div>
 
         <!-- Комментарии -->
-        <div class="Comments Node">
+        <div class="Comments">
         @foreach($content['element']['comments'] as $comment)
-           <div class="Comment Lot">
+           <div class="Comment">
                <h4>{{$comment['name']}}</h4>
                <p>{{$comment['comment']}}</p>
                <p class="Right">{{$comment['created_at']}}</p>

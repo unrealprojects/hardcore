@@ -28,18 +28,18 @@
         </table>
     </div>
 
-        <!-- Комментарии -->
-        <div class="Comments Node">
-        @foreach($content['element']['comments'] as $comment)
-           <div class="Comment Lot">
-               <h4>{{$comment['name']}}</h4>
-               <p>{{$comment['comment']}}</p>
-               <p class="Right">{{$comment['created_at']}}</p>
-           </div>
-        @endforeach
-        </div>
+
 
 </section>
-
+<!-- Комментарии -->
+<section class="Comments Node">
+    @foreach($content['element']['comments'] as $comment)
+    <div class="Comment">
+        <h4>{{$comment['name']}}</h4>
+        <p>{{$comment['comment']}}</p>
+        <p class="Right">{{$comment['created_at']}}</p>
+    </div>
+    @endforeach
+</div>
 
 @endsection
