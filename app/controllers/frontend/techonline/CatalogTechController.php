@@ -7,25 +7,30 @@ class CatalogTechController extends TechonlineController{
         /* ФИЛЬТРАЦИЯ */
         $filter = [
             'category' => \Input::get('category')?:false,
-            'brand' => \Input::get('brand')?:false
+            'brand' => \Input::get('brand')?:false,
+            'region' => \Input::get('region')?:false
         ];
 
         /* МОДЕЛЬ */
-        $CatalogBase = new \Model\General\TechOnline\CatalogBase();
-        $CatalogBaseList=$CatalogBase->getList($filter);
+        $CatalogTech = new \Model\General\TechOnline\CatalogTech();
+        $CatalogTechList=$CatalogTech->getList($filter);
         $filters=false;
         if($filter['category']){
             $paramFilters = new \Model\General\TechOnline\CatalogTechCategories();
             $filters = $paramFilters->getFilters($filter['category']);
         }
 
+//        print_r($CatalogTechList->toArray()['data']);
+//        exit;
+
         /* ДАННЫЕ ВИД */
         $this->viewData['content'] = [
-            'pagination' => $CatalogBaseList->links(),
-            'list' => $CatalogBaseList->toArray()['data'],
+            'pagination' => $CatalogTechList->links(),
+            'list' => $CatalogTechList->toArray()['data'],
             'template' => 'content',
             'categories' => \Model\General\TechOnline\CatalogTechCategories::all()->toArray(),
             'brands' => \Model\General\TechOnline\CatalogBrand::all()->toArray(),
+            'regions' => \Model\General\TechOnline\CatalogRegion::all()->toArray(),
             'filters' => $filters?:false
         ];
 //        print_r($filters->toArray());exit;
@@ -35,11 +40,11 @@ class CatalogTechController extends TechonlineController{
     public function actionElement($alias)
     {
         /* ПОЛУЧЕНИЕ СПИСКА ДАННЫХ ИЗ КАТАЛОГА */
-        $CatalogBase = new \Model\General\TechOnline\CatalogBase;
-        $CatalogBaseElement=$CatalogBase->getElement($alias);
+        $CatalogTech = new \Model\General\TechOnline\CatalogTech;
+        $CatalogTechElement=$CatalogTech->getElement($alias);
 
         $this->viewData['content'] = [
-            'element' => $CatalogBaseElement->toArray(),
+            'element' => $CatalogTechElement->toArray(),
             'template' => 'content'
         ];
 

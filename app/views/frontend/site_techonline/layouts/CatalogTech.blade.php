@@ -11,14 +11,20 @@
             <h4>Производители</h4>
             <ul class="List-Filter">
                 @foreach($content['brands'] as $brand)
-                <li><a href="/catalog/?brand={{$brand['alias']}}&{{\Input::getQueryString()}}">{{$brand['name']}}</a></li>
+                <li><a href="/rent/?brand={{$brand['alias']}}&{{\Input::getQueryString()}}">{{$brand['name']}}</a></li>
                 @endforeach
             </ul>
             <!-- Фильтрация :: По категориям -->
             <h4>Категории</h4>
             <ul class="List-Filter">
                 @foreach($content['categories'] as $category)
-                <li><a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a></li>
+                <li><a href="/rent/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a></li>
+                @endforeach
+            </ul>
+            <h4>Регионы</h4>
+            <ul class="List-Filter">
+                @foreach($content['regions'] as $region)
+                <li><a href="/region/?category={{$region['alias']}}&{{\Input::getQueryString()}}">{{$region['name']}}</a></li>
                 @endforeach
             </ul>
         </aside>
@@ -26,13 +32,12 @@
             <ul class="Lot-List">
             @foreach($content['list'] as $list_elem)
                 <li class="Lot">
-
                     <header>
-                         <img src="/photo/techonline/{{$list_elem['logo']}}">
+                        <img src="/photo/techonline/{{$list_elem['logo']}}">
                     <div>
-                        <h4><a href="/catalog/{{$list_elem['alias']}}">{{$list_elem['brand']['name']}}
-                    {{$list_elem['model']}}</a></h4>
-                        <p>{{$list_elem['category']['name']}}</p>
+                        <h4><a href="/rent/{{$list_elem['alias']}}">
+                    {{$list_elem['name']}}</a></h4>
+
                     </div>
                     </header>
                     <ul class="Lot-Gallery Grid-Node-1-3">
@@ -47,15 +52,41 @@
                         <!-- Параметры товара -->
                         <h6>Характеристики</h6>
                         <table class="Stripped">
-                            @foreach($list_elem['params_values'] as $param)
                             <tr>
-                                <td>{{$param['param_data']['name']}}</td>
-                                <td>{{$param['value']}}</td>
-                                <td>{{$param['param_data']['dimension']}}</td>
+                                <td>Категория:</td>
+                                <td>{{$list_elem['model']['category']['name']}}</td>
                             </tr>
-                            @endforeach
+                            <tr>
+                                <td>Арендодатель:</td>
+                                <td><a href="/admin/{{$list_elem['admin']['alias']}}">{{<0list_elem></0list_elem>['admin']['name']}}</a></td>
+                            </tr>
+                            <tr>
+                                <td>Бренд:</td>
+                                <td>{{$list_elem['model']['brand']['name']}}</td>
+                            </tr>
+                            <tr>
+                                <td>Модель:</td>
+                                <td>{{$list_elem['model']['model']}}</td>
+                            </tr>
+                            <tr>
+                                <td>Регион:</td>
+                                <td>{{$list_elem['region']['name']}}</td>
+                            </tr>
+                            <tr>
+                                <td>Cтатус:</td>
+                                <td>{{$list_elem['status']['name']}}</td>
+                            </tr>
+                            <tr>
+                                <td>Состояние:</td>
+                                <td> {{$list_elem['opacity']['name']}}</td>
+                            </tr>
+                            <tr>
+                                <td>Цена:</td>
+                                <td>{{$list_elem['rate']}}</td>
+                            </tr>
                         </table>
                     </div>
+
                 </li>
             @endforeach
             </ul>
@@ -75,6 +106,7 @@
         {{$filter['max_value']}}
     @endforeach
 @endif
+
 </section>
 
 @endsection
