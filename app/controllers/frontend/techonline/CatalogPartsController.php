@@ -1,7 +1,7 @@
 <?php
 namespace Controller\Frontend\TechOnline;
 
-class CatalogBaseController extends TechonlineController{
+class CatalogPartsController extends TechonlineController{
     public function actionList()
     {
         /* ФИЛЬТРАЦИЯ */
@@ -29,7 +29,7 @@ class CatalogBaseController extends TechonlineController{
             'filters' => $filters?:false
         ];
 //        print_r($filters->toArray());exit;
-        return \View::make($this->siteViewPath.'/layouts/CatalogBase',$this->viewData);
+        return \View::make($this->siteViewPath.'/layouts/CatalogParts',$this->viewData);
     }
 
     public function actionElement($alias)
@@ -43,6 +43,6 @@ class CatalogBaseController extends TechonlineController{
             'template' => 'content'
         ];
 
-        return \View::make($this->siteViewPath.'/layouts/CatalogBaseElement',$this->viewData);
+        return \View::make($this->siteViewPath.'/layouts/CatalogPartsElement',$this->viewData);
     }
 }
