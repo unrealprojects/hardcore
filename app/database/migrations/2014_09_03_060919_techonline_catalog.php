@@ -94,7 +94,7 @@ class TechonlineCatalog extends Migration {
             $table->text('photos')->nullable();
 
             $table->integer('model_id')->nullable();
-            $table->integer('category_id')->nullable();
+
             $table->integer('admin_id')->nullable();
             $table->integer('region_id')->nullable();
 
