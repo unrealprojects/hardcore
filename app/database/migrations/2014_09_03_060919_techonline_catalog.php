@@ -55,8 +55,14 @@ class TechonlineCatalog extends Migration {
 
             $catalog_base->description = 'Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.';
 
+
             $catalog_base->photos =
-                '{"0":{"name":"Big Japan Car","src":"bigcar.jpg"},"1":{"name":"Big Japan Car","src":"bigcar.jpg"},"2":{"name":"Big Japan Car","src":"bigcar.jpg"},"3":{"name":"Big Japan Car","src":"bigcar.jpg"}}';
+                json_encode([ 0=>["name"=>"Big Japan Car","src"=>Faker\Provider\Image::imageUrl(640+$i, 420, 'transport')],
+                  1=>["name"=>"Big Japan Car","src"=>Faker\Provider\Image::imageUrl(650+$i, 420, 'transport')],
+                  2=>["name"=>"Big Japan Car","src"=>Faker\Provider\Image::imageUrl(660+$i, 420, 'transport')],
+                  3=>["name"=>"Big Japan Car","src"=>Faker\Provider\Image::imageUrl(670+$i, 420, 'transport')],
+                  4=>["name"=>"Big Japan Car","src"=>Faker\Provider\Image::imageUrl(680+$i, 420, 'transport')],
+                  5=>["name"=>"Big Japan Car","src"=>Faker\Provider\Image::imageUrl(690+$i, 420, 'transport')]]);
 
 
             if($i<10){
@@ -113,13 +119,13 @@ class TechonlineCatalog extends Migration {
 
             $catalog_base->description ='Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.';
 
-
             $catalog_base->photos =
                 '{0:{name:"Big Japan Car",src:"bigcar.jpg"},
                   1:{name:"Big Japan Car",src:"bigcar.jpg"},
                   2:{name:"Big Japan Car",src:"bigcar.jpg"},
                   3:{name:"Big Japan Car",src:"bigcar.jpg"},
-                  4:{name:"Big Japan Car",src:"bigcar.jpg"}}';
+                  4:{name:"Big Japan Car",src:"bigcar.jpg"}
+                  5:{name:"Big Japan Car",src:"bigcar.jpg"}}';
 
             $catalog_base->model_id=$i;
             $catalog_base->category_id=$i;

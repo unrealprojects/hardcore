@@ -19,4 +19,15 @@
 
     </section>
 
+    <section class="nav-bar">
+        <nav>
+            <ul role="menubar">
+                <li><a href="/catalog">Каталог стройтехники</a></li>
+                <li><a href="/rent">Аренда стройтехники</a></li>
+                <li><a href="/parts">Запчасти и сервис</a></li>
+                <li><a href="/sellers">Каталог арендодателей</a></li>
+            </ul>
+        </nav>
+    </section>
+
 </header>
