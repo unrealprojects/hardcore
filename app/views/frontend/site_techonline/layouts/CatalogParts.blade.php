@@ -29,9 +29,9 @@
                     </header>
                     <ul class="Lot-Gallery Grid-Node-1-3">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
-                        @if($i<4)
-                        <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
-                        @endif
+                            @if($i<4)
+                                <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+                            @endif
                         @endforeach
                     </ul>
 
