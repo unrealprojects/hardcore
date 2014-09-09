@@ -26,10 +26,14 @@
         </li>
     @endforeach
     </ul>
-    <form class="Form-Vertical action="">
+    <form class="Form-Horizontal action="">
         <h4 class="Section-Subheader">Написать комментарий</h4>
         <div class="Control-Group">
-            <label for="Comment-New">Текст</label>
+            <label for="">Имя</label>
+            <input type="text"/>
+        </div>
+        <div class="Control-Group">
+            <label for="Comment-New">Текст комментария</label>
             <textarea name="" id="Comment-New" rows="5"></textarea>
         </div>
         <div class="Control-Group">
