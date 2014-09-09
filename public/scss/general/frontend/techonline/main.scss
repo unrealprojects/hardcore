@@ -42,6 +42,17 @@ body {
 	font-size: 1.00em;
 	line-height: 1.45;
 }
+.Section-Header ,
+.Section-Subheader {
+	display: inline-block;
+	margin: 0 0 -($size-xxl) 0;
+	padding: $size-s $size-n;
+	background-color: $clr-grey-darker;
+	border-left: 4px solid $clr-main;
+	color: #fff;
+	font-weight: 100;
+	clear: both;
+}
 .Section-Header {
 	font-size: $font-size-xxl;
 }
@@ -50,7 +61,7 @@ body {
 }
 // Шапка сайта
 .Page-Header {
-	background: #272727;
+	background: $clr-grey-darker;
 	color: white;
 	border-bottom: $size-xxs solid $clr-main;
 

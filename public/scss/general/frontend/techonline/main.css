@@ -458,7 +458,7 @@ a:visited {
   text-decoration: none; }
 
 a:hover {
-  color: #4d4d4d; }
+  color: #333333; }
 
 html,
 body,
@@ -494,6 +494,17 @@ body {
   font-size: 1.00em;
   line-height: 1.45; }
 
+.Section-Header,
+.Section-Subheader {
+  display: inline-block;
+  margin: 0 -75px 0;
+  padding: 10px 15px;
+  background-color: #333333;
+  border-left: 4px solid #ec6700;
+  color: #fff;
+  font-weight: 100;
+  clear: both; }
+
 .Section-Header {
   font-size: 1.5em; }
 
@@ -501,7 +512,7 @@ body {
   font-size: 1.25em; }
 
 .Page-Header {
-  background: #272727;
+  background: #333333;
   color: white;
   border-bottom: 2px solid #ec6700; }
   .Page-Header .Centrate {
@@ -616,7 +627,7 @@ footer > .Copyright {
       color: #fff;
       display: block;
       padding: 10px 20px;
-      background-color: #4d4d4d; }
+      background-color: #333333; }
     .pagination > li:hover > span {
       cursor: default; }
     .pagination > li:hover > a {

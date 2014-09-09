@@ -25,7 +25,7 @@ $clr-blue-light: lighten($clr-blue,45%);
 $clr-grey: #ccc;
 $clr-grey-light:  lighten($clr-grey, 17%);
 $clr-grey-dark:   darken($clr-grey,  5%);
-$clr-grey-darker: darken($clr-grey,  50%);
+$clr-grey-darker: darken($clr-grey,  60%);
 
 $clr-main:  $clr-orange;
 $clr-main-dark: $clr-orange-dark;
@@ -41,7 +41,8 @@ $size-n:   15px;
 $size:     20px;
 $size-l:   30px;
 $size-xl:  50px;
-$size-xxl: 100px;
+$size-xxl: 75px;
+$size-xxxl:100px;
 
 $font-size-xxs:   0.625em;
 $font-size-xs:    0.813em;
