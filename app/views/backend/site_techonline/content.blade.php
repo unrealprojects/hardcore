@@ -1,22 +1,23 @@
 @extends('backend.standard.start')
 
 @section('head')
-@include('backend.site_techonline.head')
-@include('backend.site_techonline.parts.navigation')
+    @include('backend.site_techonline.head')
 @endsection
 
 @section('content')
-<div id="wrap">
-
-
-    <main>
+@include('backend.site_techonline.parts.navigation')
+    <div data-role="header" class="ui-header-fixed">
+        @include('backend.site_techonline.parts.header')
+    </div>
+    <div role="main" class="ui-content">
         @yield('main')
-    </main>
-</div>
+    </div>
+    <div data-role="footer">
 
-
+    </div>
 @endsection
 
-@section('scripts')
-@include('backend.site_techonline.script')
+
+@section('template_scripts')
+    @include('backend.site_techonline.scripts')
 @endsection

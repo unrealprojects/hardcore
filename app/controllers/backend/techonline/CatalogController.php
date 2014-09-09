@@ -82,17 +82,10 @@ class CatalogController extends TechonlineController{
     {
 
         if ($id) {
-
-
             $item_create= \Model\General\TechOnline\CatalogBase::find($id);
-
             $item_create->delete();
         }
         /* Удаление элемента catalog_base */
     }
 
-    /*
-    todo::разобраться как делается пагинация на laravel стандартными методами, возможно ничего придумывать не нужно
-    http://laravel.com/docs/pagination
-    */
 }

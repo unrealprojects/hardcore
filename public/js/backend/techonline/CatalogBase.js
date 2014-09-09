@@ -8,9 +8,8 @@ $(document).ready(function(){
               $(".create_description").text("Введите описание модели");
         }
     });
+
     $(".create_description").click(function(){
-
-
         if(($(".create_description").text())=="Введите описание модели"){
             $(this).text(" ");
         }
@@ -18,7 +17,6 @@ $(document).ready(function(){
         if(($(".create_model").text())==" "){
             $(".create_model").text("Введите название модели");
         }
-
     });
 
 
@@ -43,12 +41,14 @@ $(document).ready(function(){
 
 
     $('.delete').click(function(){
+        this_elem=this;
         var item_id=$(this).parent().attr('id');
         item_id=item_id.substring(2);
         $.ajax({
             url:"/backend/catalog/delete/"+item_id,
             type: "GET",
             success: function(){
+                $(this_elem).parent().remove();
                 $(".massage").text('Запись успешно удалена ');
             }
 

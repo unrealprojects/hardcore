@@ -7,11 +7,15 @@
 </head>
 
 <body>
-@yield('content')
+    <div data-role="page">
+        @yield('content')
+    </div>
 
-@include('general.scripts')
-@yield('scripts')
-@yield('scripts_ie8')
+    @include('general.scripts')
+    @yield('template_scripts')
+    @yield('scripts')
+
+    @yield('scripts_ie8')
 </body>
 
 </html>
