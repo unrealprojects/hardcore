@@ -3,14 +3,14 @@
     <h4 class="Section-Header">Комментарии</h4>
     <ul class="Comment-List">
     @foreach($content['element']['comments'] as $comment)
-        <li class="Comment-List-Element">
+        <li class="Comment-List-Element" comment_id="{{$comment['id']}}">
             <div class="Comment-List-Element-Rating">
                 <span class="Default">
-                    <span class="Arrow">
+                    <span class="Arrow Up">
                         <img title="Проголосовать за этот комментарий" src="/img/techonline/arrow-up.png">
                     </span>
-                    <span>0</span>
-                    <span class="Arrow">
+                    <span class="Value">{{$comment['rating']}}</span>
+                    <span class="Arrow Down">
                         <img title="Проголосовать против этого комментария" src="/img/techonline/arrow-down.png">
                     </span>
                 </span>

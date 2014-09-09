@@ -60,3 +60,10 @@ Route::get('/backend/catalog/create','\Controller\Backend\TechOnline\CatalogCont
 
 Route::get('/backend/catalog/update/{id}','\Controller\Backend\TechOnline\CatalogController@categoryBaseUpdate');
 Route::get('/backend/catalog/delete/{id}','\Controller\Backend\TechOnline\CatalogController@categoryBaseDelete');
+
+
+
+/*** SYSTEM::BACKEND::COMMENTS ***/
+Route::get('/comments/up/{id}','\Controller\CommentsController@up');
+Route::get('/comments/down/{id}','\Controller\CommentsController@down');
+Route::post('/comments/add/{id}','\Controller\CommentsController@add');

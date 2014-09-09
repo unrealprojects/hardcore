@@ -55,7 +55,8 @@
 }
 
 .Message.Bottom-Right {
-	width: $message-br-width;
+	width: $message-br-width !important;
+    height: auto !important;
 	position: fixed;
 	bottom: $size;
 	right: $size;

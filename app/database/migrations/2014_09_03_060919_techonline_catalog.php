@@ -569,32 +569,6 @@ class TechonlineCatalog extends Migration {
         }
 
 
-        /*** КОММЕНТАРИИ ***/
-        Schema::create('comments', function($table)
-        {
-            $table->increments('id');
-
-            $table->string('name')->nullable();
-            $table->text('comment')->nullable();
-
-            $table->integer('level')->nullable();
-            $table->integer('parent_id')->nullable();
-
-            $table->integer('list_id')->nullable();
-
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
-        });
-
-        $faker = Faker\Factory::create();
-        for($i=0;$i<500;$i++){
-            $comments = new \Model\General\Comments();
-            $comments->name = $faker->name;
-            $comments->comment = $faker->paragraph();
-            $comments->parent_id = 0;
-            $comments->list_id = $i%100;
-            $comments->save();
-        }
 	}
 
 	public function down()
@@ -618,6 +592,6 @@ class TechonlineCatalog extends Migration {
         Schema::dropIfExists('catalog_params_values');
         Schema::dropIfExists('catalog_tech_categories_to_params');
 
-        Schema::dropIfExists('comments');
+
 	}
 }

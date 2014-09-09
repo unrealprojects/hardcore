@@ -1,3 +1,1 @@
-@section('script')
-
-@endsection
+<script src="/js/frontend/standard.js" type="text/javascript"></script>

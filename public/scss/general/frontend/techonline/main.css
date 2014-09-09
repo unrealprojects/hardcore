@@ -352,7 +352,8 @@ input[type='submit'][disabled] {
   background-image: url(/img/techonline/icon-info.png); }
 
 .Message.Bottom-Right {
-  width: 300px;
+  width: 300px !important;
+  height: auto !important;
   position: fixed;
   bottom: 20px;
   right: 20px; }
