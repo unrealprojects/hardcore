@@ -364,7 +364,8 @@ input[type='submit'][disabled] {
   height: auto !important;
   position: fixed;
   bottom: 20px;
-  right: 20px; }
+  right: 20px;
+  box-shadow: 0 1px 2px #333; }
 
 body.RoundUI .Message {
   border-radius: 5px; }
