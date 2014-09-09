@@ -33,6 +33,7 @@ return array(
     'Mascame\\Urlify' => array($vendorDir . '/mascame/urlify/src'),
     'Jeremeamia\\SuperClosure' => array($vendorDir . '/jeremeamia/SuperClosure/src'),
     'Illuminate' => array($vendorDir . '/laravel/framework/src'),
+    'Greggilbert\\Recaptcha' => array($vendorDir . '/greggilbert/recaptcha/src'),
     'File' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'Faker\\PHPUnit' => array($vendorDir . '/fzaninotto/faker/test'),
     'Faker' => array($vendorDir . '/fzaninotto/faker/src'),

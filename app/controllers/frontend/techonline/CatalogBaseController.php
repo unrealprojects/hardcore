@@ -45,4 +45,5 @@ class CatalogBaseController extends TechonlineController{
 
         return \View::make($this->siteViewPath.'/layouts/CatalogBaseElement',$this->viewData);
     }
+
 }

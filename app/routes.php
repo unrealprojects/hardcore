@@ -66,4 +66,4 @@ Route::get('/backend/catalog/delete/{id}','\Controller\Backend\TechOnline\Catalo
 /*** SYSTEM::BACKEND::COMMENTS ***/
 Route::get('/comments/up/{id}','\Controller\CommentsController@up');
 Route::get('/comments/down/{id}','\Controller\CommentsController@down');
-Route::post('/comments/add/{id}','\Controller\CommentsController@add');
+Route::get('/comments/add/{list_id}','\Controller\CommentsController@add');

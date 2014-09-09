@@ -121,7 +121,8 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-        'Mascame\Urlify\UrlifyServiceProvider'
+        'Mascame\Urlify\UrlifyServiceProvider',
+        'Greggilbert\Recaptcha\RecaptchaServiceProvider'
 
 	),
 

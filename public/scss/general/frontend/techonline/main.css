@@ -288,6 +288,14 @@ input[type='submit'][disabled] {
   right: 1px;
   border-right: 0; }
 
+#recaptcha_widget_div {
+  display: inline-block;
+  width: 70%; }
+
+#recaptcha_table {
+  position: relative;
+  left: -3px; }
+
 /* ╨б╨╛╨╛╨▒╤Й╨╡╨╜╨╕╤П > ///////////////////////////////////////////////////////////////////////////////*/
 .Message {
   font-size: 90%;

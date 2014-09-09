@@ -2,11 +2,6 @@
 
 @section('main')
 
-<aside class="Message Bottom-Right Icon Error">
-    <h4>Ошибка</h4>
-    <p>Неверное имя пользователя</p>
-</aside>
-
 <section class="Node Grid Split">
 
     <h3 class="Section-Header">Каталог строительной техники</h3>

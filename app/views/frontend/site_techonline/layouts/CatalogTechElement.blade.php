@@ -67,7 +67,7 @@
     </div>
 
 </section>
-@include('frontend.site_techonline.parts.header')
+@include('frontend.site_techonline.layouts.CatalogComments')
 
 
 @endsection

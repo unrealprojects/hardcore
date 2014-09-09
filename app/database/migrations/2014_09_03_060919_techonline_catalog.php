@@ -112,7 +112,7 @@ class TechonlineCatalog extends Migration {
         for($i=1;$i<30;$i++){
             $catalog_base = new \Model\General\TechOnline\CatalogTech();
 
-            $catalog_base->name = 'Сдам в аренду кран №'.$i;
+            $catalog_base->name = 'Сдам в аренду кран '.$i;
             $catalog_base->rate = $i*98 . ' руб/ч';
             $catalog_base->alias = Mascame\Urlify::filter($catalog_base->name);
             $catalog_base->logo  = 'logo.jpg';

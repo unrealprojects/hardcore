@@ -1,4 +1,5 @@
 <!-- Комментарии -->
+<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
 <div class="Comment Node">
     <h4 class="Section-Header">Комментарии</h4>
     <ul class="Comment-List">
@@ -26,18 +27,26 @@
         </li>
     @endforeach
     </ul>
+
     <form class="Form-Horizontal action="">
         <h4 class="Section-Subheader">Написать комментарий</h4>
+        <input name="list_id" value="{{$content['element']['comments'][0]['list_id']}}" type="hidden">
         <div class="Control-Group">
             <label for="Comment-New-Name">Имя</label>
-            <input id="Comment-New-Name" type="text"/>
+            <input id="Comment-New-Name" name="name" type="text"/>
         </div>
         <div class="Control-Group">
             <label for="Comment-New">Текст комментария</label>
-            <textarea name="" id="Comment-New-Text" rows="5"></textarea>
+            <textarea name="comment" id="Comment-New-Text" rows="5"></textarea>
+        </div>
+        <div class="Control-Group">
+            <label for="Comment-New">Введите код</label>
+            {{Form::captcha()}}
         </div>
         <div class="Control-Group">
             <input type="submit" value="Написать"/>
         </div>
     </form>
+
+
 </div>
