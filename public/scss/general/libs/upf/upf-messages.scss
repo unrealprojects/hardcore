@@ -27,7 +27,7 @@
   color: $clr-red-dark;
 }
 .Message.Icon.Error {
-  background-image: url(../img/icon-error.png);
+  background-image: url(/img/techonline/icon-error.png);
 }
 .Message.Warning {
   background-color: $clr-yellow-light;
@@ -35,7 +35,7 @@
   color: $clr-yellow-dark;
 }
 .Message.Icon.Warning {
-  background-image: url(../img/icon-warning.png);
+  background-image: url(/img/techonline/icon-warning.png);
 }
 .Message.Success {
   background-color: $clr-green-light;
@@ -43,7 +43,7 @@
   color: $clr-green-dark;
 }
 .Message.Icon.Success {
-  background-image: url(../img/icon-success.png);
+  background-image: url(/img/techonline/icon-success.png);
 }
 .Message.Info {
   background-color: $clr-blue-light;
@@ -51,8 +51,16 @@
   color: $clr-blue-dark;
 }
 .Message.Icon.Info {
-  background-image: url(../img/icon-info.png);
+  background-image: url(/img/techonline/icon-info.png);
 }
+
+.Message.Bottom-Right {
+	width: $message-br-width;
+	position: fixed;
+	bottom: $size;
+	right: $size;
+}
+
 body.RoundUI .Message {
   border-radius: $size-xs;
 }

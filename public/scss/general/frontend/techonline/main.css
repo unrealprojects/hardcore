@@ -325,7 +325,7 @@ input[type='submit'][disabled] {
   color: #d30000; }
 
 .Message.Icon.Error {
-  background-image: url(../img/icon-error.png); }
+  background-image: url(/img/techonline/icon-error.png); }
 
 .Message.Warning {
   background-color: #fffaea;
@@ -333,7 +333,7 @@ input[type='submit'][disabled] {
   color: #b78f00; }
 
 .Message.Icon.Warning {
-  background-image: url(../img/icon-warning.png); }
+  background-image: url(/img/techonline/icon-warning.png); }
 
 .Message.Success {
   background-color: #dfffdc;
@@ -341,7 +341,7 @@ input[type='submit'][disabled] {
   color: #0b8f00; }
 
 .Message.Icon.Success {
-  background-image: url(../img/icon-success.png); }
+  background-image: url(/img/techonline/icon-success.png); }
 
 .Message.Info {
   background-color: #daf7ff;
@@ -349,7 +349,13 @@ input[type='submit'][disabled] {
   color: #00abd9; }
 
 .Message.Icon.Info {
-  background-image: url(../img/icon-info.png); }
+  background-image: url(/img/techonline/icon-info.png); }
+
+.Message.Bottom-Right {
+  width: 300px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px; }
 
 body.RoundUI .Message {
   border-radius: 5px; }
