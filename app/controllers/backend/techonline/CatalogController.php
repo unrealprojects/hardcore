@@ -48,19 +48,6 @@ class CatalogController extends TechonlineController{
             $item_create->save();
         }
 
-
-//        if ($_GET["model"] && $_GET["description"]) {
-//            $model = $_GET["model"];
-//            $description = $_GET["description"];
-//
-//            $item_create=new \Model\General\TechOnline\CatalogBase;
-//            $item_create->model= $model;
-//            $item_create->description= $description;
-//            $item_create->save();
-//        }
-
-
-        /* Добавление элемента catalog_base */
     }
 
     public function categoryBaseUpdate($id=false)

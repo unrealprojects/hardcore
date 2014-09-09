@@ -128,7 +128,6 @@ class TechonlineCatalog extends Migration {
                     5=>["name"=>"Big Japan Car","src"=>Faker\Provider\Image::imageUrl(690+$i, 420, 'transport')]]);
 
             $catalog_base->model_id=$i;
-            $catalog_base->category_id=$i;
             $catalog_base->admin_id=$i;
             $catalog_base->region_id=$i;
             $catalog_base->comments_id=$i;
