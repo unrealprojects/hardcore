@@ -2,22 +2,22 @@
 
 @section('main')
 <section class="Node">
-    <div class="Lot">
+    <div class="Lot" itemscope itemtype="http://data-vocabulary.org/Product">
         <header>
             <h4 class="Section-Header">
-                <!--<img src="/photo/techonline/{{$content['element']['logo']}}">-->{{$content['element']['brand']['name']}}
+                <!--<img src="/photo/techonline/{{$content['element']['logo']}}">--><span itemprop="brand">{{$content['element']['brand']['name']}}</span>
                     {{$content['element']['model']}}
-            <p>{{$content['element']['category']['name']}}</p>
+            <p itemprop="category">{{$content['element']['category']['name']}}</p>
             </h4>
         </header>
         <ul class="Lot-Gallery Grid-Node-1-3">
             @foreach(json_decode($content['element']['photos'],true) as $photo)
-            <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+            <li><img itemprop="image" src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
             @endforeach
         </ul>
 
         <div class="Lot-About Grid-Node-2-3">
-            <p>{{$content['element']['description']}}</p>
+            <p itemprop="description">{{$content['element']['description']}}</p>
 
         <!-- Параметры товара -->
         <h6>Характеристики</h6>
