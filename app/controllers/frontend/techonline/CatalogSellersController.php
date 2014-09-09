@@ -6,27 +6,19 @@ class CatalogSellersController extends TechonlineController{
     {
         /* ФИЛЬТРАЦИЯ */
         $filter = [
-            'category' => \Input::get('category')?:false,
-            'brand' => \Input::get('brand')?:false
+            'region' => \Input::get('region')?:false
         ];
 
         /* МОДЕЛЬ */
-        $CatalogBase = new \Model\General\TechOnline\CatalogBase();
-        $CatalogBaseList=$CatalogBase->getList($filter);
-        $filters=false;
-        if($filter['category']){
-            $paramFilters = new \Model\General\TechOnline\CatalogTechCategories();
-            $filters = $paramFilters->getFilters($filter['category']);
-        }
+        $CatalogAdmin = new \Model\General\TechOnline\CatalogAdmin();
+        $CatalogAdminList=$CatalogAdmin->getList($filter);
 
         /* ДАННЫЕ ВИД */
         $this->viewData['content'] = [
-            'pagination' => $CatalogBaseList->links(),
-            'list' => $CatalogBaseList->toArray()['data'],
+            'pagination' => $CatalogAdminList->links(),
+            'list' => $CatalogAdminList->toArray()['data'],
             'template' => 'content',
-            'categories' => \Model\General\TechOnline\CatalogTechCategories::all()->toArray(),
-            'brands' => \Model\General\TechOnline\CatalogBrand::all()->toArray(),
-            'filters' => $filters?:false
+            'regions' => \Model\General\TechOnline\CatalogRegion::all()->toArray()
         ];
 //        print_r($filters->toArray());exit;
         return \View::make($this->siteViewPath.'/layouts/CatalogSellers',$this->viewData);
@@ -35,13 +27,14 @@ class CatalogSellersController extends TechonlineController{
     public function actionElement($alias)
     {
         /* ПОЛУЧЕНИЕ СПИСКА ДАННЫХ ИЗ КАТАЛОГА */
-        $CatalogBase = new \Model\General\TechOnline\CatalogBase;
-        $CatalogBaseElement=$CatalogBase->getElement($alias);
+        $CatalogAdmin = new \Model\General\TechOnline\CatalogAdmin();
+        $CatalogAdminList=$CatalogAdmin->getElement($alias);
 
         $this->viewData['content'] = [
-            'element' => $CatalogBaseElement->toArray(),
+            'element' => $CatalogAdminList->toArray(),
             'template' => 'content'
         ];
+//        print_r($CatalogAdminList->toArray());exit;
 
         return \View::make($this->siteViewPath.'/layouts/CatalogSellersElement',$this->viewData);
     }

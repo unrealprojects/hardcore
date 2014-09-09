@@ -24,7 +24,7 @@
             <h4>Регионы</h4>
             <ul class="List-Filter">
                 @foreach($content['regions'] as $region)
-                <li><a href="/region/?category={{$region['alias']}}&{{\Input::getQueryString()}}">{{$region['name']}}</a></li>
+                <li><a href="/rent/?region={{$region['alias']}}&{{\Input::getQueryString()}}">{{$region['name']}}</a></li>
                 @endforeach
             </ul>
         </aside>
@@ -41,9 +41,11 @@
                     </div>
                     </header>
                     <ul class="Lot-Gallery Grid-Node-1-3">
-                    @foreach(json_decode($list_elem['photos'],true) as $photo)
-                        <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
-                    @endforeach
+                        @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
+                            @if($i<4)
+                                 <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+                            @endif
+                        @endforeach
                     </ul>
 
                     <div class="Lot-About Grid-Node-2-3">
