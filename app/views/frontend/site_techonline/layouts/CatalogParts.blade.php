@@ -1,9 +1,11 @@
 @extends('frontend.site_techonline.'.$content['template'])
 
 @section('main')
+
+
 <section class="Node Grid">
 
-    <h3>Запчасти и сервис</h3>
+    <h3 class="Section-Header">Запчасти и сервис</h3>
     <div class="Grid-Row">
         <!-- Фильтрация :: Общий блок -->
         <aside class="Sidebar-Filter Grid-Node-1-5">

@@ -3,9 +3,13 @@
 @section('main')
 <section class="Node">
     <div class="Lot">
-
-        <h4><!--<img src="/photo/techonline/{{$content['element']['logo']}}">--><a href="/catalog/{{$content['element']['alias']}}">{{$content['element']['brand']['name']}} {{$content['element']['category']['name']}}
-                {{$content['element']['model']}}</a></h4>
+        <header>
+            <h4 class="Section-Header">
+                <!--<img src="/photo/techonline/{{$content['element']['logo']}}">-->{{$content['element']['brand']['name']}}
+                    {{$content['element']['model']}}
+            <p>{{$content['element']['category']['name']}}</p>
+            </h4>
+        </header>
         <ul class="Lot-Gallery Grid-Node-1-3">
             @foreach(json_decode($content['element']['photos'],true) as $photo)
             <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>

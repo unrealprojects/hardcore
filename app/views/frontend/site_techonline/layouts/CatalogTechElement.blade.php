@@ -3,7 +3,7 @@
 @section('main')
 <section class="Node">
     <div class="Lot">
-        <h4><!--<img src="/photo/techonline/{{$content['element']['logo']}}">--><a href="/rent/{{$content['element']['alias']}}">
+        <h4 class="Section-Header"><!--<img src="/photo/techonline/{{$content['element']['logo']}}">--><a href="/rent/{{$content['element']['alias']}}">
                 {{$content['element']['name']}}</a></h4>
         <ul class="Lot-Gallery Grid-Node-1-3">
             @foreach(json_decode($content['element']['photos'],true) as $photo)

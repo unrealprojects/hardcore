@@ -29,12 +29,12 @@
     <form class="Form-Horizontal action="">
         <h4 class="Section-Subheader">Написать комментарий</h4>
         <div class="Control-Group">
-            <label for="">Имя</label>
-            <input type="text"/>
+            <label for="Comment-New-Name">Имя</label>
+            <input id="Comment-New-Name" type="text"/>
         </div>
         <div class="Control-Group">
             <label for="Comment-New">Текст комментария</label>
-            <textarea name="" id="Comment-New" rows="5"></textarea>
+            <textarea name="" id="Comment-New-Text" rows="5"></textarea>
         </div>
         <div class="Control-Group">
             <input type="submit" value="Написать"/>
