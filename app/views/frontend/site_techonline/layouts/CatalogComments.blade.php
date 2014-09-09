@@ -47,6 +47,4 @@
             <input type="submit" value="Написать"/>
         </div>
     </form>
-
-
 </div>
