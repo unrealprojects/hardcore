@@ -53,7 +53,7 @@
                             <tr>
                                 <td>{{$param['param_data']['name']}}</td>
                                 <td>{{$param['value']}}</td>
-                                <td>{{$param['param_data']['dimension']}}</td>
+                                <td>{{$param['param_data']['dimension']}}   </td>
                             </tr>
                             @endforeach
                         </table>

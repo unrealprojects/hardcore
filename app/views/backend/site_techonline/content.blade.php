@@ -2,6 +2,7 @@
 
 @section('head')
 @include('backend.site_techonline.head')
+@include('backend.site_techonline.parts.navigation')
 @endsection
 
 @section('content')
