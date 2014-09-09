@@ -67,19 +67,8 @@
             @endforeach
         </div>
 
-        <!-- Комментарии -->
-        <h4>Комментарии</h4>
-        <div class="Comments">
-        @foreach($content['element']['comments'] as $comment)
-           <div class="Comment">
-               <h4>{{$comment['name']}}</h4>
-               <p>{{$comment['comment']}}</p>
-               <p class="Right">{{$comment['created_at']}}</p>
-           </div>
-        @endforeach
-        </div>
 
 </section>
-
+@include('frontend.site_techonline.layouts.CatalogComments')
 
 @endsection

@@ -143,7 +143,7 @@ code.Inline, code.pagination {
 .Inline > li, nav.Page-Navigation ul > li, .pagination > li {
   float: left; }
 
-.No-Bullets, nav.Page-Navigation ul, .List-Filter {
+.No-Bullets, nav.Page-Navigation ul, .List-Filter, .Comment .Comment-List {
   list-style: none; }
 
 .Control-Group {
@@ -356,10 +356,10 @@ body.RoundUI .Message {
 
 /* ╨б╨╛╨╛╨▒╤Й╨╡╨╜╨╕╤П < ///////////////////////////////////////////////////////////////////////////////*/
 .Left, .Page-Header .Centrate .Site-Logo, .Page-Header .Centrate .Page-Auth button.Sign-In,
-.Page-Header .Centrate .Page-Auth .User-Exit {
+.Page-Header .Centrate .Page-Auth .User-Exit, .Comment .Comment-List li .Comment-List-Element-Content header h5 {
   float: left; }
 
-.Right, .Page-Header .Centrate .Page-Auth, .Page-Header .Centrate .Page-Auth > p {
+.Right, .Page-Header .Centrate .Page-Auth, .Page-Header .Centrate .Page-Auth > p, .Comment .Comment-List li .Comment-List-Element-Content header small.Date {
   float: right; }
 
 .dev {
@@ -372,7 +372,7 @@ body.RoundUI .Message {
   margin-left: auto;
   margin-right: auto; }
 
-.fix, .Page-Header .Centrate, nav.Page-Navigation ul, .Lot,
+.fix, .Page-Header .Centrate, nav.Page-Navigation ul, .Lot, .Comment .Comment-List li .Comment-List-Element-Content header,
 .Node,
 .Grid,
 .Grid-Row,
@@ -381,7 +381,7 @@ body.RoundUI .Message {
 .Tab-Buttons {
   display: table; }
 
-.fix:after, .Page-Header .Centrate:after, nav.Page-Navigation ul:after, .Lot:after,
+.fix:after, .Page-Header .Centrate:after, nav.Page-Navigation ul:after, .Lot:after, .Comment .Comment-List li .Comment-List-Element-Content header:after,
 .Node:after,
 .Grid:after,
 .Grid-Row:after,
@@ -493,6 +493,12 @@ body {
   font-family: 'Exo 2', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.00em;
   line-height: 1.45; }
+
+.Section-Header {
+  font-size: 1.5em; }
+
+.Section-Subheader {
+  font-size: 1.25em; }
 
 .Page-Header {
   background: #272727;
@@ -635,6 +641,39 @@ footer > .Copyright {
     .List-Filter > li > a:hover {
       background-color: #ec6700;
       color: #fff; }
+
+.Comment .Comment-List li {
+  margin-top: 50px; }
+  .Comment .Comment-List li:first-child {
+    margin-top: 0; }
+  .Comment .Comment-List li .Comment-List-Element-Rating {
+    float: left;
+    margin-right: 30px;
+    color: #ccc; }
+    .Comment .Comment-List li .Comment-List-Element-Rating > span {
+      display: block;
+      margin: 0 auto;
+      text-align: center; }
+  .Comment .Comment-List li .Arrow {
+    visibility: hidden;
+    cursor: pointer; }
+    .Comment .Comment-List li .Arrow img {
+      display: block; }
+  .Comment .Comment-List li:hover .Arrow {
+    visibility: visible; }
+    .Comment .Comment-List li:hover .Arrow .Positive {
+      color: #0da900; }
+    .Comment .Comment-List li:hover .Arrow .Negative {
+      color: #ec0000; }
+  .Comment .Comment-List li .Comment-List-Element-Content {
+    overflow: hidden; }
+    .Comment .Comment-List li .Comment-List-Element-Content header small.Date {
+      color: #ccc; }
+    .Comment .Comment-List li .Comment-List-Element-Content p {
+      font-size: 1.125em;
+      width: 75%; }
+.Comment > form {
+  margin-top: 50px; }
 
 @media all and (max-width: 1024px) {
   body {

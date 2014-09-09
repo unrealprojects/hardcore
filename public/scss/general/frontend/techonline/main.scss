@@ -42,7 +42,12 @@ body {
 	font-size: 1.00em;
 	line-height: 1.45;
 }
-
+.Section-Header {
+	font-size: $font-size-xxl;
+}
+.Section-Subheader {
+	font-size: $font-size-xl;
+}
 // Шапка сайта
 .Page-Header {
 	background: #272727;
@@ -273,6 +278,71 @@ footer > .Copyright {
 		}
 	}
 }
+.Comment {
+	.Comment-List {
+		@extend .No-Bullets;
+		li {
+			margin-top: $size-xl;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			.Comment-List-Element-Rating {
+				float: left;
+				margin-right: $size-l;
+				color: $clr-grey;
+				& > span {
+					display: block;
+					margin: 0 auto;
+					text-align: center;
+				}
+				}
+				.Arrow {
+					visibility: hidden;
+					cursor: pointer;
+					img {
+						display: block;
+					}
+				}
+				&:hover .Arrow {
+					visibility: visible;
+
+				.Positive {
+					color: $clr-green;
+				}
+				.Negative {
+					color: $clr-red;
+				}
+			}
+
+			.Comment-List-Element-Content {
+				overflow: hidden;
+
+				header {
+					@extend .fix;
+
+					h5 {
+						@extend .Left;
+					}
+
+					small.Date {
+						@extend .Right;
+						color: $clr-grey;
+					}
+				}
+				p {
+					font-size: $font-size-l;
+					width: 75%;
+				}
+			}
+		}
+	}
+	& > form {
+		margin-top: $size-xl;
+	}
+}
+
 @media all and (max-width: 1024px) {
 	body {
 		font-size: 90%;
