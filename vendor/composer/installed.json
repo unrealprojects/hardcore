@@ -1763,7 +1763,9 @@
         "time": "2014-06-04 14:43:02",
         "type": "library",
         "extra": {
-            "branch-alias": []
+            "branch-alias": [
+
+            ]
         },
         "installation-source": "dist",
         "autoload": {

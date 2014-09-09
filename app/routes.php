@@ -34,8 +34,8 @@
 
 /*** FRONTEND::CATALOG ***/
 Route::get('/','MainPageController@showWelcome');
-Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogController@actionList');
-Route::get('/catalog/{alias}','\Controller\Frontend\TechOnline\CatalogController@actionElement');
+Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogBaseController@actionList');
+Route::get('/catalog/{alias}','\Controller\Frontend\TechOnline\CatalogBaseController@actionElement');
 
 /*** FRONTEND::CATALOG_TECH ***/
 Route::get('/rent','\Controller\Frontend\TechOnline\CatalogTechController@actionList');
