@@ -173,12 +173,20 @@ nav.Page-Navigation {
 
 	& header {
 		margin-bottom: $size-n;
+		@extend .fix;
 
 		& h4 {
 			font-size: $font-size-xl;
 			text-transform: uppercase;
+			float: left;
 		}
-
+		& h5 {
+			color: white;
+			background-color: $clr-main;
+			margin-right: -$size-xl;
+			padding: $size-s $size-n;
+			float: right;
+		}
 		& img {
 			display: block;
 			height: 30px;

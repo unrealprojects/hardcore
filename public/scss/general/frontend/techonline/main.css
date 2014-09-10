@@ -400,7 +400,7 @@ body.RoundUI .Message {
   margin-left: auto;
   margin-right: auto; }
 
-.fix, .Page-Header .Centrate, nav.Page-Navigation ul, .Lot, .Comment .Comment-List li .Comment-List-Element-Content header,
+.fix, .Page-Header .Centrate, nav.Page-Navigation ul, .Lot, .Lot header, .Comment .Comment-List li .Comment-List-Element-Content header,
 .Node,
 .Grid,
 .Grid-Row,
@@ -409,7 +409,7 @@ body.RoundUI .Message {
 .Tab-Buttons {
   display: table; }
 
-.fix:after, .Page-Header .Centrate:after, nav.Page-Navigation ul:after, .Lot:after, .Comment .Comment-List li .Comment-List-Element-Content header:after,
+.fix:after, .Page-Header .Centrate:after, nav.Page-Navigation ul:after, .Lot:after, .Lot header:after, .Comment .Comment-List li .Comment-List-Element-Content header:after,
 .Node:after,
 .Grid:after,
 .Grid-Row:after,
@@ -599,7 +599,14 @@ nav.Page-Navigation {
     margin-bottom: 15px; }
     .Lot header h4 {
       font-size: 1.25em;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      float: left; }
+    .Lot header h5 {
+      color: white;
+      background-color: #ec6700;
+      margin-right: -50px;
+      padding: 10px 15px;
+      float: right; }
     .Lot header img {
       display: block;
       height: 30px;
