@@ -1,5 +1,12 @@
 @extends('frontend.site_techonline.content')
 
+@section('main')
+<section class="Page-Slider">
+    <div class="Slider-Inner">
+        <img class="Truck" src="/img/techonline/belaz.png" alt=""/>
+    </div>
+</section>
+
     <!-- КАТАЛОГ СТРОЙТЕХНИКИ::КАТЕГОРИИ C КАРТИНКАМИ-->
     @foreach($content['categories'] as $category)
         <a href="/tech/$category['alias']" alt="{{$category['name']}}">{{$category['name']}}</a>
@@ -43,3 +50,5 @@
     @endforeach
 
     <!-- НОВОСТИ::СПИСОК -->
+
+@endsection

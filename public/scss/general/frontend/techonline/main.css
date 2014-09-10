@@ -594,6 +594,21 @@ nav.Page-Navigation {
     nav.Page-Navigation ul li:first-child {
       margin-left: 0; }
 
+.Page-Slider {
+  overflow: hidden;
+  background: url(../../../../img/techonline/shadow-down-top.png) repeat-x bottom, url(../../../../img/techonline/shadow-top-down.png) repeat-x top, url(../../../../img/techonline/banner-background.jpg) no-repeat center center;
+  margin-bottom: 50px;
+  margin-top: -30px;
+  height: 250px; }
+  .Page-Slider .Slider-Inner {
+    position: relative;
+    width: 1000px;
+    margin: 0 auto; }
+    .Page-Slider .Slider-Inner img.Truck {
+      position: absolute;
+      -webkit-animation: SlideUp 1s;
+      animation: SlideUp 1s; }
+
 .Lot {
   margin-top: 50px; }
   .Lot:first-child {
@@ -726,5 +741,27 @@ footer > .Copyright {
       width: 75%; }
 .Comment > form {
   margin-top: 50px; }
+
+@-webkit-keyframes SlideUp {
+  from {
+    opacity: 0;
+    top: 300px; }
+  to {
+    opacity: 1;
+    top: 0; } }
+@-moz-keyframes SlideUp {
+  from {
+    opacity: 0;
+    top: 300px; }
+  to {
+    opacity: 1;
+    top: 0; } }
+@keyframes SlideUp {
+  from {
+    opacity: 0;
+    top: 300px; }
+  to {
+    opacity: 1;
+    top: 0; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,6 +1,7 @@
 (function($){
     $(document).ready(function(){
 
+
         /* Message */
         window.Message = function (event,message,type){
             if(type===undefined){
