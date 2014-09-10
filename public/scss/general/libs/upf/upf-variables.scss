@@ -57,7 +57,8 @@ $Control-Group-Input-Width: 50%;
 $Control-Group-Label-Width: 30%;
 $Control-Group-Label2-Width: (100% - $Control-Group-Input-Width - $Control-Group-Label-Width);
 
-$node-width: 1100px;
+$node-padding: $size-l;
+$node-width: 1000px;
 $footer-height: 50px;
 $line-height: 24px;
 $grid-spacing: 5%;

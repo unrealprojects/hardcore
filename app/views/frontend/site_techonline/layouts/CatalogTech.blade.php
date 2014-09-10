@@ -35,6 +35,7 @@
                     <header>
                         <div>
                             <h4><a href="/rent/{{$list_elem['alias']}}">{{$list_elem['name']}}</a></h4>
+                            <h5>{{$list_elem['rate']}}</h5>
                         </div>
                     </header>
                     <ul class="Lot-Gallery Grid-Node-1-3">
@@ -78,10 +79,6 @@
                             <tr>
                                 <td>Состояние:</td>
                                 <td> {{$list_elem['opacity']['name']}}</td>
-                            </tr>
-                            <tr>
-                                <td>Цена:</td>
-                                <td>{{$list_elem['rate']}}</td>
                             </tr>
                         </table>
                     </div>

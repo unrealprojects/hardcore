@@ -29,11 +29,11 @@
                 <li class="Lot">
 
                     <header>
-                    <div>
-                        <h4><a href="/catalog/{{$list_elem['alias']}}">{{$list_elem['brand']['name']}}
-                    {{$list_elem['model']}}</a></h4>
+                        <h4>
+                            <a href="/catalog/{{$list_elem['alias']}}">{{$list_elem['brand']['name']}}
+                            {{$list_elem['model']}}</a>
+                        </h4>
                         <p>{{$list_elem['category']['name']}}</p>
-                    </div>
                     </header>
 
                     <ul class="Lot-Gallery Grid-Node-1-3">
