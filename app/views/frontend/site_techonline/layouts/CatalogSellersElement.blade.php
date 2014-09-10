@@ -44,7 +44,7 @@
                     <td><a href="{{$content['element']['website']}}">{{$content['element']['website']}}</a></td>
                 </tr>
             </table>
-    </div>
+        </div>
 
         <!-- Список Техники -->
 
@@ -76,7 +76,6 @@
                 <h4> <a href="/parts/{{$part['alias']}}">{{$part['name']}}</a></h4>
                 <p>{{$part['description']}}</p>
                 <p>{{$part['price']}}</p>
-
             </div>
             @endforeach
         </div>

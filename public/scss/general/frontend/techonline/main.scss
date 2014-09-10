@@ -59,17 +59,17 @@ body {
 	border-bottom: 1px solid #e1e1e1;
 
 	.Centrate {
-		padding: $size-n $size-l;
+		padding: $size-n 0;
 		width: $node-width;
 		@extend .fix;
 
 		.Site-Logo {
+			width: 40%;
 			float: left;
 			overflow: hidden;
 			display: inline-block;
 
 			div {
-				width: 400px;
 				height: 45px;
 				overflow: hidden;
 
@@ -136,8 +136,9 @@ body {
 }
 nav.Page-Navigation {
 	float: right;
-	padding: 0 0;
-	width: 65%;
+	display: inline-block;
+	width: 50%;
+	text-align:right;
 	ul {
 		@extend .Inline;
 		@extend .No-Bullets;
@@ -159,6 +160,7 @@ nav.Page-Navigation {
 				}
 			}
 			&:first-child {
+				margin-left: 0;
 			}
 		}
 	}
@@ -197,6 +199,7 @@ nav.Page-Navigation {
 
 		& p {
 			font-size: $font-size-s;
+			clear: both;
 		}
 
 	}
@@ -260,8 +263,11 @@ footer > .Copyright {
 
 // Блок Пагинации
 .Pagination {
-	@extend .Inline;
+	margin-left: -($size-xl);
+	border-left: 4px solid $clr-main;
 	list-style: none;
+	@extend .Inline;
+	@extend .fix;
 	& > li {
 		margin-top: 0 !important; // Наследование .Node подразумевает margin-top каждого вложенного элемента. Убираем
 		margin-right: 1px; // Разлипаем прямоугольники страниц
@@ -380,40 +386,3 @@ footer > .Copyright {
 		margin-top: $size-xl;
 	}
 }
-
-
-
-@media all and (max-width: 1024px) {
-	body {
-		font-size: 90%;
-	}
-	.Centrate ,
-	.Node 	  {
-		width: 90%;
-	}
-}
-@media all and (min-width: 1024px) {
-	.Centrate ,
-	.Node {
-		width: $node-width - 300px!important;
-	}
-}
-@media all and (min-width: 1377px) {
-	.Centrate ,
-	.Node {
-		width: $node-width - 100px!important;
-	}
-}
-@media all and (min-width: 1640px) {
-	.Centrate ,
-	.Node {
-		width: $node-width + 200px!important;
-	}
-}
-@media all and (min-width: 1900px) {
-	.Centrate ,
-	.Node {
-		width: $node-width + 250px!important;
-	}
-}
-

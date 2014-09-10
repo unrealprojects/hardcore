@@ -7,6 +7,7 @@
             <h4 class="Section-Header">
                 {{$content['element']['name']}}
             </h4>
+            <h5>{{$content['element']['rate']}}</h5>
         </header>
         <ul class="Lot-Gallery Grid-Node-2-5">
             @foreach(json_decode($content['element']['photos'],true) as $i=>$photo)
@@ -50,10 +51,7 @@
                     <td>Состояние:</td>
                     <td> {{$content['element']['opacity']['name']}}</td>
                 </tr>
-                <tr>
-                    <td>Цена:</td>
-                    <td>{{$content['element']['rate']}}</td>
-                </tr>
+
             </table>
 
 

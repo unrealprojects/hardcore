@@ -22,7 +22,9 @@
 
                     <header>
                     <div>
-                        <h4><a href="/sellers/{{$list_elem['alias']}}">{{$list_elem['name']}}</a></h4>
+                        <h4>
+                            <a href="/sellers/{{$list_elem['alias']}}">{{$list_elem['name']}}</a>
+                        </h4>
                     </div>
                     </header>
                     <ul class="Lot-Gallery Grid-Node-1-3">
