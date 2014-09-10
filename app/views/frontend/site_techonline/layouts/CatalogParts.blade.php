@@ -47,12 +47,8 @@
                                 <td>{{$list_elem['category']['name']}}</td>
                             </tr>
                             <tr>
-                                <td>Арендодатель:</td>
-                                <td><a href="/admin/{{$list_elem['admin']['alias']}}">{{$list_elem['admin']['name']}}</a></td>
-                            </tr>
-                            <tr>
-                                <td>Cтатус:</td>
-                                <td>{{$list_elem['status']['name']}}</td>
+                                <td>Продавец:</td>
+                                <td><a href="/sellers/{{$list_elem['admin']['alias']}}">{{$list_elem['admin']['name']}}</a></td>
                             </tr>
                             <tr>
                                 <td>Состояние:</td>

@@ -33,7 +33,8 @@
 
 
 /*** FRONTEND::CATALOG ***/
-Route::get('/','MainPageController@showWelcome');
+Route::get('/','\Controller\Frontend\TechOnline\MainPageController@index');
+
 Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogBaseController@actionList');
 Route::get('/catalog/{alias}','\Controller\Frontend\TechOnline\CatalogBaseController@actionElement');
 
@@ -52,6 +53,7 @@ Route::get('/sellers/{alias}','\Controller\Frontend\TechOnline\CatalogSellersCon
 
 
 /*** BACKEND::CATALOG ***/
+
 Route::get('/backend/catalog','\Controller\Backend\TechOnline\CatalogController@actionIndex');
 
 Route::get('/backend/catalog/list','\Controller\Backend\TechOnline\CatalogController@categoryBaseList');

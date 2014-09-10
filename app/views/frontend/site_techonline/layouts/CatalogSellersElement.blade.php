@@ -24,31 +24,36 @@
                     <td>{{$content['element']['phone']}}</td>
                 </tr>
                 <tr>
+                    <td>Регион:</td>
+                    <td> {{$content['element']['region']['name']}}</td>
+                </tr>
+                <tr>
                     <td>Адрес:</td>
                     <td> {{$content['element']['adress']}}</td>
                 </tr>
                 <tr>
                     <td>Email:</td>
-                    <td> {{$content['element']['email']}}</td>
+                    <td><a href="mailto:{{$content['element']['email']}}">{{$content['element']['email']}}</a></td>
                 </tr>
                 <tr>
                     <td>Skype:</td>
-                    <td> {{$content['element']['skype']}}</td>
+                    <td><a href="callto:{{$content['element']['skype']}}">{{$content['element']['skype']}}</a></td>
                 </tr>
                 <tr>
                     <td>Site:</td>
-                    <td> {{$content['element']['website']}}</td>
-                </tr>
-                <tr>
-                    <td>Регион:</td>
-                    <td> {{$content['element']['region']['name']}}</td>
+                    <td><a href="{{$content['element']['website']}}">{{$content['element']['website']}}</a></td>
                 </tr>
             </table>
     </div>
 
         <!-- Список Техники -->
-        <h4>Аренда стройтехники</h4>
+
         <div class="CatalogTech">
+            <header>
+                <h4 class="Section-Header">
+                    Аренда стройтехники
+                </h4>
+            </header>
             @foreach($content['element']['tech_list'] as $tech)
             <div class="Element">
                 <h4> <a href="/rent/{{$tech['alias']}}">{{$tech['name']}}</a></h4>
@@ -59,8 +64,13 @@
         </div>
 
         <!-- Список Запчастей -->
-        <h4>Запчасти и сервис</h4>
+
         <div class="CatalogParts">
+            <header>
+                <h4 class="Section-Header">
+                    Запчасти и сервис
+                </h4>
+            </header>
             @foreach($content['element']['parts_list'] as $part)
             <div class="Element">
                 <h4> <a href="/parts/{{$part['alias']}}">{{$part['name']}}</a></h4>

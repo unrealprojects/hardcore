@@ -4,13 +4,14 @@
     <div class="Centrate" role="banner">
 
         <div href="http://hardcore/catalog" class="Site-Logo">
-            <div class="">
-                <img src="/img/techonline/logo.png"/>
-
-                <h2>Стройтехника
-                    <small>.Онлайн</small>
-                </h2>
-            </div>
+            <a href="/">
+                <div class="">
+                    <img src="/img/techonline/logo.png"/>
+                    <h2>Стройтехника
+                        <small>.Онлайн</small>
+                    </h2>
+                </div>
+            </a>
         </div>
         <nav class="Page-Navigation">
             <ul>

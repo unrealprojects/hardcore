@@ -33,12 +33,9 @@
             @foreach($content['list'] as $list_elem)
                 <li class="Lot">
                     <header>
-                        <img src="/photo/techonline/{{$list_elem['logo']}}">
-                    <div>
-                        <h4><a href="/rent/{{$list_elem['alias']}}">
-                    {{$list_elem['name']}}</a></h4>
-
-                    </div>
+                        <div>
+                            <h4><a href="/rent/{{$list_elem['alias']}}">{{$list_elem['name']}}</a></h4>
+                        </div>
                     </header>
                     <ul class="Lot-Gallery Grid-Node-1-3">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
@@ -60,7 +57,7 @@
                             </tr>
                             <tr>
                                 <td>Арендодатель:</td>
-                                <td><a href="/admin/{{$list_elem['admin']['alias']}}">{{$list_elem['admin']['name']}}</a></td>
+                                <td><a href="/sellers/{{$list_elem['admin']['alias']}}">{{$list_elem['admin']['name']}}</a></td>
                             </tr>
                             <tr>
                                 <td>Бренд:</td>
