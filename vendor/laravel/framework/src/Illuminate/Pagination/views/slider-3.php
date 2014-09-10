@@ -3,7 +3,8 @@
 ?>
 
 <?php if ($paginator->getLastPage() > 1): ?>
-	<ul class="pagination">
-			<?php echo $presenter->render(); ?>
+	<ul class="Pagination">
+        <li class="Pagination-Cation"><span>Страницы</span></li>
+	    <?php echo $presenter->render(); ?>
 	</ul>
 <?php endif; ?>
