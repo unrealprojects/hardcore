@@ -1,5 +1,6 @@
 @mixin Animation($animation-name, $animation-time) {
 	-webkit-animation: $animation-name $animation-time;
+	-moz-animation: $animation-name $animation-time;
 	animation: $animation-name $animation-time;
 }
 

@@ -8,12 +8,14 @@
 </section>
 
 <div class="Node">
-    <ul>
+    <ul class="Grid-Row">
     <!-- КАТАЛОГ СТРОЙТЕХНИКИ::КАТЕГОРИИ C КАРТИНКАМИ-->
     @foreach($content['categories'] as $category)
-        <li><a href="/tech/$category['alias']" alt="{{$category['name']}}">{{$category['name']}}</a></li>
+        <li class="Grid-Node-1-2"><a href="/tech/$category['alias']" alt="{{$category['name']}}">{{$category['name']}}</a></li>
     @endforeach
     </ul>
+</div>
+<div class="Node">
     <ul>
      <!-- АРЕНДА СТРОЙТЕХНИКИ::КАТЕГОРИИ -->
      @foreach($content['categories'] as $category)
@@ -23,7 +25,7 @@
      <ul>
      <!-- АРЕНДА СТРОЙТЕХНИКИ::БРЕНДЫ -->
      @foreach($content['brands'] as $brand)
-         <li><a href="/tech/$brand['alias']" alt="{{$brand['name']}}">{{$brand['name']}}</a>></li>
+         <li><a href="/tech/$brand['alias']" alt="{{$brand['name']}}">{{$brand['name']}}</a></li>
      @endforeach
      </ul>
 </div>

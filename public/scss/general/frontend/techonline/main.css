@@ -607,6 +607,7 @@ nav.Page-Navigation {
     .Page-Slider .Slider-Inner img.Truck {
       position: absolute;
       -webkit-animation: SlideUp 1s;
+      -moz-animation: SlideUp 1s;
       animation: SlideUp 1s; }
 
 .Lot {
