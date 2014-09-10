@@ -259,7 +259,7 @@ footer > .Copyright {
 }
 
 // Блок Пагинации
-.pagination {
+.Pagination {
 	@extend .Inline;
 	list-style: none;
 	& > li {
@@ -283,6 +283,9 @@ footer > .Copyright {
 		}
 		&.active > span {
 			background-color: $clr-main;
+		}
+		li.Pagination-Caption {
+
 		}
 	}
 }
