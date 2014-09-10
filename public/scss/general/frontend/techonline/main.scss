@@ -29,15 +29,7 @@ body > #wrap {
 }
 
 body {
-	background: #eeeeee; /* Old browsers */
-	background: -moz-linear-gradient(left, #eeeeee 0%, #ffffff 50%, #eeeeee 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #eeeeee), color-stop(50%, #ffffff), color-stop(100%, #eeeeee)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left, #eeeeee 0%, #ffffff 50%, #eeeeee 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left, #eeeeee 0%, #ffffff 50%, #eeeeee 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left, #eeeeee 0%, #ffffff 50%, #eeeeee 100%); /* IE10+ */
-	background: linear-gradient(to right, #eeeeee 0%, #ffffff 50%, #eeeeee 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#eeeeee', GradientType=1); /* IE6-9 */
-
+	background: #eee;
 	font-family: 'Exo 2', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 1.00em;
 	line-height: 1.45;
@@ -45,7 +37,7 @@ body {
 .Section-Header ,
 .Section-Subheader {
 	display: inline-block;
-	margin: 0 0 -($size-xxl) 0;
+	margin: 0 0 -($size-xl) 0;
 	padding: $size-s $size-n;
 	background-color: $clr-grey-darker;
 	border-left: 4px solid $clr-main;
@@ -60,30 +52,46 @@ body {
 	font-size: $font-size-xl;
 }
 // Шапка сайта
+
 .Page-Header {
-	background: $clr-grey-darker;
-	color: white;
-	border-bottom: $size-xxs solid $clr-main;
+	background: white;
+	margin-bottom: $size-l;
+	border-bottom: 1px solid #e1e1e1;
 
 	.Centrate {
-		padding: $size-n 0;
+		padding: $size-n $size-l;
 		width: $node-width;
 		@extend .fix;
 
-		// Логотип сайта (ссылка на главную страницу)
 		.Site-Logo {
-			display: block;
-			width: 479px;
-			height: 50px;
-			background-image: url('../../../../img/techonline/logo-sprite.png');
-			background-repeat: no-repeat;
-			background-position: top left;
-			@extend .Left;
-			@extend .Animate;
+			float: left;
+			overflow: hidden;
+			display: inline-block;
 
-			&:hover {
-				background-position: left -45px;
+			div {
+				width: 400px;
+				height: 45px;
+				overflow: hidden;
+
+				img {
+					display: block;
+					float: left;
+					margin-right: $size;
+				}
+
+				h2 {
+					color: $clr-main;
+					font-size: 30px;
+					font-weight: 100;
+					text-transform: uppercase;
+
+					small {
+						color: black;
+						font-size: $font-size-xs;
+					}
+				}
 			}
+
 		}
 
 		// Блок авторизации
@@ -97,7 +105,7 @@ body {
 				margin: $size-xs $size 0 0;
 				border: 1px solid;
 				text-align: center;
-				color: #fff;
+				color: $clr-main;
 				background-color: transparent;
 				@extend .Left;
 				@extend .Animate;
@@ -127,24 +135,25 @@ body {
 	}
 }
 nav.Page-Navigation {
-	padding: $size 0;
+	float: right;
+	padding: 0 0;
+	width: 65%;
 	ul {
-		width: $node-width;
-		margin-right: auto;
-		margin-left: auto;
 		@extend .Inline;
 		@extend .No-Bullets;
 		@extend .fix;
 		li {
-			margin-left: $size-xl;
+			margin-left: $size-l;
 
 			& > a {
 				display: block;
-				padding: $size-xs $size-n;
-				font-size: $font-size-xl;
-				border: 1px solid transparent;
+				padding: $size-s 0;
+				font-size: $font-size;
+				border-bottom: 3px solid transparent;
 				color: #000;
-				&:hover {
+				text-transform: uppercase;
+				&:hover ,
+				&.Link-Active {
 					color: $clr-main;
 					border-color: $clr-main;
 				}
@@ -166,7 +175,8 @@ nav.Page-Navigation {
 		margin-bottom: $size-n;
 
 		& h4 {
-			font-size: $font-size-l;
+			font-size: $font-size-xl;
+			text-transform: uppercase;
 		}
 
 		& img {
@@ -183,18 +193,19 @@ nav.Page-Navigation {
 
 	}
 	.Lot-Gallery {
+		position: relative;
+		overflow: auto;
+		padding-right: $size-xl!important;
 		& > li {
 			display: block;
-			float: left !important;
-			width: 33.33%;
+			overflow: hidden;
+			float: left;
+			width: 100%;
 			& > img {
 				width: 100%;
 				display: block;
+
 			}
-		}
-		& > li:first-child {
-			margin-bottom: $size-n;
-			width: 100%;
 		}
 	}
 	.Lot-About {
@@ -211,6 +222,10 @@ nav.Page-Navigation {
 				}
 			}
 		}
+	}
+	&.Element .Lot-About {
+		font-size: $font-size-l;
+
 	}
 }
 
@@ -348,6 +363,7 @@ footer > .Copyright {
 				}
 			}
 		}
+
 	}
 	& > form {
 		margin-top: $size-xl;
@@ -360,31 +376,33 @@ footer > .Copyright {
 	body {
 		font-size: 90%;
 	}
-	.Node {
+	.Centrate ,
+	.Node 	  {
 		width: 90%;
 	}
 }
 @media all and (min-width: 1024px) {
+	.Centrate ,
 	.Node {
-		width: $node-width - 300px;
+		width: $node-width - 300px!important;
 	}
 }
 @media all and (min-width: 1377px) {
+	.Centrate ,
 	.Node {
-		width: $node-width - 100px;
-		padding: $size-l;
+		width: $node-width - 100px!important;
 	}
 }
 @media all and (min-width: 1640px) {
+	.Centrate ,
 	.Node {
-		width: $node-width + 200px;
-		padding: $size-xl;
+		width: $node-width + 200px!important;
 	}
 }
 @media all and (min-width: 1900px) {
+	.Centrate ,
 	.Node {
-		width: $node-width + 250px;
-		padding: $size-xl;
+		width: $node-width + 250px!important;
 	}
 }
 

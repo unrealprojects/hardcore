@@ -22,7 +22,6 @@
                 @foreach($content['list'] as $list_elem)
                 <li class="Lot">
                     <header>
-                        <img src="/photo/techonline/{{$list_elem['logo']}}">
                         <div>
                             <h4><a href="/parts/{{$list_elem['alias']}}">
                                     {{$list_elem['name']}}</a></h4>
@@ -31,7 +30,7 @@
                     </header>
                     <ul class="Lot-Gallery Grid-Node-1-3">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
-                            @if($i<4)
+                            @if($i<1)
                                 <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
                             @endif
                         @endforeach

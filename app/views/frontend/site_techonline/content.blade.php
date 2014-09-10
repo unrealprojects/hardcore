@@ -7,7 +7,6 @@
 @section('content')
 <div id="wrap">
     @include('frontend.site_techonline.parts.header')
-    @include('frontend.site_techonline.parts.navigation')
     <main>
         @yield('main')
     </main>

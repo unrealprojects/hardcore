@@ -2,7 +2,7 @@
 
 @section('main')
 
-<section class="Node Grid Split">
+<section class="Node Grid">
 
     <h3 class="Section-Header">Каталог строительной техники</h3>
     <div class="Grid-Row">
@@ -29,16 +29,16 @@
                 <li class="Lot">
 
                     <header>
-                         <img src="/photo/techonline/{{$list_elem['logo']}}">
                     <div>
                         <h4><a href="/catalog/{{$list_elem['alias']}}">{{$list_elem['brand']['name']}}
                     {{$list_elem['model']}}</a></h4>
                         <p>{{$list_elem['category']['name']}}</p>
                     </div>
                     </header>
+
                     <ul class="Lot-Gallery Grid-Node-1-3">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
-                            @if($i<4)
+                            @if($i<1)
                                  <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
                             @endif
                         @endforeach
