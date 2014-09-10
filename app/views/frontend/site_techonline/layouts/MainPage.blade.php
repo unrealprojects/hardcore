@@ -7,7 +7,7 @@
 
      <!-- АРЕНДА СТРОЙТЕХНИКИ::КАТЕГОРИИ -->
      @foreach($content['categories'] as $category)
-<a href="/tech/$category['alias']" alt="{{$category['name']}}">{{$category['name']}}</a>
+        <a href="/tech/$category['alias']" alt="{{$category['name']}}">{{$category['name']}}</a>
      @endforeach
 
      <!-- АРЕНДА СТРОЙТЕХНИКИ::БРЕНДЫ -->
