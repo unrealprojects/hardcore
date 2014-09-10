@@ -41,6 +41,8 @@ class TechonlineCatalog extends Migration {
 
             $table->text('photos')->nullable();
 
+            $table->integer('rating')->default(0);
+
             $table->integer('category_id')->nullable();
             $table->integer('brand_id')->nullable();
             $table->integer('comments_id')->nullable();
@@ -105,6 +107,8 @@ class TechonlineCatalog extends Migration {
 
             $table->boolean('active')->default(false);
 
+            $table->integer('rating')->default(0);
+
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
         });
@@ -164,6 +168,8 @@ class TechonlineCatalog extends Migration {
 
             $table->boolean('active')->default(false);
 
+            $table->integer('rating')->default(0);
+
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
         });
@@ -221,6 +227,7 @@ class TechonlineCatalog extends Migration {
             $table->boolean('active')->default(false);
 
             $table->integer('comments_id')->nullable();
+            $table->integer('rating')->default(0);
 
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
@@ -416,16 +423,19 @@ class TechonlineCatalog extends Migration {
         });
 
         $categories = [
-            'Фронтальные погрузчики',
-            'Дорожные катки',
+            'Гусеничные экскаваторы',
             'Автогрейдеры',
+            'Колесные экскаваторы',
+            'Экскаваторы-погрузчики',
+            'Фронтальные погрузчики',
             'Бульдозеры',
-            'Тягачи',
-            'Фронтальные погрузчики 1',
-            'Дорожные катки 1',
-            'Автогрейдеры 1',
-            'Бульдозеры 1',
-            'Тягачи 1'
+            'Экскаваторы карьерные',
+            'Карьерные самосвалы',
+            'Мини-экскаваторы',
+            'Мини-погрузчики',
+            'Автокраны',
+            'Манипулятры',
+            'Башенные краны'
         ];
 
         foreach($categories as $category){

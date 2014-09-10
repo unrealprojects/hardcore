@@ -761,6 +761,7 @@ return array(
     'Net_SFTP_Stream' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Net/SFTP/Stream.php',
     'Net_SSH1' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Net/SSH1.php',
     'Net_SSH2' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Net/SSH2.php',
+    'News' => $baseDir . '/app/database/migrations/2014_09_10_144615_news.php',
     'Normalizer' => $vendorDir . '/patchwork/utf8/class/Normalizer.php',
     'PHPParser_Autoloader' => $vendorDir . '/nikic/php-parser/lib/PHPParser/Autoloader.php',
     'PHPParser_Builder' => $vendorDir . '/nikic/php-parser/lib/PHPParser/Builder.php',
