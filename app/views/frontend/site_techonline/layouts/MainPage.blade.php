@@ -7,21 +7,26 @@
     </div>
 </section>
 
+<div class="Node">
+    <ul>
     <!-- КАТАЛОГ СТРОЙТЕХНИКИ::КАТЕГОРИИ C КАРТИНКАМИ-->
     @foreach($content['categories'] as $category)
-        <a href="/tech/$category['alias']" alt="{{$category['name']}}">{{$category['name']}}</a>
+        <li><a href="/tech/$category['alias']" alt="{{$category['name']}}">{{$category['name']}}</a></li>
     @endforeach
-
+    </ul>
+    <ul>
      <!-- АРЕНДА СТРОЙТЕХНИКИ::КАТЕГОРИИ -->
      @foreach($content['categories'] as $category)
-        <a href="/tech/$category['alias']" alt="{{$category['name']}}">{{$category['name']}}</a>
+        <li><a href="/tech/$category['alias']" alt="{{$category['name']}}">{{$category['name']}}</a></li>
      @endforeach
-
+     </ul>
+     <ul>
      <!-- АРЕНДА СТРОЙТЕХНИКИ::БРЕНДЫ -->
      @foreach($content['brands'] as $brand)
-        <a href="/tech/$brand['alias']" alt="{{$brand['name']}}">{{$brand['name']}}</a>
+         <li><a href="/tech/$brand['alias']" alt="{{$brand['name']}}">{{$brand['name']}}</a>></li>
      @endforeach
-
+     </ul>
+</div>
      <!-- ФИЛЬТР -->
 
          <!-- ФИЛЬТР::ТАБ 1::РЕГИОНЫ-->
