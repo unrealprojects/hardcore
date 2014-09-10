@@ -23,6 +23,6 @@ return array(
 	*/
 	'template'		=> '',
     'options' => array(
-        'theme' => 'white',
+        'theme' => 'clean',
     ),
 );

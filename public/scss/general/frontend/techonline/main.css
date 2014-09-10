@@ -12,6 +12,9 @@ a img {
 body {
   font-family: sans-serif; }
 
+iframe {
+  display: block; }
+
 .Grid {
   width: 100%; }
 
@@ -291,9 +294,19 @@ input[type='submit'][disabled] {
   display: inline-block;
   width: 70%; }
 
-#recaptcha_table {
-  position: relative;
-  left: -3px; }
+#recaptcha_widget_div .recaptchatable {
+  border: none !important;
+  width: 100%;
+  padding-bottom: 10px !important;
+  display: block; }
+
+#recaptcha_widget_div .recaptchatable .recaptcha_image_cell,
+#recaptcha_widget_div .recaptchatable td {
+  padding: 0px 7px 0px 0px !important; }
+
+#recaptcha_widget_div .recaptchatable #recaptcha_image {
+  margin: 0px;
+  border: none !important; }
 
 /* ╨б╨╛╨╛╨▒╤Й╨╡╨╜╨╕╤П > ///////////////////////////////////////////////////////////////////////////////*/
 .Message {

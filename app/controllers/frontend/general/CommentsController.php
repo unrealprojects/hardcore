@@ -51,7 +51,7 @@ class CommentsController extends \Controller{
            $comment->list_id = $list_id;
            $comment->save();
            $comment['comment']=$comment->find($comment->id)->toArray();
-           $content = \View::make('/frontend/site_techonline/layouts/CatalogCommentsItem',$comment);
+           $content = \View::make('frontend.standard.layouts.comments.Item',$comment);
 
 
            $newVoteIp = new \Model\General\CommentsVoted();

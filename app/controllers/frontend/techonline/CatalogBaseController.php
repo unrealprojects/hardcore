@@ -40,7 +40,7 @@ class CatalogBaseController extends TechonlineController{
 
         $this->viewData['content'] = [
             'element' => $CatalogBaseElement->toArray(),
-            'template' => 'content'
+            'template' => 'content',
         ];
 
         return \View::make($this->siteViewPath.'/layouts/CatalogBaseElement',$this->viewData);

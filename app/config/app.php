@@ -119,8 +119,9 @@ return array(
 		'Illuminate\Session\SessionServiceProvider',
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
-		'Illuminate\View\ViewServiceProvider',
-		'Illuminate\Workbench\WorkbenchServiceProvider',
+//		'Illuminate\View\ViewServiceProvider',  @prepend (включение)
+        'Loom\Extensions\LoomViewServiceProvider',
+        'Illuminate\Workbench\WorkbenchServiceProvider',
         'Mascame\Urlify\UrlifyServiceProvider',
         'Greggilbert\Recaptcha\RecaptchaServiceProvider'
 

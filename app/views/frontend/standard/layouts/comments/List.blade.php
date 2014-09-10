@@ -1,5 +1,4 @@
 <!-- Комментарии -->
-<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
 <div class="Comment Node">
     <h4 class="Section-Header">Комментарии</h4>
     <ul class="Comment-List">
@@ -10,7 +9,7 @@
                     <span class="Arrow Up">
                         <img title="Проголосовать за этот комментарий" src="/img/techonline/arrow-up.png">
                     </span>
-                    <span class="Value">{{$comment['rating']}}</span>
+                    <span class="Value {{($comment['rating']>0)?'Positive':''}}{{($comment['rating']<0)?'Negative':''}}">{{$comment['rating']}}</span>
                     <span class="Arrow Down">
                         <img title="Проголосовать против этого комментария" src="/img/techonline/arrow-down.png">
                     </span>
@@ -48,3 +47,8 @@
         </div>
     </form>
 </div>
+
+@section('scripts')
+    @parent
+    <script src="/js/frontend/Comments.js" type="text/javascript"></script>
+@endsection

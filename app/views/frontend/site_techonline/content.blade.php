@@ -18,6 +18,7 @@
 </footer>
 @endsection
 
+
 @section('scripts')
     @include('frontend.site_techonline.script')
 @endsection

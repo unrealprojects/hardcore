@@ -5,6 +5,18 @@ class MainPageController extends TechonlineController{
 
 	public function index()
 	{
+        /* Категории вверху */
+
+        /* Каталог стройтехники */
+
+        /*  Производители */
+
+        /* Фильтр */
+
+        /* Новости, Исполнители с наивысшим рейтингом */
+
+
+
         $this->viewData['content']=[
             '1'=>1
         ];

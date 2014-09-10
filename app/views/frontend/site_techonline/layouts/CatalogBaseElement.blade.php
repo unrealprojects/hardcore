@@ -35,7 +35,7 @@
     </div>
 
 </section>
-@include('frontend.site_techonline.layouts.CatalogComments')
+@include('frontend.standard.layouts.comments.List')
 
 
 @endsection
