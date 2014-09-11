@@ -1,101 +1,108 @@
 .Control-Group {
-  margin-top: $size-s;
-}
-.Control-Group:first-child {
-  margin-top: 0;
+	margin-top: 		$size-s;
+	@extend 			._Fix;
+
+	&:first-child {
+		margin-top: 	0;
+	}
+
+	input ,
+	select {
+		font-weight: 	900;
+	}
+	textarea {
+		resize: vertical;
+	}
+	input[type='submit'] + input[type='submit'] {
+		margin-left: 	$size-n;
+	}
+	& + .Control-Group {
+		margin-top: $size;
+	}
+	&:first-child {
+		margin-top: 0;
+	}
 }
 .Form-Vertical .Control-Group {
-  margin-top: $size;
-}
-.Form-Vertical .Control-Group:first-child {
-  margin-top: 0;
-}
-.Control-Group textarea {
-  resize: vertical;
-}
-.Control-Group input[type='submit'] + input[type='submit'] {
-  margin-left: $size-n;
-}
-.Control-Group input  ,
-.Control-Group select {
-  font-weight: 900;
-}
-// Вертикальная форма
-.Form-Vertical label   ,
-.Form-Vertical input   ,
-.Form-Vertical select  ,
-.Form-Vertical textarea {
-  display: block;
-  width: 100%;
-  border: 1px solid;
-}
+	margin-top: 		$size;
 
-.Form-Vertical label {
-  padding: $size-s 0;
-  border-color: transparent;
+	&:first-child {
+  		margin-top: 	0;
+	}
 }
-.Form-Vertical input     ,
-.Form-Vertical select    {
-  padding: $size-s;
+.Form-Vertical {
+	label {
+		padding: 		$size-s 0;
+		border-color: 	transparent;
+	}
+	input,
+	select,
+	textarea {
+		padding: 		$size-s;
+	}
+	label,
+	input,
+	select,
+	textarea {
+		display: 		block;
+		width: 			100%;
+		border: 		1px solid;
+	}
 }
 // Горизонтальная форма
-.Form-Horizontal label    ,
-.Form-Horizontal input    ,
-.Form-Horizontal select   ,
-.Form-Horizontal textarea {
-  display: block;
-  line-height: $line-height;
-  float: left;
-  border: 1px solid;
-}
-.Form-Horizontal label   {
-  width: 30%;
-  border-color: transparent;
-}
-.Form-Horizontal input   ,
-.Form-Horizontal select  ,
-.Form-Horizontal textarea{
-  padding: $size-xs $size-s;
-  width: 70%;
+.Form-Horizontal {
+	label,
+	input,
+	select,
+	textarea {
+		display: 		block;
+		float: 			left;
+		width: 			70%;
+		border: 		1px solid;
+		padding: 		$size-xs $size-s;
+		line-height: 	$line-height;
+	}
+	label   {
+		width: 			30%;
+		border-color: 	transparent;
+	}
 }
 label.Checkbox ,
 label.Radio    {
-  display: block;
-  width: 100%;
+  display: 				block;
+  width: 				100%;
 }
 
 // Чекбокс и радио-кнопка
 input[type='checkbox']  ,
 input[type='radio']     {
-  width: auto;
-  display: inline;
-  float: none;
-  vertical-align: middle;
-  margin: -2px $size-s 0 0;
-  border: 0;
+  width: 				auto;
+  display: 				inline;
+  float: 				none;
+  vertical-align: 		middle;
+  margin: 				-2px $size-s 0 0;
+  border: 				0;
 }
 
 // КНОПКА
 input[type='submit'] {
-  width: inherit;
-  background-color: $clr-main;
+  width: 				inherit;
+  background-color: 	$clr-main;
   color: #fff;
   border: 0;
   cursor: pointer;
   padding: $size-s $size-l!important;
   font-size: 110%;
-}
-
-// КНОПКА (НАВЕДЕНИЕ)
-input[type='submit']:hover {
-  background-color: $clr-main-dark;
+	&:hover {
+		background-color: $clr-main-dark;
+	}
+	&[disabled] {
+		background-color: $clr-grey;
+		cursor: not-allowed;
+	}
 }
 
 // КНОПКА (ОТКЛЮЧЕНА)
-input[type='submit'][disabled] {
-  background-color: $clr-grey;
-  cursor: not-allowed;
-}
 .Control-Group input        ,
 .Control-Group select       ,
 .Control-Group textarea     {
@@ -176,4 +183,211 @@ input[type='submit'][disabled] {
 #recaptcha_widget_div .recaptchatable #recaptcha_image{
   margin: 0px;
   border:none !important;
+}
+
+dl.Tabs {
+	@extend ._Fix;
+	dt {
+		float: left;
+		position: relative;
+		height: 50px;
+		cursor: pointer;
+		margin-right: 10px;
+		padding: 10px;
+		background: $clr-grey-darker;
+		color: white;
+		@include Transition(border, 0.2s);
+
+		&.Active {
+			background: $clr-grey-darker;
+			border-top: 3px solid $clr-main;
+		}
+		&.Disabled {
+			color: darken($clr-grey-dark, 30%);
+			cursor: not-allowed;
+			&:hover {
+				background: $clr-grey-darker;
+			}
+		}
+
+		&:hover {
+			background: lighten($clr-grey-darker,5%);
+		}
+	}
+	dd {
+		display: none;
+		float: right;
+		margin: 50px 0 0 -100%;
+		position: relative;
+		width: 100%;
+		z-index: 2;
+		border-top: 2px solid $clr-grey-darker;
+
+		&.Active {
+			display: block;
+		}
+
+		& > div {
+			padding: $size 0;
+		}
+	}
+}
+
+
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+.noUi-target,
+.noUi-target * {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-ms-touch-action: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.noUi-base {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.noUi-origin {
+	position: absolute;
+	right: 0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+.noUi-handle {
+	position: relative;
+	z-index: 1;
+}
+.noUi-stacking .noUi-handle {
+	/* This class is applied to the lower origin when
+	   its values is > 50%. */
+	z-index: 10;
+}
+.noUi-stacking + .noUi-origin {
+	/* Fix stacking order in IE7, which incorrectly
+	   creates a new context for the origins. */
+	*z-index: -1;
+}
+.noUi-state-tap .noUi-origin {
+	-webkit-transition: left 0.3s, top 0.3s;
+	transition: left 0.3s, top 0.3s;
+}
+.noUi-state-drag * {
+	cursor: inherit !important;
+}
+
+/* Slider size and handle placement;
+ */
+
+// @todo: Привести этот код в порядок. Тут пиздец
+.noUi-horizontal {
+	height: 14px;
+}
+.noUi-horizontal .noUi-handle {
+	width: 34px;
+	height: 22px;
+	left: -17px;
+	top: -4px;
+}
+.noUi-horizontal.noUi-extended {
+	padding: 0 15px;
+}
+.noUi-horizontal.noUi-extended .noUi-origin  {
+	right: -15px;
+}
+.noUi-vertical {
+	width: 18px;
+}
+.noUi-vertical .noUi-handle {
+	width: 28px;
+	height: 34px;
+	left: -6px;
+	top: -17px;
+}
+.noUi-vertical.noUi-extended {
+	padding: 15px 0;
+}
+.noUi-vertical.noUi-extended .noUi-origin  {
+	bottom: -15px;
+}
+
+/* Styling;
+ */
+.noUi-background {
+	background: #eee;
+}
+.noUi-connect {
+	background: #3FB8AF;
+	-webkit-transition: background 450ms;
+	transition: background 450ms;
+}
+.noUi-origin {
+	border-radius: 5px;
+}
+.noUi-target {
+	border-radius: 4px;
+}
+
+/* Handles and cursors;
+ */
+.noUi-dragable {
+	cursor: w-resize;
+}
+.noUi-vertical .noUi-dragable {
+	cursor: n-resize;
+}
+.noUi-handle {
+	border: 1px solid #c67200;
+	border-radius: 5px;
+	background: #e18100;
+	cursor: default;
+	box-shadow: 0 0 1px #ffcb84 inset;
+}
+.noUi-handle:hover,
+.noUi-handle:active {
+	cursor: pointer;
+	box-shadow: 0 0 5px #ffa226;
+	transition: .2s ease;
+}
+/* Handle stripes;
+ */
+.noUi-handle:before,
+.noUi-handle:after {
+	content: "";
+	display: block;
+	position: absolute;
+	height: 14px;
+	width: 1px;
+	background: #E8E7E6;
+	left: 14px;
+	top: 3px;
+}
+.noUi-handle:after {
+	left: 17px;
+}
+.noUi-vertical .noUi-handle:before,
+.noUi-vertical .noUi-handle:after {
+	width: 14px;
+	height: 1px;
+	left: 6px;
+	top: 14px;
+}
+.noUi-vertical .noUi-handle:after {
+	top: 17px;
+}
+
+/* Disabled state;
+ */
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+	background: #B8B8B8;
+}
+[disabled] .noUi-handle {
+	cursor: not-allowed;
 }

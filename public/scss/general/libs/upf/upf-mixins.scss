@@ -1,9 +1,24 @@
-@mixin Animation($animation-name, $animation-time) {
-	-webkit-animation: $animation-name $animation-time;
-	-moz-animation: $animation-name $animation-time;
-	animation: $animation-name $animation-time;
+@mixin Transition($transition-name, $transition-time) {
+		-webkit-transition: $transition-name $transition-time;
+		-moz-transition: $transition-name $transition-time;
+		transition: $transition-name $transition-time;
 }
+@mixin Animation($animation-name, $animation-time, $animation-delay: 0) {
+	@if $animation-time == 0 {
 
+		-webkit-animation: $animation-name $animation-time;
+		-moz-animation: $animation-name $animation-time;
+		animation: $animation-name $animation-time;
+	}
+	@else {
+		-webkit-animation: $animation-name $animation-time;
+		-moz-animation: $animation-name $animation-time;
+		animation: $animation-name $animation-time;
+		-webkit-animation-delay: $animation-delay;
+		-moz-animation-delay: $animation-delay;
+		animation-delay: $animation-delay;
+	}
+}
 @mixin Keyframes($animation-name) {
 	@-webkit-keyframes #{$animation-name} {
 		@content;

@@ -1,62 +1,84 @@
-/* Сообщения > ///////////////////////////////////////////////////////////////////////////////*/
+// @todo: Перевести messages.scss на SASS.
 .Message {
-  font-size: 90%;
-  border: 1px solid;
-  padding: $size-s;
-  box-shadow: 0 0 2px white inset;
-  margin-bottom: $size;
+	font-size: 90%;
+	border: 1px solid;
+	padding: $size-s;
+	box-shadow: 0 0 2px white inset;
+	margin-bottom: $size;
 }
+
 .Message h3,
 .Message h4,
 .Message h5,
 .Message h6 {
-  margin-bottom: 5px;
+	margin-bottom: 5px;
 }
-.Message h3 {font-size: 120%}
-.Message h4 {font-size: 110%}
-.Message h5 {font-size: 100%}
-.Message h6 {font-size: 90%}
+
+.Message h3 {
+	font-size: 120%
+}
+
+.Message h4 {
+	font-size: 110%
+}
+
+.Message h5 {
+	font-size: 100%
+}
+
+.Message h6 {
+	font-size: 90%
+}
+
 .Message.Icon {
-  padding-left: 50px;
-  background-repeat: no-repeat;
-  background-position: 10px center;
+	padding-left: 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
 }
+
 .Message.Error {
-  background-color: $clr-red-light;
-  border-color: $clr-red;
-  color: $clr-red-dark;
+	background-color: $clr-red-light;
+	border-color: $clr-red;
+	color: $clr-red-dark;
 }
+
 .Message.Icon.Error {
-  background-image: url(/img/techonline/icon-error.png);
+	background-image: url(/img/techonline/icon-error.png);
 }
+
 .Message.Warning {
-  background-color: $clr-yellow-light;
-  border-color: $clr-yellow;
-  color: $clr-yellow-dark;
+	background-color: $clr-yellow-light;
+	border-color: $clr-yellow;
+	color: $clr-yellow-dark;
 }
+
 .Message.Icon.Warning {
-  background-image: url(/img/techonline/icon-warning.png);
+	background-image: url(/img/techonline/icon-warning.png);
 }
+
 .Message.Success {
-  background-color: $clr-green-light;
-  border-color: $clr-green;
-  color: $clr-green-dark;
+	background-color: $clr-green-light;
+	border-color: $clr-green;
+	color: $clr-green-dark;
 }
+
 .Message.Icon.Success {
-  background-image: url(/img/techonline/icon-success.png);
+	background-image: url(/img/techonline/icon-success.png);
 }
+
 .Message.Info {
-  background-color: $clr-blue-light;
-  border-color: $clr-blue;
-  color: $clr-blue-dark;
+	background-color: $clr-blue-light;
+	border-color: $clr-blue;
+	color: $clr-blue-dark;
 }
+
 .Message.Icon.Info {
-  background-image: url(/img/techonline/icon-info.png);
+	background-image: url(/img/techonline/icon-info.png);
 }
 
 .Message.Bottom-Right {
 	width: $message-br-width !important;
-    height: auto !important;
+	height: auto !important;
 	position: fixed;
 	bottom: $size;
 	right: $size;
@@ -64,6 +86,7 @@
 }
 
 body.RoundUI .Message {
-  border-radius: $size-xs;
+	border-radius: $size-xs;
 }
+
 /* Сообщения < ///////////////////////////////////////////////////////////////////////////////*/

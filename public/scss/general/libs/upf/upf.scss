@@ -1,77 +1,30 @@
-@charset "utf-8";
+@charset "utf-8";						// Кодировка
 
-@import "upf-mixins";
-@import "upf-variables";
-@import "upf-reset";
-@import "upf-grid";
-@import "upf-typography";
-@import "upf-forms";
-@import "upf-messages";
+@import "upf-mixins";					// Миксины
+@import "upf-variables";				// Настройки
+@import "upf-modificators";				// Модификаторы
+@import "upf-reset";					// Сброс настроек браузера
+@import "upf-grid";						// Сетка
+@import "upf-typography";				// Типографика
+@import "upf-forms";					// Формы
+@import "upf-messages";					// Сообщения
 
-.Left {
-	float: left;
-}
 
-.Right {
-	float: right;
-}
 
-.dev {
-	outline: 1px red solid !important;
-}
 
-.visible {
-	display: block;
-}
-
-.Centrate {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.fix,
-.Node,
-.Grid,
-.Grid-Row,
-.Control-Group,
-.Tab-Set,
-.Tab-Buttons {
-	display: table;
-}
-
-.fix:after,
-.Node:after,
-.Grid:after,
-.Grid-Row:after,
-.Control-Group:after,
-.Tab-Set,
-.Tab-Buttons {
-	content: '. .';
-	display: block;
-	word-spacing: 99in;
-	height: 0;
-	overflow: hidden;
-}
 
 .Node {
-	width: $node-width;
-	margin-left: auto;
-	margin-right: auto;
-	padding: $size-l;
-	background-color: white;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 50px;
-	border: 1px solid #e1e1e1;
+	padding: 			$size-l;
+
+	background-color: 	white;
+	border: 			1px solid #e1e1e1;
+
+	@extend 			._Centrated;
+	@extend 			._Standalone;
+	@extend 			._Section-Inner;
+	@extend 			._Fix;
 }
 
-.Node + .Node {
-	margin-top: 50px;
-}
-
-.Node:first-child {
-	margin-top: 0;
-}
 
 // Внутренние элементы нода отступают друг от друга
 .Node > * {
@@ -121,10 +74,6 @@ table.Big > tr > td {
 
 table.Small > tr > td {
 	padding: 5px;
-}
-
-.Animate {
-	transition: 0.3s ease;
 }
 
 

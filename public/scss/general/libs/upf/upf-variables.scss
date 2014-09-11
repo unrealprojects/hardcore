@@ -44,7 +44,7 @@ $size-xl:  50px;
 $size-xxl: 75px;
 $size-xxxl:100px;
 
-$font-size-xxs:   0.625em;
+$font-size-xxs:   0.750em;
 $font-size-xs:    0.813em;
 $font-size-s:     0.875em;
 $font-size:       1.000em;
@@ -59,7 +59,10 @@ $Control-Group-Label2-Width: (100% - $Control-Group-Input-Width - $Control-Group
 
 $node-padding: $size-l;
 $node-width: 1000px;
-$footer-height: 50px;
+$footer-height: 100px;
+$block-gap: $size-l;
+$section-gap: $size-xl;
+$section-width: 1000px;
 $line-height: 24px;
 $grid-spacing: 5%;
 $message-br-width: 300px;

@@ -4,14 +4,17 @@
 
 // Контейнер грида
 .Grid {
-  width: 100%;
+	width: 100%;
+	@extend ._Fix;
 }
 
 // Строка грида
 .Grid-Row 		{
-  width: 100%;
-  margin-top: $size-l;
-  &:first-child {
+	width: 100%;
+	margin-top: $size-l;
+	@extend ._Fix;
+
+	&:first-child {
     margin-top: 0;
   }
 }
@@ -27,7 +30,7 @@
 .Grid-Node-4-5 {width: 80.00%}
 
 .Grid-No-Padding > * {
-  padding: 0!important;
+	padding: 0!important;
 }
 
 [class*='Grid-Node-'] {

@@ -1,12 +1,23 @@
+a:link,
+a:visited {
+	color: $clr-main;
+	text-decoration: none;
+	@include Transition(color , .3s);
+}
+
+a:hover {
+	color: $clr-grey-darker;
+}
+
 code {
   background-color: $clr-grey-light;
   border-left: $size solid $clr-grey;
   font-family: "Courier New", monospace;
   display: block;
   padding: $size-s $size;
-}
-code.Inline {
-  display: inline-block;
+	&.Inline {
+		display: inline-block;
+	}
 }
 
 .Section-Header.Ribbon {
