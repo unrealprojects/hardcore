@@ -56,7 +56,7 @@
             </header>
             @foreach($content['element']['tech_list'] as $tech)
             <div class="Element">
-                <h4> <a href="/rent/{{$tech['alias']}}">{{$tech['name']}}</a></h4>
+                <h4> <a href="/rent/{{$tech['metadata']['alias']}}">{{$tech['name']}}</a></h4>
                 <p>{{$tech['description']}}</p>
                 <p>{{$tech['rate']}}</p>
             </div>
@@ -73,7 +73,7 @@
             </header>
             @foreach($content['element']['parts_list'] as $part)
             <div class="Element">
-                <h4> <a href="/parts/{{$part['alias']}}">{{$part['name']}}</a></h4>
+                <h4> <a href="/parts/{{$part['metadata']['alias']}}">{{$part['name']}}</a></h4>
                 <p>{{$part['description']}}</p>
                 <p>{{$part['price']}}</p>
             </div>

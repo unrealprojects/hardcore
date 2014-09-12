@@ -30,7 +30,7 @@
 
                     <header>
                         <h4>
-                            <a href="/catalog/{{$list_elem['alias']}}">{{$list_elem['brand']['name']}}
+                            <a href="/catalog/{{$list_elem['metadata']['alias']}}">{{$list_elem['brand']['name']}}
                             {{$list_elem['model']}}</a>
                         </h4>
                         <p>{{$list_elem['category']['name']}}</p>

@@ -34,7 +34,7 @@
                 <li class="Lot">
                     <header>
                         <div>
-                            <h4><a href="/rent/{{$list_elem['alias']}}">{{$list_elem['name']}}</a></h4>
+                            <h4><a href="/rent/{{$list_elem['metadata']['alias']}}">{{$list_elem['name']}}</a></h4>
                             <h5>{{$list_elem['rate']}}</h5>
                         </div>
                     </header>
@@ -58,7 +58,7 @@
                             </tr>
                             <tr>
                                 <td>Арендодатель:</td>
-                                <td><a href="/sellers/{{$list_elem['admin']['alias']}}">{{$list_elem['admin']['name']}}</a></td>
+                                <td><a href="/sellers/{{$list_elem['admin']['metadata']['alias']}}">{{$list_elem['admin']['name']}}</a></td>
                             </tr>
                             <tr>
                                 <td>Бренд:</td>

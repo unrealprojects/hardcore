@@ -28,7 +28,7 @@ class CatalogBaseController extends TechonlineController{
             'brands' => \Model\General\TechOnline\CatalogBrand::all()->toArray(),
             'filters' => $filters?:false
         ];
-//        print_r($filters->toArray());exit;
+//        print_r($CatalogBaseList->toArray()['data']);exit;
         return \View::make($this->siteViewPath.'/layouts/CatalogBase',$this->viewData);
     }
 

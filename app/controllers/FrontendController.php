@@ -13,13 +13,13 @@ class FrontendController extends \Controller {
         $alias=\Route::current()->parameter('alias');
         $app_section=\Request::segment(1);
 
-        $MetaData = \Model\General\MetaData::where('app_section',$app_section)->where('alias',$alias)->first()  ;
+        $MetaData = \Model\General\MetaData::where('app_section',$app_section)->where('alias',$alias)->first();
 
         $this->viewData=[
             'meta' => [
-                'title' => (!empty($MetaData->title))?:\Config::get('site/app_settings.MetaData.title'),
-                'description' => (!empty($MetaData->description))?:\Config::get('site.app_settings.metadata.description'),
-                'keywords' => (!empty($MetaData->keywords))?:\Config::get('site.app_settings.metadata.keyword')
+                'title' => (!empty($MetaData->title))?$MetaData->title:\Config::get('site/app_settings.MetaData.title'),
+                'description' => (!empty($MetaData->description))?$MetaData->description:\Config::get('site.app_settings.metadata.description'),
+                'keywords' => (!empty($MetaData->keywords))?$MetaData->keywords:\Config::get('site.app_settings.metadata.keyword')
             ]
         ];
     }

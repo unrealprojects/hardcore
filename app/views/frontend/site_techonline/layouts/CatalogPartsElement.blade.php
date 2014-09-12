@@ -28,7 +28,7 @@
                 </tr>
                 <tr>
                     <td>Арендодатель:</td>
-                    <td><a href="/admin/{{$content['element']['admin']['alias']}}">{{$content['element']['admin']['name']}}</a></td>
+                    <td><a href="/  sellers/{{$content['element']['admin']['metadata']['alias']}}">{{$content['element']['admin']['name']}}</a></td>
                 </tr>
                 <tr>
                     <td>Cтатус:</td>

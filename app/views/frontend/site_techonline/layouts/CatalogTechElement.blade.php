@@ -29,7 +29,7 @@
                 </tr>
                 <tr>
                     <td>Арендодатель:</td>
-                    <td><a href="/admin/{{$content['element']['admin']['alias']}}">{{$content['element']['admin']['name']}}</a></td>
+                    <td><a href="/admin/{{$content['element']['admin']['metadata']['alias']}}">{{$content['element']['admin']['name']}}</a></td>
                 </tr>
                 <tr>
                     <td>Бренд:</td>
@@ -37,7 +37,7 @@
                 </tr>
                 <tr>
                     <td>Модель:</td>
-                    <td><a href="/catalog/{{$content['element']['model']['alias']}}">{{$content['element']['model']['model']}}</a></td>
+                    <td><a href="/catalog/{{$content['element']['model']['metadata']['alias']}}">{{$content['element']['model']['model']}}</a></td>
                 </tr>
                 <tr>
                     <td>Регион:</td>

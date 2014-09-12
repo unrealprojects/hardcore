@@ -14,6 +14,7 @@ class Metadata extends Migration {
         {
             $table->increments('id');
 
+            $table->string('alias')->nullable();
             $table->string('title')->nullable();
             $table->string('description')->nullable();
             $table->string('keywords')->nullable();
@@ -26,10 +27,12 @@ class Metadata extends Migration {
              * 2,3 ... n = other app
              */
 
-            $table->integer('app_section')->nullable();
-            $table->integer('page_id')->nullable();
+            $table->string('app_section')->nullable();
 
-            $table->string('alias')->nullable();
+
+
+            $table->dateTime('created_at');
+            $table->dateTime('updated_at');
         });
 
         /*

@@ -23,7 +23,7 @@
                     <header>
                     <div>
                         <h4>
-                            <a href="/sellers/{{$list_elem['alias']}}">{{$list_elem['name']}}</a>
+                            <a href="/sellers/{{$list_elem['metadata']['alias']}}">{{$list_elem['name']}}</a>
                         </h4>
                     </div>
                     </header>

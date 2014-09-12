@@ -38,7 +38,6 @@ class CatalogTech extends TechOnline {
         return $this->hasOne('Model\General\TechOnline\CatalogAdmin','id','admin_id');
     }
 
-
     /* Запросы */
     public function getList($filter){
         $this->filter = $filter;
@@ -46,12 +45,15 @@ class CatalogTech extends TechOnline {
         return $this::with('model',
                            'model.category',
                            'model.brand',
+                           'model.metadata',
                            'model.params_values',
                            'model.params_values.paramData',
                            'region',
                            'status',
                            'opacity',
-                           'admin')
+                           'admin',
+                           'admin.metadata',
+                           'metadata')
             ->whereHas('model', function($query) {
                 if($this->filter['category']){
                     $query->whereHas('category',function($query){
@@ -75,17 +77,23 @@ class CatalogTech extends TechOnline {
     }
 
     public function getElement($alias){
+        $this->rewrite['alias']=$alias;
         return $this::with('model',
             'model.category',
             'model.brand',
+            'model.metadata',
             'model.params_values',
             'model.params_values.paramData',
             'region',
             'comments',
             'status',
             'opacity',
-            'admin')
-            ->where('alias','=',$alias)
+            'admin',
+            'admin.metadata',
+            'metadata')
+            ->whereHas('metadata', function($query) {
+                $query->where('alias',$this->rewrite['alias']);
+            })
             ->first();
     }
 }

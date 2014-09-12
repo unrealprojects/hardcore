@@ -23,7 +23,7 @@
                 <li class="Lot">
                     <header>
                         <div>
-                            <h4><a href="/parts/{{$list_elem['alias']}}">
+                            <h4><a href="/parts/{{$list_elem['metadata']['alias']}}">
                                     {{$list_elem['name']}}</a>
                             </h4>
 
@@ -49,7 +49,7 @@
                             </tr>
                             <tr>
                                 <td>Продавец:</td>
-                                <td><a href="/sellers/{{$list_elem['admin']['alias']}}">{{$list_elem['admin']['name']}}</a></td>
+                                <td><a href="/sellers/{{$list_elem['admin']['metadata']['alias']}}">{{$list_elem['admin']['name']}}</a></td>
                             </tr>
                             <tr>
                                 <td>Состояние:</td>

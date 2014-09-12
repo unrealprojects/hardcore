@@ -21,22 +21,16 @@ class CatalogBase extends TechOnline {
         return $this->hasOne('Model\General\TechOnline\CatalogTechCategories','id','category_id');
     }
 
-   public function params_values()
+    public function params_values()
     {
         return $this->hasMany('Model\General\TechOnline\CatalogParamsValues','model_id','id');
     }
-
-    public function comments()
-    {
-        return $this->hasMany('Model\General\Comments','list_id','comments_id');
-    }
-
 
     /* Запросы */
     public function getList($filter){
        $this->filter = $filter;
 
-       return $this->with('category','brand','params_values','params_values.paramData')
+       return $this->with('category','brand','params_values','params_values.paramData','metadata')
             ->whereHas('category', function($query) {
                  if($this->filter['category']){
                      $query->where('alias', $this->filter['category']);
@@ -51,8 +45,11 @@ class CatalogBase extends TechOnline {
     }
 
     public function getElement($alias){
-        return $this->with('category','brand','params_values','params_values.paramData','comments')
-                    ->where('alias','=',$alias)
+        $this->rewrite['alias']=$alias;
+        return $this->with('category','brand','params_values','params_values.paramData','comments','metadata')
+                    ->whereHas('metadata', function($query) {
+                        $query->where('alias',$this->rewrite['alias']);
+                    })
                     ->first();
     }
 }

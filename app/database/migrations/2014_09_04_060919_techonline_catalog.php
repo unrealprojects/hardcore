@@ -32,7 +32,6 @@ class TechonlineCatalog extends Migration {
         Schema::create('catalog_base', function($table)
         {
             $table->increments('id');
-            $table->string('alias')->nullable();
 
             $table->string('model')->nullable();
             $table->string('logo')->nullable();
@@ -46,13 +45,30 @@ class TechonlineCatalog extends Migration {
             $table->integer('category_id')->nullable();
             $table->integer('brand_id')->nullable();
             $table->integer('comments_id')->nullable();
+            $table->integer('metadata_id')->nullable();
         });
 
         for($i=1;$i<30;$i++){
             $catalog_base = new \Model\General\TechOnline\CatalogBase();
 
-            $catalog_base->model = 'Test Drive Кран '.$i*11;
-            $catalog_base->alias = Mascame\Urlify::filter($catalog_base->model);
+
+
+
+            $catalog_base->model = 'Test Drive Кран №'.$i*11;
+
+            /* update metadata */
+            $meta_data = new \Model\General\MetaData();
+            $meta_data->alias = Mascame\Urlify::filter($catalog_base->model);
+            $meta_data->title=$catalog_base->model;
+            $meta_data->description=$catalog_base->model;
+            $meta_data->keywords=$catalog_base->model;
+
+
+            $meta_data->app_section = 'catalog';
+            $meta_data->save();
+            $catalog_base->metadata_id = $meta_data->id;
+            /*end update metadata*/
+
             $catalog_base->logo = 'logo.jpg';
 
             $catalog_base->description = 'Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.';
@@ -86,7 +102,6 @@ class TechonlineCatalog extends Migration {
         Schema::create('catalog_tech', function($table)
         {
             $table->increments('id');
-            $table->string('alias')->nullable();
 
             $table->string('name')->nullable();
             $table->string('logo')->nullable();
@@ -104,6 +119,7 @@ class TechonlineCatalog extends Migration {
             $table->integer('opacity_id')->nullable();
 
             $table->integer('comments_id')->nullable();
+            $table->integer('metadata_id')->nullable();
 
             $table->boolean('active')->default(false);
 
@@ -118,7 +134,19 @@ class TechonlineCatalog extends Migration {
 
             $catalog_base->name = 'Сдам в аренду кран '.$i;
             $catalog_base->rate = $i*98 . ' руб/ч';
-            $catalog_base->alias = Mascame\Urlify::filter($catalog_base->name);
+
+            /* update metadata */
+            $meta_data = new \Model\General\MetaData();
+            $meta_data->title=$catalog_base->name;
+            $meta_data->description=$catalog_base->name;
+            $meta_data->keywords=$catalog_base->name;
+
+            $meta_data->alias= Mascame\Urlify::filter($catalog_base->name);
+            $meta_data->app_section = 'tech';
+            $meta_data->save();
+            $catalog_base->metadata_id = $meta_data->id;
+            /* end update metadata*/
+
             $catalog_base->logo  = 'logo.jpg';
 
             $catalog_base->description ='Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.';
@@ -147,7 +175,6 @@ class TechonlineCatalog extends Migration {
         Schema::create('catalog_parts', function($table)
         {
             $table->increments('id');
-            $table->string('alias')->nullable();
 
             $table->string('name')->nullable();
             $table->string('logo')->nullable();
@@ -165,6 +192,7 @@ class TechonlineCatalog extends Migration {
             $table->integer('opacity_id')->nullable();
 
             $table->integer('comments_id')->nullable();
+            $table->integer('metadata_id')->nullable();
 
             $table->boolean('active')->default(false);
 
@@ -180,7 +208,18 @@ class TechonlineCatalog extends Migration {
             $catalog_base->name = 'Запчасть для крана '.$i;
             $catalog_base->price = $i*98 . ' руб.';
 
-            $catalog_base->alias = Mascame\Urlify::filter($catalog_base->name);
+            /* update metadata */
+            $meta_data = new \Model\General\MetaData();
+            $meta_data->title=$catalog_base->name;
+            $meta_data->description=$catalog_base->name;
+            $meta_data->keywords=$catalog_base->name;
+
+            $meta_data->alias = Mascame\Urlify::filter($catalog_base->name);
+            $meta_data->app_section = 'parts';
+            $meta_data->save();
+            $catalog_base->metadata_id = $meta_data->id;
+            /* end update metadata*/
+
             $catalog_base->logo  = 'logo.jpg';
 
             $catalog_base->description ='Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.';
@@ -208,7 +247,6 @@ class TechonlineCatalog extends Migration {
         Schema::create('catalog_admin', function($table)
         {
             $table->increments('id');
-            $table->string('alias')->nullable();
 
             $table->string('name')->nullable();
             $table->string('logo')->nullable();
@@ -227,6 +265,7 @@ class TechonlineCatalog extends Migration {
             $table->boolean('active')->default(false);
 
             $table->integer('comments_id')->nullable();
+            $table->integer('metadata_id')->nullable();
             $table->integer('rating')->default(0);
 
             $table->dateTime('created_at');
@@ -239,7 +278,18 @@ class TechonlineCatalog extends Migration {
 
             $catalog_base->name = 'Транспортная кампания  '.$i;
 
-            $catalog_base->alias = Mascame\Urlify::filter($catalog_base->name);
+            /* update metadata */
+            $meta_data = new \Model\General\MetaData();
+            $meta_data->title=$catalog_base->name;
+            $meta_data->description=$catalog_base->name;
+            $meta_data->keywords=$catalog_base->name;
+
+            $meta_data->alias= Mascame\Urlify::filter($catalog_base->name);
+            $meta_data->app_section = 'sellers';
+            $meta_data->save();
+            $catalog_base->metadata_id = $meta_data->id;
+            /* end update metadata*/
+
             $catalog_base->logo  = 'logo.jpg';
 
             $catalog_base->description ='Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.';

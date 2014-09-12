@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Comments' => $baseDir . '/app/database/migrations/2014_09_09_133713_comments.php',
+    'Comments' => $baseDir . '/app/database/migrations/2014_09_03_133713_comments.php',
     'Controller\\Backend\\TechOnline\\CatalogController' => $baseDir . '/app/controllers/backend/techonline/CatalogController.php',
     'Controller\\Backend\\TechOnline\\TechonlineController' => $baseDir . '/app/controllers/backend/techonline/TechonlineController.php',
     'Controller\\CommentsController' => $baseDir . '/app/controllers/frontend/general/CommentsController.php',
@@ -17,13 +17,13 @@ return array(
     'Controller\\Frontend\\TechOnline\\CatalogTechController' => $baseDir . '/app/controllers/frontend/techonline/CatalogTechController.php',
     'Controller\\Frontend\\TechOnline\\MainPageController' => $baseDir . '/app/controllers/frontend/techonline/MainPageController.php',
     'Controller\\Frontend\\TechOnline\\TechonlineController' => $baseDir . '/app/controllers/frontend/techonline/TechonlineController.php',
-    'CreateHardcoreRoutes' => $baseDir . '/app/database/migrations/2014_08_22_100050_create_hardcore_routes.php',
+    'CreateHardcoreRoutes' => $baseDir . '/app/database/migrations/2014_09_01_100050_create_hardcore_routes.php',
     'DatabaseSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
     'Loom\\Extensions\\BladeCompiler' => $baseDir . '/app/loom/extensions/BladeCompiler.php',
     'Loom\\Extensions\\Environment' => $baseDir . '/app/loom/extensions/Environment.php',
     'Loom\\Extensions\\LoomViewServiceProvider' => $baseDir . '/app/loom/extensions/LoomViewServiceProvider.php',
-    'Metadata' => $baseDir . '/app/database/migrations/2014_09_12_143402_metadata.php',
+    'Metadata' => $baseDir . '/app/database/migrations/2014_09_02_143402_metadata.php',
     'Model\\Backend\\Backend' => $baseDir . '/app/models/backend/Backend.php',
     'Model\\Backend\\Routes' => $baseDir . '/app/models/backend/Routes.php',
     'Model\\General\\Comments' => $baseDir . '/app/models/general/Comments.php',
@@ -46,7 +46,7 @@ return array(
     'Model\\General\\TechOnline\\TechOnline' => $baseDir . '/app/models/general/techonline/TechOnline.php',
     'News' => $baseDir . '/app/database/migrations/2014_09_10_144615_news.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
-    'TechonlineCatalog' => $baseDir . '/app/database/migrations/2014_09_03_060919_techonline_catalog.php',
+    'TechonlineCatalog' => $baseDir . '/app/database/migrations/2014_09_04_060919_techonline_catalog.php',
     'TestCase' => $baseDir . '/app/tests/TestCase.php',
     'User' => $baseDir . '/app/models/User.php',
     'Whoops\\Module' => $vendorDir . '/filp/whoops/src/deprecated/Zend/Module.php',

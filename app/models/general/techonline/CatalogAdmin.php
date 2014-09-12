@@ -25,17 +25,11 @@ class CatalogAdmin extends TechOnline {
         return $this->hasMany('Model\General\TechOnline\CatalogParts','admin_id','id');
     }
 
-    public function comments()
-    {
-        return $this->hasMany('Model\General\Comments','list_id','comments_id');
-    }
-
-
     /* Запросы */
     public function getList($filter){
         $this->filter = $filter;
 
-        return $this->with('region')
+        return $this->with('region','metadata')
             ->whereHas('region', function($query) {
                 if($this->filter['region']){
                     $query->where('alias', $this->filter['region']);
@@ -46,8 +40,12 @@ class CatalogAdmin extends TechOnline {
     }
 
     public function getElement($alias){
-        return $this->with('region','partsList','techList','comments')
-            ->where('alias','=',$alias)
+        $this->rewrite['alias']=$alias;
+
+        return $this->with('region','partsList','partsList.metadata','techList','techList.metadata','comments','metadata')
+            ->whereHas('metadata', function($query) {
+                 $query->where('alias',$this->rewrite['alias']);
+            })
             ->first();
     }
 }

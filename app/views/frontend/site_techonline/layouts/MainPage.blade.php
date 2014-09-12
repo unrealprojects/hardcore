@@ -114,7 +114,7 @@
         <li class="Seller-Item Grid-Node-1-2">
             <header>
                 <h5 class="Seller-Title">
-                    <a href="/sellers/{{$seller['alias']}}" alt=" {{$seller['name']}}">{{$seller['name']}}</a>
+                    <a href="/sellers/{{$seller['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$seller['name']}}</a>
                 </h5>
                 <small>
                     {{$seller['region']['name']}}
