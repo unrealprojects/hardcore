@@ -10,11 +10,10 @@ body,
 body > #wrap {
 	height: auto;
 	min-height: 100%;
-	clear: both
-}
-
-#wrap > #wrap-stop {
-	height: $footer-height;
+	clear: both;
+	& > #wrap-stop {
+		height: $footer-height;
+	}
 }
 
 body {
@@ -39,11 +38,11 @@ body {
 }
 
 .Section-Header {
-	font-size: $font-size-xxl;
+	font-size: $Font-Size-Huge;
 }
 
 .Section-Subheader {
-	font-size: $font-size-xl;
+	font-size: $Font-Size-Large;
 }
 
 // Шапка сайта
@@ -52,108 +51,148 @@ body {
 	background: white;
 	margin-bottom: $size-l;
 	border-bottom: 1px solid #e1e1e1;
-	height: 77px;
+	height: 80px;
 	@extend ._Soft_Shadow;
 
 	.Centrate {
-		padding: $size-n 0;
 		width: $node-width;
+		height: 80px;
 		@extend ._Fix;
 		@extend ._Centrated;
 		@extend ._Section-Inner;
+		@extend ._Inline;
 
 		.Site-Logo {
-			width: 40%;
-			float: left;
+			position: relative;
+			width: 35%;
+			height: 80px;
 			overflow: hidden;
 			display: inline-block;
-
 			div {
-				height: 45px;
-				overflow: hidden;
+				width: 100%;
+				position: absolute;
+				top: 20px;
+				@include Transition(opacity, .5s);
 
 				img {
 					display: block;
 					float: left;
-					margin-right: $size;
+					margin-right: $size-s;
 				}
 
 				h2 {
+					padding: $size-xs 0;
 					color: $clr-main;
-					font-size: 30px;
 					font-weight: 100;
 					text-transform: uppercase;
 
 					small {
+						display: inline;
+						font-size: $Font-Size-Micro;
 						color: black;
-						font-size: $font-size-xs;
 					}
 				}
 			}
+			& > a {
+				z-index: 2;
+				position: absolute;
+				display: block;
+				padding: $size-l;
+				@include Transition(opacity, .5s);
+				@include Opacity(0);
 
+				&:hover {
+					color: $clr-main;
+					text-decoration: underline;
+				}
+			}
+			&:hover > div {
+				@include Opacity(0);
+			}
+			&:hover > a {
+				@include Opacity(1);
+			}
 		}
 
 		// Блок авторизации
 		.Page-Auth {
-			@extend ._Right;
-
+			position: relative;
+			padding: 0 $size-s;
+			width: 19%;
+			height: 80px;
+			button.Sign-In {
+				background: url(../../../../img/techonline/icon-sign-in.png) $size-s center  no-repeat;
+			}
 			button.Sign-In,
 			.User-Exit {
 				display: block;
-				padding: $size-s;
-				margin: $size-xs $size 0 0;
+				width: 100%;
+				margin-top: $size-s;
+				padding: $size-s $size-xs $size-s $size;
 				border: 1px solid;
-				background-color: transparent;
+				background-color: $clr-main;
 				text-align: center;
-				color: $clr-main;
+				color: white;
 				@extend ._Left;
 
 				&:hover {
-					color: $clr-main;
+					cursor: pointer;
+					background-color: $clr-grey-dark;
 				}
 			}
 
-			& > p {
-				padding: $size-xs 0;
-				@extend ._Right;
-			}
-
-			& > a {
-				float: left;
-				margin: $size-n $size 0 0;
-				overflow: hidden;
+			a {
+				text-align: center;
 				display: block;
-				font-size: $font-size-s;
+				margin-top: $size;
 
 			}
 			.User-Exit {
 				margin-right: 0;
 			}
+			.Sign-In-UI {
+				position: absolute;
+				padding: $size;
+				background-color: white;
+				top: 79px;
+				right: 0;
+				width: 400px;
+				font-size: $Font-Size-Small;
+				border-top: 4px solid $clr-main;
+				z-index: 10;
+				@extend ._Soft_Shadow;
+				form {
+					h4 {
+						font-size: $Font-Size-Huge;
+					}
+				}
+			}
 		}
 	}
 }
 
-nav.Page-Navigation {
-	float: right;
+.Page-Navigation {
 	display: inline-block;
-	width: 50%;
+	width: 46%;
 	text-align: right;
+
 	ul {
 		@extend .Inline;
 		@extend .No-Bullets;
 		@extend ._Fix;
 		li {
-			margin-left: $size-l;
+			margin-left: $size-n;
 
 			& > a {
 				display: block;
-				padding: $size-s 0;
+				padding: $size-l 0 $size-s;
 
 				border-bottom: 3px solid transparent;
 
-				font-size: $font-size;
+				font-size: $Font-Size-Default;
 				color: #000;
 				text-transform: uppercase;
+
 				&:hover,
 				&.Link-Active {
 					border-color: $clr-main;
@@ -195,7 +234,6 @@ nav.Page-Navigation {
 				a {
 					display: block;
 					padding: $size-n;
-					font-size: $font-size-l;
 					color: #fff;
 					border: 1px solid white;
 					box-shadow: 0 0 20px rgba(0,0,0,0.4);
@@ -223,7 +261,6 @@ nav.Page-Navigation {
 		@extend ._Fix;
 
 		& h4 {
-			font-size: $font-size-xl;
 			text-transform: uppercase;
 			float: left;
 		}
@@ -243,7 +280,6 @@ nav.Page-Navigation {
 		}
 
 		& p {
-			font-size: $font-size-s;
 			clear: both;
 		}
 
@@ -260,10 +296,8 @@ nav.Page-Navigation {
 		}
 	}
 	.Lot-About {
-		font-size: $font-size-s;
 		& > h6 {
 			margin-top: $size-n;
-			font-size: $font-size-xl;
 		}
 		& > table {
 			margin: 0 (-$size-s);
@@ -275,7 +309,6 @@ nav.Page-Navigation {
 		}
 	}
 	&.Element .Lot-About {
-		font-size: $font-size-l;
 
 	}
 }
@@ -336,7 +369,6 @@ nav.Page-Navigation {
 		margin-right: $size;
 		& > a {
 			display: block;
-			font-size: $font-size-s;
 			padding: $size-xs $size-s;
 			margin: 0 (-$size-s);
 			&:hover {
@@ -424,7 +456,6 @@ nav.Page-Navigation {
 					}
 				}
 				p {
-					font-size: $font-size-l;
 					width: 75%;
 				}
 			}
@@ -444,7 +475,6 @@ nav.Page-Navigation {
 			h5.Seller-Title {
 				a {
 					text-transform: uppercase;
-					font-size: $font-size-xxl;
 				}
 			}
 
@@ -457,8 +487,6 @@ footer[role='contentinfo'] {
 
 	background: white;
 	border-top: 1px solid #e1e1e1;
-
-	font-size: 90%;
 	& > div {
 		padding: $size-l 0;
 		@extend ._Fix;
@@ -478,7 +506,6 @@ footer[role='contentinfo'] {
 						color: black;
 						padding-bottom: $size-xs;
 						border-bottom: 2px solid transparent;
-						font-size: $font-size-xl;
 						&:hover {
 							color: $clr-main;
 							border-color: $clr-main;
@@ -497,7 +524,6 @@ footer[role='contentinfo'] {
 	li {
 		a {
 			display: block;
-			font-size: $font-size-xs;
 			padding: $size-xs 0
 		}
 	}
@@ -512,19 +538,19 @@ footer[role='contentinfo'] {
 }
 @include Keyframes(FadeIn) {
 	from {
-		opacity: 0;
+		@include Opacity(0);
 	}
 	to {
-		opacity: 1;
+		@include Opacity(1);
 	}
 }
 @include Keyframes(SlideUp) {
 	from {
-		opacity: 0;
+		@include Opacity(0);
 		top: 300px;
 	}
 	to {
-		opacity: 1;
+		@include Opacity(1);
 		top: 0;
 	}
 }

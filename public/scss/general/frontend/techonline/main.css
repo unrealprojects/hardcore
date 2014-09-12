@@ -23,28 +23,28 @@
 .Page-Header .Centrate .Page-Auth .User-Exit, .Comment .Comment-List li .Comment-List-Element-Content header h5, footer[role='contentinfo'] > div .Copyright {
   float: left; }
 
-._Right, .Page-Header .Centrate .Page-Auth, .Page-Header .Centrate .Page-Auth > p, .Comment .Comment-List li .Comment-List-Element-Content header small.Date, footer[role='contentinfo'] > div .Footer-Navigation {
+._Right, .Comment .Comment-List li .Comment-List-Element-Content header small.Date, footer[role='contentinfo'] > div .Footer-Navigation {
   float: right; }
 
 ._Dev {
   outline: 1px red solid !important; }
 
-._Fix, .Grid, .Grid-Row, .Control-Group, dl.Tabs, .Node, .Page-Header .Centrate, nav.Page-Navigation ul, .Lot, .Lot header, .Pagination, .List-Categories li, .Comment .Comment-List li .Comment-List-Element-Content header, footer[role='contentinfo'] > div {
+._Fix, .Grid, .Grid-Row, .Control-Group, dl.Tabs, .Node, .Page-Header .Centrate, .Page-Navigation ul, .Lot, .Lot header, .Pagination, .List-Categories li, .Comment .Comment-List li .Comment-List-Element-Content header, footer[role='contentinfo'] > div {
   display: table; }
-  ._Fix:after, .Grid:after, .Grid-Row:after, .Control-Group:after, dl.Tabs:after, .Node:after, .Page-Header .Centrate:after, nav.Page-Navigation ul:after, .Lot:after, .Lot header:after, .Pagination:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after {
+  ._Fix:after, .Grid:after, .Grid-Row:after, .Control-Group:after, dl.Tabs:after, .Node:after, .Page-Header .Centrate:after, .Page-Navigation ul:after, .Lot:after, .Lot header:after, .Pagination:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after {
     content: '. .';
     display: block;
     word-spacing: 99in;
     height: 0;
     overflow: hidden; }
 
-._Inline > *, footer[role='contentinfo'] > div .Footer-Navigation ul > * {
+._Inline > *, .Page-Header .Centrate > *, footer[role='contentinfo'] > div .Footer-Navigation ul > * {
   float: left; }
 
 ._No-Bullets, .Page-Slider .Slider-Inner .Slider-Links, footer[role='contentinfo'] > div .Footer-Navigation ul {
   list-style: none; }
 
-._Soft_Shadow, .Page-Header {
+._Soft_Shadow, .Page-Header, .Page-Header .Centrate .Page-Auth .Sign-In-UI {
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.1); }
 
 * {
@@ -72,7 +72,7 @@ iframe {
   .Grid-Row:first-child {
     margin-top: 0; }
 
-.Grid-Node-1-2 {
+.Grid-Node-1-2, .Control-Group.Checkbox.Submit > div, .Control-Group.Checkbox.Submit > [type='submit'] {
   width: 50.00%; }
 
 .Grid-Node-1-3 {
@@ -115,7 +115,7 @@ iframe {
   .Grid.Split [class*='Grid-Node-']:first-child {
     margin-left: 0; }
 
-.Grid.Split .Grid-Node-1-2 {
+.Grid.Split .Grid-Node-1-2, .Grid.Split .Control-Group.Checkbox.Submit > div, .Grid.Split .Control-Group.Checkbox.Submit > [type='submit'] {
   width: 47.5%; }
 
 .Grid.Split .Grid-Node-1-3 {
@@ -151,6 +151,10 @@ iframe {
 .Grid [class*='Grid-Node-']:last-of-type {
   padding-right: 0; }
 
+body {
+  font-size: 1em;
+  line-height: 1.45; }
+
 a:link,
 a:visited {
   color: #ec6700;
@@ -160,11 +164,11 @@ a:visited {
   transition: color 0.3s; }
 
 a:hover {
-  color: #333333; }
+  color: #555555; }
 
 code {
-  background-color: #f7f7f7;
-  border-left: 20px solid #ccc;
+  background-color: #dedede;
+  border-left: 20px solid #cccccc;
   font-family: "Courier New", monospace;
   display: block;
   padding: 10px 20px; }
@@ -200,14 +204,15 @@ code {
   border-right-color: transparent;
   right: 0; }
 
-.Inline > li, nav.Page-Navigation ul > li, .Pagination > li {
+.Inline > li, .Page-Navigation ul > li, .Pagination > li {
   float: left; }
 
-.No-Bullets, nav.Page-Navigation ul, .List-Filter, .Comment .Comment-List {
+.No-Bullets, .Page-Navigation ul, .List-Filter, .Comment .Comment-List {
   list-style: none; }
 
 .Control-Group {
-  margin-top: 10px; }
+  margin-top: 10px;
+  width: 100%; }
   .Control-Group:first-child {
     margin-top: 0; }
   .Control-Group input,
@@ -221,6 +226,11 @@ code {
     margin-top: 20px; }
   .Control-Group:first-child {
     margin-top: 0; }
+  .Control-Group.Checkbox.Submit > div {
+    padding: 10px 0; }
+
+label.Control-Group {
+  float: none !important; }
 
 .Form-Vertical .Control-Group {
   margin-top: 20px; }
@@ -250,11 +260,15 @@ code {
   float: left;
   width: 70%;
   border: 1px solid;
-  padding: 5px 10px;
   line-height: 24px; }
+.Form-Horizontal input,
+.Form-Horizontal select,
+.Form-Horizontal textarea {
+  padding: 5px 10px; }
 .Form-Horizontal label {
   width: 30%;
-  border-color: transparent; }
+  border-color: transparent;
+  padding: 5px 10px 5px 0; }
 
 label.Checkbox,
 label.Radio {
@@ -281,13 +295,13 @@ input[type='submit'] {
   input[type='submit']:hover {
     background-color: #d30000; }
   input[type='submit'][disabled] {
-    background-color: #ccc;
+    background-color: #cccccc;
     cursor: not-allowed; }
 
 .Control-Group input,
 .Control-Group select,
 .Control-Group textarea {
-  border-color: #ccc !important; }
+  border-color: #cccccc !important; }
 
 .Control-Group input:focus,
 .Control-Group select:focus,
@@ -323,9 +337,9 @@ input[type='submit'] {
   text-align: center;
   padding: 5px 10px 5px;
   line-height: 24px;
-  background-color: #f7f7f7;
-  border-right: 1px solid #ccc;
-  border-left: 1px solid #ccc;
+  background-color: #dedede;
+  border-right: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
   box-shadow: 0 0 2px white inset;
   font-size: 80%; }
 
@@ -364,21 +378,21 @@ dl.Tabs dt {
   cursor: pointer;
   margin-right: 10px;
   padding: 10px;
-  background: #333333;
+  background: #555555;
   color: white;
   -webkit-transition: border 0.2s;
   -moz-transition: border 0.2s;
   transition: border 0.2s; }
   dl.Tabs dt.Active {
-    background: #333333;
+    background: #555555;
     border-top: 3px solid #ec6700; }
   dl.Tabs dt.Disabled {
-    color: #737373;
+    color: #4d4d4d;
     cursor: not-allowed; }
     dl.Tabs dt.Disabled:hover {
-      background: #333333; }
+      background: #555555; }
   dl.Tabs dt:hover {
-    background: #404040; }
+    background: #626262; }
 dl.Tabs dd {
   display: none;
   float: right;
@@ -386,7 +400,7 @@ dl.Tabs dd {
   position: relative;
   width: 100%;
   z-index: 2;
-  border-top: 2px solid #333333; }
+  border-top: 2px solid #555555; }
   dl.Tabs dd.Active {
     display: block; }
   dl.Tabs dd > div {
@@ -443,12 +457,11 @@ dl.Tabs dd {
  */
 .noUi-horizontal {
   height: 14px; }
-
-.noUi-horizontal .noUi-handle {
-  width: 34px;
-  height: 22px;
-  left: -17px;
-  top: -4px; }
+  .noUi-horizontal .noUi-handle {
+    width: 34px;
+    height: 22px;
+    left: -17px;
+    top: -4px; }
 
 .noUi-horizontal.noUi-extended {
   padding: 0 15px; }
@@ -544,83 +557,62 @@ dl.Tabs dd {
   cursor: not-allowed; }
 
 .Message {
-  font-size: 90%;
   border: 1px solid;
   padding: 10px;
   box-shadow: 0 0 2px white inset;
   margin-bottom: 20px; }
+  .Message h3,
+  .Message h4,
+  .Message h5,
+  .Message h6 {
+    margin-bottom: 5px; }
+  .Message h3 {
+    font-size: 120%; }
+  .Message h4 {
+    font-size: 110%; }
+  .Message h5 {
+    font-size: 100%; }
+  .Message h6 {
+    font-size: 90%; }
+  .Message.Icon {
+    padding-left: 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center; }
+  .Message.Error {
+    background-color: #ffecec;
+    border-color: #ec0000;
+    color: #d30000; }
+  .Message.Warning {
+    background-color: #fffaea;
+    border-color: #d1a300;
+    color: #b78f00; }
+  .Message.Success {
+    background-color: #dfffdc;
+    border-color: #0da900;
+    color: #0b8f00; }
+  .Message.Info {
+    background-color: #daf7ff;
+    border-color: #00bff3;
+    color: #00abd9; }
+  .Message.Bottom-Right {
+    width: 300px !important;
+    height: auto !important;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0 1px 2px #333; }
+  .Message.Icon.Error {
+    background-image: url(/img/techonline/icon-error.png); }
+  .Message.Icon.Warning {
+    background-image: url(/img/techonline/icon-warning.png); }
+  .Message.Icon.Success {
+    background-image: url(/img/techonline/icon-success.png); }
+  .Message.Icon.Info {
+    background-image: url(/img/techonline/icon-info.png); }
 
-.Message h3,
-.Message h4,
-.Message h5,
-.Message h6 {
-  margin-bottom: 5px; }
-
-.Message h3 {
-  font-size: 120%; }
-
-.Message h4 {
-  font-size: 110%; }
-
-.Message h5 {
-  font-size: 100%; }
-
-.Message h6 {
-  font-size: 90%; }
-
-.Message.Icon {
-  padding-left: 50px;
-  background-repeat: no-repeat;
-  background-position: 10px center; }
-
-.Message.Error {
-  background-color: #ffecec;
-  border-color: #ec0000;
-  color: #d30000; }
-
-.Message.Icon.Error {
-  background-image: url(/img/techonline/icon-error.png); }
-
-.Message.Warning {
-  background-color: #fffaea;
-  border-color: #d1a300;
-  color: #b78f00; }
-
-.Message.Icon.Warning {
-  background-image: url(/img/techonline/icon-warning.png); }
-
-.Message.Success {
-  background-color: #dfffdc;
-  border-color: #0da900;
-  color: #0b8f00; }
-
-.Message.Icon.Success {
-  background-image: url(/img/techonline/icon-success.png); }
-
-.Message.Info {
-  background-color: #daf7ff;
-  border-color: #00bff3;
-  color: #00abd9; }
-
-.Message.Icon.Info {
-  background-image: url(/img/techonline/icon-info.png); }
-
-.Message.Bottom-Right {
-  width: 300px !important;
-  height: auto !important;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  box-shadow: 0 1px 2px #333; }
-
-body.RoundUI .Message {
-  border-radius: 5px; }
-
-/* ╨б╨╛╨╛╨▒╤Й╨╡╨╜╨╕╤П < ///////////////////////////////////////////////////////////////////////////////*/
 .Node {
   padding: 30px;
-  background-color: white;
-  border: 1px solid #e1e1e1; }
+  background-color: white; }
 
 .Node > * {
   margin-top: 20px; }
@@ -667,9 +659,8 @@ body > #wrap {
   height: auto;
   min-height: 100%;
   clear: both; }
-
-#wrap > #wrap-stop {
-  height: 100px; }
+  body > #wrap > #wrap-stop {
+    height: 100px; }
 
 body {
   background: #eee;
@@ -678,10 +669,7 @@ body {
   line-height: 1.45;
   -webkit-animation: FadeIn 0.35s;
   -moz-animation: FadeIn 0.35s;
-  animation: FadeIn 0.35s;
-  -webkit-animation-delay: 0;
-  -moz-animation-delay: 0;
-  animation-delay: 0; }
+  animation: FadeIn 0.35s; }
 
 .Section-Header,
 .Section-Subheader {
@@ -691,7 +679,7 @@ body {
   padding: 10px 15px;
   border-left: 4px solid #ec6700;
   text-transform: uppercase;
-  background-color: #333333;
+  background-color: #555555;
   color: #fff;
   font-weight: 100; }
 
@@ -699,77 +687,121 @@ body {
   font-size: 1.5em; }
 
 .Section-Subheader {
-  font-size: 1.25em; }
+  font-size: 1.125em; }
 
 .Page-Header {
   background: white;
   margin-bottom: 30px;
   border-bottom: 1px solid #e1e1e1;
-  height: 77px; }
+  height: 80px; }
   .Page-Header .Centrate {
-    padding: 15px 0;
-    width: 1000px; }
+    width: 1000px;
+    height: 80px; }
     .Page-Header .Centrate .Site-Logo {
-      width: 40%;
-      float: left;
+      position: relative;
+      width: 35%;
+      height: 80px;
       overflow: hidden;
       display: inline-block; }
       .Page-Header .Centrate .Site-Logo div {
-        height: 45px;
-        overflow: hidden; }
+        width: 100%;
+        position: absolute;
+        top: 20px;
+        -webkit-transition: opacity 0.5s;
+        -moz-transition: opacity 0.5s;
+        transition: opacity 0.5s; }
         .Page-Header .Centrate .Site-Logo div img {
           display: block;
           float: left;
-          margin-right: 20px; }
+          margin-right: 10px; }
         .Page-Header .Centrate .Site-Logo div h2 {
+          padding: 5px 0;
           color: #ec6700;
-          font-size: 30px;
           font-weight: 100;
           text-transform: uppercase; }
           .Page-Header .Centrate .Site-Logo div h2 small {
-            color: black;
-            font-size: 0.813em; }
-    .Page-Header .Centrate .Page-Auth button.Sign-In,
-    .Page-Header .Centrate .Page-Auth .User-Exit {
-      display: block;
-      padding: 10px;
-      margin: 5px 20px 0 0;
-      border: 1px solid;
-      background-color: transparent;
-      text-align: center;
-      color: #ec6700; }
-      .Page-Header .Centrate .Page-Auth button.Sign-In:hover,
-      .Page-Header .Centrate .Page-Auth .User-Exit:hover {
-        color: #ec6700; }
-    .Page-Header .Centrate .Page-Auth > p {
-      padding: 5px 0; }
-    .Page-Header .Centrate .Page-Auth > a {
-      float: left;
-      margin: 15px 20px 0 0;
-      overflow: hidden;
-      display: block;
-      font-size: 0.875em; }
-    .Page-Header .Centrate .Page-Auth .User-Exit {
-      margin-right: 0; }
+            display: inline;
+            font-size: 0.8em;
+            color: black; }
+      .Page-Header .Centrate .Site-Logo > a {
+        z-index: 2;
+        position: absolute;
+        display: block;
+        padding: 30px;
+        -webkit-transition: opacity 0.5s;
+        -moz-transition: opacity 0.5s;
+        transition: opacity 0.5s;
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0); }
+        .Page-Header .Centrate .Site-Logo > a:hover {
+          color: #ec6700;
+          text-decoration: underline; }
+      .Page-Header .Centrate .Site-Logo:hover > div {
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0); }
+      .Page-Header .Centrate .Site-Logo:hover > a {
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: alpha(opacity=100); }
+    .Page-Header .Centrate .Page-Auth {
+      position: relative;
+      padding: 0 10px;
+      width: 19%;
+      height: 80px; }
+      .Page-Header .Centrate .Page-Auth button.Sign-In {
+        background: url(../../../../img/techonline/icon-sign-in.png) 10px center no-repeat; }
+      .Page-Header .Centrate .Page-Auth button.Sign-In,
+      .Page-Header .Centrate .Page-Auth .User-Exit {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 5px 10px 20px;
+        border: 1px solid;
+        background-color: #ec6700;
+        text-align: center;
+        color: white; }
+        .Page-Header .Centrate .Page-Auth button.Sign-In:hover,
+        .Page-Header .Centrate .Page-Auth .User-Exit:hover {
+          cursor: pointer;
+          background-color: #999999; }
+      .Page-Header .Centrate .Page-Auth a {
+        text-align: center;
+        display: block;
+        margin-top: 20px; }
+      .Page-Header .Centrate .Page-Auth .User-Exit {
+        margin-right: 0; }
+      .Page-Header .Centrate .Page-Auth .Sign-In-UI {
+        position: absolute;
+        padding: 20px;
+        background-color: white;
+        top: 79px;
+        right: 0;
+        width: 400px;
+        font-size: 0.875em;
+        border-top: 4px solid #ec6700;
+        z-index: 10; }
+        .Page-Header .Centrate .Page-Auth .Sign-In-UI form h4 {
+          font-size: 1.5em; }
 
-nav.Page-Navigation {
-  float: right;
+.Page-Navigation {
   display: inline-block;
-  width: 50%;
+  width: 46%;
   text-align: right; }
-  nav.Page-Navigation ul li {
-    margin-left: 30px; }
-    nav.Page-Navigation ul li > a {
+  .Page-Navigation ul li {
+    margin-left: 15px; }
+    .Page-Navigation ul li > a {
       display: block;
-      padding: 10px 0;
+      padding: 30px 0 10px;
       border-bottom: 3px solid transparent;
       font-size: 1em;
       color: #000;
       text-transform: uppercase; }
-      nav.Page-Navigation ul li > a:hover, nav.Page-Navigation ul li > a.Link-Active {
+      .Page-Navigation ul li > a:hover, .Page-Navigation ul li > a.Link-Active {
         border-color: #ec6700;
         color: #ec6700; }
-    nav.Page-Navigation ul li:first-child {
+    .Page-Navigation ul li:first-child {
       margin-left: 0; }
 
 .Page-Slider {
@@ -785,23 +817,16 @@ nav.Page-Navigation {
       position: absolute;
       -webkit-animation: SlideUp 1s;
       -moz-animation: SlideUp 1s;
-      animation: SlideUp 1s;
-      -webkit-animation-delay: 0;
-      -moz-animation-delay: 0;
-      animation-delay: 0; }
+      animation: SlideUp 1s; }
     .Page-Slider .Slider-Inner .Slider-Links {
       position: absolute;
       right: 300px;
       -webkit-animation: SlideUp 0.6s;
       -moz-animation: SlideUp 0.6s;
-      animation: SlideUp 0.6s;
-      -webkit-animation-delay: 0;
-      -moz-animation-delay: 0;
-      animation-delay: 0; }
+      animation: SlideUp 0.6s; }
       .Page-Slider .Slider-Inner .Slider-Links li a {
         display: block;
         padding: 15px;
-        font-size: 1.125em;
         color: #fff;
         border: 1px solid white;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); }
@@ -817,7 +842,6 @@ nav.Page-Navigation {
   .Lot header {
     margin-bottom: 15px; }
     .Lot header h4 {
-      font-size: 1.25em;
       text-transform: uppercase;
       float: left; }
     .Lot header h5 {
@@ -833,7 +857,6 @@ nav.Page-Navigation {
       margin-right: 15px;
       margin-top: 5px; }
     .Lot header p {
-      font-size: 0.875em;
       clear: both; }
   .Lot .Lot-Gallery {
     position: relative; }
@@ -843,17 +866,12 @@ nav.Page-Navigation {
       float: left; }
       .Lot .Lot-Gallery > li > img {
         width: 100%; }
-  .Lot .Lot-About {
-    font-size: 0.875em; }
-    .Lot .Lot-About > h6 {
-      margin-top: 15px;
-      font-size: 1.25em; }
-    .Lot .Lot-About > table {
-      margin: 0 -10px; }
-      .Lot .Lot-About > table tr td {
-        padding: 5px 10px; }
-  .Lot.Element .Lot-About {
-    font-size: 1.125em; }
+  .Lot .Lot-About > h6 {
+    margin-top: 15px; }
+  .Lot .Lot-About > table {
+    margin: 0 -10px; }
+    .Lot .Lot-About > table tr td {
+      padding: 5px 10px; }
 
 .Lot-List > li:first-child {
   margin-top: 0; }
@@ -869,13 +887,13 @@ nav.Page-Navigation {
       color: #fff;
       display: block;
       padding: 10px 20px;
-      background-color: #333333; }
+      background-color: #555555; }
     .Pagination > li:hover > span {
       cursor: default; }
     .Pagination > li:hover > a {
-      background-color: #bfbfbf; }
+      background-color: #999999; }
     .Pagination > li.disabled > span {
-      color: #bfbfbf; }
+      color: #999999; }
     .Pagination > li.active > span {
       background-color: #ec6700; }
 
@@ -888,7 +906,6 @@ nav.Page-Navigation {
   margin-right: 20px; }
   .List-Filter > li > a {
     display: block;
-    font-size: 0.875em;
     padding: 5px 10px;
     margin: 0 -10px; }
     .List-Filter > li > a:hover {
@@ -927,7 +944,7 @@ nav.Page-Navigation {
   .Comment .Comment-List li .Comment-List-Element-Rating {
     float: left;
     margin-right: 30px;
-    color: #ccc; }
+    color: #cccccc; }
     .Comment .Comment-List li .Comment-List-Element-Rating > span {
       display: block;
       margin: 0 auto;
@@ -946,9 +963,8 @@ nav.Page-Navigation {
   .Comment .Comment-List li .Comment-List-Element-Content {
     overflow: hidden; }
     .Comment .Comment-List li .Comment-List-Element-Content header small.Date {
-      color: #ccc; }
+      color: #cccccc; }
     .Comment .Comment-List li .Comment-List-Element-Content p {
-      font-size: 1.125em;
       width: 75%; }
 .Comment > form {
   margin-top: 50px; }
@@ -956,14 +972,12 @@ nav.Page-Navigation {
 .Seller-List li.Seller-Item {
   padding-right: 50px; }
   .Seller-List li.Seller-Item header h5.Seller-Title a {
-    text-transform: uppercase;
-    font-size: 1.5em; }
+    text-transform: uppercase; }
 
 footer[role='contentinfo'] {
   height: 100px;
   background: white;
-  border-top: 1px solid #e1e1e1;
-  font-size: 90%; }
+  border-top: 1px solid #e1e1e1; }
   footer[role='contentinfo'] > div {
     padding: 30px 0; }
     footer[role='contentinfo'] > div .Footer-Navigation ul li {
@@ -971,8 +985,7 @@ footer[role='contentinfo'] {
       footer[role='contentinfo'] > div .Footer-Navigation ul li a {
         color: black;
         padding-bottom: 5px;
-        border-bottom: 2px solid transparent;
-        font-size: 1.25em; }
+        border-bottom: 2px solid transparent; }
         footer[role='contentinfo'] > div .Footer-Navigation ul li a:hover {
           color: #ec6700;
           border-color: #ec6700; }
@@ -981,7 +994,6 @@ footer[role='contentinfo'] {
 
 .Filter-Regions li a {
   display: block;
-  font-size: 0.813em;
   padding: 5px 0; }
 
 .Filter-Categories li a {
@@ -990,39 +1002,63 @@ footer[role='contentinfo'] {
 
 @-webkit-keyframes FadeIn {
   from {
-    opacity: 0; }
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0); }
   to {
-    opacity: 1; } }
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100); } }
 @-moz-keyframes FadeIn {
   from {
-    opacity: 0; }
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0); }
   to {
-    opacity: 1; } }
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100); } }
 @keyframes FadeIn {
   from {
-    opacity: 0; }
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0); }
   to {
-    opacity: 1; } }
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100); } }
 @-webkit-keyframes SlideUp {
   from {
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
     top: 300px; }
   to {
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
     top: 0; } }
 @-moz-keyframes SlideUp {
   from {
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
     top: 300px; }
   to {
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
     top: 0; } }
 @keyframes SlideUp {
   from {
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
     top: 300px; }
   to {
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
     top: 0; } }
 
 /*# sourceMappingURL=main.css.map */

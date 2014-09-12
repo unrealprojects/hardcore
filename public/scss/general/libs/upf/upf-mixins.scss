@@ -4,21 +4,18 @@
 		transition: $transition-name $transition-time;
 }
 @mixin Animation($animation-name, $animation-time, $animation-delay: 0) {
-	@if $animation-time == 0 {
-
-		-webkit-animation: $animation-name $animation-time;
-		-moz-animation: $animation-name $animation-time;
-		animation: $animation-name $animation-time;
-	}
-	@else {
-		-webkit-animation: $animation-name $animation-time;
-		-moz-animation: $animation-name $animation-time;
-		animation: $animation-name $animation-time;
+	-webkit-animation: $animation-name $animation-time;
+	-moz-animation: $animation-name $animation-time;
+	animation: $animation-name $animation-time;
+	@if ($animation-delay != 0) {
 		-webkit-animation-delay: $animation-delay;
 		-moz-animation-delay: $animation-delay;
 		animation-delay: $animation-delay;
+
 	}
+
 }
+
 @mixin Keyframes($animation-name) {
 	@-webkit-keyframes #{$animation-name} {
 		@content;
@@ -29,4 +26,11 @@
 	@keyframes #{$animation-name} {
 		@content;
 	}
+}
+
+@mixin Opacity($value){
+	$IEValue: $value * 100;
+	opacity: $value;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+	filter: alpha(opacity=$IEValue);
 }

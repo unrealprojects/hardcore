@@ -22,10 +22,12 @@ $clr-blue: #00bff3;
 $clr-blue-dark:  darken($clr-blue,5%);
 $clr-blue-light: lighten($clr-blue,45%);
 
-$clr-grey: #ccc;
-$clr-grey-light:  lighten($clr-grey, 17%);
-$clr-grey-dark:   darken($clr-grey,  5%);
-$clr-grey-darker: darken($clr-grey,  60%);
+
+$clr-grey-lighter: 		#f1f1f1;
+$clr-grey-light: 		#dedede;
+$clr-grey:				#cccccc;
+$clr-grey-dark: 		#999999;
+$clr-grey-darker: 		#555555;
 
 $clr-main:  $clr-orange;
 $clr-main-dark: $clr-orange-dark;
@@ -44,29 +46,26 @@ $size-xl:  50px;
 $size-xxl: 75px;
 $size-xxxl:100px;
 
-$font-size-xxs:   0.750em;
-$font-size-xs:    0.813em;
-$font-size-s:     0.875em;
-$font-size:       1.000em;
-$font-size-l:     1.125em;
-$font-size-xl:    1.250em;
-$font-size-xxl:   1.500em;
-$font-size-xxxl:  2.000em;
 
-$Control-Group-Input-Width: 50%;
-$Control-Group-Label-Width: 30%;
-$Control-Group-Label2-Width: (100% - $Control-Group-Input-Width - $Control-Group-Label-Width);
+$Font-Size-Micro:				0.800em;
+$Font-Size-Small:				0.875em;
+$Font-Size-Default:				1.000em;
+$Font-Size-Large:				1.125em;
+$Font-Size-Huge:				1.500em;
 
-$node-padding: $size-l;
-$node-width: 1000px;
-$footer-height: 100px;
-$block-gap: $size-l;
-$section-gap: $size-xl;
+
+
+// НАСТРОЙКИ САЙТА
+$Body-Font-Size:				$Font-Size-Default;
+$node-width: 					1000px;			// Ширина ноды
+$node-padding: 					$size-l;		// Внутренний отступ ноды
+$section-gap: 					$size-xl;		// Отступ между нодами
+$block-gap: 					$size-l;		// Отступ между блоками внутри нода
+
+$footer-height: 				100px;			// Высота футера
+
+$line-height: 					24px;			// Стандартная высота строки
+
 $section-width: 1000px;
-$line-height: 24px;
 $grid-spacing: 5%;
 $message-br-width: 300px;
-// Media screen sizes
-$screen-fhd:    1920px;
-$screen-mobile: 800px;
-// Sizes

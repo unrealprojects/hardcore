@@ -1,5 +1,6 @@
 .Control-Group {
 	margin-top: 		$size-s;
+	width: 100%;
 	@extend 			._Fix;
 
 	&:first-child {
@@ -22,6 +23,18 @@
 	&:first-child {
 		margin-top: 0;
 	}
+	&.Checkbox.Submit {
+		& > div {
+			padding: $size-s 0;
+			@extend .Grid-Node-1-2;
+		}
+		& > [type='submit'] {
+			@extend .Grid-Node-1-2;
+		}
+	}
+}
+label.Control-Group {
+	float: none!important;
 }
 .Form-Vertical .Control-Group {
 	margin-top: 		$size;
@@ -59,12 +72,18 @@
 		float: 			left;
 		width: 			70%;
 		border: 		1px solid;
-		padding: 		$size-xs $size-s;
 		line-height: 	$line-height;
+	}
+	input,
+	select,
+	textarea {
+		padding: 		$size-xs $size-s;
 	}
 	label   {
 		width: 			30%;
 		border-color: 	transparent;
+		padding: 		$size-xs $size-s $size-xs 0;
+
 	}
 }
 label.Checkbox ,
@@ -288,12 +307,13 @@ dl.Tabs {
 // @todo: Привести этот код в порядок. Тут пиздец
 .noUi-horizontal {
 	height: 14px;
-}
-.noUi-horizontal .noUi-handle {
-	width: 34px;
-	height: 22px;
-	left: -17px;
-	top: -4px;
+
+	.noUi-handle {
+		width: 34px;
+		height: 22px;
+		left: -17px;
+		top: -4px;
+	}
 }
 .noUi-horizontal.noUi-extended {
 	padding: 0 15px;
