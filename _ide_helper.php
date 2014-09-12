@@ -2775,7 +2775,7 @@ namespace {
 		 }
 
 	}
-	class Controller extends \Illuminate\Routing\Controller{
+	class Controller\FrontendController extends \Illuminate\Routing\Controller{
 	}
 	class Cookie extends \Illuminate\Support\Facades\Cookie{
 		/**

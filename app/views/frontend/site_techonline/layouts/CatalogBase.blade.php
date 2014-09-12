@@ -42,7 +42,7 @@
                                  <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
                             @elseif($i>1 && $i<5)
                                 <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
-                        @elseif($i>5)
+                            @elseif($i>5)
                                 <li style="display: none"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
                             @endif
                         @endforeach
