@@ -13,7 +13,12 @@ a:visited {
 a:hover {
 	color: $clr-grey-darker;
 }
-
+hr {
+	height: 1px;
+	border: 0;
+	border-bottom: 1px solid $clr-grey-light;
+	color: $clr-grey-light;
+}
 code {
   background-color: $clr-grey-light;
   border-left: $size solid $clr-grey;

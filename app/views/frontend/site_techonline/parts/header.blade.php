@@ -29,7 +29,8 @@
                    <button class="Sign-In">
                        Войти на сайт
                    </button>
-                   <a href="#">Регистрация</a>        <!--
+                   <a href="#">Регистрация</a>
+                   <!--
                    <div class="Sign-In-UI">
                        <form class="Form-Horizontal" action="">
                            <h4>Авторизация</h4>
@@ -50,8 +51,32 @@
                            </label>
 
                        </form>
+                   </div>-->
+                   <!--
+                   <div class="Sign-Up-UI">
+                       <form class="Form-Horizontal" action="">
+                           <h4>Регистрация</h4>
+                           <div class="Control-Group">
+                               <label for="Sign-In-Username">E-mail</label>
+                               <input id="Sign-In-Username" type="text"/>
+                           </div>
+
+                           <div class="Control-Group">
+                               <label for="Sign-In-Password">Пароль</label>
+                               <input id="Sign-In-Password" type="password"/>
+                           </div>
+                           <label class="Control-Group Checkbox Submit" for="Sign-In-Remember-Me">
+                               <div class="Grid-Node-1-2">
+                                   <input id="Sign-In-Remember-Me" type="checkbox"/>Запомнить меня
+                               </div>
+                               <input class="class="Grid-Node-1-2"" type="submit" value="Зарегистриваться"/>
+                           </label>
+
+                       </form>
                    </div>
                </div>
+
+                <!--
                Авторизованный пользователь
               <div class="Page-Auth">
                   <a href="#">Константин Константинопольский</a>

@@ -56,7 +56,7 @@
 </div>
 <!-- ФИЛЬТР -->
 
-<div class="Node Tabs">
+<div class="Node Tabs Filter">
 
     <dl class="Tabs">
         <dt class="Active">Выбор региона</dt>
@@ -103,6 +103,8 @@
             </div>
         </dd>
     </dl>
+    <hr/>
+    <button class="Button">Применить фильтр</button>
 
 </div>
 

@@ -2,19 +2,29 @@
 
 @section('main')
 <section class="Node">
-    <div class="Lot Element">
+    <div class="Lot Item">
         <header>
             <h4 class="Section-Header">
                {{$content['element']['name']}}
             </h4>
         </header>
-        <ul class="Lot-Gallery Grid-Node-2-5">
+
+        <div class="Lot-Gallery Grid-Node-1-3">
             @foreach(json_decode($content['element']['photos'],true) as $i=>$photo)
-            @if($i<1)
-            <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
-            @endif
-            @endforeach
-        </ul>
+            @if($i==1)
+            <img itemprop="image" class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+
+            <ul>
+                @elseif($i>1 && $i<5)
+                <li><img itemprop="image" src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+                @elseif($i>5)
+                <li style="display: none">
+                    <img itemprop="image" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                </li>
+                @endif
+                @endforeach
+            </ul>
+        </div>
 
         <div class="Lot-About Grid-Node-3-5">
             <p>{{$content['element']['description']}}</p>

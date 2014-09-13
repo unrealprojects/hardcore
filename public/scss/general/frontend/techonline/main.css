@@ -38,14 +38,41 @@
     height: 0;
     overflow: hidden; }
 
-._Inline > *, .Page-Header .Centrate > *, footer[role='contentinfo'] > div .Footer-Navigation ul > * {
+._Inline > *, .Page-Header .Centrate > *, .Lot .Lot-Gallery ul > *, footer[role='contentinfo'] > div .Footer-Navigation ul > * {
   float: left; }
 
-._No-Bullets, .Page-Slider .Slider-Inner .Slider-Links, footer[role='contentinfo'] > div .Footer-Navigation ul {
+._No-Bullets, .Page-Slider .Slider-Inner .Slider-Links, .Lot .Lot-Gallery ul, .Pagination, footer[role='contentinfo'] > div .Footer-Navigation ul {
   list-style: none; }
 
-._Soft_Shadow, .Page-Header, .Page-Header .Centrate .Page-Auth .Sign-In-UI {
+._Soft_Shadow, .Page-Header, .Page-Header .Centrate .Page-Auth .Sign-In-UI,
+.Page-Header .Centrate .Page-Auth .Sign-Up-UI {
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.1); }
+
+._Fly-Out, .Section-Header,
+.Section-Subheader, .Pagination {
+  margin-left: -50px; }
+
+._Button, .Button {
+  padding: 15px 20px;
+  border: 0;
+  background-color: #ec6700;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  transition: background 0.3s; }
+  ._Button:hover, .Button:hover {
+    background-color: #555555; }
+
+._Fit-Row, .Lot .Lot-Gallery img.Lot-Main-Photo {
+  width: 100% !important; }
+
+._Highlight, .Lot .Lot-Gallery img.Lot-Main-Photo, .Lot .Lot-Gallery ul li img {
+  cursor: pointer; }
+  ._Highlight:hover, .Lot .Lot-Gallery img.Lot-Main-Photo:hover, .Lot .Lot-Gallery ul li img:hover {
+    opacity: 0.9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: alpha(opacity=90); }
 
 * {
   margin: 0;
@@ -166,6 +193,12 @@ a:visited {
 a:hover {
   color: #555555; }
 
+hr {
+  height: 1px;
+  border: 0;
+  border-bottom: 1px solid #dedede;
+  color: #dedede; }
+
 code {
   background-color: #dedede;
   border-left: 20px solid #cccccc;
@@ -243,14 +276,14 @@ label.Control-Group {
 .Form-Vertical input,
 .Form-Vertical select,
 .Form-Vertical textarea {
-  padding: 10px; }
+  padding: 10px;
+  border: 1px solid; }
 .Form-Vertical label,
 .Form-Vertical input,
 .Form-Vertical select,
 .Form-Vertical textarea {
   display: block;
-  width: 100%;
-  border: 1px solid; }
+  width: 100%; }
 
 .Form-Horizontal label,
 .Form-Horizontal input,
@@ -387,7 +420,7 @@ dl.Tabs dt {
     background: #555555;
     border-top: 3px solid #ec6700; }
   dl.Tabs dt.Disabled {
-    color: #4d4d4d;
+    color: #999999;
     cursor: not-allowed; }
     dl.Tabs dt.Disabled:hover {
       background: #555555; }
@@ -405,156 +438,6 @@ dl.Tabs dd {
     display: block; }
   dl.Tabs dd > div {
     padding: 20px 0; }
-
-/* Functional styling;
- * These styles are required for noUiSlider to function.
- * You don't need to change these rules to apply your design.
- */
-.noUi-target,
-.noUi-target * {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -ms-touch-action: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-.noUi-base {
-  width: 100%;
-  height: 100%;
-  position: relative; }
-
-.noUi-origin {
-  position: absolute;
-  right: 0;
-  top: 0;
-  left: 0;
-  bottom: 0; }
-
-.noUi-handle {
-  position: relative;
-  z-index: 1; }
-
-.noUi-stacking .noUi-handle {
-  /* This class is applied to the lower origin when
-     its values is > 50%. */
-  z-index: 10; }
-
-.noUi-stacking + .noUi-origin {
-  /* Fix stacking order in IE7, which incorrectly
-     creates a new context for the origins. */
-  *z-index: -1; }
-
-.noUi-state-tap .noUi-origin {
-  -webkit-transition: left 0.3s, top 0.3s;
-  transition: left 0.3s, top 0.3s; }
-
-.noUi-state-drag * {
-  cursor: inherit !important; }
-
-/* Slider size and handle placement;
- */
-.noUi-horizontal {
-  height: 14px; }
-  .noUi-horizontal .noUi-handle {
-    width: 34px;
-    height: 22px;
-    left: -17px;
-    top: -4px; }
-
-.noUi-horizontal.noUi-extended {
-  padding: 0 15px; }
-
-.noUi-horizontal.noUi-extended .noUi-origin {
-  right: -15px; }
-
-.noUi-vertical {
-  width: 18px; }
-
-.noUi-vertical .noUi-handle {
-  width: 28px;
-  height: 34px;
-  left: -6px;
-  top: -17px; }
-
-.noUi-vertical.noUi-extended {
-  padding: 15px 0; }
-
-.noUi-vertical.noUi-extended .noUi-origin {
-  bottom: -15px; }
-
-/* Styling;
- */
-.noUi-background {
-  background: #eee; }
-
-.noUi-connect {
-  background: #3FB8AF;
-  -webkit-transition: background 450ms;
-  transition: background 450ms; }
-
-.noUi-origin {
-  border-radius: 5px; }
-
-.noUi-target {
-  border-radius: 4px; }
-
-/* Handles and cursors;
- */
-.noUi-dragable {
-  cursor: w-resize; }
-
-.noUi-vertical .noUi-dragable {
-  cursor: n-resize; }
-
-.noUi-handle {
-  border: 1px solid #c67200;
-  border-radius: 5px;
-  background: #e18100;
-  cursor: default;
-  box-shadow: 0 0 1px #ffcb84 inset; }
-
-.noUi-handle:hover,
-.noUi-handle:active {
-  cursor: pointer;
-  box-shadow: 0 0 5px #ffa226;
-  transition: .2s ease; }
-
-/* Handle stripes;
- */
-.noUi-handle:before,
-.noUi-handle:after {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 14px;
-  width: 1px;
-  background: #E8E7E6;
-  left: 14px;
-  top: 3px; }
-
-.noUi-handle:after {
-  left: 17px; }
-
-.noUi-vertical .noUi-handle:before,
-.noUi-vertical .noUi-handle:after {
-  width: 14px;
-  height: 1px;
-  left: 6px;
-  top: 14px; }
-
-.noUi-vertical .noUi-handle:after {
-  top: 17px; }
-
-/* Disabled state;
- */
-[disabled].noUi-connect,
-[disabled] .noUi-connect {
-  background: #B8B8B8; }
-
-[disabled] .noUi-handle {
-  cursor: not-allowed; }
 
 .Message {
   border: 1px solid;
@@ -675,7 +558,6 @@ body {
 .Section-Subheader {
   display: inline-block;
   clear: both;
-  margin: 0 -50px 0;
   padding: 10px 15px;
   border-left: 4px solid #ec6700;
   text-transform: uppercase;
@@ -772,7 +654,8 @@ body {
         margin-top: 20px; }
       .Page-Header .Centrate .Page-Auth .User-Exit {
         margin-right: 0; }
-      .Page-Header .Centrate .Page-Auth .Sign-In-UI {
+      .Page-Header .Centrate .Page-Auth .Sign-In-UI,
+      .Page-Header .Centrate .Page-Auth .Sign-Up-UI {
         position: absolute;
         padding: 20px;
         background-color: white;
@@ -782,7 +665,8 @@ body {
         font-size: 0.875em;
         border-top: 4px solid #ec6700;
         z-index: 10; }
-        .Page-Header .Centrate .Page-Auth .Sign-In-UI form h4 {
+        .Page-Header .Centrate .Page-Auth .Sign-In-UI form h4,
+        .Page-Header .Centrate .Page-Auth .Sign-Up-UI form h4 {
           font-size: 1.5em; }
 
 .Page-Navigation {
@@ -857,14 +741,17 @@ body {
       margin-right: 15px;
       margin-top: 5px; }
     .Lot header p {
+      font-size: 0.8em;
       clear: both; }
   .Lot .Lot-Gallery {
-    position: relative; }
-    .Lot .Lot-Gallery > li {
-      border: 1px red solid;
-      width: 50%;
-      float: left; }
-      .Lot .Lot-Gallery > li > img {
+    padding-right: 20px; }
+    .Lot .Lot-Gallery ul li {
+      width: 30%;
+      margin-left: 5%; }
+      .Lot .Lot-Gallery ul li:first-child {
+        margin-left: 0; }
+      .Lot .Lot-Gallery ul li img {
+        display: block;
         width: 100%; }
   .Lot .Lot-About > h6 {
     margin-top: 15px; }
@@ -877,9 +764,7 @@ body {
   margin-top: 0; }
 
 .Pagination {
-  margin-left: -50px;
-  border-left: 4px solid #ec6700;
-  list-style: none; }
+  border-left: 4px solid #ec6700; }
   .Pagination > li {
     margin-top: 0 !important;
     margin-right: 1px; }

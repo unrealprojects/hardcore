@@ -28,13 +28,13 @@ body {
 .Section-Subheader {
 	display: inline-block;
 	clear: both;
-	margin: 0 0 -($size-xl) 0;
 	padding: $size-s $size-n;
 	border-left: 4px solid $clr-main;
 	text-transform: uppercase;
 	background-color: $clr-grey-darker;
 	color: #fff;
 	font-weight: 100;
+	@extend ._Fly-Out;
 }
 
 .Section-Header {
@@ -46,7 +46,6 @@ body {
 }
 
 // Шапка сайта
-
 .Page-Header {
 	background: white;
 	margin-bottom: $size-l;
@@ -150,7 +149,8 @@ body {
 			.User-Exit {
 				margin-right: 0;
 			}
-			.Sign-In-UI {
+			.Sign-In-UI ,
+			.Sign-Up-UI {
 				position: absolute;
 				padding: $size;
 				background-color: white;
@@ -280,18 +280,31 @@ body {
 		}
 
 		& p {
+			font-size: $Font-Size-Micro;
 			clear: both;
 		}
 
 	}
 	.Lot-Gallery {
-		position: relative;
-		& > li {
-			border: 1px red solid;
-			width: 50%;
-			float: left;
-			& > img {
-				width: 100%;
+		padding-right: $size;
+		img.Lot-Main-Photo {
+			@extend ._Fit-Row;
+			@extend ._Highlight;
+		}
+		ul {
+			@extend ._No-Bullets;
+			@extend ._Inline;
+			li {
+				width: 30%;
+				margin-left: 5%;
+				&:first-child {
+					margin-left: 0;
+				}
+				img {
+					display: block;
+					width: 100%;
+					@extend ._Highlight;
+				}
 			}
 		}
 	}
@@ -321,9 +334,9 @@ body {
 
 // Блок Пагинации
 .Pagination {
-	margin-left: -($size-xl);
 	border-left: 4px solid $clr-main;
-	list-style: none;
+	@extend ._Fly-Out;
+	@extend ._No-Bullets;
 	@extend .Inline;
 	@extend ._Fix;
 	& > li {

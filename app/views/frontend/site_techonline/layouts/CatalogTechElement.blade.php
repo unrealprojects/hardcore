@@ -9,13 +9,23 @@
             </h4>
             <h5>{{$content['element']['rate']}}</h5>
         </header>
-        <ul class="Lot-Gallery Grid-Node-2-5">
+
+        <div class="Lot-Gallery Grid-Node-1-3">
             @foreach(json_decode($content['element']['photos'],true) as $i=>$photo)
-            @if($i<1)
-            <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
-            @endif
-            @endforeach
-        </ul>
+            @if($i==1)
+            <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+
+            <ul>
+                @elseif($i>1 && $i<5)
+                <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+                @elseif($i>5)
+                <li style="display: none">
+                    <img src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                </li>
+                @endif
+                @endforeach
+            </ul>
+        </div>
 
         <div class="Lot-About Grid-Node-3-5">
             <p>{{$content['element']['description']}}</p>

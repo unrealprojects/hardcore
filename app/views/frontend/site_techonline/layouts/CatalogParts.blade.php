@@ -2,7 +2,6 @@
 
 @section('main')
 
-
 <section class="Node Grid">
 
     <h3 class="Section-Header">Запчасти и сервис</h3>
@@ -23,19 +22,30 @@
                 <li class="Lot">
                     <header>
                         <div>
-                            <h4><a href="/parts/{{$list_elem['metadata']['alias']}}">
-                                    {{$list_elem['name']}}</a>
+                            <h4>
+                                <a href="/parts/{{$list_elem['metadata']['alias']}}">
+                                    {{$list_elem['name']}}
+                                </a>
                             </h4>
-
                         </div>
                     </header>
-                    <ul class="Lot-Gallery Grid-Node-1-3">
+
+                    <div class="Lot-Gallery Grid-Node-1-3">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
-                            @if($i<1)
-                                <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+                        @if($i==1)
+                        <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+
+                        <ul>
+                            @elseif($i>1 && $i<5)
+                            <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+                            @elseif($i>5)
+                            <li style="display: none">
+                                <img src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                            </li>
                             @endif
-                        @endforeach
-                    </ul>
+                            @endforeach
+                        </ul>
+                    </div>
 
                     <div class="Lot-About Grid-Node-2-3">
                         <p>{{$list_elem['description']}}</p>

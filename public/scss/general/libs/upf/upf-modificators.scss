@@ -68,15 +68,41 @@
 // Выводит всех потомков в линию
 ._Inline {
 	& > * {
-		float: left;
+		float: 			left;
 	}
 }
 
 // Убирает буллиты у списков
 ._No-Bullets {
-	list-style: none;
+	list-style: 		none;
 }
 // Добавляет едва заметную тень вокруг блока
 ._Soft_Shadow {
-	box-shadow: 0 0 50px rgba(0,0,0,0.1);
+	box-shadow: 		0 0 50px rgba(0,0,0,0.1);
+}
+
+._Fly-Out {
+	margin-left: -($size-xl);
+}
+._Button {
+	padding: 			$size-n $size;
+
+	border: 			0;
+	background-color: 	$clr-main;
+	color: 				#fff;
+	cursor: 			pointer;
+	@include 			Transition(background, .3s);
+	&:hover {
+		background-color: $clr-grey-darker;
+	}
+}
+._Fit-Row {
+	width: 100%!important;
+}
+._Highlight {
+	cursor: pointer;
+
+	&:hover {
+		@include Opacity(.9);
+	}
 }

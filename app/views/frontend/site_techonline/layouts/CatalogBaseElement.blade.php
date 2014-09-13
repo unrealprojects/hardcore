@@ -5,18 +5,28 @@
     <div class="Lot Element" itemscope itemtype="http://data-vocabulary.org/Product">
         <header>
             <h4 class="Section-Header">
-                <!--<img src="/photo/techonline/{{$content['element']['logo']}}">--><span itemprop="brand">{{$content['element']['brand']['name']}}</span>
+                <span itemprop="brand">{{$content['element']['brand']['name']}}</span>
                     {{$content['element']['model']}}
             <p itemprop="category">{{$content['element']['category']['name']}}</p>
             </h4>
         </header>
-        <ul class="Lot-Gallery Grid-Node-1-3">
+
+        <div class="Lot-Gallery Grid-Node-1-3">
             @foreach(json_decode($content['element']['photos'],true) as $i=>$photo)
-            @if($i<1)
-            <li><img itemprop="image" src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
-            @endif
-            @endforeach
-        </ul>
+            @if($i==1)
+            <img itemprop="image" class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+
+            <ul>
+                @elseif($i>1 && $i<5)
+                <li><img itemprop="image" src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+                @elseif($i>5)
+                <li style="display: none">
+                    <img itemprop="image" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                </li>
+                @endif
+                @endforeach
+            </ul>
+        </div>
 
         <div class="Lot-About Grid-Node-2-3">
             <p itemprop="description">{{$content['element']['description']}}</p>
@@ -35,7 +45,7 @@
     </div>
 
 </section>
-@include('frontend.standard.layouts.comments.List')
 
+@include('frontend.standard.layouts.comments.List')
 
 @endsection
