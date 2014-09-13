@@ -767,7 +767,8 @@ body {
       padding: 5px 10px; }
 
 .Breadcrumbs {
-  padding: 0; }
+  padding: 0;
+  margin-bottom: -10px; }
   .Breadcrumbs ul {
     padding: 10px 30px;
     background-color: white; }
