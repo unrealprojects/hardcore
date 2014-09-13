@@ -217,6 +217,9 @@ a:visited {
 a:hover {
   color: #555555; }
 
+a:active {
+  color: #ec6700; }
+
 hr {
   height: 1px;
   border: 0;
@@ -590,7 +593,10 @@ body {
   font-weight: 100; }
 
 .Header-Column {
-  font-size: 1.125em; }
+  font-size: 1.5em;
+  font-weight: 100;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dedede; }
 
 .Section-Header {
   font-size: 1.5em; }
@@ -751,10 +757,15 @@ body {
   .Lot:first-child {
     margin-top: 0; }
   .Lot header {
-    margin-bottom: 15px; }
+    border-bottom: 1px #dedede dashed;
+    padding-bottom: 10px;
+    margin-bottom: 10px; }
     .Lot header h4 {
       text-transform: uppercase;
-      float: left; }
+      float: left;
+      font-size: 22px; }
+      .Lot header h4 a {
+        color: #555555; }
     .Lot header .Lot-Price {
       color: white;
       background-color: #ec6700;
@@ -768,10 +779,12 @@ body {
       margin-right: 15px;
       margin-top: 5px; }
     .Lot header p {
-      font-size: 0.8em;
+      font-size: 12px;
       clear: both; }
   .Lot .Lot-Gallery {
     padding-right: 30px; }
+    .Lot .Lot-Gallery img.Lot-Main-Photo {
+      border-radius: 10px; }
     .Lot .Lot-Gallery ul li {
       width: 30%;
       margin-left: 5%; }
@@ -779,7 +792,10 @@ body {
         margin-left: 0; }
       .Lot .Lot-Gallery ul li img {
         display: block;
-        width: 100%; }
+        width: 100%;
+        border-radius: 10px; }
+  .Lot .Lot-About p {
+    font-size: 14px; }
   .Lot .Lot-About .Lot-Values {
     padding: 10px;
     border-top: 1px solid #dedede;
@@ -787,11 +803,15 @@ body {
     .Lot .Lot-About .Lot-Values li {
       margin-right: 5%; }
   .Lot .Lot-About > h6 {
-    margin-top: 15px; }
+    font-size: 1.125em;
+    margin-top: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #dedede; }
   .Lot .Lot-About > table {
-    margin: 0 -10px; }
+    width: 100%; }
     .Lot .Lot-About > table tr td {
-      padding: 5px 10px; }
+      padding: 5px 10px;
+      font-size: 14px; }
 
 .Breadcrumbs {
   padding: 0 !important;
@@ -830,12 +850,24 @@ body {
     .Pagination > li.active > span {
       background-color: #ec6700; }
 
+.Sidebar-Filter a.Active {
+  color: white;
+  background-color: #555555; }
 .Sidebar-Filter > h4 {
   margin-top: 20px; }
   .Sidebar-Filter > h4:first-child {
     margin-top: 0; }
-.Sidebar-Filter > ul > li > a {
-  font-size: 1em; }
+.Sidebar-Filter > ul {
+  font-family: Calibri, Helvetica, Verdana, sans-serif !important; }
+  .Sidebar-Filter > ul > li > a {
+    margin-left: -5px;
+    margin-right: 30px;
+    display: block;
+    padding: 5px;
+    font-size: 12px; }
+    .Sidebar-Filter > ul > li > a:hover {
+      color: white;
+      background-color: #555555; }
 
 .List-Categories li {
   padding: 10px 0; }
@@ -852,6 +884,8 @@ body {
   display: block;
   width: 90%;
   margin: 0 auto; }
+.List-Categories.Brands img {
+  width: 50px; }
 
 .Comment .Comment-List li {
   margin-top: 50px; }

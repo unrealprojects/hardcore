@@ -47,7 +47,10 @@
         <h4 class="Header-Column">Производители</h4>
         <ul class="List-Categories">
             @foreach($content['brands'] as $brand)
-            <li class="Grid-Node-1-2"><a href="/tech/$brand['alias']" alt="{{$brand['name']}}">{{$brand['name']}}</a>
+            <li class="Grid-Node-1-2">
+                <a href="/tech/$brand['alias']" alt="{{$brand['name']}}">
+                    {{$brand['name']}}
+                </a>
             </li>
             @endforeach
         </ul>

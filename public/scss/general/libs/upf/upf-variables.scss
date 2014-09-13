@@ -55,7 +55,8 @@ $Font-Size-Huge:				1.500em;
 
 
 $Font-Family-Exo2:				'Exo 2', 'Open Sans', Helvetica, Verdana, sans-serif;
-$Font-Family-Verdana:			Helvetica, Verdana, sans-serif;
+$Font-Family-Verdana:			Helvetica, Verdana, sans-serif!important;
+$Font-Family-Calibri:			Calibri, Helvetica, Verdana, sans-serif!important;
 // НАСТРОЙКИ САЙТА
 $Body-Font-Size:				$Font-Size-Default;
 $node-width: 					1000px;			// Ширина ноды

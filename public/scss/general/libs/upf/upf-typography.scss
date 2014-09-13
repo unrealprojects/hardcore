@@ -13,6 +13,9 @@ a:visited {
 a:hover {
 	color: $clr-grey-darker;
 }
+a:active {
+	color: $clr-main;
+}
 hr {
 	height: 1px;
 	border: 0;

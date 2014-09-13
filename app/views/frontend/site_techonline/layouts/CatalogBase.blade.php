@@ -50,7 +50,7 @@
                         <p>{{$list_elem['category']['name']}}</p>
                     </header>
 
-                    <div class="Lot-Gallery Grid-Node-1-3">
+                    <div class="Lot-Gallery Grid-Node-3-7">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                             @if($i==1)
                                  <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
@@ -67,7 +67,7 @@
                         </ul>
                     </div>
 
-                    <div class="Lot-About Grid-Node-2-3">
+                    <div class="Lot-About Grid-Node-4-7">
                         <p>{{$list_elem['description']}}</p>
 
                         <!-- Параметры товара -->
@@ -76,8 +76,7 @@
                             @foreach($list_elem['params_values'] as $param)
                             <tr>
                                 <td>{{$param['param_data']['name']}}</td>
-                                <td>{{$param['value']}}</td>
-                                <td>{{$param['param_data']['dimension']}}   </td>
+                                <td>{{$param['value']}} {{$param['param_data']['dimension']}}</td>
                             </tr>
                             @endforeach
                         </table>

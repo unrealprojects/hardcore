@@ -6,7 +6,7 @@
     <h3 class="Section-Header">Каталог строительной техники</h3>
     <div class="Grid-Row">
         <!-- Фильтрация :: Общий блок -->
-        <aside class="Sidebar-Filter Grid-Node-1-5">
+        <aside class="Sidebar-Filter Grid-Node-2-7">
             <!-- Фильтрация :: По брендам -->
             <h4>Производители</h4>
             <ul class="List-Filter">
@@ -44,7 +44,7 @@
             </ul>
         </aside>
 
-        <article class="Grid-Node-4-5">
+        <article class="Grid-Node-5-7">
             <ul class="Lot-List">
             @foreach($content['list'] as $list_elem)
                 <li class="Lot">
@@ -54,7 +54,7 @@
                             <h5>{{$list_elem['rate']}}</h5>
                         </div>
                     </header>
-                    <div class="Lot-Gallery Grid-Node-1-3">
+                    <div class="Lot-Gallery Grid-Node-3-7">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                         @if($i==1)
                         <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
@@ -71,7 +71,7 @@
                         </ul>
                     </div>
 
-                    <div class="Lot-About Grid-Node-2-3">
+                    <div class="Lot-About Grid-Node-4-7">
                         <p>{{$list_elem['description']}}</p>
 
                         <!-- Параметры товара -->

@@ -37,7 +37,10 @@ body {
 	@extend ._Fly-Out;
 }
 .Header-Column {
-	font-size: $Font-Size-Large;
+	font-size: $Font-Size-Huge;
+	font-weight: 100;
+	padding-bottom: $size-s;
+	border-bottom: 1px solid $clr-grey-light;
 }
 
 
@@ -264,12 +267,18 @@ body {
 	}
 
 	& header {
-		margin-bottom: $size-n;
+		border-bottom: 1px $clr-grey-light  dashed;
+		padding-bottom: $size-s;
+		margin-bottom: $size-s;
 		@extend ._Fix;
 
 		& h4 {
 			text-transform: uppercase;
 			float: left;
+			font-size: 22px;
+			a {
+				color: $clr-grey-darker
+			}
 		}
 		& .Lot-Price {
 			color: white;
@@ -288,7 +297,7 @@ body {
 		}
 
 		& p {
-			font-size: $Font-Size-Micro;
+			font-size: 12px;
 			clear: both;
 		}
 
@@ -296,8 +305,11 @@ body {
 	.Lot-Gallery {
 		padding-right: $size-l;
 		img.Lot-Main-Photo {
+			border-radius: 10px;
 			@extend ._Fit-Row;
 			@extend ._Highlight;
+			&:hover {
+			}
 		}
 		ul {
 			@extend ._No-Bullets;
@@ -311,12 +323,16 @@ body {
 				img {
 					display: block;
 					width: 100%;
+					border-radius: 10px;
 					@extend ._Highlight;
 				}
 			}
 		}
 	}
 	.Lot-About {
+		p {
+			font-size: 14px;
+		}
 		& .Lot-Values {
 			padding: $size-s;
 
@@ -329,13 +345,17 @@ body {
 			}
 		}
 		& > h6 {
+			font-size: $Font-Size-Large;
 			margin-top: $size-n;
+			padding-bottom: $size-xs;
+			border-bottom: 1px dashed $clr-grey-light;
 		}
 		& > table {
-			margin: 0 (-$size-s);
+			width: 100%;
 			& tr {
 				& td {
 					padding: $size-xs $size-s;
+					font-size: 14px;
 				}
 			}
 		}
@@ -411,6 +431,11 @@ body {
 }
 
 .Sidebar-Filter {
+	a.Active {
+
+		color: white;
+		background-color: $clr-grey-darker;
+	}
 	& > h4 {
 		margin-top: $size;
 		&:first-child {
@@ -418,9 +443,18 @@ body {
 		}
 	}
 	& > ul {
+		font-family: $Font-Family-Calibri;
 		& > li {
 			& > a {
-				font-size: $Font-Size-Default;
+				margin-left: -$size-xs;
+				margin-right: $size-l;
+				display: block;
+				padding: $size-xs;
+				font-size: 12px;
+				&:hover {
+					color: white;
+					background-color: $clr-grey-darker;
+				}
 			}
 
 		}
@@ -451,6 +485,11 @@ body {
 			margin: 0 auto;
 		}
 
+	}
+	&.Brands {
+		img {
+			width: 50px;
+		}
 	}
 }
 
