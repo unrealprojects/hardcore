@@ -54,7 +54,7 @@ class TechonlineCatalog extends Migration {
 
 
 
-            $catalog_base->model = 'Test Drive Кран №'.$i*11;
+            $catalog_base->model = 'Test Drive Кран '.$i*11;
 
             /* update metadata */
             $meta_data = new \Model\General\MetaData();
