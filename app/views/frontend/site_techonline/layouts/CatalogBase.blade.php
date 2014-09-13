@@ -6,7 +6,7 @@
     <h3 class="Section-Header">Каталог строительной техники</h3>
     <div class="Grid-Row">
         <!-- Фильтрация :: Общий блок -->
-        <aside class="Sidebar-Filter Grid-Node-1-5">
+        <aside class="Sidebar-Filter Grid-Node-2-7">
             <!-- Фильтрация :: По брендам -->
             <h4>Производители</h4>
             <ul class="List-Filter">
@@ -18,19 +18,24 @@
             <h4>Категории</h4>
             <ul class="List-Filter">
                 @foreach($content['categories'] as $category)
-                    <li><a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a></li>
+                    <li class="List-Filter-Subheader">
+                        <img src="/img/techonline/icon-dropdown.png" alt=""/>
+                        <a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a>
+                    </li>
 
                     @if($category['subCategories'])
-                        <ul>
-                        @foreach($category['subCategories'] as $subCategory)
-                             <li><a href="/catalog/?category={{$subCategory['alias']}}&{{\Input::getQueryString()}}">{{$subCategory['name']}}</a></li>
-                        @endforeach
-                        </ul>
+                        <li class="List-Filter-Subcategory">
+                            <ul>
+                            @foreach($category['subCategories'] as $subCategory)
+                                 <li><a href="/catalog/?category={{$subCategory['alias']}}&{{\Input::getQueryString()}}">{{$subCategory['name']}}</a></li>
+                            @endforeach
+                            </ul>
+                        </li>
                     @endif
                 @endforeach
             </ul>
         </aside>
-        <article class="Grid-Node-4-5">
+        <article class="Grid-Node-5-7">
             <ul class="Lot-List">
             @foreach($content['list'] as $list_elem)
                 <li class="Lot">

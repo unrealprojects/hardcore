@@ -16,7 +16,7 @@
 ._Section-Inner, .Node, .Page-Header .Page-Header-Inner, footer[role='contentinfo'] > div {
   width: 1000px !important; }
 
-._Icon-Spacing, .List-Categories.Icons img {
+._Icon-Spacing {
   margin-right: 20px; }
 
 ._Left, .Page-Header .Page-Header-Inner .Page-Auth button.Sign-In,
@@ -29,9 +29,9 @@
 ._Dev {
   outline: 1px red solid !important; }
 
-._Fix, ._Inline, .Page-Header .Page-Header-Inner, .Lot .Lot-Gallery ul, .Lot .Lot-About .Lot-Values, .Breadcrumbs ul, footer[role='contentinfo'] > div .Footer-Navigation ul, .Grid, .Grid-Row, .Control-Group, dl.Tabs, .Node, .Page-Navigation ul, .Lot, .Lot header, .Pagination, .List-Categories li, .Comment .Comment-List li .Comment-List-Element-Content header, footer[role='contentinfo'] > div {
+._Fix, ._Inline, .Page-Header .Page-Header-Inner, .Lot .Lot-Gallery ul, .Lot .Lot-About .Lot-Values, .Breadcrumbs ul, footer[role='contentinfo'] > div .Footer-Navigation ul, .Grid, .Grid-Row, .Control-Group, dl.Tabs, .Node, .Page-Navigation ul, .Lot, .Lot header, .Pagination, .List-Categories li, .Comment .Comment-List li .Comment-List-Element-Content header, footer[role='contentinfo'] > div, .List-Filter li.List-Filter-Subheader {
   display: table; }
-  ._Fix:after, ._Inline:after, .Page-Header .Page-Header-Inner:after, .Lot .Lot-Gallery ul:after, .Lot .Lot-About .Lot-Values:after, .Breadcrumbs ul:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Grid:after, .Grid-Row:after, .Control-Group:after, dl.Tabs:after, .Node:after, .Page-Navigation ul:after, .Lot:after, .Lot header:after, .Pagination:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after {
+  ._Fix:after, ._Inline:after, .Page-Header .Page-Header-Inner:after, .Lot .Lot-Gallery ul:after, .Lot .Lot-About .Lot-Values:after, .Breadcrumbs ul:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Grid:after, .Grid-Row:after, .Control-Group:after, dl.Tabs:after, .Node:after, .Page-Navigation ul:after, .Lot:after, .Lot header:after, .Pagination:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after, .List-Filter li.List-Filter-Subheader:after {
     content: '. .';
     display: block;
     word-spacing: 99in;
@@ -134,6 +134,24 @@ iframe {
 
 .Grid-Node-4-5 {
   width: 80.00%; }
+
+.Grid-Node-1-7 {
+  width: 14.28%; }
+
+.Grid-Node-2-7 {
+  width: 28.56%; }
+
+.Grid-Node-3-7 {
+  width: 42.84%; }
+
+.Grid-Node-4-7 {
+  width: 57.12%; }
+
+.Grid-Node-5-7 {
+  width: 71.40%; }
+
+.Grid-Node-6-7 {
+  width: 85.68%; }
 
 .Grid-No-Padding > * {
   padding: 0 !important; }
@@ -246,7 +264,7 @@ code {
 .Inline > li, .Page-Navigation ul > li, .Pagination > li {
   float: left; }
 
-.No-Bullets, .Page-Navigation ul, .Comment .Comment-List, .List-Filter {
+.No-Bullets, .Page-Navigation ul, .Comment .Comment-List, .List-Filter, .List-Filter li.List-Filter-Subcategory ul {
   list-style: none; }
 
 .Control-Group {
@@ -816,15 +834,24 @@ body {
   margin-top: 20px; }
   .Sidebar-Filter > h4:first-child {
     margin-top: 0; }
+.Sidebar-Filter > ul > li > a {
+  font-size: 1em; }
 
 .List-Categories li {
   padding: 10px 0; }
   .List-Categories li a {
+    font-size: 0.875em;
     display: inline-block; }
+.List-Categories.Icons a {
+  padding: 10px 0;
+  font-size: 1em;
+  width: 100%;
+  text-align: center; }
 .List-Categories.Icons img {
   vertical-align: middle;
-  display: inline-block;
-  width: 50px; }
+  display: block;
+  width: 90%;
+  margin: 0 auto; }
 
 .Comment .Comment-List li {
   margin-top: 50px; }
@@ -907,16 +934,20 @@ footer[role='contentinfo'] {
   .Seller-List li.Seller-Item header h5.Seller-Title a {
     text-transform: uppercase; }
 
-.List-Filter > li {
-  margin-right: 30px; }
-  .List-Filter > li > a {
-    display: block;
-    padding: 5px 10px;
-    margin: 0 -10px;
-    font-size: 0.875em; }
-    .List-Filter > li > a:hover {
-      background-color: #ec6700;
-      color: #fff; }
+.List-Filter li.List-Filter-Subheader img {
+  margin: 6px 5px 0 0;
+  width: 12px;
+  float: left; }
+.List-Filter li.List-Filter-Subheader a {
+  max-width: 90%;
+  display: inline-block; }
+.List-Filter li.List-Filter-Subcategory ul {
+  margin-left: 17px;
+  margin-bottom: 20px; }
+  .List-Filter li.List-Filter-Subcategory ul li a {
+    display: inline-block;
+    padding: 5px 0;
+    font-size: .7em; }
 
 @-webkit-keyframes FadeIn {
   from {

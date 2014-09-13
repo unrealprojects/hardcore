@@ -417,6 +417,14 @@ body {
 			margin-top: 0;
 		}
 	}
+	& > ul {
+		& > li {
+			& > a {
+				font-size: $Font-Size-Default;
+			}
+
+		}
+	}
 }
 
 // Список категорий
@@ -425,16 +433,24 @@ body {
 		padding: $size-s 0;
 		@extend ._Fix;
 		a {
+			font-size: $Font-Size-Small;
 			display: inline-block;
 		}
 	}
 	&.Icons {
+		a {
+			padding: $size-s 0;
+			font-size: $Font-Size-Default;
+			width: 100%;
+			text-align: center;
+		}
 		img {
 			vertical-align: middle;
-			display: inline-block;
-			width: 50px;
-			@extend ._Icon-Spacing;
+			display: block;
+			width: 90%;
+			margin: 0 auto;
 		}
+
 	}
 }
 
@@ -570,12 +586,17 @@ footer[role='contentinfo'] {
 	}
 }
 
+// Список арендаторов в 2 строки на главной странице
 .Seller-List {
 	@extend ._Vertical-Spacing;
+
 	li.Seller-Item {
 		padding-right: $size-xl;
+
 		header {
+
 			h5.Seller-Title {
+
 				a {
 					text-transform: uppercase;
 				}
@@ -586,17 +607,34 @@ footer[role='contentinfo'] {
 }
 
 .List-Filter {
+	$icon-width: 12px;
+	$icon-spacing: $size-xs;
 	@extend .No-Bullets;
-	& > li {
-		margin-right: $size-l;
-		& > a {
-			display: block;
-			padding: $size-xs $size-s;
-			margin: 0 (-$size-s);
-			font-size: $Font-Size-Small;
-			&:hover {
-				background-color: $clr-main;
-				color: #fff;
+
+	li.List-Filter-Subheader {
+		@extend ._Fix;
+		img {
+			margin: 6px $size-xs 0 0;
+			width: $icon-width;
+			float: left;
+		}
+		a {
+			max-width: 90%;
+			display: inline-block;
+		}
+	}
+
+	li.List-Filter-Subcategory {
+		ul {
+			margin-left: $icon-width + $icon-spacing;
+			margin-bottom: $size;
+			@extend .No-Bullets;
+			li {
+				a {
+					display: inline-block;
+					padding: $size-xs 0;
+					font-size: .7em;
+				}
 			}
 		}
 	}

@@ -22,7 +22,7 @@
     <h3 class="Section-Header">Каталог стройтехники</h3>
     <ul class="Grid-Row List-Categories Icons">
         @foreach($content['categories'] as $category)
-        <li class="Grid-Node-1-3"><img src="#"><a href="/tech/$category['alias']" alt="{{$category['name']}}">{{$category['name']}}</a>
+        <li class="Grid-Node-1-4"><img src="/img/techonline/car-icon-1.png"><a href="/tech/$category['alias']" alt="{{$category['name']}}">{{$category['name']}}</a>
         </li>
         @endforeach
     </ul>

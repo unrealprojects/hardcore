@@ -21,10 +21,10 @@
 
             <ul>
                 @elseif($i>1 && $i<5)
-                <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+                <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image"></li>
                 @elseif($i>5)
                 <li style="display: none">
-                    <img src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                    <img src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image">
                 </li>
                 @endif
                 @endforeach
@@ -40,7 +40,7 @@
                 <li>Состояние: {{$content['element']['opacity']['name']}}</li>
                 <li>Статус: {{$content['element']['status']['name']}}</li>
             </ul>
-            <p>{{$content['element']['description']}}</p>
+            <p itemprop="description">{{$content['element']['description']}}</p>
 
             <!-- Параметры товара -->
             <h6>Характеристики</h6>
@@ -51,7 +51,7 @@
                 </tr>
                 <tr>
                     <td>Модель:</td>
-                    <td><a href="/catalog/{{$content['element']['model']['metadata']['alias']}}">{{$content['element']['model']['model']}}</a></td>
+                    <td><a itemprop="category" href="/catalog/{{$content['element']['model']['metadata']['alias']}}">{{$content['element']['model']['model']}}</a></td>
                 </tr>
                 <tr>
                     <td>Регион:</td>
