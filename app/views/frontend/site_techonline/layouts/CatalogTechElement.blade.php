@@ -1,16 +1,20 @@
 @extends('frontend.site_techonline.'.$content['template'])
 
 @section('main')
+
 <section class="Node">
     <div class="Lot Element">
         <header>
             <h4 class="Section-Header">
                 {{$content['element']['name']}}
+                <p>{{$content['element']['model']['category']['name']}}</p>
             </h4>
-            <h5>{{$content['element']['rate']}}</h5>
+            <h5 class="Lot-Price">
+                {{$content['element']['rate']}}
+            </h5>
         </header>
 
-        <div class="Lot-Gallery Grid-Node-1-3">
+        <div class="Lot-Gallery Grid-Node-2-5">
             @foreach(json_decode($content['element']['photos'],true) as $i=>$photo)
             @if($i==1)
             <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
@@ -25,22 +29,22 @@
                 @endif
                 @endforeach
             </ul>
-        </div>
+            <div class="Lot-Renter">
+                Арендатор
+                <a href="/admin/{{$content['element']['admin']['metadata']['alias']}}">{{$content['element']['admin']['name']}}</a>
+            </div>
+       </div>
 
         <div class="Lot-About Grid-Node-3-5">
+            <ul class="Lot-Values">
+                <li>Состояние: {{$content['element']['opacity']['name']}}</li>
+                <li>Статус: {{$content['element']['status']['name']}}</li>
+            </ul>
             <p>{{$content['element']['description']}}</p>
 
             <!-- Параметры товара -->
             <h6>Характеристики</h6>
             <table class="Stripped">
-                <tr>
-                    <td>Категория:</td>
-                    <td>{{$content['element']['model']['category']['name']}}</td>
-                </tr>
-                <tr>
-                    <td>Арендодатель:</td>
-                    <td><a href="/admin/{{$content['element']['admin']['metadata']['alias']}}">{{$content['element']['admin']['name']}}</a></td>
-                </tr>
                 <tr>
                     <td>Бренд:</td>
                     <td>{{$content['element']['model']['brand']['name']}}</td>
@@ -53,15 +57,6 @@
                     <td>Регион:</td>
                     <td>{{$content['element']['region']['name']}}</td>
                 </tr>
-                <tr>
-                    <td>Cтатус:</td>
-                    <td>{{$content['element']['status']['name']}}</td>
-                </tr>
-                <tr>
-                    <td>Состояние:</td>
-                    <td> {{$content['element']['opacity']['name']}}</td>
-                </tr>
-
             </table>
 
 

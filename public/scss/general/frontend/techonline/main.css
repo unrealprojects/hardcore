@@ -29,19 +29,19 @@
 ._Dev {
   outline: 1px red solid !important; }
 
-._Fix, .Grid, .Grid-Row, .Control-Group, dl.Tabs, .Node, .Page-Header .Centrate, .Page-Navigation ul, .Lot, .Lot header, .Pagination, .List-Categories li, .Comment .Comment-List li .Comment-List-Element-Content header, footer[role='contentinfo'] > div {
+._Fix, ._Inline, .Page-Header .Centrate, .Lot .Lot-Gallery ul, .Lot .Lot-About .Lot-Values, .Breadcrumbs ul, footer[role='contentinfo'] > div .Footer-Navigation ul, .Grid, .Grid-Row, .Control-Group, dl.Tabs, .Node, .Page-Navigation ul, .Lot, .Lot header, .Pagination, .List-Categories li, .Comment .Comment-List li .Comment-List-Element-Content header, footer[role='contentinfo'] > div {
   display: table; }
-  ._Fix:after, .Grid:after, .Grid-Row:after, .Control-Group:after, dl.Tabs:after, .Node:after, .Page-Header .Centrate:after, .Page-Navigation ul:after, .Lot:after, .Lot header:after, .Pagination:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after {
+  ._Fix:after, ._Inline:after, .Page-Header .Centrate:after, .Lot .Lot-Gallery ul:after, .Lot .Lot-About .Lot-Values:after, .Breadcrumbs ul:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Grid:after, .Grid-Row:after, .Control-Group:after, dl.Tabs:after, .Node:after, .Page-Navigation ul:after, .Lot:after, .Lot header:after, .Pagination:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after {
     content: '. .';
     display: block;
     word-spacing: 99in;
     height: 0;
     overflow: hidden; }
 
-._Inline > *, .Page-Header .Centrate > *, .Lot .Lot-Gallery ul > *, footer[role='contentinfo'] > div .Footer-Navigation ul > * {
+._Inline > *, .Page-Header .Centrate > *, .Lot .Lot-Gallery ul > *, .Lot .Lot-About .Lot-Values > *, .Breadcrumbs ul > *, footer[role='contentinfo'] > div .Footer-Navigation ul > * {
   float: left; }
 
-._No-Bullets, .Page-Slider .Slider-Inner .Slider-Links, .Lot .Lot-Gallery ul, .Pagination, footer[role='contentinfo'] > div .Footer-Navigation ul {
+._No-Bullets, .Page-Slider .Slider-Inner .Slider-Links, .Lot .Lot-Gallery ul, .Lot .Lot-About .Lot-Values, .Breadcrumbs ul, .Pagination, footer[role='contentinfo'] > div .Footer-Navigation ul {
   list-style: none; }
 
 ._Soft_Shadow, .Page-Header, .Page-Header .Centrate .Page-Auth .Sign-In-UI,
@@ -728,7 +728,7 @@ body {
     .Lot header h4 {
       text-transform: uppercase;
       float: left; }
-    .Lot header h5 {
+    .Lot header .Lot-Price {
       color: white;
       background-color: #ec6700;
       margin-right: -50px;
@@ -744,7 +744,7 @@ body {
       font-size: 0.8em;
       clear: both; }
   .Lot .Lot-Gallery {
-    padding-right: 20px; }
+    padding-right: 30px; }
     .Lot .Lot-Gallery ul li {
       width: 30%;
       margin-left: 5%; }
@@ -753,12 +753,33 @@ body {
       .Lot .Lot-Gallery ul li img {
         display: block;
         width: 100%; }
+  .Lot .Lot-About .Lot-Values {
+    padding: 10px;
+    border-top: 1px solid #dedede;
+    background-color: #f1f1f1; }
+    .Lot .Lot-About .Lot-Values li {
+      margin-right: 5%; }
   .Lot .Lot-About > h6 {
     margin-top: 15px; }
   .Lot .Lot-About > table {
     margin: 0 -10px; }
     .Lot .Lot-About > table tr td {
       padding: 5px 10px; }
+
+.Breadcrumbs ul {
+  padding: 10px 30px;
+  background-color: white; }
+  .Breadcrumbs ul li a,
+  .Breadcrumbs ul li span {
+    padding: 5px; }
+    .Breadcrumbs ul li a:hover,
+    .Breadcrumbs ul li span:hover {
+      background-color: #f1f1f1; }
+  .Breadcrumbs ul li:before {
+    padding: 0 10px;
+    content: "/"; }
+  .Breadcrumbs ul li:first-child:before {
+    content: ""; }
 
 .Lot-List > li:first-child {
   margin-top: 0; }

@@ -264,12 +264,13 @@ body {
 			text-transform: uppercase;
 			float: left;
 		}
-		& h5 {
+		& .Lot-Price {
 			color: white;
 			background-color: $clr-main;
 			margin-right: -$size-xl;
 			padding: $size-s $size-n;
 			float: right;
+
 		}
 		& img {
 			display: block;
@@ -286,7 +287,7 @@ body {
 
 	}
 	.Lot-Gallery {
-		padding-right: $size;
+		padding-right: $size-l;
 		img.Lot-Main-Photo {
 			@extend ._Fit-Row;
 			@extend ._Highlight;
@@ -309,6 +310,17 @@ body {
 		}
 	}
 	.Lot-About {
+		& .Lot-Values {
+			padding: $size-s;
+
+			border-top:			1px solid $clr-grey-light;
+			background-color: $clr-grey-lighter;
+			@extend ._No-Bullets;
+			@extend ._Inline;
+			li {
+				margin-right: 5%;
+			}
+		}
 		& > h6 {
 			margin-top: $size-n;
 		}
@@ -323,6 +335,33 @@ body {
 	}
 	&.Element .Lot-About {
 
+	}
+}
+
+.Breadcrumbs {
+	ul {
+		padding: $size-s $size-l;
+		background-color: white;
+		@extend ._Inline;
+		@extend ._No-Bullets;
+		li {
+			a    ,
+			span {
+				padding: $size-xs;
+				&:hover {
+					background-color: $clr-grey-lighter;
+				}
+			}
+			&:before {
+				padding: 0 $size-s;
+				content: "/";
+			}
+		}
+		li:first-child {
+			&:before {
+				content: "";
+			}
+		}
 	}
 }
 
