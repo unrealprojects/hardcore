@@ -3,9 +3,15 @@
    <ul>
        @foreach($breadCrumbs as $crumb)
            @if($crumb['link'])
-                <li><a href="{{$crumb['link']}}">{{$crumb['title']}}</a></li>
+                <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="{{$crumb['link']}}" itemprop="url">
+                        <span itemprop="title">{{$crumb['title']}}</span>
+                    </a>
+                </li>
            @else
-                <li>{{$crumb['title']}}</li>
+                <li>
+                    {{$crumb['title']}}
+                </li>
            @endif
        @endforeach
    </ul>

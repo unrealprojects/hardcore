@@ -33,7 +33,7 @@
 
     <!-- АРЕНДА СТРОЙТЕХНИКИ::КАТЕГОРИИ -->
     <div class="Grid-Node-3-5">
-        <h4>Аренда стройтехники</h4>
+        <h4 class="Header-Column">Аренда стройтехники</h4>
         <ul class="List-Categories">
             @foreach($content['categories'] as $category)
             <li class="Grid-Node-1-2"><a href="/tech/$category['alias']"
@@ -44,7 +44,7 @@
 
     <!-- АРЕНДА СТРОЙТЕХНИКИ::БРЕНДЫ -->
     <div class="Grid-Node-2-5">
-        <h4>Производители</h4>
+        <h4 class="Header-Column">Производители</h4>
         <ul class="List-Categories">
             @foreach($content['brands'] as $brand)
             <li class="Grid-Node-1-2"><a href="/tech/$brand['alias']" alt="{{$brand['name']}}">{{$brand['name']}}</a>
@@ -71,6 +71,7 @@
                 </ul>
             </div>
         </dd>
+
         <dt>Выбор категории</dt>
         <dd>
             <div>
@@ -83,6 +84,7 @@
                 </ul>
             </div>
         </dd>
+
         <dt class="Disabled">Дополнительные параметры</dt>
         <dd>
             <div>
