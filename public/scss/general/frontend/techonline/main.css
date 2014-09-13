@@ -529,7 +529,8 @@ dl.Tabs dd {
 
 .Node {
   padding: 30px;
-  background-color: white; }
+  background-color: white;
+  border-radius: 10px; }
 
 .Node > * {
   margin-top: 20px; }
@@ -539,16 +540,6 @@ dl.Tabs dd {
 
 .Node [class*='Grid-Node-'] {
   margin-top: 0; }
-
-/* ТАБЫ > ////////////////////////////////////////////////////////////////////////////////////*/
-.Tab-Buttons > li {
-  float: left; }
-
-[class*='Tab-Node'] {
-  display: none; }
-
-.Tab-Node:first-child {
-  display: block; }
 
 /* ТАБЫ < ////////////////////////////////////////////////////////////////////////////////////*/
 table.Stripped tr:nth-child(even) td {
@@ -606,7 +597,7 @@ body {
   border-bottom: 1px solid #dedede; }
 
 .Section-Header {
-  font-size: 1.5em; }
+  font-size: 22px; }
 
 .Section-Subheader {
   font-size: 1.125em; }
