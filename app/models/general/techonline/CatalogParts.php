@@ -13,7 +13,7 @@ class CatalogParts extends TechOnline {
 
     public function category()
     {
-        return $this->hasOne('Model\General\TechOnline\CatalogPartsCategories','id','category_id');
+        return $this->hasOne('Model\General\TechOnline\CatalogTechCategories','id','category_id');
     }
 
     public function comments()

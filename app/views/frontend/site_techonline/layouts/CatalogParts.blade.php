@@ -10,9 +10,24 @@
         <aside class="Sidebar-Filter Grid-Node-1-5">
             <!-- Фильтрация :: По категориям -->
             <h4>Категории</h4>
-            <ul class="List-Filter">
+            <ul class="List-Filter Accordion">
                 @foreach($content['categories'] as $category)
-                <li><a href="/parts/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a></li>
+                <li class="List-Filter-Subheader">
+                    @if($category['subCategories'])
+                    <img class='Accordion-Switch' src="/img/techonline/icon-dropdown.png" alt=""/>
+                    @endif
+                    <a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a>
+                </li>
+
+                @if($category['subCategories'])
+                <li class="List-Filter-Subcategory">
+                    <ul>
+                        @foreach($category['subCategories'] as $subCategory)
+                        <li><a href="/catalog/?category={{$subCategory['alias']}}&{{\Input::getQueryString()}}">{{$subCategory['name']}}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
+                @endif
                 @endforeach
             </ul>
         </aside>
@@ -80,4 +95,8 @@
 </section>
 
 
+@endsection
+
+@section('scripts')
+<script src="/js/frontend/Accordion.js" type="text/javascript"></script>
 @endsection

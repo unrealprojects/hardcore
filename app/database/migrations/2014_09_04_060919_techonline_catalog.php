@@ -436,33 +436,6 @@ class TechonlineCatalog extends Migration {
             $catalog_region->save();
         }
 
-        /*** КАТЕГОРИИ ЗАПЧАСТЕЙ ***/
-        Schema::create('catalog_parts_categories', function($table)
-        {
-            $table->increments('id');
-            $table->string('alias')->nullable();
-            $table->string('name')->nullable();
-        });
-
-        $categories = [
-            'Категория запчастей 1',
-            'Категория запчастей 2',
-            'Категория запчастей 3',
-            'Категория запчастей 4',
-            'Категория запчастей 5',
-            'Категория запчастей 6',
-            'Категория запчастей 7',
-            'Категория запчастей 8',
-            'Категория запчастей 9',
-            'Категория запчастей 10',
-        ];
-
-        foreach($categories as $category){
-            $catalog_category = new \Model\General\TechOnline\CatalogPartsCategories();
-            $catalog_category->name=$category;
-            $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
-            $catalog_category->save();
-        }
 
         /*** КАТЕГОРИИ ТЕХНИКИ ***/
         Schema::create('catalog_tech_categories', function($table)

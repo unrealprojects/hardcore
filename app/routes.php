@@ -52,6 +52,9 @@ Route::get('/sellers/{alias}','\Controller\Frontend\TechOnline\CatalogSellersCon
 
 
 
+
+
+
 /*** BACKEND::CATALOG ***/
 
 Route::get('/backend/catalog','\Controller\Backend\TechOnline\CatalogController@actionIndex');
@@ -64,11 +67,15 @@ Route::get('/backend/catalog/update/{id}','\Controller\Backend\TechOnline\Catalo
 Route::get('/backend/catalog/delete/{id}','\Controller\Backend\TechOnline\CatalogController@categoryBaseDelete');
 
 
+/*** SYSTEM::FRONTEND::NEWS ***/
+Route::get('/news','\Controller\Frontend\TechOnline\NewsController@list');
+Route::get('/news/{alias}','\Controller\Frontend\TechOnline\NewsController@item');
 
-/*** SYSTEM::BACKEND::VOTED ***/
+
+/*** SYSTEM::FRONTEND::VOTED ***/
 Route::get('/vote/up/{app_section}/{id}','\Controller\VoteController@up');
 Route::get('/vote/down/{app_section}/{id}','\Controller\VoteController@down');
-Route::get('/vote/down/{app_section}/{id}','\Controller\VoteController@down');
 
-/*** SYSTEM::BACKEND::COMMENTS ***/
+
+/*** SYSTEM::FRONTEND::COMMENTS ***/
 Route::get('/comments/add/{list_id}','\Controller\CommentsController@add');
