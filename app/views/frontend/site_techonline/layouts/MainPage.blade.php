@@ -78,8 +78,15 @@
                 <ul class="Filter-Categories">
                     <!-- ФИЛЬТР::ТАБ 2::Категории-->
                     @foreach($content['categories'] as $category)
-                    <li class="Grid-Node-1-2"><a href="/tech/$category['alias']" alt="{{$category['name']}}">{{$category['name']}}</a>
-                    </li>
+                    <li><a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a></li>
+
+                    @if($category['subCategories'])
+                    <ul>
+                        @foreach($category['subCategories'] as $subCategory)
+                        <li><a href="/catalog/?category={{$subCategory['alias']}}&{{\Input::getQueryString()}}">{{$subCategory['name']}}</a></li>
+                        @endforeach
+                    </ul>
+                    @endif
                     @endforeach
                 </ul>
             </div>

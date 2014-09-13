@@ -28,7 +28,7 @@ class CatalogTechController extends TechonlineController{
             'pagination' => $CatalogTechList->links(),
             'list' => $CatalogTechList->toArray()['data'],
             'template' => 'content',
-            'categories' => \Model\General\TechOnline\CatalogTechCategories::all()->toArray(),
+            'categories' => \Model\General\TechOnline\CatalogTechCategories::toSubCategories(),
             'brands' => \Model\General\TechOnline\CatalogBrand::all()->toArray(),
             'regions' => \Model\General\TechOnline\CatalogRegion::all()->toArray(),
             'filters' => $filters?:false

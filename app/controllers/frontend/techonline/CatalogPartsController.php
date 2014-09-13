@@ -19,7 +19,7 @@ class CatalogPartsController extends TechonlineController{
             'pagination' => $CatalogPartsList->links(),
             'list' => $CatalogPartsList->toArray()['data'],
             'template' => 'content',
-            'categories' => \Model\General\TechOnline\CatalogPartsCategories::all()->toArray(),
+            'categories' => \Model\General\TechOnline\CatalogTechCategories::toSubCategories(),
         ];
 //        print_r($filters->toArray());exit;
         return \View::make($this->siteViewPath.'/layouts/CatalogParts',$this->viewData);

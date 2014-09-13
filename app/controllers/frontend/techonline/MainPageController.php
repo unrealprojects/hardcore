@@ -14,8 +14,7 @@ class MainPageController extends TechonlineController{
 
 
         $this->viewData['content']=[
-            '1'=>1,
-            'categories'=>\Model\General\TechOnline\CatalogTechCategories::all()->toArray(),
+            'categories'=>\Model\General\TechOnline\CatalogTechCategories::toSubCategories(),
             'regions'=>\Model\General\TechOnline\CatalogRegion::all()->toArray(),
             'brands'=>\Model\General\TechOnline\CatalogBrand::all()->toArray(),
             'news'=>'news',
