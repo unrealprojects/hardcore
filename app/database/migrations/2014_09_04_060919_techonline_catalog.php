@@ -470,30 +470,9 @@ class TechonlineCatalog extends Migration {
             $table->increments('id');
             $table->string('alias')->nullable();
             $table->string('name')->nullable();
+            $table->string('parent_id')->nullable();
         });
 
-        $categories = [
-            'Гусеничные экскаваторы',
-            'Автогрейдеры',
-            'Колесные экскаваторы',
-            'Экскаваторы-погрузчики',
-            'Фронтальные погрузчики',
-            'Бульдозеры',
-            'Экскаваторы карьерные',
-            'Карьерные самосвалы',
-            'Мини-экскаваторы',
-            'Мини-погрузчики',
-            'Автокраны',
-            'Манипулятры',
-            'Башенные краны'
-        ];
-
-        foreach($categories as $category){
-            $catalog_category = new \Model\General\TechOnline\CatalogTechCategories();
-            $catalog_category->name=$category;
-            $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
-            $catalog_category->save();
-        }
 
         /*** СОСТОЯНИЕ ***/
         Schema::create('catalog_opacity', function($table)

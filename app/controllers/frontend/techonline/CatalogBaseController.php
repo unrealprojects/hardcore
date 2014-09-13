@@ -19,12 +19,14 @@ class CatalogBaseController extends TechonlineController{
             $filters = $paramFilters->getFilters($filter['category']);
         }
 
+
+
         /* ДАННЫЕ ВИД */
         $this->viewData['content'] = [
             'pagination' => $CatalogBaseList->links(),
             'list' => $CatalogBaseList->toArray()['data'],
             'template' => 'content',
-            'categories' => \Model\General\TechOnline\CatalogTechCategories::all()->toArray(),
+            'categories' => \Model\General\TechOnline\CatalogTechCategories::toSubCategories(),
             'brands' => \Model\General\TechOnline\CatalogBrand::all()->toArray(),
             'filters' => $filters?:false
         ];

@@ -18,7 +18,15 @@
             <h4>Категории</h4>
             <ul class="List-Filter">
                 @foreach($content['categories'] as $category)
-                <li><a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a></li>
+                    <li><a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a></li>
+
+                    @if($category['subCategories'])
+                        <ul>
+                        @foreach($category['subCategories'] as $subCategory)
+                             <li><a href="/catalog/?category={{$subCategory['alias']}}&{{\Input::getQueryString()}}">{{$subCategory['name']}}</a></li>
+                        @endforeach
+                        </ul>
+                    @endif
                 @endforeach
             </ul>
         </aside>

@@ -19,4 +19,29 @@ class CatalogTechCategories extends TechOnline {
             ->where('alias',$category)
             ->first();
     }
+
+    static public function toSubCategories(){
+       $instance = new static;
+       $categories=$instance::get()->toArray();
+       $sorted=[];
+       $i=0;
+
+       foreach($categories as $key=>&$category){
+           if($category['parent_id']==0){
+               $sorted[]=$category;
+               foreach($categories as $subKey=>&$subcategory){
+                   if($subcategory['parent_id']!=0 && $category['id']==$subcategory['parent_id']){
+                       $sorted[$i]['subCategories'][]=$subcategory;
+                       unset($categories[$subKey]);
+                   }
+               }
+               unset($categories[$key]);
+               $i++;
+
+           }
+       }
+//        print_r($sorted);
+//        exit;
+       return $sorted;
+    }
 }
