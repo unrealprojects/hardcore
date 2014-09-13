@@ -71,6 +71,7 @@
                         <p>{{$list_elem['description']}}</p>
 
                         <!-- Параметры товара -->
+                        @if($list_elem['params_values'])
                         <h6>Характеристики</h6>
                         <table class="Stripped">
                             @foreach($list_elem['params_values'] as $param)
@@ -80,6 +81,7 @@
                             </tr>
                             @endforeach
                         </table>
+                        @endif
                     </div>
                 </li>
             @endforeach
