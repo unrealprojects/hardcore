@@ -1,7 +1,7 @@
 <?php
 namespace Controller;
 
-class VotedController extends \Controller{
+class VoteController extends \Controller{
 
 	public function up($app_section,$id)
 	{
@@ -10,7 +10,7 @@ class VotedController extends \Controller{
             $newVote=\Model\General\Comments::find($id)){
 
             $newVoteIp = new \Model\General\Voted();
-            $newVoteIp->app_section='comments';
+            $newVoteIp->app_section=$app_section;
             $newVoteIp->item_id=$id;
             $newVoteIp->ip=\Request::getClientIp();
             $newVoteIp->save();
@@ -30,7 +30,7 @@ class VotedController extends \Controller{
             $newVote=\Model\General\Comments::find($id)){
 
             $newVoteIp = new \Model\General\Voted();
-            $newVoteIp->app_section='comments';
+            $newVoteIp->app_section=$app_section;
             $newVoteIp->item_id=$id;
             $newVoteIp->ip=\Request::getClientIp();
             $newVoteIp->save();

@@ -1,7 +1,13 @@
+@if(!empty($breadCrumbs))
 <div class="Breadcrumbs Node">
-    <ul>
-        <li><a href="#">Главная страница</a></li>
-        <li><a href="#">Аренда стройтехники</a></li>
-        <li><a href="#">MAN XF</a></li>
-    </ul>
+   <ul>
+       @foreach($breadCrumbs as $crumb)
+           @if($crumb['link'])
+                <li><a href="{{$crumb['link']}}">{{$crumb['title']}}</a></li>
+           @else
+                <li>{{$crumb['title']}}</li>
+           @endif
+       @endforeach
+   </ul>
 </div>
+@endif

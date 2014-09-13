@@ -1,13 +1,13 @@
 (function($){
     $(document).ready(function(){
-        /* Comments */
+        /* Vote */
         $.getScript('http://www.google.com/recaptcha/api/js/recaptcha_ajax.js');
 
         $(document).on('click','.Comment-List-Element .Up',function(){
             comment_id=$(this).parent().parent().parent().attr('comment_id');
             var this_element = this;
             $.ajax({
-                url:'/comments/up/'+comment_id,
+                url:'/vote/up/comments/'+comment_id,
                 type:'get',
                 dataType:'json',
                 success:function($data){
@@ -23,7 +23,7 @@
             comment_id=$(this).parent().parent().parent().attr('comment_id');
             var this_element = this;
             $.ajax({
-                url:'/comments/down/'+comment_id,
+                url:'/vote/down/comments/'+comment_id,
                 type:'get',
                 dataType:'json',
                 success:function($data){
@@ -35,6 +35,7 @@
             });
         });
 
+        /* Comments */
         $('.Form-Horizontal input[type=submit]').click(function(){
             var this_element = this;
             var name = $('input[name=name]',$(this_element).parent().parent()).val();

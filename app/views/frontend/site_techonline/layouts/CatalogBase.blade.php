@@ -1,9 +1,6 @@
 @extends('frontend.site_techonline.'.$content['template'])
 
 @section('main')
-
-@include('frontend.site_techonline.parts.breadcrumbs')
-
 <section class="Node Grid">
 
     <h3 class="Section-Header">Каталог строительной техники</h3>

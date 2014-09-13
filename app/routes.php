@@ -66,8 +66,9 @@ Route::get('/backend/catalog/delete/{id}','\Controller\Backend\TechOnline\Catalo
 
 
 /*** SYSTEM::BACKEND::VOTED ***/
-Route::get('/vote/up/{app_section}/{id}','\Controller\CommentsController@up');
-Route::get('/vote/down/{app_section}/{id}','\Controller\CommentsController@down');
+Route::get('/vote/up/{app_section}/{id}','\Controller\VoteController@up');
+Route::get('/vote/down/{app_section}/{id}','\Controller\VoteController@down');
+Route::get('/vote/down/{app_section}/{id}','\Controller\VoteController@down');
 
 /*** SYSTEM::BACKEND::COMMENTS ***/
 Route::get('/comments/add/{list_id}','\Controller\CommentsController@add');

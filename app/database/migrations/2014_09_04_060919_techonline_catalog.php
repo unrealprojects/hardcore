@@ -142,7 +142,7 @@ class TechonlineCatalog extends Migration {
             $meta_data->keywords=$catalog_base->name;
 
             $meta_data->alias= Mascame\Urlify::filter($catalog_base->name);
-            $meta_data->app_section = 'tech';
+            $meta_data->app_section = 'rent';
             $meta_data->save();
             $catalog_base->metadata_id = $meta_data->id;
             /* end update metadata*/
@@ -215,7 +215,7 @@ class TechonlineCatalog extends Migration {
             $meta_data->keywords=$catalog_base->name;
 
             $meta_data->alias = Mascame\Urlify::filter($catalog_base->name);
-            $meta_data->app_section = 'parts';
+            $meta_data->app_section = 'parts    ';
             $meta_data->save();
             $catalog_base->metadata_id = $meta_data->id;
             /* end update metadata*/
@@ -628,6 +628,39 @@ class TechonlineCatalog extends Migration {
             $params_rel->save();
         }
 
+
+        /* Мета для основных страниц */
+        $meta_data = new \Model\General\MetaData();
+        $meta_data->title="Каталог Стройтехники";
+        $meta_data->description="Каталог Стройтехники";
+        $meta_data->keywords="Каталог Стройтехники";
+        $meta_data->alias = '';
+        $meta_data->app_section = 'catalog';
+        $meta_data->save();
+
+        $meta_data = new \Model\General\MetaData();
+        $meta_data->title="Аренда Стройтехники";
+        $meta_data->description="Аренда Стройтехники";
+        $meta_data->keywords="Аренда Стройтехники";
+        $meta_data->alias = '';
+        $meta_data->app_section = 'rent';
+        $meta_data->save();
+
+        $meta_data = new \Model\General\MetaData();
+        $meta_data->title="Запчасти и сервис";
+        $meta_data->description="Запчасти и сервис";
+        $meta_data->keywords="Запчасти и сервис";
+        $meta_data->alias = '';
+        $meta_data->app_section = 'parts';
+        $meta_data->save();
+
+        $meta_data = new \Model\General\MetaData();
+        $meta_data->title="Арендодатели";
+        $meta_data->description="Арендодатели";
+        $meta_data->keywords="Арендодатели";
+        $meta_data->alias = '';
+        $meta_data->app_section = 'sellers';
+        $meta_data->save();
 
 	}
 

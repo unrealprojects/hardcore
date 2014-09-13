@@ -17,6 +17,7 @@ return array(
     'Controller\\Frontend\\TechOnline\\CatalogTechController' => $baseDir . '/app/controllers/frontend/techonline/CatalogTechController.php',
     'Controller\\Frontend\\TechOnline\\MainPageController' => $baseDir . '/app/controllers/frontend/techonline/MainPageController.php',
     'Controller\\Frontend\\TechOnline\\TechonlineController' => $baseDir . '/app/controllers/frontend/techonline/TechonlineController.php',
+    'Controller\\VoteController' => $baseDir . '/app/controllers/frontend/general/VoteController.php',
     'CreateHardcoreRoutes' => $baseDir . '/app/database/migrations/2014_09_01_100050_create_hardcore_routes.php',
     'DatabaseSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
