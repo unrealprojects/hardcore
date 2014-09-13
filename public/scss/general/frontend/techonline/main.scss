@@ -29,12 +29,13 @@ body {
 	display: inline-block;
 	clear: both;
 	padding: $size-s $size-n;
-	border-left: 4px solid $clr-main;
 	text-transform: uppercase;
-	background-color: $clr-grey-darker;
+	background-color: $clr-main;
+	background: linear-gradient(to right, $clr-main, $clr-main-lighter);
 	color: #fff;
 	font-weight: 100;
 	@extend ._Fly-Out;
+	@extend ._Round-Diagonal-Reverse;
 }
 .Header-Column {
 	font-size: $Font-Size-Huge;
@@ -282,11 +283,11 @@ body {
 		}
 		& .Lot-Price {
 			color: white;
-			background-color: $clr-main;
 			margin-right: -$size-xl;
 			padding: $size-s $size-n;
 			float: right;
-
+			background: linear-gradient(to left, $clr-main, $clr-main-lighter);
+			@extend ._Round-Diagonal;
 		}
 		& img {
 			display: block;

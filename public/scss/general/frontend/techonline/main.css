@@ -74,6 +74,13 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
     filter: alpha(opacity=90); }
 
+._Round-Diagonal, .Lot header .Lot-Price {
+  border-radius: 10px 0; }
+
+._Round-Diagonal-Reverse, .Section-Header,
+.Section-Subheader {
+  border-radius: 0 10px; }
+
 * {
   margin: 0;
   padding: 0;
@@ -251,7 +258,7 @@ code {
   content: ' ';
   position: absolute;
   display: block;
-  border: 15px solid #d30000;
+  border: 15px solid #a34b00;
   border-bottom-color: transparent;
   top: 50px;
   z-index: 1; }
@@ -353,7 +360,7 @@ input[type='submit'] {
   padding: 10px 30px !important;
   font-size: 110%; }
   input[type='submit']:hover {
-    background-color: #d30000; }
+    background-color: #a34b00; }
   input[type='submit'][disabled] {
     background-color: #cccccc;
     cursor: not-allowed; }
@@ -586,9 +593,9 @@ body {
   display: inline-block;
   clear: both;
   padding: 10px 15px;
-  border-left: 4px solid #ec6700;
   text-transform: uppercase;
-  background-color: #555555;
+  background-color: #ec6700;
+  background: linear-gradient(to right, #ec6700, #ff9441);
   color: #fff;
   font-weight: 100; }
 
@@ -768,10 +775,10 @@ body {
         color: #555555; }
     .Lot header .Lot-Price {
       color: white;
-      background-color: #ec6700;
       margin-right: -50px;
       padding: 10px 15px;
-      float: right; }
+      float: right;
+      background: linear-gradient(to left, #ec6700, #ff9441); }
     .Lot header img {
       display: block;
       height: 30px;

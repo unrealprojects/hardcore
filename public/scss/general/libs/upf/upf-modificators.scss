@@ -107,3 +107,9 @@
 		@include Opacity(.9);
 	}
 }
+._Round-Diagonal {
+	border-radius: 10px 0;
+}
+._Round-Diagonal-Reverse {
+	border-radius: 0 10px;
+}
