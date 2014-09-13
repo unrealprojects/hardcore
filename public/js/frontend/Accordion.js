@@ -1,7 +1,7 @@
 (function($){
     $(document).ready(function(){
         $('.Accordion > .List-Filter-Subcategory').hide();
-        $('.Accordion > .List-Filter-Subheader > .Accordion-Switch').click(function(){
+        $('.Accordion > .List-Filter-Subheader > div > .Accordion-Switch').click(function(){
             var selfClick = $(this).parent()
                                    .next()
                                    .is(':visible');

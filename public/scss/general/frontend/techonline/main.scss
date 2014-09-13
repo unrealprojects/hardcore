@@ -437,26 +437,32 @@ body {
 		background-color: $clr-grey-darker;
 	}
 	& > h4 {
+		font-size: 20px;
+		font-weight: 100;
 		margin-top: $size;
+		margin-bottom: $size-xs;
 		&:first-child {
 			margin-top: 0;
 		}
 	}
 	& > ul {
+		margin-right: $size-xl;
 		font-family: $Font-Family-Calibri;
 		& > li {
 			& > a {
-				margin-left: -$size-xs;
-				margin-right: $size-l;
 				display: block;
 				padding: $size-xs;
-				font-size: 12px;
+				border-top: 1px dashed $clr-grey;
+				font-size: 13px;
+				font-weight: 900;
+				color: black;
 				&:hover {
-					color: white;
-					background-color: $clr-grey-darker;
+					background-color: $clr-grey-light;
 				}
 			}
-
+			&:first-child a {
+				border: 0;
+			}
 		}
 	}
 }
@@ -652,14 +658,24 @@ footer[role='contentinfo'] {
 
 	li.List-Filter-Subheader {
 		@extend ._Fix;
-		img {
-			margin: 6px $size-xs 0 0;
-			width: $icon-width;
+		div {
+			width: 10%;
 			float: left;
+			img {
+				padding: $size-xs 0;
+				margin: $size-xs 0 0;
+				width: $icon-width;
+				float: left;
+				cursor: pointer;
+				&:hover {
+					@include Opacity(.75);
+				}
+			}
 		}
+
 		a {
-			max-width: 90%;
-			display: inline-block;
+			width: 90%;
+			float: right;
 		}
 	}
 

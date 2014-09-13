@@ -20,7 +20,7 @@
                 @foreach($content['categories'] as $category)
                     <li class="List-Filter-Subheader">
                         @if($category['subCategories'])
-                            <img class='Accordion-Switch' src="/img/techonline/icon-dropdown.png" alt=""/>
+                            <div><img class='Accordion-Switch' src="/img/techonline/icon-dropdown.png" alt=""/></div>
                         @endif
                         <a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a>
                     </li>
