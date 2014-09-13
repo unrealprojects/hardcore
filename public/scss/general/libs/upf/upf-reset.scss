@@ -1,15 +1,25 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box; /* Android Fix */
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box; /* Android Fix */
 }
+
 a img {
-  border: 0;
+	border: 0;
 }
+
 body {
-  font-family: sans-serif;
+	font-family: sans-serif;
 }
-iframe{
-  display: block;
+
+article,
+section,
+nav,
+aside {
+	display: block;
+}
+
+iframe {
+	display: block;
 }

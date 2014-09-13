@@ -36,6 +36,10 @@ body {
 	font-weight: 100;
 	@extend ._Fly-Out;
 }
+.Header-Column {
+	font-size: $Font-Size-Large;
+}
+
 
 .Section-Header {
 	font-size: $Font-Size-Huge;
@@ -53,7 +57,7 @@ body {
 	height: 80px;
 	@extend ._Soft_Shadow;
 
-	.Centrate {
+	.Page-Header-Inner {
 		width: $node-width;
 		height: 80px;
 		@extend ._Fix;
@@ -171,6 +175,7 @@ body {
 	}
 }
 
+// Меню навигации по сайту
 .Page-Navigation {
 	display: inline-block;
 	width: 46%;
@@ -207,6 +212,7 @@ body {
 	}
 }
 
+//
 .Page-Slider {
 	overflow: hidden;
 	background: url(../../../../img/techonline/shadow-down-top.png) repeat-x bottom, url(../../../../img/techonline/shadow-top-down.png) repeat-x top, url(../../../../img/techonline/banner-background.jpg) no-repeat center center;
@@ -248,6 +254,7 @@ body {
 	}
 }
 
+// Список товаров
 .Lot {
 	margin-top: $size-xl;
 	@extend ._Fix;
@@ -338,11 +345,12 @@ body {
 	}
 }
 
+// Хлебные крошки
 .Breadcrumbs {
-	padding: 0;
+	padding: 0!important;
 	margin-bottom: -20px!important;
 	ul {
-		padding: $size-s $size-l;
+		padding: $size-s 0;
 		background-color: white;
 		@extend ._Inline;
 		@extend ._No-Bullets;
@@ -364,12 +372,6 @@ body {
 				content: "";
 			}
 		}
-	}
-}
-
-.Lot-List > li {
-	&:first-child {
-		margin-top: 0;
 	}
 }
 
@@ -417,27 +419,7 @@ body {
 	}
 }
 
-.List-Filter {
-	@extend .No-Bullets;
-	& > li {
-		margin-right: $size;
-		& > a {
-			display: block;
-			padding: $size-xs $size-s;
-			margin: 0 (-$size-s);
-			&:hover {
-				background-color: $clr-main;
-				color: #fff;
-			}
-		}
-	}
-}
-.Category-List {
-	@include Animation(FadeIn,1s,0.3s);
-}
-.Rent-List {
-	@include Animation(FadeIn,1s,0.5s);
-}
+// Список категорий
 .List-Categories {
 	li {
 		padding: $size-s 0;
@@ -456,6 +438,7 @@ body {
 	}
 }
 
+// Блок комментариев
 .Comment {
 	.Comment-List {
 		@extend .No-Bullets;
@@ -521,21 +504,7 @@ body {
 	}
 }
 
-.Seller-List {
-	@extend ._Vertical-Spacing;
-	li.Seller-Item {
-		padding-right: $size-xl;
-		header {
-			h5.Seller-Title {
-				a {
-					text-transform: uppercase;
-				}
-			}
-
-		}
-	}
-}
-
+// Блок футера
 footer[role='contentinfo'] {
 	height: $footer-height;
 
@@ -551,6 +520,7 @@ footer[role='contentinfo'] {
 		}
 		.Footer-Navigation {
 			@extend ._Right;
+			width: 37%;
 			ul {
 				@extend ._No-Bullets;
 				@extend ._Inline;
@@ -574,6 +544,14 @@ footer[role='contentinfo'] {
 	}
 }
 
+.Category-List {
+	@include Animation(FadeIn,1s,0.3s);
+}
+
+.Rent-List {
+	@include Animation(FadeIn,1s,0.5s);
+}
+
 .Filter-Regions {
 	li {
 		a {
@@ -582,6 +560,7 @@ footer[role='contentinfo'] {
 		}
 	}
 }
+
 .Filter-Categories {
 	li {
 		a {
@@ -590,6 +569,39 @@ footer[role='contentinfo'] {
 		}
 	}
 }
+
+.Seller-List {
+	@extend ._Vertical-Spacing;
+	li.Seller-Item {
+		padding-right: $size-xl;
+		header {
+			h5.Seller-Title {
+				a {
+					text-transform: uppercase;
+				}
+			}
+
+		}
+	}
+}
+
+.List-Filter {
+	@extend .No-Bullets;
+	& > li {
+		margin-right: $size-l;
+		& > a {
+			display: block;
+			padding: $size-xs $size-s;
+			margin: 0 (-$size-s);
+			font-size: $Font-Size-Small;
+			&:hover {
+				background-color: $clr-main;
+				color: #fff;
+			}
+		}
+	}
+}
+
 @include Keyframes(FadeIn) {
 	from {
 		@include Opacity(0);

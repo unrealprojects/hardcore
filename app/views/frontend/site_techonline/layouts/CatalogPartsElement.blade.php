@@ -2,7 +2,7 @@
 
 @section('main')
 <section class="Node">
-    <div class="Lot Item">
+    <div class="Lot" itemscope itemtype="http://data-vocabulary.org/Product">
         <header>
             <h4 class="Section-Header">
                 {{$content['element']['name']}}
@@ -12,7 +12,7 @@
         <div class="Lot-Gallery Grid-Node-1-3">
             @foreach(json_decode($content['element']['photos'],true) as $i=>$photo)
             @if($i==1)
-            <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+            <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image">
 
             <ul>
                 @elseif($i>1 && $i<5)
