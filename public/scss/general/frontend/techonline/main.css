@@ -766,20 +766,22 @@ body {
     .Lot .Lot-About > table tr td {
       padding: 5px 10px; }
 
-.Breadcrumbs ul {
-  padding: 10px 30px;
-  background-color: white; }
-  .Breadcrumbs ul li a,
-  .Breadcrumbs ul li span {
-    padding: 5px; }
-    .Breadcrumbs ul li a:hover,
-    .Breadcrumbs ul li span:hover {
-      background-color: #f1f1f1; }
-  .Breadcrumbs ul li:before {
-    padding: 0 10px;
-    content: "/"; }
-  .Breadcrumbs ul li:first-child:before {
-    content: ""; }
+.Breadcrumbs {
+  padding: 0; }
+  .Breadcrumbs ul {
+    padding: 10px 30px;
+    background-color: white; }
+    .Breadcrumbs ul li a,
+    .Breadcrumbs ul li span {
+      padding: 5px; }
+      .Breadcrumbs ul li a:hover,
+      .Breadcrumbs ul li span:hover {
+        background-color: #f1f1f1; }
+    .Breadcrumbs ul li:before {
+      padding: 0 10px;
+      content: "/"; }
+    .Breadcrumbs ul li:first-child:before {
+      content: ""; }
 
 .Lot-List > li:first-child {
   margin-top: 0; }
