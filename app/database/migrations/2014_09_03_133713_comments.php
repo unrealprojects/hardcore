@@ -7,7 +7,8 @@ class Comments extends Migration {
 	public function up()
 	{
         Schema::dropIfExists('comments');
-        Schema::dropIfExists('comments_voted');
+        Schema::dropIfExists('voted');
+
         /*** КОММЕНТАРИИ ***/
         Schema::create('comments', function($table)
         {
@@ -26,7 +27,6 @@ class Comments extends Migration {
             $table->dateTime('updated_at');
         });
 
-
         $faker = Faker\Factory::create();
         for($i=0;$i<500;$i++){
             $comments = new \Model\General\Comments();
@@ -37,12 +37,12 @@ class Comments extends Migration {
             $comments->save();
         }
 
-        Schema::create('comments_voted', function($table)
+        Schema::create('voted', function($table)
         {
             $table->increments('id');
             $table->string('ip')->nullable();
-            $table->integer('comment_id')->nullable();
-
+            $table->integer('app_section')->nullable();
+            $table->integer('item_id')->nullable();
         });
 	}
 
@@ -54,7 +54,7 @@ class Comments extends Migration {
 	public function down()
 	{
         Schema::dropIfExists('comments');
-        Schema::dropIfExists('comments_voted');
+        Schema::dropIfExists('voted');
 	}
 
 }

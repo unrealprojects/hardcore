@@ -134,3 +134,22 @@
 <!-- НОВОСТИ::СПИСОК -->
 
 @endsection
+
+@section('scripts')
+    @parent
+    <script src="/js/frontend/techonline/MainPage.js" type="text/javascript"></script>
+    <script>
+        $("#Slider-Range-1").slider({
+             range: true,
+             min: 100,
+             max: 50000,
+             values: [ 100, 50000 ],
+            slide: function( event, ui ) {
+                $("#Slider-Range-Value-1").text(ui.values[ 0 ] + "руб. - " + ui.values[ 1 ] +"руб.");
+            }
+        });
+        $("#Slider-Range-Value-1").text( "$" + $( "#Slider-Range-1").slider( "values", 0 ) +
+            " - руб." + $( "#Slider-Range-1" ).slider( "values", 1 ) );
+
+    </script>
+@endsection

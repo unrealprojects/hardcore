@@ -8,7 +8,6 @@ class News extends Migration {
 	public function up()
 	{
         Schema::dropIfExists('news');
-        Schema::dropIfExists('news_voted');
         Schema::dropIfExists('news_categories');
         Schema::dropIfExists('news_tags');
         Schema::dropIfExists('news_to_tags');
@@ -52,7 +51,6 @@ class News extends Migration {
 	public function down()
 	{
         Schema::dropIfExists('news');
-        Schema::dropIfExists('news_voted');
         Schema::dropIfExists('news_categories');
         Schema::dropIfExists('news_tags');
         Schema::dropIfExists('news_to_tags');

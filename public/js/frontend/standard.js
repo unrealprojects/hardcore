@@ -17,7 +17,7 @@
         }
 
         /* Slider-Range */
-        $("#Slider-Range-1").noUiSlider({
+      /*  $("#Slider-Range-1").noUiSlider({
             start: [ 0 ],
             step: 50,
             range: {
@@ -39,13 +39,12 @@
                 }
             }
         });
-
+*/
         $("dl.Tabs dt").click(function(){
 
             $(this)
                 .siblings().removeClass("Active").end()
                 .next("dd").andSelf().addClass("Active");
-
         });
 
     });
