@@ -28,7 +28,7 @@ class CatalogSellersController extends TechonlineController{
     {
         /* ПОЛУЧЕНИЕ СПИСКА ДАННЫХ ИЗ КАТАЛОГА */
         $CatalogAdmin = new \Model\General\TechOnline\CatalogAdmin();
-        $CatalogAdminList=$CatalogAdmin->getElement($alias);
+        $CatalogAdminList=$CatalogAdmin->getItem($alias);
 
         $this->viewData['content'] = [
             'item' => $CatalogAdminList->toArray(),

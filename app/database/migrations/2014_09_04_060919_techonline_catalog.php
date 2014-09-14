@@ -610,6 +610,14 @@ class TechonlineCatalog extends Migration {
         $meta_data->alias = '';
         $meta_data->app_section = 'news';
         $meta_data->save();
+
+        $meta_data = new \Model\General\MetaData();
+        $meta_data->title="Личный Кабнет";
+        $meta_data->description="Личный Кабнет";
+        $meta_data->keywords="Личный Кабнет";
+        $meta_data->alias = '';
+        $meta_data->app_section = 'cabinet';
+        $meta_data->save();
 	}
 
 	public function down()

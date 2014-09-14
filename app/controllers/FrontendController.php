@@ -41,12 +41,13 @@ class FrontendController extends \Controller {
             ];
         }
         if($alias=\Route::current()->parameter('alias')){
-            $app_section_item = \Model\General\MetaData::where('app_section',$app_section)->where('alias',$alias)->first();
-            $this->viewData['breadCrumbs'][2]=
-                [
-                    'title'=>$app_section_item->title,
-                    'link'=>''
-                ];
+            if($app_section_item = \Model\General\MetaData::where('app_section',$app_section)->where('alias',$alias)->first()){
+                $this->viewData['breadCrumbs'][2]=
+                    [
+                        'title'=>$app_section_item->title,
+                        'link'=>''
+                    ];
+            }
 
         }
 //        print_r($this->viewData['breadCrumbs']);

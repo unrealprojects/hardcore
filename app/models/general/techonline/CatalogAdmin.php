@@ -39,7 +39,7 @@ class CatalogAdmin extends TechOnline {
             ->paginate(5);
     }
 
-    public function getElement($alias){
+    public function getItem($alias){
         $this->rewrite['alias']=$alias;
 
         return $this->with('region','partsList','partsList.metadata','techList','techList.metadata','comments','metadata')

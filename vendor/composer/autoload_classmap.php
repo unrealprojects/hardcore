@@ -13,6 +13,7 @@ return array(
     'Controller\\CommentsController' => $baseDir . '/app/controllers/frontend/general/CommentsController.php',
     'Controller\\Frontend\\FrontendController' => $baseDir . '/app/controllers/FrontendController.php',
     'Controller\\Frontend\\NewsController' => $baseDir . '/app/controllers/frontend/general/NewsController.php',
+    'Controller\\Frontend\\TechOnline\\CabinetController' => $baseDir . '/app/controllers/frontend/techonline/CabinetController.php',
     'Controller\\Frontend\\TechOnline\\CatalogBaseController' => $baseDir . '/app/controllers/frontend/techonline/CatalogBaseController.php',
     'Controller\\Frontend\\TechOnline\\CatalogPartsController' => $baseDir . '/app/controllers/frontend/techonline/CatalogPartsController.php',
     'Controller\\Frontend\\TechOnline\\CatalogSellersController' => $baseDir . '/app/controllers/frontend/techonline/CatalogSellersController.php',
