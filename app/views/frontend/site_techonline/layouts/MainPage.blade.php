@@ -153,12 +153,12 @@
         <li class="News-Item Grid-Node-1-2">
             <header>
                 <h5 class="News-Title">
-                    <a href="/sellers/{{$new['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$new['name']}}</a>
+                    <a href="/news/{{$new['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$new['name']}}</a>
                     <span class="News-Date">
                         {{$new['updated_at']}}
                     </span>
                 </h5>
-                <img src="{{$new['logo']}}" alt="{{$new['name']}}">
+                <img src="{{$new['logo']}}" alt="{{$new['name']}}" style="width: 100%;">
 
                 <div class="Seller-Rating">
                     {{$new['rating']}}

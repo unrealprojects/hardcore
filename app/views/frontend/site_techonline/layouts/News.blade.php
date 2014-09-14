@@ -32,11 +32,12 @@
                     </header>
 
                     <div class="Lot-Gallery Grid-Node-3-7">
-                        <img src="{{$list_elem['logo']}}" alt="{{$list_elem['name']}}">
+                        <img src="{{$list_elem['logo']}}" alt="{{$list_elem['name']}}" style="width: 100%;">
                     </div>
 
                     <div class="Lot-About Grid-Node-4-7">
                         <p>{{$list_elem['text_preview']}}</p>
+                        {{$list_elem['rating']}}
                     </div>
                 </li>
 

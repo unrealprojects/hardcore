@@ -53,12 +53,15 @@ Route::get('/sellers','\Controller\Frontend\TechOnline\CatalogSellersController@
 Route::get('/sellers/{alias}','\Controller\Frontend\TechOnline\CatalogSellersController@actionElement');
 
 
-
+/*** FRONTEND::TECHONLINE::CABINET ***/
+Route::get('/cabinet','\Controller\Frontend\TechOnline\CabinetController@actionList');
+Route::get('/cabinet/add','\Controller\Frontend\TechOnline\CabinetControllerController@actionAdd');
+Route::get('/cabinet/edit/{alias}','\Controller\Frontend\TechOnline\CabinetControllerController@actionEdit');
+Route::get('/cabinet/update/{alias}','\Controller\Frontend\TechOnline\CabinetControllerController@actionUpdate');
 
 
 
 /*** BACKEND::CATALOG ***/
-
 Route::get('/backend/catalog','\Controller\Backend\TechOnline\CatalogController@actionIndex');
 
 Route::get('/backend/catalog/list','\Controller\Backend\TechOnline\CatalogController@categoryBaseList');
@@ -74,7 +77,7 @@ Route::get('/news','\Controller\Frontend\NewsController@actionList');
 Route::get('/news/{alias}','\Controller\Frontend\NewsController@actionItem');
 
 
-/*** SYSTEM::FRONTEND::VOTED ***/
+/*** SYSTEM::FRONTEND:: VOTED ***/
 Route::get('/vote/up/{app_section}/{id}','\Controller\VoteController@up');
 Route::get('/vote/down/{app_section}/{id}','\Controller\VoteController@down');
 
