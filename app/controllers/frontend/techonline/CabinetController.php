@@ -11,8 +11,10 @@ class CabinetController extends TechonlineController{
 
         $this->viewData['content'] = [
             'item' => $CatalogAdminList->toArray(),
+            'regions' => \Model\General\TechOnline\CatalogRegion::all()->toArray(),
             'template' => 'content'
         ];
+
         return \View::make($this->siteViewPath.'/layouts/cabinet/Cabinet',$this->viewData);
     }
 

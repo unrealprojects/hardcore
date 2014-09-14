@@ -2,7 +2,7 @@
 
 @section('main')
 <!-- Личный Кабинет -->
-<div class="Comment Node">
+<div class="Comment Node" xmlns="http://www.w3.org/1999/html">
     <h4 class="Section-Header">Личный Кабинет</h4>
 
     <nav class="Navigation">
@@ -53,8 +53,39 @@
         </div>
 
         <div class="Control-Group">
+            <label for="Cabinet-Region">Регион</label>
+            <select id="Cabinet-Region" name="website" type="text" value="{{$content['item']['region_id']}}"/>
+                @foreach($content['regions'] as $region)
+                    @if($region['id']==$content['item']['region_id'])
+                        <option selected="selected" value="{{$region['id']}}">{{$region['name']}}</option>
+                    @else
+                        <option value="{{$region['id']}}">{{$region['name']}}</option>
+                    @endif
+                @endforeach
+            </select>
+        </div>
+
+        <div class="Control-Group">
+            <label for="Cabinet-Active">Опубликовать</label>
+            <input id="Cabinet-Active" name="active" type="checkbox" {{($content['item']['active'])?'checked=checked':''}}"/>
+        </div>
+
+        <div class="Control-Group">
+            <label for="Cabinet-Rating">Рейтинг</label>
+            <input id="Cabinet-Rating" name="active" type="text" disabled="true" value="{{$content['item']['rating']}}"/>
+        </div>
+        <div class="Control-Group">
+            <label for="Cabinet-Created">Аккаунт создан</label>
+            <input id="Cabinet-Created" name="created" type="text" disabled="true" value="{{$content['item']['created_at']}}"/>
+        </div>
+
+
+        <div class="Control-Group">
             <input type="submit" value="Обновить Информацию"/>
         </div>
     </form>
 </div>
+
+@include('frontend.standard.layouts.comments.List')
 @endsection
+
