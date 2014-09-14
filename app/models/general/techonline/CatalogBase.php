@@ -18,7 +18,7 @@ class CatalogBase extends TechOnline {
 
     public function category()
     {
-        return $this->hasOne('Model\General\TechOnline\CatalogTechCategories','id','category_id');
+        return $this->hasOne('Model\General\Categories','id','category_id');
     }
 
     public function params_values()
@@ -31,6 +31,11 @@ class CatalogBase extends TechOnline {
        $this->filter = $filter;
 
        return $this->with('category','brand','params_values','params_values.paramData','metadata')
+            /* Уточнение app_section для категории */
+           ->whereHas('category', function($query) {
+                   $query->where('app_section', 'catalog');
+           })
+            /* Фильтрация */
             ->whereHas('category', function($query) {
                  if($this->filter['category']){
                      $query->where('alias', $this->filter['category']);
@@ -47,6 +52,10 @@ class CatalogBase extends TechOnline {
     public function getElement($alias){
         $this->rewrite['alias']=$alias;
         return $this->with('category','brand','params_values','params_values.paramData','comments','metadata')
+                    /* Уточнение app_section для категории */
+                    ->whereHas('category', function($query) {
+                        $query->where('app_section', 'catalog');
+                    })
                     ->whereHas('metadata', function($query) {
                         $query->where('alias',$this->rewrite['alias']);
                     })

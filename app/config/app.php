@@ -123,7 +123,8 @@ return array(
         'Loom\Extensions\LoomViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
         'Mascame\Urlify\UrlifyServiceProvider',
-        'Greggilbert\Recaptcha\RecaptchaServiceProvider'
+        'Greggilbert\Recaptcha\RecaptchaServiceProvider',
+        'Maatwebsite\Excel\ExcelServiceProvider'
 
 	),
 
@@ -191,6 +192,8 @@ return array(
             'URL'               => 'Illuminate\Support\Facades\URL',
             'Validator'         => 'Illuminate\Support\Facades\Validator',
             'View'              => 'Illuminate\Support\Facades\View',
+
+        'Excel' => 'Maatwebsite\Excel\Facades\Excel'
 
         ),
 

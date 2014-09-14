@@ -16,7 +16,7 @@ class CatalogTechController extends TechonlineController{
         $CatalogTechList=$CatalogTech->getList($filter);
         $filters=false;
         if($filter['category']){
-            $paramFilters = new \Model\General\TechOnline\CatalogTechCategories();
+            $paramFilters = new \Model\General\Categories();
             $filters = $paramFilters->getFilters($filter['category']);
         }
 
@@ -28,7 +28,7 @@ class CatalogTechController extends TechonlineController{
             'pagination' => $CatalogTechList->links(),
             'list' => $CatalogTechList->toArray()['data'],
             'template' => 'content',
-            'categories' => \Model\General\TechOnline\CatalogTechCategories::toSubCategories(),
+            'categories' => \Model\General\Categories::toSubCategories(),
             'brands' => \Model\General\TechOnline\CatalogBrand::all()->toArray(),
             'regions' => \Model\General\TechOnline\CatalogRegion::all()->toArray(),
             'filters' => $filters?:false

@@ -26,7 +26,7 @@ class TechonlineCatalog extends Migration {
 
         Schema::dropIfExists('catalog_params');
         Schema::dropIfExists('catalog_params_values');
-        Schema::dropIfExists('catalog_tech_categories_to_params');
+        Schema::dropIfExists('catalog_categories_to_params');
 
         /*** БАЗОВЫЙ КАТАЛОГ ***/
         Schema::create('catalog_base', function($table)
@@ -436,17 +436,6 @@ class TechonlineCatalog extends Migration {
             $catalog_region->save();
         }
 
-
-        /*** КАТЕГОРИИ ТЕХНИКИ ***/
-        Schema::create('catalog_tech_categories', function($table)
-        {
-            $table->increments('id');
-            $table->string('alias')->nullable();
-            $table->string('name')->nullable();
-            $table->string('parent_id')->nullable();
-        });
-
-
         /*** СОСТОЯНИЕ ***/
         Schema::create('catalog_opacity', function($table)
         {
@@ -550,7 +539,7 @@ class TechonlineCatalog extends Migration {
         }
 
         /*** ОТНОШЕНИЕ ПАРАМЕТРОВ К КАТЕГОРИИ ТЕХНИКИ ***/
-        Schema::create('catalog_tech_categories_to_params', function($table)
+        Schema::create('catalog_categories_to_params', function($table)
         {
             $table->increments('id');
 
@@ -627,16 +616,11 @@ class TechonlineCatalog extends Migration {
         Schema::dropIfExists('catalog_brand');
         Schema::dropIfExists('catalog_region');
 
-        Schema::dropIfExists('catalog_parts_categories');
-        Schema::dropIfExists('catalog_tech_categories');
-
         Schema::dropIfExists('catalog_opacity');
         Schema::dropIfExists('catalog_statuses');
 
         Schema::dropIfExists('catalog_params');
         Schema::dropIfExists('catalog_params_values');
-        Schema::dropIfExists('catalog_tech_categories_to_params');
-
-
+        Schema::dropIfExists('catalog_categories_to_params');
 	}
 }

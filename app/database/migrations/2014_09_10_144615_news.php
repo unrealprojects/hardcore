@@ -9,6 +9,7 @@ class News extends Migration {
 
 	public function up()
 	{
+        Schema::dropIfExists('news');
         Schema::create('news', function($table)
         {
             $table->increments('id');
@@ -30,18 +31,9 @@ class News extends Migration {
             $table->dateTime('updated_at');
         });
 
-        /*** КАТЕГОРИИ ТЕХНИКИ ***/
-        Schema::create('catalog_tech_categories', function($table)
-        {
-            $table->increments('id');
-            $table->string('alias')->nullable();
-            $table->string('name')->nullable();
-            $table->string('parent_id')->nullable();
-        });
-
         $faker = Faker\Factory::create();
         for($i=0;$i<500;$i++){
-            $comments = new \Model\General\Comments();
+            $comments = new \Model\General\News();
             $comments->name = $faker->name;
             $comments->text_preview = $faker->paragraph();
             $comments->text = $faker->text();
@@ -53,9 +45,6 @@ class News extends Migration {
 	public function down()
 	{
         Schema::dropIfExists('news');
-        Schema::dropIfExists('news_categories');
-        Schema::dropIfExists('news_tags');
-        Schema::dropIfExists('news_to_tags');
 	}
 
 }

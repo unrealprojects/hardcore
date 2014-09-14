@@ -30,23 +30,25 @@
 /*foreach($routes as $route){
     Route::get($route['path'], $route['controller'].'@'.$route['function']);
 }*/
+/*** FRONTEND::TECHONLINE::WIND ***/
+Route::get('/wind','\Controller\Frontend\WindSpace\WindController@index');
 
 
-/*** FRONTEND::CATALOG ***/
+/*** FRONTEND::TECHONLINE::CATALOG ***/
 Route::get('/','\Controller\Frontend\TechOnline\MainPageController@index');
 
 Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogBaseController@actionList');
 Route::get('/catalog/{alias}','\Controller\Frontend\TechOnline\CatalogBaseController@actionElement');
 
-/*** FRONTEND::CATALOG_TECH ***/
+/*** FRONTEND::TECHONLINE::CATALOG_TECH ***/
 Route::get('/rent','\Controller\Frontend\TechOnline\CatalogTechController@actionList');
 Route::get('/rent/{alias}','\Controller\Frontend\TechOnline\CatalogTechController@actionElement');
 
-/*** FRONTEND::CATALOG_PARTS ***/
+/*** FRONTEND::TECHONLINE::CATALOG_PARTS ***/
 Route::get('/parts','\Controller\Frontend\TechOnline\CatalogPartsController@actionList');
 Route::get('/parts/{alias}','\Controller\Frontend\TechOnline\CatalogPartsController@actionElement');
 
-/*** FRONTEND::CATALOG_SELLERS ***/
+/*** FRONTEND::TECHONLINE::CATALOG_SELLERS ***/
 Route::get('/sellers','\Controller\Frontend\TechOnline\CatalogSellersController@actionList');
 Route::get('/sellers/{alias}','\Controller\Frontend\TechOnline\CatalogSellersController@actionElement');
 

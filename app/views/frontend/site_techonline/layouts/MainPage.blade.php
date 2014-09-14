@@ -22,8 +22,7 @@
     <h3 class="Section-Header">Каталог стройтехники</h3>
     <ul class="Grid-Row List-Categories Icons">
         @foreach($content['categories'] as $category)
-        <li class="Grid-Node-1-4"><img src="/img/techonline/car-icon-1.png"><a href="/tech/$category['alias']" alt="{{$category['name']}}">{{$category['name']}}</a>
-        </li>
+        <li class="Grid-Node-1-4"><img src="{{$category['logo']}}"><a href="/tech/$category['alias']" alt="{{$category['name']}}">{{$category['name']}}</a></li>
         @endforeach
     </ul>
 
@@ -36,8 +35,7 @@
         <h4 class="Header-Column">Аренда стройтехники</h4>
         <ul class="List-Categories">
             @foreach($content['categories'] as $category)
-            <li class="Grid-Node-1-2"><a href="/tech/$category['alias']"
-                                         alt="{{$category['name']}}">{{$category['name']}}</a></li>
+            <li class="Grid-Node-1-2"><a href="/tech/{{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
             @endforeach
         </ul>
     </div>

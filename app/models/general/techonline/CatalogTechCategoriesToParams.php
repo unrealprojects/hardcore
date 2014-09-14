@@ -6,5 +6,5 @@
 namespace Model\General\TechOnline;
 
 class CatalogPartsCategoriesToParams extends TechOnline {
-    protected $table = 'catalog_tech_categories_to_params';
+    protected $table = 'catalog_categories_to_params';
 }

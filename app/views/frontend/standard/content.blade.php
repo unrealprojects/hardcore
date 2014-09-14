@@ -13,3 +13,7 @@
     @yield('footer')
 </footer>
 @endsection
+
+@section('head')
+    <link rel="stylesheet" href="/scss/general/libs/upf/main.css"/>
+@endsection

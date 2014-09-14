@@ -7,7 +7,6 @@ class CatalogCategories extends Migration {
 
 	public function up()
 	{
-
         $categories = [
             "Мини-спецтехника",
             "Землеройная техника",
@@ -19,11 +18,13 @@ class CatalogCategories extends Migration {
             "Складская техника"
         ];
 
-        foreach($categories as $category){
-            $catalog_category = new \Model\General\TechOnline\CatalogTechCategories();
+        foreach($categories as $key=>$category){
+            $catalog_category = new \Model\General\Categories();
             $catalog_category->name=$category;
+            $catalog_category->app_section='catalog';
             $catalog_category->parent_id=0;
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
+            $catalog_category->logo = '/photo/standard/categories/logo_' . $key . '.jpg';
             $catalog_category->save();
         }
 
@@ -41,8 +42,9 @@ class CatalogCategories extends Migration {
         ];
 
         foreach($categories as $category){
-            $catalog_category = new \Model\General\TechOnline\CatalogTechCategories();
+            $catalog_category = new \Model\General\Categories();
             $catalog_category->name=$category;
+            $catalog_category->app_section='catalog';
             $catalog_category->parent_id=1;
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
             $catalog_category->save();
@@ -72,9 +74,10 @@ class CatalogCategories extends Migration {
         ];
 
         foreach($categories as $category){
-            $catalog_category = new \Model\General\TechOnline\CatalogTechCategories();
+            $catalog_category = new \Model\General\Categories();
             $catalog_category->name=$category;
             $catalog_category->parent_id=2;
+            $catalog_category->app_section='catalog';
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
             $catalog_category->save();
         }
@@ -101,9 +104,10 @@ class CatalogCategories extends Migration {
         ];
 
         foreach($categories as $category){
-            $catalog_category = new \Model\General\TechOnline\CatalogTechCategories();
+            $catalog_category = new \Model\General\Categories();
             $catalog_category->name=$category;
             $catalog_category->parent_id=3;
+            $catalog_category->app_section='catalog';
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
             $catalog_category->save();
         }
@@ -131,9 +135,10 @@ class CatalogCategories extends Migration {
         ];
 
         foreach($categories as $category){
-            $catalog_category = new \Model\General\TechOnline\CatalogTechCategories();
+            $catalog_category = new \Model\General\Categories();
             $catalog_category->name=$category;
             $catalog_category->parent_id=4;
+            $catalog_category->app_section='catalog';
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
             $catalog_category->save();
         }
@@ -152,8 +157,9 @@ class CatalogCategories extends Migration {
         ];
 
         foreach($categories as $category){
-            $catalog_category = new \Model\General\TechOnline\CatalogTechCategories();
+            $catalog_category = new \Model\General\Categories();
             $catalog_category->name=$category;
+            $catalog_category->app_section='catalog';
             $catalog_category->parent_id=5;
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
             $catalog_category->save();
@@ -179,8 +185,9 @@ class CatalogCategories extends Migration {
         ];
 
         foreach($categories as $category){
-            $catalog_category = new \Model\General\TechOnline\CatalogTechCategories();
+            $catalog_category = new \Model\General\Categories();
             $catalog_category->name=$category;
+            $catalog_category->app_section='catalog';
             $catalog_category->parent_id=6;
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
             $catalog_category->save();
@@ -196,8 +203,9 @@ class CatalogCategories extends Migration {
         ];
 
         foreach($categories as $category){
-            $catalog_category = new \Model\General\TechOnline\CatalogTechCategories();
+            $catalog_category = new \Model\General\Categories();
             $catalog_category->name=$category;
+            $catalog_category->app_section='catalog';
             $catalog_category->parent_id=7;
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
             $catalog_category->save();
@@ -215,8 +223,9 @@ class CatalogCategories extends Migration {
         ];
 
         foreach($categories as $category){
-            $catalog_category = new \Model\General\TechOnline\CatalogTechCategories();
+            $catalog_category = new \Model\General\Categories();
             $catalog_category->name=$category;
+            $catalog_category->app_section='catalog';
             $catalog_category->parent_id=8;
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
             $catalog_category->save();
