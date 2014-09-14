@@ -15,9 +15,9 @@
 
 .Node {
 	padding: 			$size-l;
-
 	background-color: 	white;
 
+	@include 			Round(all);
 	@extend 			._Centrated;
 	@extend 			._Standalone;
 	@extend 			._Section-Inner;
@@ -39,20 +39,6 @@
 .Node [class*='Grid-Node-'] {
 	margin-top: 0
 }
-
-/* ТАБЫ > ////////////////////////////////////////////////////////////////////////////////////*/
-.Tab-Buttons > li {
-	float: left;
-}
-
-[class*='Tab-Node'] {
-	display: none;
-}
-
-.Tab-Node:first-child {
-	display: block;
-}
-
 /* ТАБЫ < ////////////////////////////////////////////////////////////////////////////////////*/
 table.Stripped tr:nth-child(even) td {
 	background-color: #f0f0f0;
@@ -63,7 +49,7 @@ table.Stripped {
 }
 
 table > tr > td {
-	padding: 20px;
+	padding: $size-n;
 }
 
 table.Big > tr > td {
@@ -74,7 +60,10 @@ table.Big > tr > td {
 table.Small > tr > td {
 	padding: 5px;
 }
-
+table  td.Param {
+	width: 60%;
+	border-right: 1px dashed $clr-grey;
+}
 
 
 

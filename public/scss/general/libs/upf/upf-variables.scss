@@ -3,9 +3,12 @@ $clr-red: #ec0000;
 $clr-red-dark:  darken($clr-red,5%);
 $clr-red-light: lighten($clr-red,50%);
 
+
+$clr-orange-lighter: #ff9441;
+$clr-orange-light: #ff7f1c;
 $clr-orange: #ec6700;
-$clr-orange-dark:  darken($clr-red,5%);
-$clr-orange-light: lighten($clr-red,50%);
+$clr-orange-dark: #c15600;
+$clr-orange-darker: #a34b00;
 
 $clr-yellow: #d1a300;
 $clr-yellow-dark:  darken($clr-yellow,5%);
@@ -31,7 +34,9 @@ $clr-grey-darker: 		#555555;
 
 $clr-main:  $clr-orange;
 $clr-main-dark: $clr-orange-dark;
+$clr-main-dark: $clr-orange-darker;
 $clr-main-light: $clr-orange-light;
+$clr-main-lighter: $clr-orange-lighter;
 // Color Scheme
 
 
@@ -64,10 +69,11 @@ $node-padding: 					$size-l;		// Внутренний отступ ноды
 $section-gap: 					$size-xl;		// Отступ между нодами
 $block-gap: 					$size-l;		// Отступ между блоками внутри нода
 
+$border-radius: 				10px;
 $footer-height: 				100px;			// Высота футера
 
 $line-height: 					24px;			// Стандартная высота строки
-
+$selection-color: 				$clr-grey-dark;
 $section-width: 1000px;
 $grid-spacing: 5%;
 $message-br-width: 300px;

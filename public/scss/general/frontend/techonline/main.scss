@@ -29,12 +29,17 @@ body {
 	display: inline-block;
 	clear: both;
 	padding: $size-s $size-n;
-	border-left: 4px solid $clr-main;
 	text-transform: uppercase;
-	background-color: $clr-grey-darker;
+	background-color: $clr-main;
+	background: linear-gradient(to right, $clr-main, $clr-main-lighter);
 	color: #fff;
 	font-weight: 100;
+	cursor: default;
+	@include Round(diagonal-reverse);
+
+	@extend ._Unselectable;
 	@extend ._Fly-Out;
+
 }
 .Header-Column {
 	font-size: $Font-Size-Huge;
@@ -45,7 +50,7 @@ body {
 
 
 .Section-Header {
-	font-size: $Font-Size-Huge;
+	font-size: 22px;
 }
 
 .Section-Subheader {
@@ -58,6 +63,7 @@ body {
 	margin-bottom: $size-l;
 	border-bottom: 1px solid #e1e1e1;
 	height: 80px;
+	@extend ._Unselectable;
 	@extend ._Soft_Shadow;
 
 	.Page-Header-Inner {
@@ -89,6 +95,7 @@ body {
 				h2 {
 					padding: $size-xs 0;
 					color: $clr-main;
+					font-size: $Font-Size-Huge;
 					font-weight: 100;
 					text-transform: uppercase;
 
@@ -126,51 +133,37 @@ body {
 			padding: 0 $size-s;
 			width: 19%;
 			height: 80px;
-			button.Sign-In {
-				background: url(../../../../img/techonline/icon-sign-in.png) $size-s center  no-repeat;
-			}
-			button.Sign-In,
-			.User-Exit {
-				display: block;
-				width: 100%;
-				margin-top: $size-s;
-				padding: $size-s $size-xs $size-s $size;
-				border: 1px solid;
-				background-color: $clr-main;
-				text-align: center;
-				color: white;
-				@extend ._Left;
-
-				&:hover {
-					cursor: pointer;
-					background-color: $clr-grey-dark;
+			margin-top: 25px;
+			& > .Button {
+				font-size: 12px;
+				padding: $size-xs $size-s;
+				float: left;
+				margin-left: 5%;
+				&:first-child {
+					margin-left: 0;
 				}
 			}
 
-			a {
-				text-align: center;
-				display: block;
-				margin-top: $size;
-
-			}
-			.User-Exit {
-				margin-right: 0;
-			}
 			.Sign-In-UI ,
 			.Sign-Up-UI {
 				position: absolute;
 				padding: $size;
 				background-color: white;
-				top: 79px;
+				top: 46px;
 				right: 0;
 				width: 400px;
 				font-size: $Font-Size-Small;
 				border-top: 4px solid $clr-main;
 				z-index: 10;
+				@include Round(all);
 				@extend ._Soft_Shadow;
+				@extend ._Unselectable;
 				form {
 					h4 {
+						padding-bottom: $size-s;
+						margin-bottom: $size;
 						font-size: $Font-Size-Huge;
+						border-bottom: 1px dashed $clr-grey;
 					}
 				}
 			}
@@ -204,7 +197,6 @@ body {
 				&:hover,
 				&.Link-Active {
 					border-color: $clr-main;
-
 					color: $clr-main;
 				}
 			}
@@ -222,6 +214,7 @@ body {
 	margin-bottom: 50px;
 	margin-top: -($size-l);
 	height: 250px;
+	@extend ._Unselectable;
 
 	.Slider-Inner {
 		position: relative;
@@ -282,11 +275,11 @@ body {
 		}
 		& .Lot-Price {
 			color: white;
-			background-color: $clr-main;
 			margin-right: -$size-xl;
 			padding: $size-s $size-n;
 			float: right;
-
+			background: linear-gradient(to left, $clr-main, $clr-main-lighter);
+			@include Round(diagonal);
 		}
 		& img {
 			display: block;
@@ -305,7 +298,7 @@ body {
 	.Lot-Gallery {
 		padding-right: $size-l;
 		img.Lot-Main-Photo {
-			border-radius: 10px;
+			@include Round(all);
 			@extend ._Fit-Row;
 			@extend ._Highlight;
 			&:hover {
@@ -323,7 +316,7 @@ body {
 				img {
 					display: block;
 					width: 100%;
-					border-radius: 10px;
+					@include Round(all);
 					@extend ._Highlight;
 				}
 			}
@@ -360,31 +353,30 @@ body {
 			}
 		}
 	}
-	&.Element .Lot-About {
-
-	}
 }
 
 // Хлебные крошки
 .Breadcrumbs {
 	padding: 0!important;
 	margin-bottom: -20px!important;
+	background-color: white;
+	@include Round(all);
 	ul {
 		padding: $size-s 0;
-		background-color: white;
 		@extend ._Inline;
 		@extend ._No-Bullets;
 		li {
 			a    ,
 			span {
 				padding: $size-xs;
-				&:hover {
-					background-color: $clr-grey-lighter;
-				}
+			}
+			a:hover {
+				background-color: $clr-grey-lighter;
 			}
 			&:before {
 				padding: 0 $size-s;
 				content: "/";
+				@extend ._Unselectable;
 			}
 		}
 		li:first-child {
@@ -639,14 +631,41 @@ footer[role='contentinfo'] {
 		padding-right: $size-xl;
 
 		header {
-
+			margin-bottom: $size-s;
+			border-bottom: 1px $clr-grey dashed;
+			padding-bottom: $size-s;
+			@extend ._Fix;
 			h5.Seller-Title {
+				display: block;
+				float: left;
+				width: 85%;
 
 				a {
+					font-size: $Font-Size-Large;
 					text-transform: uppercase;
+				}
+				.Seller-Location {
+					display: block;
+					clear: both;
+					font-size: $Font-Size-Micro;
 				}
 			}
 
+			.Seller-Rating {
+				width: 15%;
+				float: left;
+				text-align: right;
+				color: $clr-grey;
+			}
+
+		}
+		.Seller-Description {
+			font-size: 14px;
+		}
+
+		//@fixme Наплодил "фич", блин.
+		&:last-child {
+			padding-right: $size-xl;
 		}
 	}
 }

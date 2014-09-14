@@ -1,7 +1,10 @@
-@mixin Transition($transition-name, $transition-time) {
-		-webkit-transition: $transition-name $transition-time;
-		-moz-transition: $transition-name $transition-time;
-		transition: $transition-name $transition-time;
+@mixin Transition($Transition-Name, $Transition-Time) {
+	-webkit-transition-property: 	$Transition-Name;
+	-moz-transition-property: 		$Transition-Name;
+	transition-property: 			$Transition-Name;
+	-webkit-transition-duration: 	$Transition-Time;
+	-moz-transition-duration: 		$Transition-Time;
+	transition-duration: 			$Transition-Time;
 }
 @mixin Animation($animation-name, $animation-time, $animation-delay: 0) {
 	-webkit-animation: $animation-name $animation-time;
@@ -32,4 +35,22 @@
 	opacity: $value;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
 	filter: alpha(opacity=$IEValue);
+}
+
+@mixin Round($Round-Mode) {
+	@if ($Round-Mode == 'all') {
+		border-radius: $border-radius;
+	}
+	@else if ($Round-Mode == 'diagonal') {
+		border-radius: $border-radius 0;
+	}
+	@else if ($Round-Mode == 'diagonal-reverse') {
+		border-radius: 0 $border-radius;
+	}
+	@else if ($Round-Mode == 'bottom-left') {
+		border-bottom-left-radius: $border-radius;
+	}
+	@else if ($Round-Mode == 'search') {
+		border-radius: $size-l;
+	}
 }

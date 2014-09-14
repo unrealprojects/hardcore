@@ -67,43 +67,57 @@
 
 // Выводит всех потомков в линию
 ._Inline {
-	@extend 			._Fix;
+	@extend 				._Fix;
 	& > * {
-		float: 			left;
+		float: 				left;
 	}
 }
 
 // Убирает буллиты у списков
 ._No-Bullets {
-	list-style: 		none;
+	list-style: 			none;
 }
 // Добавляет едва заметную тень вокруг блока
 ._Soft_Shadow {
-	box-shadow: 		0 0 50px rgba(0,0,0,0.1);
+	box-shadow: 			0 0 50px rgba(0,0,0,0.15);
 }
 
 ._Fly-Out {
-	margin-left: -($size-xl);
+	margin-left: 			-($size-xl);
 }
 ._Button {
-	padding: 			$size-n $size;
+	padding: 				$size-n $size;
 
-	border: 			0;
-	background-color: 	$clr-main;
-	color: 				#fff;
-	cursor: 			pointer;
-	@include 			Transition(background, .3s);
+	border: 				0;
+	background-color: 		$clr-main;
+	color: 					#fff;
+	cursor: 				pointer;
+	@include 				Transition(background, .3s);
 	&:hover {
-		background-color: $clr-grey-darker;
+		background-color: 	$clr-grey-darker;
 	}
 }
 ._Fit-Row {
-	width: 100%!important;
+	width: 					100%!important;
 }
 ._Highlight {
-	cursor: pointer;
+	cursor: 				pointer;
 
 	&:hover {
-		@include Opacity(.9);
+		@include 			Opacity(.9);
 	}
+}
+
+._Search {
+	@include 				Round(search);
+}
+
+// Убирает нежелательное выделение текста мышью.
+// Не блокирует интерактивные элементы.
+._Unselectable {
+	-webkit-user-select: 	none;
+	-moz-user-select: 		none;
+	-ms-user-select: 		none;
+	-o-user-select: 		none;
+	user-select: 			none;
 }

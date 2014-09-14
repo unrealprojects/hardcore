@@ -51,7 +51,7 @@
                     <header>
                         <div>
                             <h4><a href="/rent/{{$list_elem['metadata']['alias']}}">{{$list_elem['name']}}</a></h4>
-                            <h5>{{$list_elem['rate']}}</h5>
+                            <h5 class="Lot-Price">{{$list_elem['rate']}}</h5>
                         </div>
                     </header>
                     <div class="Lot-Gallery Grid-Node-3-7">

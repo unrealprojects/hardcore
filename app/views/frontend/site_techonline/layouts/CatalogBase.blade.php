@@ -73,11 +73,11 @@
                         <!-- Параметры товара -->
                         @if($list_elem['params_values'])
                         <h6>Характеристики</h6>
-                        <table class="Stripped">
+                        <table>
                             @foreach($list_elem['params_values'] as $param)
                             <tr>
-                                <td>{{$param['param_data']['name']}}</td>
-                                <td>{{$param['value']}} {{$param['param_data']['dimension']}}</td>
+                                <td class="Param">{{$param['param_data']['name']}}</td>
+                                <td class="Value">{{$param['value']}} {{$param['param_data']['dimension']}}</td>
                             </tr>
                             @endforeach
                         </table>

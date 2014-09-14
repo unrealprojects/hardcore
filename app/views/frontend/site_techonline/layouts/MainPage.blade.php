@@ -118,8 +118,8 @@
 
 </div>
 
+<!-- АРЕНДОДАТЕЛИ::СПИСОК -->
 <div class="Node">
-    <!-- АРЕНДОДАТЕЛИ::СПИСОК -->
     <h4 class="Section-Header">Лучшие арендодатели</h4>
     <ul class="Seller-List Grid">
         @foreach($content['sellers'] as $seller)
@@ -127,10 +127,11 @@
             <header>
                 <h5 class="Seller-Title">
                     <a href="/sellers/{{$seller['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$seller['name']}}</a>
+                    <span class="Seller-Location">
+                        {{$seller['region']['name']}}
+                    </span>
                 </h5>
-                <small>
-                    {{$seller['region']['name']}}
-                </small>
+
 
                 <div class="Seller-Rating">
                     {{$seller['rating']}}
@@ -143,7 +144,11 @@
         @endforeach
     </ul>
 </div>
+
 <!-- НОВОСТИ::СПИСОК -->
+<section class="News Node">
+    <h4 class="Section-Header">Новости</h4>
+</section>
 
 @endsection
 
