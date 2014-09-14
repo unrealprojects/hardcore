@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHardcoreCategories extends Migration {
+class CreateHardcoreTags extends Migration {
 
 	public function up()
 	{
@@ -37,7 +37,7 @@ class CreateHardcoreCategories extends Migration {
             $tags->app_section = 'news';
             $tags->save();
         }
-        for($i=0;$i<12;$i++){
+        for($i=0;$i<20;$i++){
             $tags = new \Model\General\Tags();
             $tags->name = $faker->word();
             $tags->alias = Mascame\Urlify::filter($tags->name);
@@ -48,16 +48,16 @@ class CreateHardcoreCategories extends Migration {
 
         /*** TAGS_TO_ITEMS ***/
         for($i=0;$i<12;$i++){
-            for($j=0;$j<12;$i++){
+            for($j=0;$j<5;$j++){
                 $tags_to_items = new \Model\General\TagsToItems();
-                $tags_to_items->tag_id=$i;
-                $tags_to_items->item_id=$j;
+                $tags_to_items->tag_id=$j+$i;
+                $tags_to_items->item_id=$i;
                 $tags_to_items->app_section = 'news';
                 $tags_to_items->save();
             }
         }
         for($i=0;$i<12;$i++){
-            for($j=0;$j<12;$i++){
+            for($j=0;$j<5;$j++){
                 $tags_to_items = new \Model\General\TagsToItems();
                 $tags_to_items->tag_id=$i;
                 $tags_to_items->item_id=$j;

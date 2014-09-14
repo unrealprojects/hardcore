@@ -603,6 +603,13 @@ class TechonlineCatalog extends Migration {
         $meta_data->app_section = 'sellers';
         $meta_data->save();
 
+        $meta_data = new \Model\General\MetaData();
+        $meta_data->title="Новости";
+        $meta_data->description="Новости";
+        $meta_data->keywords="Новости";
+        $meta_data->alias = '';
+        $meta_data->app_section = 'news';
+        $meta_data->save();
 	}
 
 	public function down()

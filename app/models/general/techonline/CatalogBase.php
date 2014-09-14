@@ -55,6 +55,9 @@ class CatalogBase extends TechOnline {
                     /* Уточнение app_section для категории */
                     ->whereHas('category', function($query) {
                         $query->where('app_section', 'catalog');
+                    })                    /* Уточнение app_section для категории */
+                    ->whereHas('category', function($query) {
+                        $query->where('app_section', 'catalog');
                     })
                     ->whereHas('metadata', function($query) {
                         $query->where('alias',$this->rewrite['alias']);

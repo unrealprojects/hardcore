@@ -2,7 +2,7 @@
 <div class="Comment Node">
     <h4 class="Section-Header">Комментарии</h4>
     <ul class="Comment-List">
-    @foreach($content['element']['comments'] as $comment)
+    @foreach($content['item']['comments'] as $comment)
         <li class="Comment-List-Element" comment_id="{{$comment['id']}}">
             <div class="Comment-List-Element-Rating">
                 <span class="Default">
@@ -29,7 +29,7 @@
 
     <form class="Form-Horizontal action="">
         <h4 class="Section-Subheader">Написать комментарий</h4>
-        <input name="list_id" value="{{$content['element']['comments'][0]['list_id']}}" type="hidden">
+        <input name="list_id" value="{{$content['item']['comments'][0]['list_id']}}" type="hidden">
         <div class="Control-Group">
             <label for="Comment-New-Name">Имя</label>
             <input id="Comment-New-Name" name="name" type="text"/>

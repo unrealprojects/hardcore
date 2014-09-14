@@ -6,7 +6,7 @@
         <img class="Truck" src="/img/techonline/belaz.png" alt=""/>
         <ul class="Slider-Links">
             <li>
-                <a href="#">Арендовать стройтехнику</a>
+                <a href="/rent">Арендовать стройтехнику</a>
             </li>
             <li>
                 <a href="#">Разместить стройтехнику</a>
@@ -148,6 +148,28 @@
 <!-- НОВОСТИ::СПИСОК -->
 <section class="News Node">
     <h4 class="Section-Header">Новости</h4>
+    <ul class="News-List Grid">
+        @foreach($content['news'] as $new)
+        <li class="News-Item Grid-Node-1-2">
+            <header>
+                <h5 class="News-Title">
+                    <a href="/sellers/{{$new['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$new['name']}}</a>
+                    <span class="News-Date">
+                        {{$new['updated_at']}}
+                    </span>
+                </h5>
+                <img src="{{$new['logo']}}" alt="{{$new['name']}}">
+
+                <div class="Seller-Rating">
+                    {{$new['rating']}}
+                </div>
+            </header>
+            <div class="Seller-Description">
+                {{$new['text_preview']}}
+            </div>
+        </li>
+        @endforeach
+    </ul>
 </section>
 
 @endsection

@@ -41,7 +41,7 @@ class CatalogBaseController extends TechonlineController{
         $CatalogBaseElement=$CatalogBase->getElement($alias);
 
         $this->viewData['content'] = [
-            'element' => $CatalogBaseElement->toArray(),
+            'item' => $CatalogBaseElement->toArray(),
             'template' => 'content',
         ];
 

@@ -24,12 +24,10 @@
         </nav>
 
         <div class="Page-Auth">
-            <button class="Button">
-                Войти
-            </button>
-            <a class="Button" href="#">Регистрация</a>
+            <button class="Button Sign-In">Войти</button>
+            <button class="Button Sign-Up">Регистрация</button>
 
-            <div class="Sign-In-UI">
+            <div class="Sign-In-UI" style="display:none;">
                 <form class="Form-Horizontal" action="">
                     <h4>Авторизация</h4>
                     <div class="Control-Group">
@@ -52,8 +50,8 @@
                 </form>
             </div>
 
-            <!--
-            <div class="Sign-Up-UI">
+
+            <div class="Sign-Up-UI" style="display:none;">
                 <form class="Form-Horizontal" action="">
                     <h4>Регистрация</h4>
                     <div class="Control-Group">
@@ -76,7 +74,7 @@
                 </form>
             </div>
         </div>
--->
+
     </div>
 
 </section>

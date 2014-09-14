@@ -5,12 +5,12 @@
     <div class="Lot" itemscope itemtype="http://data-vocabulary.org/Product">
         <header>
             <h4 class="Section-Header">
-                {{$content['element']['name']}}
+                {{$content['item']['name']}}
             </h4>
         </header>
 
         <div class="Lot-Gallery Grid-Node-1-3">
-            @foreach(json_decode($content['element']['photos'],true) as $i=>$photo)
+            @foreach(json_decode($content['item']['photos'],true) as $i=>$photo)
             @if($i==1)
             <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image">
 
@@ -27,30 +27,30 @@
         </div>
 
         <div class="Lot-About Grid-Node-2-3">
-            <p>{{$content['element']['description']}}</p>
+            <p>{{$content['item']['description']}}</p>
 
             <!-- Параметры товара -->
             <h6>Характеристики</h6>
             <table class="Stripped">
                 <tr>
                     <td>Категория:</td>
-                    <td>{{$content['element']['category']['name']}}</td>
+                    <td>{{$content['item']['category']['name']}}</td>
                 </tr>
                 <tr>
                     <td>Арендодатель:</td>
-                    <td><a href="/  sellers/{{$content['element']['admin']['metadata']['alias']}}">{{$content['element']['admin']['name']}}</a></td>
+                    <td><a href="/  sellers/{{$content['item']['admin']['metadata']['alias']}}">{{$content['item']['admin']['name']}}</a></td>
                 </tr>
                 <tr>
                     <td>Cтатус:</td>
-                    <td>{{$content['element']['status']['name']}}</td>
+                    <td>{{$content['item']['status']['name']}}</td>
                 </tr>
                 <tr>
                     <td>Состояние:</td>
-                    <td> {{$content['element']['opacity']['name']}}</td>
+                    <td> {{$content['item']['opacity']['name']}}</td>
                 </tr>
                 <tr>
                     <td>Цена:</td>
-                    <td>{{$content['element']['price']}}</td>
+                    <td>{{$content['item']['price']}}</td>
                 </tr>
             </table>
         </div>

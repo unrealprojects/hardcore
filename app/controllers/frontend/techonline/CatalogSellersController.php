@@ -31,7 +31,7 @@ class CatalogSellersController extends TechonlineController{
         $CatalogAdminList=$CatalogAdmin->getElement($alias);
 
         $this->viewData['content'] = [
-            'element' => $CatalogAdminList->toArray(),
+            'item' => $CatalogAdminList->toArray(),
             'template' => 'content'
         ];
 //        print_r($CatalogAdminList->toArray());exit;

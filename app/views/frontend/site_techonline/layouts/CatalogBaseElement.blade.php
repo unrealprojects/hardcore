@@ -5,14 +5,14 @@
     <div class="Lot" itemscope itemtype="http://data-vocabulary.org/Product">
         <header>
             <h4 class="Section-Header">
-                <span itemprop="brand">{{$content['element']['brand']['name']}}</span>
-                    {{$content['element']['model']}}
-            <p itemprop="category">{{$content['element']['category']['name']}}</p>
+                <span itemprop="brand">{{$content['item']['brand']['name']}}</span>
+                    {{$content['item']['model']}}
+            <p itemprop="category">{{$content['item']['category']['name']}}</p>
             </h4>
         </header>
 
         <div class="Lot-Gallery Grid-Node-1-3">
-            @foreach(json_decode($content['element']['photos'],true) as $i=>$photo)
+            @foreach(json_decode($content['item']['photos'],true) as $i=>$photo)
             @if($i==1)
             <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image">
 
@@ -29,12 +29,12 @@
         </div>
 
         <div class="Lot-About Grid-Node-2-3">
-            <p itemprop="description">{{$content['element']['description']}}</p>
+            <p itemprop="description">{{$content['item']['description']}}</p>
 
         <!-- Параметры товара -->
         <h6>Характеристики</h6>
         <table class="Stripped">
-            @foreach($content['element']['params_values'] as $param)
+            @foreach($content['item']['params_values'] as $param)
             <tr>
                 <td>{{$param['param_data']['name']}}</td>
                 <td>{{$param['value']}}</td>

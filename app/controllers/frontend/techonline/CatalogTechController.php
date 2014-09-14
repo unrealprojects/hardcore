@@ -44,7 +44,7 @@ class CatalogTechController extends TechonlineController{
         $CatalogTechElement=$CatalogTech->getElement($alias);
 
         $this->viewData['content'] = [
-            'element' => $CatalogTechElement->toArray(),
+            'item' => $CatalogTechElement->toArray(),
             'template' => 'content'
         ];
 

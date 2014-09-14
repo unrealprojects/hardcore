@@ -32,7 +32,7 @@ class CatalogPartsController extends TechonlineController{
         $CatalogPartsElement=$CatalogParts->getElement($alias);
 
         $this->viewData['content'] = [
-            'element' => $CatalogPartsElement->toArray(),
+            'item' => $CatalogPartsElement->toArray(),
             'template' => 'content'
         ];
 

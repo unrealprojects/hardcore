@@ -15,7 +15,7 @@ class News extends Migration {
             $table->increments('id');
 
             $table->string('name')->nullable();
-            $table->string('photo')->nullable();
+            $table->string('logo')->nullable();
 
             $table->string('text_preview')->nullable();
             $table->text('text')->nullable();
@@ -31,14 +31,27 @@ class News extends Migration {
             $table->dateTime('updated_at');
         });
 
+
         $faker = Faker\Factory::create();
         for($i=0;$i<500;$i++){
-            $comments = new \Model\General\News();
-            $comments->name = $faker->name;
-            $comments->text_preview = $faker->paragraph();
-            $comments->text = $faker->text();
-            $comments->comments_id = $i%100;
-            $comments->save();
+            $news = new \Model\General\News();
+            $news->name = $faker->name;
+                /* update metadata */
+                $meta_data = new \Model\General\MetaData();
+                $meta_data->title=$news->name;
+                $meta_data->description=$news->name;
+                $meta_data->keywords=$news->name;
+
+                $meta_data->alias= Mascame\Urlify::filter($news->name);
+                $meta_data->app_section = 'news';
+                $meta_data->save();
+                $news->metadata_id = $meta_data->id;
+                /* end update metadata*/
+            $news->logo = Faker\Provider\Image::imageUrl(650+$i, 420, 'transport');
+            $news->text_preview = $faker->paragraph();
+            $news->text =$faker->paragraph().$faker->paragraph().$faker->paragraph().$faker->paragraph();
+            $news->comments_id = $i%100;
+            $news->save();
         }
 	}
 

@@ -70,8 +70,8 @@ Route::get('/backend/catalog/delete/{id}','\Controller\Backend\TechOnline\Catalo
 
 
 /*** SYSTEM::FRONTEND::NEWS ***/
-Route::get('/news','\Controller\Frontend\TechOnline\NewsController@list');
-Route::get('/news/{alias}','\Controller\Frontend\TechOnline\NewsController@item');
+Route::get('/news','\Controller\Frontend\NewsController@actionList');
+Route::get('/news/{alias}','\Controller\Frontend\NewsController@actionItem');
 
 
 /*** SYSTEM::FRONTEND::VOTED ***/

@@ -1,31 +1,47 @@
 <?php
-namespace Controller;
+namespace Controller\Frontend;
 
-class NewsController extends \Controller{
-
-    public function add($list_id){
-       $reCaptcha = new \Greggilbert\Recaptcha\CheckRecaptcha();
-       if($reCaptcha=$reCaptcha->check(\Input::get('challenge'),\Input::get('response'))[0]=='true'){
-           $comment = new \Model\General\Comments();
-
-           $comment->name = \Input::get('name');
-           $comment->comment = \Input::get('comment');
-           $comment->list_id = $list_id;
-           $comment->save();
-           $comment['comment']=$comment->find($comment->id)->toArray();
-           $content = \View::make('frontend.standard.layouts.comments.Item',$comment);
+class NewsController extends FrontendController{
 
 
-           $newVoteIp = new \Model\General\Voted();
-           $newVoteIp->app_section='comments';
-           $newVoteIp->item_id=$comment->id;
-           $newVoteIp->ip=\Request::getClientIp();
-           $newVoteIp->save();
+    public function actionList(){
+        /* ФИЛЬТРАЦИЯ */
+        $filter = [
+            'category' => \Input::get('category')?:false,
+            'tag' => \Input::get('tag')?:false
+        ];
 
-           echo json_encode(['Event'=>'Сообщение','Message'=>'Спасибо, Ваш комментрий добавлен!','Type'=>'Success',
-                             'comment'=>[htmlentities($content)]]);
-       }else{
-           echo json_encode(['Event'=>'Ошибка','Message'=>'Не верно введена капча!','Type'=>'Error']);
-       }
+        /* МОДЕЛЬ */
+        $News = new \Model\General\News();
+        $NewsList=$News->getList($filter);
+        $filters=false;
+        if($filter['category']){
+            $paramFilters = new \Model\General\Categories();
+            $filters = $paramFilters->getFilters($filter['category']);
+        }
+
+        /* ДАННЫЕ ВИД */
+        $this->viewData['content'] = [
+            'pagination' => $NewsList->links(),
+            'list' => $NewsList->toArray()['data'],
+            'template' => 'content',
+            'tags' => \Model\General\Tags::where('app_section','news')->get(),
+            'filters' => $filters?:false
+        ];
+
+//        print_r($NewsList->toArray());
+        return \View::make('/frontend/site_techonline/layouts/News',$this->viewData);
+    }
+
+    public function actionItem($alias){
+        $News = new \Model\General\News;
+        $NewsItem=$News->getItem($alias);
+
+        $this->viewData['content'] = [
+            'item' => $NewsItem->toArray(),
+            'template' => 'content',
+        ];
+
+        return \View::make('/frontend/site_techonline/layouts/NewsItem',$this->viewData);
     }
 }
