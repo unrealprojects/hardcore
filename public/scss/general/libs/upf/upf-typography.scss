@@ -2,12 +2,15 @@ body {
 	font-size: $Body-Font-Size;
 	line-height: 1.45;
 }
-
+*::selection {
+	color: white;
+	background-color: $selection-color;
+}
 a:link,
 a:visited {
 	color: $clr-main;
 	text-decoration: none;
-	@include Transition(color , .3s);
+	@include Transition(#{color, background, border} , .3s);
 }
 
 a:hover {

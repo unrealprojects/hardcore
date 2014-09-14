@@ -24,7 +24,7 @@
 		margin-top: 0;
 	}
 	&.Checkbox.Submit {
-		& > div {
+		& > label {
 			padding: $size-s 0;
 			@extend .Grid-Node-1-2;
 		}
@@ -106,13 +106,14 @@ input[type='radio']     {
 
 // КНОПКА
 input[type='submit'] {
-  width: 				inherit;
-  background-color: 	$clr-main;
-  color: #fff;
-  border: 0;
-  cursor: pointer;
-  padding: $size-s $size-l!important;
-  font-size: 110%;
+	width: 				inherit;
+	background-color: 	$clr-main;
+	color: 				#fff;
+	border: 			0;
+	cursor: 			pointer;
+	padding: 			$size-s 0;
+	font-size: 			110%;
+	text-align: 		center;
 	&:hover {
 		background-color: $clr-main-dark;
 	}
@@ -241,7 +242,7 @@ dl.Tabs {
 		position: relative;
 		width: 100%;
 		z-index: 2;
-		border-top: 2px solid $clr-grey-darker;
+		border-top: 1px solid $clr-grey-darker;
 
 		&.Active {
 			display: block;
@@ -253,6 +254,20 @@ dl.Tabs {
 	}
 }
 
-.Button {
+button.Button ,
+input.Button  ,
+a.Button      {
+	line-height: $line-height;
+	color: white;
 	@extend ._Button;
+
+	&[disabled] {
+		cursor: not-allowed;
+		background-color: $clr-grey-dark;
+		color: $clr-grey-light;
+	}
+
+	&.Search {
+		@extend ._Search;
+	}
 }
