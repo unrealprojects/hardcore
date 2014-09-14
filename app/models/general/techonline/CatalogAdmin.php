@@ -48,4 +48,17 @@ class CatalogAdmin extends TechOnline {
             })
             ->first();
     }
+
+    public function getFullItem($alias){
+        $this->rewrite['alias']=$alias;
+
+        return $this->with('region',
+                           'partsList','partsList.metadata',
+                           'techList','techList.metadata','techList.region','techList.status','techList.opacity','techList.model','techList.model.category','techList.model.brand',
+                           'comments','metadata')
+            ->whereHas('metadata', function($query) {
+                $query->where('alias',$this->rewrite['alias']);
+            })
+            ->first();
+    }
 }

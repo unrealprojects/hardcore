@@ -7,7 +7,7 @@ class CabinetController extends TechonlineController{
         //todo: если админ, то работаю с его id
         /* ДАННЫЕ ВИД */
         $CatalogAdmin = new \Model\General\TechOnline\CatalogAdmin();
-        $CatalogAdminList=$CatalogAdmin->getItem($alias);
+        $CatalogAdminList=$CatalogAdmin->getFullItem($alias);
 
         $this->viewData['content'] = [
             'item' => $CatalogAdminList->toArray(),
@@ -18,14 +18,20 @@ class CabinetController extends TechonlineController{
         return \View::make($this->siteViewPath.'/layouts/cabinet/Cabinet',$this->viewData);
     }
 
-
-   /* public function actionElement($alias)
+    public function actionCabinetRent($alias)
     {
-        $this->viewData['content'] = [
-            'item' => $CatalogAdminList->toArray(),
-            'template' => 'content',
-        ];
+            //todo: если админ, то работаю с его id
+            /* ДАННЫЕ ВИД */
+            $CatalogAdmin = new \Model\General\TechOnline\CatalogAdmin();
+            $CatalogAdminList=$CatalogAdmin->getFullItem($alias);
 
-        return \View::make($this->siteViewPath.'/layouts/CatalogBaseElement',$this->viewData);
-    }*/
+            $this->viewData['content'] = [
+                'item' => $CatalogAdminList->toArray(),
+                'regions' => \Model\General\TechOnline\CatalogRegion::all()->toArray(),
+                'template' => 'content'
+            ];
+
+            return \View::make($this->siteViewPath.'/layouts/cabinet/Cabinet',$this->viewData);
+    }
+
 }

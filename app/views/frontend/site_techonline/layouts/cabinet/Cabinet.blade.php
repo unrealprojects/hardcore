@@ -86,6 +86,75 @@
     </form>
 </div>
 
+
+
+<article class="Node">
+    <h4 class="Section-Header">Стройтехника</h4>
+    <ul class="Lot-List">
+        @foreach($content['item']['tech_list'] as $list_elem)
+        <li class="Lot">
+            <header>
+                <div>
+                    <h4><a href="/rent/{{$list_elem['metadata']['alias']}}">{{$list_elem['name']}}</a></h4>
+                    <h5 class="Lot-Price">{{$list_elem['rate']}}</h5>
+                </div>
+            </header>
+            <div class="Lot-Gallery Grid-Node-3-7">
+                @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
+                @if($i==1)
+                <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+
+                <ul>
+                    @elseif($i>1 && $i<5)
+                    <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+                    @elseif($i>5)
+                    <li style="display: none">
+                        <img src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                    </li>
+                    @endif
+                    @endforeach
+                </ul>
+            </div>
+
+            <div class="Lot-About Grid-Node-4-7">
+                <p>{{$list_elem['description']}}</p>
+
+                <!-- Параметры товара -->
+                <h6>Характеристики</h6>
+                <table class="Stripped">
+                    <tr>
+                        <td>Категория:</td>
+                        <td>{{$list_elem['model']['category']['name']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Бренд:</td>
+                        <td>{{$list_elem['model']['brand']['name']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Модель:</td>
+                        <td>{{$list_elem['model']['model']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Регион:</td>
+                        <td>{{$list_elem['region']['name']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Cтатус:</td>
+                        <td>{{$list_elem['status']['name']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Состояние:</td>
+                        <td> {{$list_elem['opacity']['name']}}</td>
+                    </tr>
+                </table>
+            </div>
+
+        </li>
+        @endforeach
+    </ul>
+</article>
+
+
 @include('frontend.standard.layouts.comments.List')
 @endsection
 
