@@ -116,6 +116,7 @@
                 </ul>
             </div>
 
+
             <div class="Lot-About Grid-Node-4-7">
                 <p>{{$list_elem['description']}}</p>
 
