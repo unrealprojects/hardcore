@@ -31,12 +31,12 @@
 ._Dev {
   outline: 1px red solid !important; }
 
-._Fix, ._Inline, .Page-Header .Page-Header-Inner, .Breadcrumbs .Breadcrumb-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, ul.Tag-List, .Grid, .Grid-Row, .Control-Group, dl.Tabs, .Node, .Page-Navigation ul, .Lot, .Lot header, .Pagination, .List-Categories li, .Comment .Comment-List li .Comment-List-Element-Content header, footer[role='contentinfo'] > div, .News-List li.News-Item header,
+._Fix, ._Inline, .Page-Header .Page-Header-Inner, .Breadcrumbs .Breadcrumb-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, ul.Tag-List, .Grid, .Grid-Row, .Control-Group, .Control-Group.Smart, .Control-Group.Smart .Input-Smart, dl.Tabs, .Node, .Page-Navigation ul, .Lot, .Lot header, .Pagination, .List-Categories li, .Comment .Comment-List li .Comment-List-Element-Content header, footer[role='contentinfo'] > div, .News-List li.News-Item header,
 .News-List li.Seller-Item header,
 .Seller-List li.News-Item header,
 .Seller-List li.Seller-Item header, .Snippet-Item, .Snippet-Item header, .Snippet-Item header .Item-Title, .List-Filter li.List-Filter-Subheader {
   display: table; }
-  ._Fix:after, ._Inline:after, .Page-Header .Page-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Grid:after, .Grid-Row:after, .Control-Group:after, dl.Tabs:after, .Node:after, .Page-Navigation ul:after, .Lot:after, .Lot header:after, .Pagination:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after, .News-List li.News-Item header:after,
+  ._Fix:after, ._Inline:after, .Page-Header .Page-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Grid:after, .Grid-Row:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Node:after, .Page-Navigation ul:after, .Lot:after, .Lot header:after, .Pagination:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after, .News-List li.News-Item header:after,
   .News-List li.Seller-Item header:after,
   .Seller-List li.News-Item header:after,
   .Seller-List li.Seller-Item header:after, .Snippet-Item:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, .List-Filter li.List-Filter-Subheader:after {
@@ -138,52 +138,52 @@ iframe {
     margin-top: 0; }
 
 .Grid-Node-1-2, .Control-Group.Checkbox.Submit > label, .Control-Group.Checkbox.Submit > [type='submit'] {
-  width: 50.00%; }
+  width: 50% !important; }
 
 .Grid-Node-1-3 {
-  width: 33.33%; }
+  width: 33.33% !important; }
 
 .Grid-Node-2-3 {
-  width: 66.66%; }
+  width: 66.66% !important; }
 
 .Grid-Node-1-4 {
-  width: 25.00%; }
+  width: 25% !important; }
 
 .Grid-Node-2-4 {
-  width: 50.00%; }
+  width: 50% !important; }
 
 .Grid-Node-3-4 {
-  width: 75.00%; }
+  width: 75% !important; }
 
 .Grid-Node-1-5 {
-  width: 20.00%; }
+  width: 20% !important; }
 
 .Grid-Node-2-5, .Snippet-Item .Item-Gallery, .Snippet-Item .Item-Photo {
-  width: 40.00%; }
+  width: 40% !important; }
 
 .Grid-Node-3-5, .Snippet-Item .Item-Content {
-  width: 60.00%; }
+  width: 60% !important; }
 
 .Grid-Node-4-5 {
-  width: 80.00%; }
+  width: 80% !important; }
 
 .Grid-Node-1-7 {
-  width: 14.28%; }
+  width: 14.28% !important; }
 
 .Grid-Node-2-7 {
-  width: 28.56%; }
+  width: 28.56% !important; }
 
 .Grid-Node-3-7 {
-  width: 42.84%; }
+  width: 42.84% !important; }
 
 .Grid-Node-4-7 {
-  width: 57.12%; }
+  width: 57.12% !important; }
 
 .Grid-Node-5-7 {
-  width: 71.40%; }
+  width: 71.4% !important; }
 
 .Grid-Node-6-7 {
-  width: 85.68%; }
+  width: 85.68% !important; }
 
 .Grid-No-Padding > * {
   padding: 0 !important; }
@@ -336,6 +336,23 @@ code {
       padding: 10px 20px; }
   .Control-Group.Checkbox.Submit > label {
     padding: 10px 0; }
+  .Control-Group.Smart .Input-Smart {
+    width: 70%; }
+    .Control-Group.Smart .Input-Smart .Prefix,
+    .Control-Group.Smart .Input-Smart .Postfix {
+      float: left;
+      padding: 5px 10px;
+      background-color: #f1f1f1;
+      line-height: 24px;
+      font-size: 14px;
+      text-align: center; }
+    .Control-Group.Smart .Input-Smart .Prefix {
+      border: 1px solid #cccccc;
+      border-right-width: 0; }
+    .Control-Group.Smart .Input-Smart input,
+    .Control-Group.Smart .Input-Smart select,
+    .Control-Group.Smart .Input-Smart textarea {
+      float: left; }
 
 label.Control-Group {
   float: none !important; }
@@ -351,7 +368,7 @@ label.Control-Group {
 .Form-Vertical input,
 .Form-Vertical select,
 .Form-Vertical textarea {
-  padding: 10px;
+  padding: 5px 10px;
   border: 1px solid; }
 .Form-Vertical label,
 .Form-Vertical input,
@@ -394,7 +411,6 @@ input[type='radio'] {
 
 input[type='submit'] {
   width: inherit;
-  background-color: #ec6700;
   padding: 10px 0;
   font-size: 110%;
   text-align: center; }
@@ -407,57 +423,19 @@ input[type='submit'] {
 .Control-Group input,
 .Control-Group select,
 .Control-Group textarea {
-  border-color: #cccccc !important; }
+  border-color: #cccccc;
+  -webkit-transition-property: border-color;
+  -moz-transition-property: border-color;
+  transition-property: border-color;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  transition-duration: 0.5s; }
 
 .Control-Group input:focus,
 .Control-Group select:focus,
 .Control-Group textarea:focus {
   outline: 0;
-  border-color: #ec6700 !important; }
-
-.Input-Smart {
-  min-height: 36px;
-  position: relative; }
-
-.Input-Smart input {
-  min-height: 36px;
-  line-height: 24px;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-  padding: 5px 10px; }
-
-.Input-Smart .before + input,
-.Input-Smart .before + .after + input {
-  padding-left: 50px; }
-
-.Input-Smart .after input {
-  padding-right: 50px; }
-
-.Input-Smart .before,
-.Input-Smart .after {
-  position: absolute;
-  z-index: 2;
-  width: 40px;
-  display: block;
-  text-align: center;
-  padding: 5px 10px 5px;
-  line-height: 24px;
-  background-color: #dedede;
-  border-right: 1px solid #cccccc;
-  border-left: 1px solid #cccccc;
-  box-shadow: 0 0 2px white inset;
-  font-size: 80%; }
-
-.Input-Smart .before {
-  left: 1px;
-  top: 1px;
-  border-left: 0; }
-
-.Input-Smart .after {
-  top: 1px;
-  right: 1px;
-  border-right: 0; }
+  border-color: #ec6700; }
 
 #recaptcha_widget_div {
   display: inline-block;

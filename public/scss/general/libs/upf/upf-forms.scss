@@ -1,3 +1,11 @@
+$Control-Border-Color:					$clr-grey;
+$Control-Background-Color:				white;
+$Control-Focus-Border-Color:			$clr-main;
+$Control-Sublabel-Background-Color:		$clr-grey-lighter;
+$Control-Padding:						$size-xs $size-s;
+$Control-Line-Height:					$line-height;
+
+
 .Control-Group {
 	margin-top: 		$size-s;
 	width: 100%;
@@ -15,9 +23,13 @@
 		font-family: $Font-Family-Verdana;
 		resize: vertical;
 	}
+
+	// Отступ между двумя кнопками в ряд
 	input[type='submit'] + input[type='submit'] {
 		margin-left: 	$size-n;
 	}
+
+	// Отступ между контрол-группами
 	& + .Control-Group {
 		margin-top: $size;
 	}
@@ -27,6 +39,7 @@
 	&.Offset {
 		padding-top: $size;
 		border-top: 1px dashed $clr-grey;
+
 		input[type='submit']	,
 		button.Button			{
 			display: inline-block;
@@ -42,6 +55,31 @@
 		}
 		& > [type='submit'] {
 			@extend .Grid-Node-1-2;
+		}
+	}
+	&.Smart {
+		@extend ._Fix;
+		.Input-Smart {
+			@extend ._Fix;
+			width: 70%;
+			.Prefix	 ,
+			.Postfix {
+				float: left;
+				padding: $Control-Padding;
+				background-color: $Control-Sublabel-Background-Color;
+				line-height: $Control-Line-Height;
+				font-size: 14px;
+				text-align: center;
+			}
+			.Prefix {
+				border: 1px solid $Control-Border-Color;
+				border-right-width: 0;
+			}
+			input	 ,
+			select   ,
+			textarea {
+				float: left;
+			}
 		}
 	}
 }
@@ -63,7 +101,7 @@ label.Control-Group {
 	input,
 	select,
 	textarea {
-		padding: 		$size-s;
+		padding: 		$Control-Padding;
 		border: 		1px solid;
 	}
 	label,
@@ -119,7 +157,6 @@ input[type='radio']     {
 // КНОПКА
 input[type='submit'] {
 	width: 				inherit;
-	background-color: 	$clr-main;
 	padding: 			$size-s 0;
 	font-size: 			110%;
 	text-align: 		center;
@@ -139,59 +176,16 @@ input[type='submit'] {
 .Control-Group input        ,
 .Control-Group select       ,
 .Control-Group textarea     {
-  border-color: $clr-grey!important;
+  border-color: $Control-Border-Color;
+	@include Transition(border-color, .5s);
 }
 .Control-Group input:focus   ,
 .Control-Group select:focus  ,
 .Control-Group textarea:focus{
   outline: 0;
-  border-color: $clr-main!important;
+  border-color: $Control-Focus-Border-Color;
 }
-.Input-Smart {
-  min-height: $line-height + ($size-xs * 2) + 2px;
-  position: relative;
-}
-.Input-Smart input {
-  // Высота строки + 2 Внутренних отступа + 2 пикселы рамки
-  min-height: $line-height + ($size-xs * 2) + 2px;
-  line-height: $line-height;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-  padding: $size-xs $size-s;
-}
-.Input-Smart .before + input ,
-.Input-Smart .before + .after + input {
-  padding-left: 50px;
-}
-.Input-Smart .after input {
-  padding-right: 50px;
-}
-.Input-Smart .before  ,
-.Input-Smart .after   {
-  position: absolute;
-  z-index: 2;
-  width: 40px;
-  display: block;
-  text-align: center;
-  padding: $size-xs ($size-s) $size-xs;
-  line-height: $line-height;
-  background-color: $clr-grey-light;
-  border-right: 1px solid $clr-grey;
-  border-left: 1px solid $clr-grey;
-  box-shadow: 0 0 2px white inset;
-  font-size: 80%;
-}
-.Input-Smart .before {
-  left: 1px;
-  top: 1px;
-  border-left: 0;
-}
-.Input-Smart .after {
-  top: 1px;
-  right: 1px;
-  border-right: 0;
-}
+
 
 
 // FIX reCaptcha

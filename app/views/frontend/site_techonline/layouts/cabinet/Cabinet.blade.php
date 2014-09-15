@@ -18,9 +18,6 @@
     <form class="Form-Horizontal Grid-Node-3-4">
         <h4 class="Header-Column">Редактировать данные</h4>
 
-    <form class="Form-Horizontal action="">
-        <h4 class="Section-Subheader">Редактировать данные</h4>
-
         <div class="Control-Group">
             <label for="Cabinet-Name">Название организации</label>
             <input id="Cabinet-Name" name="name" type="text" value="{{$content['item']['name']}}"/>
@@ -38,12 +35,12 @@
 
         <div class="Control-Group">
             <label for="Cabinet-Phone">Телефон организации</label>
-            <input id="Cabinet-Phone" name="phone" type="text" value="{{$content['item']['phone']}}"/>
+            <input id="Cabinet-Phone" name="phone" type="tel" value="{{$content['item']['phone']}}"/>
         </div>
 
         <div class="Control-Group">
             <label for="Cabinet-Email">Email организации</label>
-            <input id="Cabinet-Email" name="email" type="text" value="{{$content['item']['email']}}"/>
+            <input id="Cabinet-Email" name="email" type="email" value="{{$content['item']['email']}}"/>
         </div>
 
         <div class="Control-Group">
@@ -51,14 +48,17 @@
             <input id="Cabinet-Skype" name="skype" type="text" value="{{$content['item']['skype']}}"/>
         </div>
 
-        <div class="Control-Group">
+        <div class="Control-Group Smart">
             <label for="Cabinet-Website">Вебсайт организации</label>
-            <input id="Cabinet-Website" name="website" type="text" value="{{$content['item']['website']}}"/>
+            <div class="Input-Smart">
+                <span class="Grid-Node-1-5 Prefix">http://</span>
+                <input class="Grid-Node-4-5" id="Cabinet-Website" name="website" type="text" value="{{$content['item']['website']}}"/>
+            </div>
         </div>
 
         <div class="Control-Group">
             <label for="Cabinet-Region">Регион</label>
-            <select id="Cabinet-Region" name="website" type="text" value="{{$content['item']['region_id']}}"/>
+            <select id="Cabinet-Region" name="website" type="text" value="{{$content['item']['region_id']}}">
                 @foreach($content['regions'] as $region)
                     @if($region['id']==$content['item']['region_id'])
                         <option selected="selected" value="{{$region['id']}}">{{$region['name']}}</option>
