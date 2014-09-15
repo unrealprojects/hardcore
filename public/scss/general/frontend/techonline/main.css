@@ -16,7 +16,7 @@
     margin-top: 0 !important; }
 
 ._Section-Inner, .Node, .Page-Header .Page-Header-Inner, footer[role='contentinfo'] > div {
-  width: 1000px; }
+  width: 1000px !important; }
 
 ._Icon-Spacing {
   margin-right: 20px; }

@@ -30,7 +30,7 @@
 }
 // Устанавливает секции фиксированную ширину, согласно файлу настроек
 ._Section-Inner {
-	width: 			$section-width;
+	width: 			$section-width!important;
 }
 
 // Отбивает контент вправо от иконки
