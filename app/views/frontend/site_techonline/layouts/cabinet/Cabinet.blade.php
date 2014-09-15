@@ -18,6 +18,9 @@
     <form class="Form-Horizontal Grid-Node-3-4">
         <h4 class="Header-Column">Редактировать данные</h4>
 
+    <form class="Form-Horizontal action="">
+        <h4 class="Section-Subheader">Редактировать данные</h4>
+
         <div class="Control-Group">
             <label for="Cabinet-Name">Название организации</label>
             <input id="Cabinet-Name" name="name" type="text" value="{{$content['item']['name']}}"/>
@@ -131,6 +134,10 @@
                 <h6>Характеристики</h6>
                 <table>
                     <tr>
+                        <td>Категория:</td>
+                        <td>{{$list_elem['model']['category']['name']}}</td>
+                    </tr>
+                    <tr>
                         <td>Бренд:</td>
                         <td>{{$list_elem['model']['brand']['name']}}</td>
                     </tr>
@@ -141,6 +148,14 @@
                     <tr>
                         <td>Регион:</td>
                         <td>{{$list_elem['region']['name']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Cтатус:</td>
+                        <td>{{$list_elem['status']['name']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Состояние:</td>
+                        <td> {{$list_elem['opacity']['name']}}</td>
                     </tr>
                 </table>
             </div>
