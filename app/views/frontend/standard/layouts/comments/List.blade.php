@@ -42,7 +42,7 @@
             <label for="Comment-New">Введите код</label>
             {{Form::captcha()}}
         </div>
-        <div class="Control-Group">
+        <div class="Control-Group Offset">
             <input type="submit" value="Написать"/>
         </div>
     </form>

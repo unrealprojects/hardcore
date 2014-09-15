@@ -37,23 +37,26 @@
                 @endforeach
             </ul>
         </aside>
+
         <article class="Grid-Node-5-7">
-            <ul class="Lot-List">
+            <ul class="Snippet-List">
             @foreach($content['list'] as $list_elem)
-                <li class="Lot">
+                <li class="Snippet-Item">
 
                     <header>
-                        <h4>
-                            <a href="/catalog/{{$list_elem['metadata']['alias']}}">{{$list_elem['brand']['name']}}
+                        <h4 class="Item-Title">
+                            <a href="/catalog/{{$list_elem['metadata']['alias']}}">
+                                {{$list_elem['brand']['name']}}
                             {{$list_elem['model']}}</a>
+
+                            <span class="Item-Category">{{$list_elem['category']['name']}}</span>
                         </h4>
-                        <p>{{$list_elem['category']['name']}}</p>
                     </header>
 
-                    <div class="Lot-Gallery Grid-Node-3-7">
+                    <div class="Item-Gallery Grid-Node-3-7">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                             @if($i==1)
-                                 <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                                 <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
 
                         <ul>
                             @elseif($i>1 && $i<5)
@@ -67,8 +70,8 @@
                         </ul>
                     </div>
 
-                    <div class="Lot-About Grid-Node-4-7">
-                        <p>{{$list_elem['description']}}</p>
+                    <div class="Item-Content Grid-Node-4-7">
+                        {{$list_elem['description']}}
 
                         <!-- Параметры товара -->
                         @if($list_elem['params_values'])
@@ -76,8 +79,8 @@
                         <table>
                             @foreach($list_elem['params_values'] as $param)
                             <tr>
-                                <td class="Param">{{$param['param_data']['name']}}</td>
-                                <td class="Value">{{$param['value']}} {{$param['param_data']['dimension']}}</td>
+                                <td>{{$param['param_data']['name']}}</td>
+                                <td>{{$param['value']}} {{$param['param_data']['dimension']}}</td>
                             </tr>
                             @endforeach
                         </table>

@@ -45,7 +45,7 @@ body {
 	font-size: $Font-Size-Huge;
 	font-weight: 100;
 	padding-bottom: $size-s;
-	border-bottom: 1px solid $clr-grey-light;
+	border-bottom: 1px dashed $clr-grey-dark;
 }
 
 
@@ -265,29 +265,6 @@ body {
 		margin-bottom: $size-s;
 		@extend ._Fix;
 
-		& h4 {
-			text-transform: uppercase;
-			float: left;
-			font-size: 22px;
-			a {
-				color: $clr-grey-darker
-			}
-		}
-		& .Lot-Price {
-			color: white;
-			margin-right: -$size-xl;
-			padding: $size-s $size-n;
-			float: right;
-			background: linear-gradient(to left, $clr-main, $clr-main-lighter);
-			@include Round(diagonal);
-		}
-		& img {
-			display: block;
-			height: 30px;
-			float: left;
-			margin-right: $size-n;
-			margin-top: $size-xs;
-		}
 
 		& p {
 			font-size: 12px;
@@ -295,48 +272,12 @@ body {
 		}
 
 	}
-	.Lot-Gallery {
-		padding-right: $size-l;
-		img.Lot-Main-Photo {
-			@include Round(all);
-			@extend ._Fit-Row;
-			@extend ._Highlight;
-			&:hover {
-			}
-		}
-		ul {
-			@extend ._No-Bullets;
-			@extend ._Inline;
-			li {
-				width: 30%;
-				margin-left: 5%;
-				&:first-child {
-					margin-left: 0;
-				}
-				img {
-					display: block;
-					width: 100%;
-					@include Round(all);
-					@extend ._Highlight;
-				}
-			}
-		}
-	}
+
 	.Lot-About {
 		p {
 			font-size: 14px;
 		}
-		& .Lot-Values {
-			padding: $size-s;
-
-			border-top:			1px solid $clr-grey-light;
-			background-color: $clr-grey-lighter;
-			@extend ._No-Bullets;
-			@extend ._Inline;
-			li {
-				margin-right: 5%;
-			}
-		}
+		&
 		& > h6 {
 			font-size: $Font-Size-Large;
 			margin-top: $size-n;
@@ -361,11 +302,13 @@ body {
 	margin-bottom: -20px!important;
 	background-color: white;
 	@include Round(all);
-	ul {
+
+	.Breadcrumb-List {
 		padding: $size-s 0;
 		@extend ._Inline;
 		@extend ._No-Bullets;
-		li {
+
+		.Breadcrumb-Item {
 			a    ,
 			span {
 				padding: $size-xs;
@@ -379,7 +322,8 @@ body {
 				@extend ._Unselectable;
 			}
 		}
-		li:first-child {
+
+		.Breadcrumb-Item:first-child {
 			&:before {
 				content: "";
 			}
@@ -494,10 +438,9 @@ body {
 // Блок комментариев
 .Comment {
 	.Comment-List {
-		@extend .No-Bullets;
+		@extend ._No-Bullets;
+		@extend ._Vertical-Spacing;
 		li {
-			margin-top: $size-xl;
-
 			&:first-child {
 				margin-top: 0;
 			}
@@ -624,9 +567,11 @@ footer[role='contentinfo'] {
 }
 
 // Список арендаторов в 2 строки на главной странице
+.News-List   ,
 .Seller-List {
 	@extend ._Vertical-Spacing;
 
+	li.News-Item   ,
 	li.Seller-Item {
 		padding-right: $size-xl;
 
@@ -635,7 +580,7 @@ footer[role='contentinfo'] {
 			border-bottom: 1px $clr-grey dashed;
 			padding-bottom: $size-s;
 			@extend ._Fix;
-			h5.Seller-Title {
+			h5.Title {
 				display: block;
 				float: left;
 				width: 85%;
@@ -644,6 +589,7 @@ footer[role='contentinfo'] {
 					font-size: $Font-Size-Large;
 					text-transform: uppercase;
 				}
+				.News-Date       ,
 				.Seller-Location {
 					display: block;
 					clear: both;
@@ -651,7 +597,8 @@ footer[role='contentinfo'] {
 				}
 			}
 
-			.Seller-Rating {
+
+			.Rating {
 				width: 15%;
 				float: left;
 				text-align: right;
@@ -659,13 +606,212 @@ footer[role='contentinfo'] {
 			}
 
 		}
-		.Seller-Description {
+		.Description {
 			font-size: 14px;
+			img {
+				width: 100%;
+				margin-bottom: $size;
+				@include Round(all);
+			}
+			& > div {
+			}
 		}
 
 		//@fixme Наплодил "фич", блин.
 		&:last-child {
 			padding-right: $size-xl;
+		}
+	}
+}
+.Snippet-List {
+	@extend ._Vertical-Spacing;
+	@extend ._No-Bullets;
+
+	.Snippet-Item {
+
+		header {
+
+			.Item-Category ,
+			.Item-Location {
+				padding: 0;
+			}
+		}
+	}
+	.Item-Gallery {
+		& > img {
+			width: 100%;
+		}
+	}
+}
+.Snippet-Item {
+	@extend ._Fix;
+
+	header {
+		margin-bottom: $size;
+		@extend ._Fix;
+
+		.Item-Title {
+			margin: $size-xs $size-s 0 0;
+			display: inline-block;
+			max-width: 55%;
+			text-transform: uppercase;
+			font-size: 20px;
+			@extend ._Fix;
+			@extend ._Left;
+
+			a {
+				display: block;
+				color: $clr-main;
+				&:hover {
+					color: $clr-main;
+				}
+			}
+			.Item-Category ,
+			.Item-Location {
+				float: left;
+				text-transform: none;
+				font-size: 12px;
+				font-weight: 100;
+				color: $clr-grey-dark;
+			}
+		}
+		h4 				,
+		.Section-Header {
+			float: left;
+		}
+
+		.Item-Values {
+			display: inline!important;
+			width: 45%;
+			color: white;
+			margin-right: -$size-xl;
+			float: right;
+			background: linear-gradient(to left, $clr-main, $clr-main-lighter);
+
+			@include Round(diagonal);
+			@extend ._No-Bullets;
+			@extend ._Inline;
+
+			li {
+				padding: $size-s $size-s;
+				h6 {
+					margin: 0;
+					font-size: 12px;
+					font-weight: 100;
+				}
+			}
+		}
+	}
+	.Item-Gallery {
+		padding-right: $size-l;
+		@extend ._Left;
+		@extend .Grid-Node-2-5;
+
+		img.Item-Main-Photo {
+			@include Round(all);
+			@extend ._Fit-Row;
+			@extend ._Highlight;
+		}
+
+		ul {
+			@extend ._No-Bullets;
+			@extend ._Inline;
+
+			li {
+				width: 30%;
+				margin-left: 5%;
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				img {
+					display: block;
+					width: 100%;
+					@include Round(all);
+					@extend ._Highlight;
+				}
+			}
+		}
+	}
+
+	.Item-Photo {
+		margin-bottom: $size-l;
+		padding-right: $size-l;
+		@extend ._Left;
+		@extend .Grid-Node-2-5;
+
+		img {
+			width: 100%;
+			@include Round(all);
+		}
+	}
+
+	.Item-Content {
+		margin-bottom: $size-l;
+		font-size: 14px;
+
+		@extend ._Right;
+		@extend .Grid-Node-3-5;
+
+		h6 {
+			margin: $size-s 0 $size-xs;
+			font-size: 18px;
+		}
+
+		p {
+			& + p {
+				margin-top: $size-n;
+			}
+		}
+		table {
+			font-size: 14px;
+			border-top: 1px dashed $clr-grey-light;
+			width: 100%;
+			tr {
+				td {
+					padding: $size-xs 0;
+				}
+			}
+		}
+	}
+
+	.Item-Info {
+		clear: both;
+		padding: $size-s 0;
+		border-top: 1px dashed $clr-grey-dark;
+		color: $clr-grey-dark;
+		font-size: $Font-Size-Micro;
+		.Date {
+			padding: $size-xs 0;
+			margin: 0 $size-l $size-s 0;
+			@extend ._Left;
+		}
+		.Tags {
+			@extend ._Left;
+		}
+	}
+}
+
+// @todo: вывести код готовых блоков-заготовок в отдельный файл
+ul.Tag-List {
+	@extend ._Fix;
+	@extend ._Inline;
+	@extend ._No-Bullets;
+
+	li.Tag-Item {
+		margin-right: $size-s;
+		a {
+			display: inline-block;
+			padding: $size-xs $size-s;
+			background-color: $clr-grey;
+			color: white;
+			font-size: 12px;
+
+			@include Round(left);
+			&:hover {
+				background-color: $clr-grey-dark;
+			}
 		}
 	}
 }
@@ -713,7 +859,16 @@ footer[role='contentinfo'] {
 		}
 	}
 }
+.Menu-List {
 
+	ul {
+		@extend ._No-Bullets;
+
+		li {
+			padding: $size-s 0;
+		}
+	}
+}
 @include Keyframes(FadeIn) {
 	from {
 		@include Opacity(0);
@@ -730,5 +885,55 @@ footer[role='contentinfo'] {
 	to {
 		@include Opacity(1);
 		top: 0;
+	}
+}
+
+
+@media all and (max-width: 1024px) {
+	* {
+		border-radius: 0!important;
+	}
+	.Node {
+		padding: 15px;
+	}
+	.Page-Navigation > ul > li > a {
+		font-size: 12px;
+	}
+	.Section-Header	,
+	.Section-Subheader {
+		margin-left: -15px;
+		border-radius: 0;
+	}
+	.Snippet-Item header {
+		margin-bottom: 10px!important;
+	}
+	.Item-Title {
+		max-width: 100%!important;
+	}
+	.Item-Gallery {
+		padding-right: 0!important;
+		width: 100%!important;
+	}
+	.Item-Gallery {
+		.Item-Main-Photo {
+			width: 100%!important;
+			margin-bottom: 10px!important;
+		}
+	}
+	.Item-Content {
+		margin-top: $size;
+		width: 100%!important;
+	}
+
+	.Item-Values {
+		width: 100%!important;
+		margin-top: 15px;
+		margin-right: 0!important;
+	}
+	._Section-Inner {
+		width: 95%!important;
+	}
+	._Fly-Out {
+		margin-left: -15px;
 	}
 }

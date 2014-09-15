@@ -12,6 +12,7 @@
 		font-weight: 	900;
 	}
 	textarea {
+		font-family: $Font-Family-Verdana;
 		resize: vertical;
 	}
 	input[type='submit'] + input[type='submit'] {
@@ -22,6 +23,17 @@
 	}
 	&:first-child {
 		margin-top: 0;
+	}
+	&.Offset {
+		padding-top: $size;
+		border-top: 1px dashed $clr-grey;
+		input[type='submit']	,
+		button.Button			{
+			display: inline-block;
+			width: auto;
+			padding: $size-s $size;
+			@extend ._Right;
+		}
 	}
 	&.Checkbox.Submit {
 		& > label {
@@ -108,15 +120,15 @@ input[type='radio']     {
 input[type='submit'] {
 	width: 				inherit;
 	background-color: 	$clr-main;
-	color: 				#fff;
-	border: 			0;
-	cursor: 			pointer;
 	padding: 			$size-s 0;
 	font-size: 			110%;
 	text-align: 		center;
+	@extend 			._Button;
+
 	&:hover {
-		background-color: $clr-main-dark;
+		background-color: $clr-grey-darker;
 	}
+
 	&[disabled] {
 		background-color: $clr-grey;
 		cursor: not-allowed;

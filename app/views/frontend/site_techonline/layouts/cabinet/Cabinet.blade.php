@@ -3,19 +3,20 @@
 @section('main')
 <!-- Личный Кабинет -->
 <div class="Comment Node" xmlns="http://www.w3.org/1999/html">
-    <h4 class="Section-Header">Личный Кабинет</h4>
+    <aside class="Grid-Node-1-4">
+        <h4 class="Section-Header">Личный Кабинет</h4>
 
-    <nav class="Navigation">
-        <ul>
-            <li><a href="/cabinet/{{\Route::current()->parameter('alias')}}/" title="Каталог стройтехники">Редактировать данные</a></li>
-            <li><a href="/cabinet/{{\Route::current()->parameter('alias')}}/rent" title="Взять стройтехнику в аренду">Разместить стройтехнику</a></li>
-            <li><a href="/cabinet/{{\Route::current()->parameter('alias')}}/parts">Разместить запчасти</a></li>
-        </ul>
-    </nav>
+        <nav class="Menu-List">
+            <ul>
+                <li><a href="/cabinet/{{\Route::current()->parameter('alias')}}/" title="Каталог стройтехники">Редактировать данные</a></li>
+                <li><a href="/cabinet/{{\Route::current()->parameter('alias')}}/rent" title="Взять стройтехнику в аренду">Разместить стройтехнику</a></li>
+                <li><a href="/cabinet/{{\Route::current()->parameter('alias')}}/parts">Разместить запчасти</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-
-    <form class="Form-Horizontal action="">
-        <h4 class="Section-Subheader">Редактировать данные</h4>
+    <form class="Form-Horizontal Grid-Node-3-4">
+        <h4 class="Header-Column">Редактировать данные</h4>
 
         <div class="Control-Group">
             <label for="Cabinet-Name">Название организации</label>
@@ -79,10 +80,10 @@
             <input id="Cabinet-Created" name="created" type="text" disabled="true" value="{{$content['item']['created_at']}}"/>
         </div>
 
-
-        <div class="Control-Group">
+        <div class="Control-Group Offset">
             <input type="submit" value="Обновить Информацию"/>
         </div>
+
     </form>
 </div>
 
@@ -90,19 +91,26 @@
 
 <article class="Node">
     <h4 class="Section-Header">Стройтехника</h4>
-    <ul class="Lot-List">
+    <ul class="Snippet-List">
         @foreach($content['item']['tech_list'] as $list_elem)
-        <li class="Lot">
+        <li class="Snippet-Item">
             <header>
-                <div>
-                    <h4><a href="/rent/{{$list_elem['metadata']['alias']}}">{{$list_elem['name']}}</a></h4>
-                    <h5 class="Lot-Price">{{$list_elem['rate']}}</h5>
-                </div>
+                    <h4 class="Item-Title"><a href="/rent/{{$list_elem['metadata']['alias']}}">
+                            {{$list_elem['name']}}</a>
+                        <p class="Item-Category">
+                            {{$list_elem['model']['category']['name']}}
+                        </p>
+                    </h4>
+                    <ul class="Item-Values">
+                        <li><h6>Статус:</h6>{{$list_elem['status']['name']}}</li>
+                        <li><h6>Состояние:</h6>{{$list_elem['opacity']['name']}}</li>
+                        <li><h6>Цена:</h6>{{$list_elem['rate']}}</li>
+                    </ul>
             </header>
-            <div class="Lot-Gallery Grid-Node-3-7">
+            <div class="Item-Gallery Grid-Node-3-7">
                 @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                 @if($i==1)
-                <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
 
                 <ul>
                     @elseif($i>1 && $i<5)
@@ -116,16 +124,12 @@
                 </ul>
             </div>
 
-            <div class="Lot-About Grid-Node-4-7">
-                <p>{{$list_elem['description']}}</p>
+            <div class="Item-Content Grid-Node-4-7">
+                {{$list_elem['description']}}
 
                 <!-- Параметры товара -->
                 <h6>Характеристики</h6>
-                <table class="Stripped">
-                    <tr>
-                        <td>Категория:</td>
-                        <td>{{$list_elem['model']['category']['name']}}</td>
-                    </tr>
+                <table>
                     <tr>
                         <td>Бренд:</td>
                         <td>{{$list_elem['model']['brand']['name']}}</td>
@@ -137,14 +141,6 @@
                     <tr>
                         <td>Регион:</td>
                         <td>{{$list_elem['region']['name']}}</td>
-                    </tr>
-                    <tr>
-                        <td>Cтатус:</td>
-                        <td>{{$list_elem['status']['name']}}</td>
-                    </tr>
-                    <tr>
-                        <td>Состояние:</td>
-                        <td> {{$list_elem['opacity']['name']}}</td>
                     </tr>
                 </table>
             </div>

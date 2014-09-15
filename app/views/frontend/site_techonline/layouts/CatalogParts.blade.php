@@ -32,23 +32,28 @@
             </ul>
         </aside>
         <article class="Grid-Node-5-7">
-            <ul class="Lot-List">
+            <ul class="Snippet-List">
                 @foreach($content['list'] as $list_elem)
-                <li class="Lot">
+                <li class="Snippet-Item">
                     <header>
-                        <div>
-                            <h4>
-                                <a href="/parts/{{$list_elem['metadata']['alias']}}">
-                                    {{$list_elem['name']}}
-                                </a>
-                            </h4>
-                        </div>
+                        <h4 class="Item-Title">
+                            <a href="/parts/{{$list_elem['metadata']['alias']}}">
+                                {{$list_elem['name']}}
+                            </a>
+                            <p class="Item-Location">
+                                {{$list_elem['category']['name']}}
+                            </p>
+                        </h4>
+                        <ul class="Item-Values">
+                            <li><h6>Статус:</h6>{{$list_elem['status']['name']}}</li>
+                            <li><h6>Состояние:</h6>{{$list_elem['opacity']['name']}}</li>
+                        </ul>
                     </header>
 
-                    <div class="Lot-Gallery Grid-Node-3-7">
+                    <div class="Item-Gallery Grid-Node-3-7">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                         @if($i==1)
-                        <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                        <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
 
                         <ul>
                             @elseif($i>1 && $i<5)
@@ -62,23 +67,15 @@
                         </ul>
                     </div>
 
-                    <div class="Lot-About Grid-Node-4-7">
-                        <p>{{$list_elem['description']}}</p>
+                    <div class="Item-Content Grid-Node-4-7">
+                        {{$list_elem['description']}}
 
                         <!-- Параметры товара -->
                         <h6>Характеристики</h6>
-                        <table class="Stripped">
-                            <tr>
-                                <td>Категория:</td>
-                                <td>{{$list_elem['category']['name']}}</td>
-                            </tr>
+                        <table>
                             <tr>
                                 <td>Продавец:</td>
                                 <td><a href="/sellers/{{$list_elem['admin']['metadata']['alias']}}">{{$list_elem['admin']['name']}}</a></td>
-                            </tr>
-                            <tr>
-                                <td>Состояние:</td>
-                                <td> {{$list_elem['opacity']['name']}}</td>
                             </tr>
                         </table>
                     </div>

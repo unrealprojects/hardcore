@@ -17,23 +17,21 @@
             </ul>
         </aside>
         <article class="Grid-Node-5-7">
-            <ul class="Lot-List">
+            <ul class="Snippet-List">
                 @foreach($content['list'] as $list_elem)
-                <li class="Lot">
+                <li class="Snippet-Item">
                     <header>
-                        <div>
-                            <h4>
+                            <h4 class="Item-Title">
                                 <a href="/sellers/{{$list_elem['metadata']['alias']}}">
                                     {{$list_elem['name']}}
                                 </a>
                             </h4>
-                        </div>
                     </header>
 
-                    <div class="Lot-Gallery Grid-Node-3-7">
+                    <div class="Item-Gallery Grid-Node-3-7">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                         @if($i==1)
-                        <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                        <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
 
                         <ul>
                             @elseif($i>1 && $i<5)
@@ -47,9 +45,10 @@
                         </ul>
                     </div>
 
-                    <div class="Lot-About Grid-Node-4-7">
-                        <p>{{$list_elem['description']}}</p>
-                        <table class="Stripped">
+                    <div class="Item-Content Grid-Node-4-7">
+                        {{$list_elem['description']}}
+                        <h6>Контактные данные</h6>
+                        <table>
                             <tr>
                                 <td>Телефоны:</td>
                                 <td>{{$list_elem['phone']}}</td>

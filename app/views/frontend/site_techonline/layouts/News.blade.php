@@ -24,8 +24,9 @@
                     <header>
                         <h4>
                             <a href="/news/{{$list_elem['metadata']['alias']}}">{{$list_elem['name']}}</a>
+
+                            <span>{{$list_elem['created_at']}}</span>
                         </h4>
-                        <p>{{$list_elem['created_at']}}</p>
                             @foreach($list_elem['tags'] as $tag)
                                 <a href="/news/?tag={{$tag['alias']}}&{{\Input::getQueryString()}}">{{$tag['name']}} </a>
                             @endforeach

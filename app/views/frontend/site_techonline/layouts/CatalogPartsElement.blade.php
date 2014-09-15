@@ -3,8 +3,8 @@
 @section('main')
 <section class="Node">
     <div class="Lot" itemscope itemtype="http://data-vocabulary.org/Product">
-        <header>
-            <h4 class="Section-Header">
+        <header class="Section-Header">
+            <h4>
                 {{$content['item']['name']}}
             </h4>
         </header>

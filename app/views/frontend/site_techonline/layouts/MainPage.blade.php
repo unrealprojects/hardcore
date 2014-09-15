@@ -6,7 +6,7 @@
         <img class="Truck" src="/img/techonline/belaz.png" alt=""/>
         <ul class="Slider-Links">
             <li>
-                <a href="/rent">Арендовать стройтехнику</a>
+                <a href="#">Арендовать стройтехнику</a>
             </li>
             <li>
                 <a href="#">Разместить стройтехнику</a>
@@ -16,7 +16,6 @@
 </section>
 
 <div class="Node Category-List">
-
 
     <!-- КАТАЛОГ СТРОЙТЕХНИКИ::КАТЕГОРИИ C КАРТИНКАМИ-->
     <h3 class="Section-Header">Каталог стройтехники</h3>
@@ -113,9 +112,9 @@
             </div>
         </dd>
     </dl>
-    <hr/>
-    <button class="Button">Применить фильтр</button>
-
+    <div class="Control-Group Offset">
+        <button class="Button">Применить фильтр</button>
+    </div>
 </div>
 
 <!-- АРЕНДОДАТЕЛИ::СПИСОК -->
@@ -125,7 +124,7 @@
         @foreach($content['sellers'] as $seller)
         <li class="Seller-Item Grid-Node-1-2">
             <header>
-                <h5 class="Seller-Title">
+                <h5 class="Title">
                     <a href="/sellers/{{$seller['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$seller['name']}}</a>
                     <span class="Seller-Location">
                         {{$seller['region']['name']}}
@@ -133,11 +132,11 @@
                 </h5>
 
 
-                <div class="Seller-Rating">
+                <div class="Rating">
                     {{$seller['rating']}}
                 </div>
             </header>
-            <div class="Seller-Description">
+            <div class="Description">
                 {{$seller['description']}}
             </div>
         </li>
@@ -152,21 +151,22 @@
         @foreach($content['news'] as $new)
         <li class="News-Item Grid-Node-1-2">
             <header>
-                <h5 class="News-Title">
+                <h5 class="Title">
                     <a href="/news/{{$new['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$new['name']}}</a>
                     <span class="News-Date">
                         {{$new['updated_at']}}
                     </span>
                 </h5>
-                <img src="{{$new['logo']}}" alt="{{$new['name']}}" style="width: 100%;">
 
-                <div class="Seller-Rating">
+
+                <div class="Rating">
                     {{$new['rating']}}
                 </div>
             </header>
-            <div class="Seller-Description">
-                {{$new['text_preview']}}
-            </div>
+            <article class="Description">
+                <img src="{{$new['logo']}}" alt="{{$new['name']}}">
+                <div>{{$new['text_preview']}}</div>
+            </article>
         </li>
         @endforeach
     </ul>

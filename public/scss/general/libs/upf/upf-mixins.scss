@@ -47,8 +47,20 @@
 	@else if ($Round-Mode == 'diagonal-reverse') {
 		border-radius: 0 $border-radius;
 	}
+	@else if ($Round-Mode == 'left') {
+		border-radius: $border-radius 0 0 $border-radius;
+	}
 	@else if ($Round-Mode == 'bottom-left') {
 		border-bottom-left-radius: $border-radius;
+	}
+	@else if ($Round-Mode == 'bottom-right') {
+		border-bottom-right-radius: $border-radius;
+	}
+	@else if ($Round-Mode == 'top-left') {
+		border-top-left-radius: $border-radius;
+	}
+	@else if ($Round-Mode == 'top-right') {
+		border-top-right-radius: $border-radius;
 	}
 	@else if ($Round-Mode == 'search') {
 		border-radius: $size-l;
