@@ -204,13 +204,16 @@ body {
 }
 
 //
-.Page-Slider {
+#Page-Slider {
 	clear: both;
 	overflow: hidden;
 	margin-bottom: 50px;
 	height: 250px;
-	background: $clr-main;
-	background: linear-gradient(to top, $clr-main-light, $clr-main);
+	background-image: url(../../../../img/techonline/banner-background.jpg);
+	background-position: center 0;
+	background-repeat: repeat;
+	background-attachment: fixed;
+	//background: linear-gradient(to top, $clr-main-light, $clr-main);
 	box-shadow: 0 0 20px rgba(0, 0, 0, .4) inset;
 	@include Animation(SlideDown,.5s);
 	@extend ._Unselectable;
@@ -221,31 +224,22 @@ body {
 		@extend ._Section-Inner;
 		@extend ._Centered;
 
-		img.Truck {
+		#Truck {
 			width: 360px;
-
+			top: 0;
 			position: absolute;
 			@include Animation(SlideUp, 1s);
 		}
-		.Slider-Links {
+		#Slider-Links {
 			position: absolute;
-			margin-top: 60px;
-			right: 300px;
-			@extend ._No-Bullets;
-			@extend ._Vertical-Spacing;
-			@include Animation(SlideUp,0.6s);
-			li {
-				a {
-					display: block;
-					padding: $size-n;
-					color: black;
-					background-color: white;
-					box-shadow: 0 0 20px rgba(0,0,0,0.4);
-					&:hover {
-						color: #fff;
-						background: $clr-grey-darker;
-					}
-				}
+			top: 50px;
+			left: 400px;
+			opacity: 1;
+			@include Animation(FadeIn,1.5s);
+			a {
+				margin-bottom: 10px;
+
+				display: block;
 			}
 		}
 	}
@@ -332,9 +326,10 @@ body {
 		font-size: 20px;
 		font-weight: 100;
 		margin-top: $size;
-		padding: $size-s;
-		background-color: $clr-main;
+		padding: $size-xs $size-s;
+		background: $clr-grey-darker;
 		color: white;
+
 		&:first-child {
 			margin-top: 0;
 		}
@@ -854,6 +849,7 @@ ul.Tag-List {
 	height: 40px;
 	cursor: pointer;
 	background: url(../../../../img/techonline/icon-scroll-top.png) no-repeat;
+	display: none;
 	@include Transition(background,.3s);
 	&:hover {
 		background: url(../../../../img/techonline/icon-scroll-top-hover.png) no-repeat;

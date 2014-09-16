@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url(normalize.css);
-._Centered, .Node, .Page-Header .Page-Header-Inner, .Page-Slider .Slider-Inner, footer[role='contentinfo'] > div {
+._Centered, .Node, .Page-Header .Page-Header-Inner, #Page-Slider .Slider-Inner, footer[role='contentinfo'] > div {
   margin-left: auto;
   margin-right: auto; }
 
@@ -9,12 +9,12 @@
   ._Standalone:first-child, .Node:first-child {
     margin-top: 0; }
 
-._Vertical-Spacing > *, .Page-Slider .Slider-Inner .Slider-Links > *, .Comment .Comment-List > *, .Snippet-List > * {
+._Vertical-Spacing > *, .Comment .Comment-List > *, .Snippet-List > * {
   margin-top: 30px !important; }
-  ._Vertical-Spacing > *:first-child, .Page-Slider .Slider-Inner .Slider-Links > *:first-child, .Comment .Comment-List > *:first-child, .Snippet-List > *:first-child {
+  ._Vertical-Spacing > *:first-child, .Comment .Comment-List > *:first-child, .Snippet-List > *:first-child {
     margin-top: 0 !important; }
 
-._Section-Inner, .Node, .Page-Header .Page-Header-Inner, .Page-Slider .Slider-Inner, footer[role='contentinfo'] > div {
+._Section-Inner, .Node, .Page-Header .Page-Header-Inner, #Page-Slider .Slider-Inner, footer[role='contentinfo'] > div {
   width: 1000px !important; }
 
 ._Icon-Spacing {
@@ -30,7 +30,7 @@
 ._Dev {
   outline: 1px red solid !important; }
 
-._Clearfix:before, ._Inline:before, .Page-Header .Page-Header-Inner:before, .Breadcrumbs .Breadcrumb-List:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Row:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Node:before, .Page-Header:before, .Page-Navigation ul:before, .Page-Slider .Slider-Inner:before, .Pagination:before, .List-Categories:before, .List-Categories li:before, .Comment .Comment-List li .Comment-List-Element-Content header:before, footer[role='contentinfo'] > div:before, .News-List li.News-Item header:before,
+._Clearfix:before, ._Inline:before, .Page-Header .Page-Header-Inner:before, .Breadcrumbs .Breadcrumb-List:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Row:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Node:before, .Page-Header:before, .Page-Navigation ul:before, #Page-Slider .Slider-Inner:before, .Pagination:before, .List-Categories:before, .List-Categories li:before, .Comment .Comment-List li .Comment-List-Element-Content header:before, footer[role='contentinfo'] > div:before, .News-List li.News-Item header:before,
 .News-List li.Seller-Item header:before,
 .Seller-List li.News-Item header:before,
 .Seller-List li.Seller-Item header:before, .Snippet-Item:before, .Snippet-Item header:before, .Snippet-Item header .Item-Title:before, .List-Filter li.List-Filter-Subheader:before,
@@ -50,7 +50,7 @@ dl.Tabs:after,
 .Node:after,
 .Page-Header:after,
 .Page-Navigation ul:after,
-.Page-Slider .Slider-Inner:after,
+#Page-Slider .Slider-Inner:after,
 .Pagination:after,
 .List-Categories:after,
 .List-Categories li:after,
@@ -67,7 +67,7 @@ footer[role='contentinfo'] > div:after,
   content: " ";
   display: table; }
 
-._Clearfix:after, ._Inline:after, .Page-Header .Page-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Row:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Node:after, .Page-Header:after, .Page-Navigation ul:after, .Page-Slider .Slider-Inner:after, .Pagination:after, .List-Categories:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after, .News-List li.News-Item header:after,
+._Clearfix:after, ._Inline:after, .Page-Header .Page-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Row:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Node:after, .Page-Header:after, .Page-Navigation ul:after, #Page-Slider .Slider-Inner:after, .Pagination:after, .List-Categories:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after, .News-List li.News-Item header:after,
 .News-List li.Seller-Item header:after,
 .Seller-List li.News-Item header:after,
 .Seller-List li.Seller-Item header:after, .Snippet-Item:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, .List-Filter li.List-Filter-Subheader:after {
@@ -90,7 +90,7 @@ footer[role='contentinfo'] > div:after,
 .Nine,
 .Ten,
 .Eleven,
-.Twelve, .Page-Slider .Slider-Inner .Slider-Links, .Breadcrumbs .Breadcrumb-List, .Pagination, .Comment .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, ul.Tag-List, .Menu-List ul {
+.Twelve, .Breadcrumbs .Breadcrumb-List, .Pagination, .Comment .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, ul.Tag-List, .Menu-List ul {
   list-style: none; }
 
 ._Soft_Shadow, .Page-Header, .Page-Header .Page-Header-Inner .Page-Auth .Sign-In-UI,
@@ -138,7 +138,7 @@ a.Button.Search {
 
 ._Unselectable, .Section-Header,
 .Section-Subheader, .Page-Header, .Page-Header .Page-Header-Inner .Page-Auth .Sign-In-UI,
-.Page-Header .Page-Header-Inner .Page-Auth .Sign-Up-UI, .Page-Slider, .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item:before {
+.Page-Header .Page-Header-Inner .Page-Auth .Sign-Up-UI, #Page-Slider, .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item:before {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -835,41 +835,39 @@ body {
     .Page-Navigation ul li:first-child {
       margin-left: 0; }
 
-.Page-Slider {
+#Page-Slider {
   clear: both;
   overflow: hidden;
   margin-bottom: 50px;
   height: 250px;
-  background: #ec6700;
-  background: linear-gradient(to top, #ff7f1c, #ec6700);
+  background-image: url(../../../../img/techonline/banner-background.jpg);
+  background-position: center 0;
+  background-repeat: repeat;
+  background-attachment: fixed;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4) inset;
   -webkit-animation: SlideDown 0.5s;
   -moz-animation: SlideDown 0.5s;
   animation: SlideDown 0.5s; }
-  .Page-Slider .Slider-Inner {
+  #Page-Slider .Slider-Inner {
     position: relative; }
-    .Page-Slider .Slider-Inner img.Truck {
+    #Page-Slider .Slider-Inner #Truck {
       width: 360px;
+      top: 0;
       position: absolute;
       -webkit-animation: SlideUp 1s;
       -moz-animation: SlideUp 1s;
       animation: SlideUp 1s; }
-    .Page-Slider .Slider-Inner .Slider-Links {
+    #Page-Slider .Slider-Inner #Slider-Links {
       position: absolute;
-      margin-top: 60px;
-      right: 300px;
-      -webkit-animation: SlideUp 0.6s;
-      -moz-animation: SlideUp 0.6s;
-      animation: SlideUp 0.6s; }
-      .Page-Slider .Slider-Inner .Slider-Links li a {
-        display: block;
-        padding: 15px;
-        color: black;
-        background-color: white;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); }
-        .Page-Slider .Slider-Inner .Slider-Links li a:hover {
-          color: #fff;
-          background: #555555; }
+      top: 50px;
+      left: 400px;
+      opacity: 1;
+      -webkit-animation: FadeIn 1.5s;
+      -moz-animation: FadeIn 1.5s;
+      animation: FadeIn 1.5s; }
+      #Page-Slider .Slider-Inner #Slider-Links a {
+        margin-bottom: 10px;
+        display: block; }
 
 .Breadcrumbs {
   padding: 0 !important;
@@ -916,8 +914,8 @@ body {
   font-size: 20px;
   font-weight: 100;
   margin-top: 20px;
-  padding: 10px;
-  background-color: #ec6700;
+  padding: 5px 10px;
+  background: #555555;
   color: white; }
   .Sidebar-Filter > h4:first-child {
     margin-top: 0; }
@@ -1242,6 +1240,7 @@ ul.Tag-List li.Tag-Item {
   height: 40px;
   cursor: pointer;
   background: url(../../../../img/techonline/icon-scroll-top.png) no-repeat;
+  display: none;
   -webkit-transition-property: background;
   -moz-transition-property: background;
   transition-property: background;
@@ -1364,7 +1363,7 @@ ul.Tag-List li.Tag-Item {
     margin-top: 15px;
     margin-right: 0 !important; }
 
-  ._Section-Inner, .Node, .Page-Header .Page-Header-Inner, .Page-Slider .Slider-Inner, footer[role='contentinfo'] > div {
+  ._Section-Inner, .Node, .Page-Header .Page-Header-Inner, #Page-Slider .Slider-Inner, footer[role='contentinfo'] > div {
     width: 95% !important; }
 
   ._Fly-Out, .Section-Header,

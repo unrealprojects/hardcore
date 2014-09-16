@@ -1,21 +1,16 @@
 @extends('frontend.site_techonline.content')
 
 @section('main')
-<section class="Page-Slider">
+<section data-type="background" data-speed="10" id="Page-Slider">
     <div class="Slider-Inner">
-        <img class="Truck" src="/img/techonline/belaz.png" alt=""/>
-        <ul class="Slider-Links">
-            <li>
-                <a href="#">Арендовать стройтехнику</a>
-            </li>
-            <li>
-                <a href="#">Разместить стройтехнику</a>
-            </li>
-        </ul>
+        <img id="Truck" src="/img/techonline/belaz.png" alt=""/>
+        <div id="Slider-Links">
+            <a class="Button" href="#">Арендовать стройтехнику</a>
+            <a class="Button" href="#">Разместить стройтехнику</a></div>
     </div>
 </section>
 
-<div class="Node Row Category-List">
+<section class="Node Row Category-List">
 
     <!-- КАТАЛОГ СТРОЙТЕХНИКИ::КАТЕГОРИИ C КАРТИНКАМИ-->
     <h3 class="Section-Header">Каталог стройтехники</h3>
@@ -25,9 +20,9 @@
         @endforeach
     </ul>
 
-</div>
+</section>
 
-<div class="Node Row Split Rent-List">
+<section class="Node Row Split Rent-List">
 
     <!-- АРЕНДА СТРОЙТЕХНИКИ::КАТЕГОРИИ -->
     <div class="Seven">
@@ -53,7 +48,7 @@
         </ul>
     </div>
 
-</div>
+</section>
 <!-- ФИЛЬТР -->
 
 <div class="Node Tabs Filter">
@@ -172,7 +167,6 @@
     </ul>
 </section>
 
-<div title="Вернуться наверх" id="Scroll-Top"></div>
 @endsection
 
 @section('scripts')

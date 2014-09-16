@@ -50,6 +50,9 @@
 	@else if ($Round-Mode == 'left') {
 		border-radius: $border-radius 0 0 $border-radius;
 	}
+	@else if ($Round-Mode == 'top') {
+		border-radius: $border-radius $border-radius 0 0;
+	}
 	@else if ($Round-Mode == 'bottom-left') {
 		border-bottom-left-radius: $border-radius;
 	}

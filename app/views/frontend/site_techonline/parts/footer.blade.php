@@ -1,3 +1,4 @@
+<div title="Вернуться наверх" id="Scroll-Top"></div>
 <footer role="contentinfo">
     <div>
         <p class="Copyright">&copy; Copyright 2014 &mdash; Стройтехника.Онлайн</p>

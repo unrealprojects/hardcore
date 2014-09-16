@@ -14,6 +14,8 @@
     <div id="wrap-stop"></div>
 </div>
 
+<div title="Вернуться наверх" id="Scroll-Top"></div>
+
 <footer>
     @include('frontend.site_techonline.parts.footer')
 </footer>
