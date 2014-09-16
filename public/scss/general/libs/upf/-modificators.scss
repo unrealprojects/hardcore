@@ -94,6 +94,9 @@
 	&:hover {
 		background-color: 	$clr-grey-darker;
 	}
+	&._Rounded {
+		@include Round(all, $Control-Border-Radius);
+	}
 }
 ._Fit-Row {
 	width: 					100%;

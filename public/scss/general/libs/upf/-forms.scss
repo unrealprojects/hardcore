@@ -1,10 +1,3 @@
-$Control-Border-Color:					$clr-grey;
-$Control-Background-Color:				white;
-$Control-Focus-Border-Color:			$clr-main;
-$Control-Sublabel-Background-Color:		$clr-grey-lighter;
-$Control-Padding:						$size-xs $size-s;
-$Control-Line-Height:					$line-height;
-$Control-Border-Radius:					1px;
 
 .Control-Group {
 	margin-top: 		$size-s;
@@ -225,11 +218,11 @@ dl.Tabs {
 		padding: 10px;
 		background: $clr-grey-darker;
 		color: white;
+		@include Round(all,$Control-Border-Radius);
 		@include Transition(border, 0.2s);
 
 		&.Active {
-			background: $clr-grey-darker;
-			border-top: 3px solid $clr-main;
+			background: $clr-main;
 		}
 		&.Disabled {
 			color: $clr-grey-dark;
@@ -250,7 +243,6 @@ dl.Tabs {
 		position: relative;
 		width: 100%;
 		z-index: 2;
-		border-top: 1px solid $clr-grey-darker;
 
 		&.Active {
 			display: block;

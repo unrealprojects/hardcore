@@ -1,12 +1,12 @@
 @extends('frontend.site_techonline.content')
 
 @section('main')
-<section data-type="background" data-speed="10" id="Page-Slider">
+<section id="Page-Slider">
     <div class="Slider-Inner">
         <img id="Truck" src="/img/techonline/belaz.png" alt=""/>
         <div id="Slider-Links">
-            <a class="Button" href="#">Арендовать стройтехнику</a>
-            <a class="Button" href="#">Разместить стройтехнику</a></div>
+            <a class="Button _Rounded" href="#">Арендовать стройтехнику</a>
+            <a class="Button _Rounded" href="#">Разместить стройтехнику</a></div>
     </div>
 </section>
 

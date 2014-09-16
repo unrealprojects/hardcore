@@ -20,6 +20,8 @@ $Grid-Twelve-Width:		($Grid-One-Width * 12) + (11 * $Grid-Gutter);
 
 $Grid-Split-One-Width:	100%/12;
 
+
+
 // Color Scheme
 $clr-red: #ec0000;
 $clr-red-dark:  darken($clr-red,5%);
@@ -100,3 +102,11 @@ $selection-color: 				$clr-grey-dark;
 $section-width: 1000px;
 $grid-spacing: 5%;
 $message-br-width: 300px;
+
+$Control-Border-Color:					$clr-grey;
+$Control-Background-Color:				white;
+$Control-Focus-Border-Color:			$clr-main;
+$Control-Sublabel-Background-Color:		$clr-grey-lighter;
+$Control-Padding:						$size-xs $size-s;
+$Control-Line-Height:					$line-height;
+$Control-Border-Radius:					5px;

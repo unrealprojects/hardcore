@@ -37,33 +37,33 @@
 	filter: alpha(opacity=$IEValue);
 }
 
-@mixin Round($Round-Mode: all, $Radius: 10px) {
+@mixin Round($Round-Mode: all, $Radius: $border-radius) {
 	@if ($Round-Mode == 'all') {
-		border-radius: $border-radius;
+		border-radius: $Radius;
 	}
 	@else if ($Round-Mode == 'diagonal') {
-		border-radius: $border-radius 0;
+		border-radius: $Radius 0;
 	}
 	@else if ($Round-Mode == 'diagonal-reverse') {
-		border-radius: 0 $border-radius;
+		border-radius: 0 $Radius;
 	}
 	@else if ($Round-Mode == 'left') {
-		border-radius: $border-radius 0 0 $border-radius;
+		border-radius: $Radius 0 0 $Radius;
 	}
 	@else if ($Round-Mode == 'top') {
-		border-radius: $border-radius $border-radius 0 0;
+		border-radius: $Radius $Radius 0 0;
 	}
 	@else if ($Round-Mode == 'bottom-left') {
-		border-bottom-left-radius: $border-radius;
+		border-bottom-left-radius: $Radius;
 	}
 	@else if ($Round-Mode == 'bottom-right') {
-		border-bottom-right-radius: $border-radius;
+		border-bottom-right-radius: $Radius;
 	}
 	@else if ($Round-Mode == 'top-left') {
-		border-top-left-radius: $border-radius;
+		border-top-left-radius: $Radius;
 	}
 	@else if ($Round-Mode == 'top-right') {
-		border-top-right-radius: $border-radius;
+		border-top-right-radius: $Radius;
 	}
 	@else if ($Round-Mode == 'search') {
 		border-radius: $size-l;

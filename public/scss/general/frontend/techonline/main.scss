@@ -575,11 +575,6 @@ footer[role='contentinfo'] {
 			& > div {
 			}
 		}
-
-		//@fixme Наплодил "фич", блин.
-		&:last-child {
-			padding-right: $size-xl;
-		}
 	}
 }
 .Snippet-List {

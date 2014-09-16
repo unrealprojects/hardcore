@@ -120,6 +120,10 @@ a.Button {
   input.Button:hover,
   a.Button:hover {
     background-color: #555555; }
+  ._Button._Rounded, input._Rounded[type='submit'], button._Rounded.Button,
+  input._Rounded.Button,
+  a._Rounded.Button {
+    border-radius: 5px; }
 
 ._Fit-Row, .Snippet-Item .Item-Gallery img.Item-Main-Photo {
   width: 100%; }
@@ -397,7 +401,7 @@ code {
   .Control-Group input,
   .Control-Group select {
     font-weight: 900;
-    border-radius: 10px; }
+    border-radius: 5px; }
   .Control-Group textarea {
     font-family: Helvetica, Verdana, sans-serif !important;
     resize: vertical; }
@@ -543,6 +547,7 @@ dl.Tabs dt {
   padding: 10px;
   background: #555555;
   color: white;
+  border-radius: 5px;
   -webkit-transition-property: border;
   -moz-transition-property: border;
   transition-property: border;
@@ -550,8 +555,7 @@ dl.Tabs dt {
   -moz-transition-duration: 0.2s;
   transition-duration: 0.2s; }
   dl.Tabs dt.Active {
-    background: #555555;
-    border-top: 3px solid #ec6700; }
+    background: #ec6700; }
   dl.Tabs dt.Disabled {
     color: #999999;
     cursor: not-allowed; }
@@ -565,8 +569,7 @@ dl.Tabs dd {
   margin: 50px 0 0 -100%;
   position: relative;
   width: 100%;
-  z-index: 2;
-  border-top: 1px solid #555555; }
+  z-index: 2; }
   dl.Tabs dd.Active {
     display: block; }
   dl.Tabs dd > div {
@@ -1088,11 +1091,6 @@ footer[role='contentinfo'] {
       width: 100%;
       margin-bottom: 20px;
       border-radius: 10px; }
-  .News-List li.News-Item:last-child,
-  .News-List li.Seller-Item:last-child,
-  .Seller-List li.News-Item:last-child,
-  .Seller-List li.Seller-Item:last-child {
-    padding-right: 50px; }
 
 .Snippet-List .Snippet-Item header .Item-Category,
 .Snippet-List .Snippet-Item header .Item-Location {
