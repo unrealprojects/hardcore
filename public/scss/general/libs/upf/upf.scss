@@ -1,5 +1,6 @@
 @charset "utf-8";						// Кодировка
 
+@import "normalize.css";
 @import "upf-mixins";					// Миксины
 @import "upf-variables";				// Настройки
 @import "upf-modificators";				// Модификаторы
@@ -18,16 +19,19 @@
 	background-color: 	white;
 
 	@include 			Round(all);
-	@extend 			._Centrated;
+	@extend 			._Centered;
 	@extend 			._Standalone;
 	@extend 			._Section-Inner;
-	@extend 			._Fix;
+	@extend 			._Clearfix;
 }
 
 
 // Внутренние элементы нода отступают друг от друга
 .Node > * {
 	margin-top: $size;
+}
+.Node.Row > * {
+	margin-top: 0;
 }
 
 // Убирает отступ у первого элемента в ноде

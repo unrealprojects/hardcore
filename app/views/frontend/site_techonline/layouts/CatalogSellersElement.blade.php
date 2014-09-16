@@ -2,14 +2,14 @@
 
 @section('main')
 <section class="Node">
-    <div class="Snippet-Item" itemscope itemtype="http://data-vocabulary.org/Product">
+    <div class="Snippet-Item Row Split" itemscope itemtype="http://data-vocabulary.org/Product">
         <header>
             <h4 class="Section-Header">
                 {{$content['item']['name']}}
             </h4>
         </header>
 
-        <div class="Item-Gallery Grid-Node-1-3">
+        <div class="Item-Gallery Five">
             @foreach(json_decode($content['item']['photos'],true) as $i=>$photo)
             @if($i==1)
             <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image">
@@ -26,7 +26,7 @@
             </ul>
         </div>
 
-        <div class="Item-Content Grid-Node-3-5">
+        <div class="Item-Content Seven">
             <p>{{$content['item']['description']}}</p>
             <h6>Контактная информация</h6>
             <table>

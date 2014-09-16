@@ -4,10 +4,10 @@
 
 <section class="Node Grid">
 
-    <h3 class="Section-Header">Запчасти и сервис</h3>
-    <div class="Grid-Row">
+    <h3 class="Section-Header">Запчасти и сервис Parts.Blade.Php</h3>
+    <div class="Row Split">
         <!-- Фильтрация :: Общий блок -->
-        <aside class="Sidebar-Filter Grid-Node-2-7">
+        <aside class="Sidebar-Filter Four">
             <!-- Фильтрация :: По категориям -->
             <h4>Категории</h4>
             <ul class="List-Filter Accordion">
@@ -31,10 +31,10 @@
                 @endforeach
             </ul>
         </aside>
-        <article class="Grid-Node-5-7">
+        <article class="Eight">
             <ul class="Snippet-List">
                 @foreach($content['list'] as $list_elem)
-                <li class="Snippet-Item">
+                <li class="Snippet-Item Row Split">
                     <header>
                         <h4 class="Item-Title">
                             <a href="/parts/{{$list_elem['metadata']['alias']}}">
@@ -50,7 +50,7 @@
                         </ul>
                     </header>
 
-                    <div class="Item-Gallery Grid-Node-3-7">
+                    <div class="Item-Gallery Five">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                         @if($i==1)
                         <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
@@ -67,7 +67,7 @@
                         </ul>
                     </div>
 
-                    <div class="Item-Content Grid-Node-4-7">
+                    <div class="Item-Content Seven">
                         {{$list_elem['description']}}
 
                         <!-- Параметры товара -->

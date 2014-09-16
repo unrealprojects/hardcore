@@ -1,5 +1,6 @@
 @charset "UTF-8";
-._Centrated, .Node, .Page-Header .Page-Header-Inner, .Page-Slider .Slider-Inner, footer[role='contentinfo'] > div {
+@import url(normalize.css);
+._Centered, .Node, .Page-Header .Page-Header-Inner, .Page-Slider .Slider-Inner, footer[role='contentinfo'] > div {
   margin-left: auto;
   margin-right: auto; }
 
@@ -8,14 +9,12 @@
   ._Standalone:first-child, .Node:first-child {
     margin-top: 0; }
 
-._Vertical-Spacing > *, .Page-Slider .Slider-Inner .Slider-Links > *, .Comment .Comment-List > *, .News-List > *,
-.Seller-List > *, .Snippet-List > * {
+._Vertical-Spacing > *, .Page-Slider .Slider-Inner .Slider-Links > *, .Comment .Comment-List > *, .Snippet-List > * {
   margin-top: 30px !important; }
-  ._Vertical-Spacing > *:first-child, .Page-Slider .Slider-Inner .Slider-Links > *:first-child, .Comment .Comment-List > *:first-child, .News-List > *:first-child,
-  .Seller-List > *:first-child, .Snippet-List > *:first-child {
+  ._Vertical-Spacing > *:first-child, .Page-Slider .Slider-Inner .Slider-Links > *:first-child, .Comment .Comment-List > *:first-child, .Snippet-List > *:first-child {
     margin-top: 0 !important; }
 
-._Section-Inner, .Node, .Page-Header .Page-Header-Inner, footer[role='contentinfo'] > div {
+._Section-Inner, .Node, .Page-Header .Page-Header-Inner, .Page-Slider .Slider-Inner, footer[role='contentinfo'] > div {
   width: 1000px !important; }
 
 ._Icon-Spacing {
@@ -31,25 +30,67 @@
 ._Dev {
   outline: 1px red solid !important; }
 
-._Fix, ._Inline, .Page-Header .Page-Header-Inner, .Breadcrumbs .Breadcrumb-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, ul.Tag-List, .Grid, .Grid-Row, .Control-Group, .Control-Group.Smart, .Control-Group.Smart .Input-Smart, dl.Tabs, .Node, .Page-Navigation ul, .Lot, .Lot header, .Pagination, .List-Categories li, .Comment .Comment-List li .Comment-List-Element-Content header, footer[role='contentinfo'] > div, .News-List li.News-Item header,
-.News-List li.Seller-Item header,
-.Seller-List li.News-Item header,
-.Seller-List li.Seller-Item header, .Snippet-Item, .Snippet-Item header, .Snippet-Item header .Item-Title, .List-Filter li.List-Filter-Subheader {
+._Clearfix:before, ._Inline:before, .Page-Header .Page-Header-Inner:before, .Breadcrumbs .Breadcrumb-List:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Row:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Node:before, .Page-Header:before, .Page-Navigation ul:before, .Page-Slider .Slider-Inner:before, .Pagination:before, .List-Categories:before, .List-Categories li:before, .Comment .Comment-List li .Comment-List-Element-Content header:before, footer[role='contentinfo'] > div:before, .News-List li.News-Item header:before,
+.News-List li.Seller-Item header:before,
+.Seller-List li.News-Item header:before,
+.Seller-List li.Seller-Item header:before, .Snippet-Item:before, .Snippet-Item header:before, .Snippet-Item header .Item-Title:before, .List-Filter li.List-Filter-Subheader:before,
+._Clearfix:after,
+._Inline:after,
+.Page-Header .Page-Header-Inner:after,
+.Breadcrumbs .Breadcrumb-List:after,
+footer[role='contentinfo'] > div .Footer-Navigation ul:after,
+.Snippet-Item header .Item-Values:after,
+.Snippet-Item .Item-Gallery ul:after,
+ul.Tag-List:after,
+.Row:after,
+.Control-Group:after,
+.Control-Group.Smart:after,
+.Control-Group.Smart .Input-Smart:after,
+dl.Tabs:after,
+.Node:after,
+.Page-Header:after,
+.Page-Navigation ul:after,
+.Page-Slider .Slider-Inner:after,
+.Pagination:after,
+.List-Categories:after,
+.List-Categories li:after,
+.Comment .Comment-List li .Comment-List-Element-Content header:after,
+footer[role='contentinfo'] > div:after,
+.News-List li.News-Item header:after,
+.News-List li.Seller-Item header:after,
+.Seller-List li.News-Item header:after,
+.Seller-List li.Seller-Item header:after,
+.Snippet-Item:after,
+.Snippet-Item header:after,
+.Snippet-Item header .Item-Title:after,
+.List-Filter li.List-Filter-Subheader:after {
+  content: " ";
   display: table; }
-  ._Fix:after, ._Inline:after, .Page-Header .Page-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Grid:after, .Grid-Row:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Node:after, .Page-Navigation ul:after, .Lot:after, .Lot header:after, .Pagination:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after, .News-List li.News-Item header:after,
-  .News-List li.Seller-Item header:after,
-  .Seller-List li.News-Item header:after,
-  .Seller-List li.Seller-Item header:after, .Snippet-Item:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, .List-Filter li.List-Filter-Subheader:after {
-    content: '. .';
-    display: block;
-    word-spacing: 99in;
-    height: 0;
-    overflow: hidden; }
+
+._Clearfix:after, ._Inline:after, .Page-Header .Page-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Row:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Node:after, .Page-Header:after, .Page-Navigation ul:after, .Page-Slider .Slider-Inner:after, .Pagination:after, .List-Categories:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after, .News-List li.News-Item header:after,
+.News-List li.Seller-Item header:after,
+.Seller-List li.News-Item header:after,
+.Seller-List li.Seller-Item header:after, .Snippet-Item:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, .List-Filter li.List-Filter-Subheader:after {
+  clear: both; }
 
 ._Inline > *, .Page-Header .Page-Header-Inner > *, .Breadcrumbs .Breadcrumb-List > *, footer[role='contentinfo'] > div .Footer-Navigation ul > *, .Snippet-Item header .Item-Values > *, .Snippet-Item .Item-Gallery ul > *, ul.Tag-List > * {
   float: left; }
 
-._No-Bullets, .Page-Slider .Slider-Inner .Slider-Links, .Breadcrumbs .Breadcrumb-List, .Pagination, .Comment .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, ul.Tag-List, .Menu-List ul {
+._No-Bullets, .One,
+.Two,
+.Three,
+.Four,
+.Five,
+.Six,
+.Control-Group.Checkbox.Submit > label,
+.Control-Group.Checkbox.Submit > [type='submit'],
+.Seven,
+.Snippet-Item .Item-Content,
+.Eight,
+.Nine,
+.Ten,
+.Eleven,
+.Twelve, .Page-Slider .Slider-Inner .Slider-Links, .Breadcrumbs .Breadcrumb-List, .Pagination, .Comment .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, ul.Tag-List, .Menu-List ul {
   list-style: none; }
 
 ._Soft_Shadow, .Page-Header, .Page-Header .Page-Header-Inner .Page-Auth .Sign-In-UI,
@@ -128,111 +169,150 @@ aside {
 iframe {
   display: block; }
 
-.Grid {
+.Row {
+  display: block; }
+
+.Row.Split > * {
+  margin-left: 1%;
+  margin-right: 1%; }
+
+.One,
+.Two,
+.Three,
+.Four,
+.Five,
+.Six,
+.Control-Group.Checkbox.Submit > label,
+.Control-Group.Checkbox.Submit > [type='submit'],
+.Seven,
+.Snippet-Item .Item-Content,
+.Eight,
+.Nine,
+.Ten,
+.Eleven,
+.Twelve {
+  float: left; }
+  .One.End,
+  .Two.End,
+  .Three.End,
+  .Four.End,
+  .Five.End,
+  .Six.End,
+  .Control-Group.Checkbox.Submit > label.End,
+  .Control-Group.Checkbox.Submit > .End[type='submit'],
+  .Seven.End,
+  .Snippet-Item .End.Item-Content,
+  .Eight.End,
+  .Nine.End,
+  .Ten.End,
+  .Eleven.End,
+  .Twelve.End {
+    float: right; }
+
+.Row.Merge > .One {
+  width: 8.33333%; }
+
+.Row.Merge > .Two {
+  width: 16.66667%; }
+
+.Row.Merge > .Three {
+  width: 25%; }
+
+.Row.Merge > .Four {
+  width: 33.33333%; }
+
+.Row.Merge > .Five {
+  width: 41.66667%; }
+
+.Row.Merge > .Six, .Control-Group.Checkbox.Submit.Row.Merge > label, .Control-Group.Checkbox.Submit.Row.Merge > [type='submit'] {
+  width: 50%; }
+
+.Row.Merge > .Seven, .Snippet-Item .Row.Merge > .Item-Content {
+  width: 58.33333%; }
+
+.Row.Merge > .Eight {
+  width: 66.66667%; }
+
+.Row.Merge > .Nine {
+  width: 75%; }
+
+.Row.Merge > .Ten {
+  width: 83.33333%; }
+
+.Row.Merge > .Eleven {
+  width: 91.66667%; }
+
+.Row.Merge > .Twelve {
   width: 100%; }
 
-.Grid-Row {
-  width: 100%;
-  margin-top: 30px; }
-  .Grid-Row:first-child {
-    margin-top: 0; }
+.Row.Split > .One {
+  width: 6.33333%; }
 
-.Grid-Node-1-2, .Control-Group.Checkbox.Submit > label, .Control-Group.Checkbox.Submit > [type='submit'] {
-  width: 50% !important; }
+.Row.Split > .Two {
+  width: 14.66667%; }
 
-.Grid-Node-1-3 {
-  width: 33.33% !important; }
+.Row.Split > .Three {
+  width: 23%; }
 
-.Grid-Node-2-3 {
-  width: 66.66% !important; }
+.Row.Split > .Four {
+  width: 31.33333%; }
 
-.Grid-Node-1-4 {
-  width: 25% !important; }
+.Row.Split > .Five {
+  width: 39.66667%; }
 
-.Grid-Node-2-4 {
-  width: 50% !important; }
-
-.Grid-Node-3-4 {
-  width: 75% !important; }
-
-.Grid-Node-1-5 {
-  width: 20% !important; }
-
-.Grid-Node-2-5, .Snippet-Item .Item-Gallery, .Snippet-Item .Item-Photo {
-  width: 40% !important; }
-
-.Grid-Node-3-5, .Snippet-Item .Item-Content {
-  width: 60% !important; }
-
-.Grid-Node-4-5 {
-  width: 80% !important; }
-
-.Grid-Node-1-7 {
-  width: 14.28% !important; }
-
-.Grid-Node-2-7 {
-  width: 28.56% !important; }
-
-.Grid-Node-3-7 {
-  width: 42.84% !important; }
-
-.Grid-Node-4-7 {
-  width: 57.12% !important; }
-
-.Grid-Node-5-7 {
-  width: 71.4% !important; }
-
-.Grid-Node-6-7 {
-  width: 85.68% !important; }
-
-.Grid-No-Padding > * {
-  padding: 0 !important; }
-
-[class*='Grid-Node-'] {
-  display: block;
-  float: left;
-  min-height: 1px; }
-
-.Grid.Split [class*='Grid-Node-'] {
-  margin-left: 5%; }
-  .Grid.Split [class*='Grid-Node-']:first-child {
-    margin-left: 0; }
-
-.Grid.Split .Grid-Node-1-2, .Grid.Split .Control-Group.Checkbox.Submit > label, .Grid.Split .Control-Group.Checkbox.Submit > [type='submit'] {
-  width: 47.5%; }
-
-.Grid.Split .Grid-Node-1-3 {
-  width: 30%; }
-
-.Grid.Split .Grid-Node-2-3 {
-  width: 60%; }
-
-.Grid.Split .Grid-Node-1-4 {
-  width: 21.25%; }
-
-.Grid.Split .Grid-Node-2-4 {
-  width: 42.5%; }
-
-.Grid.Split .Grid-Node-3-4 {
-  width: 63.75%; }
-
-.Grid.Split .Grid-Node-1-5 {
-  width: 16%; }
-
-.Grid.Split .Grid-Node-2-5, .Grid.Split .Snippet-Item .Item-Gallery, .Snippet-Item .Grid.Split .Item-Gallery, .Grid.Split .Snippet-Item .Item-Photo, .Snippet-Item .Grid.Split .Item-Photo {
-  width: 32%; }
-
-.Grid.Split .Grid-Node-3-5, .Grid.Split .Snippet-Item .Item-Content, .Snippet-Item .Grid.Split .Item-Content {
+.Row.Split > .Six, .Control-Group.Checkbox.Submit.Row.Split > label, .Control-Group.Checkbox.Submit.Row.Split > [type='submit'] {
   width: 48%; }
 
-.Grid.Split .Grid-Node-4-5 {
-  width: 64%; }
+.Row.Split > .Seven, .Snippet-Item .Row.Split > .Item-Content {
+  width: 56.33333%; }
 
-.Grid [class*='Grid-Node-']:first-of-type {
-  padding-left: 0; }
+.Row.Split > .Eight {
+  width: 64.66667%; }
 
-.Grid [class*='Grid-Node-']:last-of-type {
-  padding-right: 0; }
+.Row.Split > .Nine {
+  width: 73%; }
+
+.Row.Split > .Ten {
+  width: 81.33333%; }
+
+.Row.Split > .Eleven {
+  width: 89.66667%; }
+
+.Row.Split > .Twelve {
+  width: 98%; }
+
+.Push-One {
+  margin-left: 10.33333%; }
+
+.Push-Two {
+  margin-left: 18.66667%; }
+
+.Push-Three {
+  margin-left: 27%; }
+
+.Push-Four {
+  margin-left: 35.33333%; }
+
+.Push-Five {
+  margin-left: 43.66667%; }
+
+.Push-Six {
+  margin-left: 52%; }
+
+.Push-Seven {
+  margin-left: 60.33333%; }
+
+.Push-Eight {
+  margin-left: 68.66667%; }
+
+.Push-Nine {
+  margin-left: 77%; }
+
+.Push-Ten {
+  margin-left: 85.33333%; }
+
+.Push-Eleven {
+  margin-left: 93.66667%; }
 
 body {
   font-size: 1em;
@@ -567,6 +647,9 @@ a.Button {
 .Node > * {
   margin-top: 20px; }
 
+.Node.Row > * {
+  margin-top: 0; }
+
 .Node > *:first-child {
   margin-top: 0; }
 
@@ -607,13 +690,13 @@ body > #wrap {
     height: 100px; }
 
 body {
-  background: #eee;
+  background: #eee url(../../../../img/techonline/page-background3.png) repeat;
   font-family: 'Exo 2', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.00em;
   line-height: 1.45;
-  -webkit-animation: FadeIn 0.35s;
-  -moz-animation: FadeIn 0.35s;
-  animation: FadeIn 0.35s; }
+  -webkit-animation: FadeIn 0.6s;
+  -moz-animation: FadeIn 0.6s;
+  animation: FadeIn 0.6s; }
 
 .Section-Header,
 .Section-Subheader {
@@ -642,9 +725,11 @@ body {
 
 .Page-Header {
   background: white;
-  margin-bottom: 30px;
   border-bottom: 1px solid #e1e1e1;
-  height: 80px; }
+  height: 80px;
+  -webkit-animation: FadeIn 1s;
+  -moz-animation: FadeIn 1s;
+  animation: FadeIn 1s; }
   .Page-Header .Page-Header-Inner {
     width: 1000px;
     height: 80px; }
@@ -706,16 +791,12 @@ body {
     .Page-Header .Page-Header-Inner .Page-Auth {
       position: relative;
       padding: 0 10px;
-      width: 19%;
-      height: 80px;
-      margin-top: 25px; }
+      width: 15%; }
       .Page-Header .Page-Header-Inner .Page-Auth > .Button {
+        margin-top: 4px;
+        width: 100%;
         font-size: 12px;
-        padding: 5px 10px;
-        float: left;
-        margin-left: 5%; }
-        .Page-Header .Page-Header-Inner .Page-Auth > .Button:first-child {
-          margin-left: 0; }
+        padding: 5px 0; }
       .Page-Header .Page-Header-Inner .Page-Auth .Sign-In-UI,
       .Page-Header .Page-Header-Inner .Page-Auth .Sign-Up-UI {
         position: absolute;
@@ -737,7 +818,7 @@ body {
 
 .Page-Navigation {
   display: inline-block;
-  width: 46%;
+  width: 50%;
   text-align: right; }
   .Page-Navigation ul li {
     margin-left: 15px; }
@@ -755,21 +836,27 @@ body {
       margin-left: 0; }
 
 .Page-Slider {
+  clear: both;
   overflow: hidden;
-  background: url(../../../../img/techonline/shadow-down-top.png) repeat-x bottom, url(../../../../img/techonline/shadow-top-down.png) repeat-x top, url(../../../../img/techonline/banner-background.jpg) no-repeat center center;
   margin-bottom: 50px;
-  margin-top: -30px;
-  height: 250px; }
+  height: 250px;
+  background: #ec6700;
+  background: linear-gradient(to top, #ff7f1c, #ec6700);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4) inset;
+  -webkit-animation: SlideDown 0.5s;
+  -moz-animation: SlideDown 0.5s;
+  animation: SlideDown 0.5s; }
   .Page-Slider .Slider-Inner {
-    position: relative;
-    width: 1000px; }
+    position: relative; }
     .Page-Slider .Slider-Inner img.Truck {
+      width: 360px;
       position: absolute;
       -webkit-animation: SlideUp 1s;
       -moz-animation: SlideUp 1s;
       animation: SlideUp 1s; }
     .Page-Slider .Slider-Inner .Slider-Links {
       position: absolute;
+      margin-top: 60px;
       right: 300px;
       -webkit-animation: SlideUp 0.6s;
       -moz-animation: SlideUp 0.6s;
@@ -777,41 +864,16 @@ body {
       .Page-Slider .Slider-Inner .Slider-Links li a {
         display: block;
         padding: 15px;
-        color: #fff;
-        border: 1px solid white;
+        color: black;
+        background-color: white;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); }
         .Page-Slider .Slider-Inner .Slider-Links li a:hover {
           color: #fff;
-          border-color: #fff;
-          background: #ec6700; }
-
-.Lot {
-  margin-top: 50px; }
-  .Lot:first-child {
-    margin-top: 0; }
-  .Lot header {
-    border-bottom: 1px #dedede dashed;
-    padding-bottom: 10px;
-    margin-bottom: 10px; }
-    .Lot header p {
-      font-size: 12px;
-      clear: both; }
-  .Lot .Lot-About p {
-    font-size: 14px; }
-  .Lot .Lot-About
-  .Lot .Lot-About > h6 {
-    font-size: 1.125em;
-    margin-top: 15px;
-    padding-bottom: 5px;
-    border-bottom: 1px dashed #dedede; }
-  .Lot .Lot-About > table {
-    width: 100%; }
-    .Lot .Lot-About > table tr td {
-      padding: 5px 10px;
-      font-size: 14px; }
+          background: #555555; }
 
 .Breadcrumbs {
   padding: 0 !important;
+  margin-top: 20px !important;
   margin-bottom: -20px !important;
   background-color: white;
   border-radius: 10px; }
@@ -885,7 +947,7 @@ body {
 .List-Categories.Icons img {
   vertical-align: middle;
   display: block;
-  width: 90%;
+  height: 100px;
   margin: 0 auto; }
 .List-Categories.Brands img {
   width: 50px; }
@@ -968,7 +1030,7 @@ footer[role='contentinfo'] {
 .News-List li.Seller-Item,
 .Seller-List li.News-Item,
 .Seller-List li.Seller-Item {
-  padding-right: 50px; }
+  padding: 20px; }
   .News-List li.News-Item header,
   .News-List li.Seller-Item header,
   .Seller-List li.News-Item header,
@@ -1211,6 +1273,21 @@ ul.Tag-List li.Tag-Item {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: alpha(opacity=100);
     top: 0; } }
+@-webkit-keyframes SlideDown {
+  from {
+    max-height: 1px; }
+  to {
+    max-height: 350px; } }
+@-moz-keyframes SlideDown {
+  from {
+    max-height: 1px; }
+  to {
+    max-height: 350px; } }
+@keyframes SlideDown {
+  from {
+    max-height: 1px; }
+  to {
+    max-height: 350px; } }
 @media all and (max-width: 1024px) {
   * {
     border-radius: 0 !important; }
@@ -1249,7 +1326,7 @@ ul.Tag-List li.Tag-Item {
     margin-top: 15px;
     margin-right: 0 !important; }
 
-  ._Section-Inner, .Node, .Page-Header .Page-Header-Inner, footer[role='contentinfo'] > div {
+  ._Section-Inner, .Node, .Page-Header .Page-Header-Inner, .Page-Slider .Slider-Inner, footer[role='contentinfo'] > div {
     width: 95% !important; }
 
   ._Fly-Out, .Section-Header,

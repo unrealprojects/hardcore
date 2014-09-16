@@ -17,11 +17,11 @@ body > #wrap {
 }
 
 body {
-	background: #eee;
+	background: #eee url(../../../../img/techonline/page-background3.png) repeat;
 	font-family: 'Exo 2', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 1.00em;
 	line-height: 1.45;
-	@include Animation(FadeIn,0.35s);
+	@include Animation(FadeIn,0.6s);
 }
 
 .Section-Header,
@@ -60,17 +60,18 @@ body {
 // Шапка сайта
 .Page-Header {
 	background: white;
-	margin-bottom: $size-l;
 	border-bottom: 1px solid #e1e1e1;
 	height: 80px;
+	@include Animation(FadeIn,1s);
+	@extend ._Clearfix;
 	@extend ._Unselectable;
 	@extend ._Soft_Shadow;
 
 	.Page-Header-Inner {
 		width: $node-width;
 		height: 80px;
-		@extend ._Fix;
-		@extend ._Centrated;
+		@extend ._Clearfix;
+		@extend ._Centered;
 		@extend ._Section-Inner;
 		@extend ._Inline;
 
@@ -131,17 +132,12 @@ body {
 		.Page-Auth {
 			position: relative;
 			padding: 0 $size-s;
-			width: 19%;
-			height: 80px;
-			margin-top: 25px;
+			width: 15%;
 			& > .Button {
+				margin-top: 4px;
+				width: 100%;
 				font-size: 12px;
-				padding: $size-xs $size-s;
-				float: left;
-				margin-left: 5%;
-				&:first-child {
-					margin-left: 0;
-				}
+				padding: $size-xs 0;
 			}
 
 			.Sign-In-UI ,
@@ -174,13 +170,13 @@ body {
 // Меню навигации по сайту
 .Page-Navigation {
 	display: inline-block;
-	width: 46%;
+	width: 50%;
 	text-align: right;
 
 	ul {
 		@extend .Inline;
 		@extend .No-Bullets;
-		@extend ._Fix;
+		@extend ._Clearfix;
 		li {
 			margin-left: $size-n;
 
@@ -209,25 +205,31 @@ body {
 
 //
 .Page-Slider {
+	clear: both;
 	overflow: hidden;
-	background: url(../../../../img/techonline/shadow-down-top.png) repeat-x bottom, url(../../../../img/techonline/shadow-top-down.png) repeat-x top, url(../../../../img/techonline/banner-background.jpg) no-repeat center center;
 	margin-bottom: 50px;
-	margin-top: -($size-l);
 	height: 250px;
+	background: $clr-main;
+	background: linear-gradient(to top, $clr-main-light, $clr-main);
+	box-shadow: 0 0 20px rgba(0, 0, 0, .4) inset;
+	@include Animation(SlideDown,.5s);
 	@extend ._Unselectable;
 
 	.Slider-Inner {
 		position: relative;
-		width: $node-width;
-
-		@extend ._Centrated;
+		@extend ._Clearfix;
+		@extend ._Section-Inner;
+		@extend ._Centered;
 
 		img.Truck {
+			width: 360px;
+
 			position: absolute;
 			@include Animation(SlideUp, 1s);
 		}
 		.Slider-Links {
 			position: absolute;
+			margin-top: 60px;
 			right: 300px;
 			@extend ._No-Bullets;
 			@extend ._Vertical-Spacing;
@@ -236,60 +238,13 @@ body {
 				a {
 					display: block;
 					padding: $size-n;
-					color: #fff;
-					border: 1px solid white;
+					color: black;
+					background-color: white;
 					box-shadow: 0 0 20px rgba(0,0,0,0.4);
 					&:hover {
 						color: #fff;
-						border-color: #fff;
-						background: $clr-main;
+						background: $clr-grey-darker;
 					}
-				}
-			}
-		}
-	}
-}
-
-// Список товаров
-.Lot {
-	margin-top: $size-xl;
-	@extend ._Fix;
-
-	&:first-child {
-		margin-top: 0;
-	}
-
-	& header {
-		border-bottom: 1px $clr-grey-light  dashed;
-		padding-bottom: $size-s;
-		margin-bottom: $size-s;
-		@extend ._Fix;
-
-
-		& p {
-			font-size: 12px;
-			clear: both;
-		}
-
-	}
-
-	.Lot-About {
-		p {
-			font-size: 14px;
-		}
-		&
-		& > h6 {
-			font-size: $Font-Size-Large;
-			margin-top: $size-n;
-			padding-bottom: $size-xs;
-			border-bottom: 1px dashed $clr-grey-light;
-		}
-		& > table {
-			width: 100%;
-			& tr {
-				& td {
-					padding: $size-xs $size-s;
-					font-size: 14px;
 				}
 			}
 		}
@@ -299,6 +254,7 @@ body {
 // Хлебные крошки
 .Breadcrumbs {
 	padding: 0!important;
+	margin-top: $size!important;
 	margin-bottom: -20px!important;
 	background-color: white;
 	@include Round(all);
@@ -337,7 +293,7 @@ body {
 	@extend ._Fly-Out;
 	@extend ._No-Bullets;
 	@extend .Inline;
-	@extend ._Fix;
+	@extend ._Clearfix;
 	& > li {
 		margin-top: 0 !important; // Наследование .Node подразумевает margin-top каждого вложенного элемента. Убираем
 		margin-right: 1px; // Разлипаем прямоугольники страниц
@@ -405,9 +361,10 @@ body {
 
 // Список категорий
 .List-Categories {
+	@extend ._Clearfix;
 	li {
 		padding: $size-s 0;
-		@extend ._Fix;
+		@extend ._Clearfix;
 		a {
 			font-size: $Font-Size-Small;
 			display: inline-block;
@@ -423,7 +380,7 @@ body {
 		img {
 			vertical-align: middle;
 			display: block;
-			width: 90%;
+			height: 100px;
 			margin: 0 auto;
 		}
 
@@ -477,7 +434,7 @@ body {
 				overflow: hidden;
 
 				header {
-					@extend ._Fix;
+					@extend ._Clearfix;
 
 					h5 {
 						@extend ._Left;
@@ -508,8 +465,8 @@ footer[role='contentinfo'] {
 	border-top: 1px solid #e1e1e1;
 	& > div {
 		padding: $size-l 0;
-		@extend ._Fix;
-		@extend ._Centrated;
+		@extend ._Clearfix;
+		@extend ._Centered;
 		@extend ._Section-Inner;
 		.Copyright {
 			@extend ._Left;
@@ -569,17 +526,15 @@ footer[role='contentinfo'] {
 // Список арендаторов в 2 строки на главной странице
 .News-List   ,
 .Seller-List {
-	@extend ._Vertical-Spacing;
 
 	li.News-Item   ,
 	li.Seller-Item {
-		padding-right: $size-xl;
-
+		padding: $size;
 		header {
 			margin-bottom: $size-s;
 			border-bottom: 1px $clr-grey dashed;
 			padding-bottom: $size-s;
-			@extend ._Fix;
+			@extend ._Clearfix;
 			h5.Title {
 				display: block;
 				float: left;
@@ -644,11 +599,11 @@ footer[role='contentinfo'] {
 	}
 }
 .Snippet-Item {
-	@extend ._Fix;
+	@extend ._Clearfix;
 
 	header {
 		margin-bottom: $size;
-		@extend ._Fix;
+		@extend ._Clearfix;
 
 		.Item-Title {
 			margin: $size-xs $size-s 0 0;
@@ -656,7 +611,7 @@ footer[role='contentinfo'] {
 			max-width: 55%;
 			text-transform: uppercase;
 			font-size: 20px;
-			@extend ._Fix;
+			@extend ._Clearfix;
 			@extend ._Left;
 
 			a {
@@ -705,7 +660,6 @@ footer[role='contentinfo'] {
 	.Item-Gallery {
 		padding-right: $size-l;
 		@extend ._Left;
-		@extend .Grid-Node-2-5;
 
 		img.Item-Main-Photo {
 			@include Round(all);
@@ -739,7 +693,6 @@ footer[role='contentinfo'] {
 		margin-bottom: $size-l;
 		padding-right: $size-l;
 		@extend ._Left;
-		@extend .Grid-Node-2-5;
 
 		img {
 			width: 100%;
@@ -752,7 +705,7 @@ footer[role='contentinfo'] {
 		font-size: 14px;
 
 		@extend ._Right;
-		@extend .Grid-Node-3-5;
+		@extend .Seven;
 
 		h6 {
 			margin: $size-s 0 $size-xs;
@@ -795,7 +748,7 @@ footer[role='contentinfo'] {
 
 // @todo: вывести код готовых блоков-заготовок в отдельный файл
 ul.Tag-List {
-	@extend ._Fix;
+	@extend ._Clearfix;
 	@extend ._Inline;
 	@extend ._No-Bullets;
 
@@ -822,7 +775,7 @@ ul.Tag-List {
 	@extend .No-Bullets;
 
 	li.List-Filter-Subheader {
-		@extend ._Fix;
+		@extend ._Clearfix;
 		div {
 			width: 10%;
 			float: left;
@@ -885,6 +838,14 @@ ul.Tag-List {
 	to {
 		@include Opacity(1);
 		top: 0;
+	}
+}
+@include Keyframes(SlideDown) {
+	from {
+		max-height: 1px;
+	}
+	to {
+		max-height: 350px;
 	}
 }
 

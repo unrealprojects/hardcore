@@ -3,7 +3,7 @@
 @section('main')
 
 <section class="Node">
-    <div class="Snippet-Item Lot" itemscope itemtype="http://data-vocabulary.org/Product">
+    <div class="Snippet-Item Row Split" itemscope itemtype="http://data-vocabulary.org/Product">
         <header>
             <h4 class="Section-Header">
                 {{$content['item']['name']}}
@@ -14,7 +14,7 @@
             </h5>
         </header>
 
-        <div class="Item-Gallery">
+        <div class="Item-Gallery Five">
             @foreach(json_decode($content['item']['photos'],true) as $i=>$photo)
             @if($i==1)
             <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image">
@@ -35,7 +35,7 @@
             </div>
        </div>
 
-        <div class="Item-Content">
+        <div class="Item-Content Seven">
             <p itemprop="description">{{$content['item']['description']}}</p>
 
             <!-- Параметры товара -->

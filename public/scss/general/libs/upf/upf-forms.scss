@@ -9,7 +9,7 @@ $Control-Line-Height:					$line-height;
 .Control-Group {
 	margin-top: 		$size-s;
 	width: 100%;
-	@extend 			._Fix;
+	@extend 			._Clearfix;
 
 	&:first-child {
 		margin-top: 	0;
@@ -51,16 +51,18 @@ $Control-Line-Height:					$line-height;
 	&.Checkbox.Submit {
 		& > label {
 			padding: $size-s 0;
-			@extend .Grid-Node-1-2;
+			@extend .Six;
 		}
 		& > [type='submit'] {
-			@extend .Grid-Node-1-2;
+			@extend .Six;
 		}
 	}
+
+	// Контрол группа умного инпута
 	&.Smart {
-		@extend ._Fix;
+		@extend ._Clearfix;
 		.Input-Smart {
-			@extend ._Fix;
+			@extend ._Clearfix;
 			width: 70%;
 			.Prefix	 ,
 			.Postfix {
@@ -213,7 +215,7 @@ input[type='submit'] {
 }
 
 dl.Tabs {
-	@extend ._Fix;
+	@extend ._Clearfix;
 	dt {
 		float: left;
 		position: relative;

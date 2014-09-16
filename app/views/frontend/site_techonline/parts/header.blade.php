@@ -40,11 +40,11 @@
                         <input id="Sign-In-Password" type="password"/>
                     </div>
 
-                    <div class="Control-Group Checkbox Submit" for="Sign-In-Remember-Me">
-                        <label class="Grid-Node-1-2">
+                    <div class="Control-Group Checkbox Submit Row Merge" for="Sign-In-Remember-Me">
+                        <label class="Six">
                             <input id="Sign-In-Remember-Me" type="checkbox"/>Запомнить меня
                         </label>
-                        <input class="class="Grid-Node-1-2"" type="submit" value="Войти на сайт"/>
+                        <input class="class="Six" type="submit" value="Войти на сайт"/>
                     </div>
 
                 </form>
@@ -64,11 +64,11 @@
                         <input id="Sign-In-Password" type="password"/>
                     </div>
 
-                    <div class="Control-Group Checkbox Submit" for="Sign-In-Remember-Me">
-                        <label class="Grid-Node-1-2">
+                    <div class="Control-Group Checkbox Submit Row Merge" for="Sign-In-Remember-Me">
+                        <label class="Six">
                             <input id="Sign-Up-Remember-Me" type="checkbox"/>Запомнить меня
                         </label>
-                        <input class="class="Grid-Node-1-2"" type="submit" value="Зарегистриваться"/>
+                        <input class="class="Six" type="submit" value="Зарегистриваться"/>
                     </div>
 
                 </form>

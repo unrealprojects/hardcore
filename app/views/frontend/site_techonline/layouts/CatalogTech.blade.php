@@ -1,12 +1,12 @@
 @extends('frontend.site_techonline.'.$content['template'])
 
 @section('main')
-<section class="Node Grid">
+<section class="Node">
 
     <h3 class="Section-Header">Каталог строительной техники</h3>
-    <div class="Grid-Row">
+    <div class="Row Split">
         <!-- Фильтрация :: Общий блок -->
-        <aside class="Sidebar-Filter Grid-Node-2-7">
+        <aside class="Sidebar-Filter Four">
             <!-- Фильтрация :: По брендам -->
             <h4>Производители</h4>
             <ul class="List-Filter">
@@ -44,13 +44,13 @@
             </ul>
         </aside>
 
-        <article class="Grid-Node-5-7">
+        <article class="Eight End">
             <ul class="Snippet-List">
             @foreach($content['list'] as $list_elem)
-                <li class="Snippet-Item">
+                <li class="Snippet-Item Row Split">
 
-                    <header>
-                        <h4 class="Item-Title">
+                    <header class="Row Merge">
+                        <h4 class="Item-Title Six">
                             <a href="/rent/{{$list_elem['metadata']['alias']}}">
                                 {{$list_elem['name']}}
                             </a>
@@ -58,13 +58,13 @@
                                 {{$list_elem['model']['category']['name']}}
                             </span>
                         </h4>
-                        <ul class="Item-Values">
+                        <ul class="Item-Values Six">
                             <li><h6>Статус:</h6>{{$list_elem['status']['name']}}</li>
                             <li><h6>Состояние:</h6>{{$list_elem['opacity']['name']}}</li>
                             <li><h6>Цена:</h6>{{$list_elem['rate']}}</li>
                         </ul>
                     </header>
-                    <div class="Item-Gallery">
+                    <div class="Item-Gallery Five">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                         @if($i==1)
                         <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
@@ -81,7 +81,7 @@
                         </ul>
                     </div>
 
-                    <div class="Item-Content">
+                    <div class="Item-Content Seven">
                         {{$list_elem['description']}}
 
                         <!-- Параметры товара -->

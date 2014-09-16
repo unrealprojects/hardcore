@@ -1,71 +1,90 @@
-// Unreal Projects Framework
-// Grid Module v.2
+// UPF Grid Module
+// v.3
 
+.Row {
+	display: block;
+	@extend ._Clearfix;
 
-// Контейнер грида
-.Grid {
-	width: 100%;
-	@extend ._Fix;
 }
-
-// Строка грида
-.Grid-Row 		{
-	width: 100%;
-	margin-top: $size-l;
-	@extend ._Fix;
-
-	&:first-child {
-    margin-top: 0;
-  }
+.Row.Split > * {
+	margin-left: $Grid-Gutter/2;
+	margin-right: $Grid-Gutter/2;
 }
-.Grid-Node-1-2 {width: 50.00%!important;}
-.Grid-Node-1-3 {width: 33.33%!important;}
-.Grid-Node-2-3 {width: 66.66%!important;}
-.Grid-Node-1-4 {width: 25.00%!important;}
-.Grid-Node-2-4 {width: 50.00%!important;}
-.Grid-Node-3-4 {width: 75.00%!important;}
-.Grid-Node-1-5 {width: 20.00%!important;}
-.Grid-Node-2-5 {width: 40.00%!important;}
-.Grid-Node-3-5 {width: 60.00%!important;}
-.Grid-Node-4-5 {width: 80.00%!important;}
-.Grid-Node-1-7 {width: 14.28%!important;}
-.Grid-Node-2-7 {width: 28.56%!important;}
-.Grid-Node-3-7 {width: 42.84%!important;}
-.Grid-Node-4-7 {width: 57.12%!important;}
-.Grid-Node-5-7 {width: 71.40%!important;}
-.Grid-Node-6-7 {width: 85.68%!important;}
+.One	,
+.Two	,
+.Three	,
+.Four	,
+.Five	,
+.Six	,
+.Seven	,
+.Eight	,
+.Nine	,
+.Ten	,
+.Eleven	,
+.Twelve {
+	float: left;
+	@extend ._No-Bullets;
 
-.Grid-No-Padding > * {
-	padding: 0!important;
+	&.End {
+		float: right;
+	}
 }
+.Row.Merge > .One 	 {width:	$Grid-Split-One-Width;		}
+.Row.Merge > .Two 	 {width:	$Grid-Split-One-Width * 2;	}
+.Row.Merge > .Three  {width:	$Grid-Split-One-Width * 3;	}
+.Row.Merge > .Four   {width:	$Grid-Split-One-Width * 4;	}
+.Row.Merge > .Five 	 {width:	$Grid-Split-One-Width * 5;	}
+.Row.Merge > .Six    {width:	$Grid-Split-One-Width * 6;	}
+.Row.Merge > .Seven  {width:	$Grid-Split-One-Width * 7;	}
+.Row.Merge > .Eight  {width:	$Grid-Split-One-Width * 8;	}
+.Row.Merge > .Nine 	 {width:	$Grid-Split-One-Width * 9;	}
+.Row.Merge > .Ten 	 {width:	$Grid-Split-One-Width * 10;	}
+.Row.Merge > .Eleven {width:	$Grid-Split-One-Width * 11;	}
+.Row.Merge > .Twelve {width:	$Grid-Split-One-Width * 12;	}
 
-[class*='Grid-Node-'] {
-  display: block;
-  float: left;
-  min-height: 1px;
+.Row.Split > .One 	 {	width: $Grid-One-Width;		}
+.Row.Split > .Two 	 {	width: $Grid-Two-Width;		}
+.Row.Split > .Three  {	width: $Grid-Three-Width;	}
+.Row.Split > .Four 	 {	width: $Grid-Four-Width;	}
+.Row.Split > .Five 	 {	width: $Grid-Five-Width;	}
+.Row.Split > .Six 	 {	width: $Grid-Six-Width;		}
+.Row.Split > .Seven  {	width: $Grid-Seven-Width;	}
+.Row.Split > .Eight  {	width: $Grid-Eight-Width;	}
+.Row.Split > .Nine   {	width: $Grid-Nine-Width;	}
+.Row.Split > .Ten 	 {	width: $Grid-Ten-Width;		}
+.Row.Split > .Eleven {	width: $Grid-Eleven-Width;	}
+.Row.Split > .Twelve {	width: $Grid-Twelve-Width;	}
+
+.Push-One {
+	margin-left: $Grid-Gutter + ($Grid-One-Width + $Grid-Gutter);
 }
-.Grid.Split [class*='Grid-Node-'] {
-  margin-left: 5%;
-  &:first-child {
-    margin-left: 0;
-  }
+.Push-Two {
+	margin-left: $Grid-Gutter + ($Grid-Two-Width + $Grid-Gutter);
 }
-.Grid.Split .Grid-Node-1-2 {width: (100% - (1 * $grid-spacing)) / 2}
-.Grid.Split .Grid-Node-1-3 {width: (100% - (2 * $grid-spacing)) / 3}
-.Grid.Split .Grid-Node-2-3 {width: ((100% - (2 * $grid-spacing)) / 3) * 2}
-.Grid.Split .Grid-Node-1-4 {width: ((100% - (3 * $grid-spacing)) / 4) * 1}
-.Grid.Split .Grid-Node-2-4 {width: ((100% - (3 * $grid-spacing)) / 4) * 2}
-.Grid.Split .Grid-Node-3-4 {width: ((100% - (3 * $grid-spacing)) / 4) * 3}
-.Grid.Split .Grid-Node-1-5 {width: ((100% - (4 * $grid-spacing)) / 5) * 1}
-.Grid.Split .Grid-Node-2-5 {width: ((100% - (4 * $grid-spacing)) / 5) * 2}
-.Grid.Split .Grid-Node-3-5 {width: ((100% - (4 * $grid-spacing)) / 5) * 3}
-.Grid.Split .Grid-Node-4-5 {width: ((100% - (4 * $grid-spacing)) / 5) * 4}
-
-
-.Grid [class*='Grid-Node-']:first-of-type {
-  padding-left: 0;
+.Push-Three {
+	margin-left: $Grid-Gutter + ($Grid-Three-Width + $Grid-Gutter);
 }
-
-.Grid [class*='Grid-Node-']:last-of-type {
-  padding-right: 0;
+.Push-Four {
+	margin-left: $Grid-Gutter + ($Grid-Four-Width + $Grid-Gutter);
+}
+.Push-Five {
+	margin-left: $Grid-Gutter + ($Grid-Five-Width + $Grid-Gutter);
+}
+.Push-Six {
+	margin-left: $Grid-Gutter + ($Grid-Six-Width + $Grid-Gutter);
+}
+.Push-Seven {
+	margin-left: $Grid-Gutter + ($Grid-Seven-Width + $Grid-Gutter);
+}
+.Push-Eight {
+	margin-left: $Grid-Gutter + ($Grid-Eight-Width + $Grid-Gutter);
+}
+.Push-Nine {
+	margin-left: $Grid-Gutter + ($Grid-Nine-Width + $Grid-Gutter);
+}
+.Push-Ten {
+	margin-left: $Grid-Gutter + ($Grid-Ten-Width + $Grid-Gutter);
+}
+.Push-Eleven {
+	margin-left: $Grid-Gutter + ($Grid-Eleven-Width + $Grid-Gutter);
 }

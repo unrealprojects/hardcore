@@ -1,3 +1,25 @@
+$Screen-Size-Huge:		2560px;
+$Screen-Size-Large:		1920px;
+$Screen-Size-Default:	1366px;
+$Screen-Size-Small:		1024px;
+$Screen-Size-Tiny:		768px;
+
+$Grid-Gutter:			2%;
+$Grid-One-Width:		(100% - (12 * $Grid-Gutter)) / 12;
+$Grid-Two-Width:		($Grid-One-Width * 2) + (1 * $Grid-Gutter);
+$Grid-Three-Width:		($Grid-One-Width * 3) + (2 * $Grid-Gutter);
+$Grid-Four-Width:		($Grid-One-Width * 4) + (3 * $Grid-Gutter);
+$Grid-Five-Width:		($Grid-One-Width * 5) + (4 * $Grid-Gutter);
+$Grid-Six-Width:		($Grid-One-Width * 6) + (5 * $Grid-Gutter);
+$Grid-Seven-Width:		($Grid-One-Width * 7) + (6 * $Grid-Gutter);
+$Grid-Eight-Width:		($Grid-One-Width * 8) + (7 * $Grid-Gutter);
+$Grid-Nine-Width:		($Grid-One-Width * 9) + (8 * $Grid-Gutter);
+$Grid-Ten-Width:		($Grid-One-Width * 10) + (9 * $Grid-Gutter);
+$Grid-Eleven-Width:		($Grid-One-Width * 11) + (10 * $Grid-Gutter);
+$Grid-Twelve-Width:		($Grid-One-Width * 12) + (11 * $Grid-Gutter);
+
+$Grid-Split-One-Width:	100%/12;
+
 // Color Scheme
 $clr-red: #ec0000;
 $clr-red-dark:  darken($clr-red,5%);

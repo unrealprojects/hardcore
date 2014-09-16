@@ -2,17 +2,17 @@
 
 @section('main')
 <section class="Node">
-    <div class="Lot" itemscope itemtype="http://data-vocabulary.org/Product">
+    <div class="Snippet-Item Row Split" itemscope itemtype="http://data-vocabulary.org/Product">
         <header class="Section-Header">
             <h4>
                 {{$content['item']['name']}}
             </h4>
         </header>
 
-        <div class="Lot-Gallery Grid-Node-1-3">
+        <div class="Item-Gallery Five">
             @foreach(json_decode($content['item']['photos'],true) as $i=>$photo)
             @if($i==1)
-            <img class="Lot-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image">
+            <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image">
 
             <ul>
                 @elseif($i>1 && $i<5)
@@ -26,12 +26,12 @@
             </ul>
         </div>
 
-        <div class="Lot-About Grid-Node-2-3">
+        <div class="Item-Content Seven">
             <p>{{$content['item']['description']}}</p>
 
             <!-- Параметры товара -->
             <h6>Характеристики</h6>
-            <table class="Stripped">
+            <table>
                 <tr>
                     <td>Категория:</td>
                     <td>{{$content['item']['category']['name']}}</td>

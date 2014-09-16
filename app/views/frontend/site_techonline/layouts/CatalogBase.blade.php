@@ -3,10 +3,10 @@
 @section('main')
 <section class="Node Grid">
 
-    <h3 class="Section-Header">Каталог строительной техники</h3>
-    <div class="Grid-Row">
+    <h3 class="Section-Header">Каталог строительной техники Base.blade.php</h3>
+    <div class="Row Split">
         <!-- Фильтрация :: Общий блок -->
-        <aside class="Sidebar-Filter Grid-Node-2-7">
+        <aside class="Sidebar-Filter Four">
             <!-- Фильтрация :: По брендам -->
             <h4>Производители</h4>
             <ul class="List-Filter">
@@ -38,10 +38,10 @@
             </ul>
         </aside>
 
-        <article class="Grid-Node-5-7">
+        <article class="Eight">
             <ul class="Snippet-List">
             @foreach($content['list'] as $list_elem)
-                <li class="Snippet-Item">
+                <li class="Snippet-Item Row Split">
 
                     <header>
                         <h4 class="Item-Title">
@@ -53,7 +53,7 @@
                         </h4>
                     </header>
 
-                    <div class="Item-Gallery Grid-Node-3-7">
+                    <div class="Item-Gallery Five">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                             @if($i==1)
                                  <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
@@ -70,7 +70,7 @@
                         </ul>
                     </div>
 
-                    <div class="Item-Content Grid-Node-4-7">
+                    <div class="Item-Content Seven">
                         {{$list_elem['description']}}
 
                         <!-- Параметры товара -->

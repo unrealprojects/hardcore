@@ -5,9 +5,9 @@
 
 
 // Центрирует заданный блок внутри родителя.
-._Centrated {
-	margin-left: 	auto;
-	margin-right: 	auto;
+._Centered {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 // Отбивает секции друг от друга по вертикали за исключением первого
@@ -53,21 +53,18 @@
 }
 
 // Clearfix. Предотвращает схлопывание блоков
-._Fix {
-	display: 		table;
-	&:after {
-		content: 	'. .';
-		display: 	block;
-		word-spacing: 99in;
-		height: 	0;
-		overflow: 	hidden;
-
-	}
+._Clearfix:before ,
+._Clearfix:after  {
+	content: " ";
+	display: table;
+}
+._Clearfix:after {
+	clear: both;
 }
 
 // Выводит всех потомков в линию
 ._Inline {
-	@extend 				._Fix;
+	@extend 				._Clearfix;
 	& > * {
 		float: 				left;
 	}
