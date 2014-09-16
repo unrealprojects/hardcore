@@ -916,23 +916,26 @@ body {
   font-size: 20px;
   font-weight: 100;
   margin-top: 20px;
-  margin-bottom: 5px; }
+  padding: 10px;
+  background-color: #ec6700;
+  color: white; }
   .Sidebar-Filter > h4:first-child {
     margin-top: 0; }
 .Sidebar-Filter > ul {
-  margin-right: 50px;
   font-family: Calibri, Helvetica, Verdana, sans-serif !important; }
-  .Sidebar-Filter > ul > li > a {
-    display: block;
-    padding: 5px;
-    border-top: 1px dashed #cccccc;
-    font-size: 13px;
-    font-weight: 900;
-    color: black; }
-    .Sidebar-Filter > ul > li > a:hover {
-      background-color: #dedede; }
-  .Sidebar-Filter > ul > li:first-child a {
-    border: 0; }
+  .Sidebar-Filter > ul > li {
+    border-top: 1px solid white; }
+    .Sidebar-Filter > ul > li > a {
+      display: block;
+      padding: 5px 10px;
+      font-size: 13px;
+      font-weight: 900;
+      color: black;
+      background-color: #f1f1f1; }
+      .Sidebar-Filter > ul > li > a:hover {
+        background-color: #cccccc; }
+    .Sidebar-Filter > ul > li:first-child a {
+      border: 0; }
 
 .List-Categories li {
   padding: 10px 0; }
@@ -983,9 +986,15 @@ body {
   margin-top: 50px; }
 
 footer[role='contentinfo'] {
+  position: relative;
   height: 100px;
   background: white;
   border-top: 1px solid #e1e1e1; }
+  footer[role='contentinfo'] img.Footer-Img {
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    width: 200px; }
   footer[role='contentinfo'] > div {
     padding: 30px 0; }
     footer[role='contentinfo'] > div .Footer-Navigation {
@@ -1186,32 +1195,61 @@ ul.Tag-List li.Tag-Item {
     ul.Tag-List li.Tag-Item a:hover {
       background-color: #999999; }
 
-.List-Filter li.List-Filter-Subheader div {
-  width: 10%;
-  float: left; }
-  .List-Filter li.List-Filter-Subheader div img {
-    padding: 5px 0;
-    margin: 5px 0 0;
-    width: 12px;
-    float: left;
-    cursor: pointer; }
-    .List-Filter li.List-Filter-Subheader div img:hover {
-      opacity: 0.75;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
-      filter: alpha(opacity=75); }
-.List-Filter li.List-Filter-Subheader a {
-  width: 90%;
-  float: right; }
-.List-Filter li.List-Filter-Subcategory ul {
-  margin-left: 17px;
-  margin-bottom: 20px; }
+.List-Filter li.List-Filter-Subheader {
+  background-color: #dedede; }
+  .List-Filter li.List-Filter-Subheader div {
+    text-align: center;
+    width: 15%;
+    float: left; }
+    .List-Filter li.List-Filter-Subheader div span {
+      padding: 5px 5px 2px;
+      display: block;
+      vertical-align: middle;
+      text-shadow: 1px 1px 1px white;
+      font-weight: bold;
+      color: #555555;
+      font-size: 14px;
+      cursor: pointer; }
+    .List-Filter li.List-Filter-Subheader div span:hover {
+      color: #ec6700; }
+  .List-Filter li.List-Filter-Subheader a {
+    font-size: 1em;
+    font-weight: 100;
+    width: 85%;
+    float: right; }
+.List-Filter li.List-Filter-Subcategory ul li {
+  border-top: 1px white solid; }
   .List-Filter li.List-Filter-Subcategory ul li a {
-    display: inline-block;
-    padding: 5px 0;
-    font-size: .7em; }
+    color: black;
+    width: 100%;
+    background-color: #f1f1f1;
+    display: block;
+    padding: 10px;
+    font-size: .9em; }
+    .List-Filter li.List-Filter-Subcategory ul li a:hover {
+      background-color: #dedede; }
+  .List-Filter li.List-Filter-Subcategory ul li:first-child {
+    border-top: 0; }
 
 .Menu-List ul li {
   padding: 10px 0; }
+
+#Scroll-Top {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: url(../../../../img/techonline/icon-scroll-top.png) no-repeat;
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
+  #Scroll-Top:hover {
+    background: url(../../../../img/techonline/icon-scroll-top-hover.png) no-repeat; }
 
 @-webkit-keyframes FadeIn {
   from {

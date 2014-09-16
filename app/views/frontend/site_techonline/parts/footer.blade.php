@@ -10,4 +10,5 @@
             </ul>
         </nav>
     </div>
+    <img class="Footer-Img" src="/img/techonline/footer-icon.png" alt=""/>
 </footer>

@@ -172,6 +172,7 @@
     </ul>
 </section>
 
+<div title="Вернуться наверх" id="Scroll-Top"></div>
 @endsection
 
 @section('scripts')

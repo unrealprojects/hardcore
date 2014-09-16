@@ -6,7 +6,7 @@
     <h3 class="Section-Header">Каталог строительной техники Base.blade.php</h3>
     <div class="Row Split">
         <!-- Фильтрация :: Общий блок -->
-        <aside class="Sidebar-Filter Four">
+        <aside class="Sidebar-Filter Three">
             <!-- Фильтрация :: По брендам -->
             <h4>Производители</h4>
             <ul class="List-Filter">
@@ -20,7 +20,7 @@
                 @foreach($content['categories'] as $category)
                     <li class="List-Filter-Subheader">
                         @if($category['subCategories'])
-                            <div class='Accordion-Switch'><img src="/img/techonline/icon-dropdown.png" alt=""/></div>
+                            <div class='Accordion-Switch'><span>&or;</span></div>
                         @endif
                         <a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a>
                     </li>
@@ -38,7 +38,7 @@
             </ul>
         </aside>
 
-        <article class="Eight">
+        <article class="Eight End">
             <ul class="Snippet-List">
             @foreach($content['list'] as $list_elem)
                 <li class="Snippet-Item Row Split">

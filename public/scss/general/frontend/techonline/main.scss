@@ -332,24 +332,26 @@ body {
 		font-size: 20px;
 		font-weight: 100;
 		margin-top: $size;
-		margin-bottom: $size-xs;
+		padding: $size-s;
+		background-color: $clr-main;
+		color: white;
 		&:first-child {
 			margin-top: 0;
 		}
 	}
 	& > ul {
-		margin-right: $size-xl;
 		font-family: $Font-Family-Calibri;
 		& > li {
+			border-top: 1px solid white;
 			& > a {
 				display: block;
-				padding: $size-xs;
-				border-top: 1px dashed $clr-grey;
+				padding: $size-xs $size-s;
 				font-size: 13px;
 				font-weight: 900;
 				color: black;
+				background-color: $clr-grey-lighter;
 				&:hover {
-					background-color: $clr-grey-light;
+					background-color: $clr-grey;
 				}
 			}
 			&:first-child a {
@@ -459,10 +461,17 @@ body {
 
 // Блок футера
 footer[role='contentinfo'] {
+	position: relative;
 	height: $footer-height;
 
 	background: white;
 	border-top: 1px solid #e1e1e1;
+	img.Footer-Img {
+		position: absolute;
+		bottom: $footer-height/2;
+		right: $size;
+		width: 200px;
+	}
 	& > div {
 		padding: $size-l 0;
 		@extend ._Clearfix;
@@ -770,43 +779,57 @@ ul.Tag-List {
 }
 
 .List-Filter {
-	$icon-width: 12px;
-	$icon-spacing: $size-xs;
 	@extend .No-Bullets;
 
 	li.List-Filter-Subheader {
+		background-color: $clr-grey-light;
 		@extend ._Clearfix;
 		div {
-			width: 10%;
+			text-align: center;
+			width: 15%;
 			float: left;
-			img {
-				padding: $size-xs 0;
-				margin: $size-xs 0 0;
-				width: $icon-width;
-				float: left;
+			span {
+				padding: $size-xs $size-xs 2px;
+				display: block;
+				vertical-align: middle;
+				text-shadow: 1px 1px 1px white;
+				font-weight: bold;
+				color: $clr-grey-darker;
+				font-size: 14px;
 				cursor: pointer;
-				&:hover {
-					@include Opacity(.75);
-				}
+			}
+			span:hover {
+				color: $clr-main;
 			}
 		}
 
 		a {
-			width: 90%;
+			font-size: 1em;
+			font-weight: 100;
+			width: 85%;
 			float: right;
 		}
 	}
 
 	li.List-Filter-Subcategory {
 		ul {
-			margin-left: $icon-width + $icon-spacing;
-			margin-bottom: $size;
 			@extend .No-Bullets;
 			li {
+				border-top: 1px white solid;
 				a {
-					display: inline-block;
-					padding: $size-xs 0;
-					font-size: .7em;
+					color: black;
+					width: 100%;
+					background-color: $clr-grey-lighter;
+					display: block;
+					padding: $size-s;
+					font-size: .9em;
+					&:hover {
+						background-color: $clr-grey-light;
+					}
+				}
+
+				&:first-child {
+					border-top: 0;
 				}
 			}
 		}
@@ -822,6 +845,21 @@ ul.Tag-List {
 		}
 	}
 }
+
+#Scroll-Top {
+	position: fixed;
+	top: $size;
+	left: $size;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	background: url(../../../../img/techonline/icon-scroll-top.png) no-repeat;
+	@include Transition(background,.3s);
+	&:hover {
+		background: url(../../../../img/techonline/icon-scroll-top-hover.png) no-repeat;
+	}
+}
+
 @include Keyframes(FadeIn) {
 	from {
 		@include Opacity(0);
