@@ -15,7 +15,7 @@ class CatalogRegions extends Migration {
             $table->string('name')->nullable();
 
             $table->integer('parent_id')->nullable();
-            $table->enum('type',['Области','Республики','Автономные округа'])->default(0);
+           // $table->enum('type',array('q','r','a'))->default(0);
 
             $table->boolean('popular')->dafault(false);
             $table->boolean('active')->dafault(false);
