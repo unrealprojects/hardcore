@@ -11,7 +11,7 @@
                 type:'get',
                 dataType:'json',
                 success:function($data){
-                    Message($data['Event'],$data['Message'],$data['Type']);
+                    UP.Message($data['Event'],$data['Message'],$data['Type']);
                     if($data['Type']=='Success'){
                         $('.Value',$(this_element).parent()).text(parseInt($('.Value',$(this_element).parent()).text())+1);
                     }
@@ -27,7 +27,7 @@
                 type:'get',
                 dataType:'json',
                 success:function($data){
-                    Message($data['Event'],$data['Message'],$data['Type']);
+                    UP.Message($data['Event'],$data['Message'],$data['Type']);
                     if($data['Type']=='Success'){
                         $('.Value',$(this_element).parent()).text(parseInt($('.Value',$(this_element).parent()).text())-1);
                     }
@@ -53,7 +53,7 @@
                     dataType:'json',
                     success:function($data){
                         Recaptcha.reload();
-                        Message($data['Event'],$data['Message'],$data['Type']);
+                        UP.Message($data['Event'],$data['Message'],$data['Type']);
                         if($data['Type']=='Success'){
                             $('.Comment-List').append($('<div/>').html($data['comment']).text());
                         }
@@ -61,7 +61,7 @@
                 });
             }else{
                 Recaptcha.reload();
-                Message('Ошибка','Заполните все поля','Error');
+                UP.Message('Ошибка','Заполните все поля','Error');
             }
             return false;
         });

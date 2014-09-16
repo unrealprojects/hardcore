@@ -7,6 +7,7 @@
     <div class="Row Split">
         <!-- Фильтрация :: Общий блок -->
         <aside class="Sidebar-Filter Four">
+
             <!-- Фильтрация :: По брендам -->
             <h4>Производители</h4>
             <ul class="List-Filter">
@@ -14,28 +15,30 @@
                 <li><a href="/rent/?brand={{$brand['alias']}}&{{\Input::getQueryString()}}">{{$brand['name']}}</a></li>
                 @endforeach
             </ul>
+
             <!-- Фильтрация :: По категориям -->
             <h4>Категории</h4>
             <ul class="List-Filter Accordion">
                 @foreach($content['categories'] as $category)
-                <li class="List-Filter-Subheader">
-                    @if($category['subCategories'])
-                    <img class='Accordion-Switch' src="/img/techonline/icon-dropdown.png" alt=""/>
-                    @endif
-                    <a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a>
-                </li>
+                    <li class="List-Filter-Subheader Accordion-Subheader">
+                        @if($category['subCategories'])
+                            <img class='Accordion-Switch' src="/img/techonline/icon-dropdown.png" alt=""/>
+                        @endif
+                        <a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a>
+                    </li>
 
-                @if($category['subCategories'])
-                <li class="List-Filter-Subcategory">
-                    <ul>
-                        @foreach($category['subCategories'] as $subCategory)
-                        <li><a href="/catalog/?category={{$subCategory['alias']}}&{{\Input::getQueryString()}}">{{$subCategory['name']}}</a></li>
-                        @endforeach
-                    </ul>
-                </li>
-                @endif
+                    @if($category['subCategories'])
+                    <li class="List-Filter-Subcategory Accordion-Subcategory">
+                        <ul>
+                            @foreach($category['subCategories'] as $subCategory)
+                            <li><a href="/catalog/?category={{$subCategory['alias']}}&{{\Input::getQueryString()}}">{{$subCategory['name']}}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    @endif
                 @endforeach
             </ul>
+
             <h4>Регионы</h4>
             <ul class="List-Filter">
                 @foreach($content['regions'] as $region)

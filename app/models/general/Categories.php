@@ -21,11 +21,24 @@ class Categories extends General{
     }
 
     /* Создание двухуровневых вложений */
-    static public function toSubCategories(){
+    static public function toSubCategories($withPopular=false){
        $instance = new static;
        $categories=$instance::where('app_section','catalog')->get()->toArray();
        $sorted=[];
-       $i=0;
+        $i=0;
+        /* Формирование категории Популярные */
+        if($withPopular){
+            $sorted[0]=["name"=>"Популярные","alias"=>"popular"];
+            foreach($categories as $key=>&$category){
+                if($category['popular']){
+                    $sorted[0]['subCategories'][]=$category;
+                }
+            }
+            $i++;
+        }
+
+
+        /* Формирование подкатегорий */
 
        foreach($categories as $key=>&$category){
            if($category['parent_id']==0){
@@ -38,11 +51,8 @@ class Categories extends General{
                }
                unset($categories[$key]);
                $i++;
-
            }
        }
-//        print_r($sorted);
-//        exit;
        return $sorted;
     }
 }

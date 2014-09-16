@@ -10,6 +10,77 @@
     </div>
 </section>
 
+<!-- ФИЛЬТР -->
+
+<div class="Node Tabs Filter">
+
+    <h3 class="Section-Header">Поиск стройтехники</h3>
+    <dl class="Tabs">
+        <dt class="Active">Выбор региона</dt>
+        <dd class="Active">
+            <div>
+                <!-- ФИЛЬТР::ТАБ 1::РЕГИОНЫ-->
+                <ul class="Filter-Regions Row Merge">
+                    @foreach($content['regions'] as $region)
+                    <li class="Three"><a href="/tech/?region=$region['alias']" alt="{{$region['name']}}">{{$region['name']}}</a>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+        </dd>
+
+        <dt>Выбор категории</dt>
+        <dd>
+            <div>
+                <input class="Autocomplete-Categories" placeholder="Введите название категории"/>
+                <ul class="Filter Accordion">
+                    @foreach($content['categories_with_popular'] as $category)
+                    <li class="Filter-Subheader Accordion-Subheader">
+                        @if($category['subCategories'])
+                        <img class='Accordion-Switch' src="/img/techonline/icon-dropdown.png" alt=""/>
+                        @endif
+                        <a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a>
+                    </li>
+
+                    @if($category['subCategories'])
+                    <li class="Filter-Subcategory Accordion-Subcategory">
+                        <ul>
+                            @foreach($category['subCategories'] as $subCategory)
+                            <li><a href="/catalog/?category={{$subCategory['alias']}}&{{\Input::getQueryString()}}">{{$subCategory['name']}}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    @endif
+                    @endforeach
+                </ul>
+            </div>
+        </dd>
+
+        <dt>Дополнительные параметры</dt>
+        <dd>
+            <div>
+                <form class="Form-Vertical" action="">
+                    <!-- ФИЛЬТР::ТАБ 3::ПАРАМЕТРЫ (ЗАВЕРСТАТЬ СЛАЙДЕР JQUERY - ВЫВЕДУ ПОЗЖЕ) -->
+                    <div class="Control-Group">
+                        <label for="Slider-Range-1">Цена: <span id="Slider-Range-Value-1"></span></label>
+
+                        <div class="Slider-Range" id="Slider-Range-1"></div>
+                    </div>
+                    <div class="Control-Group">
+                        <label for="Slider-Range-2">Свойство 2: <span id="Slider-Range-Value-2"></span></label>
+
+                        <div class="Slider-Range" id="Slider-Range-2"></div>
+                    </div>
+
+                </form>
+            </div>
+        </dd>
+    </dl>
+    <div class="Control-Group Offset">
+        <button class="Button">Выполнить поиск</button>
+    </div>
+</div>
+
 <section class="Node Row Category-List">
 
     <!-- КАТАЛОГ СТРОЙТЕХНИКИ::КАТЕГОРИИ C КАРТИНКАМИ-->
@@ -49,68 +120,7 @@
     </div>
 
 </section>
-<!-- ФИЛЬТР -->
 
-<div class="Node Tabs Filter">
-
-    <dl class="Tabs">
-        <dt class="Active">Выбор региона</dt>
-        <dd class="Active">
-            <div>
-                <!-- ФИЛЬТР::ТАБ 1::РЕГИОНЫ-->
-                <ul class="Filter-Regions Row Merge">
-                    @foreach($content['regions'] as $region)
-                    <li class="Three"><a href="/tech/?region=$region['alias']" alt="{{$brand['name']}}">{{$region['name']}}</a>
-                    </li>
-                    @endforeach
-                </ul>
-            </div>
-        </dd>
-
-        <dt>Выбор категории</dt>
-        <dd>
-            <div>
-                <ul class="Filter-Categories">
-                    <!-- ФИЛЬТР::ТАБ 2::Категории-->
-                    @foreach($content['categories'] as $category)
-                    <li><a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a></li>
-
-                    @if($category['subCategories'])
-                    <ul>
-                        @foreach($category['subCategories'] as $subCategory)
-                        <li><a href="/catalog/?category={{$subCategory['alias']}}&{{\Input::getQueryString()}}">{{$subCategory['name']}}</a></li>
-                        @endforeach
-                    </ul>
-                    @endif
-                    @endforeach
-                </ul>
-            </div>
-        </dd>
-
-        <dt class="Disabled">Дополнительные параметры</dt>
-        <dd>
-            <div>
-                <form class="Form-Vertical" action="">
-                    <!-- ФИЛЬТР::ТАБ 3::ПАРАМЕТРЫ (ЗАВЕРСТАТЬ СЛАЙДЕР JQUERY - ВЫВЕДУ ПОЗЖЕ) -->
-                    <div class="Control-Group">
-                        <label for="Slider-Range-1">Цена: <span id="Slider-Range-Value-1"></span></label>
-
-                        <div class="Slider-Range" id="Slider-Range-1"></div>
-                    </div>
-                    <div class="Control-Group">
-                        <label for="Slider-Range-2">Свойство 2: <span id="Slider-Range-Value-2"></span></label>
-
-                        <div class="Slider-Range" id="Slider-Range-2"></div>
-                    </div>
-
-                </form>
-            </div>
-        </dd>
-    </dl>
-    <div class="Control-Group Offset">
-        <button class="Button">Применить фильтр</button>
-    </div>
-</div>
 
 <!-- АРЕНДОДАТЕЛИ::СПИСОК -->
 <div class="Node">
@@ -171,8 +181,10 @@
 
 @section('scripts')
     @parent
+    <script src="/js/frontend/Accordion.js" type="text/javascript"></script>
     <script src="/js/frontend/techonline/MainPage.js" type="text/javascript"></script>
     <script>
+        /* Формирование слайдера */
         $("#Slider-Range-1").slider({
              range: true,
              min: 100,
@@ -185,5 +197,14 @@
         $("#Slider-Range-Value-1").text( "$" + $( "#Slider-Range-1").slider( "values", 0 ) +
             " - руб." + $( "#Slider-Range-1" ).slider( "values", 1 ) );
 
-    </script>
+        var categories = [
+        @foreach($content['categories_list'] as $category)
+           '{{$category['name']}}',
+        @endforeach
+            ];
+
+    $( ".Autocomplete-Categories" ).autocomplete({
+        source: categories
+    });
+ </script>
 @endsection

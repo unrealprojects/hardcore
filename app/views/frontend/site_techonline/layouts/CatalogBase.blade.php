@@ -15,25 +15,26 @@
                 @endforeach
             </ul>
             <!-- Фильтрация :: По категориям -->
+            <!-- Фильтрация :: По категориям -->
             <h4>Категории</h4>
             <ul class="List-Filter Accordion">
                 @foreach($content['categories'] as $category)
-                    <li class="List-Filter-Subheader">
-                        @if($category['subCategories'])
-                            <div class='Accordion-Switch'><span>&or;</span></div>
-                        @endif
-                        <a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a>
-                    </li>
-
+                <li class="List-Filter-Subheader Accordion-Subheader">
                     @if($category['subCategories'])
-                        <li class="List-Filter-Subcategory">
-                            <ul>
-                            @foreach($category['subCategories'] as $subCategory)
-                                 <li><a href="/catalog/?category={{$subCategory['alias']}}&{{\Input::getQueryString()}}">{{$subCategory['name']}}</a></li>
-                            @endforeach
-                            </ul>
-                        </li>
+                    <img class='Accordion-Switch' src="/img/techonline/icon-dropdown.png" alt=""/>
                     @endif
+                    <a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a>
+                </li>
+
+                @if($category['subCategories'])
+                <li class="List-Filter-Subcategory Accordion-Subcategory">
+                    <ul>
+                        @foreach($category['subCategories'] as $subCategory)
+                        <li><a href="/catalog/?category={{$subCategory['alias']}}&{{\Input::getQueryString()}}">{{$subCategory['name']}}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
+                @endif
                 @endforeach
             </ul>
         </aside>

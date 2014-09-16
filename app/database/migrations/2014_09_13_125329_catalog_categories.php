@@ -25,6 +25,7 @@ class CatalogCategories extends Migration {
             $catalog_category->parent_id=0;
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
             $catalog_category->logo = '/photo/standard/categories/logo_' . $key . '.jpg';
+            $catalog_category->active=true;
             $catalog_category->save();
         }
 
@@ -47,6 +48,7 @@ class CatalogCategories extends Migration {
             $catalog_category->app_section='catalog';
             $catalog_category->parent_id=1;
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
+            $catalog_category->active=true;
             $catalog_category->save();
         }
         $categories = [
@@ -66,9 +68,6 @@ class CatalogCategories extends Migration {
             "Трубоукладчики",
             "Установки ГНБ",
             "Фронтальные мини-погрузчики",
-            "Фронтальные погрузчики (колесные)",
-            "Экскаваторы и машины для демон…",
-            "Экскаваторы-амфибии",
             "Экскаваторы-планировщики",
             "Экскаваторы-погрузчики"
         ];
@@ -79,6 +78,9 @@ class CatalogCategories extends Migration {
             $catalog_category->parent_id=2;
             $catalog_category->app_section='catalog';
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
+            $catalog_category->popular=true;
+            $catalog_category->active=true;
+            $catalog_category->active=true;
             $catalog_category->save();
         }
 
@@ -109,6 +111,7 @@ class CatalogCategories extends Migration {
             $catalog_category->parent_id=3;
             $catalog_category->app_section='catalog';
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
+            $catalog_category->active=true;
             $catalog_category->save();
         }
 
@@ -140,6 +143,7 @@ class CatalogCategories extends Migration {
             $catalog_category->parent_id=4;
             $catalog_category->app_section='catalog';
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
+            $catalog_category->active=true;
             $catalog_category->save();
         }
 
@@ -162,6 +166,7 @@ class CatalogCategories extends Migration {
             $catalog_category->app_section='catalog';
             $catalog_category->parent_id=5;
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
+            $catalog_category->active=true;
             $catalog_category->save();
         }
 
@@ -190,6 +195,7 @@ class CatalogCategories extends Migration {
             $catalog_category->app_section='catalog';
             $catalog_category->parent_id=6;
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
+            $catalog_category->active=true;
             $catalog_category->save();
         }
 
@@ -208,6 +214,7 @@ class CatalogCategories extends Migration {
             $catalog_category->app_section='catalog';
             $catalog_category->parent_id=7;
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
+            $catalog_category->active=true;
             $catalog_category->save();
         }
 
@@ -228,6 +235,7 @@ class CatalogCategories extends Migration {
             $catalog_category->app_section='catalog';
             $catalog_category->parent_id=8;
             $catalog_category->alias = Mascame\Urlify::filter($catalog_category->name);
+            $catalog_category->active=true;
             $catalog_category->save();
         }
 	}

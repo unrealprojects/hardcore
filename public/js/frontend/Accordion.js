@@ -1,19 +1,19 @@
 (function($){
     $(document).ready(function(){
-        $('.Accordion > .List-Filter-Subcategory').hide();
-        $('.Accordion > .List-Filter-Subheader > .Accordion-Switch').click(function(){
+        $('.Accordion > .Accordion-Subcategory').hide();
+        $('.Accordion > .Accordion-Subheader > .Accordion-Switch').click(function(){
             var selfClick = $(this).parent()
                                    .next()
                                    .is(':visible');
 
             if(!selfClick) {
                 $(this).parent().parent()
-                       .find('.List-Filter-Subcategory:visible')
+                       .find('.Accordion-Subcategory:visible')
                        .slideToggle();
             }
 
             $(this).parent()
-                   .next('.List-Filter-Subcategory')
+                   .next('.Accordion-Subcategory')
                    .stop(true, true)
                    .slideToggle();
         });

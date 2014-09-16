@@ -18,6 +18,9 @@ use Illuminate\Database\Migrations\Migration;
 
             $table->string('parent_id')->nullable();
             $table->string('app_section')->nullable();
+
+            $table->boolean('popular')->dafault(false);
+            $table->boolean('active')->dafault(false);
         });
 	}
 
