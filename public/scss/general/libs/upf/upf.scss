@@ -1,14 +1,14 @@
-@charset "utf-8";						// Кодировка
+@charset "utf-8";					// Кодировка
 
 @import "normalize.css";
-@import "upf-mixins";					// Миксины
-@import "upf-variables";				// Настройки
-@import "upf-modificators";				// Модификаторы
-@import "upf-reset";					// Сброс настроек браузера
-@import "upf-grid";						// Сетка
-@import "upf-typography";				// Типографика
-@import "upf-forms";					// Формы
-@import "upf-messages";					// Сообщения
+@import "-mixins";					// Миксины
+@import "-variables";				// Настройки
+@import "-modificators";			// Модификаторы
+@import "-reset";					// Сброс настроек браузера
+@import "-grid";					// Сетка
+@import "-typography";				// Типографика
+@import "-forms";					// Формы
+@import "-messages";				// Сообщения
 
 
 

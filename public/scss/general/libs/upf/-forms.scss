@@ -4,7 +4,7 @@ $Control-Focus-Border-Color:			$clr-main;
 $Control-Sublabel-Background-Color:		$clr-grey-lighter;
 $Control-Padding:						$size-xs $size-s;
 $Control-Line-Height:					$line-height;
-
+$Control-Border-Radius:					1px;
 
 .Control-Group {
 	margin-top: 		$size-s;
@@ -18,6 +18,7 @@ $Control-Line-Height:					$line-height;
 	input ,
 	select {
 		font-weight: 	900;
+		@include Round('all', $Control-Border-Radius);
 	}
 	textarea {
 		font-family: $Font-Family-Verdana;
@@ -63,7 +64,6 @@ $Control-Line-Height:					$line-height;
 		@extend ._Clearfix;
 		.Input-Smart {
 			@extend ._Clearfix;
-			width: 70%;
 			.Prefix	 ,
 			.Postfix {
 				float: left;

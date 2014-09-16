@@ -396,7 +396,8 @@ code {
     margin-top: 0; }
   .Control-Group input,
   .Control-Group select {
-    font-weight: 900; }
+    font-weight: 900;
+    border-radius: 10px; }
   .Control-Group textarea {
     font-family: Helvetica, Verdana, sans-serif !important;
     resize: vertical; }
@@ -416,23 +417,21 @@ code {
       padding: 10px 20px; }
   .Control-Group.Checkbox.Submit > label {
     padding: 10px 0; }
-  .Control-Group.Smart .Input-Smart {
-    width: 70%; }
-    .Control-Group.Smart .Input-Smart .Prefix,
-    .Control-Group.Smart .Input-Smart .Postfix {
-      float: left;
-      padding: 5px 10px;
-      background-color: #f1f1f1;
-      line-height: 24px;
-      font-size: 14px;
-      text-align: center; }
-    .Control-Group.Smart .Input-Smart .Prefix {
-      border: 1px solid #cccccc;
-      border-right-width: 0; }
-    .Control-Group.Smart .Input-Smart input,
-    .Control-Group.Smart .Input-Smart select,
-    .Control-Group.Smart .Input-Smart textarea {
-      float: left; }
+  .Control-Group.Smart .Input-Smart .Prefix,
+  .Control-Group.Smart .Input-Smart .Postfix {
+    float: left;
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+    line-height: 24px;
+    font-size: 14px;
+    text-align: center; }
+  .Control-Group.Smart .Input-Smart .Prefix {
+    border: 1px solid #cccccc;
+    border-right-width: 0; }
+  .Control-Group.Smart .Input-Smart input,
+  .Control-Group.Smart .Input-Smart select,
+  .Control-Group.Smart .Input-Smart textarea {
+    float: left; }
 
 label.Control-Group {
   float: none !important; }

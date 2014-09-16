@@ -37,7 +37,7 @@
 	filter: alpha(opacity=$IEValue);
 }
 
-@mixin Round($Round-Mode) {
+@mixin Round($Round-Mode: all, $Radius: 10px) {
 	@if ($Round-Mode == 'all') {
 		border-radius: $border-radius;
 	}
