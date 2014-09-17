@@ -5,7 +5,7 @@
 
         <div href="http://hardcore/catalog" class="Site-Logo">
             <div>
-                <img src="/img/techonline/logo.png"/>
+                <img class="Logo-Img" src="/img/techonline/logo.png"/>
 
                 <h2>Стройтехника
                     <small>.Онлайн</small>
@@ -14,7 +14,8 @@
             <a class="Link-Home" href="/">Вернуться на главную страницу</a>
         </div>
 
-        <nav class="Page-Navigation">
+        <div id="Menu-Toggle"></div>
+        <nav id="Menu" class="Page-Navigation">
             <ul>
                 <li><a href="/catalog" title="Каталог стройтехники">Каталог</a></li>
                 <li><a href="/rent" title="Взять стройтехнику в аренду">Аренда</a></li>

@@ -88,7 +88,7 @@ body {
 				top: 20px;
 				@include Transition(opacity, .5s);
 
-				img {
+				img.Logo-Img {
 					display: block;
 					float: left;
 					margin-right: $size-s;
@@ -103,7 +103,7 @@ body {
 
 					small {
 						display: inline;
-						font-size: $Font-Size-Micro;
+						font-size: 16px;
 						color: black;
 					}
 				}
@@ -132,7 +132,17 @@ body {
 
 	}
 }
-
+#Menu-Toggle {
+	float: right;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	background: url(../../../../img/techonline/icon-menu.png) center center no-repeat;
+	@include Transition(background-image,.3s);
+	&:hover {
+		background: url(../../../../img/techonline/icon-menu-hover.png) center center no-repeat;
+	}
+}
 // Блок авторизации
 .Page-Auth {
 	position: relative;
@@ -176,7 +186,7 @@ body {
 }
 // Меню навигации по сайту
 .Page-Navigation {
-	display: inline-block;
+	display: none;
 	width: 100%;
 	text-align: right;
 
@@ -186,10 +196,10 @@ body {
 		li {
 			display: block;
 			width: 100%;
+			border-top: 1px solid $clr-grey-light;
 			& > a {
 				display: block;
 				padding: $size-s 0;
-				border-top: 1px solid $clr-grey-light;
 				border-bottom: 3px solid transparent;
 
 				font-size: $Font-Size-Large;
@@ -203,6 +213,7 @@ body {
 
 			}
 			&:first-child {
+				border-top: 0;
 				margin-left: 0;
 			}
 		}

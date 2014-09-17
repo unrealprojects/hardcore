@@ -1,7 +1,7 @@
 @extends('frontend.site_techonline.'.$content['template'])
 
 @section('main')
-<section class="Node Grid">
+<section class="Node">
 
     <h3 class="Section-Header">Каталог строительной техники Base.blade.php</h3>
     <div class="Row Split">

@@ -41,7 +41,7 @@
         });
 
         $(window).scroll(function () {
-            if ($(this).scrollTop() > 0) {
+            if( ($(this).scrollTop() > 0) && ($(window).width() > 500) ) {
                 $('#Scroll-Top').fadeIn();
             } else {
                 $('#Scroll-Top').fadeOut();
@@ -54,6 +54,13 @@
             return false;
         });
 
+        $('#Menu-Toggle').click(function(){
+            if ( $('#Menu').is(':hidden') ) {
+                $('#Menu').slideDown('slow');
+            } else {
+                $('#Menu').slideUp('slow');
+            }
+        });
 
     });
 })(jQuery);

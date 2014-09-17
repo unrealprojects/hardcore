@@ -2,12 +2,12 @@
 
 @section('main')
 
-<section class="Node Grid">
+<section class="Node">
 
     <h3 class="Section-Header">Каталог строительной техники</h3>
-    <div class="Row Split">
+    <div class="Row Merge">
         <!-- Фильтрация :: Общий блок -->
-        <aside class="Sidebar-Filter Grid Four">
+        <aside class="Sidebar-Filter Grid Three">
             <!-- Фильтрация :: По регионам -->
             <h4>Регионы</h4>
             <ul class="List-Filter">
@@ -16,7 +16,7 @@
                 @endforeach
             </ul>
         </aside>
-        <article class="Eight">
+        <article class="Grid Eight Push-One">
             <ul class="Snippet-List">
                 @foreach($content['list'] as $list_elem)
                 <li class="Snippet-Item Row Split">

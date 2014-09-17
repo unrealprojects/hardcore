@@ -2,12 +2,12 @@
 
 @section('main')
 
-<section class="Node Grid">
+<section class="Node">
 
     <h3 class="Section-Header">Запчасти и сервис Parts.Blade.Php</h3>
-    <div class="Row Split">
+    <div class="Row Merge">
         <!-- Фильтрация :: Общий блок -->
-        <aside class="Sidebar-Filter Four">
+        <aside class="Sidebar-Filter Grid Three">
             <!-- Фильтрация :: По категориям -->
             <h4>Категории</h4>
             <ul class="List-Filter Accordion">
@@ -31,7 +31,7 @@
                 @endforeach
             </ul>
         </aside>
-        <article class="Eight">
+        <article class="Grid Eight Push-One">
             <ul class="Snippet-List">
                 @foreach($content['list'] as $list_elem)
                 <li class="Snippet-Item Row Split">
@@ -50,7 +50,7 @@
                         </ul>
                     </header>
 
-                    <div class="Item-Gallery Five">
+                    <div class="Item-Gallery Grid Five">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                         @if($i==1)
                         <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
@@ -67,7 +67,7 @@
                         </ul>
                     </div>
 
-                    <div class="Item-Content Seven">
+                    <div class="Item-Content Grid Seven">
                         {{$list_elem['description']}}
 
                         <!-- Параметры товара -->

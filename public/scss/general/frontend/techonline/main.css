@@ -266,37 +266,37 @@ iframe {
     width: 98%; }
 
   .Push-One {
-    margin-left: 10.33333%; }
+    margin-left: 8.33333%; }
 
   .Push-Two {
-    margin-left: 18.66667%; }
+    margin-left: 16.66667%; }
 
   .Push-Three {
-    margin-left: 27%; }
+    margin-left: 25%; }
 
   .Push-Four {
-    margin-left: 35.33333%; }
+    margin-left: 33.33333%; }
 
   .Push-Five {
-    margin-left: 43.66667%; }
+    margin-left: 41.66667%; }
 
   .Push-Six {
-    margin-left: 52%; }
+    margin-left: 50%; }
 
   .Push-Seven {
-    margin-left: 60.33333%; }
+    margin-left: 58.33333%; }
 
   .Push-Eight {
-    margin-left: 68.66667%; }
+    margin-left: 66.66667%; }
 
   .Push-Nine {
-    margin-left: 77%; }
+    margin-left: 75%; }
 
   .Push-Ten {
-    margin-left: 85.33333%; }
+    margin-left: 83.33333%; }
 
   .Push-Eleven {
-    margin-left: 93.66667%; } }
+    margin-left: 91.66667%; } }
 body {
   font-size: 1em;
   line-height: 1.45; }
@@ -748,7 +748,7 @@ body {
         -webkit-transition-duration: 0.5s;
         -moz-transition-duration: 0.5s;
         transition-duration: 0.5s; }
-        .Page-Header .Page-Header-Inner .Site-Logo div img {
+        .Page-Header .Page-Header-Inner .Site-Logo div img.Logo-Img {
           display: block;
           float: left;
           margin-right: 10px; }
@@ -760,7 +760,7 @@ body {
           text-transform: uppercase; }
           .Page-Header .Page-Header-Inner .Site-Logo div h2 small {
             display: inline;
-            font-size: 0.8em;
+            font-size: 16px;
             color: black; }
       .Page-Header .Page-Header-Inner .Site-Logo > a {
         z-index: 2;
@@ -787,6 +787,21 @@ body {
         opacity: 1;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
         filter: alpha(opacity=100); }
+
+#Menu-Toggle {
+  float: right;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: url(../../../../img/techonline/icon-menu.png) center center no-repeat;
+  -webkit-transition-property: background-image;
+  -moz-transition-property: background-image;
+  transition-property: background-image;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
+  #Menu-Toggle:hover {
+    background: url(../../../../img/techonline/icon-menu-hover.png) center center no-repeat; }
 
 .Page-Auth {
   position: relative;
@@ -821,16 +836,16 @@ body {
       border-bottom: 1px dashed #cccccc; }
 
 .Page-Navigation {
-  display: inline-block;
+  display: none;
   width: 100%;
   text-align: right; }
   .Page-Navigation ul li {
     display: block;
-    width: 100%; }
+    width: 100%;
+    border-top: 1px solid #dedede; }
     .Page-Navigation ul li > a {
       display: block;
       padding: 10px 0;
-      border-top: 1px solid #dedede;
       border-bottom: 3px solid transparent;
       font-size: 1.125em;
       color: #000;
@@ -839,6 +854,7 @@ body {
       .Page-Navigation ul li > a.Link-Active, .Page-Navigation ul li > a:hover {
         background-color: #f1f1f1; }
     .Page-Navigation ul li:first-child {
+      border-top: 0;
       margin-left: 0; }
 
 #Page-Slider {
@@ -1365,6 +1381,9 @@ li.List-Filter-Subcategory ul li {
   .Site-Logo div h2 {
     font-size: 22px; } }
 @media all and (min-width: 1024px) {
+  #Menu-Toggle {
+    display: none; }
+
   .Section-Header,
   .Section-Subheader {
     display: inline-block;
@@ -1382,7 +1401,8 @@ li.List-Filter-Subcategory ul li {
 
   .Page-Navigation {
     float: left;
-    width: 50%; }
+    width: 50%;
+    display: block !important; }
     .Page-Navigation ul li {
       width: auto;
       display: inline-block;
