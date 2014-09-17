@@ -540,7 +540,7 @@ class TechonlineCatalog extends Migration {
         Schema::dropIfExists('catalog_admin');
 
         Schema::dropIfExists('catalog_brand');
-        Schema::dropIfExists('catalog_region');
+
 
         Schema::dropIfExists('catalog_opacity');
         Schema::dropIfExists('catalog_statuses');

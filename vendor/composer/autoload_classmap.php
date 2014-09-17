@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'CatalogCategories' => $baseDir . '/app/database/migrations/2014_09_13_125329_catalog_categories.php',
+    'CatalogRegions' => $baseDir . '/app/database/migrations/2014_09_13_125330_catalog_regions.php',
     'Comments' => $baseDir . '/app/database/migrations/2014_09_03_133713_comments.php',
     'Controller\\Backend\\TechOnline\\CatalogController' => $baseDir . '/app/controllers/backend/techonline/CatalogController.php',
     'Controller\\Backend\\TechOnline\\TechonlineController' => $baseDir . '/app/controllers/backend/techonline/TechonlineController.php',

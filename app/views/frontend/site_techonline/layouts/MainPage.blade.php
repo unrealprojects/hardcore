@@ -19,11 +19,45 @@
         <dt class="Active"><span>Выбор региона</span></dt>
         <dd class="Active">
             <div>
+                <div class="Control-Group">
+                    <input class="Autocomplete-Regions" placeholder="Поиск региона ..."/>
+                </div>
                 <!-- ФИЛЬТР::ТАБ 1::РЕГИОНЫ-->
-                <ul class="Filter-Regions Row Merge">
+                <ul class="Filter Accordion">
                     @foreach($content['regions'] as $region)
-                    <li class="Grid Three"><a href="/tech/?region=$region['alias']" alt="{{$region['name']}}">{{$region['name']}}</a>
-                    </li>
+                        <li class="Filter-Subheader Accordion-Subheader">
+                            @if($region['subRegions'])
+                                <div class="Accordion-Switch"><span>&or;</span></div>
+                            @endif
+                            <a href="/catalog/?category={{$region['alias']}}&{{\Input::getQueryString()}}">{{$region['name']}}</a>
+                        </li>
+
+                        @if($region['subRegions'])
+                        <li class="Filter-Subcategory Accordion-Subcategory">
+                            <ul>
+                                @foreach($region['subRegions'] as $subRegions)
+                                    <li>
+                                        <a href="/catalog/?category={{$subRegions['alias']}}&{{\Input::getQueryString()}}">{{$subRegions['name']}}</a>
+                                        <!-- Вложенные города -->
+
+                                        @if(!empty($subRegions['cities']))
+                                        <ul class="Filter-Cities">
+
+                                            <li><a href="/catalog/?category={{$subRegions['alias']}}&{{\Input::getQueryString()}}">Все города</a></li>
+                                            @foreach($subRegions['cities'] as $city)
+                                            <li><a href="/catalog/?category={{$city['alias']}}&{{\Input::getQueryString()}}">{{$city['name']}}</a></li>
+                                            @endforeach
+                                            <li><a class="Back" href="/">Вернуться к выбору региона</a></li>
+                                        </ul>
+                                        @endif
+                                    </li>
+
+
+
+                                @endforeach
+                            </ul>
+                        </li>
+                        @endif
                     @endforeach
                 </ul>
             </div>
@@ -199,14 +233,48 @@
         $("#Slider-Range-Value-1").text( "$" + $( "#Slider-Range-1").slider( "values", 0 ) +
             " - руб." + $( "#Slider-Range-1" ).slider( "values", 1 ) );
 
+
+        /* Autocomplite */
         var categories = [
-        @foreach($content['categories_list'] as $category)
-           '{{$category['name']}}',
-        @endforeach
+                @foreach($content['categories_list'] as $category)
+                   '{{$category['name']}}',
+                @endforeach
             ];
 
-    $( ".Autocomplete-Categories" ).autocomplete({
-        source: categories
-    });
+        $( ".Autocomplete-Categories" ).autocomplete({
+            source: categories
+        });
+
+        var regions = [
+            @foreach($content['regions_list'] as $region)
+                '{{$region['name']}}',
+            @endforeach
+        ];
+        $( ".Autocomplete-Regions" ).autocomplete({
+            source: regions
+        });
+
+        /* Вкладка городов */
+        $(document).on('click','.Filter a',function(){
+            return false;
+        });
+
+        $('.Filter-Subcategory li>a').click(function(){
+            if($('.Filter-Cities',$(this).parent()).length){
+                var cities=$('.Filter-Cities',$(this).parent()).html();
+
+                $('.Filter.Accordion').hide().after('<div class="Filter-Cities">'+cities+"</div>");
+
+                $('.Tabs .Back').on('click',function(){
+                    $('dd>div>.Filter-Cities').remove();
+                    $('.Filter.Accordion').show();
+                    return false;
+                });
+
+                return false;
+            }
+        });
+
+
  </script>
 @endsection

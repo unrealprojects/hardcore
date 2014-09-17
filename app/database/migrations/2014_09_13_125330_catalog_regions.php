@@ -14,14 +14,15 @@ class CatalogRegions extends Migration {
             $table->string('alias')->nullable();
             $table->string('name')->nullable();
 
-            $table->integer('parent_id')->nullable();
-           // $table->enum('type',array('q','r','a'))->default(0);
+            $table->integer('parent_id')->default(0);
+            $table->enum('type',array('Области','Республики','Автономные округа','Края'))->default('Области');
 
             $table->boolean('popular')->dafault(false);
             $table->boolean('active')->dafault(false);
         });
 
         $regions = [
+            'Амурская обл.',
             'Архангельская обл.',
             'Астраханская обл',
             'Белгородская обл.',
@@ -67,53 +68,120 @@ class CatalogRegions extends Migration {
             'Ярославская обл.'
         ];
 
-        $regions = [
-            'Адыгея',
-            'Алтай',
-            'Башкортостан',
-            'Бурятия',
-            'Дагестан',
-            'Ингушетия',
-            'Кабардино-Балкария',
-            'Калмыкия',
-            'Карачаево-Черкесия',
-            'Карелия',
-            'Коми',
-            'Крым',
-            'Марий Эл',
-            'Мордовия',
-            'Саха (Якутия)',
-            'Северная Осетия',
-            'Татарстан',
-            'Тыва (Тува)',
-            'Удмуртия',
-            'Хакасия',
-            'Чечня',
-            'Чувашия'
-        ];
-
+        foreach($regions as $region){
+            $catalog_region = new \Model\General\TechOnline\CatalogRegion();
+            $catalog_region->name=$region;
+            $catalog_region->active=true;
+            $catalog_region->alias = Mascame\Urlify::filter($catalog_region->name);
+            $catalog_region->save();
+        }
 
         $regions = [
-            'Алтайский край',
-            'Забайкальский край',
-            'Камчатский край',
-            'Краснодарский край',
-            'Красноярский край',
-            'Пермский край',
-            'Приморский край',
-            'Хабаровский край',
-        ];
-
-        $regions = [
-            'Ненецкий АО',
-            'Ханты-Мансийский АО — Югра',
-            'Чукотский АО',
-            'Ямало-Ненецкий АО',
+            ['Адыгея',"Республики"],
+            ['Алтай',"Республики"],
+            ['Башкортостан',"Республики"],
+            ['Бурятия',"Республики"],
+            ['Дагестан',"Республики"],
+            ['Ингушетия',"Республики"],
+            ['Кабардино-Балкария',"Республики"],
+            ['Калмыкия',"Республики"],
+            ['Карачаево-Черкесия',"Республики"],
+            ['Карелия',"Республики"],
+            ['Коми',"Республики"],
+            ['Крым',"Республики"],
+            ['Марий Эл',"Республики"],
+            ['Мордовия',"Республики"],
+            ['Саха (Якутия)',"Республики"],
+            ['Северная Осетия',"Республики"],
+            ['Татарстан',"Республики"],
+            ['Тыва (Тува)',"Республики"],
+            ['Удмуртия',"Республики"],
+            ['Хакасия',"Республики"],
+            ['Чечня',"Республики"],
+            ['Чувашия',"Республики"]
         ];
 
         foreach($regions as $region){
             $catalog_region = new \Model\General\TechOnline\CatalogRegion();
+            $catalog_region->name=$region[0];
+            $catalog_region->type=$region[1];
+
+            $catalog_region->active=true;
+            $catalog_region->alias = Mascame\Urlify::filter($catalog_region->name);
+            $catalog_region->save();
+        }
+
+        $regions = [
+            ['Алтайский край','Края'],
+            ['Забайкальский край','Края'],
+            ['Камчатский край','Края'],
+            ['Краснодарский край','Края'],
+            ['Красноярский край','Края'],
+            ['Пермский край','Края'],
+            ['Приморский край','Края'],
+            ['Хабаровский край', 'Края'],
+        ];
+
+        foreach($regions as $region){
+            $catalog_region = new \Model\General\TechOnline\CatalogRegion();
+            $catalog_region->name=$region[0];
+            $catalog_region->type=$region[1];
+            $catalog_region->active=true;
+            $catalog_region->alias = Mascame\Urlify::filter($catalog_region->name);
+            $catalog_region->save();
+        }
+
+        $regions = [
+            ['Ненецкий АО','Автономные округа'],
+            ['Ханты-Мансийский АО — Югра','Автономные округа'],
+            ['Чукотский АО','Автономные округа'],
+            ['Ямало-Ненецкий АО','Автономные округа']
+        ];
+        foreach($regions as $region){
+            $catalog_region = new \Model\General\TechOnline\CatalogRegion();
+            $catalog_region->name=$region[0];
+            $catalog_region->type=$region[1];
+            $catalog_region->active=true;
+            $catalog_region->alias = Mascame\Urlify::filter($catalog_region->name);
+            $catalog_region->save();
+        }
+
+
+        $regions = [
+            'Благовещенск',
+            'Белогорск',
+            'Свободный',
+            'Зея',
+            'Райчихинск',
+            'Шимановск'
+        ];
+
+
+        foreach($regions as $region){
+            $catalog_region = new \Model\General\TechOnline\CatalogRegion();
             $catalog_region->name=$region;
+            $catalog_region->parent_id=1;
+            $catalog_region->active=true;
+            $catalog_region->alias = Mascame\Urlify::filter($catalog_region->name);
+            $catalog_region->save();
+        }
+
+        $regions = [
+            'Архангельск',
+            'Северодвинск',
+            'Котлас',
+            'Новодвинск',
+            'Коряжма',
+            'Мирный'
+        ];
+
+
+        foreach($regions as $region){
+            $catalog_region = new \Model\General\TechOnline\CatalogRegion();
+            $catalog_region->name=$region;
+            $catalog_region->parent_id=2;
+            $catalog_region->active=true;
+            $catalog_region->popular=true;
             $catalog_region->alias = Mascame\Urlify::filter($catalog_region->name);
             $catalog_region->save();
         }
@@ -121,6 +189,7 @@ class CatalogRegions extends Migration {
 
 	public function down()
 	{
+        Schema::dropIfExists('catalog_region');
 	}
 
 }

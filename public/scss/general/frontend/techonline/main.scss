@@ -237,7 +237,8 @@ body {
 		#Slider-Links {
 			@include Animation(FadeIn,1.5s);
 		}
-.Autocomplete-Categories {
+.Autocomplete-Categories,
+.Autocomplete-Regions{
 	width: 100%;
 	padding: $size-s $size;
 	border: 1px solid;
@@ -856,6 +857,7 @@ li.List-Filter-Subcategory {
 	@extend ._No-Bullets;
 	.Filter-Subheader {
 		border-top: 1px solid white;
+        clear:both;
 		@extend ._Clearfix;
 		& > div {
 			float: left;
@@ -890,10 +892,18 @@ li.List-Filter-Subcategory {
 	}
 	.Filter-Subcategory {
 		background: $clr-grey-lighter;
+        display: none;
+
 		ul {
 			@extend ._No-Bullets;
+            .Filter-Cities{
+                display:none;
+            }
 			li {
 				border-top: 1px solid white;
+                display: inline-block;
+                width: 33%;
+
 				a {
 					display: block;
 					padding: $size-xs $size-l;

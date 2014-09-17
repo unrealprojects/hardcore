@@ -873,7 +873,8 @@ body {
   -moz-animation: FadeIn 1.5s;
   animation: FadeIn 1.5s; }
 
-.Autocomplete-Categories {
+.Autocomplete-Categories,
+.Autocomplete-Regions {
   width: 100%;
   padding: 10px 20px;
   border: 1px solid; }
@@ -1261,7 +1262,8 @@ li.List-Filter-Subcategory ul li {
 .Filter.Accordion {
   margin-top: 20px; }
   .Filter.Accordion .Filter-Subheader {
-    border-top: 1px solid white; }
+    border-top: 1px solid white;
+    clear: both; }
     .Filter.Accordion .Filter-Subheader > div {
       float: left;
       width: 10%;
@@ -1289,9 +1291,14 @@ li.List-Filter-Subcategory ul li {
       display: block;
       padding: 10px 30px; }
   .Filter.Accordion .Filter-Subcategory {
-    background: #f1f1f1; }
+    background: #f1f1f1;
+    display: none; }
+    .Filter.Accordion .Filter-Subcategory ul .Filter-Cities {
+      display: none; }
     .Filter.Accordion .Filter-Subcategory ul li {
-      border-top: 1px solid white; }
+      border-top: 1px solid white;
+      display: inline-block;
+      width: 33%; }
       .Filter.Accordion .Filter-Subcategory ul li a {
         display: block;
         padding: 5px 30px;
