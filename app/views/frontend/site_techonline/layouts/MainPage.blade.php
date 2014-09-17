@@ -17,13 +17,13 @@
     <h3 class="Section-Header">Поиск стройтехники</h3>
     <dl class="Tabs">
         <dt class="Active"><span>Выбор региона</span></dt>
-        <dd class="Active">
+        <dd class="Active Tab-Regions">
             <div>
                 <div class="Control-Group">
                     <input class="Autocomplete-Regions" placeholder="Поиск региона ..."/>
                 </div>
                 <!-- ФИЛЬТР::ТАБ 1::РЕГИОНЫ-->
-                <ul class="Filter Accordion">
+                <ul class="Filter Accordion ">
                     @foreach($content['regions'] as $region)
                         <li class="Filter-Subheader Accordion-Subheader">
                             @if($region['subRegions'])
@@ -64,7 +64,7 @@
         </dd>
 
         <dt><span>Выбор категории</span></dt>
-        <dd>
+        <dd class="Tab-Categories">
             <div>
                 <div class="Control-Group">
                     <input class="Autocomplete-Categories" placeholder="Поиск техники ..."/>
@@ -93,7 +93,7 @@
         </dd>
 
         <dt class="Wide"><span>Дополнительные параметры</span></dt>
-        <dd>
+        <dd class="Tab-Params">
             <div>
                 <form class="Form-Vertical" action="">
                     <!-- ФИЛЬТР::ТАБ 3::ПАРАМЕТРЫ (ЗАВЕРСТАТЬ СЛАЙДЕР JQUERY - ВЫВЕДУ ПОЗЖЕ) -->
@@ -259,15 +259,15 @@
             return false;
         });
 
-        $('.Filter-Subcategory li>a').click(function(){
+        $('.Tab-Regions .Filter-Subcategory li>a').click(function(){
             if($('.Filter-Cities',$(this).parent()).length){
                 var cities=$('.Filter-Cities',$(this).parent()).html();
 
-                $('.Filter.Accordion').hide().after('<div class="Filter-Cities">'+cities+"</div>");
+                $('.Tab-Regions .Filter.Accordion').hide().after('<div class="Filter-Cities">'+cities+"</div>");
 
                 $('.Tabs .Back').on('click',function(){
                     $('dd>div>.Filter-Cities').remove();
-                    $('.Filter.Accordion').show();
+                    $('.Tab-Regions .Filter.Accordion').show();
                     return false;
                 });
 
