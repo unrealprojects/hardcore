@@ -16,7 +16,7 @@
 
     <h3 class="Section-Header">Поиск стройтехники</h3>
     <dl class="Tabs">
-        <dt class="Active"><span>Выбор региона</span></dt>
+        <dt class="Active Tab-Regions"><span>Выбор региона</span></dt>
         <dd class="Active Tab-Regions">
             <div>
                 <div class="Control-Group">
@@ -29,7 +29,7 @@
                             @if($region['subRegions'])
                                 <div class="Accordion-Switch"><span>&or;</span></div>
                             @endif
-                            <a href="/catalog/?category={{$region['alias']}}&{{\Input::getQueryString()}}">{{$region['name']}}</a>
+                            <a href="/catalog/?region={{$region['alias']}}" alias="{{$region['alias']}}">{{$region['name']}}</a>
                         </li>
 
                         @if($region['subRegions'])
@@ -37,15 +37,15 @@
                             <ul>
                                 @foreach($region['subRegions'] as $subRegions)
                                     <li>
-                                        <a href="/catalog/?category={{$subRegions['alias']}}&{{\Input::getQueryString()}}">{{$subRegions['name']}}</a>
+                                        <a href="/catalog/?region={{$subRegions['alias']}}" alias="{{$subRegions['alias']}}">{{$subRegions['name']}}</a>
                                         <!-- Вложенные города -->
 
                                         @if(!empty($subRegions['cities']))
                                         <ul class="Filter-Cities">
 
-                                            <li><a href="/catalog/?category={{$subRegions['alias']}}&{{\Input::getQueryString()}}">Все города</a></li>
+                                            <li><a href="/catalog/?region={{$subRegions['alias']}}" alias="{{$subRegions['alias']}}">Все города</a></li>
                                             @foreach($subRegions['cities'] as $city)
-                                            <li><a href="/catalog/?category={{$city['alias']}}&{{\Input::getQueryString()}}">{{$city['name']}}</a></li>
+                                            <li><a href="/catalog/?region={{$city['alias']}}" alias="{{$city['alias']}}">{{$city['name']}}</a></li>
                                             @endforeach
                                             <li><a class="Back" href="/">Вернуться к выбору региона</a></li>
                                         </ul>
@@ -63,7 +63,7 @@
             </div>
         </dd>
 
-        <dt><span>Выбор категории</span></dt>
+        <dt class="Tab-Categories"><span>Выбор категории</span></dt>
         <dd class="Tab-Categories">
             <div>
                 <div class="Control-Group">
@@ -75,14 +75,14 @@
                         @if($category['subCategories'])
                         <div class="Accordion-Switch"><span>&or;</span></div>
                         @endif
-                        <a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a>
+                        <a href="/catalog/?category={{$category['alias']}}" alias="{{$category['alias']}}">{{$category['name']}}</a>
                     </li>
 
                     @if($category['subCategories'])
                     <li class="Filter-Subcategory Accordion-Subcategory">
                         <ul>
                             @foreach($category['subCategories'] as $subCategory)
-                            <li><a href="/catalog/?category={{$subCategory['alias']}}&{{\Input::getQueryString()}}">{{$subCategory['name']}}</a></li>
+                            <li><a href="/catalog/?category={{$subCategory['alias']}}" alias="{{$category['alias']}}">{{$subCategory['name']}}</a></li>
                             @endforeach
                         </ul>
                     </li>
@@ -92,7 +92,7 @@
             </div>
         </dd>
 
-        <dt class="Wide"><span>Дополнительные параметры</span></dt>
+        <dt class="Wide Tab-Params"><span>Дополнительные параметры</span></dt>
         <dd class="Tab-Params">
             <div>
                 <form class="Form-Vertical" action="">
@@ -113,7 +113,7 @@
         </dd>
     </dl>
     <div class="Control-Group Offset">
-        <button class="Button">Выполнить поиск</button>
+        <button class="Button Search">Выполнить поиск</button>
     </div>
 </div>
 
@@ -220,6 +220,7 @@
     <script src="/js/frontend/Accordion.js" type="text/javascript"></script>
     <script src="/js/frontend/techonline/MainPage.js" type="text/javascript"></script>
     <script>
+        searchArray = {};
         /* Формирование слайдера */
         $("#Slider-Range-1").slider({
              range: true,
@@ -228,16 +229,19 @@
              values: [ 100, 50000 ],
             slide: function( event, ui ) {
                 $("#Slider-Range-Value-1").text(ui.values[ 0 ] + "руб. - " + ui.values[ 1 ] +"руб.");
+                searchArray['price-min']=ui.values[ 0 ];
+                searchArray['price-max']= ui.values[ 1 ];
             }
         });
         $("#Slider-Range-Value-1").text( "$" + $( "#Slider-Range-1").slider( "values", 0 ) +
             " - руб." + $( "#Slider-Range-1" ).slider( "values", 1 ) );
 
 
+
         /* Autocomplite */
         var categories = [
                 @foreach($content['categories_list'] as $category)
-                   '{{$category['name']}}',
+                   {key:"{{$category['alias']}}",label:"{{$category['name']}}"},
                 @endforeach
             ];
 
@@ -247,34 +251,103 @@
 
         var regions = [
             @foreach($content['regions_list'] as $region)
-                '{{$region['name']}}',
+                 {key:"{{$region['alias']}}",label:"{{$region['name']}}"},
             @endforeach
         ];
         $( ".Autocomplete-Regions" ).autocomplete({
-            source: regions
+            source: regions,
+            select: function (event, ui) {
+                /* Запись параметров */
+                searchArray['region']=ui.item.key;
+                delete searchArray['region_type'];
+
+                /* Смена таба */
+                $('.Tab-Regions').removeClass('Active');
+                $('.Tab-Categories').addClass('Active');
+            }
         });
 
-        /* Вкладка городов */
+        /* Некликабельность ссылок */
         $(document).on('click','.Filter a',function(){
             return false;
         });
 
-        $('.Tab-Regions .Filter-Subcategory li>a').click(function(){
+        /* Таб :: Региионы */
+        $('dd.Tab-Regions .Filter-Subcategory li>a').click(function(){
+            /* Переход на города, если они есть */
             if($('.Filter-Cities',$(this).parent()).length){
                 var cities=$('.Filter-Cities',$(this).parent()).html();
+                $('dd.Tab-Regions .Filter.Accordion').hide().after('<div class="Filter-Cities">'+cities+"</div>");
+                /* Запись параметров региона */
+                searchArray['region']=$(this).attr('alias');
+                delete searchArray['region_type'];
 
-                $('.Tab-Regions .Filter.Accordion').hide().after('<div class="Filter-Cities">'+cities+"</div>");
-
+                /* Возврат на категории */
                 $('.Tabs .Back').on('click',function(){
                     $('dd>div>.Filter-Cities').remove();
                     $('.Tab-Regions .Filter.Accordion').show();
                     return false;
                 });
+                /* Если нет городов, выбор категории */
+            }else{
 
-                return false;
+                /* Запись параметров */
+                searchArray['region']=$(this).attr('alias');
+                delete searchArray['region_type'];
+
+                /* Смена таба */
+                $('.Tab-Regions').removeClass('Active');
+                $('.Tab-Categories').addClass('Active');
             }
+            return false;
+        });
+
+        /* Выбор города */
+        $(document).on('click','.Filter-Cities a',function(){
+            searchArray['region']=$(this).attr('alias');
+            delete searchArray['region_type'];
+
+            /* Смена таба */
+            $('.Tab-Regions').removeClass('Active');
+            $('.Tab-Categories').addClass('Active');
+            return false;
+        });
+
+        /* Выбор типа категории (популярные, области...)*/
+        $('dd.Tab-Regions .Filter-Subheader a').click(function(){
+            /* Запись параметров */
+            searchArray['region_type']=$(this).attr('alias');
+            delete searchArray['region'];
+
+            /* Смена таба */
+            $('.Tab-Regions').removeClass('Active');
+            $('.Tab-Categories').addClass('Active');
+            return false;
+        });
+
+        /* Таб :: Категории */
+
+        $('dd.Tab-Categories a').click(function(){
+            /* Запись параметров */
+            searchArray['category']=$(this).attr('alias');
+
+            /* todo:: ajax запрос на смену таба */
+
+            /* Смена таба */
+            $('.Tab-Categories').removeClass('Active');
+            $('.Tab-Params').addClass('Active');
+            return false;
         });
 
 
+        /* Поиск */
+        $('.Search').click(function(){
+            searchString='?';
+            $.each(searchArray,function(key,value){
+                searchString+=key+'='+value+'&';
+            });
+            location.href='rent'+searchString;
+            //console.log(searchString);
+        });
  </script>
 @endsection

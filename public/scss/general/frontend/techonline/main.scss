@@ -897,7 +897,7 @@ li.List-Filter-Subcategory {
 		ul {
 			@extend ._No-Bullets;
             .Filter-Cities{
-                display:none;
+              display:none;
             }
 			li {
 				border-top: 1px solid white;
@@ -917,6 +917,9 @@ li.List-Filter-Subcategory {
 	}
 }
 
+.ui-widget-header{
+  background-color: $clr-main;
+}
 
 @include Keyframes(FadeIn) {
 	from {

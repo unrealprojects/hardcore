@@ -1306,6 +1306,9 @@ li.List-Filter-Subcategory ul li {
         .Filter.Accordion .Filter-Subcategory ul li a:hover {
           background-color: #dedede; }
 
+.ui-widget-header {
+  background-color: #ec6700; }
+
 @-webkit-keyframes FadeIn {
   from {
     opacity: 0;
