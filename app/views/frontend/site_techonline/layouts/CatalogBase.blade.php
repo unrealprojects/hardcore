@@ -6,7 +6,7 @@
     <h3 class="Section-Header">Каталог строительной техники Base.blade.php</h3>
     <div class="Row Split">
         <!-- Фильтрация :: Общий блок -->
-        <aside class="Sidebar-Filter Three">
+        <aside class="Sidebar-Filter Grid Three">
             <!-- Фильтрация :: По брендам -->
             <h4>Производители</h4>
             <ul class="List-Filter">
@@ -39,7 +39,7 @@
             </ul>
         </aside>
 
-        <article class="Eight End">
+        <article class="Grid Eight End">
             <ul class="Snippet-List">
             @foreach($content['list'] as $list_elem)
                 <li class="Snippet-Item Row Split">
@@ -54,7 +54,7 @@
                         </h4>
                     </header>
 
-                    <div class="Item-Gallery Five">
+                    <div class="Item-Gallery Grid Five">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                             @if($i==1)
                                  <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
@@ -71,7 +71,7 @@
                         </ul>
                     </div>
 
-                    <div class="Item-Content Seven">
+                    <div class="Item-Content Grid Seven">
                         {{$list_elem['description']}}
 
                         <!-- Параметры товара -->

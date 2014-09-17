@@ -15,10 +15,10 @@
 
 
 .Node {
-	padding: 			$size-l;
+	padding: 			$size-n;
 	background-color: 	white;
+	clear: 				both;
 
-	@include 			Round(all);
 	@extend 			._Centered;
 	@extend 			._Standalone;
 	@extend 			._Section-Inner;

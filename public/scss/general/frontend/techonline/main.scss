@@ -9,6 +9,7 @@ body,
 
 body > #wrap {
 	height: auto;
+	min-width: 360px;
 	min-height: 100%;
 	clear: both;
 	& > #wrap-stop {
@@ -17,16 +18,20 @@ body > #wrap {
 }
 
 body {
-	background: #eee url(../../../../img/techonline/page-background3.png) repeat;
-	font-family: 'Exo 2', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 1.00em;
-	line-height: 1.45;
-	@include Animation(FadeIn,0.6s);
+	background: 	#eee
+					url(../../../../img/techonline/page-background3.png)
+					repeat;
+
+	font-family: 	'Exo 2', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	line-height: 	1.45;
+
+	@include 		Font-Size(85%,90%,100%, 110%);
+	@include 		Animation(FadeIn,0.6s);
 }
 
 .Section-Header,
 .Section-Subheader {
-	display: inline-block;
+	display: block;
 	clear: both;
 	padding: $size-s $size-n;
 	text-transform: uppercase;
@@ -35,10 +40,8 @@ body {
 	color: #fff;
 	font-weight: 100;
 	cursor: default;
-	@include Round(diagonal-reverse);
-
-	@extend ._Unselectable;
 	@extend ._Fly-Out;
+	@extend ._Unselectable;
 
 }
 .Header-Column {
@@ -50,7 +53,7 @@ body {
 
 
 .Section-Header {
-	font-size: 22px;
+	font-size: 16px;
 }
 
 .Section-Subheader {
@@ -60,27 +63,25 @@ body {
 // Шапка сайта
 .Page-Header {
 	background: white;
-	border-bottom: 1px solid #e1e1e1;
-	height: 80px;
 	@include Animation(FadeIn,1s);
 	@extend ._Clearfix;
 	@extend ._Unselectable;
 	@extend ._Soft_Shadow;
 
 	.Page-Header-Inner {
-		width: $node-width;
-		height: 80px;
+		width:	90%;
 		@extend ._Clearfix;
 		@extend ._Centered;
 		@extend ._Section-Inner;
 		@extend ._Inline;
 
 		.Site-Logo {
+			display: block;
 			position: relative;
-			width: 35%;
+			width:	100%;
 			height: 80px;
 			overflow: hidden;
-			display: inline-block;
+
 			div {
 				width: 100%;
 				position: absolute;
@@ -96,7 +97,7 @@ body {
 				h2 {
 					padding: $size-xs 0;
 					color: $clr-main;
-					font-size: $Font-Size-Huge;
+					font-size: 26px;
 					font-weight: 100;
 					text-transform: uppercase;
 
@@ -128,73 +129,78 @@ body {
 			}
 		}
 
-		// Блок авторизации
-		.Page-Auth {
-			position: relative;
-			padding: 0 $size-s;
-			width: 15%;
-			& > .Button {
-				margin-top: 4px;
-				width: 100%;
-				font-size: 12px;
-				padding: $size-xs 0;
-			}
 
-			.Sign-In-UI ,
-			.Sign-Up-UI {
-				position: absolute;
-				padding: $size;
-				background-color: white;
-				top: 46px;
-				right: 0;
-				width: 400px;
-				font-size: $Font-Size-Small;
-				border-top: 4px solid $clr-main;
-				z-index: 10;
-				@include Round(all);
-				@extend ._Soft_Shadow;
-				@extend ._Unselectable;
-				form {
-					h4 {
-						padding-bottom: $size-s;
-						margin-bottom: $size;
-						font-size: $Font-Size-Huge;
-						border-bottom: 1px dashed $clr-grey;
-					}
-				}
+	}
+}
+
+// Блок авторизации
+.Page-Auth {
+	position: relative;
+	width: 100%;
+	margin-bottom: $size;
+	& > .Button {
+		margin-top: 4px;
+		float: left;
+		width: 47.5%;
+		font-size: 12px;
+		padding: $size-xs 0;
+		margin-left: 5%;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	.Sign-In-UI ,
+	.Sign-Up-UI {
+		position: absolute;
+		padding: $size;
+		background-color: white;
+		top: 46px;
+		right: 0;
+		width: 400px;
+		font-size: $Font-Size-Small;
+		border-top: 4px solid $clr-main;
+		z-index: 10;
+		@include Round(all);
+		@extend ._Soft_Shadow;
+		@extend ._Unselectable;
+		form {
+			h4 {
+				padding-bottom: $size-s;
+				margin-bottom: $size;
+				font-size: $Font-Size-Huge;
+				border-bottom: 1px dashed $clr-grey;
 			}
 		}
 	}
 }
-
 // Меню навигации по сайту
 .Page-Navigation {
 	display: inline-block;
-	width: 50%;
+	width: 100%;
 	text-align: right;
 
 	ul {
-		@extend .Inline;
 		@extend .No-Bullets;
 		@extend ._Clearfix;
 		li {
-			margin-left: $size-n;
-
+			display: block;
+			width: 100%;
 			& > a {
 				display: block;
-				padding: $size-l 0 $size-s;
-
+				padding: $size-s 0;
+				border-top: 1px solid $clr-grey-light;
 				border-bottom: 3px solid transparent;
 
-				font-size: $Font-Size-Default;
+				font-size: $Font-Size-Large;
 				color: #000;
+				text-align: left;
 				text-transform: uppercase;
-
-				&:hover,
-				&.Link-Active {
-					border-color: $clr-main;
-					color: $clr-main;
+				&.Link-Active ,
+				&:hover       {
+					background-color: $clr-grey-lighter;
 				}
+
 			}
 			&:first-child {
 				margin-left: 0;
@@ -205,46 +211,26 @@ body {
 
 //
 #Page-Slider {
-	clear: both;
-	overflow: hidden;
-	margin-bottom: 50px;
-	height: 250px;
-	background-image: url(../../../../img/techonline/banner-background.jpg);
-	background-position: center 0;
-	background-repeat: repeat;
-	background-attachment: fixed;
-	//background: linear-gradient(to top, $clr-main-light, $clr-main);
-	box-shadow: 0 0 20px rgba(0, 0, 0, .4) inset;
+	display: none;
 	@include Animation(SlideDown,.5s);
 	@extend ._Unselectable;
-
+}
 	.Slider-Inner {
-		position: relative;
-		@extend ._Clearfix;
-		@extend ._Section-Inner;
-		@extend ._Centered;
-
+		 @extend ._Clearfix;
+		 @extend ._Section-Inner;
+		 @extend ._Centered;
+	}
 		#Truck {
-			width: 360px;
-			top: 0;
-			position: absolute;
 			@include Animation(SlideUp, 1s);
 		}
 		#Slider-Links {
-			position: absolute;
-			top: 50px;
-			left: 400px;
-			opacity: 1;
 			@include Animation(FadeIn,1.5s);
-			a {
-				margin-bottom: 10px;
-
-				display: block;
-			}
 		}
-	}
+.Autocomplete-Categories {
+	width: 100%;
+	padding: $size-s $size;
+	border: 1px solid;
 }
-
 // Хлебные крошки
 .Breadcrumbs {
 	padding: 0!important;
@@ -502,6 +488,10 @@ footer[role='contentinfo'] {
 }
 
 .Category-List {
+	ul > li {
+		width: 50%;
+		float: left;
+	}
 	@include Animation(FadeIn,1s,0.3s);
 }
 
@@ -770,57 +760,56 @@ ul.Tag-List {
 
 .List-Filter {
 	@extend .No-Bullets;
-
-	li.List-Filter-Subheader {
-		background-color: $clr-grey-light;
-		@extend ._Clearfix;
-		div {
-			text-align: center;
-			width: 15%;
-			float: left;
-			span {
-				padding: $size-xs $size-xs 2px;
-				display: block;
-				vertical-align: middle;
-				text-shadow: 1px 1px 1px white;
-				font-weight: bold;
-				color: $clr-grey-darker;
-				font-size: 14px;
-				cursor: pointer;
-			}
-			span:hover {
-				color: $clr-main;
-			}
+}
+li.List-Filter-Subheader {
+	background-color: $clr-grey-light;
+	@extend ._Clearfix;
+	div {
+		text-align: center;
+		width: 15%;
+		float: left;
+		span {
+			padding: $size-xs $size-xs 2px;
+			display: block;
+			vertical-align: middle;
+			text-shadow: 1px 1px 1px white;
+			font-weight: bold;
+			color: $clr-grey-darker;
+			font-size: 14px;
+			cursor: pointer;
 		}
-
-		a {
-			font-size: 1em;
-			font-weight: 100;
-			width: 85%;
-			float: right;
+		span:hover {
+			color: $clr-main;
 		}
 	}
 
-	li.List-Filter-Subcategory {
-		ul {
-			@extend .No-Bullets;
-			li {
-				border-top: 1px white solid;
-				a {
-					color: black;
-					width: 100%;
-					background-color: $clr-grey-lighter;
-					display: block;
-					padding: $size-s;
-					font-size: .9em;
-					&:hover {
-						background-color: $clr-grey-light;
-					}
-				}
+	a {
+		font-size: 1em;
+		font-weight: 100;
+		width: 85%;
+		float: right;
+	}
+}
 
-				&:first-child {
-					border-top: 0;
+li.List-Filter-Subcategory {
+	ul {
+		@extend .No-Bullets;
+		li {
+			border-top: 1px white solid;
+			a {
+				color: black;
+				width: 100%;
+				background-color: $clr-grey-lighter;
+				display: block;
+				padding: $size-s;
+				font-size: .9em;
+				&:hover {
+					background-color: $clr-grey-light;
 				}
+			}
+
+			&:first-child {
+				border-top: 0;
 			}
 		}
 	}
@@ -851,6 +840,63 @@ ul.Tag-List {
 	}
 }
 
+.Filter.Accordion {
+	margin-top: $size;
+	@extend ._No-Bullets;
+	.Filter-Subheader {
+		border-top: 1px solid white;
+		@extend ._Clearfix;
+		& > div {
+			float: left;
+			width: 10%;
+			text-align: center;
+			background-color: $clr-grey-dark;
+			span {
+				color: white;
+				display: block;
+				width: 100%;
+				padding: $size-s 0;
+				line-height: $line-height;
+				background-color: $clr-grey-darker;
+				font-size: 16px;
+				font-weight: bold;
+				cursor: pointer;
+				&:hover {
+					color: $clr-main;
+				}
+			}
+		}
+		& > a {
+			float: right;
+			width: 90%;
+			color: white;
+			background-color: $clr-main;
+			line-height: $line-height;
+			font-size: 16px;
+			display: block;
+			padding: $size-s $size-l;
+		}
+	}
+	.Filter-Subcategory {
+		background: $clr-grey-lighter;
+		ul {
+			@extend ._No-Bullets;
+			li {
+				border-top: 1px solid white;
+				a {
+					display: block;
+					padding: $size-xs $size-l;
+					color: black;
+					&:hover {
+						background-color: $clr-grey-light;
+					}
+				}
+			}
+		}
+	}
+}
+
+
 @include Keyframes(FadeIn) {
 	from {
 		@include Opacity(0);
@@ -878,52 +924,5 @@ ul.Tag-List {
 	}
 }
 
-
-@media all and (max-width: 1024px) {
-	* {
-		border-radius: 0!important;
-	}
-	.Node {
-		padding: 15px;
-	}
-	.Page-Navigation > ul > li > a {
-		font-size: 12px;
-	}
-	.Section-Header	,
-	.Section-Subheader {
-		margin-left: -15px;
-		border-radius: 0;
-	}
-	.Snippet-Item header {
-		margin-bottom: 10px!important;
-	}
-	.Item-Title {
-		max-width: 100%!important;
-	}
-	.Item-Gallery {
-		padding-right: 0!important;
-		width: 100%!important;
-	}
-	.Item-Gallery {
-		.Item-Main-Photo {
-			width: 100%!important;
-			margin-bottom: 10px!important;
-		}
-	}
-	.Item-Content {
-		margin-top: $size;
-		width: 100%!important;
-	}
-
-	.Item-Values {
-		width: 100%!important;
-		margin-top: 15px;
-		margin-right: 0!important;
-	}
-	._Section-Inner {
-		width: 95%!important;
-	}
-	._Fly-Out {
-		margin-left: -15px;
-	}
-}
+// Подключение файла Media Queries
+@import 'media';

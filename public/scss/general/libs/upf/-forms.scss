@@ -209,20 +209,33 @@ input[type='submit'] {
 
 dl.Tabs {
 	@extend ._Clearfix;
+	dt.Wide {
+		width: 40%;
+	}
 	dt {
+		display: table;
+		border-top: 2px solid $clr-main;
+		width: 30%;
 		float: left;
+		min-height: 65px;
 		position: relative;
-		height: 50px;
+		padding: $size-s 0;
 		cursor: pointer;
-		margin-right: 10px;
-		padding: 10px;
-		background: $clr-grey-darker;
-		color: white;
-		@include Round(all,$Control-Border-Radius);
-		@include Transition(border, 0.2s);
-
+		background: $clr-grey-lighter;
+		color: black;
+		text-align: center;
+		@include Transition(#{background-color, color}, 0.5s);
+		& > span {
+			vertical-align: middle;
+			display: table-cell;
+		}
+		&:hover {
+			color: white;
+			background-color: $clr-grey-darker;
+		}
 		&.Active {
-			background: $clr-main;
+			color: white;
+			background: $clr-main!important;
 		}
 		&.Disabled {
 			color: $clr-grey-dark;
@@ -231,15 +244,11 @@ dl.Tabs {
 				background: $clr-grey-darker;
 			}
 		}
-
-		&:hover {
-			background: lighten($clr-grey-darker,5%);
-		}
 	}
 	dd {
 		display: none;
 		float: right;
-		margin: 50px 0 0 -100%;
+		margin: 60px 0 0 -100%;
 		position: relative;
 		width: 100%;
 		z-index: 2;

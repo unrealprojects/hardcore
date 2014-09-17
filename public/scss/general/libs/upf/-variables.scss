@@ -1,6 +1,6 @@
 $Screen-Size-Huge:		2560px;
-$Screen-Size-Large:		1920px;
-$Screen-Size-Default:	1366px;
+$Screen-Size-Large:		1900px;
+$Screen-Size-Default:	1260px;
 $Screen-Size-Small:		1024px;
 $Screen-Size-Tiny:		768px;
 
@@ -99,7 +99,21 @@ $footer-height: 				100px;			// Высота футера
 
 $line-height: 					24px;			// Стандартная высота строки
 $selection-color: 				$clr-grey-dark;
-$section-width: 1000px;
+
+// Таблица размеров нод
+$Section-Width-Tiny: 			90%;
+$Section-Width-Small: 			970px;
+$Section-Width-Default: 		$Section-Width-Small + 130px;
+$Section-Width-Large:			$Section-Width-Default + 100px;
+$Section-Width-Huge:			$Section-Width-Large + 100px;
+
+
+// Стилевые ограничения для разных устройств
+
+// tiny, small, default, huge, false
+$Enable-Fly-Out:				small;
+$Enable-Grid:					tiny;
+
 $grid-spacing: 5%;
 $message-br-width: 300px;
 

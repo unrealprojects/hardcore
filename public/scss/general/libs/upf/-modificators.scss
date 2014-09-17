@@ -30,7 +30,19 @@
 }
 // Устанавливает секции фиксированную ширину, согласно файлу настроек
 ._Section-Inner {
-	width: 			$section-width!important;
+	width: 			$Section-Width-Tiny;
+	@media all and (min-width: $Screen-Size-Small) {
+		width:		$Section-Width-Small;
+	}
+	@media all and (min-width: $Screen-Size-Default) {
+		width:		$Section-Width-Default;
+	}
+	@media all and (min-width: $Screen-Size-Large) {
+		width:		$Section-Width-Large;
+	}
+	@media all and (min-width: $Screen-Size-Huge) {
+		width:		$Section-Width-Huge;
+	}
 }
 
 // Отбивает контент вправо от иконки
@@ -78,9 +90,32 @@
 ._Soft_Shadow {
 	box-shadow: 			0 0 50px rgba(0,0,0,0.15);
 }
-
 ._Fly-Out {
-	margin-left: 			-($size-xl);
+	@if ( $Enable-Fly-Out == tiny ) {
+		@media all and (min-width: $Screen-Size-Tiny) {
+			margin-left: 		-($size-xl);
+		}
+	}
+	@else if ( $Enable-Fly-Out == small ) {
+		@media all and (min-width: $Screen-Size-Small) {
+			margin-left: 		-($size-xl);
+		}
+	}
+	@else if ( $Enable-Fly-Out == default ) {
+		@media all and (min-width: $Screen-Size-Default) {
+			margin-left: 		-($size-xl);
+		}
+	}
+	@else if ( $Enable-Fly-Out == large ) {
+		@media all and (min-width: $Screen-Size-Large) {
+			margin-left: 		-($size-xl);
+		}
+	}
+	@else if ( $Enable-Fly-Out == huge ) {
+		@media all and (min-width: $Screen-Size-Huge) {
+			margin-left: 		-($size-xl);
+		}
+	}
 }
 ._Button {
 	padding: 				$size-n $size;
@@ -121,4 +156,11 @@
 	-ms-user-select: 		none;
 	-o-user-select: 		none;
 	user-select: 			none;
+}
+
+._Smart-Brake {
+	display: block;
+	@media all and (min-width: $Screen-Size-Tiny) {
+		display: inline;
+	}
 }

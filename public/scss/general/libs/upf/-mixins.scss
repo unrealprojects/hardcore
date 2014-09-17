@@ -69,3 +69,35 @@
 		border-radius: $size-l;
 	}
 }
+// Позволяет назначать динамические (от размера экрана) размеры шрифта
+@mixin Font-Size($FS-XS, $FS-S, $FS-M, $FS-L) {
+	font-size: $FS-M;
+	@media all and (max-width: 640px) {
+		font-size: $FS-XS;
+	}
+	@media all and (max-width: 1024px) and (min-width: 641px)  {
+		font-size: $FS-S;
+	}
+	@media all and (max-width: 1280px) and (min-width: 1025px) {
+		font-size: $FS-M;
+	}
+	@media all and (max-width: 1920px) and (min-width: 1281px) {
+		font-size: $FS-L;
+	}
+}
+
+@mixin Display($D-XS,$D-S,$D-M,$D-L) {
+	display: $D-M;
+	@media all and (max-width: 640px) {
+		display: $D-XS;
+	}
+	@media all and (max-width: 1024px) and (min-width: 641px)  {
+		display: $D-S;
+	}
+	@media all and (max-width: 1280px) and (min-width: 1025px) {
+		display: $D-M;
+	}
+	@media all and (max-width: 1920px) and (min-width: 1281px) {
+		display: $D-L;
+	}
+}

@@ -1,90 +1,121 @@
-// UPF Grid Module
-// v.3
+// UPF Grid Module v.3
 
+// CHANGELOG:
+// v.1	Base features
+// v.2	Split/Merge
+// v.3 	Media Queries
+
+// Grid row. Nothing to see here
 .Row {
 	display: block;
 	@extend ._Clearfix;
 
 }
-.Row.Split > * {
-	margin-left: $Grid-Gutter/2;
-	margin-right: $Grid-Gutter/2;
-}
-.One	,
-.Two	,
-.Three	,
-.Four	,
-.Five	,
-.Six	,
-.Seven	,
-.Eight	,
-.Nine	,
-.Ten	,
-.Eleven	,
-.Twelve {
-	float: left;
+ul.Row > li {
 	@extend ._No-Bullets;
+}
 
-	&.End {
+@mixin IncludeGrid {
+
+	// Rows in Splitted grid must have gutter from both sides.
+	.Row.Split > * {
+		margin-left: $Grid-Gutter/2;
+		margin-right: $Grid-Gutter/2;
+	}
+
+	// Makes grid nodes inline
+	.Grid {
+		float: left;
+	}
+
+	// End of Grid row. Pushing grid node to right
+	Grid.End {
 		float: right;
 	}
-}
-.Row.Merge > .One 	 {width:	$Grid-Split-One-Width;		}
-.Row.Merge > .Two 	 {width:	$Grid-Split-One-Width * 2;	}
-.Row.Merge > .Three  {width:	$Grid-Split-One-Width * 3;	}
-.Row.Merge > .Four   {width:	$Grid-Split-One-Width * 4;	}
-.Row.Merge > .Five 	 {width:	$Grid-Split-One-Width * 5;	}
-.Row.Merge > .Six    {width:	$Grid-Split-One-Width * 6;	}
-.Row.Merge > .Seven  {width:	$Grid-Split-One-Width * 7;	}
-.Row.Merge > .Eight  {width:	$Grid-Split-One-Width * 8;	}
-.Row.Merge > .Nine 	 {width:	$Grid-Split-One-Width * 9;	}
-.Row.Merge > .Ten 	 {width:	$Grid-Split-One-Width * 10;	}
-.Row.Merge > .Eleven {width:	$Grid-Split-One-Width * 11;	}
-.Row.Merge > .Twelve {width:	$Grid-Split-One-Width * 12;	}
 
-.Row.Split > .One 	 {	width: $Grid-One-Width;		}
-.Row.Split > .Two 	 {	width: $Grid-Two-Width;		}
-.Row.Split > .Three  {	width: $Grid-Three-Width;	}
-.Row.Split > .Four 	 {	width: $Grid-Four-Width;	}
-.Row.Split > .Five 	 {	width: $Grid-Five-Width;	}
-.Row.Split > .Six 	 {	width: $Grid-Six-Width;		}
-.Row.Split > .Seven  {	width: $Grid-Seven-Width;	}
-.Row.Split > .Eight  {	width: $Grid-Eight-Width;	}
-.Row.Split > .Nine   {	width: $Grid-Nine-Width;	}
-.Row.Split > .Ten 	 {	width: $Grid-Ten-Width;		}
-.Row.Split > .Eleven {	width: $Grid-Eleven-Width;	}
-.Row.Split > .Twelve {	width: $Grid-Twelve-Width;	}
+	.Row.Merge > .One 	 {width:	$Grid-Split-One-Width;		}
+	.Row.Merge > .Two 	 {width:	$Grid-Split-One-Width * 2;	}
+	.Row.Merge > .Three  {width:	$Grid-Split-One-Width * 3;	}
+	.Row.Merge > .Four   {width:	$Grid-Split-One-Width * 4;	}
+	.Row.Merge > .Five 	 {width:	$Grid-Split-One-Width * 5;	}
+	.Row.Merge > .Six    {width:	$Grid-Split-One-Width * 6;	}
+	.Row.Merge > .Seven  {width:	$Grid-Split-One-Width * 7;	}
+	.Row.Merge > .Eight  {width:	$Grid-Split-One-Width * 8;	}
+	.Row.Merge > .Nine 	 {width:	$Grid-Split-One-Width * 9;	}
+	.Row.Merge > .Ten 	 {width:	$Grid-Split-One-Width * 10;	}
+	.Row.Merge > .Eleven {width:	$Grid-Split-One-Width * 11;	}
+	.Row.Merge > .Twelve {width:	$Grid-Split-One-Width * 12;	}
 
-.Push-One {
-	margin-left: $Grid-Gutter + ($Grid-One-Width + $Grid-Gutter);
+	.Row.Split > .One 	 {	width: $Grid-One-Width;		}
+	.Row.Split > .Two 	 {	width: $Grid-Two-Width;		}
+	.Row.Split > .Three  {	width: $Grid-Three-Width;	}
+	.Row.Split > .Four 	 {	width: $Grid-Four-Width;	}
+	.Row.Split > .Five 	 {	width: $Grid-Five-Width;	}
+	.Row.Split > .Six 	 {	width: $Grid-Six-Width;		}
+	.Row.Split > .Seven  {	width: $Grid-Seven-Width;	}
+	.Row.Split > .Eight  {	width: $Grid-Eight-Width;	}
+	.Row.Split > .Nine   {	width: $Grid-Nine-Width;	}
+	.Row.Split > .Ten 	 {	width: $Grid-Ten-Width;		}
+	.Row.Split > .Eleven {	width: $Grid-Eleven-Width;	}
+	.Row.Split > .Twelve {	width: $Grid-Twelve-Width;	}
+
+	.Push-One {
+		margin-left: $Grid-Gutter + ($Grid-One-Width + $Grid-Gutter);
+	}
+	.Push-Two {
+		margin-left: $Grid-Gutter + ($Grid-Two-Width + $Grid-Gutter);
+	}
+	.Push-Three {
+		margin-left: $Grid-Gutter + ($Grid-Three-Width + $Grid-Gutter);
+	}
+	.Push-Four {
+		margin-left: $Grid-Gutter + ($Grid-Four-Width + $Grid-Gutter);
+	}
+	.Push-Five {
+		margin-left: $Grid-Gutter + ($Grid-Five-Width + $Grid-Gutter);
+	}
+	.Push-Six {
+		margin-left: $Grid-Gutter + ($Grid-Six-Width + $Grid-Gutter);
+	}
+	.Push-Seven {
+		margin-left: $Grid-Gutter + ($Grid-Seven-Width + $Grid-Gutter);
+	}
+	.Push-Eight {
+		margin-left: $Grid-Gutter + ($Grid-Eight-Width + $Grid-Gutter);
+	}
+	.Push-Nine {
+		margin-left: $Grid-Gutter + ($Grid-Nine-Width + $Grid-Gutter);
+	}
+	.Push-Ten {
+		margin-left: $Grid-Gutter + ($Grid-Ten-Width + $Grid-Gutter);
+	}
+	.Push-Eleven {
+		margin-left: $Grid-Gutter + ($Grid-Eleven-Width + $Grid-Gutter);
+	}
 }
-.Push-Two {
-	margin-left: $Grid-Gutter + ($Grid-Two-Width + $Grid-Gutter);
+
+@if ( $Enable-Grid == tiny ) {
+	@media all and (min-width: $Screen-Size-Tiny) {
+		@include IncludeGrid;
+	}
 }
-.Push-Three {
-	margin-left: $Grid-Gutter + ($Grid-Three-Width + $Grid-Gutter);
+@if ( $Enable-Grid == small ) {
+	@media all and (min-width: $Screen-Size-Small) {
+		@include IncludeGrid;
+	}
 }
-.Push-Four {
-	margin-left: $Grid-Gutter + ($Grid-Four-Width + $Grid-Gutter);
+@if ( $Enable-Grid == default ) {
+	@media all and (min-width: $Screen-Size-Default) {
+		@include IncludeGrid;
+	}
 }
-.Push-Five {
-	margin-left: $Grid-Gutter + ($Grid-Five-Width + $Grid-Gutter);
+@if ( $Enable-Grid == large ) {
+	@media all and (min-width: $Screen-Size-Large) {
+		@include IncludeGrid;
+	}
 }
-.Push-Six {
-	margin-left: $Grid-Gutter + ($Grid-Six-Width + $Grid-Gutter);
-}
-.Push-Seven {
-	margin-left: $Grid-Gutter + ($Grid-Seven-Width + $Grid-Gutter);
-}
-.Push-Eight {
-	margin-left: $Grid-Gutter + ($Grid-Eight-Width + $Grid-Gutter);
-}
-.Push-Nine {
-	margin-left: $Grid-Gutter + ($Grid-Nine-Width + $Grid-Gutter);
-}
-.Push-Ten {
-	margin-left: $Grid-Gutter + ($Grid-Ten-Width + $Grid-Gutter);
-}
-.Push-Eleven {
-	margin-left: $Grid-Gutter + ($Grid-Eleven-Width + $Grid-Gutter);
+@if ( $Enable-Grid == huge ) {
+	@media all and (min-width: $Screen-Size-Huge) {
+		@include IncludeGrid;
+	}
 }

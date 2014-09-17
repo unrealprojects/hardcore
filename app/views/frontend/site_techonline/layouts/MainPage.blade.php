@@ -12,32 +12,34 @@
 
 <!-- ФИЛЬТР -->
 
-<div class="Node Tabs Filter">
+<div class="Node Filter">
 
     <h3 class="Section-Header">Поиск стройтехники</h3>
     <dl class="Tabs">
-        <dt class="Active">Выбор региона</dt>
+        <dt class="Active"><span>Выбор региона</span></dt>
         <dd class="Active">
             <div>
                 <!-- ФИЛЬТР::ТАБ 1::РЕГИОНЫ-->
                 <ul class="Filter-Regions Row Merge">
                     @foreach($content['regions'] as $region)
-                    <li class="Three"><a href="/tech/?region=$region['alias']" alt="{{$region['name']}}">{{$region['name']}}</a>
+                    <li class="Grid Three"><a href="/tech/?region=$region['alias']" alt="{{$region['name']}}">{{$region['name']}}</a>
                     </li>
                     @endforeach
                 </ul>
             </div>
         </dd>
 
-        <dt>Выбор категории</dt>
+        <dt><span>Выбор категории</span></dt>
         <dd>
             <div>
-                <input class="Autocomplete-Categories" placeholder="Введите название категории"/>
+                <div class="Control-Group">
+                    <input class="Autocomplete-Categories" placeholder="Поиск техники ..."/>
+                </div>
                 <ul class="Filter Accordion">
                     @foreach($content['categories_with_popular'] as $category)
                     <li class="Filter-Subheader Accordion-Subheader">
                         @if($category['subCategories'])
-                        <img class='Accordion-Switch' src="/img/techonline/icon-dropdown.png" alt=""/>
+                        <div class="Accordion-Switch"><span>&or;</span></div>
                         @endif
                         <a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a>
                     </li>
@@ -56,7 +58,7 @@
             </div>
         </dd>
 
-        <dt>Дополнительные параметры</dt>
+        <dt class="Wide"><span>Дополнительные параметры</span></dt>
         <dd>
             <div>
                 <form class="Form-Vertical" action="">
@@ -87,7 +89,7 @@
     <h3 class="Section-Header">Каталог стройтехники</h3>
     <ul class="Row Merge List-Categories Icons">
         @foreach($content['categories'] as $category)
-            <li class="Three"><img src="{{$category['logo']}}"><a href="/catalog/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
+            <li class="Grid Three"><img src="{{$category['logo']}}"><a href="/catalog/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
         @endforeach
     </ul>
 
@@ -96,21 +98,21 @@
 <section class="Node Row Split Rent-List">
 
     <!-- АРЕНДА СТРОЙТЕХНИКИ::КАТЕГОРИИ -->
-    <div class="Seven">
+    <div class="Grid Seven">
         <h4 class="Header-Column">Аренда стройтехники</h4>
         <ul class="List-Categories Row Merge">
             @foreach($content['categories'] as $category)
-            <li class="Six""><a href="/rent/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
+            <li class="Grid Six""><a href="/rent/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
             @endforeach
         </ul>
     </div>
 
     <!-- АРЕНДА СТРОЙТЕХНИКИ::БРЕНДЫ -->
-    <div class="Five">
+    <div class="Grid Five">
         <h4 class="Header-Column">Производители</h4>
         <ul class="List-Categories Row Merge">
             @foreach($content['brands'] as $brand)
-            <li class="Row Merge Six">
+            <li class="Row Merge Grid Six">
                 <a href="/rent/?brand=$brand['alias']" alt="{{$brand['name']}}">
                     {{$brand['name']}}
                 </a>
@@ -127,7 +129,7 @@
     <h4 class="Section-Header">Лучшие арендодатели</h4>
     <ul class="Seller-List Row Split">
         @foreach($content['sellers'] as $seller)
-        <li class="Seller-Item Six">
+        <li class="Seller-Item Grid Six">
             <header>
                 <h5 class="Title">
                     <a href="/sellers/{{$seller['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$seller['name']}}</a>
@@ -154,7 +156,7 @@
     <h4 class="Section-Header">Новости</h4>
     <ul class="News-List Row Split">
         @foreach($content['news'] as $new)
-        <li class="News-Item Six">
+        <li class="News-Item Grid Six">
             <header>
                 <h5 class="Title">
                     <a href="/news/{{$new['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$new['name']}}</a>

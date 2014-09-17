@@ -1,0 +1,112 @@
+@media all and (min-width: $Screen-Size-Tiny) {
+	.Node {
+		@include 			Round(all);
+	}
+
+	.Site-Logo div h2 {
+		font-size: 22px;
+	}
+}
+@media all and (min-width: $Screen-Size-Small) {
+	.Section-Header,
+	.Section-Subheader {
+		display: inline-block;
+		@include Round(diagonal);
+	}
+	.Page-Header {
+		height: 80px;
+	}
+	.Page-Header-Inner {
+		width: $Section-Width-Small;
+	}
+		.Site-Logo {
+			display: inline-block;
+			width: 35%!important;
+		}
+		.Page-Navigation {
+			float: left;
+			width: 50%;
+			ul {
+				li {
+					width: auto;
+					display: inline-block;
+					float: left;
+					margin-left: $size-n;
+					a {
+						padding: $size-l 0 $size-s;
+						border-top: 0;
+						&:hover,
+						&.Link-Active {
+							background-color: transparent;
+							border-color: $clr-main;
+							color: $clr-main;
+						}
+					}
+				}
+			}
+		}
+		.Page-Auth {
+			float: left;
+			width: 15%;
+			padding: 0 $size-s;
+			margin: 0;
+			& > .Button {
+				float: none;
+				width: 100%;
+				margin-left: 0;
+			}
+		}
+	#Page-Slider {
+		display: block;
+		clear: both;
+		overflow: hidden;
+		margin-bottom: 50px;
+		height: 250px;
+		background-image: url(../../../../img/techonline/banner-background.jpg);
+		background-position: center 0;
+		background-repeat: repeat;
+		background-attachment: fixed;
+		box-shadow: 0 0 20px rgba(0, 0, 0, .4) inset;
+
+		.Slider-Inner {
+			position: relative;
+
+			#Truck {
+				width: 360px;
+				top: 0;
+				position: absolute;
+			}
+			#Slider-Links {
+				position: absolute;
+				top: 50px;
+				left: 400px;
+				opacity: 1;
+				a {
+					margin-bottom: 10px;
+
+					display: block;
+				}
+			}
+		}
+	}
+}
+@media all and (min-width: $Screen-Size-Default) {
+	.Node {
+		padding: $size-l;
+	}
+	.Section-Header {
+		font-size: 22px;
+	}
+	.Page-Header-Inner {
+		width: $Section-Width-Default;
+	}
+
+}
+@media all and (min-width: $Screen-Size-Large) {
+
+}
+@media all and (min-width: $Screen-Size-Huge) {
+	.Node {
+		padding: $size-xl;
+	}
+}

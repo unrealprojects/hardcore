@@ -14,7 +14,7 @@
             </h5>
         </header>
 
-        <div class="Item-Gallery Five">
+        <div class="Item-Gallery Grid Five">
             @foreach(json_decode($content['item']['photos'],true) as $i=>$photo)
             @if($i==1)
             <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image">
@@ -35,7 +35,7 @@
             </div>
        </div>
 
-        <div class="Item-Content Seven">
+        <div class="Item-Content Grid Seven">
             <p itemprop="description">{{$content['item']['description']}}</p>
 
             <!-- Параметры товара -->

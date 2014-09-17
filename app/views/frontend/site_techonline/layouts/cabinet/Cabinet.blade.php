@@ -3,7 +3,7 @@
 @section('main')
 <!-- Личный Кабинет -->
 <div class="Node Row Split" xmlns="http://www.w3.org/1999/html">
-    <aside class="Three">
+    <aside class="Grid Three">
         <h4 class="Section-Header">Личный Кабинет</h4>
 
         <nav class="Menu-List">
@@ -15,7 +15,7 @@
         </nav>
     </aside>
 
-    <form class="Form-Horizontal Nine">
+    <form class="Form-Horizontal Grid Nine">
         <h4 class="Header-Column">Редактировать данные</h4>
 
         <div class="Control-Group">
@@ -110,7 +110,7 @@
                         <li><h6>Цена:</h6>{{$list_elem['rate']}}</li>
                     </ul>
             </header>
-            <div class="Item-Gallery Four">
+            <div class="Item-Gallery Grid Four">
                 @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                 @if($i==1)
                 <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
@@ -127,7 +127,7 @@
                 </ul>
             </div>
 
-            <div class="Item-Content Eight">
+            <div class="Item-Content Grid Eight">
                 {{$list_elem['description']}}
 
                 <!-- Параметры товара -->

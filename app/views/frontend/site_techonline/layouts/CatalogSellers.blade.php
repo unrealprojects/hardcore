@@ -7,7 +7,7 @@
     <h3 class="Section-Header">Каталог строительной техники</h3>
     <div class="Row Split">
         <!-- Фильтрация :: Общий блок -->
-        <aside class="Sidebar-Filter Four">
+        <aside class="Sidebar-Filter Grid Four">
             <!-- Фильтрация :: По регионам -->
             <h4>Регионы</h4>
             <ul class="List-Filter">
@@ -28,7 +28,7 @@
                             </h4>
                     </header>
 
-                    <div class="Item-Gallery Five">
+                    <div class="Item-Gallery Grid Five">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                         @if($i==1)
                         <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
@@ -45,7 +45,7 @@
                         </ul>
                     </div>
 
-                    <div class="Item-Content Seven">
+                    <div class="Item-Content Grid Seven">
                         {{$list_elem['description']}}
                         <h6>Контактные данные</h6>
                         <table>

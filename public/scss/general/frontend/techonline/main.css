@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url(normalize.css);
-._Centered, .Node, .Page-Header .Page-Header-Inner, #Page-Slider .Slider-Inner, footer[role='contentinfo'] > div {
+._Centered, .Node, .Page-Header .Page-Header-Inner, .Slider-Inner, footer[role='contentinfo'] > div {
   margin-left: auto;
   margin-right: auto; }
 
@@ -14,8 +14,20 @@
   ._Vertical-Spacing > *:first-child, .Comment .Comment-List > *:first-child, .Snippet-List > *:first-child {
     margin-top: 0 !important; }
 
-._Section-Inner, .Node, .Page-Header .Page-Header-Inner, #Page-Slider .Slider-Inner, footer[role='contentinfo'] > div {
-  width: 1000px !important; }
+._Section-Inner, .Node, .Page-Header .Page-Header-Inner, .Slider-Inner, footer[role='contentinfo'] > div {
+  width: 90%; }
+  @media all and (min-width: 1024px) {
+    ._Section-Inner, .Node, .Page-Header .Page-Header-Inner, .Slider-Inner, footer[role='contentinfo'] > div {
+      width: 970px; } }
+  @media all and (min-width: 1260px) {
+    ._Section-Inner, .Node, .Page-Header .Page-Header-Inner, .Slider-Inner, footer[role='contentinfo'] > div {
+      width: 1100px; } }
+  @media all and (min-width: 1900px) {
+    ._Section-Inner, .Node, .Page-Header .Page-Header-Inner, .Slider-Inner, footer[role='contentinfo'] > div {
+      width: 1200px; } }
+  @media all and (min-width: 2560px) {
+    ._Section-Inner, .Node, .Page-Header .Page-Header-Inner, .Slider-Inner, footer[role='contentinfo'] > div {
+      width: 1300px; } }
 
 ._Icon-Spacing {
   margin-right: 20px; }
@@ -30,10 +42,10 @@
 ._Dev {
   outline: 1px red solid !important; }
 
-._Clearfix:before, ._Inline:before, .Page-Header .Page-Header-Inner:before, .Breadcrumbs .Breadcrumb-List:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Row:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Node:before, .Page-Header:before, .Page-Navigation ul:before, #Page-Slider .Slider-Inner:before, .Pagination:before, .List-Categories:before, .List-Categories li:before, .Comment .Comment-List li .Comment-List-Element-Content header:before, footer[role='contentinfo'] > div:before, .News-List li.News-Item header:before,
+._Clearfix:before, ._Inline:before, .Page-Header .Page-Header-Inner:before, .Breadcrumbs .Breadcrumb-List:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Row:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Node:before, .Page-Header:before, .Page-Navigation ul:before, .Slider-Inner:before, .Pagination:before, .List-Categories:before, .List-Categories li:before, .Comment .Comment-List li .Comment-List-Element-Content header:before, footer[role='contentinfo'] > div:before, .News-List li.News-Item header:before,
 .News-List li.Seller-Item header:before,
 .Seller-List li.News-Item header:before,
-.Seller-List li.Seller-Item header:before, .Snippet-Item:before, .Snippet-Item header:before, .Snippet-Item header .Item-Title:before, .List-Filter li.List-Filter-Subheader:before,
+.Seller-List li.Seller-Item header:before, .Snippet-Item:before, .Snippet-Item header:before, .Snippet-Item header .Item-Title:before, li.List-Filter-Subheader:before, .Filter.Accordion .Filter-Subheader:before,
 ._Clearfix:after,
 ._Inline:after,
 .Page-Header .Page-Header-Inner:after,
@@ -50,7 +62,7 @@ dl.Tabs:after,
 .Node:after,
 .Page-Header:after,
 .Page-Navigation ul:after,
-#Page-Slider .Slider-Inner:after,
+.Slider-Inner:after,
 .Pagination:after,
 .List-Categories:after,
 .List-Categories li:after,
@@ -63,43 +75,31 @@ footer[role='contentinfo'] > div:after,
 .Snippet-Item:after,
 .Snippet-Item header:after,
 .Snippet-Item header .Item-Title:after,
-.List-Filter li.List-Filter-Subheader:after {
+li.List-Filter-Subheader:after,
+.Filter.Accordion .Filter-Subheader:after {
   content: " ";
   display: table; }
 
-._Clearfix:after, ._Inline:after, .Page-Header .Page-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Row:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Node:after, .Page-Header:after, .Page-Navigation ul:after, #Page-Slider .Slider-Inner:after, .Pagination:after, .List-Categories:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after, .News-List li.News-Item header:after,
+._Clearfix:after, ._Inline:after, .Page-Header .Page-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Row:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Node:after, .Page-Header:after, .Page-Navigation ul:after, .Slider-Inner:after, .Pagination:after, .List-Categories:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after, .News-List li.News-Item header:after,
 .News-List li.Seller-Item header:after,
 .Seller-List li.News-Item header:after,
-.Seller-List li.Seller-Item header:after, .Snippet-Item:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, .List-Filter li.List-Filter-Subheader:after {
+.Seller-List li.Seller-Item header:after, .Snippet-Item:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, li.List-Filter-Subheader:after, .Filter.Accordion .Filter-Subheader:after {
   clear: both; }
 
 ._Inline > *, .Page-Header .Page-Header-Inner > *, .Breadcrumbs .Breadcrumb-List > *, footer[role='contentinfo'] > div .Footer-Navigation ul > *, .Snippet-Item header .Item-Values > *, .Snippet-Item .Item-Gallery ul > *, ul.Tag-List > * {
   float: left; }
 
-._No-Bullets, .One,
-.Two,
-.Three,
-.Four,
-.Five,
-.Six,
-.Control-Group.Checkbox.Submit > label,
-.Control-Group.Checkbox.Submit > [type='submit'],
-.Seven,
-.Snippet-Item .Item-Content,
-.Eight,
-.Nine,
-.Ten,
-.Eleven,
-.Twelve, .Breadcrumbs .Breadcrumb-List, .Pagination, .Comment .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, ul.Tag-List, .Menu-List ul {
+._No-Bullets, ul.Row > li, .Breadcrumbs .Breadcrumb-List, .Pagination, .Comment .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, ul.Tag-List, .Menu-List ul, .Filter.Accordion, .Filter.Accordion .Filter-Subcategory ul {
   list-style: none; }
 
-._Soft_Shadow, .Page-Header, .Page-Header .Page-Header-Inner .Page-Auth .Sign-In-UI,
-.Page-Header .Page-Header-Inner .Page-Auth .Sign-Up-UI {
+._Soft_Shadow, .Page-Header, .Page-Auth .Sign-In-UI,
+.Page-Auth .Sign-Up-UI {
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.15); }
 
-._Fly-Out, .Section-Header,
-.Section-Subheader, .Pagination {
-  margin-left: -50px; }
+@media all and (min-width: 1024px) {
+  ._Fly-Out, .Section-Header,
+  .Section-Subheader, .Pagination {
+    margin-left: -50px; } }
 
 ._Button, input[type='submit'], button.Button,
 input.Button,
@@ -141,13 +141,19 @@ a.Button.Search {
   border-radius: 30px; }
 
 ._Unselectable, .Section-Header,
-.Section-Subheader, .Page-Header, .Page-Header .Page-Header-Inner .Page-Auth .Sign-In-UI,
-.Page-Header .Page-Header-Inner .Page-Auth .Sign-Up-UI, #Page-Slider, .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item:before {
+.Section-Subheader, .Page-Header, .Page-Auth .Sign-In-UI,
+.Page-Auth .Sign-Up-UI, #Page-Slider, .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item:before {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none; }
+
+._Smart-Brake {
+  display: block; }
+  @media all and (min-width: 768px) {
+    ._Smart-Brake {
+      display: inline; } }
 
 * {
   margin: 0;
@@ -176,148 +182,121 @@ iframe {
 .Row {
   display: block; }
 
-.Row.Split > * {
-  margin-left: 1%;
-  margin-right: 1%; }
+@media all and (min-width: 768px) {
+  .Row.Split > * {
+    margin-left: 1%;
+    margin-right: 1%; }
 
-.One,
-.Two,
-.Three,
-.Four,
-.Five,
-.Six,
-.Control-Group.Checkbox.Submit > label,
-.Control-Group.Checkbox.Submit > [type='submit'],
-.Seven,
-.Snippet-Item .Item-Content,
-.Eight,
-.Nine,
-.Ten,
-.Eleven,
-.Twelve {
-  float: left; }
-  .One.End,
-  .Two.End,
-  .Three.End,
-  .Four.End,
-  .Five.End,
-  .Six.End,
-  .Control-Group.Checkbox.Submit > label.End,
-  .Control-Group.Checkbox.Submit > .End[type='submit'],
-  .Seven.End,
-  .Snippet-Item .End.Item-Content,
-  .Eight.End,
-  .Nine.End,
-  .Ten.End,
-  .Eleven.End,
-  .Twelve.End {
+  .Grid {
+    float: left; }
+
+  Grid.End {
     float: right; }
 
-.Row.Merge > .One {
-  width: 8.33333%; }
+  .Row.Merge > .One {
+    width: 8.33333%; }
 
-.Row.Merge > .Two {
-  width: 16.66667%; }
+  .Row.Merge > .Two {
+    width: 16.66667%; }
 
-.Row.Merge > .Three {
-  width: 25%; }
+  .Row.Merge > .Three {
+    width: 25%; }
 
-.Row.Merge > .Four {
-  width: 33.33333%; }
+  .Row.Merge > .Four {
+    width: 33.33333%; }
 
-.Row.Merge > .Five {
-  width: 41.66667%; }
+  .Row.Merge > .Five {
+    width: 41.66667%; }
 
-.Row.Merge > .Six, .Control-Group.Checkbox.Submit.Row.Merge > label, .Control-Group.Checkbox.Submit.Row.Merge > [type='submit'] {
-  width: 50%; }
+  .Row.Merge > .Six, .Control-Group.Checkbox.Submit.Row.Merge > label, .Control-Group.Checkbox.Submit.Row.Merge > [type='submit'] {
+    width: 50%; }
 
-.Row.Merge > .Seven, .Snippet-Item .Row.Merge > .Item-Content {
-  width: 58.33333%; }
+  .Row.Merge > .Seven, .Snippet-Item .Row.Merge > .Item-Content {
+    width: 58.33333%; }
 
-.Row.Merge > .Eight {
-  width: 66.66667%; }
+  .Row.Merge > .Eight {
+    width: 66.66667%; }
 
-.Row.Merge > .Nine {
-  width: 75%; }
+  .Row.Merge > .Nine {
+    width: 75%; }
 
-.Row.Merge > .Ten {
-  width: 83.33333%; }
+  .Row.Merge > .Ten {
+    width: 83.33333%; }
 
-.Row.Merge > .Eleven {
-  width: 91.66667%; }
+  .Row.Merge > .Eleven {
+    width: 91.66667%; }
 
-.Row.Merge > .Twelve {
-  width: 100%; }
+  .Row.Merge > .Twelve {
+    width: 100%; }
 
-.Row.Split > .One {
-  width: 6.33333%; }
+  .Row.Split > .One {
+    width: 6.33333%; }
 
-.Row.Split > .Two {
-  width: 14.66667%; }
+  .Row.Split > .Two {
+    width: 14.66667%; }
 
-.Row.Split > .Three {
-  width: 23%; }
+  .Row.Split > .Three {
+    width: 23%; }
 
-.Row.Split > .Four {
-  width: 31.33333%; }
+  .Row.Split > .Four {
+    width: 31.33333%; }
 
-.Row.Split > .Five {
-  width: 39.66667%; }
+  .Row.Split > .Five {
+    width: 39.66667%; }
 
-.Row.Split > .Six, .Control-Group.Checkbox.Submit.Row.Split > label, .Control-Group.Checkbox.Submit.Row.Split > [type='submit'] {
-  width: 48%; }
+  .Row.Split > .Six, .Control-Group.Checkbox.Submit.Row.Split > label, .Control-Group.Checkbox.Submit.Row.Split > [type='submit'] {
+    width: 48%; }
 
-.Row.Split > .Seven, .Snippet-Item .Row.Split > .Item-Content {
-  width: 56.33333%; }
+  .Row.Split > .Seven, .Snippet-Item .Row.Split > .Item-Content {
+    width: 56.33333%; }
 
-.Row.Split > .Eight {
-  width: 64.66667%; }
+  .Row.Split > .Eight {
+    width: 64.66667%; }
 
-.Row.Split > .Nine {
-  width: 73%; }
+  .Row.Split > .Nine {
+    width: 73%; }
 
-.Row.Split > .Ten {
-  width: 81.33333%; }
+  .Row.Split > .Ten {
+    width: 81.33333%; }
 
-.Row.Split > .Eleven {
-  width: 89.66667%; }
+  .Row.Split > .Eleven {
+    width: 89.66667%; }
 
-.Row.Split > .Twelve {
-  width: 98%; }
+  .Row.Split > .Twelve {
+    width: 98%; }
 
-.Push-One {
-  margin-left: 10.33333%; }
+  .Push-One {
+    margin-left: 10.33333%; }
 
-.Push-Two {
-  margin-left: 18.66667%; }
+  .Push-Two {
+    margin-left: 18.66667%; }
 
-.Push-Three {
-  margin-left: 27%; }
+  .Push-Three {
+    margin-left: 27%; }
 
-.Push-Four {
-  margin-left: 35.33333%; }
+  .Push-Four {
+    margin-left: 35.33333%; }
 
-.Push-Five {
-  margin-left: 43.66667%; }
+  .Push-Five {
+    margin-left: 43.66667%; }
 
-.Push-Six {
-  margin-left: 52%; }
+  .Push-Six {
+    margin-left: 52%; }
 
-.Push-Seven {
-  margin-left: 60.33333%; }
+  .Push-Seven {
+    margin-left: 60.33333%; }
 
-.Push-Eight {
-  margin-left: 68.66667%; }
+  .Push-Eight {
+    margin-left: 68.66667%; }
 
-.Push-Nine {
-  margin-left: 77%; }
+  .Push-Nine {
+    margin-left: 77%; }
 
-.Push-Ten {
-  margin-left: 85.33333%; }
+  .Push-Ten {
+    margin-left: 85.33333%; }
 
-.Push-Eleven {
-  margin-left: 93.66667%; }
-
+  .Push-Eleven {
+    margin-left: 93.66667%; } }
 body {
   font-size: 1em;
   line-height: 1.45; }
@@ -387,10 +366,10 @@ code {
   border-right-color: transparent;
   right: 0; }
 
-.Inline > li, .Page-Navigation ul > li, .Pagination > li {
+.Inline > li, .Pagination > li {
   float: left; }
 
-.No-Bullets, .Page-Navigation ul, .List-Filter, .List-Filter li.List-Filter-Subcategory ul {
+.No-Bullets, .Page-Navigation ul, .List-Filter, li.List-Filter-Subcategory ul {
   list-style: none; }
 
 .Control-Group {
@@ -538,35 +517,44 @@ input[type='submit'] {
   margin: 0px;
   border: none !important; }
 
+dl.Tabs dt.Wide {
+  width: 40%; }
 dl.Tabs dt {
+  display: table;
+  border-top: 2px solid #ec6700;
+  width: 30%;
   float: left;
+  min-height: 65px;
   position: relative;
-  height: 50px;
+  padding: 10px 0;
   cursor: pointer;
-  margin-right: 10px;
-  padding: 10px;
-  background: #555555;
-  color: white;
-  border-radius: 5px;
-  -webkit-transition-property: border;
-  -moz-transition-property: border;
-  transition-property: border;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  transition-duration: 0.2s; }
+  background: #f1f1f1;
+  color: black;
+  text-align: center;
+  -webkit-transition-property: background-color, color;
+  -moz-transition-property: background-color, color;
+  transition-property: background-color, color;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  transition-duration: 0.5s; }
+  dl.Tabs dt > span {
+    vertical-align: middle;
+    display: table-cell; }
+  dl.Tabs dt:hover {
+    color: white;
+    background-color: #555555; }
   dl.Tabs dt.Active {
-    background: #ec6700; }
+    color: white;
+    background: #ec6700 !important; }
   dl.Tabs dt.Disabled {
     color: #999999;
     cursor: not-allowed; }
     dl.Tabs dt.Disabled:hover {
       background: #555555; }
-  dl.Tabs dt:hover {
-    background: #626262; }
 dl.Tabs dd {
   display: none;
   float: right;
-  margin: 50px 0 0 -100%;
+  margin: 60px 0 0 -100%;
   position: relative;
   width: 100%;
   z-index: 2; }
@@ -642,9 +630,9 @@ a.Button {
     background-image: url(/img/techonline/icon-info.png); }
 
 .Node {
-  padding: 30px;
+  padding: 15px;
   background-color: white;
-  border-radius: 10px; }
+  clear: both; }
 
 .Node > * {
   margin-top: 20px; }
@@ -686,6 +674,7 @@ body,
 
 body > #wrap {
   height: auto;
+  min-width: 360px;
   min-height: 100%;
   clear: both; }
   body > #wrap > #wrap-stop {
@@ -694,15 +683,27 @@ body > #wrap {
 body {
   background: #eee url(../../../../img/techonline/page-background3.png) repeat;
   font-family: 'Exo 2', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1.00em;
   line-height: 1.45;
+  font-size: 100%;
   -webkit-animation: FadeIn 0.6s;
   -moz-animation: FadeIn 0.6s;
   animation: FadeIn 0.6s; }
+  @media all and (max-width: 640px) {
+    body {
+      font-size: 85%; } }
+  @media all and (max-width: 1024px) and (min-width: 641px) {
+    body {
+      font-size: 90%; } }
+  @media all and (max-width: 1280px) and (min-width: 1025px) {
+    body {
+      font-size: 100%; } }
+  @media all and (max-width: 1920px) and (min-width: 1281px) {
+    body {
+      font-size: 110%; } }
 
 .Section-Header,
 .Section-Subheader {
-  display: inline-block;
+  display: block;
   clear: both;
   padding: 10px 15px;
   text-transform: uppercase;
@@ -710,8 +711,7 @@ body {
   background: linear-gradient(to right, #ec6700, #ff9441);
   color: #fff;
   font-weight: 100;
-  cursor: default;
-  border-radius: 0 10px; }
+  cursor: default; }
 
 .Header-Column {
   font-size: 1.5em;
@@ -720,27 +720,24 @@ body {
   border-bottom: 1px dashed #999999; }
 
 .Section-Header {
-  font-size: 22px; }
+  font-size: 16px; }
 
 .Section-Subheader {
   font-size: 1.125em; }
 
 .Page-Header {
   background: white;
-  border-bottom: 1px solid #e1e1e1;
-  height: 80px;
   -webkit-animation: FadeIn 1s;
   -moz-animation: FadeIn 1s;
   animation: FadeIn 1s; }
   .Page-Header .Page-Header-Inner {
-    width: 1000px;
-    height: 80px; }
+    width: 90%; }
     .Page-Header .Page-Header-Inner .Site-Logo {
+      display: block;
       position: relative;
-      width: 35%;
+      width: 100%;
       height: 80px;
-      overflow: hidden;
-      display: inline-block; }
+      overflow: hidden; }
       .Page-Header .Page-Header-Inner .Site-Logo div {
         width: 100%;
         position: absolute;
@@ -758,7 +755,7 @@ body {
         .Page-Header .Page-Header-Inner .Site-Logo div h2 {
           padding: 5px 0;
           color: #ec6700;
-          font-size: 1.5em;
+          font-size: 26px;
           font-weight: 100;
           text-transform: uppercase; }
           .Page-Header .Page-Header-Inner .Site-Logo div h2 small {
@@ -790,86 +787,80 @@ body {
         opacity: 1;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
         filter: alpha(opacity=100); }
-    .Page-Header .Page-Header-Inner .Page-Auth {
-      position: relative;
-      padding: 0 10px;
-      width: 15%; }
-      .Page-Header .Page-Header-Inner .Page-Auth > .Button {
-        margin-top: 4px;
-        width: 100%;
-        font-size: 12px;
-        padding: 5px 0; }
-      .Page-Header .Page-Header-Inner .Page-Auth .Sign-In-UI,
-      .Page-Header .Page-Header-Inner .Page-Auth .Sign-Up-UI {
-        position: absolute;
-        padding: 20px;
-        background-color: white;
-        top: 46px;
-        right: 0;
-        width: 400px;
-        font-size: 0.875em;
-        border-top: 4px solid #ec6700;
-        z-index: 10;
-        border-radius: 10px; }
-        .Page-Header .Page-Header-Inner .Page-Auth .Sign-In-UI form h4,
-        .Page-Header .Page-Header-Inner .Page-Auth .Sign-Up-UI form h4 {
-          padding-bottom: 10px;
-          margin-bottom: 20px;
-          font-size: 1.5em;
-          border-bottom: 1px dashed #cccccc; }
+
+.Page-Auth {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px; }
+  .Page-Auth > .Button {
+    margin-top: 4px;
+    float: left;
+    width: 47.5%;
+    font-size: 12px;
+    padding: 5px 0;
+    margin-left: 5%; }
+    .Page-Auth > .Button:first-child {
+      margin-left: 0; }
+  .Page-Auth .Sign-In-UI,
+  .Page-Auth .Sign-Up-UI {
+    position: absolute;
+    padding: 20px;
+    background-color: white;
+    top: 46px;
+    right: 0;
+    width: 400px;
+    font-size: 0.875em;
+    border-top: 4px solid #ec6700;
+    z-index: 10;
+    border-radius: 10px; }
+    .Page-Auth .Sign-In-UI form h4,
+    .Page-Auth .Sign-Up-UI form h4 {
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      font-size: 1.5em;
+      border-bottom: 1px dashed #cccccc; }
 
 .Page-Navigation {
   display: inline-block;
-  width: 50%;
+  width: 100%;
   text-align: right; }
   .Page-Navigation ul li {
-    margin-left: 15px; }
+    display: block;
+    width: 100%; }
     .Page-Navigation ul li > a {
       display: block;
-      padding: 30px 0 10px;
+      padding: 10px 0;
+      border-top: 1px solid #dedede;
       border-bottom: 3px solid transparent;
-      font-size: 1em;
+      font-size: 1.125em;
       color: #000;
+      text-align: left;
       text-transform: uppercase; }
-      .Page-Navigation ul li > a:hover, .Page-Navigation ul li > a.Link-Active {
-        border-color: #ec6700;
-        color: #ec6700; }
+      .Page-Navigation ul li > a.Link-Active, .Page-Navigation ul li > a:hover {
+        background-color: #f1f1f1; }
     .Page-Navigation ul li:first-child {
       margin-left: 0; }
 
 #Page-Slider {
-  clear: both;
-  overflow: hidden;
-  margin-bottom: 50px;
-  height: 250px;
-  background-image: url(../../../../img/techonline/banner-background.jpg);
-  background-position: center 0;
-  background-repeat: repeat;
-  background-attachment: fixed;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4) inset;
+  display: none;
   -webkit-animation: SlideDown 0.5s;
   -moz-animation: SlideDown 0.5s;
   animation: SlideDown 0.5s; }
-  #Page-Slider .Slider-Inner {
-    position: relative; }
-    #Page-Slider .Slider-Inner #Truck {
-      width: 360px;
-      top: 0;
-      position: absolute;
-      -webkit-animation: SlideUp 1s;
-      -moz-animation: SlideUp 1s;
-      animation: SlideUp 1s; }
-    #Page-Slider .Slider-Inner #Slider-Links {
-      position: absolute;
-      top: 50px;
-      left: 400px;
-      opacity: 1;
-      -webkit-animation: FadeIn 1.5s;
-      -moz-animation: FadeIn 1.5s;
-      animation: FadeIn 1.5s; }
-      #Page-Slider .Slider-Inner #Slider-Links a {
-        margin-bottom: 10px;
-        display: block; }
+
+#Truck {
+  -webkit-animation: SlideUp 1s;
+  -moz-animation: SlideUp 1s;
+  animation: SlideUp 1s; }
+
+#Slider-Links {
+  -webkit-animation: FadeIn 1.5s;
+  -moz-animation: FadeIn 1.5s;
+  animation: FadeIn 1.5s; }
+
+.Autocomplete-Categories {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid; }
 
 .Breadcrumbs {
   padding: 0 !important;
@@ -1018,6 +1009,9 @@ footer[role='contentinfo'] {
   -webkit-animation-delay: 0.3s;
   -moz-animation-delay: 0.3s;
   animation-delay: 0.3s; }
+  .Category-List ul > li {
+    width: 50%;
+    float: left; }
 
 .Rent-List {
   -webkit-animation: FadeIn 1s;
@@ -1190,13 +1184,13 @@ ul.Tag-List li.Tag-Item {
     ul.Tag-List li.Tag-Item a:hover {
       background-color: #999999; }
 
-.List-Filter li.List-Filter-Subheader {
+li.List-Filter-Subheader {
   background-color: #dedede; }
-  .List-Filter li.List-Filter-Subheader div {
+  li.List-Filter-Subheader div {
     text-align: center;
     width: 15%;
     float: left; }
-    .List-Filter li.List-Filter-Subheader div span {
+    li.List-Filter-Subheader div span {
       padding: 5px 5px 2px;
       display: block;
       vertical-align: middle;
@@ -1205,25 +1199,26 @@ ul.Tag-List li.Tag-Item {
       color: #555555;
       font-size: 14px;
       cursor: pointer; }
-    .List-Filter li.List-Filter-Subheader div span:hover {
+    li.List-Filter-Subheader div span:hover {
       color: #ec6700; }
-  .List-Filter li.List-Filter-Subheader a {
+  li.List-Filter-Subheader a {
     font-size: 1em;
     font-weight: 100;
     width: 85%;
     float: right; }
-.List-Filter li.List-Filter-Subcategory ul li {
+
+li.List-Filter-Subcategory ul li {
   border-top: 1px white solid; }
-  .List-Filter li.List-Filter-Subcategory ul li a {
+  li.List-Filter-Subcategory ul li a {
     color: black;
     width: 100%;
     background-color: #f1f1f1;
     display: block;
     padding: 10px;
     font-size: .9em; }
-    .List-Filter li.List-Filter-Subcategory ul li a:hover {
+    li.List-Filter-Subcategory ul li a:hover {
       background-color: #dedede; }
-  .List-Filter li.List-Filter-Subcategory ul li:first-child {
+  li.List-Filter-Subcategory ul li:first-child {
     border-top: 0; }
 
 .Menu-List ul li {
@@ -1246,6 +1241,47 @@ ul.Tag-List li.Tag-Item {
   transition-duration: 0.3s; }
   #Scroll-Top:hover {
     background: url(../../../../img/techonline/icon-scroll-top-hover.png) no-repeat; }
+
+.Filter.Accordion {
+  margin-top: 20px; }
+  .Filter.Accordion .Filter-Subheader {
+    border-top: 1px solid white; }
+    .Filter.Accordion .Filter-Subheader > div {
+      float: left;
+      width: 10%;
+      text-align: center;
+      background-color: #999999; }
+      .Filter.Accordion .Filter-Subheader > div span {
+        color: white;
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        line-height: 24px;
+        background-color: #555555;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer; }
+        .Filter.Accordion .Filter-Subheader > div span:hover {
+          color: #ec6700; }
+    .Filter.Accordion .Filter-Subheader > a {
+      float: right;
+      width: 90%;
+      color: white;
+      background-color: #ec6700;
+      line-height: 24px;
+      font-size: 16px;
+      display: block;
+      padding: 10px 30px; }
+  .Filter.Accordion .Filter-Subcategory {
+    background: #f1f1f1; }
+    .Filter.Accordion .Filter-Subcategory ul li {
+      border-top: 1px solid white; }
+      .Filter.Accordion .Filter-Subcategory ul li a {
+        display: block;
+        padding: 5px 30px;
+        color: black; }
+        .Filter.Accordion .Filter-Subcategory ul li a:hover {
+          background-color: #dedede; }
 
 @-webkit-keyframes FadeIn {
   from {
@@ -1322,49 +1358,90 @@ ul.Tag-List li.Tag-Item {
     max-height: 1px; }
   to {
     max-height: 350px; } }
-@media all and (max-width: 1024px) {
-  * {
-    border-radius: 0 !important; }
-
+@media all and (min-width: 768px) {
   .Node {
-    padding: 15px; }
+    border-radius: 10px; }
 
-  .Page-Navigation > ul > li > a {
-    font-size: 12px; }
-
+  .Site-Logo div h2 {
+    font-size: 22px; } }
+@media all and (min-width: 1024px) {
   .Section-Header,
   .Section-Subheader {
-    margin-left: -15px;
-    border-radius: 0; }
+    display: inline-block;
+    border-radius: 10px 0; }
 
-  .Snippet-Item header {
-    margin-bottom: 10px !important; }
+  .Page-Header {
+    height: 80px; }
 
-  .Item-Title {
-    max-width: 100% !important; }
+  .Page-Header-Inner {
+    width: 970px; }
 
-  .Item-Gallery {
-    padding-right: 0 !important;
-    width: 100% !important; }
+  .Site-Logo {
+    display: inline-block;
+    width: 35% !important; }
 
-  .Item-Gallery .Item-Main-Photo {
-    width: 100% !important;
-    margin-bottom: 10px !important; }
+  .Page-Navigation {
+    float: left;
+    width: 50%; }
+    .Page-Navigation ul li {
+      width: auto;
+      display: inline-block;
+      float: left;
+      margin-left: 15px; }
+      .Page-Navigation ul li a {
+        padding: 30px 0 10px;
+        border-top: 0; }
+        .Page-Navigation ul li a:hover, .Page-Navigation ul li a.Link-Active {
+          background-color: transparent;
+          border-color: #ec6700;
+          color: #ec6700; }
 
-  .Item-Content {
-    margin-top: 20px;
-    width: 100% !important; }
+  .Page-Auth {
+    float: left;
+    width: 15%;
+    padding: 0 10px;
+    margin: 0; }
+    .Page-Auth > .Button {
+      float: none;
+      width: 100%;
+      margin-left: 0; }
 
-  .Item-Values {
-    width: 100% !important;
-    margin-top: 15px;
-    margin-right: 0 !important; }
+  #Page-Slider {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 50px;
+    height: 250px;
+    background-image: url(../../../../img/techonline/banner-background.jpg);
+    background-position: center 0;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4) inset; }
+    #Page-Slider .Slider-Inner {
+      position: relative; }
+      #Page-Slider .Slider-Inner #Truck {
+        width: 360px;
+        top: 0;
+        position: absolute; }
+      #Page-Slider .Slider-Inner #Slider-Links {
+        position: absolute;
+        top: 50px;
+        left: 400px;
+        opacity: 1; }
+        #Page-Slider .Slider-Inner #Slider-Links a {
+          margin-bottom: 10px;
+          display: block; } }
+@media all and (min-width: 1260px) {
+  .Node {
+    padding: 30px; }
 
-  ._Section-Inner, .Node, .Page-Header .Page-Header-Inner, #Page-Slider .Slider-Inner, footer[role='contentinfo'] > div {
-    width: 95% !important; }
+  .Section-Header {
+    font-size: 22px; }
 
-  ._Fly-Out, .Section-Header,
-  .Section-Subheader, .Pagination {
-    margin-left: -15px; } }
+  .Page-Header-Inner {
+    width: 1100px; } }
+@media all and (min-width: 2560px) {
+  .Node {
+    padding: 50px; } }
 
 /*# sourceMappingURL=main.css.map */
