@@ -5,6 +5,7 @@ namespace Model\General;
 class General extends \Eloquent {
     public $timestamps = false;
     public $rewrite;
+    public $filter =[];
     /* Связь с Мета Данными */
     public function metadata()
     {

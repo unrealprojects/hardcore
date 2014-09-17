@@ -9,8 +9,8 @@
         <nav class="Menu-List">
             <ul>
                 <li><a href="/cabinet/{{\Route::current()->parameter('alias')}}/" title="Каталог стройтехники">Редактировать данные</a></li>
-                <li><a href="/cabinet/{{\Route::current()->parameter('alias')}}/rent" title="Взять стройтехнику в аренду">Разместить стройтехнику</a></li>
-                <li><a href="/cabinet/{{\Route::current()->parameter('alias')}}/parts">Разместить запчасти</a></li>
+                <li><a href="/cabinet/{{\Route::current()->parameter('alias')}}/rent" title="Взять стройтехнику в аренду">Стройтехника</a></li>
+                <li><a href="/cabinet/{{\Route::current()->parameter('alias')}}/parts">Запчасти и сервис</a></li>
             </ul>
         </nav>
     </aside>

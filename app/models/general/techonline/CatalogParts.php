@@ -37,14 +37,25 @@ class CatalogParts extends TechOnline {
     }
 
     /* Запросы */
-    public function getList($filter){
+    public function getList($filter=[]){
         $this->filter = $filter;
 
         return $this->with('category','status','opacity','admin','admin.metadata','metadata')
             ->whereHas('category', function($query) {
-                if($this->filter['category']){
+                if(!empty($this->filter['category'])){
                     $query->where('alias', $this->filter['category']);
                 }
+            })
+            ->paginate(5);
+    }
+
+    public function getListForSeller($seller){
+        $this->filter['seller'] = $seller;
+        return $this->with('category','status','opacity','admin','admin.metadata','metadata')
+            ->whereHas('admin', function($query) {
+                $query->whereHas('metadata',function($query){
+                    $query->where('alias', $this->filter['seller']);
+                });
             })
             ->paginate(5);
     }

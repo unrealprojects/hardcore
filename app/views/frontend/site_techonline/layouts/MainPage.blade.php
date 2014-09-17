@@ -238,20 +238,11 @@
 
 
 
+
         /* Autocomplite */
-        var categories = [
-                @foreach($content['categories_list'] as $category)
-                   {key:"{{$category['alias']}}",label:"{{$category['name']}}"},
-                @endforeach
-            ];
-
-        $( ".Autocomplete-Categories" ).autocomplete({
-            source: categories
-        });
-
         var regions = [
             @foreach($content['regions_list'] as $region)
-                 {key:"{{$region['alias']}}",label:"{{$region['name']}}"},
+                {key:"{{$region['alias']}}",label:"{{$region['name']}}"},
             @endforeach
         ];
         $( ".Autocomplete-Regions" ).autocomplete({
@@ -264,6 +255,26 @@
                 /* Смена таба */
                 $('.Tab-Regions').removeClass('Active');
                 $('.Tab-Categories').addClass('Active');
+            }
+        });
+
+
+        var categories = [
+            @foreach($content['categories_list'] as $category)
+               {key:"{{$category['alias']}}",label:"{{$category['name']}}"},
+            @endforeach
+        ];
+
+        $( ".Autocomplete-Categories" ).autocomplete({
+            source: categories,
+            select: function (event, ui) {
+                /* Запись параметров */
+                searchArray['category']=ui.item.key;
+
+                /* todo:: ajax запрос на смену таба */
+                /* Смена таба */
+                $('.Tab-Categories').removeClass('Active');
+                $('.Tab-Params').addClass('Active');
             }
         });
 
