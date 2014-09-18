@@ -1130,7 +1130,8 @@ ul.Menu-List li {
   border-left: 4px solid #ec6700; }
   .Pagination > li {
     margin-top: 0 !important;
-    margin-right: 1px; }
+    margin-right: 1px;
+    float: left; }
     .Pagination > li > span, .Pagination > li > a {
       color: #fff;
       display: block;
@@ -1540,6 +1541,9 @@ li.List-Filter-Subcategory ul li {
 
 .ui-widget-header {
   background-color: #ec6700; }
+
+.Accordion-Subcategory {
+  display: none; }
 
 @-webkit-keyframes FadeIn {
   from {

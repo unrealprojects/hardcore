@@ -3,7 +3,12 @@
 
         /* fancybox */
         $(".fancybox").fancybox({
-                 type: "image"
+                 type: "image",
+                 helpers: {
+                     overlay: {
+                         locked: false
+                     }
+                 }
             });
 
         window.UP={};

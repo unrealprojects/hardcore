@@ -11,7 +11,7 @@
             <span class="Item-Category" itemprop="category">{{$content['item']['category']['name']}}</span>
         </header>
 
-        <div class="Item-Gallery Grid Five">
+        <div class="Item-Gallery Grid XS-5">
             @foreach(json_decode($content['item']['photos'],true) as $i=>$photo)
             @if($i==1)
             <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
@@ -30,7 +30,7 @@
             </ul>
         </div>
 
-        <div class="Item-Content Seven">
+        <div class="Item-Content XS-7">
             <p itemprop="description">{{$content['item']['description']}}</p>
 
         <!-- Параметры товара -->

@@ -283,6 +283,7 @@ ul.Menu-List {
 	& > li {
 		margin-top: 0 !important; // Наследование .Node подразумевает margin-top каждого вложенного элемента. Убираем
 		margin-right: 1px; // Разлипаем прямоугольники страниц
+        float:left;
 		& > span,
 		& > a {
 			color: #fff;
@@ -953,8 +954,13 @@ li.List-Filter-Subcategory {
 		}
 	}
 }
+
+// todo: разнести по местам
 .ui-widget-header{
   background-color: $clr-main;
+}
+.Accordion-Subcategory{
+  display:none;
 }
 
 @include Keyframes(FadeIn) {

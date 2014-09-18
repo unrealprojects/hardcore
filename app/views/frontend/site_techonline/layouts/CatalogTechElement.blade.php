@@ -14,28 +14,29 @@
             </h5>
         </header>
 
-        <div class="Item-Gallery Grid Five">
+        <div class="Item-Gallery Grid XS-5">
             @foreach(json_decode($content['item']['photos'],true) as $i=>$photo)
             @if($i==1)
-            <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image">
+            <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
 
             <ul>
                 @elseif($i>1 && $i<5)
-                <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image"></li>
+                <li>
+                    <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
+                </li>
                 @elseif($i>5)
                 <li style="display: none">
-                    <img src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image">
+                    <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
                 </li>
                 @endif
                 @endforeach
             </ul>
-            <div class="Item-Additional-Info">
-                Арендатор
-                <a href="/admin/{{$content['item']['admin']['metadata']['alias']}}">{{$content['item']['admin']['name']}}</a>
-            </div>
-       </div>
-
-        <div class="Item-Content Grid Seven">
+        </div>
+        <div class="Item-Additional-Info">
+            Арендатор
+            <a href="/admin/{{$content['item']['admin']['metadata']['alias']}}">{{$content['item']['admin']['name']}}</a>
+        </div>
+        <div class="Item-Content Grid XS-7">
             <p itemprop="description">{{$content['item']['description']}}</p>
 
             <!-- Параметры товара -->

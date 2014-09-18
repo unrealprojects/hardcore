@@ -9,24 +9,26 @@
             </h4>
         </header>
 
-        <div class="Item-Gallery Five">
+        <div class="Item-Gallery Grid XS-5">
             @foreach(json_decode($content['item']['photos'],true) as $i=>$photo)
             @if($i==1)
-            <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image">
+            <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
 
             <ul>
                 @elseif($i>1 && $i<5)
-                <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+                <li>
+                    <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
+                </li>
                 @elseif($i>5)
                 <li style="display: none">
-                    <img src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                    <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
                 </li>
                 @endif
                 @endforeach
             </ul>
         </div>
 
-        <div class="Item-Content Seven">
+        <div class="Item-Content XS-7">
             <p>{{$content['item']['description']}}</p>
 
             <!-- Параметры товара -->

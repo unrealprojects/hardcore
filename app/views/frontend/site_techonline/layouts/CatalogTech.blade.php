@@ -88,7 +88,7 @@
                             <li><h6>Цена:</h6>{{$list_elem['rate']}}</li>
                         </ul>
                     </header>
-                    <div class="Item-Gallery Grid Five">
+                    <div class="Item-Gallery Grid XS-5">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                         @if($i==1)
                         <a href="{{$photo['src']}}" rel="Gallery-{{$item_key}}" class="fancybox"><img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
@@ -107,7 +107,7 @@
                         </ul>
                     </div>
 
-                    <div class="Item-Content Seven">
+                    <div class="Item-Content XS-7">
                         {{$list_elem['description']}}
 
                         <!-- Параметры товара -->
