@@ -24,7 +24,17 @@ class MainPageController extends TechonlineController{
         return \View::make($this->siteViewPath.'/layouts/MainPage',$this->viewData);
 	}
 
-    public function fitersSet($category_alias){
-
+    public function filterSet($category_alias){
+        $paramFilters = new \Model\General\Categories();
+        $filters = $paramFilters->getFilters($category_alias);
+        $this->viewData['content']=[
+            'filters'=>$filters
+        ];
+        $content=\View::make($this->siteViewPath.'/layouts/filter/FilterParams',$this->viewData);
+        $script=\View::make($this->siteViewPath.'/layouts/filter/FilterParamsScript',$this->viewData);
+        echo json_encode([
+            'params'=>[htmlentities($content)],
+            'script'=>[htmlentities($script)],
+        ]);
     }
 }

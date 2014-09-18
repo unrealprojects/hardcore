@@ -89,18 +89,13 @@
 
                         <div class="Slider-Range" id="Slider-Range-1"></div>
                     </div>
-                    <div class="Control-Group">
-                        <label for="Slider-Range-2">Свойство 2: <span id="Slider-Range-Value-2"></span></label>
-
-                        <div class="Slider-Range" id="Slider-Range-2"></div>
-                    </div>
 
                     <!-- Бренды -->
                     <ul class="Filter Accordion Accordion-Brands">
 
                         <li class="Filter-Subheader Accordion-Subheader">
                             <div class="Accordion-Switch"><span>&or;</span></div>
-                            <a href="#">Выбор прроизводителя</a>
+                            <a href="#">Выбор производителя</a>
                         </li>
 
                         <li class="Filter-Subcategory Accordion-Subcategory">
@@ -165,12 +160,13 @@ $("#Slider-Range-1").slider({
     values: [ 100, 50000 ],
     slide: function( event, ui ) {
         $("#Slider-Range-Value-1").text(ui.values[ 0 ] + "руб. - " + ui.values[ 1 ] +"руб.");
-        searchArray['price-min']=ui.values[ 0 ];
-        searchArray['price-max']= ui.values[ 1 ];
+        searchArray['[params][price][min-value]']=ui.values[ 0 ];
+        searchArray['[params][price][max-value]']= ui.values[ 1 ];
+        searchArray['[params][price][alias]']='price';
     }
 });
-$("#Slider-Range-Value-1").text( "$" + $( "#Slider-Range-1").slider( "values", 0 ) +
-    " - руб." + $( "#Slider-Range-1" ).slider( "values", 1 ) );
+$("#Slider-Range-Value-1").text( $( "#Slider-Range-1").slider( "values", 0 ) +
+    " - руб." + $( "#Slider-Range-1" ).slider( "values", 1 ) +"руб." );
 
 
 
@@ -281,13 +277,25 @@ $('dd.Tab-Regions .Filter-Subheader a').click(function(){
 });
 
 /* Таб :: Категории */
+function getParams($category_alias){
+    $.ajax({
+        type:'get',
+        url:'/filter/'+$category_alias,
+        dataType:'json',
+        success:function(data){
+            $('.Ajax-Params').remove();
+            $('.Tab-Params .Form-Vertical>.Control-Group').first().after($('<div/>').html(data['params']).text());
+            $('body').append($('<div/>').html(data['script']).text());
+        }
+    });
+}
 
 $('dd.Tab-Categories a').click(function(){
     /* Запись параметров */
     searchArray['category']=$(this).attr('alias');
 
     /* todo:: ajax запрос на смену таба */
-
+    getParams(searchArray['category']);
     /* Смена таба */
     $('.Tab-Categories').removeClass('Active');
     $('.Tab-Params').addClass('Active');
