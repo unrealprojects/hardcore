@@ -1,7 +1,7 @@
 @extends('frontend.site_techonline.'.$content['template'])
 
 @section('main')
-<section class="Node Grid">
+<section class="Node">
 
     <h3 class="Section-Header">Новости</h3>
     <div class="Grid-Row">
@@ -49,21 +49,11 @@
 <!-- Пагинация -->
 {{$content['pagination']}}
 
-
-
-<!-- Фильтрация :: По параметрам -->
-@if($content['filters'])
-    @foreach($content['filters']['filters'] as $filter)
-        {{$filter['name']}}
-        {{$filter['dimension']}}
-        {{$filter['min_value']}}
-        {{$filter['max_value']}}
-    @endforeach
-@endif
 </section>
 
 @endsection
 
 @section('scripts')
+    @parent
     <script src="/js/frontend/Accordion.js" type="text/javascript"></script>
 @endsection

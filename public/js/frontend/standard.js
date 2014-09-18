@@ -1,5 +1,11 @@
 (function($){
     $(document).ready(function(){
+
+        /* fancybox */
+        $(".fancybox").fancybox({
+                 type: "image"
+            });
+
         window.UP={};
         /* Message */
         window.UP.Message = function (event,message,type){
@@ -15,8 +21,8 @@
             $('.Message').effect('bounce').delay(2000).fadeOut(2000);
         }
 
+        /* Табы */
         $("dl.Tabs dt").click(function(){
-
             $(this)
                 .siblings().removeClass("Active").end()
                 .next("dd").andSelf().addClass("Active");
