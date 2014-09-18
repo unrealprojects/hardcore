@@ -42,13 +42,14 @@
                                         <!-- Вложенные города -->
 
                                         @if(!empty($subRegions['cities']))
-                                        <ul class="Filter-Cities">
-                                            <li><a href="/catalog/?region={{$subRegions['alias']}}" alias="{{$subRegions['alias']}}">Все города</a></li>
-                                            @foreach($subRegions['cities'] as $city)
-                                            <li><a href="/catalog/?region={{$city['alias']}}" alias="{{$city['alias']}}">{{$city['name']}}</a></li>
-                                            @endforeach
-                                            <li><a class="Back" href="/">Вернуться к выбору региона</a></li>
-                                        </ul>
+                                        <div class="Filter-Cities">
+                                            <a class="All-Cities" href="/catalog/?region={{$subRegions['alias']}}" alias="{{$subRegions['alias']}}">Все города</a>
+                                            <a class="Back" href="/">Вернуться к выбору региона</a>
+                                            <ul>
+                                                @foreach($subRegions['cities'] as $city)
+                                                <li><a href="/catalog/?region={{$city['alias']}}" alias="{{$city['alias']}}">{{$city['name']}}</a></li>
+                                                @endforeach
+                                            </ul>
                                         @endif
                                     </li>
 
@@ -113,7 +114,7 @@
         </dd>
     </dl>
     <div class="Control-Group Offset">
-        <button class="Button">Выполнить поиск</button>
+        <button class="Button Search">Выполнить поиск</button>
     </div>
 </section>
 
@@ -370,7 +371,6 @@
             $('.Tab-Params').addClass('Active');
             return false;
         });
-
 
         /* Поиск */
         $('.Search').click(function(){

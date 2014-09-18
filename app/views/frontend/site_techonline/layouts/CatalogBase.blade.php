@@ -25,7 +25,7 @@
     </div>
     @endif
 
-    <div class="Row Merge">
+    <div class="Row Split">
         <!-- Фильтрация :: Общий блок -->
         <aside class="Sidebar-Filter Grid XS3">
             <!-- Фильтрация :: По брендам -->

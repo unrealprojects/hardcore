@@ -2,6 +2,9 @@
 
 @section('main')
 <section class="Node">
+
+    <h3 class="Section-Header">Каталог строительной техники</h3>
+
     @if(!empty($breadCrumbs))
     <div class="Breadcrumbs">
         <ul class="Breadcrumb-List">
@@ -21,10 +24,10 @@
         </ul>
     </div>
     @endif
-    <h3 class="Heading Primary">Каталог строительной техники</h3>
+
     <div class="Row Split">
         <!-- Фильтрация :: Общий блок -->
-        <aside class="Sidebar-Filter Grid XS-3">
+        <aside class="Sidebar-Filter Grid XS3">
 
             <!-- Фильтрация :: По брендам -->
             <h4>Производители</h4>
@@ -65,13 +68,13 @@
             </ul>
         </aside>
 
-        <article class="XS-8 End">
+        <article class="Grid XS-8 End">
             <ul class="Snippet-List">
-            @foreach($content['list'] as $list_elem)
+            @foreach($content['list'] as $item_key => $list_elem)
                 <li class="Snippet-Item Row Merge">
 
                     <header class="Row Merge">
-                        <h4 class="Item-Title XS-6">
+                        <h4 class="Item-Title Six">
                             <a href="/rent/{{$list_elem['metadata']['alias']}}">
                                 {{$list_elem['name']}}
                             </a>
@@ -79,30 +82,32 @@
                                 {{$list_elem['model']['category']['name']}}
                             </span>
                         </h4>
-                        <ul class="Item-Values XS-6">
+                        <ul class="Item-Values Six">
                             <li><h6>Статус:</h6>{{$list_elem['status']['name']}}</li>
                             <li><h6>Состояние:</h6>{{$list_elem['opacity']['name']}}</li>
                             <li><h6>Цена:</h6>{{$list_elem['rate']}}</li>
                         </ul>
                     </header>
-                    <div class="Item-Gallery XS-5">
+                    <div class="Item-Gallery Grid Five">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                         @if($i==1)
-                        <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                        <a href="{{$photo['src']}}" rel="Gallery-{{$item_key}}" class="fancybox"><img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
 
                         <ul>
                             @elseif($i>1 && $i<5)
-                            <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+                            <li>
+                                <a href="{{$photo['src']}}" rel="Gallery-{{$item_key}}" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
+                            </li>
                             @elseif($i>5)
                             <li style="display: none">
-                                <img src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                                <a href="{{$photo['src']}}" rel="Gallery-{{$item_key}}" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
                             </li>
                             @endif
                             @endforeach
                         </ul>
                     </div>
 
-                    <div class="Item-Content XS-7">
+                    <div class="Item-Content Seven">
                         {{$list_elem['description']}}
 
                         <!-- Параметры товара -->
@@ -153,5 +158,6 @@
 @endsection
 
 @section('scripts')
-<script src="/js/frontend/Accordion.js" type="text/javascript"></script>
+    @parent
+    <script src="/js/frontend/Accordion.js" type="text/javascript"></script>
 @endsection
