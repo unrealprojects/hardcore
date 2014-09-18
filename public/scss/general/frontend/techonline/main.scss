@@ -883,27 +883,29 @@ li.List-Filter-Subcategory {
 			padding: $size-s $size-l;
 		}
 	}
-	.Filter-Subcategory {
-		background: $clr-grey-lighter;
-        display: none;
+}
 
-		ul {
-			@extend ._No-Bullets;
-            .Filter-Cities{
-              display:none;
-            }
-			li {
-				border-top: 1px solid $clr-grey;
-                display: inline-block;
-                width: 33%;
+.Filter-Subcategory {
+	background: $clr-grey-lighter;
+	display: none;
 
-				a {
-					display: block;
-					padding: $size-xs $size-l;
-					color: black;
-					&:hover {
-						background-color: $clr-grey-light;
-					}
+	ul {
+		@extend ._No-Bullets;
+		.Filter-Cities{
+			display:none;
+		}
+
+		li {
+			border-top: 1px solid $clr-grey;
+			display: inline-block;
+			width: 100%;
+
+			a {
+				display: block;
+				padding: $size-xs $size-l;
+				color: black;
+				&:hover {
+					background-color: $clr-grey-light;
 				}
 			}
 		}
