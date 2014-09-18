@@ -3,7 +3,7 @@
 @section('main')
 <section class="Node">
 
-    <h3 class="Section-Header">Каталог строительной техники Base.blade.php</h3>
+    <h3 class="Section-Header">Каталог строительной техники</h3>
     <div class="Row Split">
         <!-- Фильтрация :: Общий блок -->
         <aside class="Sidebar-Filter Grid Three">

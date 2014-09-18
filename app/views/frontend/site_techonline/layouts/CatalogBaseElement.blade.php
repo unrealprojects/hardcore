@@ -11,17 +11,19 @@
             <span class="Item-Category" itemprop="category">{{$content['item']['category']['name']}}</span>
         </header>
 
-        <div class="Item-Gallery Five">
+        <div class="Item-Gallery Grid Five">
             @foreach(json_decode($content['item']['photos'],true) as $i=>$photo)
             @if($i==1)
-            <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}" itemprop="image">
+            <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
 
             <ul>
                 @elseif($i>1 && $i<5)
-                <li><img itemprop="image" src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+                <li>
+                    <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
+                </li>
                 @elseif($i>5)
                 <li style="display: none">
-                    <img itemprop="image" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                    <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
                 </li>
                 @endif
                 @endforeach
