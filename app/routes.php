@@ -36,6 +36,7 @@ Route::get('/wind','\Controller\Frontend\WindSpace\WindController@index');
 
 /*** FRONTEND::TECHONLINE::CATALOG ***/
 Route::get('/','\Controller\Frontend\TechOnline\MainPageController@index');
+Route::get('/filter/{category_alias}','\Controller\Frontend\TechOnline\MainPageController@filterSet');
 
 Route::get('/catalog','\Controller\Frontend\TechOnline\CatalogBaseController@actionList');
 Route::get('/catalog/{alias}','\Controller\Frontend\TechOnline\CatalogBaseController@actionElement');
