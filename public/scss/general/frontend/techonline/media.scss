@@ -36,6 +36,11 @@
 		@include Round(all, $Control-Border-Radius);
 
 	}
+	.Filter-Subcategory ul li {
+		float: left!important;
+		font-size: 14px;
+		width: 50%;
+	}
 
 }
 @media all and (min-width: $Screen-Size-Small) {
@@ -156,6 +161,12 @@
 	}
 	img.Footer-Img {
 			 display: block;
+	}
+	.Filter-Subcategory ul li {
+		width: 33%;
+		a {
+			font-size: 13px;
+		}
 	}
 }
 
