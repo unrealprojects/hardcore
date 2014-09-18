@@ -43,7 +43,6 @@
 
                                         @if(!empty($subRegions['cities']))
                                         <ul class="Filter-Cities">
-
                                             <li><a href="/catalog/?region={{$subRegions['alias']}}" alias="{{$subRegions['alias']}}">Все города</a></li>
                                             @foreach($subRegions['cities'] as $city)
                                             <li><a href="/catalog/?region={{$city['alias']}}" alias="{{$city['alias']}}">{{$city['name']}}</a></li>
@@ -309,8 +308,8 @@
         $('dd.Tab-Regions .Filter-Subcategory li>a').click(function(){
             /* Переход на города, если они есть */
             if($('.Filter-Cities',$(this).parent()).length){
-                var cities=$('.Filter-Cities',$(this).parent()).html();
-                $('dd.Tab-Regions .Filter.Accordion').hide().after('<div class="Filter-Cities">'+cities+"</div>");
+                var cities=$('.Filter-Cities',$(this).parent());
+                $('dd.Tab-Regions .Filter.Accordion').hide().after($(cities).clone());
                 /* Запись параметров региона */
                 searchArray['region']=$(this).attr('alias');
                 delete searchArray['region_type'];
