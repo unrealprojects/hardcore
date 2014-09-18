@@ -12,6 +12,7 @@
             });
 
         window.UP={};
+
         /* Message */
         window.UP.Message = function (event,message,type){
             if(type===undefined){
