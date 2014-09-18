@@ -50,6 +50,9 @@
 	@else if ($Round-Mode == 'left') {
 		border-radius: $Radius 0 0 $Radius;
 	}
+	@else if ($Round-Mode == 'right') {
+		border-radius: 0 $Radius $Radius 0;
+	}
 	@else if ($Round-Mode == 'top') {
 		border-radius: $Radius $Radius 0 0;
 	}
@@ -86,18 +89,12 @@
 	}
 }
 
-@mixin Display($D-XS,$D-S,$D-M,$D-L) {
-	display: $D-M;
-	@media all and (max-width: 640px) {
-		display: $D-XS;
-	}
-	@media all and (max-width: 1024px) and (min-width: 641px)  {
-		display: $D-S;
-	}
-	@media all and (max-width: 1280px) and (min-width: 1025px) {
-		display: $D-M;
-	}
-	@media all and (max-width: 1920px) and (min-width: 1281px) {
-		display: $D-L;
-	}
+@mixin Gradient($Color-Start, $Color-End, $Gradient-Orientation: top) {
+	background-color: $Color-End; /* Fallback */
+	background: -webkit-linear-gradient($Gradient-Orientation, $Color-Start, $Color-End); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background:    -moz-linear-gradient($Gradient-Orientation, $Color-Start, $Color-End); /* FF3.6 */
+	background:     -ms-linear-gradient($Gradient-Orientation, $Color-Start, $Color-End); /* IE10 */
+	background:      -o-linear-gradient($Gradient-Orientation, $Color-Start, $Color-End); /* Opera 11.10+ */
+	background:         linear-gradient($Gradient-Orientation, $Color-Start, $Color-End);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$Color-Start}', EndColorStr='#{$Color-End}');
 }

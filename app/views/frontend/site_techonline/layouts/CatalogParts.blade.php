@@ -7,7 +7,7 @@
     <h3 class="Section-Header">Запчасти и сервис</h3>
     <div class="Row Merge">
         <!-- Фильтрация :: Общий блок -->
-        <aside class="Sidebar-Filter Grid Three">
+        <aside class="Sidebar-Filter Grid XS-3">
             <!-- Фильтрация :: По категориям -->
             <h4>Категории</h4>
             <ul class="List-Filter Accordion">
@@ -31,10 +31,10 @@
                 @endforeach
             </ul>
         </aside>
-        <article class="Grid Eight Push-One">
+        <article class="Grid XS-8 Push-One">
             <ul class="Snippet-List">
                 @foreach($content['list'] as $list_elem)
-                <li class="Snippet-Item Row Split">
+                <li class="Snippet-Item Row Merge">
                     <header>
                         <h4 class="Item-Title">
                             <a href="/parts/{{$list_elem['metadata']['alias']}}">
@@ -50,7 +50,7 @@
                         </ul>
                     </header>
 
-                    <div class="Item-Gallery Grid Five">
+                    <div class="Item-Gallery Grid XS-5">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                         @if($i==1)
                         <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
@@ -67,7 +67,7 @@
                         </ul>
                     </div>
 
-                    <div class="Item-Content Grid Seven">
+                    <div class="Item-Content Grid XS-7">
                         {{$list_elem['description']}}
 
                         <!-- Параметры товара -->

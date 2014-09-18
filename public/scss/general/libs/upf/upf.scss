@@ -16,6 +16,7 @@
 
 .Node {
 	padding: 			$size-n;
+	border:				1px solid $clr-grey-light;
 	background-color: 	white;
 	clear: 				both;
 
@@ -24,7 +25,6 @@
 	@extend 			._Section-Inner;
 	@extend 			._Clearfix;
 }
-
 
 // Внутренние элементы нода отступают друг от друга
 .Node > * {
@@ -39,10 +39,6 @@
 	margin-top: 0;
 }
 
-// Если нод является сеткой - выключаем отступ
-.Node [class*='Grid-Node-'] {
-	margin-top: 0
-}
 /* ТАБЫ < ////////////////////////////////////////////////////////////////////////////////////*/
 table.Stripped tr:nth-child(even) td {
 	background-color: #f0f0f0;

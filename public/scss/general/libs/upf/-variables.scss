@@ -38,16 +38,19 @@ $clr-yellow: #d1a300;
 $clr-yellow-dark:  darken($clr-yellow,5%);
 $clr-yellow-light: lighten($clr-yellow,55%);
 
-$clr-green: #0da900;
-$clr-green-lighter: lighten($clr-green,80%);
-$clr-green-light: lighten($clr-green,60%);
-$clr-green-dark:  darken($clr-green,5%);
-$clr-green-darker:  darken($clr-green,15%);
+$clr-green-lighter: 	#11db00;
+$clr-green-light:	 	#0fb800;
+$clr-green:			 	#0da900;
+$clr-green-dark: 		#0c8d00;
+$clr-green-darker:		#075d00;
+
+$clr-blue-lighter: #31e2ff;
+$clr-blue-light:  #0dd0ff;
+$clr-blue: 		  #00bff3;
+$clr-blue-dark:   #00a1d4;
+$clr-blue-darker: #0088b6;
 
 
-$clr-blue: #00bff3;
-$clr-blue-dark:  darken($clr-blue,5%);
-$clr-blue-light: lighten($clr-blue,45%);
 
 
 $clr-grey-lighter: 		#f1f1f1;
@@ -86,6 +89,7 @@ $Font-Size-Huge:				1.500em;
 $Font-Family-Exo2:				'Exo 2', 'Open Sans', Helvetica, Verdana, sans-serif;
 $Font-Family-Verdana:			Helvetica, Verdana, sans-serif!important;
 $Font-Family-Calibri:			Calibri, Helvetica, Verdana, sans-serif!important;
+$Font-Family-Georgia:			Georgia, 'Times new Roman', Times, serif;
 // НАСТРОЙКИ САЙТА
 $Body-Font-Size:				$Font-Size-Default;
 $node-width: 					1000px;			// Ширина ноды
@@ -104,8 +108,8 @@ $selection-color: 				$clr-grey-dark;
 $Section-Width-Tiny: 			90%;
 $Section-Width-Small: 			970px;
 $Section-Width-Default: 		$Section-Width-Small + 130px;
-$Section-Width-Large:			$Section-Width-Default + 100px;
-$Section-Width-Huge:			$Section-Width-Large + 100px;
+$Section-Width-Large:			$Section-Width-Default + 50px;
+$Section-Width-Huge:			$Section-Width-Large + 50px;
 
 
 // Стилевые ограничения для разных устройств

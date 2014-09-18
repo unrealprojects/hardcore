@@ -18,119 +18,89 @@ body > #wrap {
 }
 
 body {
-	background: 	#eee
-					url(../../../../img/techonline/page-background3.png)
-					repeat;
+	background: 	$clr-grey-lighter;
 
-	font-family: 	'Exo 2', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 	'Exo 2','Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 	1.45;
 
 	@include 		Font-Size(85%,90%,100%, 110%);
 	@include 		Animation(FadeIn,0.6s);
 }
 
-.Section-Header,
-.Section-Subheader {
-	display: block;
-	clear: both;
-	padding: $size-s $size-n;
-	text-transform: uppercase;
-	background-color: $clr-main;
-	background: linear-gradient(to right, $clr-main, $clr-main-lighter);
-	color: #fff;
-	font-weight: 100;
-	cursor: default;
-	@extend ._Fly-Out;
-	@extend ._Unselectable;
 
-}
-.Header-Column {
-	font-size: $Font-Size-Huge;
-	font-weight: 100;
-	padding-bottom: $size-s;
-	border-bottom: 1px dashed $clr-grey-dark;
-}
-
-
-.Section-Header {
-	font-size: 16px;
-}
-
-.Section-Subheader {
-	font-size: $Font-Size-Large;
-}
-
-// Шапка сайта
-.Page-Header {
+// Site Header.
+// Main block with 100% width
+.Site-Header {
 	background: white;
 	@include Animation(FadeIn,1s);
 	@extend ._Clearfix;
 	@extend ._Unselectable;
 	@extend ._Soft_Shadow;
+}
 
-	.Page-Header-Inner {
-		width:	90%;
-		@extend ._Clearfix;
-		@extend ._Centered;
-		@extend ._Section-Inner;
-		@extend ._Inline;
+// Site Header inner block. Has the same width as content
+.Site-Header-Inner {
+	width:	90%;
+	@extend ._Clearfix;
+	@extend ._Centered;
+	@extend ._Section-Inner;
+	@extend ._Inline;
 
-		.Site-Logo {
-			display: block;
-			position: relative;
-			width:	100%;
-			height: 80px;
-			overflow: hidden;
+	.Site-Logo {
+		display: block;
+		position: relative;
+		width:	100%;
+		height: 80px;
+		overflow: hidden;
 
-			div {
-				width: 100%;
-				position: absolute;
-				top: 20px;
-				@include Transition(opacity, .5s);
+		div {
+			width: 100%;
+			position: absolute;
+			top: 20px;
+			@include Transition(opacity, .5s);
 
-				img.Logo-Img {
-					display: block;
-					float: left;
-					margin-right: $size-s;
-				}
-
-				h2 {
-					padding: $size-xs 0;
-					color: $clr-main;
-					font-size: 26px;
-					font-weight: 100;
-					text-transform: uppercase;
-
-					small {
-						display: inline;
-						font-size: 16px;
-						color: black;
-					}
-				}
-			}
-			& > a {
-				z-index: 2;
-				position: absolute;
+			img.Logo-Img {
 				display: block;
-				padding: $size-l;
-				@include Transition(opacity, .5s);
-				@include Opacity(0);
+				float: left;
+				margin-right: $size-s;
+			}
 
-				&:hover {
-					color: $clr-main;
-					text-decoration: underline;
+			h2 {
+				padding: $size-xs 0;
+				color: $clr-main;
+				font-size: 26px;
+				font-weight: 100;
+				text-transform: uppercase;
+
+				small {
+					display: inline;
+					font-size: 16px;
+					color: black;
 				}
-			}
-			&:hover > div {
-				@include Opacity(0);
-			}
-			&:hover > a {
-				@include Opacity(1);
 			}
 		}
+		& > a {
+			z-index: 2;
+			position: absolute;
+			display: block;
+			padding: $size-l;
+			@include Transition(opacity, .5s);
+			@include Opacity(0);
 
-
+			&:hover {
+				color: $clr-main;
+				text-decoration: underline;
+			}
+		}
+		&:hover > div {
+			@include Opacity(0);
+		}
+		&:hover > a {
+			@include Opacity(1);
+		}
 	}
+
+
 }
 #Menu-Toggle {
 	float: right;
@@ -185,41 +155,40 @@ body {
 	}
 }
 // Меню навигации по сайту
-.Page-Navigation {
+.Site-Navigation {
 	display: none;
 	width: 100%;
 	text-align: right;
+}
+ul.Menu-List {
+	@extend ._No-Bullets;
+	@extend ._Clearfix;
+	li {
+		display: block;
+		width: 100%;
+		border-top: 1px solid $clr-grey-light;
 
-	ul {
-		@extend .No-Bullets;
-		@extend ._Clearfix;
-		li {
-			display: block;
-			width: 100%;
-			border-top: 1px solid $clr-grey-light;
-			& > a {
-				display: block;
-				padding: $size-s 0;
-				border-bottom: 3px solid transparent;
-
-				font-size: $Font-Size-Large;
-				color: #000;
-				text-align: left;
-				text-transform: uppercase;
-				&.Link-Active ,
-				&:hover       {
-					background-color: $clr-grey-lighter;
-				}
-
-			}
-			&:first-child {
-				border-top: 0;
-				margin-left: 0;
-			}
+		&:first-child {
+			border-top: 0;
+			margin-left: 0;
 		}
 	}
 }
+.Menu-Link {
+	display: block;
+	padding: $size-s 0;
+	border-bottom: 3px solid transparent;
 
+	font-size: $Font-Size-Large;
+	color: #000;
+	text-align: left;
+	text-transform: uppercase;
+	&.Link-Active ,
+	&:hover       {
+		background-color: $clr-grey-lighter;
+	}
+
+}
 //
 #Page-Slider {
 	display: none;
@@ -237,22 +206,22 @@ body {
 		#Slider-Links {
 			@include Animation(FadeIn,1.5s);
 		}
-.Autocomplete-Categories,
-.Autocomplete-Regions{
+
+.Autocomplete {
 	width: 100%;
 	padding: $size-s $size;
 	border: 1px solid;
 }
+
 // Хлебные крошки
 .Breadcrumbs {
-	padding: 0!important;
-	margin-top: $size!important;
-	margin-bottom: -20px!important;
-	background-color: white;
-	@include Round(all);
+	padding: $size-xs;
+	margin-top: $size;
+	background-color: $clr-grey-lighter;
+	border: 1px solid $clr-grey-light;
+	@include Round(all, $Control-Border-Radius);
 
 	.Breadcrumb-List {
-		padding: $size-s 0;
 		@extend ._Inline;
 		@extend ._No-Bullets;
 
@@ -260,9 +229,10 @@ body {
 			a    ,
 			span {
 				padding: $size-xs;
+				font-size: 16px;
+				line-height: 16px;
 			}
 			a:hover {
-				background-color: $clr-grey-lighter;
 			}
 			&:before {
 				padding: 0 $size-s;
@@ -273,6 +243,7 @@ body {
 
 		.Breadcrumb-Item:first-child {
 			&:before {
+				padding: 0;
 				content: "";
 			}
 		}
@@ -452,19 +423,13 @@ body {
 	}
 }
 
-// Блок футера
+// Site Footer Block
 footer[role='contentinfo'] {
 	position: relative;
 	height: $footer-height;
 
 	background: white;
 	border-top: 1px solid #e1e1e1;
-	img.Footer-Img {
-		position: absolute;
-		bottom: $footer-height/2;
-		right: $size;
-		width: 200px;
-	}
 	& > div {
 		padding: $size-l 0;
 		@extend ._Clearfix;
@@ -498,18 +463,14 @@ footer[role='contentinfo'] {
 		}
 	}
 }
-
-.Category-List {
-	ul > li {
-		width: 50%;
-		float: left;
-	}
-	@include Animation(FadeIn,1s,0.3s);
+img.Footer-Img {
+	display: none;
+	position: absolute;
+	bottom: $footer-height/2;
+	right: $size;
+	width: 200px;
 }
 
-.Rent-List {
-	@include Animation(FadeIn,1s,0.5s);
-}
 
 .Filter-Regions {
 	li {
@@ -529,22 +490,19 @@ footer[role='contentinfo'] {
 	}
 }
 
-// Список арендаторов в 2 строки на главной странице
-.News-List   ,
-.Seller-List {
-
-	li.News-Item   ,
-	li.Seller-Item {
-		padding: $size;
+// List of snippets like News, etc.
+.List.Snippets {
+	li.List-Item {
+		border: 1px solid $clr-grey-light;
+		margin-bottom: $size;
 		header {
-			margin-bottom: $size-s;
-			border-bottom: 1px $clr-grey dashed;
+			border-bottom: 1px $clr-grey solid;
 			padding-bottom: $size-s;
+			background-color: $clr-grey-lighter;
 			@extend ._Clearfix;
 			h5.Title {
+				margin: $size-n 0 $size-n $size-n;
 				display: block;
-				float: left;
-				width: 85%;
 
 				a {
 					font-size: $Font-Size-Large;
@@ -558,22 +516,14 @@ footer[role='contentinfo'] {
 				}
 			}
 
-
-			.Rating {
-				width: 15%;
-				float: left;
-				text-align: right;
-				color: $clr-grey;
-			}
-
+		}
+		img {
+			width: 100%;
 		}
 		.Description {
+			margin: $size-n;
 			font-size: 14px;
-			img {
-				width: 100%;
-				margin-bottom: $size;
-				@include Round(all);
-			}
+
 			& > div {
 			}
 		}
@@ -584,9 +534,10 @@ footer[role='contentinfo'] {
 	@extend ._No-Bullets;
 
 	.Snippet-Item {
+		border: 1px solid $clr-grey-light;
 
 		header {
-
+			background-color: $clr-grey-lighter;
 			.Item-Category ,
 			.Item-Location {
 				padding: 0;
@@ -603,13 +554,14 @@ footer[role='contentinfo'] {
 	@extend ._Clearfix;
 
 	header {
+		position: relative;
 		margin-bottom: $size;
 		@extend ._Clearfix;
 
 		.Item-Title {
-			margin: $size-xs $size-s 0 0;
+			margin: $size-n;
 			display: inline-block;
-			max-width: 55%;
+			max-width: 50%;
 			text-transform: uppercase;
 			font-size: 20px;
 			@extend ._Clearfix;
@@ -637,14 +589,16 @@ footer[role='contentinfo'] {
 		}
 
 		.Item-Values {
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
 			display: inline!important;
 			width: 45%;
 			color: white;
-			margin-right: -$size-xl;
 			float: right;
 			background: linear-gradient(to left, $clr-main, $clr-main-lighter);
 
-			@include Round(diagonal);
 			@extend ._No-Bullets;
 			@extend ._Inline;
 
@@ -659,11 +613,11 @@ footer[role='contentinfo'] {
 		}
 	}
 	.Item-Gallery {
-		padding-right: $size-l;
+		padding: 0 $size-n $size-n;
 		@extend ._Left;
 
 		img.Item-Main-Photo {
-			@include Round(all);
+			border-top: 2px solid $clr-main;
 			@extend ._Fit-Row;
 			@extend ._Highlight;
 		}
@@ -673,8 +627,8 @@ footer[role='contentinfo'] {
 			@extend ._Inline;
 
 			li {
-				width: 30%;
-				margin-left: 5%;
+				margin-top: -6px;
+				width: 33.33%;
 
 				&:first-child {
 					margin-left: 0;
@@ -683,7 +637,7 @@ footer[role='contentinfo'] {
 				img {
 					display: block;
 					width: 100%;
-					@include Round(all);
+					border-top: 2px solid $clr-main;
 					@extend ._Highlight;
 				}
 			}
@@ -702,11 +656,11 @@ footer[role='contentinfo'] {
 	}
 
 	.Item-Content {
-		margin-bottom: $size-l;
+		padding: 0 $size-n $size-n 0;
 		font-size: 14px;
 
 		@extend ._Right;
-		@extend .Seven;
+		@extend .XS-7;
 
 		h6 {
 			margin: $size-s 0 $size-xs;
@@ -720,7 +674,7 @@ footer[role='contentinfo'] {
 		}
 		table {
 			font-size: 14px;
-			border-top: 1px dashed $clr-grey-light;
+			border-top: 1px solid $clr-grey-light;
 			width: 100%;
 			tr {
 				td {
@@ -747,7 +701,6 @@ footer[role='contentinfo'] {
 	}
 }
 
-// @todo: вывести код готовых блоков-заготовок в отдельный файл
 ul.Tag-List {
 	@extend ._Clearfix;
 	@extend ._Inline;
@@ -769,9 +722,48 @@ ul.Tag-List {
 		}
 	}
 }
+.Vote {
+	@extend ._Inline;
+	@extend ._No-Bullets;
+	display: block;
+	width: 100%;
+	clear: both;
+	margin-top: $size-s;
+	margin-left: $size-n;
+	& > li {
+		@extend ._Clearfix;
+		& > a {
+			display: block;
+			width: 30px;
+			height: 30px;
+			border: 1px solid $clr-grey-light;
+			&:hover {
+				background-color: $clr-grey-darker;
+				border-color: black;
+			}
+		}
+		& > span {
+			text-align: center;
+			padding-top: 3px;
+			border-top: 1px solid $clr-grey-light;
+			border-bottom: 1px solid $clr-grey-light;
+			display: block;
+			width: 30px;
+			height: 30px;
+			color: $clr-grey;
+			font-size: 14px;
+		}
+	}
+}
 
+.Vote-Up {
+	background: url(../../../../img/techonline/icon-vote-up.png) center center no-repeat;
+}
+.Vote-Down {
+	background: url(../../../../img/techonline/icon-vote-down.png) center center no-repeat;
+}
 .List-Filter {
-	@extend .No-Bullets;
+	@extend ._No-Bullets;
 }
 li.List-Filter-Subheader {
 	background-color: $clr-grey-light;
@@ -805,7 +797,7 @@ li.List-Filter-Subheader {
 
 li.List-Filter-Subcategory {
 	ul {
-		@extend .No-Bullets;
+		@extend ._No-Bullets;
 		li {
 			border-top: 1px white solid;
 			a {
@@ -854,9 +846,10 @@ li.List-Filter-Subcategory {
 
 .Filter.Accordion {
 	margin-top: $size;
+
 	@extend ._No-Bullets;
 	.Filter-Subheader {
-		border-top: 1px solid white;
+		border-top: 1px solid $clr-grey;
         clear:both;
 		@extend ._Clearfix;
 		& > div {
@@ -882,8 +875,8 @@ li.List-Filter-Subcategory {
 		& > a {
 			float: right;
 			width: 90%;
-			color: white;
-			background-color: $clr-main;
+			color: black;
+			background-color: $clr-grey-lighter;
 			line-height: $line-height;
 			font-size: 16px;
 			display: block;
@@ -900,7 +893,7 @@ li.List-Filter-Subcategory {
               display:none;
             }
 			li {
-				border-top: 1px solid white;
+				border-top: 1px solid $clr-grey;
                 display: inline-block;
                 width: 33%;
 

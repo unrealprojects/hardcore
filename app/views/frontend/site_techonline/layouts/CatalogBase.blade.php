@@ -3,10 +3,31 @@
 @section('main')
 <section class="Node">
 
-    <h3 class="Section-Header">Каталог строительной техники Base.blade.php</h3>
-    <div class="Row Split">
+    <h3 class="Heading Primary">Каталог строительной техники</h3>
+
+    @if(!empty($breadCrumbs))
+    <div class="Breadcrumbs">
+        <ul class="Breadcrumb-List">
+            @foreach($breadCrumbs as $crumb)
+            @if($crumb['link'])
+            <li class="Breadcrumb-Item"itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="{{$crumb['link']}}" itemprop="url">
+                    <span itemprop="title">{{$crumb['title']}}</span>
+                </a>
+            </li>
+            @else
+            <li class="Breadcrumb-Item">
+                <span>{{$crumb['title']}}</span>
+            </li>
+            @endif
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
+    <div class="Row Merge">
         <!-- Фильтрация :: Общий блок -->
-        <aside class="Sidebar-Filter Grid Three">
+        <aside class="Sidebar-Filter Grid XS3">
             <!-- Фильтрация :: По брендам -->
             <h4>Производители</h4>
             <ul class="List-Filter">
@@ -39,10 +60,10 @@
             </ul>
         </aside>
 
-        <article class="Grid Eight End">
+        <article class="Grid XS-8 End">
             <ul class="Snippet-List">
             @foreach($content['list'] as $list_elem)
-                <li class="Snippet-Item Row Split">
+                <li class="Snippet-Item Row Merge">
 
                     <header>
                         <h4 class="Item-Title">
@@ -54,7 +75,7 @@
                         </h4>
                     </header>
 
-                    <div class="Item-Gallery Grid Five">
+                    <div class="Item-Gallery Grid XS-5">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                             @if($i==1)
                                  <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
@@ -71,7 +92,7 @@
                         </ul>
                     </div>
 
-                    <div class="Item-Content Grid Seven">
+                    <div class="Item-Content Grid XS-7">
                         {{$list_elem['description']}}
 
                         <!-- Параметры товара -->

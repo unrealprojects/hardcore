@@ -1,4 +1,4 @@
-body {
+html {
 	font-size: $Body-Font-Size;
 	line-height: 1.45;
 }
@@ -6,7 +6,7 @@ body {
 	color: white;
 	background-color: $selection-color;
 }
-a:link,
+a:link	  ,
 a:visited {
 	color: $clr-main;
 	text-decoration: none;
@@ -19,6 +19,13 @@ a:hover {
 a:active {
 	color: $clr-main;
 }
+
+h1 {	font-size: 2.00em;		}
+h2 {	font-size: 1.50em;		}
+h3 {	font-size: 1.25em;		}
+h4 {	font-size: 1.10em;		}
+h5 {	font-size: 1.00em;		}
+h6 {	font-size: 0.90em;		}
 
 hr {
 	height: 1px;
@@ -37,39 +44,27 @@ code {
 	}
 }
 
-.Section-Header.Ribbon {
-  background-color: $clr-blue;
-  color: #fff;
+// Ordinary heading.
+// Font-size depends ono h1-h6 number.
+.Heading {
+	display: block;
+	clear: both;
+	text-transform: uppercase;
+	font-weight: 100;
+	cursor: default;
 
-  position: relative;
-  display: block;
-  height: $size-xl;
-  margin: (-$size-l) (-$size-xl) 0;
+	@extend ._Unselectable;
 }
-.Node header.Ribbon h3 {
-  padding: $size-s $size-l 0;
+
+// Heading with background
+.Heading.Primary {
+	color: black;
 }
-.Section-Header.Ribbon:after  ,
-.Section-Header.Ribbon:before {
-  content: ' ';
-  position: absolute;
-  display: block;
-  border: $size-n solid $clr-main-dark;
-  border-bottom-color: transparent;
-  top: $size-xl;
-  z-index: 1;
-}
-.Section-Header.Ribbon:before {
-  border-left-color: transparent;
-  left: 0;
-}
-.Section-Header.Ribbon:after {
-  border-right-color: transparent;
-  right: 0;
-}
-.Inline > li {
-  float: left;
-}
-.No-Bullets {
-  list-style: none;
+
+// Heading width underline (border-bottom)
+.Heading.Underlined {
+	display: block;
+	padding-bottom: $size-s;
+	border-bottom: 1px solid $clr-grey;
+	font-weight: 100;
 }

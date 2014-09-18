@@ -1,3 +1,4 @@
+// 768px +
 @media all and (min-width: $Screen-Size-Tiny) {
 	.Node {
 		@include 			Round(all);
@@ -5,6 +6,35 @@
 
 	.Site-Logo div h2 {
 		font-size: 22px;
+	}
+	.List.Snippets header {
+		position: relative;
+	}
+	.List.Snippets .Title {
+		display: block;
+		width: 100%;
+		padding-right: 110px;
+		float: left;
+	}
+	.Vote {
+		margin-top: 0;
+		width: 90px;
+		position: absolute;
+		top: $size-s;
+		right: $size-s;
+	}
+	.Vote-Up {
+		@include Round(right, $Control-Border-Radius);
+	}
+	.Vote-Down {
+		@include Round(left, $Control-Border-Radius);
+	}
+	li.List-Item {
+		@include Round(all, $Control-Border-Radius);
+	}
+	.Snippet-Item {
+		@include Round(all, $Control-Border-Radius);
+
 	}
 
 }
@@ -14,15 +44,10 @@
 		display: none;
 	}
 
-	.Section-Header,
-	.Section-Subheader {
-		display: inline-block;
-		@include Round(diagonal);
-	}
-	.Page-Header {
+	.Site-Header {
 		height: 80px;
 	}
-	.Page-Header-Inner {
+	.Site-Header-Inner {
 		width: $Section-Width-Small;
 	}
 		.Site-Logo {
@@ -30,30 +55,35 @@
 			width: 35%!important;
 
 		}
-		.Page-Navigation {
+		.Site-Navigation.Primary {
 			float: left;
 			width: 50%;
 			display: block!important;
+		}
 
-			ul {
-				li {
-					width: auto;
-					display: inline-block;
-					float: left;
-					margin-left: $size-n;
-					a {
-						padding: $size-l 0 $size-s;
-						border-top: 0;
-						&:hover,
-						&.Link-Active {
-							background-color: transparent;
-							border-color: $clr-main;
-							color: $clr-main;
-						}
-					}
-				}
+
+		ul.Menu-List {
+			li {
+				width: auto;
+				display: inline-block;
+				float: left;
+				margin-left: $size-n;
 			}
 		}
+
+		a.Menu-Link {
+			padding: $size-l $size-xs $size-s;
+			border-top: 0;
+			font-size: 15px;
+			color: black;
+			&:hover,
+			&.Link-Active {
+				background-color: transparent;
+				border-color: $clr-main;
+				color: $clr-main;
+			}
+		}
+
 
 		.Page-Auth {
 			float: left;
@@ -100,23 +130,41 @@
 		}
 	}
 }
+
+// 1280 x 720 HD
 @media all and (min-width: $Screen-Size-Default) {
 	.Node {
 		padding: $size-l;
 	}
-	.Section-Header {
-		font-size: 22px;
-	}
-	.Page-Header-Inner {
+
+	.Site-Header-Inner {
 		width: $Section-Width-Default;
 	}
+	a.Menu-Link {
+		font-size: 16px;
+	}
 
 }
+
+// 1920 x 1080 Full HD
 @media all and (min-width: $Screen-Size-Large) {
-
+	.Site-Header-Inner {
+		width: $Section-Width-Large;
+	}
+	a.Menu-Link {
+		font-size: 18px;
+	}
+	img.Footer-Img {
+			 display: block;
+	}
 }
+
+// 2560 x 1440 Ultra HD
 @media all and (min-width: $Screen-Size-Huge) {
 	.Node {
 		padding: $size-xl;
+	}
+	.Site-Header-Inner {
+			 width: $Section-Width-Huge;
 	}
 }

@@ -10,13 +10,9 @@
 	margin-right: auto;
 }
 
-// Отбивает секции друг от друга по вертикали за исключением первого
+// Отбивает секции друг от друга по вертикали
 ._Standalone {
 	margin-top: 	$section-gap;
-
-	&:first-child {
-		margin-top: 0;
-	}
 }
 // Отбивает блоки друг от друга по вертикали за исключением первого
 ._Vertical-Spacing {
@@ -119,14 +115,15 @@
 }
 ._Button {
 	padding: 				$size-n $size;
-
-	border: 				0!important;
+	border: 				1px solid $clr-main;
 	background-color: 		$clr-main;
 	font-weight: 			100;
 	color: 					#fff;
 	cursor: 				pointer;
+	box-shadow: 0 0 1px white inset;
 	@include 				Transition(background, .3s);
 	&:hover {
+		border-color:		$clr-grey-darker;
 		background-color: 	$clr-grey-darker;
 	}
 	&._Rounded {
@@ -156,11 +153,4 @@
 	-ms-user-select: 		none;
 	-o-user-select: 		none;
 	user-select: 			none;
-}
-
-._Smart-Brake {
-	display: block;
-	@media all and (min-width: $Screen-Size-Tiny) {
-		display: inline;
-	}
 }

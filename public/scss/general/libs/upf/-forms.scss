@@ -45,10 +45,10 @@
 	&.Checkbox.Submit {
 		& > label {
 			padding: $size-s 0;
-			@extend .Six;
+			@extend .XS-6;
 		}
 		& > [type='submit'] {
-			@extend .Six;
+			@extend .XS-6;
 		}
 	}
 
@@ -149,23 +149,7 @@ input[type='radio']     {
   border: 				0;
 }
 
-// КНОПКА
-input[type='submit'] {
-	width: 				inherit;
-	padding: 			$size-s 0;
-	font-size: 			110%;
-	text-align: 		center;
-	@extend 			._Button;
 
-	&:hover {
-		background-color: $clr-grey-darker;
-	}
-
-	&[disabled] {
-		background-color: $clr-grey;
-		cursor: not-allowed;
-	}
-}
 
 // КНОПКА (ОТКЛЮЧЕНА)
 .Control-Group input        ,
@@ -181,6 +165,24 @@ input[type='submit'] {
   border-color: $Control-Focus-Border-Color;
 }
 
+// КНОПКА
+input[type='submit'] {
+	width: 				inherit;
+	padding: 			$size-s 0;
+	font-size: 			110%;
+	font-weight: 		100;
+	text-align: 		center;
+	@extend 			._Button;
+
+	&:hover {
+		background-color: $clr-grey-darker;
+	}
+
+	&[disabled] {
+		background-color: $clr-grey;
+		cursor: not-allowed;
+	}
+}
 
 
 // FIX reCaptcha

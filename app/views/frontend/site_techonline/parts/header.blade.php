@@ -1,7 +1,7 @@
 <!-- СЕКЦИЯ: Верхнее меню сайта (Логотип + Вход) -->
-<section class="Page-Header">
+<section class="Site-Header">
 
-    <div class="Page-Header-Inner" role="banner">
+    <div class="Site-Header-Inner" role="banner">
 
         <div href="http://hardcore/catalog" class="Site-Logo">
             <div>
@@ -15,12 +15,12 @@
         </div>
 
         <div id="Menu-Toggle"></div>
-        <nav id="Menu" class="Page-Navigation">
-            <ul>
-                <li><a href="/catalog" title="Каталог стройтехники">Каталог</a></li>
-                <li><a href="/rent" title="Взять стройтехнику в аренду">Аренда</a></li>
-                <li><a href="/parts">Запчасти и сервис</a></li>
-                <li><a href="/sellers">Арендодатели</a></li>
+        <nav id="Menu" class="Site-Navigation Primary">
+            <ul class="Menu-List">
+                <li><a class="Menu-Link" href="/catalog" title="Каталог стройтехники">Каталог</a></li>
+                <li><a class="Menu-Link" href="/rent" title="Взять стройтехнику в аренду">Аренда</a></li>
+                <li><a class="Menu-Link" href="/parts">Запчасти и сервис</a></li>
+                <li><a class="Menu-Link" href="/sellers">Арендодатели</a></li>
             </ul>
         </nav>
 

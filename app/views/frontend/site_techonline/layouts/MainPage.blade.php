@@ -12,15 +12,16 @@
 
 <!-- ФИЛЬТР -->
 
-<div class="Node Filter">
+<section class="Node Filter">
 
-    <h3 class="Section-Header">Поиск стройтехники</h3>
+    <h3 class="Heading Primary">Поиск стройтехники</h3>
+
     <dl class="Tabs">
         <dt class="Active Tab-Regions"><span>Выбор региона</span></dt>
         <dd class="Active Tab-Regions">
             <div>
                 <div class="Control-Group">
-                    <input class="Autocomplete-Regions" placeholder="Поиск региона ..."/>
+                    <input class="Autocomplete" placeholder="Поиск региона ..."/>
                 </div>
                 <!-- ФИЛЬТР::ТАБ 1::РЕГИОНЫ-->
                 <ul class="Filter Accordion ">
@@ -67,7 +68,7 @@
         <dd class="Tab-Categories">
             <div>
                 <div class="Control-Group">
-                    <input class="Autocomplete-Categories" placeholder="Поиск техники ..."/>
+                    <input class="Autocomplete" placeholder="Поиск техники ..."/>
                 </div>
                 <ul class="Filter Accordion">
                     @foreach($content['categories_with_popular'] as $category)
@@ -113,57 +114,69 @@
         </dd>
     </dl>
     <div class="Control-Group Offset">
-        <button class="Button Search">Выполнить поиск</button>
+        <button class="Button">Выполнить поиск</button>
     </div>
-</div>
+</section>
 
-<section class="Node Row Category-List">
 
-    <!-- КАТАЛОГ СТРОЙТЕХНИКИ::КАТЕГОРИИ C КАРТИНКАМИ-->
-    <h3 class="Section-Header">Каталог стройтехники</h3>
+<!-- КАТАЛОГ СТРОЙТЕХНИКИ::КАТЕГОРИИ C КАРТИНКАМИ-->
+<section class="Node Row">
+
+    <h3 class="Heading Primary">Каталог стройтехники</h3>
+
     <ul class="Row Merge List-Categories Icons">
         @foreach($content['categories'] as $category)
-            <li class="Grid Three"><img src="{{$category['logo']}}"><a href="/catalog/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
+            <li class="Grid XS-6 SM-3"><img src="{{$category['logo']}}"><a href="/catalog/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
         @endforeach
     </ul>
 
 </section>
 
-<section class="Node Row Split Rent-List">
 
-    <!-- АРЕНДА СТРОЙТЕХНИКИ::КАТЕГОРИИ -->
-    <div class="Grid Seven">
-        <h4 class="Header-Column">Аренда стройтехники</h4>
+
+<!-- АРЕНДА СТРОЙТЕХНИКИ::КАТЕГОРИИ -->
+<section class="Node Row Merge">
+
+    <div class="Grid XS-7">
+
+        <h3 class="Heading Underlined">Аренда стройтехники</h3>
+
         <ul class="List-Categories Row Merge">
             @foreach($content['categories'] as $category)
-            <li class="Grid Six""><a href="/rent/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
+            <li class="Grid XS-6"><a href="/rent/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
             @endforeach
         </ul>
+
     </div>
 
     <!-- АРЕНДА СТРОЙТЕХНИКИ::БРЕНДЫ -->
-    <div class="Grid Five">
-        <h4 class="Header-Column">Производители</h4>
+    <div class="Grid XS-5">
+
+        <h3 class="Heading Underlined">Производители</h3>
+
         <ul class="List-Categories Row Merge">
             @foreach($content['brands'] as $brand)
-            <li class="Row Merge Grid Six">
+            <li class="Row Merge Grid XS-6">
                 <a href="/rent/?brand=$brand['alias']" alt="{{$brand['name']}}">
                     {{$brand['name']}}
                 </a>
             </li>
             @endforeach
         </ul>
+
     </div>
 
 </section>
 
 
 <!-- АРЕНДОДАТЕЛИ::СПИСОК -->
-<div class="Node">
-    <h4 class="Section-Header">Лучшие арендодатели</h4>
-    <ul class="Seller-List Row Split">
+<section class="Node Renters">
+
+    <h3 class="Heading Primary">Лучшие арендодатели</h3>
+
+    <ul class="List Snippets Row Split">
         @foreach($content['sellers'] as $seller)
-        <li class="Seller-Item Grid Six">
+        <li class="List-Item Grid XS-6 LR-4">
             <header>
                 <h5 class="Title">
                     <a href="/sellers/{{$seller['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$seller['name']}}</a>
@@ -173,9 +186,11 @@
                 </h5>
 
 
-                <div class="Rating">
-                    {{$seller['rating']}}
-                </div>
+                <ul class="Vote">
+                    <li><a class="Vote-Down" href="#"></a></li>
+                    <li><span>{{$seller['rating']}}</span></li>
+                    <li><a class="Vote-Up" href="#"></a></li>
+                </ul>
             </header>
             <div class="Description">
                 {{$seller['description']}}
@@ -183,14 +198,17 @@
         </li>
         @endforeach
     </ul>
-</div>
+
+</section>
 
 <!-- НОВОСТИ::СПИСОК -->
-<section class="News Node">
-    <h4 class="Section-Header">Новости</h4>
-    <ul class="News-List Row Split">
+<section class="Node News">
+
+    <h3 class="Heading Primary">Новости</h3>
+
+    <ul class="List Snippets Row Split">
         @foreach($content['news'] as $new)
-        <li class="News-Item Grid Six">
+        <li class="List-Item Grid XS-6">
             <header>
                 <h5 class="Title">
                     <a href="/news/{{$new['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$new['name']}}</a>
@@ -200,17 +218,21 @@
                 </h5>
 
 
-                <div class="Rating">
-                    {{$new['rating']}}
-                </div>
+                <ul class="Vote">
+                    <li><a class="Vote-Down" href="#"></a></li>
+                    <li><span>{{$seller['rating']}}</span></li>
+                    <li><a class="Vote-Up" href="#"></a></li>
+                </ul>
             </header>
+
+            <img src="{{$new['logo']}}" alt="{{$new['name']}}">
             <article class="Description">
-                <img src="{{$new['logo']}}" alt="{{$new['name']}}">
                 <div>{{$new['text_preview']}}</div>
             </article>
         </li>
         @endforeach
     </ul>
+
 </section>
 
 @endsection
