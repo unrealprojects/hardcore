@@ -26,7 +26,30 @@ body {
 	@include 		Font-Size(85%,90%,100%, 110%);
 	@include 		Animation(FadeIn,0.6s);
 }
+.Node {
+	padding: 			$size-n;
+	border:				1px solid $clr-grey-light;
+	background-color: 	white;
+	clear: 				both;
 
+	@extend 			._Centered;
+	@extend 			._Standalone;
+	@extend 			._Section-Inner;
+	@extend 			._Clearfix;
+}
+
+// Внутренние элементы нода отступают друг от друга
+.Node > * {
+	margin-top: $size;
+}
+.Node.Row > * {
+	margin-top: 0;
+}
+
+// Убирает отступ у первого элемента в ноде
+.Node > *:first-child {
+	margin-top: 0;
+}
 
 // Site Header.
 // Main block with 100% width
@@ -884,15 +907,15 @@ li.List-Filter-Subcategory {
 		}
 	}
 }
-
 .Filter-Subcategory {
 	background: $clr-grey-lighter;
 	display: none;
 
+	.Filter-Cities,
 	ul {
 		@extend ._No-Bullets;
-		.Filter-Cities{
-			display:none;
+		.Filter-Cities {
+			display: none;
 		}
 
 		li {
@@ -911,7 +934,25 @@ li.List-Filter-Subcategory {
 		}
 	}
 }
-
+.Filter-Cities {
+	margin-top: $size;
+	@extend .Row;
+	@extend .Merge;
+	li {
+		border-top: 1px $clr-grey-light solid;
+		@extend .Grid;
+		@extend .XS-6;
+		@extend .LR-4;
+		a {
+			display: block;
+			padding: $size-s $size-l;
+			color: black;
+			&:hover {
+				background-color: $clr-grey-lighter;
+			}
+		}
+	}
+}
 .ui-widget-header{
   background-color: $clr-main;
 }
