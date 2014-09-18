@@ -6,12 +6,12 @@
         <img id="Truck" src="/img/techonline/belaz.png" alt=""/>
         <div id="Slider-Links">
             <a class="Button _Rounded" href="#">Арендовать стройтехнику</a>
-            <a class="Button _Rounded" href="#">Разместить стройтехнику</a></div>
+            <a class="Button _Rounded" href="#">Разместить стройтехнику</a>
+        </div>
     </div>
 </section>
 
 <!-- ФИЛЬТР -->
-
 <section class="Node Filter">
 
     <h3 class="Heading Primary">Поиск стройтехники</h3>
@@ -108,6 +108,47 @@
 
                         <div class="Slider-Range" id="Slider-Range-2"></div>
                     </div>
+
+                    <!-- Бренды -->
+                    <ul class="Filter Accordion Accordion-Brands">
+
+                        <li class="Filter-Subheader Accordion-Subheader">
+                            <div class="Accordion-Switch"><span>&or;</span></div>
+                            <a href="#">Выбор прроизводителя</a>
+                        </li>
+
+                        <li class="Filter-Subcategory Accordion-Subcategory">
+                            <ul>
+                                <li>
+                                    <div class="Control-Group">
+                                        <input type="checkbox" checked="checked" id="native_brands"/>
+                                        <label for="native_brands" >Все производители</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="Control-Group">
+                                        <input type="checkbox" checked="checked" id="foreign_brands"/>
+                                        <label for="all_brands" >Отечественные производители</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="Control-Group">
+                                        <input type="checkbox" checked="checked" id="foreign_brands"/>
+                                        <label for="foreign_brands" >Зарубежные производители</label>
+                                    </div>
+                                </li>
+                                @foreach($content['brands'] as $brand)
+                                 <li>
+                                      <div class="Control-Group">
+                                          <input type="checkbox" checked="checked" foreign="false" name="{{$brand['alias']}}" id="brand_{{$brand['alias']}}"/>
+                                          <label for="brand_{{$brand['alias']}}" >{{$brand['name']}}</label>
+                                      </div>
+
+                                 </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    </ul>
 
                 </form>
             </div>
@@ -372,14 +413,27 @@
             return false;
         });
 
+        /* Таб :: Параметры */
+        $('.Accordion-Brands input[type=checkbox]').click( function(){
+
+            $('.Accordion-Brands input[type=checkbox]').each(function(key,item){
+                if($(item).is(':checked')){
+                    searchArray['brands['+key+']']=$(item).attr('name');
+                }else{
+                    delete searchArray['brands['+key+']'];
+                }
+            });
+        });
+
+
         /* Поиск */
         $('.Search').click(function(){
             searchString='?';
             $.each(searchArray,function(key,value){
                 searchString+=key+'='+value+'&';
             });
-            location.href='rent'+searchString;
-            //console.log(searchString);
+//            location.href='rent'+searchString;
+            console.log('rent'+searchString);
         });
  </script>
 @endsection

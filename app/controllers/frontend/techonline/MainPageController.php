@@ -14,7 +14,7 @@ class MainPageController extends TechonlineController{
             'categories_with_popular'=>\Model\General\Categories::toSubCategories(true),
             'regions'=>\Model\General\TechOnline\CatalogRegion::toSubRegions(true),
             'regions_list'=>\Model\General\TechOnline\CatalogRegion::all(),
-            'brands'=>\Model\General\TechOnline\CatalogBrand::all()->toArray(),
+            'brands'=>\Model\General\TechOnline\CatalogBrand::orderBy('foreign')->get()->toArray(),
             'news'=>\Model\General\News::orderBy('rating','desc')->with('tags','metadata')->limit(6)->get()->toArray(),
             'sellers'=>\Model\General\TechOnline\CatalogAdmin::orderBy('rating','desc')->with('region','metadata')->limit(6)->get()->toArray()
         ];

@@ -323,20 +323,17 @@ class TechonlineCatalog extends Migration {
             $table->increments('id');
             $table->string('alias')->nullable();
             $table->string('name')->nullable();
+            $table->string('foreign')->default(false);
         });
 
         $brands = [
                 'Mercedes-Benz',
-                'КамАЗ',
-                'КрАЗ',
                 'MAN',
                 'Foton',
                 'Carmix',
-                'МТЗ',
                 'Putzmeister',
                 'Brinkmann',
                 'Zettelmeyer',
-                'УРБ',
                 'Vicon'
             ];
 
@@ -344,8 +341,25 @@ class TechonlineCatalog extends Migration {
             $catalog_brand = new \Model\General\TechOnline\CatalogBrand();
             $catalog_brand->name=$brand;
             $catalog_brand->alias = Mascame\Urlify::filter($catalog_brand->name);
+            $catalog_brand->foreign = true;
             $catalog_brand->save();
         }
+
+        $brands = [
+            'КамАЗ',
+            'КрАЗ',
+            'МТЗ',
+            'УРБ',
+        ];
+
+        foreach($brands as $brand){
+            $catalog_brand = new \Model\General\TechOnline\CatalogBrand();
+            $catalog_brand->name=$brand;
+            $catalog_brand->alias = Mascame\Urlify::filter($catalog_brand->name);
+            $catalog_brand->save();
+        }
+
+
 
         /*** СОСТОЯНИЕ ***/
         Schema::create('catalog_opacity', function($table)
