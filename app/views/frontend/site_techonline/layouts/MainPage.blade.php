@@ -21,7 +21,7 @@
         <dd class="Active Tab-Regions">
             <div>
                 <div class="Control-Group">
-                    <input class="Autocomplete" placeholder="Поиск региона ..."/>
+                    <input class="Autocomplete Autocomplete-Regions" placeholder="Поиск региона ..."/>
                 </div>
                 <!-- ФИЛЬТР::ТАБ 1::РЕГИОНЫ-->
                 <ul class="Filter Accordion ">
@@ -68,7 +68,7 @@
         <dd class="Tab-Categories">
             <div>
                 <div class="Control-Group">
-                    <input class="Autocomplete" placeholder="Поиск техники ..."/>
+                    <input class="Autocomplete Autocomplete-Categories" placeholder="Поиск техники ..."/>
                 </div>
                 <ul class="Filter Accordion">
                     @foreach($content['categories_with_popular'] as $category)
