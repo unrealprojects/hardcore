@@ -41,7 +41,7 @@
 
         <article class="Grid Eight End">
             <ul class="Snippet-List">
-            @foreach($content['list'] as $list_elem)
+            @foreach($content['list'] as $item_key =>$list_elem)
                 <li class="Snippet-Item Row Split">
 
                     <header>
@@ -57,14 +57,16 @@
                     <div class="Item-Gallery Grid Five">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
                             @if($i==1)
-                                 <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                        <a href="{{$photo['src']}}" rel="Gallery-{{$item_key}}" class="fancybox"><img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
 
                         <ul>
                             @elseif($i>1 && $i<5)
-                                <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
+                                <li>
+                                    <a href="{{$photo['src']}}" rel="Gallery-{{$item_key}}" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
+                                </li>
                             @elseif($i>5)
                                 <li style="display: none">
-                                    <img src="{{$photo['src']}}" alt="{{$photo['name']}}">
+                                    <a href="{{$photo['src']}}" rel="Gallery-{{$item_key}}" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
                                 </li>
                             @endif
                         @endforeach
@@ -111,5 +113,6 @@
 @endsection
 
 @section('scripts')
+    @parent
     <script src="/js/frontend/Accordion.js" type="text/javascript"></script>
 @endsection
