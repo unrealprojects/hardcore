@@ -25,7 +25,7 @@
                         <h4 class="Item-Title">
                             <a href="/news/{{$list_elem['metadata']['alias']}}">{{$list_elem['name']}}</a>
 
-                            <span>{{$list_elem['created_at']}}</span>
+                            <span class="Item-Subtitle">{{$list_elem['created_at']}}</span>
                         </h4>
 
                         <ul class="Vote">
@@ -45,7 +45,7 @@
                     <footer>
                         <ul class="Tag-List">
                             @foreach($list_elem['tags'] as $tag)
-                            <li><a href="/news/?tag={{$tag['alias']}}&{{\Input::getQueryString()}}">{{$tag['name']}}</a></li>
+                            <li class="Tag-Item"><a href="/news/?tag={{$tag['alias']}}&{{\Input::getQueryString()}}">{{$tag['name']}}</a></li>
                             @endforeach
                         </ul>
                     </footer>

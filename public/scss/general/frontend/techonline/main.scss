@@ -9,7 +9,7 @@ body,
 
 body > #wrap {
 	height: auto;
-	min-width: 360px;
+	min-width: 320px;
 	min-height: 100%;
 	clear: both;
 	& > #wrap-stop {
@@ -18,7 +18,6 @@ body > #wrap {
 }
 
 body {
-	background: 	$clr-grey-lighter;
 
 	font-family: 	'Exo 2','Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 	1.45;
@@ -35,7 +34,6 @@ body {
 }
 .Node {
 	padding: 			$size-n;
-	border:				1px solid $clr-grey-light;
 	background-color: 	white;
 	clear: 				both;
 
@@ -43,6 +41,7 @@ body {
 	@extend 			._Standalone;
 	@extend 			._Section-Inner;
 	@extend 			._Clearfix;
+	@extend 			._Soft_Shadow;
 }
 
 // Внутренние элементы нода отступают друг от друга
@@ -539,12 +538,6 @@ img.Footer-Img {
 					font-size: $Font-Size-Large;
 					text-transform: uppercase;
 				}
-				.News-Date       ,
-				.Seller-Location {
-					display: block;
-					clear: both;
-					font-size: $Font-Size-Micro;
-				}
 			}
 
 		}
@@ -560,6 +553,13 @@ img.Footer-Img {
 		}
 	}
 }
+.Item-Subtitle {
+	display: block;
+	clear: both;
+	font-size: 12px;
+}
+
+// Only for LIST of Snippets
 .Snippet-List {
 	@extend ._Vertical-Spacing;
 	@extend ._No-Bullets;
@@ -575,12 +575,19 @@ img.Footer-Img {
 				padding: 0;
 			}
 		}
+		footer {
+			padding: 0 $size-n $size-n;
+			width: 100%;
+			clear: both;
+			@extend ._Clearfix;
+		}
 	}
 	.Item-Photo {
 		@extend .Grid;
 		@extend .XS-5;
 	}
 	.Item-Gallery {
+		@extend ._Clearfix;
 		@extend .Grid;
 		@extend .XS-5;
 		& > img {
@@ -588,10 +595,12 @@ img.Footer-Img {
 		}
 	}
 	.Item-Content {
+		margin-top: $size-n;
 		@extend .Grid;
 		@extend .XS-7;
 	}
 }
+
 .Snippet-Item {
 	@extend ._Clearfix;
 	@extend .Row;
@@ -636,17 +645,16 @@ img.Footer-Img {
 			right: 0;
 			top: 0;
 			bottom: 0;
-			display: inline!important;
+			display: table;
 			width: 45%;
-			color: white;
 			float: right;
-			background: linear-gradient(to left, $clr-main, $clr-main-lighter);
 
 			@extend ._No-Bullets;
 			@extend ._Inline;
+			@extend .Row;
 
 			li {
-				padding: $size-s $size-s;
+				padding: $size-n $size-s;
 				h6 {
 					margin: 0;
 					font-size: 12px;
@@ -656,8 +664,7 @@ img.Footer-Img {
 		}
 	}
 	.Item-Gallery {
-		padding: 0 $size-n $size-n;
-		@extend ._Left;
+		@extend ._Clearfix;
 
 		img.Item-Main-Photo {
 			border-top: 2px solid $clr-main;
@@ -699,7 +706,6 @@ img.Footer-Img {
 	}
 
 	.Item-Content {
-		padding: 0 $size-n $size-n;
 		font-size: 14px;
 
 		@extend .XS-7;
@@ -744,11 +750,12 @@ img.Footer-Img {
 }
 .Filter-Result {
 	border: 1px solid $clr-grey-lighter;
-	border-top: 2px solid $clr-main;
+	border-top-color: $clr-main;
 	width: 100%;
 	padding: $size-s;
 	font-size: 80%;
 	@extend ._No-Bullets;
+	@include Animation(FadeIn,1s);
 	li {
 		padding: $size-xs 0;
 		@extend ._Clearfix;
@@ -777,18 +784,19 @@ ul.Tag-List {
 	@extend ._No-Bullets;
 
 	li.Tag-Item {
-		margin-right: $size-s;
-		margin-bottom: $size-s;
+		margin-right: $size-xs;
+		margin-bottom: $size-xs;
 		a {
 			display: inline-block;
-			padding: $size-xs $size-s;
-			border: 1px solid $clr-grey-dark;
+			padding: $size-xs;
 			background-color: $clr-grey;
-			color: white;
+			color: $clr-grey-darker;
+			font-family: $Font-Family-Calibri;
 			font-size: 12px;
 
 			@include Round(all, $Control-Border-Radius);
 			&:hover {
+				color: white;
 				background-color: $clr-grey-dark;
 			}
 		}

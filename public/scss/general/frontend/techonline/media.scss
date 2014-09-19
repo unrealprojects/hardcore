@@ -34,7 +34,13 @@
 	}
 	.Snippet-Item {
 		@include Round(all, $Control-Border-Radius);
-
+		.Item-Gallery {
+			padding: 0 $size-n $size-n;
+		}
+		.Item-Content {
+			margin-top: 0;
+			padding: 0 $size-n $size-n;
+		}
 	}
 	.Filter-Subcategory ul li {
 		float: left!important;
