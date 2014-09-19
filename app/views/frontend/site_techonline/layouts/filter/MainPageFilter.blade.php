@@ -1,11 +1,6 @@
 <section class="Node Filter">
 
     <h3 class="Heading Primary">Поиск стройтехники</h3>
-    <ul class="Filter-Result">
-        <li>Регион: <span>Архангельская область</span><a class="Delete" href="#">Удалить</a></li>
-        <li>Город: <span>Северодвинск</span><a class="Delete" href="#">Удалить</a></li>
-        <li>Категория: <span>Буровые станки</span><a class="Delete" href="#">Удалить</a></li>
-    </ul>
     <dl class="Tabs">
         <dt class="Active Tab-Regions"><span>Выбор региона</span></dt>
         <dd class="Active Tab-Regions">
@@ -91,7 +86,7 @@
         <dd class="Tab-Params">
             <div>
                 <form class="Form-Vertical" action="">
-                    <!-- ФИЛЬТР::ТАБ 3::ПАРАМЕТРЫ (ЗАВЕРСТАТЬ СЛАЙДЕР JQUERY - ВЫВЕДУ ПОЗЖЕ) -->
+                    <!-- ФИЛЬТР::ТАБ 3::ПАРАМЕТРЫ -->
                     <div class="Control-Group">
                         <label for="Slider-Range-1">Цена: <span id="Slider-Range-Value-1"></span></label>
 
@@ -152,6 +147,20 @@ function scrollToTabs(){
     }, 400);
 }
 
+// Получение параметров через ajax по категории
+function getAjaxParams($category_alias){
+    $.ajax({
+        type:'get',
+        url:'/filter/'+$category_alias,
+        dataType:'json',
+        success:function(data){
+            $('.Ajax-Params').remove();
+            $('.Tab-Params .Form-Vertical>.Control-Group').first().after($('<div/>').html(data['params']).text());
+            $('body').append($('<div/>').html(data['script']).text());
+        }
+    });
+}
+
 /* Формирование слайдера */
 
 //Фильтр по цене
@@ -207,8 +216,7 @@ $( ".Autocomplete-Categories" ).autocomplete({
         /* Запись параметров */
         searchArray['category']=ui.item.key;
 
-        /* todo:: ajax запрос на смену таба */
-        /* Смена таба */
+        getAjaxParams(searchArray['category']);
         $('.Tab-Categories').removeClass('Active');
         $('.Tab-Params').addClass('Active');
         scrollToTabs();
@@ -245,12 +253,24 @@ $('dd.Tab-Regions .Filter-Subcategory li>a').click(function(){
         searchArray['region']=$(this).attr('alias');
         delete searchArray['region_type'];
 
+        if($('.Filter-Result').length){
+            $(".Filter-Select-Region").remove();
+            $('.Filter-Result').append('<li class="Filter-Selected-Region"><span>'+$(this).text()+'</span><a class="Delete" alias="'+$(this).attr('alias')+'" href="#">Удалить</a></li>');
+        }else{
+            $('.Filter .Heading').after('<ul class="Filter-Result"><li id="Filter-Selected-Region"><span>'+$(this).text()+'</span><a class="Delete" alias="'+$(this).attr('alias')+'" href="#">Удалить</a></li></ul>');
+        }
+
         /* Смена таба */
         $('.Tab-Regions').removeClass('Active');
         $('.Tab-Categories').addClass('Active');
         scrollToTabs();
     }
     return false;
+});
+
+$(document).on('click','.Filter-Selected-Region .Delete',function(){
+    delete searchArray['region'];
+    $(this).parent().remove();
 });
 
 /* Выбор города */
@@ -280,19 +300,7 @@ $('dd.Tab-Regions .Filter-Subheader a').click(function(){
 
 /****************************************************************************************** Таб :: Категории */
 
-// Получение параметров через ajax по категории
-function getAjaxParams($category_alias){
-    $.ajax({
-        type:'get',
-        url:'/filter/'+$category_alias,
-        dataType:'json',
-        success:function(data){
-            $('.Ajax-Params').remove();
-            $('.Tab-Params .Form-Vertical>.Control-Group').first().after($('<div/>').html(data['params']).text());
-            $('body').append($('<div/>').html(data['script']).text());
-        }
-    });
-}
+
 
 
 
