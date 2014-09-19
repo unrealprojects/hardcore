@@ -944,21 +944,9 @@ body {
 .Node-Wrap {
   padding: 20px 0;
   width: 100%;
-  border: 1px solid #999999;
   border-left: 0;
   border-right: 0;
-  background-color: #999999;
-  /* Fallback */
-  background: -webkit-linear-gradient(top, #cccccc, #999999);
-  /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background: -moz-linear-gradient(top, #cccccc, #999999);
-  /* FF3.6 */
-  background: -ms-linear-gradient(top, #cccccc, #999999);
-  /* IE10 */
-  background: -o-linear-gradient(top, #cccccc, #999999);
-  /* Opera 11.10+ */
-  background: linear-gradient(top, #cccccc, #999999);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#cccccc', EndColorStr='#999999'); }
+  background-color: #dedede; }
 
 .Node {
   padding: 15px;

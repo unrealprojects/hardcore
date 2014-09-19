@@ -29,10 +29,9 @@ body {
 .Node-Wrap {
 	padding: $size 0;
 	width: 100%;
-	border: 1px solid $clr-grey-dark;
 	border-left: 0;
 	border-right: 0;
-	@include Gradient($clr-grey, $clr-grey-dark, top);
+	background-color: $clr-grey-light;
 }
 .Node {
 	padding: 			$size-n;
