@@ -44,6 +44,10 @@
 
 }
 @media all and (min-width: $Screen-Size-Small) {
+	.Filter-Result {
+		display: inline-block;
+		width: auto;
+	}
 	.Snippet-List {
 		.Snippet-Item {
 			border: 1px solid $clr-grey-light;

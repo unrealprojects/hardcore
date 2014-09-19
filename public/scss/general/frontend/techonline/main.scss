@@ -745,12 +745,13 @@ img.Footer-Img {
 .Filter-Result {
 	border: 1px solid $clr-grey-lighter;
 	border-top: 2px solid $clr-main;
-	display: inline-block;
+	width: 100%;
 	padding: $size-s;
 	font-size: 80%;
 	@extend ._No-Bullets;
 	li {
 		padding: $size-xs 0;
+		@extend ._Clearfix;
 		span {
 			font-weight: bold;
 		}
@@ -761,6 +762,10 @@ img.Footer-Img {
 			background-color: $clr-main;
 			color: white;
 			@include Round(all, $Control-Border-Radius);
+			@extend ._Right;
+			&:hover {
+				background-color: $clr-grey-darker;
+			}
 		}
 	}
 
