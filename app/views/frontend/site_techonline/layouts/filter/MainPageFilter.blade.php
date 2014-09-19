@@ -95,7 +95,7 @@
                     </div>
 
                     <!-- Бренды -->
-                    <ul class="List-Group-Actions">
+                    <ul class="List-Group-Actions  Accordion-Brands">
                         <li>
                             <label class="Control-Group">
                                 <input type="checkbox" checked="checked" id="all_brands"/>
@@ -115,14 +115,13 @@
                             </label>
                         </li>
                     </ul>
-                    <ul class="List-Params">
+                    <ul class="List-Params  Accordion-Brands">
                         @foreach($content['filter']['brands'] as $brand)
                         <li>
                             <label class="Control-Group">
                                 <input type="checkbox" checked="checked" foreign="{{$brand['foreign']}}" name="{{$brand['alias']}}" id="brand_{{$brand['alias']}}"/>
                                 <span for="brand_{{$brand['alias']}}" >{{$brand['name']}}</span>
                             </label>
-
                         </li>
                         @endforeach
                     </ul>
@@ -240,6 +239,9 @@ $('dd.Tab-Regions .Filter-Subcategory li>a').click(function(){
 
         /* Запись параметров */
         searchArray['region']=$(this).attr('alias');
+        $('#Filter-Selected-Regoion').remove();
+
+        $('.Filter .Heading').after('<span class="Filter-Selected" id="Filter-Selected-Regoion">'+$(this).text()+'</span>');
         delete searchArray['region_type'];
 
         /* Смена таба */
