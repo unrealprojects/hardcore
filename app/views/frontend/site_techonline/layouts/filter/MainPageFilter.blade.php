@@ -38,9 +38,6 @@
                                     </ul>
                                     @endif
                             </li>
-
-
-
                             @endforeach
                         </ul>
                     </li>
@@ -56,6 +53,7 @@
                 <div class="Control-Group">
                     <input class="Autocomplete Autocomplete-Categories" placeholder="Поиск техники ..."/>
                 </div>
+                <!-- ФИЛЬТР::ТАБ 2::КАТЕГОРИИ-->
                 <ul class="Filter Accordion">
                     @foreach($content['filter']['categories'] as $category)
                     <li class="Filter-Subheader Accordion-Subheader">
@@ -69,7 +67,7 @@
                     <li class="Filter-Subcategory Accordion-Subcategory">
                         <ul>
                             @foreach($category['subCategories'] as $subCategory)
-                            <li><a href="/catalog/?category={{$subCategory['alias']}}" alias="{{$category['alias']}}">{{$subCategory['name']}}</a></li>
+                                <li><a href="/catalog/?category={{$subCategory['alias']}}" alias="{{$subCategory['alias']}}">{{$subCategory['name']}}</a></li>
                             @endforeach
                         </ul>
                     </li>
@@ -144,15 +142,19 @@
 @parent
 <script>
 searchArray = {};
+
 /* Вспомогательный функционал */
+
+// Анимация при переключении табов
 function scrollToTabs(){
     $('body,html').animate({
         scrollTop: $('.Node.Filter').offset().top
     }, 400);
 }
 
-
 /* Формирование слайдера */
+
+//Фильтр по цене
 $("#Slider-Range-1").slider({
     range: true,
     min: 100,
@@ -162,21 +164,22 @@ $("#Slider-Range-1").slider({
         $("#Slider-Range-Value-1").text(ui.values[ 0 ] + "руб. - " + ui.values[ 1 ] +"руб.");
         searchArray['[params][price][min-value]']=ui.values[ 0 ];
         searchArray['[params][price][max-value]']= ui.values[ 1 ];
-        searchArray['[params][price][alias]']='price';
+        searchArray['[params][price][alias]В']='price';
     }
 });
-$("#Slider-Range-Value-1").text( $( "#Slider-Range-1").slider( "values", 0 ) +
-    " - руб." + $( "#Slider-Range-1" ).slider( "values", 1 ) +"руб." );
+
+$("#Slider-Range-Value-1").text(
+    $( "#Slider-Range-1").slider( "values", 0 ) + " - руб." + $( "#Slider-Range-1" ).slider( "values", 1 ) +"руб."
+);
 
 
-
-
-/* Autocomplite */
+/* Autocomplite по регионам */
 var regions = [
     @foreach($content['filter']['regions_list'] as $region)
         {key:"{{$region['alias']}}",label:"{{$region['name']}}"},
     @endforeach
 ];
+
 $( ".Autocomplete-Regions" ).autocomplete({
     source: regions,
     select: function (event, ui) {
@@ -191,7 +194,7 @@ $( ".Autocomplete-Regions" ).autocomplete({
     }
 });
 
-
+/* Autocomplite по категориям */
 var categories = [
     @foreach($content['filter']['categories_list'] as $category)
         {key:"{{$category['alias']}}",label:"{{$category['name']}}"},
@@ -272,12 +275,13 @@ $('dd.Tab-Regions .Filter-Subheader a').click(function(){
     $('.Tab-Regions').removeClass('Active');
     $('.Tab-Categories').addClass('Active');
     scrollToTabs();
-
     return false;
 });
 
 /* Таб :: Категории */
-function getParams($category_alias){
+
+// Получение параметров через ajax по категории
+function getAjaxParams($category_alias){
     $.ajax({
         type:'get',
         url:'/filter/'+$category_alias,
@@ -290,12 +294,14 @@ function getParams($category_alias){
     });
 }
 
+
+
 $('dd.Tab-Categories a').click(function(){
     /* Запись параметров */
     searchArray['category']=$(this).attr('alias');
 
-    /* todo:: ajax запрос на смену таба */
-    getParams(searchArray['category']);
+    getAjaxParams(searchArray['category']);
+
     /* Смена таба */
     $('.Tab-Categories').removeClass('Active');
     $('.Tab-Params').addClass('Active');
