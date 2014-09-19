@@ -565,7 +565,6 @@ img.Footer-Img {
 	@extend ._No-Bullets;
 
 	.Snippet-Item {
-		border: 1px solid $clr-grey-light;
 		@extend .Row;
 		@extend .Merge;
 
@@ -700,7 +699,7 @@ img.Footer-Img {
 	}
 
 	.Item-Content {
-		padding: 0 $size-n $size-n 0;
+		padding: 0 $size-n $size-n;
 		font-size: 14px;
 
 		@extend .XS-7;
@@ -743,6 +742,29 @@ img.Footer-Img {
 		}
 	}
 }
+.Filter-Result {
+	border: 1px solid $clr-grey-lighter;
+	border-top: 2px solid $clr-main;
+	display: inline-block;
+	padding: $size-s;
+	font-size: 80%;
+	@extend ._No-Bullets;
+	li {
+		padding: $size-xs 0;
+		span {
+			font-weight: bold;
+		}
+		.Delete {
+			display: inline-block;
+			margin-left: $size-s;
+			padding: $size-xs;
+			background-color: $clr-main;
+			color: white;
+			@include Round(all, $Control-Border-Radius);
+		}
+	}
+
+}
 
 ul.Tag-List {
 	@extend ._Clearfix;
@@ -751,14 +773,16 @@ ul.Tag-List {
 
 	li.Tag-Item {
 		margin-right: $size-s;
+		margin-bottom: $size-s;
 		a {
 			display: inline-block;
 			padding: $size-xs $size-s;
+			border: 1px solid $clr-grey-dark;
 			background-color: $clr-grey;
 			color: white;
 			font-size: 12px;
 
-			@include Round(left);
+			@include Round(all, $Control-Border-Radius);
 			&:hover {
 				background-color: $clr-grey-dark;
 			}
@@ -963,34 +987,43 @@ li.List-Filter-Subcategory {
 	@extend ._Inline;
 	@extend .Row;
 	@extend .Merge;
-	li {
-		border-left: 1px solid white;
-		@extend .Grid;
-		@extend .XS-6;
-		@extend .LR-4;
-		.Control-Group,
-		a {
-			display: block;
-			padding: $size-s $size-l;
-			color: $clr-grey-darker;
-			&:hover {
-				background-color: $clr-grey-darker;
-				color: white;
-			}
-			&.Icon {
-				background-position: $size-s center;
-				background-repeat: no-repeat;
-				&.Back {
-					background-image: url(../../../../img/techonline/icon-backward.png);
-				}
-			}
+}
+.Item-Group-Actions {
+	border-left: 1px solid white;
+	width: 100%;
+	@extend .Grid;
+	@extend .XS-4;
+
+	.Control-Group,
+	a {
+		display: block;
+		padding: $size-s $size-l;
+		font-weight: bold;
+		font-size: 80%;
+		color: $clr-grey-darker;
+		&:hover {
+			background-color: $clr-grey-darker;
+			color: white;
 		}
-		&:first-child {
-			border: 0;
+		&.Icon {
+			background-position: $size-s center;
+			background-repeat: no-repeat;
+			&.Back {
+				background-image: url(../../../../img/techonline/icon-backward.png);
+			}
 		}
 	}
+	&:first-child {
+		border: 0;
+	}
 }
+
+
+
+
+
 .List-Params {
+	margin-top: $size;
 	@extend .Row;
 	@extend .Merge;
 
@@ -1003,8 +1036,8 @@ li.List-Filter-Subcategory {
 		a {
 			display: block;
 			padding: $size-s $size-l;
-			color: black;
-			
+			color: black!important;
+
 			&:hover {
 				background-color: $clr-grey-lighter;
 			}

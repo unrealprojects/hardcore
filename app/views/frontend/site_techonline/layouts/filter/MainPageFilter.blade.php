@@ -1,7 +1,11 @@
 <section class="Node Filter">
 
     <h3 class="Heading Primary">Поиск стройтехники</h3>
-
+    <ul class="Filter-Result">
+        <li>Регион: <span>Архангельская область</span><a class="Delete" href="#">Удалить</a></li>
+        <li>Город: <span>Северодвинск</span><a class="Delete" href="#">Удалить</a></li>
+        <li>Категория: <span>Буровые станки</span><a class="Delete" href="#">Удалить</a></li>
+    </ul>
     <dl class="Tabs">
         <dt class="Active Tab-Regions"><span>Выбор региона</span></dt>
         <dd class="Active Tab-Regions">
@@ -30,10 +34,10 @@
                                 @if(!empty($subRegions['cities']))
                                 <div class="Filter-Cities">
                                     <ul class="List-Group-Actions">
-                                        <li>
+                                        <li class="Item-Group-Actions">
                                             <a class="All-Cities" href="/catalog/?region={{$subRegions['alias']}}" alias="{{$subRegions['alias']}}">Все города</a>
                                         </li>
-                                        <li>
+                                        <li class="Item-Group-Actions">
                                             <a class="Icon Back" href="/">Вернуться к выбору региона</a>
                                         </li>
                                     </ul>
@@ -95,20 +99,20 @@
                     </div>
 
                     <!-- Бренды -->
-                    <ul class="List-Group-Actions  Accordion-Brands">
+                    <ul class="List-Group-Actions">
                         <li>
                             <label class="Control-Group">
                                 <input type="checkbox" checked="checked" id="all_brands"/>
                                 <span for="all_brands" >Все производители</span>
                             </label>
                         </li>
-                        <li>
+                        <li class="Item-Group-Actions">
                             <label class="Control-Group">
                                 <input type="checkbox" checked="checked" id="native_brands"/>
                                 <span for="native_brands" >Отечественные производители</span>
                             </label>
                         </li>
-                        <li>
+                        <li class="Item-Group-Actions">
                             <label class="Control-Group">
                                 <input type="checkbox" checked="checked" id="foreign_brands"/>
                                 <span for="foreign_brands" >Зарубежные производители</span>
@@ -117,7 +121,7 @@
                     </ul>
                     <ul class="List-Params  Accordion-Brands">
                         @foreach($content['filter']['brands'] as $brand)
-                        <li>
+                        <li class="Item-Group-Actions">
                             <label class="Control-Group">
                                 <input type="checkbox" checked="checked" foreign="{{$brand['foreign']}}" name="{{$brand['alias']}}" id="brand_{{$brand['alias']}}"/>
                                 <span for="brand_{{$brand['alias']}}" >{{$brand['name']}}</span>
@@ -239,9 +243,6 @@ $('dd.Tab-Regions .Filter-Subcategory li>a').click(function(){
 
         /* Запись параметров */
         searchArray['region']=$(this).attr('alias');
-        $('#Filter-Selected-Regoion').remove();
-
-        $('.Filter .Heading').after('<span class="Filter-Selected" id="Filter-Selected-Regoion">'+$(this).text()+'</span>');
         delete searchArray['region_type'];
 
         /* Смена таба */

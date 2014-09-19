@@ -4,11 +4,10 @@
 
 <section class="Node">
 
-    <h3 class="Section-Header">Каталог строительной техники</h3>
-    <div class="Row Merge">
-        <!-- Фильтрация :: Общий блок -->
+    <h3 class="Heading Primary">Каталог строительной техники</h3>
+    @include('frontend.site_techonline.parts.breadcrumbs')
+        <!--
         <aside class="Sidebar-Filter Grid XS-3">
-            <!-- Фильтрация :: По регионам -->
             <h4>Регионы</h4>
             <ul class="List-Filter">
                 @foreach($content['regions'] as $region)
@@ -16,7 +15,8 @@
                 @endforeach
             </ul>
         </aside>
-        <article class="Grid XS-8 Push-One">
+        -->
+        <article>
             <ul class="Snippet-List">
                 @foreach($content['list'] as $item_key => $list_elem)
                 <li class="Snippet-Item Row Merge">
