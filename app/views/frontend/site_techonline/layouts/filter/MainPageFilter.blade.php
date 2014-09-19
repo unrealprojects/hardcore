@@ -100,7 +100,7 @@
 
                     <!-- Бренды -->
                     <ul class="List-Group-Actions">
-                        <li>
+                        <li class="Item-Group-Actions">
                             <label class="Control-Group">
                                 <input type="checkbox" checked="checked" id="all_brands"/>
                                 <span for="all_brands" >Все производители</span>

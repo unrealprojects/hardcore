@@ -49,7 +49,7 @@
                                 {{$list_elem['brand']['name']}}
                             {{$list_elem['model']}}</a>
 
-                            <span class="Item-Category">{{$list_elem['category']['name']}}</span>
+                            <span class="Item-Subtitle">{{$list_elem['category']['name']}}</span>
                         </h4>
                     </header>
 

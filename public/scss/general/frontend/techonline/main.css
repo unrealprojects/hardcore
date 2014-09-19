@@ -31,7 +31,7 @@
 ._Icon-Spacing {
   margin-right: 20px; }
 
-._Left, .Comment .Comment-List li .Comment-List-Element-Content header h5, footer[role='contentinfo'] > div .Copyright, .Snippet-Item header .Item-Title, .Snippet-Item .Item-Gallery, .Snippet-Item .Item-Info .Date, .Snippet-Item .Item-Info .Tags {
+._Left, .Comment .Comment-List li .Comment-List-Element-Content header h5, footer[role='contentinfo'] > div .Copyright, .Snippet-Item header .Item-Title, .Snippet-Item .Item-Info .Date, .Snippet-Item .Item-Info .Tags {
   float: left; }
 
 ._Right, .Control-Group.Offset input[type='submit'],
@@ -41,7 +41,7 @@
 ._Dev {
   outline: 1px red solid !important; }
 
-._Clearfix:before, ._Inline:before, .Site-Header-Inner:before, .Breadcrumbs .Breadcrumb-List:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Vote:before, .List-Group-Actions:before, .Row:before, .Snippet-List .Snippet-Item:before, .Snippet-Item:before, .List-Params:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Node:before, .Site-Header:before, ul.Menu-List:before, .Slider-Inner:before, .Pagination:before, .List-Categories:before, .List-Categories li:before, .Comment .Comment-List li .Comment-List-Element-Content header:before, footer[role='contentinfo'] > div:before, .List.Snippets li.List-Item header:before, .Snippet-Item header:before, .Snippet-Item header .Item-Title:before, .Filter-Result li:before, .Vote > li:before, li.List-Filter-Subheader:before, .Filter.Accordion .Filter-Subheader:before,
+._Clearfix:before, ._Inline:before, .Site-Header-Inner:before, .Breadcrumbs .Breadcrumb-List:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Vote:before, .List-Group-Actions:before, .Row:before, .Snippet-List .Snippet-Item:before, .Snippet-Item:before, .List-Params:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Node:before, .Site-Header:before, ul.Menu-List:before, .Slider-Inner:before, .Pagination:before, .List-Categories:before, .List-Categories li:before, .Comment .Comment-List li .Comment-List-Element-Content header:before, footer[role='contentinfo'] > div:before, .List.Snippets li.List-Item header:before, .Snippet-List .Snippet-Item footer:before, .Snippet-List .Item-Gallery:before, .Snippet-Item header:before, .Snippet-Item header .Item-Title:before, .Snippet-Item .Item-Gallery:before, .Filter-Result li:before, .Vote > li:before, li.List-Filter-Subheader:before, .Filter.Accordion .Filter-Subheader:before,
 ._Clearfix:after,
 ._Inline:after,
 .Site-Header-Inner:after,
@@ -70,8 +70,11 @@ ul.Menu-List:after,
 .Comment .Comment-List li .Comment-List-Element-Content header:after,
 footer[role='contentinfo'] > div:after,
 .List.Snippets li.List-Item header:after,
+.Snippet-List .Snippet-Item footer:after,
+.Snippet-List .Item-Gallery:after,
 .Snippet-Item header:after,
 .Snippet-Item header .Item-Title:after,
+.Snippet-Item .Item-Gallery:after,
 .Filter-Result li:after,
 .Vote > li:after,
 li.List-Filter-Subheader:after,
@@ -79,16 +82,16 @@ li.List-Filter-Subheader:after,
   content: " ";
   display: table; }
 
-._Clearfix:after, ._Inline:after, .Site-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Vote:after, .List-Group-Actions:after, .Row:after, .Snippet-List .Snippet-Item:after, .Snippet-Item:after, .List-Params:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Node:after, .Site-Header:after, ul.Menu-List:after, .Slider-Inner:after, .Pagination:after, .List-Categories:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after, .List.Snippets li.List-Item header:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, .Filter-Result li:after, .Vote > li:after, li.List-Filter-Subheader:after, .Filter.Accordion .Filter-Subheader:after {
+._Clearfix:after, ._Inline:after, .Site-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Vote:after, .List-Group-Actions:after, .Row:after, .Snippet-List .Snippet-Item:after, .Snippet-Item:after, .List-Params:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Node:after, .Site-Header:after, ul.Menu-List:after, .Slider-Inner:after, .Pagination:after, .List-Categories:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after, .List.Snippets li.List-Item header:after, .Snippet-List .Snippet-Item footer:after, .Snippet-List .Item-Gallery:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, .Snippet-Item .Item-Gallery:after, .Filter-Result li:after, .Vote > li:after, li.List-Filter-Subheader:after, .Filter.Accordion .Filter-Subheader:after {
   clear: both; }
 
 ._Inline > *, .Site-Header-Inner > *, .Breadcrumbs .Breadcrumb-List > *, footer[role='contentinfo'] > div .Footer-Navigation ul > *, .Snippet-Item header .Item-Values > *, .Snippet-Item .Item-Gallery ul > *, ul.Tag-List > *, .Vote > *, .List-Group-Actions > * {
   float: left; }
 
-._No-Bullets, ul.Row > li, .Snippet-List ul.Snippet-Item > li, ul.Snippet-Item > li, ul.List-Group-Actions > li, ul.List-Params > li, ul.Menu-List, .Breadcrumbs .Breadcrumb-List, .Pagination, .Comment .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, .Filter-Result, ul.Tag-List, .Vote, .List-Filter, li.List-Filter-Subcategory ul, .Menu-List ul, .Filter.Accordion, .Filter-Subcategory ul, .List-Group-Actions {
+._No-Bullets, ul.Row > li, .Snippet-List ul.Snippet-Item > li, ul.Snippet-Item > li, .Snippet-Item header ul.Item-Values > li, ul.List-Group-Actions > li, ul.List-Params > li, ul.Menu-List, .Breadcrumbs .Breadcrumb-List, .Pagination, .Comment .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, .Filter-Result, ul.Tag-List, .Vote, .List-Filter, li.List-Filter-Subcategory ul, .Menu-List ul, .Filter.Accordion, .Filter-Subcategory ul, .List-Group-Actions {
   list-style: none; }
 
-._Soft_Shadow, .Site-Header, .Page-Auth .Sign-In-UI,
+._Soft_Shadow, .Node, .Site-Header, .Page-Auth .Sign-In-UI,
 .Page-Auth .Sign-Up-UI {
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.15); }
 
@@ -169,11 +172,11 @@ aside {
 iframe {
   display: block; }
 
-.Row, .Snippet-List .Snippet-Item, .Snippet-Item, .List-Group-Actions, .List-Params {
+.Row, .Snippet-List .Snippet-Item, .Snippet-Item, .Snippet-Item header .Item-Values, .List-Group-Actions, .List-Params {
   display: block; }
 
 @media all and (min-width: 768px) {
-  .Row.Split > *, .Split.Snippet-Item > *, .Split.List-Group-Actions > *, .Split.List-Params > * {
+  .Row.Split > *, .Split.Snippet-Item > *, .Snippet-Item header .Split.Item-Values > *, .Split.List-Group-Actions > *, .Split.List-Params > * {
     margin-left: 1%;
     margin-right: 1%; }
 
@@ -183,364 +186,364 @@ iframe {
   .Grid.End, .Snippet-List .End.Item-Photo, .Snippet-List .End.Item-Gallery, .Snippet-List .End.Item-Content, .Snippet-Item .End.Item-Photo, .End.Item-Group-Actions, .List-Params li.End {
     float: right; }
 
-  .Row.Merge > .XS-1, .Snippet-List .Snippet-Item > .XS-1, .Merge.Snippet-Item > .XS-1, .Snippet-Item.List-Group-Actions > .XS-1, .Snippet-Item.List-Params > .XS-1, .List-Group-Actions > .XS-1, .List-Params > .XS-1 {
+  .Row.Merge > .XS-1, .Snippet-List .Snippet-Item > .XS-1, .Merge.Snippet-Item > .XS-1, .Snippet-Item.List-Group-Actions > .XS-1, .Snippet-Item.List-Params > .XS-1, .Snippet-Item header .Merge.Item-Values > .XS-1, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-1, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-1, .Snippet-Item header .Item-Values.List-Params > .XS-1, .List-Group-Actions > .XS-1, .List-Params > .XS-1 {
     width: 8.33333%; }
 
-  .Row.Merge > .XS-2, .Snippet-List .Snippet-Item > .XS-2, .Merge.Snippet-Item > .XS-2, .Snippet-Item.List-Group-Actions > .XS-2, .Snippet-Item.List-Params > .XS-2, .List-Group-Actions > .XS-2, .List-Params > .XS-2 {
+  .Row.Merge > .XS-2, .Snippet-List .Snippet-Item > .XS-2, .Merge.Snippet-Item > .XS-2, .Snippet-Item.List-Group-Actions > .XS-2, .Snippet-Item.List-Params > .XS-2, .Snippet-Item header .Merge.Item-Values > .XS-2, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-2, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-2, .Snippet-Item header .Item-Values.List-Params > .XS-2, .List-Group-Actions > .XS-2, .List-Params > .XS-2 {
     width: 16.66667%; }
 
-  .Row.Merge > .XS-3, .Snippet-List .Snippet-Item > .XS-3, .Merge.Snippet-Item > .XS-3, .Snippet-Item.List-Group-Actions > .XS-3, .Snippet-Item.List-Params > .XS-3, .List-Group-Actions > .XS-3, .List-Params > .XS-3 {
+  .Row.Merge > .XS-3, .Snippet-List .Snippet-Item > .XS-3, .Merge.Snippet-Item > .XS-3, .Snippet-Item.List-Group-Actions > .XS-3, .Snippet-Item.List-Params > .XS-3, .Snippet-Item header .Merge.Item-Values > .XS-3, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-3, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-3, .Snippet-Item header .Item-Values.List-Params > .XS-3, .List-Group-Actions > .XS-3, .List-Params > .XS-3 {
     width: 25%; }
 
-  .Row.Merge > .XS-4, .Snippet-List .Snippet-Item > .XS-4, .Merge.Snippet-Item > .XS-4, .Snippet-Item.List-Group-Actions > .XS-4, .Snippet-Item.List-Params > .XS-4, .List-Group-Actions > .XS-4, .List-Params > .XS-4, .Row.Merge > .Item-Group-Actions, .Snippet-List .Snippet-Item > .Item-Group-Actions, .Merge.Snippet-Item > .Item-Group-Actions, .List-Group-Actions > .Item-Group-Actions, .List-Params > .Item-Group-Actions {
+  .Row.Merge > .XS-4, .Snippet-List .Snippet-Item > .XS-4, .Merge.Snippet-Item > .XS-4, .Snippet-Item.List-Group-Actions > .XS-4, .Snippet-Item.List-Params > .XS-4, .Snippet-Item header .Merge.Item-Values > .XS-4, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-4, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-4, .Snippet-Item header .Item-Values.List-Params > .XS-4, .List-Group-Actions > .XS-4, .List-Params > .XS-4, .Row.Merge > .Item-Group-Actions, .Snippet-List .Snippet-Item > .Item-Group-Actions, .Merge.Snippet-Item > .Item-Group-Actions, .Snippet-Item header .Merge.Item-Values > .Item-Group-Actions, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .Item-Group-Actions, .Snippet-Item header .Item-Values.List-Group-Actions > .Item-Group-Actions, .Snippet-Item header .Item-Values.List-Params > .Item-Group-Actions, .List-Group-Actions > .Item-Group-Actions, .List-Params > .Item-Group-Actions {
     width: 33.33333%; }
 
-  .Row.Merge > .XS-5, .Snippet-List .Snippet-Item > .XS-5, .Merge.Snippet-Item > .XS-5, .Snippet-Item.List-Group-Actions > .XS-5, .Snippet-Item.List-Params > .XS-5, .List-Group-Actions > .XS-5, .List-Params > .XS-5, .Snippet-List .Row.Merge > .Item-Photo, .Snippet-List .List-Group-Actions > .Item-Photo, .Snippet-List .List-Params > .Item-Photo, .Snippet-List .Row.Merge > .Item-Gallery, .Snippet-List .Snippet-Item > .Item-Gallery, .Snippet-List .List-Group-Actions > .Item-Gallery, .Snippet-List .List-Params > .Item-Gallery, .Snippet-Item .Row.Merge > .Item-Photo, .Snippet-List .Snippet-Item > .Item-Photo, .Merge.Snippet-Item > .Item-Photo, .Snippet-Item.List-Group-Actions > .Item-Photo, .Snippet-Item.List-Params > .Item-Photo, .Snippet-Item .List-Group-Actions > .Item-Photo, .Snippet-Item .List-Params > .Item-Photo {
+  .Row.Merge > .XS-5, .Snippet-List .Snippet-Item > .XS-5, .Merge.Snippet-Item > .XS-5, .Snippet-Item.List-Group-Actions > .XS-5, .Snippet-Item.List-Params > .XS-5, .Snippet-Item header .Merge.Item-Values > .XS-5, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-5, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-5, .Snippet-Item header .Item-Values.List-Params > .XS-5, .List-Group-Actions > .XS-5, .List-Params > .XS-5, .Snippet-List .Row.Merge > .Item-Photo, .Snippet-List .List-Group-Actions > .Item-Photo, .Snippet-List .List-Params > .Item-Photo, .Snippet-List .Row.Merge > .Item-Gallery, .Snippet-List .Snippet-Item > .Item-Gallery, .Snippet-Item header .Snippet-List .Merge.Item-Values > .Item-Gallery, .Snippet-List .Snippet-Item header .Merge.Item-Values > .Item-Gallery, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .Item-Gallery, .Snippet-List .List-Group-Actions > .Item-Gallery, .Snippet-List .List-Params > .Item-Gallery, .Snippet-Item .Row.Merge > .Item-Photo, .Snippet-List .Snippet-Item > .Item-Photo, .Merge.Snippet-Item > .Item-Photo, .Snippet-Item.List-Group-Actions > .Item-Photo, .Snippet-Item.List-Params > .Item-Photo, .Snippet-Item header .Merge.Item-Values > .Item-Photo, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .Item-Photo, .Snippet-Item .List-Group-Actions > .Item-Photo, .Snippet-Item .List-Params > .Item-Photo {
     width: 41.66667%; }
 
-  .Row.Merge > .XS-6, .Snippet-List .Snippet-Item > .XS-6, .Merge.Snippet-Item > .XS-6, .Snippet-Item.List-Group-Actions > .XS-6, .Snippet-Item.List-Params > .XS-6, .List-Group-Actions > .XS-6, .List-Params > .XS-6, .Control-Group.Checkbox.Submit.Row.Merge > label, .Snippet-List .Control-Group.Checkbox.Submit.Snippet-Item > label, .Control-Group.Checkbox.Submit.Merge.Snippet-Item > label, .Control-Group.Checkbox.Submit.List-Group-Actions > label, .Control-Group.Checkbox.Submit.List-Params > label, .Control-Group.Checkbox.Submit.Row.Merge > [type='submit'], .Snippet-List .Control-Group.Checkbox.Submit.Snippet-Item > [type='submit'], .Control-Group.Checkbox.Submit.Merge.Snippet-Item > [type='submit'], .Control-Group.Checkbox.Submit.List-Group-Actions > [type='submit'], .Control-Group.Checkbox.Submit.List-Params > [type='submit'], .List-Params .Row.Merge > li, .Snippet-List .List-Params .Snippet-Item > li, .List-Params .Snippet-List .Snippet-Item > li, .List-Params .Merge.Snippet-Item > li, .List-Params .List-Group-Actions > li, .List-Params > li {
+  .Row.Merge > .XS-6, .Snippet-List .Snippet-Item > .XS-6, .Merge.Snippet-Item > .XS-6, .Snippet-Item.List-Group-Actions > .XS-6, .Snippet-Item.List-Params > .XS-6, .Snippet-Item header .Merge.Item-Values > .XS-6, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-6, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-6, .Snippet-Item header .Item-Values.List-Params > .XS-6, .List-Group-Actions > .XS-6, .List-Params > .XS-6, .Control-Group.Checkbox.Submit.Row.Merge > label, .Snippet-List .Control-Group.Checkbox.Submit.Snippet-Item > label, .Control-Group.Checkbox.Submit.Merge.Snippet-Item > label, .Snippet-Item header .Control-Group.Checkbox.Submit.Merge.Item-Values > label, .Control-Group.Checkbox.Submit.List-Group-Actions > label, .Control-Group.Checkbox.Submit.List-Params > label, .Control-Group.Checkbox.Submit.Row.Merge > [type='submit'], .Snippet-List .Control-Group.Checkbox.Submit.Snippet-Item > [type='submit'], .Control-Group.Checkbox.Submit.Merge.Snippet-Item > [type='submit'], .Snippet-Item header .Control-Group.Checkbox.Submit.Merge.Item-Values > [type='submit'], .Control-Group.Checkbox.Submit.List-Group-Actions > [type='submit'], .Control-Group.Checkbox.Submit.List-Params > [type='submit'], .List-Params .Row.Merge > li, .Snippet-List .List-Params .Snippet-Item > li, .List-Params .Snippet-List .Snippet-Item > li, .List-Params .Merge.Snippet-Item > li, .Snippet-Item header .List-Params .Merge.Item-Values > li, .List-Params .Snippet-Item header .Merge.Item-Values > li, .List-Params .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > li, .Snippet-Item header .Item-Values.List-Params > li, .List-Params .List-Group-Actions > li, .List-Params > li {
     width: 50%; }
 
-  .Row.Merge > .XS-7, .Snippet-List .Snippet-Item > .XS-7, .Merge.Snippet-Item > .XS-7, .Snippet-Item.List-Group-Actions > .XS-7, .Snippet-Item.List-Params > .XS-7, .List-Group-Actions > .XS-7, .List-Params > .XS-7, .Snippet-List .Row.Merge > .Item-Content, .Snippet-List .List-Group-Actions > .Item-Content, .Snippet-List .List-Params > .Item-Content, .Snippet-Item .Row.Merge > .Item-Content, .Snippet-List .Snippet-Item > .Item-Content, .Merge.Snippet-Item > .Item-Content, .Snippet-Item.List-Group-Actions > .Item-Content, .Snippet-Item.List-Params > .Item-Content, .Snippet-Item .List-Group-Actions > .Item-Content, .Snippet-Item .List-Params > .Item-Content {
+  .Row.Merge > .XS-7, .Snippet-List .Snippet-Item > .XS-7, .Merge.Snippet-Item > .XS-7, .Snippet-Item.List-Group-Actions > .XS-7, .Snippet-Item.List-Params > .XS-7, .Snippet-Item header .Merge.Item-Values > .XS-7, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-7, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-7, .Snippet-Item header .Item-Values.List-Params > .XS-7, .List-Group-Actions > .XS-7, .List-Params > .XS-7, .Snippet-List .Row.Merge > .Item-Content, .Snippet-List .List-Group-Actions > .Item-Content, .Snippet-List .List-Params > .Item-Content, .Snippet-Item .Row.Merge > .Item-Content, .Snippet-List .Snippet-Item > .Item-Content, .Merge.Snippet-Item > .Item-Content, .Snippet-Item.List-Group-Actions > .Item-Content, .Snippet-Item.List-Params > .Item-Content, .Snippet-Item header .Merge.Item-Values > .Item-Content, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .Item-Content, .Snippet-Item .List-Group-Actions > .Item-Content, .Snippet-Item .List-Params > .Item-Content {
     width: 58.33333%; }
 
-  .Row.Merge > .XS-8, .Snippet-List .Snippet-Item > .XS-8, .Merge.Snippet-Item > .XS-8, .Snippet-Item.List-Group-Actions > .XS-8, .Snippet-Item.List-Params > .XS-8, .List-Group-Actions > .XS-8, .List-Params > .XS-8 {
+  .Row.Merge > .XS-8, .Snippet-List .Snippet-Item > .XS-8, .Merge.Snippet-Item > .XS-8, .Snippet-Item.List-Group-Actions > .XS-8, .Snippet-Item.List-Params > .XS-8, .Snippet-Item header .Merge.Item-Values > .XS-8, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-8, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-8, .Snippet-Item header .Item-Values.List-Params > .XS-8, .List-Group-Actions > .XS-8, .List-Params > .XS-8 {
     width: 66.66667%; }
 
-  .Row.Merge > .XS-9, .Snippet-List .Snippet-Item > .XS-9, .Merge.Snippet-Item > .XS-9, .Snippet-Item.List-Group-Actions > .XS-9, .Snippet-Item.List-Params > .XS-9, .List-Group-Actions > .XS-9, .List-Params > .XS-9 {
+  .Row.Merge > .XS-9, .Snippet-List .Snippet-Item > .XS-9, .Merge.Snippet-Item > .XS-9, .Snippet-Item.List-Group-Actions > .XS-9, .Snippet-Item.List-Params > .XS-9, .Snippet-Item header .Merge.Item-Values > .XS-9, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-9, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-9, .Snippet-Item header .Item-Values.List-Params > .XS-9, .List-Group-Actions > .XS-9, .List-Params > .XS-9 {
     width: 75%; }
 
-  .Row.Merge > .XS-10, .Snippet-List .Snippet-Item > .XS-10, .Merge.Snippet-Item > .XS-10, .Snippet-Item.List-Group-Actions > .XS-10, .Snippet-Item.List-Params > .XS-10, .List-Group-Actions > .XS-10, .List-Params > .XS-10 {
+  .Row.Merge > .XS-10, .Snippet-List .Snippet-Item > .XS-10, .Merge.Snippet-Item > .XS-10, .Snippet-Item.List-Group-Actions > .XS-10, .Snippet-Item.List-Params > .XS-10, .Snippet-Item header .Merge.Item-Values > .XS-10, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-10, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-10, .Snippet-Item header .Item-Values.List-Params > .XS-10, .List-Group-Actions > .XS-10, .List-Params > .XS-10 {
     width: 83.33333%; }
 
-  .Row.Merge > .XS-11, .Snippet-List .Snippet-Item > .XS-11, .Merge.Snippet-Item > .XS-11, .Snippet-Item.List-Group-Actions > .XS-11, .Snippet-Item.List-Params > .XS-11, .List-Group-Actions > .XS-11, .List-Params > .XS-11 {
+  .Row.Merge > .XS-11, .Snippet-List .Snippet-Item > .XS-11, .Merge.Snippet-Item > .XS-11, .Snippet-Item.List-Group-Actions > .XS-11, .Snippet-Item.List-Params > .XS-11, .Snippet-Item header .Merge.Item-Values > .XS-11, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-11, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-11, .Snippet-Item header .Item-Values.List-Params > .XS-11, .List-Group-Actions > .XS-11, .List-Params > .XS-11 {
     width: 91.66667%; }
 
-  .Row.Merge > .XS-12, .Snippet-List .Snippet-Item > .XS-12, .Merge.Snippet-Item > .XS-12, .Snippet-Item.List-Group-Actions > .XS-12, .Snippet-Item.List-Params > .XS-12, .List-Group-Actions > .XS-12, .List-Params > .XS-12 {
+  .Row.Merge > .XS-12, .Snippet-List .Snippet-Item > .XS-12, .Merge.Snippet-Item > .XS-12, .Snippet-Item.List-Group-Actions > .XS-12, .Snippet-Item.List-Params > .XS-12, .Snippet-Item header .Merge.Item-Values > .XS-12, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-12, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-12, .Snippet-Item header .Item-Values.List-Params > .XS-12, .List-Group-Actions > .XS-12, .List-Params > .XS-12 {
     width: 100%; }
 
-  .Row.Split > .XS-1, .Split.Snippet-Item > .XS-1, .Split.List-Group-Actions > .XS-1, .Split.List-Params > .XS-1 {
+  .Row.Split > .XS-1, .Split.Snippet-Item > .XS-1, .Snippet-Item header .Split.Item-Values > .XS-1, .Split.List-Group-Actions > .XS-1, .Split.List-Params > .XS-1 {
     width: 6.33333%; }
 
-  .Row.Split > .XS-2, .Split.Snippet-Item > .XS-2, .Split.List-Group-Actions > .XS-2, .Split.List-Params > .XS-2 {
+  .Row.Split > .XS-2, .Split.Snippet-Item > .XS-2, .Snippet-Item header .Split.Item-Values > .XS-2, .Split.List-Group-Actions > .XS-2, .Split.List-Params > .XS-2 {
     width: 14.66667%; }
 
-  .Row.Split > .XS-3, .Split.Snippet-Item > .XS-3, .Split.List-Group-Actions > .XS-3, .Split.List-Params > .XS-3 {
+  .Row.Split > .XS-3, .Split.Snippet-Item > .XS-3, .Snippet-Item header .Split.Item-Values > .XS-3, .Split.List-Group-Actions > .XS-3, .Split.List-Params > .XS-3 {
     width: 23%; }
 
-  .Row.Split > .XS-4, .Split.Snippet-Item > .XS-4, .Split.List-Group-Actions > .XS-4, .Split.List-Params > .XS-4, .Row.Split > .Item-Group-Actions, .Split.Snippet-Item > .Item-Group-Actions, .Split.List-Group-Actions > .Item-Group-Actions, .Split.List-Params > .Item-Group-Actions {
+  .Row.Split > .XS-4, .Split.Snippet-Item > .XS-4, .Snippet-Item header .Split.Item-Values > .XS-4, .Split.List-Group-Actions > .XS-4, .Split.List-Params > .XS-4, .Row.Split > .Item-Group-Actions, .Split.Snippet-Item > .Item-Group-Actions, .Snippet-Item header .Split.Item-Values > .Item-Group-Actions, .Split.List-Group-Actions > .Item-Group-Actions, .Split.List-Params > .Item-Group-Actions {
     width: 31.33333%; }
 
-  .Row.Split > .XS-5, .Split.Snippet-Item > .XS-5, .Split.List-Group-Actions > .XS-5, .Split.List-Params > .XS-5, .Snippet-List .Row.Split > .Item-Photo, .Snippet-List .Split.List-Group-Actions > .Item-Photo, .Snippet-List .Split.List-Params > .Item-Photo, .Snippet-List .Row.Split > .Item-Gallery, .Snippet-List .Split.Snippet-Item > .Item-Gallery, .Snippet-List .Split.List-Group-Actions > .Item-Gallery, .Snippet-List .Split.List-Params > .Item-Gallery, .Snippet-Item .Row.Split > .Item-Photo, .Split.Snippet-Item > .Item-Photo, .Snippet-Item .Split.List-Group-Actions > .Item-Photo, .Snippet-Item .Split.List-Params > .Item-Photo {
+  .Row.Split > .XS-5, .Split.Snippet-Item > .XS-5, .Snippet-Item header .Split.Item-Values > .XS-5, .Split.List-Group-Actions > .XS-5, .Split.List-Params > .XS-5, .Snippet-List .Row.Split > .Item-Photo, .Snippet-List .Split.List-Group-Actions > .Item-Photo, .Snippet-List .Split.List-Params > .Item-Photo, .Snippet-List .Row.Split > .Item-Gallery, .Snippet-List .Split.Snippet-Item > .Item-Gallery, .Snippet-Item header .Snippet-List .Split.Item-Values > .Item-Gallery, .Snippet-List .Snippet-Item header .Split.Item-Values > .Item-Gallery, .Snippet-List .Split.List-Group-Actions > .Item-Gallery, .Snippet-List .Split.List-Params > .Item-Gallery, .Snippet-Item .Row.Split > .Item-Photo, .Split.Snippet-Item > .Item-Photo, .Snippet-Item header .Split.Item-Values > .Item-Photo, .Snippet-Item .Split.List-Group-Actions > .Item-Photo, .Snippet-Item .Split.List-Params > .Item-Photo {
     width: 39.66667%; }
 
-  .Row.Split > .XS-6, .Split.Snippet-Item > .XS-6, .Split.List-Group-Actions > .XS-6, .Split.List-Params > .XS-6, .Control-Group.Checkbox.Submit.Row.Split > label, .Control-Group.Checkbox.Submit.Split.Snippet-Item > label, .Control-Group.Checkbox.Submit.Split.List-Group-Actions > label, .Control-Group.Checkbox.Submit.Split.List-Params > label, .Control-Group.Checkbox.Submit.Row.Split > [type='submit'], .Control-Group.Checkbox.Submit.Split.Snippet-Item > [type='submit'], .Control-Group.Checkbox.Submit.Split.List-Group-Actions > [type='submit'], .Control-Group.Checkbox.Submit.Split.List-Params > [type='submit'], .List-Params .Row.Split > li, .List-Params .Split.Snippet-Item > li, .List-Params .Split.List-Group-Actions > li, .Split.List-Params > li {
+  .Row.Split > .XS-6, .Split.Snippet-Item > .XS-6, .Snippet-Item header .Split.Item-Values > .XS-6, .Split.List-Group-Actions > .XS-6, .Split.List-Params > .XS-6, .Control-Group.Checkbox.Submit.Row.Split > label, .Control-Group.Checkbox.Submit.Split.Snippet-Item > label, .Snippet-Item header .Control-Group.Checkbox.Submit.Split.Item-Values > label, .Control-Group.Checkbox.Submit.Split.List-Group-Actions > label, .Control-Group.Checkbox.Submit.Split.List-Params > label, .Control-Group.Checkbox.Submit.Row.Split > [type='submit'], .Control-Group.Checkbox.Submit.Split.Snippet-Item > [type='submit'], .Snippet-Item header .Control-Group.Checkbox.Submit.Split.Item-Values > [type='submit'], .Control-Group.Checkbox.Submit.Split.List-Group-Actions > [type='submit'], .Control-Group.Checkbox.Submit.Split.List-Params > [type='submit'], .List-Params .Row.Split > li, .List-Params .Split.Snippet-Item > li, .Snippet-Item header .List-Params .Split.Item-Values > li, .List-Params .Snippet-Item header .Split.Item-Values > li, .List-Params .Split.List-Group-Actions > li, .Split.List-Params > li {
     width: 48%; }
 
-  .Row.Split > .XS-7, .Split.Snippet-Item > .XS-7, .Split.List-Group-Actions > .XS-7, .Split.List-Params > .XS-7, .Snippet-List .Row.Split > .Item-Content, .Snippet-List .Split.List-Group-Actions > .Item-Content, .Snippet-List .Split.List-Params > .Item-Content, .Snippet-Item .Row.Split > .Item-Content, .Split.Snippet-Item > .Item-Content, .Snippet-Item .Split.List-Group-Actions > .Item-Content, .Snippet-Item .Split.List-Params > .Item-Content {
+  .Row.Split > .XS-7, .Split.Snippet-Item > .XS-7, .Snippet-Item header .Split.Item-Values > .XS-7, .Split.List-Group-Actions > .XS-7, .Split.List-Params > .XS-7, .Snippet-List .Row.Split > .Item-Content, .Snippet-List .Split.List-Group-Actions > .Item-Content, .Snippet-List .Split.List-Params > .Item-Content, .Snippet-Item .Row.Split > .Item-Content, .Split.Snippet-Item > .Item-Content, .Snippet-Item header .Split.Item-Values > .Item-Content, .Snippet-Item .Split.List-Group-Actions > .Item-Content, .Snippet-Item .Split.List-Params > .Item-Content {
     width: 56.33333%; }
 
-  .Row.Split > .XS-8, .Split.Snippet-Item > .XS-8, .Split.List-Group-Actions > .XS-8, .Split.List-Params > .XS-8 {
+  .Row.Split > .XS-8, .Split.Snippet-Item > .XS-8, .Snippet-Item header .Split.Item-Values > .XS-8, .Split.List-Group-Actions > .XS-8, .Split.List-Params > .XS-8 {
     width: 64.66667%; }
 
-  .Row.Split > .XS-9, .Split.Snippet-Item > .XS-9, .Split.List-Group-Actions > .XS-9, .Split.List-Params > .XS-9 {
+  .Row.Split > .XS-9, .Split.Snippet-Item > .XS-9, .Snippet-Item header .Split.Item-Values > .XS-9, .Split.List-Group-Actions > .XS-9, .Split.List-Params > .XS-9 {
     width: 73%; }
 
-  .Row.Split > .XS-10, .Split.Snippet-Item > .XS-10, .Split.List-Group-Actions > .XS-10, .Split.List-Params > .XS-10 {
+  .Row.Split > .XS-10, .Split.Snippet-Item > .XS-10, .Snippet-Item header .Split.Item-Values > .XS-10, .Split.List-Group-Actions > .XS-10, .Split.List-Params > .XS-10 {
     width: 81.33333%; }
 
-  .Row.Split > .XS-11, .Split.Snippet-Item > .XS-11, .Split.List-Group-Actions > .XS-11, .Split.List-Params > .XS-11 {
+  .Row.Split > .XS-11, .Split.Snippet-Item > .XS-11, .Snippet-Item header .Split.Item-Values > .XS-11, .Split.List-Group-Actions > .XS-11, .Split.List-Params > .XS-11 {
     width: 89.66667%; }
 
-  .Row.Split > .XS-12, .Split.Snippet-Item > .XS-12, .Split.List-Group-Actions > .XS-12, .Split.List-Params > .XS-12 {
+  .Row.Split > .XS-12, .Split.Snippet-Item > .XS-12, .Snippet-Item header .Split.Item-Values > .XS-12, .Split.List-Group-Actions > .XS-12, .Split.List-Params > .XS-12 {
     width: 98%; } }
 @media all and (min-width: 1024px) {
-  .Row.Merge > .SM-1, .Snippet-List .Snippet-Item > .SM-1, .Merge.Snippet-Item > .SM-1, .Snippet-Item.List-Group-Actions > .SM-1, .Snippet-Item.List-Params > .SM-1, .List-Group-Actions > .SM-1, .List-Params > .SM-1 {
+  .Row.Merge > .SM-1, .Snippet-List .Snippet-Item > .SM-1, .Merge.Snippet-Item > .SM-1, .Snippet-Item.List-Group-Actions > .SM-1, .Snippet-Item.List-Params > .SM-1, .Snippet-Item header .Merge.Item-Values > .SM-1, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .SM-1, .Snippet-Item header .Item-Values.List-Group-Actions > .SM-1, .Snippet-Item header .Item-Values.List-Params > .SM-1, .List-Group-Actions > .SM-1, .List-Params > .SM-1 {
     width: 8.33333%; }
 
-  .Row.Merge > .SM-2, .Snippet-List .Snippet-Item > .SM-2, .Merge.Snippet-Item > .SM-2, .Snippet-Item.List-Group-Actions > .SM-2, .Snippet-Item.List-Params > .SM-2, .List-Group-Actions > .SM-2, .List-Params > .SM-2 {
+  .Row.Merge > .SM-2, .Snippet-List .Snippet-Item > .SM-2, .Merge.Snippet-Item > .SM-2, .Snippet-Item.List-Group-Actions > .SM-2, .Snippet-Item.List-Params > .SM-2, .Snippet-Item header .Merge.Item-Values > .SM-2, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .SM-2, .Snippet-Item header .Item-Values.List-Group-Actions > .SM-2, .Snippet-Item header .Item-Values.List-Params > .SM-2, .List-Group-Actions > .SM-2, .List-Params > .SM-2 {
     width: 16.66667%; }
 
-  .Row.Merge > .SM-3, .Snippet-List .Snippet-Item > .SM-3, .Merge.Snippet-Item > .SM-3, .Snippet-Item.List-Group-Actions > .SM-3, .Snippet-Item.List-Params > .SM-3, .List-Group-Actions > .SM-3, .List-Params > .SM-3 {
+  .Row.Merge > .SM-3, .Snippet-List .Snippet-Item > .SM-3, .Merge.Snippet-Item > .SM-3, .Snippet-Item.List-Group-Actions > .SM-3, .Snippet-Item.List-Params > .SM-3, .Snippet-Item header .Merge.Item-Values > .SM-3, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .SM-3, .Snippet-Item header .Item-Values.List-Group-Actions > .SM-3, .Snippet-Item header .Item-Values.List-Params > .SM-3, .List-Group-Actions > .SM-3, .List-Params > .SM-3 {
     width: 25%; }
 
-  .Row.Merge > .SM-4, .Snippet-List .Snippet-Item > .SM-4, .Merge.Snippet-Item > .SM-4, .Snippet-Item.List-Group-Actions > .SM-4, .Snippet-Item.List-Params > .SM-4, .List-Group-Actions > .SM-4, .List-Params > .SM-4 {
+  .Row.Merge > .SM-4, .Snippet-List .Snippet-Item > .SM-4, .Merge.Snippet-Item > .SM-4, .Snippet-Item.List-Group-Actions > .SM-4, .Snippet-Item.List-Params > .SM-4, .Snippet-Item header .Merge.Item-Values > .SM-4, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .SM-4, .Snippet-Item header .Item-Values.List-Group-Actions > .SM-4, .Snippet-Item header .Item-Values.List-Params > .SM-4, .List-Group-Actions > .SM-4, .List-Params > .SM-4 {
     width: 33.33333%; }
 
-  .Row.Merge > .SM-5, .Snippet-List .Snippet-Item > .SM-5, .Merge.Snippet-Item > .SM-5, .Snippet-Item.List-Group-Actions > .SM-5, .Snippet-Item.List-Params > .SM-5, .List-Group-Actions > .SM-5, .List-Params > .SM-5 {
+  .Row.Merge > .SM-5, .Snippet-List .Snippet-Item > .SM-5, .Merge.Snippet-Item > .SM-5, .Snippet-Item.List-Group-Actions > .SM-5, .Snippet-Item.List-Params > .SM-5, .Snippet-Item header .Merge.Item-Values > .SM-5, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .SM-5, .Snippet-Item header .Item-Values.List-Group-Actions > .SM-5, .Snippet-Item header .Item-Values.List-Params > .SM-5, .List-Group-Actions > .SM-5, .List-Params > .SM-5 {
     width: 41.66667%; }
 
-  .Row.Merge > .SM-6, .Snippet-List .Snippet-Item > .SM-6, .Merge.Snippet-Item > .SM-6, .Snippet-Item.List-Group-Actions > .SM-6, .Snippet-Item.List-Params > .SM-6, .List-Group-Actions > .SM-6, .List-Params > .SM-6 {
+  .Row.Merge > .SM-6, .Snippet-List .Snippet-Item > .SM-6, .Merge.Snippet-Item > .SM-6, .Snippet-Item.List-Group-Actions > .SM-6, .Snippet-Item.List-Params > .SM-6, .Snippet-Item header .Merge.Item-Values > .SM-6, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .SM-6, .Snippet-Item header .Item-Values.List-Group-Actions > .SM-6, .Snippet-Item header .Item-Values.List-Params > .SM-6, .List-Group-Actions > .SM-6, .List-Params > .SM-6 {
     width: 50%; }
 
-  .Row.Merge > .SM-7, .Snippet-List .Snippet-Item > .SM-7, .Merge.Snippet-Item > .SM-7, .Snippet-Item.List-Group-Actions > .SM-7, .Snippet-Item.List-Params > .SM-7, .List-Group-Actions > .SM-7, .List-Params > .SM-7 {
+  .Row.Merge > .SM-7, .Snippet-List .Snippet-Item > .SM-7, .Merge.Snippet-Item > .SM-7, .Snippet-Item.List-Group-Actions > .SM-7, .Snippet-Item.List-Params > .SM-7, .Snippet-Item header .Merge.Item-Values > .SM-7, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .SM-7, .Snippet-Item header .Item-Values.List-Group-Actions > .SM-7, .Snippet-Item header .Item-Values.List-Params > .SM-7, .List-Group-Actions > .SM-7, .List-Params > .SM-7 {
     width: 58.33333%; }
 
-  .Row.Merge > .SM-8, .Snippet-List .Snippet-Item > .SM-8, .Merge.Snippet-Item > .SM-8, .Snippet-Item.List-Group-Actions > .SM-8, .Snippet-Item.List-Params > .SM-8, .List-Group-Actions > .SM-8, .List-Params > .SM-8 {
+  .Row.Merge > .SM-8, .Snippet-List .Snippet-Item > .SM-8, .Merge.Snippet-Item > .SM-8, .Snippet-Item.List-Group-Actions > .SM-8, .Snippet-Item.List-Params > .SM-8, .Snippet-Item header .Merge.Item-Values > .SM-8, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .SM-8, .Snippet-Item header .Item-Values.List-Group-Actions > .SM-8, .Snippet-Item header .Item-Values.List-Params > .SM-8, .List-Group-Actions > .SM-8, .List-Params > .SM-8 {
     width: 66.66667%; }
 
-  .Row.Merge > .SM-9, .Snippet-List .Snippet-Item > .SM-9, .Merge.Snippet-Item > .SM-9, .Snippet-Item.List-Group-Actions > .SM-9, .Snippet-Item.List-Params > .SM-9, .List-Group-Actions > .SM-9, .List-Params > .SM-9 {
+  .Row.Merge > .SM-9, .Snippet-List .Snippet-Item > .SM-9, .Merge.Snippet-Item > .SM-9, .Snippet-Item.List-Group-Actions > .SM-9, .Snippet-Item.List-Params > .SM-9, .Snippet-Item header .Merge.Item-Values > .SM-9, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .SM-9, .Snippet-Item header .Item-Values.List-Group-Actions > .SM-9, .Snippet-Item header .Item-Values.List-Params > .SM-9, .List-Group-Actions > .SM-9, .List-Params > .SM-9 {
     width: 75%; }
 
-  .Row.Merge > .SM-10, .Snippet-List .Snippet-Item > .SM-10, .Merge.Snippet-Item > .SM-10, .Snippet-Item.List-Group-Actions > .SM-10, .Snippet-Item.List-Params > .SM-10, .List-Group-Actions > .SM-10, .List-Params > .SM-10 {
+  .Row.Merge > .SM-10, .Snippet-List .Snippet-Item > .SM-10, .Merge.Snippet-Item > .SM-10, .Snippet-Item.List-Group-Actions > .SM-10, .Snippet-Item.List-Params > .SM-10, .Snippet-Item header .Merge.Item-Values > .SM-10, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .SM-10, .Snippet-Item header .Item-Values.List-Group-Actions > .SM-10, .Snippet-Item header .Item-Values.List-Params > .SM-10, .List-Group-Actions > .SM-10, .List-Params > .SM-10 {
     width: 83.33333%; }
 
-  .Row.Merge > .SM-11, .Snippet-List .Snippet-Item > .SM-11, .Merge.Snippet-Item > .SM-11, .Snippet-Item.List-Group-Actions > .SM-11, .Snippet-Item.List-Params > .SM-11, .List-Group-Actions > .SM-11, .List-Params > .SM-11 {
+  .Row.Merge > .SM-11, .Snippet-List .Snippet-Item > .SM-11, .Merge.Snippet-Item > .SM-11, .Snippet-Item.List-Group-Actions > .SM-11, .Snippet-Item.List-Params > .SM-11, .Snippet-Item header .Merge.Item-Values > .SM-11, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .SM-11, .Snippet-Item header .Item-Values.List-Group-Actions > .SM-11, .Snippet-Item header .Item-Values.List-Params > .SM-11, .List-Group-Actions > .SM-11, .List-Params > .SM-11 {
     width: 91.66667%; }
 
-  .Row.Merge > .SM-12, .Snippet-List .Snippet-Item > .SM-12, .Merge.Snippet-Item > .SM-12, .Snippet-Item.List-Group-Actions > .SM-12, .Snippet-Item.List-Params > .SM-12, .List-Group-Actions > .SM-12, .List-Params > .SM-12 {
+  .Row.Merge > .SM-12, .Snippet-List .Snippet-Item > .SM-12, .Merge.Snippet-Item > .SM-12, .Snippet-Item.List-Group-Actions > .SM-12, .Snippet-Item.List-Params > .SM-12, .Snippet-Item header .Merge.Item-Values > .SM-12, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .SM-12, .Snippet-Item header .Item-Values.List-Group-Actions > .SM-12, .Snippet-Item header .Item-Values.List-Params > .SM-12, .List-Group-Actions > .SM-12, .List-Params > .SM-12 {
     width: 100%; }
 
-  .Row.Split > .SM-1, .Split.Snippet-Item > .SM-1, .Split.List-Group-Actions > .SM-1, .Split.List-Params > .SM-1 {
+  .Row.Split > .SM-1, .Split.Snippet-Item > .SM-1, .Snippet-Item header .Split.Item-Values > .SM-1, .Split.List-Group-Actions > .SM-1, .Split.List-Params > .SM-1 {
     width: 6.33333%; }
 
-  .Row.Split > .SM-2, .Split.Snippet-Item > .SM-2, .Split.List-Group-Actions > .SM-2, .Split.List-Params > .SM-2 {
+  .Row.Split > .SM-2, .Split.Snippet-Item > .SM-2, .Snippet-Item header .Split.Item-Values > .SM-2, .Split.List-Group-Actions > .SM-2, .Split.List-Params > .SM-2 {
     width: 14.66667%; }
 
-  .Row.Split > .SM-3, .Split.Snippet-Item > .SM-3, .Split.List-Group-Actions > .SM-3, .Split.List-Params > .SM-3 {
+  .Row.Split > .SM-3, .Split.Snippet-Item > .SM-3, .Snippet-Item header .Split.Item-Values > .SM-3, .Split.List-Group-Actions > .SM-3, .Split.List-Params > .SM-3 {
     width: 23%; }
 
-  .Row.Split > .SM-4, .Split.Snippet-Item > .SM-4, .Split.List-Group-Actions > .SM-4, .Split.List-Params > .SM-4 {
+  .Row.Split > .SM-4, .Split.Snippet-Item > .SM-4, .Snippet-Item header .Split.Item-Values > .SM-4, .Split.List-Group-Actions > .SM-4, .Split.List-Params > .SM-4 {
     width: 31.33333%; }
 
-  .Row.Split > .SM-5, .Split.Snippet-Item > .SM-5, .Split.List-Group-Actions > .SM-5, .Split.List-Params > .SM-5 {
+  .Row.Split > .SM-5, .Split.Snippet-Item > .SM-5, .Snippet-Item header .Split.Item-Values > .SM-5, .Split.List-Group-Actions > .SM-5, .Split.List-Params > .SM-5 {
     width: 39.66667%; }
 
-  .Row.Split > .SM-6, .Split.Snippet-Item > .SM-6, .Split.List-Group-Actions > .SM-6, .Split.List-Params > .SM-6 {
+  .Row.Split > .SM-6, .Split.Snippet-Item > .SM-6, .Snippet-Item header .Split.Item-Values > .SM-6, .Split.List-Group-Actions > .SM-6, .Split.List-Params > .SM-6 {
     width: 48%; }
 
-  .Row.Split > .SM-7, .Split.Snippet-Item > .SM-7, .Split.List-Group-Actions > .SM-7, .Split.List-Params > .SM-7 {
+  .Row.Split > .SM-7, .Split.Snippet-Item > .SM-7, .Snippet-Item header .Split.Item-Values > .SM-7, .Split.List-Group-Actions > .SM-7, .Split.List-Params > .SM-7 {
     width: 56.33333%; }
 
-  .Row.Split > .SM-8, .Split.Snippet-Item > .SM-8, .Split.List-Group-Actions > .SM-8, .Split.List-Params > .SM-8 {
+  .Row.Split > .SM-8, .Split.Snippet-Item > .SM-8, .Snippet-Item header .Split.Item-Values > .SM-8, .Split.List-Group-Actions > .SM-8, .Split.List-Params > .SM-8 {
     width: 64.66667%; }
 
-  .Row.Split > .SM-9, .Split.Snippet-Item > .SM-9, .Split.List-Group-Actions > .SM-9, .Split.List-Params > .SM-9 {
+  .Row.Split > .SM-9, .Split.Snippet-Item > .SM-9, .Snippet-Item header .Split.Item-Values > .SM-9, .Split.List-Group-Actions > .SM-9, .Split.List-Params > .SM-9 {
     width: 73%; }
 
-  .Row.Split > .SM-10, .Split.Snippet-Item > .SM-10, .Split.List-Group-Actions > .SM-10, .Split.List-Params > .SM-10 {
+  .Row.Split > .SM-10, .Split.Snippet-Item > .SM-10, .Snippet-Item header .Split.Item-Values > .SM-10, .Split.List-Group-Actions > .SM-10, .Split.List-Params > .SM-10 {
     width: 81.33333%; }
 
-  .Row.Split > .SM-11, .Split.Snippet-Item > .SM-11, .Split.List-Group-Actions > .SM-11, .Split.List-Params > .SM-11 {
+  .Row.Split > .SM-11, .Split.Snippet-Item > .SM-11, .Snippet-Item header .Split.Item-Values > .SM-11, .Split.List-Group-Actions > .SM-11, .Split.List-Params > .SM-11 {
     width: 89.66667%; }
 
-  .Row.Split > .SM-12, .Split.Snippet-Item > .SM-12, .Split.List-Group-Actions > .SM-12, .Split.List-Params > .SM-12 {
+  .Row.Split > .SM-12, .Split.Snippet-Item > .SM-12, .Snippet-Item header .Split.Item-Values > .SM-12, .Split.List-Group-Actions > .SM-12, .Split.List-Params > .SM-12 {
     width: 98%; } }
 @media all and (min-width: 1260px) {
-  .Row.Merge > .MD-1, .Snippet-List .Snippet-Item > .MD-1, .Merge.Snippet-Item > .MD-1, .Snippet-Item.List-Group-Actions > .MD-1, .Snippet-Item.List-Params > .MD-1, .List-Group-Actions > .MD-1, .List-Params > .MD-1 {
+  .Row.Merge > .MD-1, .Snippet-List .Snippet-Item > .MD-1, .Merge.Snippet-Item > .MD-1, .Snippet-Item.List-Group-Actions > .MD-1, .Snippet-Item.List-Params > .MD-1, .Snippet-Item header .Merge.Item-Values > .MD-1, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .MD-1, .Snippet-Item header .Item-Values.List-Group-Actions > .MD-1, .Snippet-Item header .Item-Values.List-Params > .MD-1, .List-Group-Actions > .MD-1, .List-Params > .MD-1 {
     width: 8.33333%; }
 
-  .Row.Merge > .MD-2, .Snippet-List .Snippet-Item > .MD-2, .Merge.Snippet-Item > .MD-2, .Snippet-Item.List-Group-Actions > .MD-2, .Snippet-Item.List-Params > .MD-2, .List-Group-Actions > .MD-2, .List-Params > .MD-2 {
+  .Row.Merge > .MD-2, .Snippet-List .Snippet-Item > .MD-2, .Merge.Snippet-Item > .MD-2, .Snippet-Item.List-Group-Actions > .MD-2, .Snippet-Item.List-Params > .MD-2, .Snippet-Item header .Merge.Item-Values > .MD-2, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .MD-2, .Snippet-Item header .Item-Values.List-Group-Actions > .MD-2, .Snippet-Item header .Item-Values.List-Params > .MD-2, .List-Group-Actions > .MD-2, .List-Params > .MD-2 {
     width: 16.66667%; }
 
-  .Row.Merge > .MD-3, .Snippet-List .Snippet-Item > .MD-3, .Merge.Snippet-Item > .MD-3, .Snippet-Item.List-Group-Actions > .MD-3, .Snippet-Item.List-Params > .MD-3, .List-Group-Actions > .MD-3, .List-Params > .MD-3 {
+  .Row.Merge > .MD-3, .Snippet-List .Snippet-Item > .MD-3, .Merge.Snippet-Item > .MD-3, .Snippet-Item.List-Group-Actions > .MD-3, .Snippet-Item.List-Params > .MD-3, .Snippet-Item header .Merge.Item-Values > .MD-3, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .MD-3, .Snippet-Item header .Item-Values.List-Group-Actions > .MD-3, .Snippet-Item header .Item-Values.List-Params > .MD-3, .List-Group-Actions > .MD-3, .List-Params > .MD-3 {
     width: 25%; }
 
-  .Row.Merge > .MD-4, .Snippet-List .Snippet-Item > .MD-4, .Merge.Snippet-Item > .MD-4, .Snippet-Item.List-Group-Actions > .MD-4, .Snippet-Item.List-Params > .MD-4, .List-Group-Actions > .MD-4, .List-Params > .MD-4 {
+  .Row.Merge > .MD-4, .Snippet-List .Snippet-Item > .MD-4, .Merge.Snippet-Item > .MD-4, .Snippet-Item.List-Group-Actions > .MD-4, .Snippet-Item.List-Params > .MD-4, .Snippet-Item header .Merge.Item-Values > .MD-4, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .MD-4, .Snippet-Item header .Item-Values.List-Group-Actions > .MD-4, .Snippet-Item header .Item-Values.List-Params > .MD-4, .List-Group-Actions > .MD-4, .List-Params > .MD-4 {
     width: 33.33333%; }
 
-  .Row.Merge > .MD-5, .Snippet-List .Snippet-Item > .MD-5, .Merge.Snippet-Item > .MD-5, .Snippet-Item.List-Group-Actions > .MD-5, .Snippet-Item.List-Params > .MD-5, .List-Group-Actions > .MD-5, .List-Params > .MD-5 {
+  .Row.Merge > .MD-5, .Snippet-List .Snippet-Item > .MD-5, .Merge.Snippet-Item > .MD-5, .Snippet-Item.List-Group-Actions > .MD-5, .Snippet-Item.List-Params > .MD-5, .Snippet-Item header .Merge.Item-Values > .MD-5, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .MD-5, .Snippet-Item header .Item-Values.List-Group-Actions > .MD-5, .Snippet-Item header .Item-Values.List-Params > .MD-5, .List-Group-Actions > .MD-5, .List-Params > .MD-5 {
     width: 41.66667%; }
 
-  .Row.Merge > .MD-6, .Snippet-List .Snippet-Item > .MD-6, .Merge.Snippet-Item > .MD-6, .Snippet-Item.List-Group-Actions > .MD-6, .Snippet-Item.List-Params > .MD-6, .List-Group-Actions > .MD-6, .List-Params > .MD-6 {
+  .Row.Merge > .MD-6, .Snippet-List .Snippet-Item > .MD-6, .Merge.Snippet-Item > .MD-6, .Snippet-Item.List-Group-Actions > .MD-6, .Snippet-Item.List-Params > .MD-6, .Snippet-Item header .Merge.Item-Values > .MD-6, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .MD-6, .Snippet-Item header .Item-Values.List-Group-Actions > .MD-6, .Snippet-Item header .Item-Values.List-Params > .MD-6, .List-Group-Actions > .MD-6, .List-Params > .MD-6 {
     width: 50%; }
 
-  .Row.Merge > .MD-7, .Snippet-List .Snippet-Item > .MD-7, .Merge.Snippet-Item > .MD-7, .Snippet-Item.List-Group-Actions > .MD-7, .Snippet-Item.List-Params > .MD-7, .List-Group-Actions > .MD-7, .List-Params > .MD-7 {
+  .Row.Merge > .MD-7, .Snippet-List .Snippet-Item > .MD-7, .Merge.Snippet-Item > .MD-7, .Snippet-Item.List-Group-Actions > .MD-7, .Snippet-Item.List-Params > .MD-7, .Snippet-Item header .Merge.Item-Values > .MD-7, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .MD-7, .Snippet-Item header .Item-Values.List-Group-Actions > .MD-7, .Snippet-Item header .Item-Values.List-Params > .MD-7, .List-Group-Actions > .MD-7, .List-Params > .MD-7 {
     width: 58.33333%; }
 
-  .Row.Merge > .MD-8, .Snippet-List .Snippet-Item > .MD-8, .Merge.Snippet-Item > .MD-8, .Snippet-Item.List-Group-Actions > .MD-8, .Snippet-Item.List-Params > .MD-8, .List-Group-Actions > .MD-8, .List-Params > .MD-8 {
+  .Row.Merge > .MD-8, .Snippet-List .Snippet-Item > .MD-8, .Merge.Snippet-Item > .MD-8, .Snippet-Item.List-Group-Actions > .MD-8, .Snippet-Item.List-Params > .MD-8, .Snippet-Item header .Merge.Item-Values > .MD-8, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .MD-8, .Snippet-Item header .Item-Values.List-Group-Actions > .MD-8, .Snippet-Item header .Item-Values.List-Params > .MD-8, .List-Group-Actions > .MD-8, .List-Params > .MD-8 {
     width: 66.66667%; }
 
-  .Row.Merge > .MD-9, .Snippet-List .Snippet-Item > .MD-9, .Merge.Snippet-Item > .MD-9, .Snippet-Item.List-Group-Actions > .MD-9, .Snippet-Item.List-Params > .MD-9, .List-Group-Actions > .MD-9, .List-Params > .MD-9 {
+  .Row.Merge > .MD-9, .Snippet-List .Snippet-Item > .MD-9, .Merge.Snippet-Item > .MD-9, .Snippet-Item.List-Group-Actions > .MD-9, .Snippet-Item.List-Params > .MD-9, .Snippet-Item header .Merge.Item-Values > .MD-9, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .MD-9, .Snippet-Item header .Item-Values.List-Group-Actions > .MD-9, .Snippet-Item header .Item-Values.List-Params > .MD-9, .List-Group-Actions > .MD-9, .List-Params > .MD-9 {
     width: 75%; }
 
-  .Row.Merge > .MD-10, .Snippet-List .Snippet-Item > .MD-10, .Merge.Snippet-Item > .MD-10, .Snippet-Item.List-Group-Actions > .MD-10, .Snippet-Item.List-Params > .MD-10, .List-Group-Actions > .MD-10, .List-Params > .MD-10 {
+  .Row.Merge > .MD-10, .Snippet-List .Snippet-Item > .MD-10, .Merge.Snippet-Item > .MD-10, .Snippet-Item.List-Group-Actions > .MD-10, .Snippet-Item.List-Params > .MD-10, .Snippet-Item header .Merge.Item-Values > .MD-10, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .MD-10, .Snippet-Item header .Item-Values.List-Group-Actions > .MD-10, .Snippet-Item header .Item-Values.List-Params > .MD-10, .List-Group-Actions > .MD-10, .List-Params > .MD-10 {
     width: 83.33333%; }
 
-  .Row.Merge > .MD-11, .Snippet-List .Snippet-Item > .MD-11, .Merge.Snippet-Item > .MD-11, .Snippet-Item.List-Group-Actions > .MD-11, .Snippet-Item.List-Params > .MD-11, .List-Group-Actions > .MD-11, .List-Params > .MD-11 {
+  .Row.Merge > .MD-11, .Snippet-List .Snippet-Item > .MD-11, .Merge.Snippet-Item > .MD-11, .Snippet-Item.List-Group-Actions > .MD-11, .Snippet-Item.List-Params > .MD-11, .Snippet-Item header .Merge.Item-Values > .MD-11, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .MD-11, .Snippet-Item header .Item-Values.List-Group-Actions > .MD-11, .Snippet-Item header .Item-Values.List-Params > .MD-11, .List-Group-Actions > .MD-11, .List-Params > .MD-11 {
     width: 91.66667%; }
 
-  .Row.Merge > .MD-12, .Snippet-List .Snippet-Item > .MD-12, .Merge.Snippet-Item > .MD-12, .Snippet-Item.List-Group-Actions > .MD-12, .Snippet-Item.List-Params > .MD-12, .List-Group-Actions > .MD-12, .List-Params > .MD-12 {
+  .Row.Merge > .MD-12, .Snippet-List .Snippet-Item > .MD-12, .Merge.Snippet-Item > .MD-12, .Snippet-Item.List-Group-Actions > .MD-12, .Snippet-Item.List-Params > .MD-12, .Snippet-Item header .Merge.Item-Values > .MD-12, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .MD-12, .Snippet-Item header .Item-Values.List-Group-Actions > .MD-12, .Snippet-Item header .Item-Values.List-Params > .MD-12, .List-Group-Actions > .MD-12, .List-Params > .MD-12 {
     width: 100%; }
 
-  .Row.Split > .MD-1, .Split.Snippet-Item > .MD-1, .Split.List-Group-Actions > .MD-1, .Split.List-Params > .MD-1 {
+  .Row.Split > .MD-1, .Split.Snippet-Item > .MD-1, .Snippet-Item header .Split.Item-Values > .MD-1, .Split.List-Group-Actions > .MD-1, .Split.List-Params > .MD-1 {
     width: 6.33333%; }
 
-  .Row.Split > .MD-2, .Split.Snippet-Item > .MD-2, .Split.List-Group-Actions > .MD-2, .Split.List-Params > .MD-2 {
+  .Row.Split > .MD-2, .Split.Snippet-Item > .MD-2, .Snippet-Item header .Split.Item-Values > .MD-2, .Split.List-Group-Actions > .MD-2, .Split.List-Params > .MD-2 {
     width: 14.66667%; }
 
-  .Row.Split > .MD-3, .Split.Snippet-Item > .MD-3, .Split.List-Group-Actions > .MD-3, .Split.List-Params > .MD-3 {
+  .Row.Split > .MD-3, .Split.Snippet-Item > .MD-3, .Snippet-Item header .Split.Item-Values > .MD-3, .Split.List-Group-Actions > .MD-3, .Split.List-Params > .MD-3 {
     width: 23%; }
 
-  .Row.Split > .MD-4, .Split.Snippet-Item > .MD-4, .Split.List-Group-Actions > .MD-4, .Split.List-Params > .MD-4 {
+  .Row.Split > .MD-4, .Split.Snippet-Item > .MD-4, .Snippet-Item header .Split.Item-Values > .MD-4, .Split.List-Group-Actions > .MD-4, .Split.List-Params > .MD-4 {
     width: 31.33333%; }
 
-  .Row.Split > .MD-5, .Split.Snippet-Item > .MD-5, .Split.List-Group-Actions > .MD-5, .Split.List-Params > .MD-5 {
+  .Row.Split > .MD-5, .Split.Snippet-Item > .MD-5, .Snippet-Item header .Split.Item-Values > .MD-5, .Split.List-Group-Actions > .MD-5, .Split.List-Params > .MD-5 {
     width: 39.66667%; }
 
-  .Row.Split > .MD-6, .Split.Snippet-Item > .MD-6, .Split.List-Group-Actions > .MD-6, .Split.List-Params > .MD-6 {
+  .Row.Split > .MD-6, .Split.Snippet-Item > .MD-6, .Snippet-Item header .Split.Item-Values > .MD-6, .Split.List-Group-Actions > .MD-6, .Split.List-Params > .MD-6 {
     width: 48%; }
 
-  .Row.Split > .MD-7, .Split.Snippet-Item > .MD-7, .Split.List-Group-Actions > .MD-7, .Split.List-Params > .MD-7 {
+  .Row.Split > .MD-7, .Split.Snippet-Item > .MD-7, .Snippet-Item header .Split.Item-Values > .MD-7, .Split.List-Group-Actions > .MD-7, .Split.List-Params > .MD-7 {
     width: 56.33333%; }
 
-  .Row.Split > .MD-8, .Split.Snippet-Item > .MD-8, .Split.List-Group-Actions > .MD-8, .Split.List-Params > .MD-8 {
+  .Row.Split > .MD-8, .Split.Snippet-Item > .MD-8, .Snippet-Item header .Split.Item-Values > .MD-8, .Split.List-Group-Actions > .MD-8, .Split.List-Params > .MD-8 {
     width: 64.66667%; }
 
-  .Row.Split > .MD-9, .Split.Snippet-Item > .MD-9, .Split.List-Group-Actions > .MD-9, .Split.List-Params > .MD-9 {
+  .Row.Split > .MD-9, .Split.Snippet-Item > .MD-9, .Snippet-Item header .Split.Item-Values > .MD-9, .Split.List-Group-Actions > .MD-9, .Split.List-Params > .MD-9 {
     width: 73%; }
 
-  .Row.Split > .MD-10, .Split.Snippet-Item > .MD-10, .Split.List-Group-Actions > .MD-10, .Split.List-Params > .MD-10 {
+  .Row.Split > .MD-10, .Split.Snippet-Item > .MD-10, .Snippet-Item header .Split.Item-Values > .MD-10, .Split.List-Group-Actions > .MD-10, .Split.List-Params > .MD-10 {
     width: 81.33333%; }
 
-  .Row.Split > .MD-11, .Split.Snippet-Item > .MD-11, .Split.List-Group-Actions > .MD-11, .Split.List-Params > .MD-11 {
+  .Row.Split > .MD-11, .Split.Snippet-Item > .MD-11, .Snippet-Item header .Split.Item-Values > .MD-11, .Split.List-Group-Actions > .MD-11, .Split.List-Params > .MD-11 {
     width: 89.66667%; }
 
-  .Row.Split > .MD-12, .Split.Snippet-Item > .MD-12, .Split.List-Group-Actions > .MD-12, .Split.List-Params > .MD-12 {
+  .Row.Split > .MD-12, .Split.Snippet-Item > .MD-12, .Snippet-Item header .Split.Item-Values > .MD-12, .Split.List-Group-Actions > .MD-12, .Split.List-Params > .MD-12 {
     width: 98%; } }
 @media all and (min-width: 1900px) {
-  .Row.Merge > .LR-1, .Snippet-List .Snippet-Item > .LR-1, .Merge.Snippet-Item > .LR-1, .Snippet-Item.List-Group-Actions > .LR-1, .Snippet-Item.List-Params > .LR-1, .List-Group-Actions > .LR-1, .List-Params > .LR-1 {
+  .Row.Merge > .LR-1, .Snippet-List .Snippet-Item > .LR-1, .Merge.Snippet-Item > .LR-1, .Snippet-Item.List-Group-Actions > .LR-1, .Snippet-Item.List-Params > .LR-1, .Snippet-Item header .Merge.Item-Values > .LR-1, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-1, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-1, .Snippet-Item header .Item-Values.List-Params > .LR-1, .List-Group-Actions > .LR-1, .List-Params > .LR-1 {
     width: 8.33333%; }
 
-  .Row.Merge > .LR-2, .Snippet-List .Snippet-Item > .LR-2, .Merge.Snippet-Item > .LR-2, .Snippet-Item.List-Group-Actions > .LR-2, .Snippet-Item.List-Params > .LR-2, .List-Group-Actions > .LR-2, .List-Params > .LR-2 {
+  .Row.Merge > .LR-2, .Snippet-List .Snippet-Item > .LR-2, .Merge.Snippet-Item > .LR-2, .Snippet-Item.List-Group-Actions > .LR-2, .Snippet-Item.List-Params > .LR-2, .Snippet-Item header .Merge.Item-Values > .LR-2, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-2, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-2, .Snippet-Item header .Item-Values.List-Params > .LR-2, .List-Group-Actions > .LR-2, .List-Params > .LR-2 {
     width: 16.66667%; }
 
-  .Row.Merge > .LR-3, .Snippet-List .Snippet-Item > .LR-3, .Merge.Snippet-Item > .LR-3, .Snippet-Item.List-Group-Actions > .LR-3, .Snippet-Item.List-Params > .LR-3, .List-Group-Actions > .LR-3, .List-Params > .LR-3 {
+  .Row.Merge > .LR-3, .Snippet-List .Snippet-Item > .LR-3, .Merge.Snippet-Item > .LR-3, .Snippet-Item.List-Group-Actions > .LR-3, .Snippet-Item.List-Params > .LR-3, .Snippet-Item header .Merge.Item-Values > .LR-3, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-3, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-3, .Snippet-Item header .Item-Values.List-Params > .LR-3, .List-Group-Actions > .LR-3, .List-Params > .LR-3 {
     width: 25%; }
 
-  .Row.Merge > .LR-4, .Snippet-List .Snippet-Item > .LR-4, .Merge.Snippet-Item > .LR-4, .Snippet-Item.List-Group-Actions > .LR-4, .Snippet-Item.List-Params > .LR-4, .List-Group-Actions > .LR-4, .List-Params > .LR-4, .List-Params .Row.Merge > li, .Snippet-List .List-Params .Snippet-Item > li, .List-Params .Snippet-List .Snippet-Item > li, .List-Params .Merge.Snippet-Item > li, .List-Params .List-Group-Actions > li, .List-Params > li {
+  .Row.Merge > .LR-4, .Snippet-List .Snippet-Item > .LR-4, .Merge.Snippet-Item > .LR-4, .Snippet-Item.List-Group-Actions > .LR-4, .Snippet-Item.List-Params > .LR-4, .Snippet-Item header .Merge.Item-Values > .LR-4, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-4, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-4, .Snippet-Item header .Item-Values.List-Params > .LR-4, .List-Group-Actions > .LR-4, .List-Params > .LR-4, .List-Params .Row.Merge > li, .Snippet-List .List-Params .Snippet-Item > li, .List-Params .Snippet-List .Snippet-Item > li, .List-Params .Merge.Snippet-Item > li, .Snippet-Item header .List-Params .Merge.Item-Values > li, .List-Params .Snippet-Item header .Merge.Item-Values > li, .List-Params .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > li, .Snippet-Item header .Item-Values.List-Params > li, .List-Params .List-Group-Actions > li, .List-Params > li {
     width: 33.33333%; }
 
-  .Row.Merge > .LR-5, .Snippet-List .Snippet-Item > .LR-5, .Merge.Snippet-Item > .LR-5, .Snippet-Item.List-Group-Actions > .LR-5, .Snippet-Item.List-Params > .LR-5, .List-Group-Actions > .LR-5, .List-Params > .LR-5 {
+  .Row.Merge > .LR-5, .Snippet-List .Snippet-Item > .LR-5, .Merge.Snippet-Item > .LR-5, .Snippet-Item.List-Group-Actions > .LR-5, .Snippet-Item.List-Params > .LR-5, .Snippet-Item header .Merge.Item-Values > .LR-5, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-5, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-5, .Snippet-Item header .Item-Values.List-Params > .LR-5, .List-Group-Actions > .LR-5, .List-Params > .LR-5 {
     width: 41.66667%; }
 
-  .Row.Merge > .LR-6, .Snippet-List .Snippet-Item > .LR-6, .Merge.Snippet-Item > .LR-6, .Snippet-Item.List-Group-Actions > .LR-6, .Snippet-Item.List-Params > .LR-6, .List-Group-Actions > .LR-6, .List-Params > .LR-6 {
+  .Row.Merge > .LR-6, .Snippet-List .Snippet-Item > .LR-6, .Merge.Snippet-Item > .LR-6, .Snippet-Item.List-Group-Actions > .LR-6, .Snippet-Item.List-Params > .LR-6, .Snippet-Item header .Merge.Item-Values > .LR-6, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-6, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-6, .Snippet-Item header .Item-Values.List-Params > .LR-6, .List-Group-Actions > .LR-6, .List-Params > .LR-6 {
     width: 50%; }
 
-  .Row.Merge > .LR-7, .Snippet-List .Snippet-Item > .LR-7, .Merge.Snippet-Item > .LR-7, .Snippet-Item.List-Group-Actions > .LR-7, .Snippet-Item.List-Params > .LR-7, .List-Group-Actions > .LR-7, .List-Params > .LR-7 {
+  .Row.Merge > .LR-7, .Snippet-List .Snippet-Item > .LR-7, .Merge.Snippet-Item > .LR-7, .Snippet-Item.List-Group-Actions > .LR-7, .Snippet-Item.List-Params > .LR-7, .Snippet-Item header .Merge.Item-Values > .LR-7, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-7, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-7, .Snippet-Item header .Item-Values.List-Params > .LR-7, .List-Group-Actions > .LR-7, .List-Params > .LR-7 {
     width: 58.33333%; }
 
-  .Row.Merge > .LR-8, .Snippet-List .Snippet-Item > .LR-8, .Merge.Snippet-Item > .LR-8, .Snippet-Item.List-Group-Actions > .LR-8, .Snippet-Item.List-Params > .LR-8, .List-Group-Actions > .LR-8, .List-Params > .LR-8 {
+  .Row.Merge > .LR-8, .Snippet-List .Snippet-Item > .LR-8, .Merge.Snippet-Item > .LR-8, .Snippet-Item.List-Group-Actions > .LR-8, .Snippet-Item.List-Params > .LR-8, .Snippet-Item header .Merge.Item-Values > .LR-8, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-8, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-8, .Snippet-Item header .Item-Values.List-Params > .LR-8, .List-Group-Actions > .LR-8, .List-Params > .LR-8 {
     width: 66.66667%; }
 
-  .Row.Merge > .LR-9, .Snippet-List .Snippet-Item > .LR-9, .Merge.Snippet-Item > .LR-9, .Snippet-Item.List-Group-Actions > .LR-9, .Snippet-Item.List-Params > .LR-9, .List-Group-Actions > .LR-9, .List-Params > .LR-9 {
+  .Row.Merge > .LR-9, .Snippet-List .Snippet-Item > .LR-9, .Merge.Snippet-Item > .LR-9, .Snippet-Item.List-Group-Actions > .LR-9, .Snippet-Item.List-Params > .LR-9, .Snippet-Item header .Merge.Item-Values > .LR-9, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-9, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-9, .Snippet-Item header .Item-Values.List-Params > .LR-9, .List-Group-Actions > .LR-9, .List-Params > .LR-9 {
     width: 75%; }
 
-  .Row.Merge > .LR-10, .Snippet-List .Snippet-Item > .LR-10, .Merge.Snippet-Item > .LR-10, .Snippet-Item.List-Group-Actions > .LR-10, .Snippet-Item.List-Params > .LR-10, .List-Group-Actions > .LR-10, .List-Params > .LR-10 {
+  .Row.Merge > .LR-10, .Snippet-List .Snippet-Item > .LR-10, .Merge.Snippet-Item > .LR-10, .Snippet-Item.List-Group-Actions > .LR-10, .Snippet-Item.List-Params > .LR-10, .Snippet-Item header .Merge.Item-Values > .LR-10, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-10, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-10, .Snippet-Item header .Item-Values.List-Params > .LR-10, .List-Group-Actions > .LR-10, .List-Params > .LR-10 {
     width: 83.33333%; }
 
-  .Row.Merge > .LR-11, .Snippet-List .Snippet-Item > .LR-11, .Merge.Snippet-Item > .LR-11, .Snippet-Item.List-Group-Actions > .LR-11, .Snippet-Item.List-Params > .LR-11, .List-Group-Actions > .LR-11, .List-Params > .LR-11 {
+  .Row.Merge > .LR-11, .Snippet-List .Snippet-Item > .LR-11, .Merge.Snippet-Item > .LR-11, .Snippet-Item.List-Group-Actions > .LR-11, .Snippet-Item.List-Params > .LR-11, .Snippet-Item header .Merge.Item-Values > .LR-11, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-11, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-11, .Snippet-Item header .Item-Values.List-Params > .LR-11, .List-Group-Actions > .LR-11, .List-Params > .LR-11 {
     width: 91.66667%; }
 
-  .Row.Merge > .LR-12, .Snippet-List .Snippet-Item > .LR-12, .Merge.Snippet-Item > .LR-12, .Snippet-Item.List-Group-Actions > .LR-12, .Snippet-Item.List-Params > .LR-12, .List-Group-Actions > .LR-12, .List-Params > .LR-12 {
+  .Row.Merge > .LR-12, .Snippet-List .Snippet-Item > .LR-12, .Merge.Snippet-Item > .LR-12, .Snippet-Item.List-Group-Actions > .LR-12, .Snippet-Item.List-Params > .LR-12, .Snippet-Item header .Merge.Item-Values > .LR-12, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-12, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-12, .Snippet-Item header .Item-Values.List-Params > .LR-12, .List-Group-Actions > .LR-12, .List-Params > .LR-12 {
     width: 100%; }
 
-  .Row.Split > .LR-1, .Split.Snippet-Item > .LR-1, .Split.List-Group-Actions > .LR-1, .Split.List-Params > .LR-1 {
+  .Row.Split > .LR-1, .Split.Snippet-Item > .LR-1, .Snippet-Item header .Split.Item-Values > .LR-1, .Split.List-Group-Actions > .LR-1, .Split.List-Params > .LR-1 {
     width: 6.33333%; }
 
-  .Row.Split > .LR-2, .Split.Snippet-Item > .LR-2, .Split.List-Group-Actions > .LR-2, .Split.List-Params > .LR-2 {
+  .Row.Split > .LR-2, .Split.Snippet-Item > .LR-2, .Snippet-Item header .Split.Item-Values > .LR-2, .Split.List-Group-Actions > .LR-2, .Split.List-Params > .LR-2 {
     width: 14.66667%; }
 
-  .Row.Split > .LR-3, .Split.Snippet-Item > .LR-3, .Split.List-Group-Actions > .LR-3, .Split.List-Params > .LR-3 {
+  .Row.Split > .LR-3, .Split.Snippet-Item > .LR-3, .Snippet-Item header .Split.Item-Values > .LR-3, .Split.List-Group-Actions > .LR-3, .Split.List-Params > .LR-3 {
     width: 23%; }
 
-  .Row.Split > .LR-4, .Split.Snippet-Item > .LR-4, .Split.List-Group-Actions > .LR-4, .Split.List-Params > .LR-4, .List-Params .Row.Split > li, .List-Params .Split.Snippet-Item > li, .List-Params .Split.List-Group-Actions > li, .Split.List-Params > li {
+  .Row.Split > .LR-4, .Split.Snippet-Item > .LR-4, .Snippet-Item header .Split.Item-Values > .LR-4, .Split.List-Group-Actions > .LR-4, .Split.List-Params > .LR-4, .List-Params .Row.Split > li, .List-Params .Split.Snippet-Item > li, .Snippet-Item header .List-Params .Split.Item-Values > li, .List-Params .Snippet-Item header .Split.Item-Values > li, .List-Params .Split.List-Group-Actions > li, .Split.List-Params > li {
     width: 31.33333%; }
 
-  .Row.Split > .LR-5, .Split.Snippet-Item > .LR-5, .Split.List-Group-Actions > .LR-5, .Split.List-Params > .LR-5 {
+  .Row.Split > .LR-5, .Split.Snippet-Item > .LR-5, .Snippet-Item header .Split.Item-Values > .LR-5, .Split.List-Group-Actions > .LR-5, .Split.List-Params > .LR-5 {
     width: 39.66667%; }
 
-  .Row.Split > .LR-6, .Split.Snippet-Item > .LR-6, .Split.List-Group-Actions > .LR-6, .Split.List-Params > .LR-6 {
+  .Row.Split > .LR-6, .Split.Snippet-Item > .LR-6, .Snippet-Item header .Split.Item-Values > .LR-6, .Split.List-Group-Actions > .LR-6, .Split.List-Params > .LR-6 {
     width: 48%; }
 
-  .Row.Split > .LR-7, .Split.Snippet-Item > .LR-7, .Split.List-Group-Actions > .LR-7, .Split.List-Params > .LR-7 {
+  .Row.Split > .LR-7, .Split.Snippet-Item > .LR-7, .Snippet-Item header .Split.Item-Values > .LR-7, .Split.List-Group-Actions > .LR-7, .Split.List-Params > .LR-7 {
     width: 56.33333%; }
 
-  .Row.Split > .LR-8, .Split.Snippet-Item > .LR-8, .Split.List-Group-Actions > .LR-8, .Split.List-Params > .LR-8 {
+  .Row.Split > .LR-8, .Split.Snippet-Item > .LR-8, .Snippet-Item header .Split.Item-Values > .LR-8, .Split.List-Group-Actions > .LR-8, .Split.List-Params > .LR-8 {
     width: 64.66667%; }
 
-  .Row.Split > .LR-9, .Split.Snippet-Item > .LR-9, .Split.List-Group-Actions > .LR-9, .Split.List-Params > .LR-9 {
+  .Row.Split > .LR-9, .Split.Snippet-Item > .LR-9, .Snippet-Item header .Split.Item-Values > .LR-9, .Split.List-Group-Actions > .LR-9, .Split.List-Params > .LR-9 {
     width: 73%; }
 
-  .Row.Split > .LR-10, .Split.Snippet-Item > .LR-10, .Split.List-Group-Actions > .LR-10, .Split.List-Params > .LR-10 {
+  .Row.Split > .LR-10, .Split.Snippet-Item > .LR-10, .Snippet-Item header .Split.Item-Values > .LR-10, .Split.List-Group-Actions > .LR-10, .Split.List-Params > .LR-10 {
     width: 81.33333%; }
 
-  .Row.Split > .LR-11, .Split.Snippet-Item > .LR-11, .Split.List-Group-Actions > .LR-11, .Split.List-Params > .LR-11 {
+  .Row.Split > .LR-11, .Split.Snippet-Item > .LR-11, .Snippet-Item header .Split.Item-Values > .LR-11, .Split.List-Group-Actions > .LR-11, .Split.List-Params > .LR-11 {
     width: 89.66667%; }
 
-  .Row.Split > .LR-12, .Split.Snippet-Item > .LR-12, .Split.List-Group-Actions > .LR-12, .Split.List-Params > .LR-12 {
+  .Row.Split > .LR-12, .Split.Snippet-Item > .LR-12, .Snippet-Item header .Split.Item-Values > .LR-12, .Split.List-Group-Actions > .LR-12, .Split.List-Params > .LR-12 {
     width: 98%; } }
 @media all and (min-width: 2560px) {
-  .Row.Merge > .HG-1, .Snippet-List .Snippet-Item > .HG-1, .Merge.Snippet-Item > .HG-1, .Snippet-Item.List-Group-Actions > .HG-1, .Snippet-Item.List-Params > .HG-1, .List-Group-Actions > .HG-1, .List-Params > .HG-1 {
+  .Row.Merge > .HG-1, .Snippet-List .Snippet-Item > .HG-1, .Merge.Snippet-Item > .HG-1, .Snippet-Item.List-Group-Actions > .HG-1, .Snippet-Item.List-Params > .HG-1, .Snippet-Item header .Merge.Item-Values > .HG-1, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .HG-1, .Snippet-Item header .Item-Values.List-Group-Actions > .HG-1, .Snippet-Item header .Item-Values.List-Params > .HG-1, .List-Group-Actions > .HG-1, .List-Params > .HG-1 {
     width: 8.33333%; }
 
-  .Row.Merge > .HG-2, .Snippet-List .Snippet-Item > .HG-2, .Merge.Snippet-Item > .HG-2, .Snippet-Item.List-Group-Actions > .HG-2, .Snippet-Item.List-Params > .HG-2, .List-Group-Actions > .HG-2, .List-Params > .HG-2 {
+  .Row.Merge > .HG-2, .Snippet-List .Snippet-Item > .HG-2, .Merge.Snippet-Item > .HG-2, .Snippet-Item.List-Group-Actions > .HG-2, .Snippet-Item.List-Params > .HG-2, .Snippet-Item header .Merge.Item-Values > .HG-2, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .HG-2, .Snippet-Item header .Item-Values.List-Group-Actions > .HG-2, .Snippet-Item header .Item-Values.List-Params > .HG-2, .List-Group-Actions > .HG-2, .List-Params > .HG-2 {
     width: 16.66667%; }
 
-  .Row.Merge > .HG-3, .Snippet-List .Snippet-Item > .HG-3, .Merge.Snippet-Item > .HG-3, .Snippet-Item.List-Group-Actions > .HG-3, .Snippet-Item.List-Params > .HG-3, .List-Group-Actions > .HG-3, .List-Params > .HG-3 {
+  .Row.Merge > .HG-3, .Snippet-List .Snippet-Item > .HG-3, .Merge.Snippet-Item > .HG-3, .Snippet-Item.List-Group-Actions > .HG-3, .Snippet-Item.List-Params > .HG-3, .Snippet-Item header .Merge.Item-Values > .HG-3, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .HG-3, .Snippet-Item header .Item-Values.List-Group-Actions > .HG-3, .Snippet-Item header .Item-Values.List-Params > .HG-3, .List-Group-Actions > .HG-3, .List-Params > .HG-3 {
     width: 25%; }
 
-  .Row.Merge > .HG-4, .Snippet-List .Snippet-Item > .HG-4, .Merge.Snippet-Item > .HG-4, .Snippet-Item.List-Group-Actions > .HG-4, .Snippet-Item.List-Params > .HG-4, .List-Group-Actions > .HG-4, .List-Params > .HG-4 {
+  .Row.Merge > .HG-4, .Snippet-List .Snippet-Item > .HG-4, .Merge.Snippet-Item > .HG-4, .Snippet-Item.List-Group-Actions > .HG-4, .Snippet-Item.List-Params > .HG-4, .Snippet-Item header .Merge.Item-Values > .HG-4, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .HG-4, .Snippet-Item header .Item-Values.List-Group-Actions > .HG-4, .Snippet-Item header .Item-Values.List-Params > .HG-4, .List-Group-Actions > .HG-4, .List-Params > .HG-4 {
     width: 33.33333%; }
 
-  .Row.Merge > .HG-5, .Snippet-List .Snippet-Item > .HG-5, .Merge.Snippet-Item > .HG-5, .Snippet-Item.List-Group-Actions > .HG-5, .Snippet-Item.List-Params > .HG-5, .List-Group-Actions > .HG-5, .List-Params > .HG-5 {
+  .Row.Merge > .HG-5, .Snippet-List .Snippet-Item > .HG-5, .Merge.Snippet-Item > .HG-5, .Snippet-Item.List-Group-Actions > .HG-5, .Snippet-Item.List-Params > .HG-5, .Snippet-Item header .Merge.Item-Values > .HG-5, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .HG-5, .Snippet-Item header .Item-Values.List-Group-Actions > .HG-5, .Snippet-Item header .Item-Values.List-Params > .HG-5, .List-Group-Actions > .HG-5, .List-Params > .HG-5 {
     width: 41.66667%; }
 
-  .Row.Merge > .HG-6, .Snippet-List .Snippet-Item > .HG-6, .Merge.Snippet-Item > .HG-6, .Snippet-Item.List-Group-Actions > .HG-6, .Snippet-Item.List-Params > .HG-6, .List-Group-Actions > .HG-6, .List-Params > .HG-6 {
+  .Row.Merge > .HG-6, .Snippet-List .Snippet-Item > .HG-6, .Merge.Snippet-Item > .HG-6, .Snippet-Item.List-Group-Actions > .HG-6, .Snippet-Item.List-Params > .HG-6, .Snippet-Item header .Merge.Item-Values > .HG-6, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .HG-6, .Snippet-Item header .Item-Values.List-Group-Actions > .HG-6, .Snippet-Item header .Item-Values.List-Params > .HG-6, .List-Group-Actions > .HG-6, .List-Params > .HG-6 {
     width: 50%; }
 
-  .Row.Merge > .HG-7, .Snippet-List .Snippet-Item > .HG-7, .Merge.Snippet-Item > .HG-7, .Snippet-Item.List-Group-Actions > .HG-7, .Snippet-Item.List-Params > .HG-7, .List-Group-Actions > .HG-7, .List-Params > .HG-7 {
+  .Row.Merge > .HG-7, .Snippet-List .Snippet-Item > .HG-7, .Merge.Snippet-Item > .HG-7, .Snippet-Item.List-Group-Actions > .HG-7, .Snippet-Item.List-Params > .HG-7, .Snippet-Item header .Merge.Item-Values > .HG-7, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .HG-7, .Snippet-Item header .Item-Values.List-Group-Actions > .HG-7, .Snippet-Item header .Item-Values.List-Params > .HG-7, .List-Group-Actions > .HG-7, .List-Params > .HG-7 {
     width: 58.33333%; }
 
-  .Row.Merge > .HG-8, .Snippet-List .Snippet-Item > .HG-8, .Merge.Snippet-Item > .HG-8, .Snippet-Item.List-Group-Actions > .HG-8, .Snippet-Item.List-Params > .HG-8, .List-Group-Actions > .HG-8, .List-Params > .HG-8 {
+  .Row.Merge > .HG-8, .Snippet-List .Snippet-Item > .HG-8, .Merge.Snippet-Item > .HG-8, .Snippet-Item.List-Group-Actions > .HG-8, .Snippet-Item.List-Params > .HG-8, .Snippet-Item header .Merge.Item-Values > .HG-8, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .HG-8, .Snippet-Item header .Item-Values.List-Group-Actions > .HG-8, .Snippet-Item header .Item-Values.List-Params > .HG-8, .List-Group-Actions > .HG-8, .List-Params > .HG-8 {
     width: 66.66667%; }
 
-  .Row.Merge > .HG-9, .Snippet-List .Snippet-Item > .HG-9, .Merge.Snippet-Item > .HG-9, .Snippet-Item.List-Group-Actions > .HG-9, .Snippet-Item.List-Params > .HG-9, .List-Group-Actions > .HG-9, .List-Params > .HG-9 {
+  .Row.Merge > .HG-9, .Snippet-List .Snippet-Item > .HG-9, .Merge.Snippet-Item > .HG-9, .Snippet-Item.List-Group-Actions > .HG-9, .Snippet-Item.List-Params > .HG-9, .Snippet-Item header .Merge.Item-Values > .HG-9, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .HG-9, .Snippet-Item header .Item-Values.List-Group-Actions > .HG-9, .Snippet-Item header .Item-Values.List-Params > .HG-9, .List-Group-Actions > .HG-9, .List-Params > .HG-9 {
     width: 75%; }
 
-  .Row.Merge > .HG-10, .Snippet-List .Snippet-Item > .HG-10, .Merge.Snippet-Item > .HG-10, .Snippet-Item.List-Group-Actions > .HG-10, .Snippet-Item.List-Params > .HG-10, .List-Group-Actions > .HG-10, .List-Params > .HG-10 {
+  .Row.Merge > .HG-10, .Snippet-List .Snippet-Item > .HG-10, .Merge.Snippet-Item > .HG-10, .Snippet-Item.List-Group-Actions > .HG-10, .Snippet-Item.List-Params > .HG-10, .Snippet-Item header .Merge.Item-Values > .HG-10, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .HG-10, .Snippet-Item header .Item-Values.List-Group-Actions > .HG-10, .Snippet-Item header .Item-Values.List-Params > .HG-10, .List-Group-Actions > .HG-10, .List-Params > .HG-10 {
     width: 83.33333%; }
 
-  .Row.Merge > .HG-11, .Snippet-List .Snippet-Item > .HG-11, .Merge.Snippet-Item > .HG-11, .Snippet-Item.List-Group-Actions > .HG-11, .Snippet-Item.List-Params > .HG-11, .List-Group-Actions > .HG-11, .List-Params > .HG-11 {
+  .Row.Merge > .HG-11, .Snippet-List .Snippet-Item > .HG-11, .Merge.Snippet-Item > .HG-11, .Snippet-Item.List-Group-Actions > .HG-11, .Snippet-Item.List-Params > .HG-11, .Snippet-Item header .Merge.Item-Values > .HG-11, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .HG-11, .Snippet-Item header .Item-Values.List-Group-Actions > .HG-11, .Snippet-Item header .Item-Values.List-Params > .HG-11, .List-Group-Actions > .HG-11, .List-Params > .HG-11 {
     width: 91.66667%; }
 
-  .Row.Merge > .HG-12, .Snippet-List .Snippet-Item > .HG-12, .Merge.Snippet-Item > .HG-12, .Snippet-Item.List-Group-Actions > .HG-12, .Snippet-Item.List-Params > .HG-12, .List-Group-Actions > .HG-12, .List-Params > .HG-12 {
+  .Row.Merge > .HG-12, .Snippet-List .Snippet-Item > .HG-12, .Merge.Snippet-Item > .HG-12, .Snippet-Item.List-Group-Actions > .HG-12, .Snippet-Item.List-Params > .HG-12, .Snippet-Item header .Merge.Item-Values > .HG-12, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .HG-12, .Snippet-Item header .Item-Values.List-Group-Actions > .HG-12, .Snippet-Item header .Item-Values.List-Params > .HG-12, .List-Group-Actions > .HG-12, .List-Params > .HG-12 {
     width: 100%; }
 
-  .Row.Split > .HG-1, .Split.Snippet-Item > .HG-1, .Split.List-Group-Actions > .HG-1, .Split.List-Params > .HG-1 {
+  .Row.Split > .HG-1, .Split.Snippet-Item > .HG-1, .Snippet-Item header .Split.Item-Values > .HG-1, .Split.List-Group-Actions > .HG-1, .Split.List-Params > .HG-1 {
     width: 6.33333%; }
 
-  .Row.Split > .HG-2, .Split.Snippet-Item > .HG-2, .Split.List-Group-Actions > .HG-2, .Split.List-Params > .HG-2 {
+  .Row.Split > .HG-2, .Split.Snippet-Item > .HG-2, .Snippet-Item header .Split.Item-Values > .HG-2, .Split.List-Group-Actions > .HG-2, .Split.List-Params > .HG-2 {
     width: 14.66667%; }
 
-  .Row.Split > .HG-3, .Split.Snippet-Item > .HG-3, .Split.List-Group-Actions > .HG-3, .Split.List-Params > .HG-3 {
+  .Row.Split > .HG-3, .Split.Snippet-Item > .HG-3, .Snippet-Item header .Split.Item-Values > .HG-3, .Split.List-Group-Actions > .HG-3, .Split.List-Params > .HG-3 {
     width: 23%; }
 
-  .Row.Split > .HG-4, .Split.Snippet-Item > .HG-4, .Split.List-Group-Actions > .HG-4, .Split.List-Params > .HG-4 {
+  .Row.Split > .HG-4, .Split.Snippet-Item > .HG-4, .Snippet-Item header .Split.Item-Values > .HG-4, .Split.List-Group-Actions > .HG-4, .Split.List-Params > .HG-4 {
     width: 31.33333%; }
 
-  .Row.Split > .HG-5, .Split.Snippet-Item > .HG-5, .Split.List-Group-Actions > .HG-5, .Split.List-Params > .HG-5 {
+  .Row.Split > .HG-5, .Split.Snippet-Item > .HG-5, .Snippet-Item header .Split.Item-Values > .HG-5, .Split.List-Group-Actions > .HG-5, .Split.List-Params > .HG-5 {
     width: 39.66667%; }
 
-  .Row.Split > .HG-6, .Split.Snippet-Item > .HG-6, .Split.List-Group-Actions > .HG-6, .Split.List-Params > .HG-6 {
+  .Row.Split > .HG-6, .Split.Snippet-Item > .HG-6, .Snippet-Item header .Split.Item-Values > .HG-6, .Split.List-Group-Actions > .HG-6, .Split.List-Params > .HG-6 {
     width: 48%; }
 
-  .Row.Split > .HG-7, .Split.Snippet-Item > .HG-7, .Split.List-Group-Actions > .HG-7, .Split.List-Params > .HG-7 {
+  .Row.Split > .HG-7, .Split.Snippet-Item > .HG-7, .Snippet-Item header .Split.Item-Values > .HG-7, .Split.List-Group-Actions > .HG-7, .Split.List-Params > .HG-7 {
     width: 56.33333%; }
 
-  .Row.Split > .HG-8, .Split.Snippet-Item > .HG-8, .Split.List-Group-Actions > .HG-8, .Split.List-Params > .HG-8 {
+  .Row.Split > .HG-8, .Split.Snippet-Item > .HG-8, .Snippet-Item header .Split.Item-Values > .HG-8, .Split.List-Group-Actions > .HG-8, .Split.List-Params > .HG-8 {
     width: 64.66667%; }
 
-  .Row.Split > .HG-9, .Split.Snippet-Item > .HG-9, .Split.List-Group-Actions > .HG-9, .Split.List-Params > .HG-9 {
+  .Row.Split > .HG-9, .Split.Snippet-Item > .HG-9, .Snippet-Item header .Split.Item-Values > .HG-9, .Split.List-Group-Actions > .HG-9, .Split.List-Params > .HG-9 {
     width: 73%; }
 
-  .Row.Split > .HG-10, .Split.Snippet-Item > .HG-10, .Split.List-Group-Actions > .HG-10, .Split.List-Params > .HG-10 {
+  .Row.Split > .HG-10, .Split.Snippet-Item > .HG-10, .Snippet-Item header .Split.Item-Values > .HG-10, .Split.List-Group-Actions > .HG-10, .Split.List-Params > .HG-10 {
     width: 81.33333%; }
 
-  .Row.Split > .HG-11, .Split.Snippet-Item > .HG-11, .Split.List-Group-Actions > .HG-11, .Split.List-Params > .HG-11 {
+  .Row.Split > .HG-11, .Split.Snippet-Item > .HG-11, .Snippet-Item header .Split.Item-Values > .HG-11, .Split.List-Group-Actions > .HG-11, .Split.List-Params > .HG-11 {
     width: 89.66667%; }
 
-  .Row.Split > .HG-12, .Split.Snippet-Item > .HG-12, .Split.List-Group-Actions > .HG-12, .Split.List-Params > .HG-12 {
+  .Row.Split > .HG-12, .Split.Snippet-Item > .HG-12, .Snippet-Item header .Split.Item-Values > .HG-12, .Split.List-Group-Actions > .HG-12, .Split.List-Params > .HG-12 {
     width: 98%; } }
 .Push-One {
   margin-left: 8.33333%; }
@@ -922,7 +925,6 @@ body > #wrap {
     height: 100px; }
 
 body {
-  background: #f1f1f1;
   font-family: 'Exo 2','Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.45;
   font-size: 100%;
@@ -951,7 +953,6 @@ body {
 
 .Node {
   padding: 15px;
-  border: 1px solid #dedede;
   background-color: white;
   clear: both; }
 
@@ -961,7 +962,7 @@ body {
 .Node > * {
   margin-top: 20px; }
 
-.Node.Row > *, .Node.Snippet-Item > *, .Node.List-Group-Actions > *, .Node.List-Params > * {
+.Node.Row > *, .Node.Snippet-Item > *, .Snippet-Item header .Node.Item-Values > *, .Node.List-Group-Actions > *, .Node.List-Params > * {
   margin-top: 0; }
 
 .Node > *:first-child {
@@ -1287,24 +1288,30 @@ img.Footer-Img {
       .List.Snippets li.List-Item header h5.Title a {
         font-size: 1.125em;
         text-transform: uppercase; }
-      .List.Snippets li.List-Item header h5.Title .News-Date,
-      .List.Snippets li.List-Item header h5.Title .Seller-Location {
-        display: block;
-        clear: both;
-        font-size: 0.8em; }
   .List.Snippets li.List-Item img {
     width: 100%; }
   .List.Snippets li.List-Item .Description {
     margin: 15px;
     font-size: 14px; }
 
+.Item-Subtitle {
+  display: block;
+  clear: both;
+  font-size: 12px; }
+
 .Snippet-List .Snippet-Item header {
   background-color: #f1f1f1; }
   .Snippet-List .Snippet-Item header .Item-Category,
   .Snippet-List .Snippet-Item header .Item-Location {
     padding: 0; }
+.Snippet-List .Snippet-Item footer {
+  padding: 0 15px 15px;
+  width: 100%;
+  clear: both; }
 .Snippet-List .Item-Gallery > img {
   width: 100%; }
+.Snippet-List .Item-Content {
+  margin-top: 15px; }
 
 .Snippet-Item header {
   position: relative;
@@ -1335,37 +1342,32 @@ img.Footer-Img {
     right: 0;
     top: 0;
     bottom: 0;
-    display: inline !important;
+    display: table;
     width: 45%;
-    color: white;
-    float: right;
-    background: linear-gradient(to left, #ec6700, #ff9441); }
+    float: right; }
     .Snippet-Item header .Item-Values li {
-      padding: 10px 10px; }
+      padding: 15px 10px; }
       .Snippet-Item header .Item-Values li h6 {
         margin: 0;
         font-size: 12px;
         font-weight: 100; }
-.Snippet-Item .Item-Gallery {
-  padding: 0 15px 15px; }
-  .Snippet-Item .Item-Gallery img.Item-Main-Photo {
+.Snippet-Item .Item-Gallery img.Item-Main-Photo {
+  border-top: 2px solid #ec6700; }
+.Snippet-Item .Item-Gallery ul li {
+  margin-top: -6px;
+  width: 33.33%; }
+  .Snippet-Item .Item-Gallery ul li:first-child {
+    margin-left: 0; }
+  .Snippet-Item .Item-Gallery ul li img {
+    display: block;
+    width: 100%;
     border-top: 2px solid #ec6700; }
-  .Snippet-Item .Item-Gallery ul li {
-    margin-top: -6px;
-    width: 33.33%; }
-    .Snippet-Item .Item-Gallery ul li:first-child {
-      margin-left: 0; }
-    .Snippet-Item .Item-Gallery ul li img {
-      display: block;
-      width: 100%;
-      border-top: 2px solid #ec6700; }
 .Snippet-Item .Item-Photo {
   margin-bottom: 30px;
   padding-right: 30px; }
   .Snippet-Item .Item-Photo img {
     width: 100%; }
 .Snippet-Item .Item-Content {
-  padding: 0 15px 15px;
   font-size: 14px; }
   .Snippet-Item .Item-Content h6 {
     margin: 10px 0 5px;
@@ -1390,7 +1392,7 @@ img.Footer-Img {
 
 .Filter-Result {
   border: 1px solid #f1f1f1;
-  border-top: 2px solid #ec6700;
+  border-top-color: #ec6700;
   width: 100%;
   padding: 10px;
   font-size: 80%;
@@ -1412,17 +1414,18 @@ img.Footer-Img {
         background-color: #555555; }
 
 ul.Tag-List li.Tag-Item {
-  margin-right: 10px;
-  margin-bottom: 10px; }
+  margin-right: 5px;
+  margin-bottom: 5px; }
   ul.Tag-List li.Tag-Item a {
     display: inline-block;
-    padding: 5px 10px;
-    border: 1px solid #999999;
+    padding: 5px;
     background-color: #cccccc;
-    color: white;
+    color: #555555;
+    font-family: Calibri, Helvetica, Verdana, sans-serif !important;
     font-size: 12px;
     border-radius: 5px; }
     ul.Tag-List li.Tag-Item a:hover {
+      color: white;
       background-color: #999999; }
 
 .Vote {
@@ -1717,6 +1720,11 @@ li.List-Filter-Subcategory ul li {
 
   .Snippet-Item {
     border-radius: 5px; }
+    .Snippet-Item .Item-Gallery {
+      padding: 0 15px 15px; }
+    .Snippet-Item .Item-Content {
+      margin-top: 0;
+      padding: 0 15px 15px; }
 
   .Filter-Subcategory ul li {
     float: left !important;

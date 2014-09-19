@@ -41,9 +41,9 @@
                             <a href="/parts/{{$list_elem['metadata']['alias']}}">
                                 {{$list_elem['name']}}
                             </a>
-                            <p class="Item-Location">
+                            <span class="Item-Subtitle">
                                 {{$list_elem['category']['name']}}
-                            </p>
+                            </span>
                         </h4>
                         <ul class="Item-Values">
                             <li><h6>Статус:</h6>{{$list_elem['status']['name']}}</li>
