@@ -3,10 +3,15 @@
 @section('main')
 <section class="Node">
     <div class="Snippet-Item Row Split" itemscope itemtype="http://data-vocabulary.org/Product">
-        <header class="Section-Header">
-            <h4>
+        <header>
+            <h4 class="Item-Title">
                 {{$content['item']['name']}}
             </h4>
+            <ul class="Vote">
+                <li><a class="Vote-Down" href="#"></a></li>
+                <li><span> 0 </span></li>
+                <li><a class="Vote-Up" href="#"></a></li>
+            </ul>
         </header>
 
         <div class="Item-Gallery Grid XS-5">
@@ -28,7 +33,7 @@
             </ul>
         </div>
 
-        <div class="Item-Content XS-7">
+        <div class="Item-Content Grid XS-7">
             <p>{{$content['item']['description']}}</p>
 
             <!-- Параметры товара -->

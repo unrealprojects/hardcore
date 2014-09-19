@@ -1,24 +1,20 @@
 <!-- Комментарии -->
 <div class="Comment Node">
-    <h4 class="Section-Header">Комментарии</h4>
+    <h4 class="Heading Primary">Комментарии</h4>
     <ul class="Comment-List">
     @foreach($content['item']['comments'] as $comment)
-        <li class="Comment-List-Element" comment_id="{{$comment['id']}}">
-            <div class="Comment-List-Element-Rating">
-                <span class="Default">
-                    <span class="Arrow Up">
-                        <img title="Проголосовать за этот комментарий" src="/img/techonline/arrow-up.png">
-                    </span>
-                    <span class="Value {{($comment['rating']>0)?'Positive':''}}{{($comment['rating']<0)?'Negative':''}}">{{$comment['rating']}}</span>
-                    <span class="Arrow Down">
-                        <img title="Проголосовать против этого комментария" src="/img/techonline/arrow-down.png">
-                    </span>
-                </span>
+        <li class="Comment-Item" comment_id="{{$comment['id']}}">
+            <div class="Item-Vote">
+                <ul class="Vote">
+                    <li><a class="Vote-Down" href="#"></a></li>
+                    <li><span>{{$comment['rating']}}</span></li>
+                    <li><a class="Vote-Up" href="#"></a></li>
+                </ul>
             </div>
-            <div class="Comment-List-Element-Content">
+            <div class="Item-Content">
                 <header>
-                    <h5>{{$comment['name']}}</h5>
-                    <small class="Date">{{$comment['created_at']}}</small>
+                    <h5>{{$comment['name']}}
+                        <span class="Date">{{$comment['created_at']}}</span></h5>
                 </header>
                 <p>{{$comment['comment']}}</p>
 

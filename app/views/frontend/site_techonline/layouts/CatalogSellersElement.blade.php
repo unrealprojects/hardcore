@@ -4,12 +4,17 @@
 <section class="Node">
     <div class="Snippet-Item Row Split" itemscope itemtype="http://data-vocabulary.org/Product">
         <header>
-            <h4 class="Section-Header">
+            <h4 class="Item-Title">
                 {{$content['item']['name']}}
             </h4>
+            <ul class="Vote">
+                <li><a class="Vote-Down" href="#"></a></li>
+                <li><span> 0 </span></li>
+                <li><a class="Vote-Up" href="#"></a></li>
+            </ul>
         </header>
 
-        <div class="Item-Gallery XS-5">
+        <div class="Item-Gallery Grid XS-5">
             @foreach(json_decode($content['item']['photos'],true) as $i=>$photo)
             @if($i==1)
             <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
@@ -28,7 +33,7 @@
             </ul>
         </div>
 
-        <div class="Item-Content XS-7">
+        <div class="Item-Content Grid XS-7">
             <p>{{$content['item']['description']}}</p>
             <h6>Контактная информация</h6>
             <table>
