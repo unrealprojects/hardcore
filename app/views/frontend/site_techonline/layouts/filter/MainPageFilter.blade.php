@@ -29,9 +29,15 @@
 
                                 @if(!empty($subRegions['cities']))
                                 <div class="Filter-Cities">
-                                    <a class="All-Cities" href="/catalog/?region={{$subRegions['alias']}}" alias="{{$subRegions['alias']}}">Все города</a>
-                                    <a class="Back" href="/">Вернуться к выбору региона</a>
-                                    <ul>
+                                    <ul class="List-Group-Actions">
+                                        <li>
+                                            <a class="All-Cities" href="/catalog/?region={{$subRegions['alias']}}" alias="{{$subRegions['alias']}}">Все города</a>
+                                        </li>
+                                        <li>
+                                            <a class="Icon Back" href="/">Вернуться к выбору региона</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="List-Params">
                                         @foreach($subRegions['cities'] as $city)
                                         <li><a href="/catalog/?region={{$city['alias']}}" alias="{{$city['alias']}}">{{$city['name']}}</a></li>
                                         @endforeach
@@ -89,52 +95,43 @@
                     </div>
 
                     <!-- Бренды -->
-                    <ul class="Filter Accordion Accordion-Brands">
-
-                        <li class="Filter-Subheader Accordion-Subheader">
-                            <div class="Accordion-Switch"><span>&or;</span></div>
-                            <a href="#">Выбор производителя</a>
+                    <ul class="List-Group-Actions">
+                        <li>
+                            <label class="Control-Group">
+                                <input type="checkbox" checked="checked" id="all_brands"/>
+                                <span for="all_brands" >Все производители</span>
+                            </label>
                         </li>
-
-                        <li class="Filter-Subcategory Accordion-Subcategory">
-                            <ul>
-                                <li>
-                                    <div class="Control-Group">
-                                        <input type="checkbox" checked="checked" id="all_brands"/>
-                                        <label for="all_brands" >Все производители</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="Control-Group">
-                                        <input type="checkbox" checked="checked" id="native_brands"/>
-                                        <label for="native_brands" >Отечественные производители</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="Control-Group">
-                                        <input type="checkbox" checked="checked" id="foreign_brands"/>
-                                        <label for="foreign_brands" >Зарубежные производители</label>
-                                    </div>
-                                </li>
-                                @foreach($content['filter']['brands'] as $brand)
-                                <li>
-                                    <div class="Control-Group">
-                                        <input type="checkbox" checked="checked" foreign="{{$brand['foreign']}}" name="{{$brand['alias']}}" id="brand_{{$brand['alias']}}"/>
-                                        <label for="brand_{{$brand['alias']}}" >{{$brand['name']}}</label>
-                                    </div>
-
-                                </li>
-                                @endforeach
-                            </ul>
+                        <li>
+                            <label class="Control-Group">
+                                <input type="checkbox" checked="checked" id="native_brands"/>
+                                <span for="native_brands" >Отечественные производители</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="Control-Group">
+                                <input type="checkbox" checked="checked" id="foreign_brands"/>
+                                <span for="foreign_brands" >Зарубежные производители</span>
+                            </label>
                         </li>
                     </ul>
+                    <ul class="List-Params">
+                        @foreach($content['filter']['brands'] as $brand)
+                        <li>
+                            <label class="Control-Group">
+                                <input type="checkbox" checked="checked" foreign="{{$brand['foreign']}}" name="{{$brand['alias']}}" id="brand_{{$brand['alias']}}"/>
+                                <span for="brand_{{$brand['alias']}}" >{{$brand['name']}}</span>
+                            </label>
 
+                        </li>
+                        @endforeach
+                    </ul>
                 </form>
             </div>
         </dd>
     </dl>
     <div class="Control-Group Offset">
-        <button class="Button Search">Выполнить поиск</button>
+        <button id="Filter-Search" class="Button">Выполнить поиск</button>
     </div>
 </section>
 

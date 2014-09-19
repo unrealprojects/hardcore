@@ -931,7 +931,6 @@ li.List-Filter-Subcategory {
 	background: $clr-grey-lighter;
 	display: none;
 
-	.Filter-Cities,
 	ul {
 		@extend ._No-Bullets;
 		.Filter-Cities {
@@ -954,36 +953,64 @@ li.List-Filter-Subcategory {
 		}
 	}
 }
-.Filter-Cities {
+
+.List-Group-Actions {
 	margin-top: $size;
+	border-top: 2px solid $clr-main;
+	background-color: $clr-grey-lighter;
+
+	@extend ._No-Bullets;
+	@extend ._Inline;
 	@extend .Row;
 	@extend .Merge;
-	.Special-Links {
-		@extend .Row;
-	}
-	.Special-Links > li {
-		display: block;
-		@extend .Grid;
-		@extend .XS-6;
-		@extend  ._No-Bullets;
-	}
-	.List-Cities > li {
-		border-top: 1px $clr-grey-light solid;
-		@extend ._No-Bullets;
+	li {
+		border-left: 1px solid white;
 		@extend .Grid;
 		@extend .XS-6;
 		@extend .LR-4;
+		.Control-Group,
+		a {
+			display: block;
+			padding: $size-s $size-l;
+			color: $clr-grey-darker;
+			&:hover {
+				background-color: $clr-grey-darker;
+				color: white;
+			}
+			&.Icon {
+				background-position: $size-s center;
+				background-repeat: no-repeat;
+				&.Back {
+					background-image: url(../../../../img/techonline/icon-backward.png);
+				}
+			}
+		}
+		&:first-child {
+			border: 0;
+		}
+	}
+}
+.List-Params {
+	@extend .Row;
+	@extend .Merge;
+
+	li {
+		@extend .Grid;
+		@extend .XS-6;
+		@extend .LR-4;
+
+		.Control-Group,
 		a {
 			display: block;
 			padding: $size-s $size-l;
 			color: black;
+			
 			&:hover {
 				background-color: $clr-grey-lighter;
 			}
 		}
 	}
 }
-
 // todo: разнести по местам
 .ui-widget-header{
   background-color: $clr-main;
