@@ -817,7 +817,8 @@ dl.Tabs dt {
   transition-duration: 0.5s; }
   dl.Tabs dt > span {
     vertical-align: middle;
-    display: table-cell; }
+    display: table-cell;
+    font-size: 85%; }
   dl.Tabs dt:hover {
     color: white;
     background-color: #555555; }
@@ -914,7 +915,7 @@ body,
 
 body > #wrap {
   height: auto;
-  min-width: 360px;
+  min-width: 320px;
   min-height: 100%;
   clear: both; }
   body > #wrap > #wrap-stop {
@@ -1392,7 +1393,10 @@ img.Footer-Img {
   border-top: 2px solid #ec6700;
   width: 100%;
   padding: 10px;
-  font-size: 80%; }
+  font-size: 80%;
+  -webkit-animation: FadeIn 1s;
+  -moz-animation: FadeIn 1s;
+  animation: FadeIn 1s; }
   .Filter-Result li {
     padding: 5px 0; }
     .Filter-Result li span {

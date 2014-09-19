@@ -9,7 +9,7 @@ body,
 
 body > #wrap {
 	height: auto;
-	min-width: 360px;
+	min-width: 320px;
 	min-height: 100%;
 	clear: both;
 	& > #wrap-stop {
@@ -749,6 +749,7 @@ img.Footer-Img {
 	padding: $size-s;
 	font-size: 80%;
 	@extend ._No-Bullets;
+	@include Animation(FadeIn,1s);
 	li {
 		padding: $size-xs 0;
 		@extend ._Clearfix;
