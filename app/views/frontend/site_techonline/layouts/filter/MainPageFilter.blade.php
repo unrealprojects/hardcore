@@ -59,7 +59,7 @@
                 <div class="Control-Group">
                     <input class="Autocomplete Autocomplete-Categories" placeholder="Поиск техники ..."/>
                 </div>
-                <!-- ФИЛЬТР::ТАБ 2::КАТЕГОРИИ-->
+                <!-- ФИЛЬТР::ТАБ 2::КАТЕГОРИИ -->
                 <ul class="Filter Accordion">
                     @foreach($content['filter']['categories'] as $category)
                     <li class="Filter-Subheader Accordion-Subheader">
@@ -217,7 +217,7 @@ $(document).on('click','.Filter a',function(){
     return false;
 });
 
-/* Таб :: Региионы */
+/*********************************************************************** Таб :: Региионы */
 $('dd.Tab-Regions .Filter-Subcategory li>a').click(function(){
     /* Переход на города, если они есть */
     if($('.Filter-Cities',$(this).parent()).length){
@@ -275,7 +275,7 @@ $('dd.Tab-Regions .Filter-Subheader a').click(function(){
     return false;
 });
 
-/* Таб :: Категории */
+/****************************************************************************************** Таб :: Категории */
 
 // Получение параметров через ajax по категории
 function getAjaxParams($category_alias){
@@ -306,9 +306,11 @@ $('dd.Tab-Categories a').click(function(){
     return false;
 });
 
-/* Таб :: Параметры */
+/*********************************************************************************** Таб :: Параметры :: Бренды*/
 function checkedBrands(){
-    var all_selected=true;
+    var all_selected=true,
+        foreign_all_selected=true,
+        native_all_selected=true;
     $('.Accordion-Brands input[type=checkbox]').each(function(key,item){
         if($(item).is(':checked') && $(item).attr('name')){
             searchArray['brands['+key+']']=$(item).attr('name');
@@ -316,44 +318,34 @@ function checkedBrands(){
             if($(item).attr('name')){
                 all_selected=false;
             }
+            /* Если выбраны все отечественные или не выбраны - переключаем select */
+            if(!$(item).is(':checked') && $(item).attr('name') && $(item).attr('foreign')=='0'){
+                native_all_selected=false;
+            }
+            /* Если выбраны все зарубежные или не выбраны - переключаем select */
+            if(!$(item).is(':checked') && $(item).attr('name')&& $(item).attr('foreign')=='1'){
+                foreign_all_selected=false;
+            }
             delete searchArray['brands['+key+']'];
         }
     });
+
     if(all_selected){
         $('#all_brands').prop('checked','checked');
     }else{
         $('#all_brands').prop('checked',false);
     }
-
-    /* Если выбраны все зарубежные или не выбраны - переключаем select */
-    var foreign_all_selected=true;
-    $('.Accordion-Brands input[foreign="1"]').each(function(key,item){
-        if(!$(item).is(':checked') && $(item).attr('name')){
-            foreign_all_selected=false;
-
-        }
-    });
     if(foreign_all_selected){
         $('#foreign_brands').prop('checked','checked');
     }else{
         $('#foreign_brands').prop('checked',false);
     }
-
-    /* Если выбраны все jntxtycndtyyst или не выбраны - переключаем select */
-    var native_all_selected=true;
-    $('.Accordion-Brands input[foreign=0]').each(function(key,item){
-        if(!$(item).is(':checked') && $(item).attr('name')){
-            native_all_selected=false;
-        }
-    });
     if(native_all_selected){
         $('#native_brands').prop('checked','checked');
     }else{
         $('#native_brands').prop('checked',false);
     }
-
 }
-
 
 $('.Accordion-Brands input[type=checkbox]').click( function(){
     if($(this).attr('id')!='foreign_brands' &&
