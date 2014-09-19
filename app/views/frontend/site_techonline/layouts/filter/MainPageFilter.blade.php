@@ -144,15 +144,19 @@
 @parent
 <script>
 searchArray = {};
+
 /* Вспомогательный функционал */
+
+// Анимация при переключении табов
 function scrollToTabs(){
     $('body,html').animate({
         scrollTop: $('.Node.Filter').offset().top
     }, 400);
 }
 
-
 /* Формирование слайдера */
+
+//Фильтр по цене
 $("#Slider-Range-1").slider({
     range: true,
     min: 100,
@@ -162,21 +166,23 @@ $("#Slider-Range-1").slider({
         $("#Slider-Range-Value-1").text(ui.values[ 0 ] + "руб. - " + ui.values[ 1 ] +"руб.");
         searchArray['[params][price][min-value]']=ui.values[ 0 ];
         searchArray['[params][price][max-value]']= ui.values[ 1 ];
-        searchArray['[params][price][alias]']='price';
+        searchArray['[params][price][alias]В']='price';
     }
 });
-$("#Slider-Range-Value-1").text( $( "#Slider-Range-1").slider( "values", 0 ) +
-    " - руб." + $( "#Slider-Range-1" ).slider( "values", 1 ) +"руб." );
+$("#Slider-Range-Value-1").text(
+    $( "#Slider-Range-1").slider( "values", 0 ) + " - руб." + $( "#Slider-Range-1" ).slider( "values", 1 ) +"руб."
+);
 
 
 
 
-/* Autocomplite */
+/* Autocomplite по регионам */
 var regions = [
     @foreach($content['filter']['regions_list'] as $region)
         {key:"{{$region['alias']}}",label:"{{$region['name']}}"},
     @endforeach
 ];
+
 $( ".Autocomplete-Regions" ).autocomplete({
     source: regions,
     select: function (event, ui) {
@@ -191,7 +197,7 @@ $( ".Autocomplete-Regions" ).autocomplete({
     }
 });
 
-
+/* Autocomplite по категориям */
 var categories = [
     @foreach($content['filter']['categories_list'] as $category)
         {key:"{{$category['alias']}}",label:"{{$category['name']}}"},
