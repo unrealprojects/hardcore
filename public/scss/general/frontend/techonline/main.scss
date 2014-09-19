@@ -993,14 +993,18 @@ li.List-Filter-Subcategory {
 .List-Params {
 	@extend .Row;
 	@extend .Merge;
+
 	li {
 		@extend .Grid;
 		@extend .XS-6;
 		@extend .LR-4;
+
+		.Control-Group,
 		a {
 			display: block;
 			padding: $size-s $size-l;
 			color: black;
+			
 			&:hover {
 				background-color: $clr-grey-lighter;
 			}

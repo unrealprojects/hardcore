@@ -1562,10 +1562,12 @@ li.List-Filter-Subcategory ul li {
     .List-Group-Actions li:first-child {
       border: 0; }
 
+.List-Params li .Control-Group,
 .List-Params li a {
   display: block;
   padding: 10px 30px;
   color: black; }
+  .List-Params li .Control-Group:hover,
   .List-Params li a:hover {
     background-color: #f1f1f1; }
 
