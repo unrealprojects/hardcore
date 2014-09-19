@@ -6,3 +6,10 @@
 
 <link rel="stylesheet" href="/css/general/libs/jquery-ui.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/general/libs/fancybox/jquery.fancybox.css" />
+
+<!--[if lt IE 9]>
+<script src="/js/general/libs/ie8/html5shiv.js" type="text/javascript"></script>
+<script src="/js/general/libs/ie8/respond.js" type="text/javascript"></script>
+
+
+<![endif]-->
