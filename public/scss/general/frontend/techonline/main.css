@@ -84,7 +84,7 @@ li.List-Filter-Subheader:after,
 ._Inline > *, .Site-Header-Inner > *, .Breadcrumbs .Breadcrumb-List > *, footer[role='contentinfo'] > div .Footer-Navigation ul > *, .Snippet-Item header .Item-Values > *, .Snippet-Item .Item-Gallery ul > *, ul.Tag-List > *, .Vote > *, .List-Group-Actions > * {
   float: left; }
 
-._No-Bullets, ul.Row > li, .Snippet-List ul.Snippet-Item > li, ul.Snippet-Item > li, ul.List-Group-Actions > li, ul.List-Params > li, ul.Menu-List, .Breadcrumbs .Breadcrumb-List, .Pagination, .Comment .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, ul.Tag-List, .Vote, .List-Filter, li.List-Filter-Subcategory ul, .Menu-List ul, .Filter.Accordion, .Filter-Subcategory ul, .List-Group-Actions {
+._No-Bullets, ul.Row > li, .Snippet-List ul.Snippet-Item > li, ul.Snippet-Item > li, ul.List-Group-Actions > li, ul.List-Params > li, ul.Menu-List, .Breadcrumbs .Breadcrumb-List, .Pagination, .Comment .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, .Filter-Result, ul.Tag-List, .Vote, .List-Filter, li.List-Filter-Subcategory ul, .Menu-List ul, .Filter.Accordion, .Filter-Subcategory ul, .List-Group-Actions {
   list-style: none; }
 
 ._Soft_Shadow, .Site-Header, .Page-Auth .Sign-In-UI,
@@ -1385,6 +1385,24 @@ img.Footer-Img {
   .Snippet-Item .Item-Info .Date {
     padding: 5px 0;
     margin: 0 30px 10px 0; }
+
+.Filter-Result {
+  border: 1px solid #f1f1f1;
+  border-top: 2px solid #ec6700;
+  display: inline-block;
+  padding: 10px;
+  font-size: 80%; }
+  .Filter-Result li {
+    padding: 5px 0; }
+    .Filter-Result li span {
+      font-weight: bold; }
+    .Filter-Result li .Delete {
+      display: inline-block;
+      margin-left: 10px;
+      padding: 5px;
+      background-color: #ec6700;
+      color: white;
+      border-radius: 5px; }
 
 ul.Tag-List li.Tag-Item {
   margin-right: 10px;

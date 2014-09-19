@@ -742,6 +742,29 @@ img.Footer-Img {
 		}
 	}
 }
+.Filter-Result {
+	border: 1px solid $clr-grey-lighter;
+	border-top: 2px solid $clr-main;
+	display: inline-block;
+	padding: $size-s;
+	font-size: 80%;
+	@extend ._No-Bullets;
+	li {
+		padding: $size-xs 0;
+		span {
+			font-weight: bold;
+		}
+		.Delete {
+			display: inline-block;
+			margin-left: $size-s;
+			padding: $size-xs;
+			background-color: $clr-main;
+			color: white;
+			@include Round(all, $Control-Border-Radius);
+		}
+	}
+
+}
 
 ul.Tag-List {
 	@extend ._Clearfix;

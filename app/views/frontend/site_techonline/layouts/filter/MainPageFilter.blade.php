@@ -1,7 +1,11 @@
 <section class="Node Filter">
 
     <h3 class="Heading Primary">Поиск стройтехники</h3>
-    div.Filter
+    <ul class="Filter-Result">
+        <li>Регион: <span>Архангельская область</span><a class="Delete" href="#">Удалить</a></li>
+        <li>Город: <span>Северодвинск</span><a class="Delete" href="#">Удалить</a></li>
+        <li>Категория: <span>Буровые станки</span><a class="Delete" href="#">Удалить</a></li>
+    </ul>
     <dl class="Tabs">
         <dt class="Active Tab-Regions"><span>Выбор региона</span></dt>
         <dd class="Active Tab-Regions">
