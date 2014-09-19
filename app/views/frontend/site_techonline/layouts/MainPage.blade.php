@@ -29,41 +29,41 @@
 </section>
 
 
-
+<section class="Node-Wrap">
 <!-- АРЕНДА СТРОЙТЕХНИКИ::КАТЕГОРИИ -->
-<section class="Node Row Merge">
+    <div class="Node Row Merge">
 
-    <div class="Grid XS-7">
+        <div class="Grid XS-7">
 
-        <h3 class="Heading Underlined">Аренда стройтехники</h3>
+            <h3 class="Heading Underlined">Аренда стройтехники</h3>
 
-        <ul class="List-Categories Row Merge">
-            @foreach($content['categories'] as $category)
-            <li class="Grid XS-6"><a href="/rent/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
-            @endforeach
-        </ul>
+            <ul class="List-Categories Row Merge">
+                @foreach($content['categories'] as $category)
+                <li class="Grid XS-6"><a href="/rent/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
+                @endforeach
+            </ul>
+
+        </div>
+
+        <!-- АРЕНДА СТРОЙТЕХНИКИ::БРЕНДЫ -->
+        <div class="Grid XS-5">
+
+            <h3 class="Heading Underlined">Производители</h3>
+
+            <ul class="List-Categories Row Merge">
+                @foreach($content['filter']['brands'] as $brand)
+                <li class="Row Merge Grid XS-6">
+                    <a href="/rent/?brand=$brand['alias']" alt="{{$brand['name']}}">
+                        {{$brand['name']}}
+                    </a>
+                </li>
+                @endforeach
+            </ul>
+
+        </div>
 
     </div>
-
-    <!-- АРЕНДА СТРОЙТЕХНИКИ::БРЕНДЫ -->
-    <div class="Grid XS-5">
-
-        <h3 class="Heading Underlined">Производители</h3>
-
-        <ul class="List-Categories Row Merge">
-            @foreach($content['filter']['brands'] as $brand)
-            <li class="Row Merge Grid XS-6">
-                <a href="/rent/?brand=$brand['alias']" alt="{{$brand['name']}}">
-                    {{$brand['name']}}
-                </a>
-            </li>
-            @endforeach
-        </ul>
-
-    </div>
-
 </section>
-
 
 <!-- АРЕНДОДАТЕЛИ::СПИСОК -->
 <section class="Node Renters">

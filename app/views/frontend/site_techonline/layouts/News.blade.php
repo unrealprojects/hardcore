@@ -1,12 +1,12 @@
 @extends('frontend.site_techonline.'.$content['template'])
 
 @section('main')
-<section class="Node">
+<section class="Node News-Page">
 
-    <h3 class="Section-Header">Новости</h3>
-    <div class="Grid-Row">
+    <h3 class="Heading Primary">Новости</h3>
+    <div class="Row Merge">
         <!-- Фильтрация :: Общий блок -->
-        <aside class="Sidebar-Filter Grid-Node-2-7">
+        <aside class="Sidebar-Filter Grid XS-2">
             <!-- Фильтрация :: По тегам -->
             <h4>Теги</h4>
             <ul class="List-Filter">
@@ -16,30 +16,39 @@
             </ul>
         </aside>
 
-        <article class="Grid-Node-5-7">
-            <ul class="Lot-List">
+        <article class="Grid XS-9 End">
+            <ul class="Snippet-List">
             @foreach($content['list'] as $list_elem)
-                <li class="Lot">
+                <li class="Snippet-Item">
 
                     <header>
-                        <h4>
+                        <h4 class="Item-Title">
                             <a href="/news/{{$list_elem['metadata']['alias']}}">{{$list_elem['name']}}</a>
 
                             <span>{{$list_elem['created_at']}}</span>
                         </h4>
-                            @foreach($list_elem['tags'] as $tag)
-                                <a href="/news/?tag={{$tag['alias']}}&{{\Input::getQueryString()}}">{{$tag['name']}} </a>
-                            @endforeach
+
+                        <ul class="Vote">
+                            <li><a class="Vote-Down" href="#"></a></li>
+                            <li><span>{{$list_elem['rating']}}</span></li>
+                            <li><a class="Vote-Up" href="#"></a></li>
+                        </ul>
                     </header>
 
-                    <div class="Lot-Gallery Grid-Node-3-7">
+                    <div class="Item-Photo">
                         <img src="{{$list_elem['logo']}}" alt="{{$list_elem['name']}}" style="width: 100%;">
                     </div>
 
-                    <div class="Lot-About Grid-Node-4-7">
+                    <div class="Item-Content">
                         <p>{{$list_elem['text_preview']}}</p>
-                        {{$list_elem['rating']}}
                     </div>
+                    <footer>
+                        <ul class="Tag-List">
+                            @foreach($list_elem['tags'] as $tag)
+                            <li><a href="/news/?tag={{$tag['alias']}}&{{\Input::getQueryString()}}">{{$tag['name']}}</a></li>
+                            @endforeach
+                        </ul>
+                    </footer>
                 </li>
 
             @endforeach

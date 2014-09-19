@@ -53,17 +53,26 @@
 		height: 80px;
 	}
 	.Site-Header-Inner {
-		width: $Section-Width-Small;
+		width: 100%;
+		padding: 0 $size-l;
 	}
 		.Site-Logo {
 			display: inline-block;
-			width: 35%!important;
-
+			width: 35%;
 		}
 		.Site-Navigation.Primary {
 			float: left;
 			width: 50%;
 			display: block!important;
+			.Menu-List {
+				li {
+					border-top: 0;
+
+					.Menu-Link {
+						color: $clr-grey-dark;
+					}
+				}
+			}
 		}
 
 
@@ -94,8 +103,10 @@
 			float: left;
 			width: 15%;
 			padding: 0 $size-s;
-			margin: 0;
+			margin:0;
+
 			& > .Button {
+				margin-top: 2px;
 				float: none;
 				width: 100%;
 				margin-left: 0;
@@ -142,22 +153,35 @@
 		padding: $size-l;
 	}
 
-	.Site-Header-Inner {
-		width: $Section-Width-Default;
-	}
 	a.Menu-Link {
 		font-size: 16px;
 	}
-
 }
 
 // 1920 x 1080 Full HD
 @media all and (min-width: $Screen-Size-Large) {
-	.Site-Header-Inner {
-		width: $Section-Width-Large;
+	.Site-Logo {
+		width: 20%;
 	}
-	a.Menu-Link {
-		font-size: 18px;
+	.Site-Navigation {
+		width: 60%;
+	}
+	.Page-Auth {
+		margin-top: $size-s;
+		width: 20%;
+		& > .Button {
+			width: 47.5%;
+			padding: $size-s 0;
+		}
+	}
+	.Menu-List {
+		margin-top: $size-s!important;
+		li {
+			.Menu-Link {
+				font-size: 20px;
+				padding: $size-n $size-l;
+			}
+		}
 	}
 	img.Footer-Img {
 			 display: block;

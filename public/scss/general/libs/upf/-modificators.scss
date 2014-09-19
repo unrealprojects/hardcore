@@ -13,6 +13,9 @@
 // Отбивает секции друг от друга по вертикали
 ._Standalone {
 	margin-top: 	$section-gap;
+	&:first-child {
+		margin-top: 0;
+	}
 }
 // Отбивает блоки друг от друга по вертикали за исключением первого
 ._Vertical-Spacing {
