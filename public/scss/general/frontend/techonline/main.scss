@@ -963,34 +963,43 @@ li.List-Filter-Subcategory {
 	@extend ._Inline;
 	@extend .Row;
 	@extend .Merge;
-	li {
-		border-left: 1px solid white;
-		@extend .Grid;
-		@extend .XS-6;
-		@extend .LR-4;
-		.Control-Group,
-		a {
-			display: block;
-			padding: $size-s $size-l;
-			color: $clr-grey-darker;
-			&:hover {
-				background-color: $clr-grey-darker;
-				color: white;
-			}
-			&.Icon {
-				background-position: $size-s center;
-				background-repeat: no-repeat;
-				&.Back {
-					background-image: url(../../../../img/techonline/icon-backward.png);
-				}
-			}
+}
+.Item-Group-Actions {
+	border-left: 1px solid white;
+	width: 100%;
+	@extend .Grid;
+	@extend .XS-4;
+
+	.Control-Group,
+	a {
+		display: block;
+		padding: $size-s $size-l;
+		font-weight: bold;
+		font-size: 80%;
+		color: $clr-grey-darker;
+		&:hover {
+			background-color: $clr-grey-darker;
+			color: white;
 		}
-		&:first-child {
-			border: 0;
+		&.Icon {
+			background-position: $size-s center;
+			background-repeat: no-repeat;
+			&.Back {
+				background-image: url(../../../../img/techonline/icon-backward.png);
+			}
 		}
 	}
+	&:first-child {
+		border: 0;
+	}
 }
+
+
+
+
+
 .List-Params {
+	margin-top: $size;
 	@extend .Row;
 	@extend .Merge;
 
@@ -1003,8 +1012,8 @@ li.List-Filter-Subcategory {
 		a {
 			display: block;
 			padding: $size-s $size-l;
-			color: black;
-			
+			color: black!important;
+
 			&:hover {
 				background-color: $clr-grey-lighter;
 			}

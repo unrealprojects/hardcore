@@ -30,10 +30,10 @@
                                 @if(!empty($subRegions['cities']))
                                 <div class="Filter-Cities">
                                     <ul class="List-Group-Actions">
-                                        <li>
+                                        <li class="Item-Group-Actions">
                                             <a class="All-Cities" href="/catalog/?region={{$subRegions['alias']}}" alias="{{$subRegions['alias']}}">Все города</a>
                                         </li>
-                                        <li>
+                                        <li class="Item-Group-Actions">
                                             <a class="Icon Back" href="/">Вернуться к выбору региона</a>
                                         </li>
                                     </ul>
@@ -96,19 +96,19 @@
 
                     <!-- Бренды -->
                     <ul class="List-Group-Actions">
-                        <li>
+                        <li class="Item-Group-Actions">
                             <label class="Control-Group">
                                 <input type="checkbox" checked="checked" id="all_brands"/>
                                 <span for="all_brands" >Все производители</span>
                             </label>
                         </li>
-                        <li>
+                        <li class="Item-Group-Actions">
                             <label class="Control-Group">
                                 <input type="checkbox" checked="checked" id="native_brands"/>
                                 <span for="native_brands" >Отечественные производители</span>
                             </label>
                         </li>
-                        <li>
+                        <li class="Item-Group-Actions">
                             <label class="Control-Group">
                                 <input type="checkbox" checked="checked" id="foreign_brands"/>
                                 <span for="foreign_brands" >Зарубежные производители</span>
@@ -117,7 +117,7 @@
                     </ul>
                     <ul class="List-Params">
                         @foreach($content['filter']['brands'] as $brand)
-                        <li>
+                        <li class="Item-Group-Actions">
                             <label class="Control-Group">
                                 <input type="checkbox" checked="checked" foreign="{{$brand['foreign']}}" name="{{$brand['alias']}}" id="brand_{{$brand['alias']}}"/>
                                 <span for="brand_{{$brand['alias']}}" >{{$brand['name']}}</span>
