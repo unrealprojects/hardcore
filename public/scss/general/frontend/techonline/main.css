@@ -5,6 +5,8 @@
 
 ._Standalone, .Node {
   margin-top: 50px; }
+  ._Standalone:first-child, .Node:first-child {
+    margin-top: 0; }
 
 ._Vertical-Spacing > *, .Comment .Comment-List > *, .Snippet-List > * {
   margin-top: 30px !important; }
@@ -29,17 +31,17 @@
 ._Icon-Spacing {
   margin-right: 20px; }
 
-._Left, .Comment .Comment-List li .Comment-List-Element-Content header h5, footer[role='contentinfo'] > div .Copyright, .Snippet-Item header .Item-Title, .Snippet-Item .Item-Gallery, .Snippet-Item .Item-Photo, .Snippet-Item .Item-Info .Date, .Snippet-Item .Item-Info .Tags {
+._Left, .Comment .Comment-List li .Comment-List-Element-Content header h5, footer[role='contentinfo'] > div .Copyright, .Snippet-Item header .Item-Title, .Snippet-Item .Item-Gallery, .Snippet-Item .Item-Info .Date, .Snippet-Item .Item-Info .Tags {
   float: left; }
 
 ._Right, .Control-Group.Offset input[type='submit'],
-.Control-Group.Offset button.Button, .Comment .Comment-List li .Comment-List-Element-Content header small.Date, footer[role='contentinfo'] > div .Footer-Navigation, .Snippet-Item .Item-Content {
+.Control-Group.Offset button.Button, .Comment .Comment-List li .Comment-List-Element-Content header small.Date, footer[role='contentinfo'] > div .Footer-Navigation {
   float: right; }
 
 ._Dev {
   outline: 1px red solid !important; }
 
-._Clearfix:before, ._Inline:before, .Site-Header-Inner:before, .Breadcrumbs .Breadcrumb-List:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Vote:before, .Row:before, .Filter-Cities:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Node:before, .Site-Header:before, ul.Menu-List:before, .Slider-Inner:before, .Pagination:before, .List-Categories:before, .List-Categories li:before, .Comment .Comment-List li .Comment-List-Element-Content header:before, footer[role='contentinfo'] > div:before, .List.Snippets li.List-Item header:before, .Snippet-Item:before, .Snippet-Item header:before, .Snippet-Item header .Item-Title:before, .Vote > li:before, li.List-Filter-Subheader:before, .Filter.Accordion .Filter-Subheader:before,
+._Clearfix:before, ._Inline:before, .Site-Header-Inner:before, .Breadcrumbs .Breadcrumb-List:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Vote:before, .Row:before, .Snippet-List .Snippet-Item:before, .Snippet-Item:before, .Filter-Cities:before, .Filter-Cities .Special-Links:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Node:before, .Site-Header:before, ul.Menu-List:before, .Slider-Inner:before, .Pagination:before, .List-Categories:before, .List-Categories li:before, .Comment .Comment-List li .Comment-List-Element-Content header:before, footer[role='contentinfo'] > div:before, .List.Snippets li.List-Item header:before, .Snippet-Item header:before, .Snippet-Item header .Item-Title:before, .Vote > li:before, li.List-Filter-Subheader:before, .Filter.Accordion .Filter-Subheader:before,
 ._Clearfix:after,
 ._Inline:after,
 .Site-Header-Inner:after,
@@ -50,7 +52,10 @@ footer[role='contentinfo'] > div .Footer-Navigation ul:after,
 ul.Tag-List:after,
 .Vote:after,
 .Row:after,
+.Snippet-List .Snippet-Item:after,
+.Snippet-Item:after,
 .Filter-Cities:after,
+.Filter-Cities .Special-Links:after,
 .Control-Group:after,
 .Control-Group.Smart:after,
 .Control-Group.Smart .Input-Smart:after,
@@ -65,7 +70,6 @@ ul.Menu-List:after,
 .Comment .Comment-List li .Comment-List-Element-Content header:after,
 footer[role='contentinfo'] > div:after,
 .List.Snippets li.List-Item header:after,
-.Snippet-Item:after,
 .Snippet-Item header:after,
 .Snippet-Item header .Item-Title:after,
 .Vote > li:after,
@@ -74,14 +78,14 @@ li.List-Filter-Subheader:after,
   content: " ";
   display: table; }
 
-._Clearfix:after, ._Inline:after, .Site-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Vote:after, .Row:after, .Filter-Cities:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Node:after, .Site-Header:after, ul.Menu-List:after, .Slider-Inner:after, .Pagination:after, .List-Categories:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after, .List.Snippets li.List-Item header:after, .Snippet-Item:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, .Vote > li:after, li.List-Filter-Subheader:after, .Filter.Accordion .Filter-Subheader:after {
+._Clearfix:after, ._Inline:after, .Site-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Vote:after, .Row:after, .Snippet-List .Snippet-Item:after, .Snippet-Item:after, .Filter-Cities:after, .Filter-Cities .Special-Links:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Node:after, .Site-Header:after, ul.Menu-List:after, .Slider-Inner:after, .Pagination:after, .List-Categories:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after, .List.Snippets li.List-Item header:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, .Vote > li:after, li.List-Filter-Subheader:after, .Filter.Accordion .Filter-Subheader:after {
   clear: both; }
 
 ._Inline > *, .Site-Header-Inner > *, .Breadcrumbs .Breadcrumb-List > *, footer[role='contentinfo'] > div .Footer-Navigation ul > *, .Snippet-Item header .Item-Values > *, .Snippet-Item .Item-Gallery ul > *, ul.Tag-List > *, .Vote > * {
   float: left; }
 
-._No-Bullets, ul.Row > li, ul.Filter-Cities > li, ul.Menu-List, .Breadcrumbs .Breadcrumb-List, .Pagination, .Comment .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, ul.Tag-List, .Vote, .List-Filter, li.List-Filter-Subcategory ul, .Menu-List ul, .Filter.Accordion, .Filter-Subcategory .Filter-Cities,
-.Filter-Subcategory ul {
+._No-Bullets, ul.Row > li, .Snippet-List ul.Snippet-Item > li, ul.Snippet-Item > li, ul.Filter-Cities > li, ul.Menu-List, .Breadcrumbs .Breadcrumb-List, .Pagination, .Comment .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, ul.Tag-List, .Vote, .List-Filter, li.List-Filter-Subcategory ul, .Menu-List ul, .Filter.Accordion, .Filter-Subcategory .Filter-Cities,
+.Filter-Subcategory ul, .Filter-Cities .Special-Links > li, .Filter-Cities .List-Cities > li {
   list-style: none; }
 
 ._Soft_Shadow, .Site-Header, .Page-Auth .Sign-In-UI,
@@ -165,378 +169,378 @@ aside {
 iframe {
   display: block; }
 
-.Row, .Filter-Cities {
+.Row, .Snippet-List .Snippet-Item, .Snippet-Item, .Filter-Cities, .Filter-Cities .Special-Links {
   display: block; }
 
 @media all and (min-width: 768px) {
-  .Row.Split > *, .Split.Filter-Cities > * {
+  .Row.Split > *, .Split.Snippet-Item > *, .Split.Filter-Cities > *, .Filter-Cities .Split.Special-Links > * {
     margin-left: 1%;
     margin-right: 1%; }
 
-  .Grid, .Filter-Cities li {
+  .Grid, .Snippet-List .Item-Photo, .Snippet-List .Item-Gallery, .Snippet-List .Item-Content, .Snippet-Item .Item-Photo, .Filter-Cities .Special-Links > li, .Filter-Cities .List-Cities > li {
     float: left; }
 
-  .Grid.End, .Filter-Cities li.End {
+  .Grid.End, .Snippet-List .End.Item-Photo, .Snippet-List .End.Item-Gallery, .Snippet-List .End.Item-Content, .Snippet-Item .End.Item-Photo, .Filter-Cities .Special-Links > li.End, .Filter-Cities .List-Cities > li.End {
     float: right; }
 
-  .Row.Merge > .XS-1, .Filter-Cities > .XS-1 {
+  .Row.Merge > .XS-1, .Snippet-List .Snippet-Item > .XS-1, .Merge.Snippet-Item > .XS-1, .Snippet-Item.Filter-Cities > .XS-1, .Filter-Cities > .XS-1, .Filter-Cities .Merge.Special-Links > .XS-1, .Filter-Cities .Special-Links.Filter-Cities > .XS-1 {
     width: 8.33333%; }
 
-  .Row.Merge > .XS-2, .Filter-Cities > .XS-2 {
+  .Row.Merge > .XS-2, .Snippet-List .Snippet-Item > .XS-2, .Merge.Snippet-Item > .XS-2, .Snippet-Item.Filter-Cities > .XS-2, .Filter-Cities > .XS-2, .Filter-Cities .Merge.Special-Links > .XS-2, .Filter-Cities .Special-Links.Filter-Cities > .XS-2 {
     width: 16.66667%; }
 
-  .Row.Merge > .XS-3, .Filter-Cities > .XS-3 {
+  .Row.Merge > .XS-3, .Snippet-List .Snippet-Item > .XS-3, .Merge.Snippet-Item > .XS-3, .Snippet-Item.Filter-Cities > .XS-3, .Filter-Cities > .XS-3, .Filter-Cities .Merge.Special-Links > .XS-3, .Filter-Cities .Special-Links.Filter-Cities > .XS-3 {
     width: 25%; }
 
-  .Row.Merge > .XS-4, .Filter-Cities > .XS-4 {
+  .Row.Merge > .XS-4, .Snippet-List .Snippet-Item > .XS-4, .Merge.Snippet-Item > .XS-4, .Snippet-Item.Filter-Cities > .XS-4, .Filter-Cities > .XS-4, .Filter-Cities .Merge.Special-Links > .XS-4, .Filter-Cities .Special-Links.Filter-Cities > .XS-4 {
     width: 33.33333%; }
 
-  .Row.Merge > .XS-5, .Filter-Cities > .XS-5 {
+  .Row.Merge > .XS-5, .Snippet-List .Snippet-Item > .XS-5, .Merge.Snippet-Item > .XS-5, .Snippet-Item.Filter-Cities > .XS-5, .Filter-Cities > .XS-5, .Filter-Cities .Merge.Special-Links > .XS-5, .Filter-Cities .Special-Links.Filter-Cities > .XS-5, .Snippet-List .Row.Merge > .Item-Photo, .Snippet-List .Filter-Cities > .Item-Photo, .Filter-Cities .Snippet-List .Merge.Special-Links > .Item-Photo, .Snippet-List .Filter-Cities .Merge.Special-Links > .Item-Photo, .Snippet-List .Filter-Cities .Special-Links.Filter-Cities > .Item-Photo, .Snippet-List .Row.Merge > .Item-Gallery, .Snippet-List .Snippet-Item > .Item-Gallery, .Snippet-List .Filter-Cities > .Item-Gallery, .Filter-Cities .Snippet-List .Merge.Special-Links > .Item-Gallery, .Snippet-List .Filter-Cities .Merge.Special-Links > .Item-Gallery, .Snippet-List .Filter-Cities .Special-Links.Filter-Cities > .Item-Gallery, .Snippet-Item .Row.Merge > .Item-Photo, .Snippet-List .Snippet-Item > .Item-Photo, .Merge.Snippet-Item > .Item-Photo, .Snippet-Item.Filter-Cities > .Item-Photo, .Snippet-Item .Filter-Cities > .Item-Photo, .Filter-Cities .Snippet-Item .Merge.Special-Links > .Item-Photo, .Snippet-Item .Filter-Cities .Merge.Special-Links > .Item-Photo, .Snippet-Item .Filter-Cities .Special-Links.Filter-Cities > .Item-Photo {
     width: 41.66667%; }
 
-  .Row.Merge > .XS-6, .Filter-Cities > .XS-6, .Control-Group.Checkbox.Submit.Row.Merge > label, .Control-Group.Checkbox.Submit.Filter-Cities > label, .Control-Group.Checkbox.Submit.Row.Merge > [type='submit'], .Control-Group.Checkbox.Submit.Filter-Cities > [type='submit'], .Filter-Cities .Row.Merge > li, .Filter-Cities > li {
+  .Row.Merge > .XS-6, .Snippet-List .Snippet-Item > .XS-6, .Merge.Snippet-Item > .XS-6, .Snippet-Item.Filter-Cities > .XS-6, .Filter-Cities > .XS-6, .Filter-Cities .Merge.Special-Links > .XS-6, .Filter-Cities .Special-Links.Filter-Cities > .XS-6, .Control-Group.Checkbox.Submit.Row.Merge > label, .Snippet-List .Control-Group.Checkbox.Submit.Snippet-Item > label, .Control-Group.Checkbox.Submit.Merge.Snippet-Item > label, .Control-Group.Checkbox.Submit.Filter-Cities > label, .Filter-Cities .Control-Group.Checkbox.Submit.Merge.Special-Links > label, .Control-Group.Checkbox.Submit.Row.Merge > [type='submit'], .Snippet-List .Control-Group.Checkbox.Submit.Snippet-Item > [type='submit'], .Control-Group.Checkbox.Submit.Merge.Snippet-Item > [type='submit'], .Control-Group.Checkbox.Submit.Filter-Cities > [type='submit'], .Filter-Cities .Control-Group.Checkbox.Submit.Merge.Special-Links > [type='submit'], .Filter-Cities .Special-Links.Merge > li, .Filter-Cities .Snippet-List .Special-Links.Snippet-Item > li, .Snippet-List .Filter-Cities .Special-Links.Snippet-Item > li, .Filter-Cities .Special-Links.Filter-Cities > li, .Filter-Cities .List-Cities.Row.Merge > li, .Snippet-List .Filter-Cities .List-Cities.Snippet-Item > li, .Filter-Cities .Snippet-List .List-Cities.Snippet-Item > li, .Filter-Cities .List-Cities.Merge.Snippet-Item > li, .Filter-Cities .List-Cities.Filter-Cities > li {
     width: 50%; }
 
-  .Row.Merge > .XS-7, .Filter-Cities > .XS-7, .Snippet-Item .Row.Merge > .Item-Content, .Snippet-Item .Filter-Cities > .Item-Content {
+  .Row.Merge > .XS-7, .Snippet-List .Snippet-Item > .XS-7, .Merge.Snippet-Item > .XS-7, .Snippet-Item.Filter-Cities > .XS-7, .Filter-Cities > .XS-7, .Filter-Cities .Merge.Special-Links > .XS-7, .Filter-Cities .Special-Links.Filter-Cities > .XS-7, .Snippet-List .Row.Merge > .Item-Content, .Snippet-List .Filter-Cities > .Item-Content, .Filter-Cities .Snippet-List .Merge.Special-Links > .Item-Content, .Snippet-List .Filter-Cities .Merge.Special-Links > .Item-Content, .Snippet-List .Filter-Cities .Special-Links.Filter-Cities > .Item-Content, .Snippet-Item .Row.Merge > .Item-Content, .Snippet-List .Snippet-Item > .Item-Content, .Merge.Snippet-Item > .Item-Content, .Snippet-Item.Filter-Cities > .Item-Content, .Snippet-Item .Filter-Cities > .Item-Content, .Filter-Cities .Snippet-Item .Merge.Special-Links > .Item-Content, .Snippet-Item .Filter-Cities .Merge.Special-Links > .Item-Content, .Snippet-Item .Filter-Cities .Special-Links.Filter-Cities > .Item-Content {
     width: 58.33333%; }
 
-  .Row.Merge > .XS-8, .Filter-Cities > .XS-8 {
+  .Row.Merge > .XS-8, .Snippet-List .Snippet-Item > .XS-8, .Merge.Snippet-Item > .XS-8, .Snippet-Item.Filter-Cities > .XS-8, .Filter-Cities > .XS-8, .Filter-Cities .Merge.Special-Links > .XS-8, .Filter-Cities .Special-Links.Filter-Cities > .XS-8 {
     width: 66.66667%; }
 
-  .Row.Merge > .XS-9, .Filter-Cities > .XS-9 {
+  .Row.Merge > .XS-9, .Snippet-List .Snippet-Item > .XS-9, .Merge.Snippet-Item > .XS-9, .Snippet-Item.Filter-Cities > .XS-9, .Filter-Cities > .XS-9, .Filter-Cities .Merge.Special-Links > .XS-9, .Filter-Cities .Special-Links.Filter-Cities > .XS-9 {
     width: 75%; }
 
-  .Row.Merge > .XS-10, .Filter-Cities > .XS-10 {
+  .Row.Merge > .XS-10, .Snippet-List .Snippet-Item > .XS-10, .Merge.Snippet-Item > .XS-10, .Snippet-Item.Filter-Cities > .XS-10, .Filter-Cities > .XS-10, .Filter-Cities .Merge.Special-Links > .XS-10, .Filter-Cities .Special-Links.Filter-Cities > .XS-10 {
     width: 83.33333%; }
 
-  .Row.Merge > .XS-11, .Filter-Cities > .XS-11 {
+  .Row.Merge > .XS-11, .Snippet-List .Snippet-Item > .XS-11, .Merge.Snippet-Item > .XS-11, .Snippet-Item.Filter-Cities > .XS-11, .Filter-Cities > .XS-11, .Filter-Cities .Merge.Special-Links > .XS-11, .Filter-Cities .Special-Links.Filter-Cities > .XS-11 {
     width: 91.66667%; }
 
-  .Row.Merge > .XS-12, .Filter-Cities > .XS-12 {
+  .Row.Merge > .XS-12, .Snippet-List .Snippet-Item > .XS-12, .Merge.Snippet-Item > .XS-12, .Snippet-Item.Filter-Cities > .XS-12, .Filter-Cities > .XS-12, .Filter-Cities .Merge.Special-Links > .XS-12, .Filter-Cities .Special-Links.Filter-Cities > .XS-12 {
     width: 100%; }
 
-  .Row.Split > .XS-1, .Split.Filter-Cities > .XS-1 {
+  .Row.Split > .XS-1, .Split.Snippet-Item > .XS-1, .Split.Filter-Cities > .XS-1, .Filter-Cities .Split.Special-Links > .XS-1 {
     width: 6.33333%; }
 
-  .Row.Split > .XS-2, .Split.Filter-Cities > .XS-2 {
+  .Row.Split > .XS-2, .Split.Snippet-Item > .XS-2, .Split.Filter-Cities > .XS-2, .Filter-Cities .Split.Special-Links > .XS-2 {
     width: 14.66667%; }
 
-  .Row.Split > .XS-3, .Split.Filter-Cities > .XS-3 {
+  .Row.Split > .XS-3, .Split.Snippet-Item > .XS-3, .Split.Filter-Cities > .XS-3, .Filter-Cities .Split.Special-Links > .XS-3 {
     width: 23%; }
 
-  .Row.Split > .XS-4, .Split.Filter-Cities > .XS-4 {
+  .Row.Split > .XS-4, .Split.Snippet-Item > .XS-4, .Split.Filter-Cities > .XS-4, .Filter-Cities .Split.Special-Links > .XS-4 {
     width: 31.33333%; }
 
-  .Row.Split > .XS-5, .Split.Filter-Cities > .XS-5 {
+  .Row.Split > .XS-5, .Split.Snippet-Item > .XS-5, .Split.Filter-Cities > .XS-5, .Filter-Cities .Split.Special-Links > .XS-5, .Snippet-List .Row.Split > .Item-Photo, .Snippet-List .Split.Filter-Cities > .Item-Photo, .Filter-Cities .Snippet-List .Split.Special-Links > .Item-Photo, .Snippet-List .Filter-Cities .Split.Special-Links > .Item-Photo, .Snippet-List .Row.Split > .Item-Gallery, .Snippet-List .Split.Snippet-Item > .Item-Gallery, .Snippet-List .Split.Filter-Cities > .Item-Gallery, .Filter-Cities .Snippet-List .Split.Special-Links > .Item-Gallery, .Snippet-List .Filter-Cities .Split.Special-Links > .Item-Gallery, .Snippet-Item .Row.Split > .Item-Photo, .Split.Snippet-Item > .Item-Photo, .Snippet-Item .Split.Filter-Cities > .Item-Photo, .Filter-Cities .Snippet-Item .Split.Special-Links > .Item-Photo, .Snippet-Item .Filter-Cities .Split.Special-Links > .Item-Photo {
     width: 39.66667%; }
 
-  .Row.Split > .XS-6, .Split.Filter-Cities > .XS-6, .Control-Group.Checkbox.Submit.Row.Split > label, .Control-Group.Checkbox.Submit.Split.Filter-Cities > label, .Control-Group.Checkbox.Submit.Row.Split > [type='submit'], .Control-Group.Checkbox.Submit.Split.Filter-Cities > [type='submit'], .Filter-Cities .Row.Split > li, .Split.Filter-Cities > li {
+  .Row.Split > .XS-6, .Split.Snippet-Item > .XS-6, .Split.Filter-Cities > .XS-6, .Filter-Cities .Split.Special-Links > .XS-6, .Control-Group.Checkbox.Submit.Row.Split > label, .Control-Group.Checkbox.Submit.Split.Snippet-Item > label, .Control-Group.Checkbox.Submit.Split.Filter-Cities > label, .Filter-Cities .Control-Group.Checkbox.Submit.Split.Special-Links > label, .Control-Group.Checkbox.Submit.Row.Split > [type='submit'], .Control-Group.Checkbox.Submit.Split.Snippet-Item > [type='submit'], .Control-Group.Checkbox.Submit.Split.Filter-Cities > [type='submit'], .Filter-Cities .Control-Group.Checkbox.Submit.Split.Special-Links > [type='submit'], .Filter-Cities .Special-Links.Split > li, .Filter-Cities .List-Cities.Row.Split > li, .Filter-Cities .List-Cities.Split.Snippet-Item > li, .Filter-Cities .List-Cities.Split.Filter-Cities > li {
     width: 48%; }
 
-  .Row.Split > .XS-7, .Split.Filter-Cities > .XS-7, .Snippet-Item .Row.Split > .Item-Content, .Snippet-Item .Split.Filter-Cities > .Item-Content {
+  .Row.Split > .XS-7, .Split.Snippet-Item > .XS-7, .Split.Filter-Cities > .XS-7, .Filter-Cities .Split.Special-Links > .XS-7, .Snippet-List .Row.Split > .Item-Content, .Snippet-List .Split.Filter-Cities > .Item-Content, .Filter-Cities .Snippet-List .Split.Special-Links > .Item-Content, .Snippet-List .Filter-Cities .Split.Special-Links > .Item-Content, .Snippet-Item .Row.Split > .Item-Content, .Split.Snippet-Item > .Item-Content, .Snippet-Item .Split.Filter-Cities > .Item-Content, .Filter-Cities .Snippet-Item .Split.Special-Links > .Item-Content, .Snippet-Item .Filter-Cities .Split.Special-Links > .Item-Content {
     width: 56.33333%; }
 
-  .Row.Split > .XS-8, .Split.Filter-Cities > .XS-8 {
+  .Row.Split > .XS-8, .Split.Snippet-Item > .XS-8, .Split.Filter-Cities > .XS-8, .Filter-Cities .Split.Special-Links > .XS-8 {
     width: 64.66667%; }
 
-  .Row.Split > .XS-9, .Split.Filter-Cities > .XS-9 {
+  .Row.Split > .XS-9, .Split.Snippet-Item > .XS-9, .Split.Filter-Cities > .XS-9, .Filter-Cities .Split.Special-Links > .XS-9 {
     width: 73%; }
 
-  .Row.Split > .XS-10, .Split.Filter-Cities > .XS-10 {
+  .Row.Split > .XS-10, .Split.Snippet-Item > .XS-10, .Split.Filter-Cities > .XS-10, .Filter-Cities .Split.Special-Links > .XS-10 {
     width: 81.33333%; }
 
-  .Row.Split > .XS-11, .Split.Filter-Cities > .XS-11 {
+  .Row.Split > .XS-11, .Split.Snippet-Item > .XS-11, .Split.Filter-Cities > .XS-11, .Filter-Cities .Split.Special-Links > .XS-11 {
     width: 89.66667%; }
 
-  .Row.Split > .XS-12, .Split.Filter-Cities > .XS-12 {
+  .Row.Split > .XS-12, .Split.Snippet-Item > .XS-12, .Split.Filter-Cities > .XS-12, .Filter-Cities .Split.Special-Links > .XS-12 {
     width: 98%; } }
 @media all and (min-width: 1024px) {
-  .Row.Merge > .SM-1, .Filter-Cities > .SM-1 {
+  .Row.Merge > .SM-1, .Snippet-List .Snippet-Item > .SM-1, .Merge.Snippet-Item > .SM-1, .Snippet-Item.Filter-Cities > .SM-1, .Filter-Cities > .SM-1, .Filter-Cities .Merge.Special-Links > .SM-1, .Filter-Cities .Special-Links.Filter-Cities > .SM-1 {
     width: 8.33333%; }
 
-  .Row.Merge > .SM-2, .Filter-Cities > .SM-2 {
+  .Row.Merge > .SM-2, .Snippet-List .Snippet-Item > .SM-2, .Merge.Snippet-Item > .SM-2, .Snippet-Item.Filter-Cities > .SM-2, .Filter-Cities > .SM-2, .Filter-Cities .Merge.Special-Links > .SM-2, .Filter-Cities .Special-Links.Filter-Cities > .SM-2 {
     width: 16.66667%; }
 
-  .Row.Merge > .SM-3, .Filter-Cities > .SM-3 {
+  .Row.Merge > .SM-3, .Snippet-List .Snippet-Item > .SM-3, .Merge.Snippet-Item > .SM-3, .Snippet-Item.Filter-Cities > .SM-3, .Filter-Cities > .SM-3, .Filter-Cities .Merge.Special-Links > .SM-3, .Filter-Cities .Special-Links.Filter-Cities > .SM-3 {
     width: 25%; }
 
-  .Row.Merge > .SM-4, .Filter-Cities > .SM-4 {
+  .Row.Merge > .SM-4, .Snippet-List .Snippet-Item > .SM-4, .Merge.Snippet-Item > .SM-4, .Snippet-Item.Filter-Cities > .SM-4, .Filter-Cities > .SM-4, .Filter-Cities .Merge.Special-Links > .SM-4, .Filter-Cities .Special-Links.Filter-Cities > .SM-4 {
     width: 33.33333%; }
 
-  .Row.Merge > .SM-5, .Filter-Cities > .SM-5 {
+  .Row.Merge > .SM-5, .Snippet-List .Snippet-Item > .SM-5, .Merge.Snippet-Item > .SM-5, .Snippet-Item.Filter-Cities > .SM-5, .Filter-Cities > .SM-5, .Filter-Cities .Merge.Special-Links > .SM-5, .Filter-Cities .Special-Links.Filter-Cities > .SM-5 {
     width: 41.66667%; }
 
-  .Row.Merge > .SM-6, .Filter-Cities > .SM-6 {
+  .Row.Merge > .SM-6, .Snippet-List .Snippet-Item > .SM-6, .Merge.Snippet-Item > .SM-6, .Snippet-Item.Filter-Cities > .SM-6, .Filter-Cities > .SM-6, .Filter-Cities .Merge.Special-Links > .SM-6, .Filter-Cities .Special-Links.Filter-Cities > .SM-6 {
     width: 50%; }
 
-  .Row.Merge > .SM-7, .Filter-Cities > .SM-7 {
+  .Row.Merge > .SM-7, .Snippet-List .Snippet-Item > .SM-7, .Merge.Snippet-Item > .SM-7, .Snippet-Item.Filter-Cities > .SM-7, .Filter-Cities > .SM-7, .Filter-Cities .Merge.Special-Links > .SM-7, .Filter-Cities .Special-Links.Filter-Cities > .SM-7 {
     width: 58.33333%; }
 
-  .Row.Merge > .SM-8, .Filter-Cities > .SM-8 {
+  .Row.Merge > .SM-8, .Snippet-List .Snippet-Item > .SM-8, .Merge.Snippet-Item > .SM-8, .Snippet-Item.Filter-Cities > .SM-8, .Filter-Cities > .SM-8, .Filter-Cities .Merge.Special-Links > .SM-8, .Filter-Cities .Special-Links.Filter-Cities > .SM-8 {
     width: 66.66667%; }
 
-  .Row.Merge > .SM-9, .Filter-Cities > .SM-9 {
+  .Row.Merge > .SM-9, .Snippet-List .Snippet-Item > .SM-9, .Merge.Snippet-Item > .SM-9, .Snippet-Item.Filter-Cities > .SM-9, .Filter-Cities > .SM-9, .Filter-Cities .Merge.Special-Links > .SM-9, .Filter-Cities .Special-Links.Filter-Cities > .SM-9 {
     width: 75%; }
 
-  .Row.Merge > .SM-10, .Filter-Cities > .SM-10 {
+  .Row.Merge > .SM-10, .Snippet-List .Snippet-Item > .SM-10, .Merge.Snippet-Item > .SM-10, .Snippet-Item.Filter-Cities > .SM-10, .Filter-Cities > .SM-10, .Filter-Cities .Merge.Special-Links > .SM-10, .Filter-Cities .Special-Links.Filter-Cities > .SM-10 {
     width: 83.33333%; }
 
-  .Row.Merge > .SM-11, .Filter-Cities > .SM-11 {
+  .Row.Merge > .SM-11, .Snippet-List .Snippet-Item > .SM-11, .Merge.Snippet-Item > .SM-11, .Snippet-Item.Filter-Cities > .SM-11, .Filter-Cities > .SM-11, .Filter-Cities .Merge.Special-Links > .SM-11, .Filter-Cities .Special-Links.Filter-Cities > .SM-11 {
     width: 91.66667%; }
 
-  .Row.Merge > .SM-12, .Filter-Cities > .SM-12 {
+  .Row.Merge > .SM-12, .Snippet-List .Snippet-Item > .SM-12, .Merge.Snippet-Item > .SM-12, .Snippet-Item.Filter-Cities > .SM-12, .Filter-Cities > .SM-12, .Filter-Cities .Merge.Special-Links > .SM-12, .Filter-Cities .Special-Links.Filter-Cities > .SM-12 {
     width: 100%; }
 
-  .Row.Split > .SM-1, .Split.Filter-Cities > .SM-1 {
+  .Row.Split > .SM-1, .Split.Snippet-Item > .SM-1, .Split.Filter-Cities > .SM-1, .Filter-Cities .Split.Special-Links > .SM-1 {
     width: 6.33333%; }
 
-  .Row.Split > .SM-2, .Split.Filter-Cities > .SM-2 {
+  .Row.Split > .SM-2, .Split.Snippet-Item > .SM-2, .Split.Filter-Cities > .SM-2, .Filter-Cities .Split.Special-Links > .SM-2 {
     width: 14.66667%; }
 
-  .Row.Split > .SM-3, .Split.Filter-Cities > .SM-3 {
+  .Row.Split > .SM-3, .Split.Snippet-Item > .SM-3, .Split.Filter-Cities > .SM-3, .Filter-Cities .Split.Special-Links > .SM-3 {
     width: 23%; }
 
-  .Row.Split > .SM-4, .Split.Filter-Cities > .SM-4 {
+  .Row.Split > .SM-4, .Split.Snippet-Item > .SM-4, .Split.Filter-Cities > .SM-4, .Filter-Cities .Split.Special-Links > .SM-4 {
     width: 31.33333%; }
 
-  .Row.Split > .SM-5, .Split.Filter-Cities > .SM-5 {
+  .Row.Split > .SM-5, .Split.Snippet-Item > .SM-5, .Split.Filter-Cities > .SM-5, .Filter-Cities .Split.Special-Links > .SM-5 {
     width: 39.66667%; }
 
-  .Row.Split > .SM-6, .Split.Filter-Cities > .SM-6 {
+  .Row.Split > .SM-6, .Split.Snippet-Item > .SM-6, .Split.Filter-Cities > .SM-6, .Filter-Cities .Split.Special-Links > .SM-6 {
     width: 48%; }
 
-  .Row.Split > .SM-7, .Split.Filter-Cities > .SM-7 {
+  .Row.Split > .SM-7, .Split.Snippet-Item > .SM-7, .Split.Filter-Cities > .SM-7, .Filter-Cities .Split.Special-Links > .SM-7 {
     width: 56.33333%; }
 
-  .Row.Split > .SM-8, .Split.Filter-Cities > .SM-8 {
+  .Row.Split > .SM-8, .Split.Snippet-Item > .SM-8, .Split.Filter-Cities > .SM-8, .Filter-Cities .Split.Special-Links > .SM-8 {
     width: 64.66667%; }
 
-  .Row.Split > .SM-9, .Split.Filter-Cities > .SM-9 {
+  .Row.Split > .SM-9, .Split.Snippet-Item > .SM-9, .Split.Filter-Cities > .SM-9, .Filter-Cities .Split.Special-Links > .SM-9 {
     width: 73%; }
 
-  .Row.Split > .SM-10, .Split.Filter-Cities > .SM-10 {
+  .Row.Split > .SM-10, .Split.Snippet-Item > .SM-10, .Split.Filter-Cities > .SM-10, .Filter-Cities .Split.Special-Links > .SM-10 {
     width: 81.33333%; }
 
-  .Row.Split > .SM-11, .Split.Filter-Cities > .SM-11 {
+  .Row.Split > .SM-11, .Split.Snippet-Item > .SM-11, .Split.Filter-Cities > .SM-11, .Filter-Cities .Split.Special-Links > .SM-11 {
     width: 89.66667%; }
 
-  .Row.Split > .SM-12, .Split.Filter-Cities > .SM-12 {
+  .Row.Split > .SM-12, .Split.Snippet-Item > .SM-12, .Split.Filter-Cities > .SM-12, .Filter-Cities .Split.Special-Links > .SM-12 {
     width: 98%; } }
 @media all and (min-width: 1260px) {
-  .Row.Merge > .MD-1, .Filter-Cities > .MD-1 {
+  .Row.Merge > .MD-1, .Snippet-List .Snippet-Item > .MD-1, .Merge.Snippet-Item > .MD-1, .Snippet-Item.Filter-Cities > .MD-1, .Filter-Cities > .MD-1, .Filter-Cities .Merge.Special-Links > .MD-1, .Filter-Cities .Special-Links.Filter-Cities > .MD-1 {
     width: 8.33333%; }
 
-  .Row.Merge > .MD-2, .Filter-Cities > .MD-2 {
+  .Row.Merge > .MD-2, .Snippet-List .Snippet-Item > .MD-2, .Merge.Snippet-Item > .MD-2, .Snippet-Item.Filter-Cities > .MD-2, .Filter-Cities > .MD-2, .Filter-Cities .Merge.Special-Links > .MD-2, .Filter-Cities .Special-Links.Filter-Cities > .MD-2 {
     width: 16.66667%; }
 
-  .Row.Merge > .MD-3, .Filter-Cities > .MD-3 {
+  .Row.Merge > .MD-3, .Snippet-List .Snippet-Item > .MD-3, .Merge.Snippet-Item > .MD-3, .Snippet-Item.Filter-Cities > .MD-3, .Filter-Cities > .MD-3, .Filter-Cities .Merge.Special-Links > .MD-3, .Filter-Cities .Special-Links.Filter-Cities > .MD-3 {
     width: 25%; }
 
-  .Row.Merge > .MD-4, .Filter-Cities > .MD-4 {
+  .Row.Merge > .MD-4, .Snippet-List .Snippet-Item > .MD-4, .Merge.Snippet-Item > .MD-4, .Snippet-Item.Filter-Cities > .MD-4, .Filter-Cities > .MD-4, .Filter-Cities .Merge.Special-Links > .MD-4, .Filter-Cities .Special-Links.Filter-Cities > .MD-4 {
     width: 33.33333%; }
 
-  .Row.Merge > .MD-5, .Filter-Cities > .MD-5 {
+  .Row.Merge > .MD-5, .Snippet-List .Snippet-Item > .MD-5, .Merge.Snippet-Item > .MD-5, .Snippet-Item.Filter-Cities > .MD-5, .Filter-Cities > .MD-5, .Filter-Cities .Merge.Special-Links > .MD-5, .Filter-Cities .Special-Links.Filter-Cities > .MD-5 {
     width: 41.66667%; }
 
-  .Row.Merge > .MD-6, .Filter-Cities > .MD-6 {
+  .Row.Merge > .MD-6, .Snippet-List .Snippet-Item > .MD-6, .Merge.Snippet-Item > .MD-6, .Snippet-Item.Filter-Cities > .MD-6, .Filter-Cities > .MD-6, .Filter-Cities .Merge.Special-Links > .MD-6, .Filter-Cities .Special-Links.Filter-Cities > .MD-6 {
     width: 50%; }
 
-  .Row.Merge > .MD-7, .Filter-Cities > .MD-7 {
+  .Row.Merge > .MD-7, .Snippet-List .Snippet-Item > .MD-7, .Merge.Snippet-Item > .MD-7, .Snippet-Item.Filter-Cities > .MD-7, .Filter-Cities > .MD-7, .Filter-Cities .Merge.Special-Links > .MD-7, .Filter-Cities .Special-Links.Filter-Cities > .MD-7 {
     width: 58.33333%; }
 
-  .Row.Merge > .MD-8, .Filter-Cities > .MD-8 {
+  .Row.Merge > .MD-8, .Snippet-List .Snippet-Item > .MD-8, .Merge.Snippet-Item > .MD-8, .Snippet-Item.Filter-Cities > .MD-8, .Filter-Cities > .MD-8, .Filter-Cities .Merge.Special-Links > .MD-8, .Filter-Cities .Special-Links.Filter-Cities > .MD-8 {
     width: 66.66667%; }
 
-  .Row.Merge > .MD-9, .Filter-Cities > .MD-9 {
+  .Row.Merge > .MD-9, .Snippet-List .Snippet-Item > .MD-9, .Merge.Snippet-Item > .MD-9, .Snippet-Item.Filter-Cities > .MD-9, .Filter-Cities > .MD-9, .Filter-Cities .Merge.Special-Links > .MD-9, .Filter-Cities .Special-Links.Filter-Cities > .MD-9 {
     width: 75%; }
 
-  .Row.Merge > .MD-10, .Filter-Cities > .MD-10 {
+  .Row.Merge > .MD-10, .Snippet-List .Snippet-Item > .MD-10, .Merge.Snippet-Item > .MD-10, .Snippet-Item.Filter-Cities > .MD-10, .Filter-Cities > .MD-10, .Filter-Cities .Merge.Special-Links > .MD-10, .Filter-Cities .Special-Links.Filter-Cities > .MD-10 {
     width: 83.33333%; }
 
-  .Row.Merge > .MD-11, .Filter-Cities > .MD-11 {
+  .Row.Merge > .MD-11, .Snippet-List .Snippet-Item > .MD-11, .Merge.Snippet-Item > .MD-11, .Snippet-Item.Filter-Cities > .MD-11, .Filter-Cities > .MD-11, .Filter-Cities .Merge.Special-Links > .MD-11, .Filter-Cities .Special-Links.Filter-Cities > .MD-11 {
     width: 91.66667%; }
 
-  .Row.Merge > .MD-12, .Filter-Cities > .MD-12 {
+  .Row.Merge > .MD-12, .Snippet-List .Snippet-Item > .MD-12, .Merge.Snippet-Item > .MD-12, .Snippet-Item.Filter-Cities > .MD-12, .Filter-Cities > .MD-12, .Filter-Cities .Merge.Special-Links > .MD-12, .Filter-Cities .Special-Links.Filter-Cities > .MD-12 {
     width: 100%; }
 
-  .Row.Split > .MD-1, .Split.Filter-Cities > .MD-1 {
+  .Row.Split > .MD-1, .Split.Snippet-Item > .MD-1, .Split.Filter-Cities > .MD-1, .Filter-Cities .Split.Special-Links > .MD-1 {
     width: 6.33333%; }
 
-  .Row.Split > .MD-2, .Split.Filter-Cities > .MD-2 {
+  .Row.Split > .MD-2, .Split.Snippet-Item > .MD-2, .Split.Filter-Cities > .MD-2, .Filter-Cities .Split.Special-Links > .MD-2 {
     width: 14.66667%; }
 
-  .Row.Split > .MD-3, .Split.Filter-Cities > .MD-3 {
+  .Row.Split > .MD-3, .Split.Snippet-Item > .MD-3, .Split.Filter-Cities > .MD-3, .Filter-Cities .Split.Special-Links > .MD-3 {
     width: 23%; }
 
-  .Row.Split > .MD-4, .Split.Filter-Cities > .MD-4 {
+  .Row.Split > .MD-4, .Split.Snippet-Item > .MD-4, .Split.Filter-Cities > .MD-4, .Filter-Cities .Split.Special-Links > .MD-4 {
     width: 31.33333%; }
 
-  .Row.Split > .MD-5, .Split.Filter-Cities > .MD-5 {
+  .Row.Split > .MD-5, .Split.Snippet-Item > .MD-5, .Split.Filter-Cities > .MD-5, .Filter-Cities .Split.Special-Links > .MD-5 {
     width: 39.66667%; }
 
-  .Row.Split > .MD-6, .Split.Filter-Cities > .MD-6 {
+  .Row.Split > .MD-6, .Split.Snippet-Item > .MD-6, .Split.Filter-Cities > .MD-6, .Filter-Cities .Split.Special-Links > .MD-6 {
     width: 48%; }
 
-  .Row.Split > .MD-7, .Split.Filter-Cities > .MD-7 {
+  .Row.Split > .MD-7, .Split.Snippet-Item > .MD-7, .Split.Filter-Cities > .MD-7, .Filter-Cities .Split.Special-Links > .MD-7 {
     width: 56.33333%; }
 
-  .Row.Split > .MD-8, .Split.Filter-Cities > .MD-8 {
+  .Row.Split > .MD-8, .Split.Snippet-Item > .MD-8, .Split.Filter-Cities > .MD-8, .Filter-Cities .Split.Special-Links > .MD-8 {
     width: 64.66667%; }
 
-  .Row.Split > .MD-9, .Split.Filter-Cities > .MD-9 {
+  .Row.Split > .MD-9, .Split.Snippet-Item > .MD-9, .Split.Filter-Cities > .MD-9, .Filter-Cities .Split.Special-Links > .MD-9 {
     width: 73%; }
 
-  .Row.Split > .MD-10, .Split.Filter-Cities > .MD-10 {
+  .Row.Split > .MD-10, .Split.Snippet-Item > .MD-10, .Split.Filter-Cities > .MD-10, .Filter-Cities .Split.Special-Links > .MD-10 {
     width: 81.33333%; }
 
-  .Row.Split > .MD-11, .Split.Filter-Cities > .MD-11 {
+  .Row.Split > .MD-11, .Split.Snippet-Item > .MD-11, .Split.Filter-Cities > .MD-11, .Filter-Cities .Split.Special-Links > .MD-11 {
     width: 89.66667%; }
 
-  .Row.Split > .MD-12, .Split.Filter-Cities > .MD-12 {
+  .Row.Split > .MD-12, .Split.Snippet-Item > .MD-12, .Split.Filter-Cities > .MD-12, .Filter-Cities .Split.Special-Links > .MD-12 {
     width: 98%; } }
 @media all and (min-width: 1900px) {
-  .Row.Merge > .LR-1, .Filter-Cities > .LR-1 {
+  .Row.Merge > .LR-1, .Snippet-List .Snippet-Item > .LR-1, .Merge.Snippet-Item > .LR-1, .Snippet-Item.Filter-Cities > .LR-1, .Filter-Cities > .LR-1, .Filter-Cities .Merge.Special-Links > .LR-1, .Filter-Cities .Special-Links.Filter-Cities > .LR-1 {
     width: 8.33333%; }
 
-  .Row.Merge > .LR-2, .Filter-Cities > .LR-2 {
+  .Row.Merge > .LR-2, .Snippet-List .Snippet-Item > .LR-2, .Merge.Snippet-Item > .LR-2, .Snippet-Item.Filter-Cities > .LR-2, .Filter-Cities > .LR-2, .Filter-Cities .Merge.Special-Links > .LR-2, .Filter-Cities .Special-Links.Filter-Cities > .LR-2 {
     width: 16.66667%; }
 
-  .Row.Merge > .LR-3, .Filter-Cities > .LR-3 {
+  .Row.Merge > .LR-3, .Snippet-List .Snippet-Item > .LR-3, .Merge.Snippet-Item > .LR-3, .Snippet-Item.Filter-Cities > .LR-3, .Filter-Cities > .LR-3, .Filter-Cities .Merge.Special-Links > .LR-3, .Filter-Cities .Special-Links.Filter-Cities > .LR-3 {
     width: 25%; }
 
-  .Row.Merge > .LR-4, .Filter-Cities > .LR-4, .Filter-Cities .Row.Merge > li, .Filter-Cities > li {
+  .Row.Merge > .LR-4, .Snippet-List .Snippet-Item > .LR-4, .Merge.Snippet-Item > .LR-4, .Snippet-Item.Filter-Cities > .LR-4, .Filter-Cities > .LR-4, .Filter-Cities .Merge.Special-Links > .LR-4, .Filter-Cities .Special-Links.Filter-Cities > .LR-4, .Filter-Cities .List-Cities.Row.Merge > li, .Snippet-List .Filter-Cities .List-Cities.Snippet-Item > li, .Filter-Cities .Snippet-List .List-Cities.Snippet-Item > li, .Filter-Cities .List-Cities.Merge.Snippet-Item > li, .Filter-Cities .List-Cities.Filter-Cities > li, .Filter-Cities .List-Cities.Merge.Special-Links > li {
     width: 33.33333%; }
 
-  .Row.Merge > .LR-5, .Filter-Cities > .LR-5 {
+  .Row.Merge > .LR-5, .Snippet-List .Snippet-Item > .LR-5, .Merge.Snippet-Item > .LR-5, .Snippet-Item.Filter-Cities > .LR-5, .Filter-Cities > .LR-5, .Filter-Cities .Merge.Special-Links > .LR-5, .Filter-Cities .Special-Links.Filter-Cities > .LR-5 {
     width: 41.66667%; }
 
-  .Row.Merge > .LR-6, .Filter-Cities > .LR-6 {
+  .Row.Merge > .LR-6, .Snippet-List .Snippet-Item > .LR-6, .Merge.Snippet-Item > .LR-6, .Snippet-Item.Filter-Cities > .LR-6, .Filter-Cities > .LR-6, .Filter-Cities .Merge.Special-Links > .LR-6, .Filter-Cities .Special-Links.Filter-Cities > .LR-6 {
     width: 50%; }
 
-  .Row.Merge > .LR-7, .Filter-Cities > .LR-7 {
+  .Row.Merge > .LR-7, .Snippet-List .Snippet-Item > .LR-7, .Merge.Snippet-Item > .LR-7, .Snippet-Item.Filter-Cities > .LR-7, .Filter-Cities > .LR-7, .Filter-Cities .Merge.Special-Links > .LR-7, .Filter-Cities .Special-Links.Filter-Cities > .LR-7 {
     width: 58.33333%; }
 
-  .Row.Merge > .LR-8, .Filter-Cities > .LR-8 {
+  .Row.Merge > .LR-8, .Snippet-List .Snippet-Item > .LR-8, .Merge.Snippet-Item > .LR-8, .Snippet-Item.Filter-Cities > .LR-8, .Filter-Cities > .LR-8, .Filter-Cities .Merge.Special-Links > .LR-8, .Filter-Cities .Special-Links.Filter-Cities > .LR-8 {
     width: 66.66667%; }
 
-  .Row.Merge > .LR-9, .Filter-Cities > .LR-9 {
+  .Row.Merge > .LR-9, .Snippet-List .Snippet-Item > .LR-9, .Merge.Snippet-Item > .LR-9, .Snippet-Item.Filter-Cities > .LR-9, .Filter-Cities > .LR-9, .Filter-Cities .Merge.Special-Links > .LR-9, .Filter-Cities .Special-Links.Filter-Cities > .LR-9 {
     width: 75%; }
 
-  .Row.Merge > .LR-10, .Filter-Cities > .LR-10 {
+  .Row.Merge > .LR-10, .Snippet-List .Snippet-Item > .LR-10, .Merge.Snippet-Item > .LR-10, .Snippet-Item.Filter-Cities > .LR-10, .Filter-Cities > .LR-10, .Filter-Cities .Merge.Special-Links > .LR-10, .Filter-Cities .Special-Links.Filter-Cities > .LR-10 {
     width: 83.33333%; }
 
-  .Row.Merge > .LR-11, .Filter-Cities > .LR-11 {
+  .Row.Merge > .LR-11, .Snippet-List .Snippet-Item > .LR-11, .Merge.Snippet-Item > .LR-11, .Snippet-Item.Filter-Cities > .LR-11, .Filter-Cities > .LR-11, .Filter-Cities .Merge.Special-Links > .LR-11, .Filter-Cities .Special-Links.Filter-Cities > .LR-11 {
     width: 91.66667%; }
 
-  .Row.Merge > .LR-12, .Filter-Cities > .LR-12 {
+  .Row.Merge > .LR-12, .Snippet-List .Snippet-Item > .LR-12, .Merge.Snippet-Item > .LR-12, .Snippet-Item.Filter-Cities > .LR-12, .Filter-Cities > .LR-12, .Filter-Cities .Merge.Special-Links > .LR-12, .Filter-Cities .Special-Links.Filter-Cities > .LR-12 {
     width: 100%; }
 
-  .Row.Split > .LR-1, .Split.Filter-Cities > .LR-1 {
+  .Row.Split > .LR-1, .Split.Snippet-Item > .LR-1, .Split.Filter-Cities > .LR-1, .Filter-Cities .Split.Special-Links > .LR-1 {
     width: 6.33333%; }
 
-  .Row.Split > .LR-2, .Split.Filter-Cities > .LR-2 {
+  .Row.Split > .LR-2, .Split.Snippet-Item > .LR-2, .Split.Filter-Cities > .LR-2, .Filter-Cities .Split.Special-Links > .LR-2 {
     width: 14.66667%; }
 
-  .Row.Split > .LR-3, .Split.Filter-Cities > .LR-3 {
+  .Row.Split > .LR-3, .Split.Snippet-Item > .LR-3, .Split.Filter-Cities > .LR-3, .Filter-Cities .Split.Special-Links > .LR-3 {
     width: 23%; }
 
-  .Row.Split > .LR-4, .Split.Filter-Cities > .LR-4, .Filter-Cities .Row.Split > li, .Split.Filter-Cities > li {
+  .Row.Split > .LR-4, .Split.Snippet-Item > .LR-4, .Split.Filter-Cities > .LR-4, .Filter-Cities .Split.Special-Links > .LR-4, .Filter-Cities .List-Cities.Row.Split > li, .Filter-Cities .List-Cities.Split.Snippet-Item > li, .Filter-Cities .List-Cities.Split.Filter-Cities > li, .Filter-Cities .List-Cities.Split.Special-Links > li {
     width: 31.33333%; }
 
-  .Row.Split > .LR-5, .Split.Filter-Cities > .LR-5 {
+  .Row.Split > .LR-5, .Split.Snippet-Item > .LR-5, .Split.Filter-Cities > .LR-5, .Filter-Cities .Split.Special-Links > .LR-5 {
     width: 39.66667%; }
 
-  .Row.Split > .LR-6, .Split.Filter-Cities > .LR-6 {
+  .Row.Split > .LR-6, .Split.Snippet-Item > .LR-6, .Split.Filter-Cities > .LR-6, .Filter-Cities .Split.Special-Links > .LR-6 {
     width: 48%; }
 
-  .Row.Split > .LR-7, .Split.Filter-Cities > .LR-7 {
+  .Row.Split > .LR-7, .Split.Snippet-Item > .LR-7, .Split.Filter-Cities > .LR-7, .Filter-Cities .Split.Special-Links > .LR-7 {
     width: 56.33333%; }
 
-  .Row.Split > .LR-8, .Split.Filter-Cities > .LR-8 {
+  .Row.Split > .LR-8, .Split.Snippet-Item > .LR-8, .Split.Filter-Cities > .LR-8, .Filter-Cities .Split.Special-Links > .LR-8 {
     width: 64.66667%; }
 
-  .Row.Split > .LR-9, .Split.Filter-Cities > .LR-9 {
+  .Row.Split > .LR-9, .Split.Snippet-Item > .LR-9, .Split.Filter-Cities > .LR-9, .Filter-Cities .Split.Special-Links > .LR-9 {
     width: 73%; }
 
-  .Row.Split > .LR-10, .Split.Filter-Cities > .LR-10 {
+  .Row.Split > .LR-10, .Split.Snippet-Item > .LR-10, .Split.Filter-Cities > .LR-10, .Filter-Cities .Split.Special-Links > .LR-10 {
     width: 81.33333%; }
 
-  .Row.Split > .LR-11, .Split.Filter-Cities > .LR-11 {
+  .Row.Split > .LR-11, .Split.Snippet-Item > .LR-11, .Split.Filter-Cities > .LR-11, .Filter-Cities .Split.Special-Links > .LR-11 {
     width: 89.66667%; }
 
-  .Row.Split > .LR-12, .Split.Filter-Cities > .LR-12 {
+  .Row.Split > .LR-12, .Split.Snippet-Item > .LR-12, .Split.Filter-Cities > .LR-12, .Filter-Cities .Split.Special-Links > .LR-12 {
     width: 98%; } }
 @media all and (min-width: 2560px) {
-  .Row.Merge > .HG-1, .Filter-Cities > .HG-1 {
+  .Row.Merge > .HG-1, .Snippet-List .Snippet-Item > .HG-1, .Merge.Snippet-Item > .HG-1, .Snippet-Item.Filter-Cities > .HG-1, .Filter-Cities > .HG-1, .Filter-Cities .Merge.Special-Links > .HG-1, .Filter-Cities .Special-Links.Filter-Cities > .HG-1 {
     width: 8.33333%; }
 
-  .Row.Merge > .HG-2, .Filter-Cities > .HG-2 {
+  .Row.Merge > .HG-2, .Snippet-List .Snippet-Item > .HG-2, .Merge.Snippet-Item > .HG-2, .Snippet-Item.Filter-Cities > .HG-2, .Filter-Cities > .HG-2, .Filter-Cities .Merge.Special-Links > .HG-2, .Filter-Cities .Special-Links.Filter-Cities > .HG-2 {
     width: 16.66667%; }
 
-  .Row.Merge > .HG-3, .Filter-Cities > .HG-3 {
+  .Row.Merge > .HG-3, .Snippet-List .Snippet-Item > .HG-3, .Merge.Snippet-Item > .HG-3, .Snippet-Item.Filter-Cities > .HG-3, .Filter-Cities > .HG-3, .Filter-Cities .Merge.Special-Links > .HG-3, .Filter-Cities .Special-Links.Filter-Cities > .HG-3 {
     width: 25%; }
 
-  .Row.Merge > .HG-4, .Filter-Cities > .HG-4 {
+  .Row.Merge > .HG-4, .Snippet-List .Snippet-Item > .HG-4, .Merge.Snippet-Item > .HG-4, .Snippet-Item.Filter-Cities > .HG-4, .Filter-Cities > .HG-4, .Filter-Cities .Merge.Special-Links > .HG-4, .Filter-Cities .Special-Links.Filter-Cities > .HG-4 {
     width: 33.33333%; }
 
-  .Row.Merge > .HG-5, .Filter-Cities > .HG-5 {
+  .Row.Merge > .HG-5, .Snippet-List .Snippet-Item > .HG-5, .Merge.Snippet-Item > .HG-5, .Snippet-Item.Filter-Cities > .HG-5, .Filter-Cities > .HG-5, .Filter-Cities .Merge.Special-Links > .HG-5, .Filter-Cities .Special-Links.Filter-Cities > .HG-5 {
     width: 41.66667%; }
 
-  .Row.Merge > .HG-6, .Filter-Cities > .HG-6 {
+  .Row.Merge > .HG-6, .Snippet-List .Snippet-Item > .HG-6, .Merge.Snippet-Item > .HG-6, .Snippet-Item.Filter-Cities > .HG-6, .Filter-Cities > .HG-6, .Filter-Cities .Merge.Special-Links > .HG-6, .Filter-Cities .Special-Links.Filter-Cities > .HG-6 {
     width: 50%; }
 
-  .Row.Merge > .HG-7, .Filter-Cities > .HG-7 {
+  .Row.Merge > .HG-7, .Snippet-List .Snippet-Item > .HG-7, .Merge.Snippet-Item > .HG-7, .Snippet-Item.Filter-Cities > .HG-7, .Filter-Cities > .HG-7, .Filter-Cities .Merge.Special-Links > .HG-7, .Filter-Cities .Special-Links.Filter-Cities > .HG-7 {
     width: 58.33333%; }
 
-  .Row.Merge > .HG-8, .Filter-Cities > .HG-8 {
+  .Row.Merge > .HG-8, .Snippet-List .Snippet-Item > .HG-8, .Merge.Snippet-Item > .HG-8, .Snippet-Item.Filter-Cities > .HG-8, .Filter-Cities > .HG-8, .Filter-Cities .Merge.Special-Links > .HG-8, .Filter-Cities .Special-Links.Filter-Cities > .HG-8 {
     width: 66.66667%; }
 
-  .Row.Merge > .HG-9, .Filter-Cities > .HG-9 {
+  .Row.Merge > .HG-9, .Snippet-List .Snippet-Item > .HG-9, .Merge.Snippet-Item > .HG-9, .Snippet-Item.Filter-Cities > .HG-9, .Filter-Cities > .HG-9, .Filter-Cities .Merge.Special-Links > .HG-9, .Filter-Cities .Special-Links.Filter-Cities > .HG-9 {
     width: 75%; }
 
-  .Row.Merge > .HG-10, .Filter-Cities > .HG-10 {
+  .Row.Merge > .HG-10, .Snippet-List .Snippet-Item > .HG-10, .Merge.Snippet-Item > .HG-10, .Snippet-Item.Filter-Cities > .HG-10, .Filter-Cities > .HG-10, .Filter-Cities .Merge.Special-Links > .HG-10, .Filter-Cities .Special-Links.Filter-Cities > .HG-10 {
     width: 83.33333%; }
 
-  .Row.Merge > .HG-11, .Filter-Cities > .HG-11 {
+  .Row.Merge > .HG-11, .Snippet-List .Snippet-Item > .HG-11, .Merge.Snippet-Item > .HG-11, .Snippet-Item.Filter-Cities > .HG-11, .Filter-Cities > .HG-11, .Filter-Cities .Merge.Special-Links > .HG-11, .Filter-Cities .Special-Links.Filter-Cities > .HG-11 {
     width: 91.66667%; }
 
-  .Row.Merge > .HG-12, .Filter-Cities > .HG-12 {
+  .Row.Merge > .HG-12, .Snippet-List .Snippet-Item > .HG-12, .Merge.Snippet-Item > .HG-12, .Snippet-Item.Filter-Cities > .HG-12, .Filter-Cities > .HG-12, .Filter-Cities .Merge.Special-Links > .HG-12, .Filter-Cities .Special-Links.Filter-Cities > .HG-12 {
     width: 100%; }
 
-  .Row.Split > .HG-1, .Split.Filter-Cities > .HG-1 {
+  .Row.Split > .HG-1, .Split.Snippet-Item > .HG-1, .Split.Filter-Cities > .HG-1, .Filter-Cities .Split.Special-Links > .HG-1 {
     width: 6.33333%; }
 
-  .Row.Split > .HG-2, .Split.Filter-Cities > .HG-2 {
+  .Row.Split > .HG-2, .Split.Snippet-Item > .HG-2, .Split.Filter-Cities > .HG-2, .Filter-Cities .Split.Special-Links > .HG-2 {
     width: 14.66667%; }
 
-  .Row.Split > .HG-3, .Split.Filter-Cities > .HG-3 {
+  .Row.Split > .HG-3, .Split.Snippet-Item > .HG-3, .Split.Filter-Cities > .HG-3, .Filter-Cities .Split.Special-Links > .HG-3 {
     width: 23%; }
 
-  .Row.Split > .HG-4, .Split.Filter-Cities > .HG-4 {
+  .Row.Split > .HG-4, .Split.Snippet-Item > .HG-4, .Split.Filter-Cities > .HG-4, .Filter-Cities .Split.Special-Links > .HG-4 {
     width: 31.33333%; }
 
-  .Row.Split > .HG-5, .Split.Filter-Cities > .HG-5 {
+  .Row.Split > .HG-5, .Split.Snippet-Item > .HG-5, .Split.Filter-Cities > .HG-5, .Filter-Cities .Split.Special-Links > .HG-5 {
     width: 39.66667%; }
 
-  .Row.Split > .HG-6, .Split.Filter-Cities > .HG-6 {
+  .Row.Split > .HG-6, .Split.Snippet-Item > .HG-6, .Split.Filter-Cities > .HG-6, .Filter-Cities .Split.Special-Links > .HG-6 {
     width: 48%; }
 
-  .Row.Split > .HG-7, .Split.Filter-Cities > .HG-7 {
+  .Row.Split > .HG-7, .Split.Snippet-Item > .HG-7, .Split.Filter-Cities > .HG-7, .Filter-Cities .Split.Special-Links > .HG-7 {
     width: 56.33333%; }
 
-  .Row.Split > .HG-8, .Split.Filter-Cities > .HG-8 {
+  .Row.Split > .HG-8, .Split.Snippet-Item > .HG-8, .Split.Filter-Cities > .HG-8, .Filter-Cities .Split.Special-Links > .HG-8 {
     width: 64.66667%; }
 
-  .Row.Split > .HG-9, .Split.Filter-Cities > .HG-9 {
+  .Row.Split > .HG-9, .Split.Snippet-Item > .HG-9, .Split.Filter-Cities > .HG-9, .Filter-Cities .Split.Special-Links > .HG-9 {
     width: 73%; }
 
-  .Row.Split > .HG-10, .Split.Filter-Cities > .HG-10 {
+  .Row.Split > .HG-10, .Split.Snippet-Item > .HG-10, .Split.Filter-Cities > .HG-10, .Filter-Cities .Split.Special-Links > .HG-10 {
     width: 81.33333%; }
 
-  .Row.Split > .HG-11, .Split.Filter-Cities > .HG-11 {
+  .Row.Split > .HG-11, .Split.Snippet-Item > .HG-11, .Split.Filter-Cities > .HG-11, .Filter-Cities .Split.Special-Links > .HG-11 {
     width: 89.66667%; }
 
-  .Row.Split > .HG-12, .Split.Filter-Cities > .HG-12 {
+  .Row.Split > .HG-12, .Split.Snippet-Item > .HG-12, .Split.Filter-Cities > .HG-12, .Filter-Cities .Split.Special-Links > .HG-12 {
     width: 98%; } }
 .Push-One {
   margin-left: 8.33333%; }
@@ -937,16 +941,38 @@ body {
     body {
       font-size: 110%; } }
 
+.Node-Wrap {
+  padding: 20px 0;
+  width: 100%;
+  border: 1px solid #999999;
+  border-left: 0;
+  border-right: 0;
+  background-color: #999999;
+  /* Fallback */
+  background: -webkit-linear-gradient(top, #cccccc, #999999);
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background: -moz-linear-gradient(top, #cccccc, #999999);
+  /* FF3.6 */
+  background: -ms-linear-gradient(top, #cccccc, #999999);
+  /* IE10 */
+  background: -o-linear-gradient(top, #cccccc, #999999);
+  /* Opera 11.10+ */
+  background: linear-gradient(top, #cccccc, #999999);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#cccccc', EndColorStr='#999999'); }
+
 .Node {
   padding: 15px;
   border: 1px solid #dedede;
   background-color: white;
   clear: both; }
 
+.Node + .Node-Wrap {
+  margin-top: 50px; }
+
 .Node > * {
   margin-top: 20px; }
 
-.Node.Row > *, .Node.Filter-Cities > * {
+.Node.Row > *, .Node.Snippet-Item > *, .Node.Filter-Cities > *, .Filter-Cities .Node.Special-Links > * {
   margin-top: 0; }
 
 .Node > *:first-child {
@@ -960,61 +986,6 @@ body {
 
 .Site-Header-Inner {
   width: 90%; }
-  .Site-Header-Inner .Site-Logo {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 80px;
-    overflow: hidden; }
-    .Site-Header-Inner .Site-Logo div {
-      width: 100%;
-      position: absolute;
-      top: 20px;
-      -webkit-transition-property: opacity;
-      -moz-transition-property: opacity;
-      transition-property: opacity;
-      -webkit-transition-duration: 0.5s;
-      -moz-transition-duration: 0.5s;
-      transition-duration: 0.5s; }
-      .Site-Header-Inner .Site-Logo div img.Logo-Img {
-        display: block;
-        float: left;
-        margin-right: 10px; }
-      .Site-Header-Inner .Site-Logo div h2 {
-        padding: 5px 0;
-        color: #ec6700;
-        font-size: 26px;
-        font-weight: 100;
-        text-transform: uppercase; }
-        .Site-Header-Inner .Site-Logo div h2 small {
-          display: inline;
-          font-size: 16px;
-          color: black; }
-    .Site-Header-Inner .Site-Logo > a {
-      z-index: 2;
-      position: absolute;
-      display: block;
-      padding: 30px;
-      -webkit-transition-property: opacity;
-      -moz-transition-property: opacity;
-      transition-property: opacity;
-      -webkit-transition-duration: 0.5s;
-      -moz-transition-duration: 0.5s;
-      transition-duration: 0.5s;
-      opacity: 0;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-      filter: alpha(opacity=0); }
-      .Site-Header-Inner .Site-Logo > a:hover {
-        color: #ec6700;
-        text-decoration: underline; }
-    .Site-Header-Inner .Site-Logo:hover > div {
-      opacity: 0;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-      filter: alpha(opacity=0); }
-    .Site-Header-Inner .Site-Logo:hover > a {
-      opacity: 1;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-      filter: alpha(opacity=100); }
 
 #Menu-Toggle {
   float: right;
@@ -1030,6 +1001,62 @@ body {
   transition-duration: 0.3s; }
   #Menu-Toggle:hover {
     background: url(../../../../img/techonline/icon-menu-hover.png) center center no-repeat; }
+
+.Site-Logo {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 80px;
+  overflow: hidden; }
+  .Site-Logo div {
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-duration: 0.5s; }
+    .Site-Logo div img.Logo-Img {
+      display: block;
+      float: left;
+      margin-right: 10px; }
+    .Site-Logo div h2 {
+      padding: 5px 0;
+      color: #ec6700;
+      font-size: 26px;
+      font-weight: 100;
+      text-transform: uppercase; }
+      .Site-Logo div h2 small {
+        display: inline;
+        font-size: 16px;
+        color: black; }
+  .Site-Logo > a {
+    z-index: 2;
+    position: absolute;
+    display: block;
+    padding: 30px;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0); }
+    .Site-Logo > a:hover {
+      color: #ec6700;
+      text-decoration: underline; }
+  .Site-Logo:hover > div {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0); }
+  .Site-Logo:hover > a {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100); }
 
 .Page-Auth {
   position: relative;
@@ -1349,8 +1376,7 @@ img.Footer-Img {
   margin-bottom: 30px;
   padding-right: 30px; }
   .Snippet-Item .Item-Photo img {
-    width: 100%;
-    border-radius: 10px; }
+    width: 100%; }
 .Snippet-Item .Item-Content {
   padding: 0 15px 15px 0;
   font-size: 14px; }
@@ -1530,13 +1556,15 @@ li.List-Filter-Subcategory ul li {
 
 .Filter-Cities {
   margin-top: 20px; }
-  .Filter-Cities li {
+  .Filter-Cities .Special-Links > li {
+    display: block; }
+  .Filter-Cities .List-Cities > li {
     border-top: 1px #dedede solid; }
-    .Filter-Cities li a {
+    .Filter-Cities .List-Cities > li a {
       display: block;
       padding: 10px 30px;
       color: black; }
-      .Filter-Cities li a:hover {
+      .Filter-Cities .List-Cities > li a:hover {
         background-color: #f1f1f1; }
 
 .ui-widget-header {
@@ -1667,16 +1695,21 @@ li.List-Filter-Subcategory ul li {
     height: 80px; }
 
   .Site-Header-Inner {
-    width: 970px; }
+    width: 100%;
+    padding: 0 30px; }
 
   .Site-Logo {
     display: inline-block;
-    width: 35% !important; }
+    width: 35%; }
 
   .Site-Navigation.Primary {
     float: left;
     width: 50%;
     display: block !important; }
+    .Site-Navigation.Primary .Menu-List li {
+      border-top: 0; }
+      .Site-Navigation.Primary .Menu-List li .Menu-Link {
+        color: #999999; }
 
   ul.Menu-List li {
     width: auto;
@@ -1700,6 +1733,7 @@ li.List-Filter-Subcategory ul li {
     padding: 0 10px;
     margin: 0; }
     .Page-Auth > .Button {
+      margin-top: 2px;
       float: none;
       width: 100%;
       margin-left: 0; }
@@ -1733,17 +1767,27 @@ li.List-Filter-Subcategory ul li {
   .Node {
     padding: 30px; }
 
-  .Site-Header-Inner {
-    width: 1100px; }
-
   a.Menu-Link {
     font-size: 16px; } }
 @media all and (min-width: 1900px) {
-  .Site-Header-Inner {
-    width: 1150px; }
+  .Site-Logo {
+    width: 20%; }
 
-  a.Menu-Link {
-    font-size: 18px; }
+  .Site-Navigation {
+    width: 60%; }
+
+  .Page-Auth {
+    margin-top: 10px;
+    width: 20%; }
+    .Page-Auth > .Button {
+      width: 47.5%;
+      padding: 10px 0; }
+
+  .Menu-List {
+    margin-top: 10px !important; }
+    .Menu-List li .Menu-Link {
+      font-size: 20px;
+      padding: 15px 30px; }
 
   img.Footer-Img {
     display: block; }
