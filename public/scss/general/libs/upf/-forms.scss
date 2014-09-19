@@ -22,7 +22,9 @@
 	input[type='submit'] + input[type='submit'] {
 		margin-left: 	$size-n;
 	}
-
+	span {
+		@extend ._Unselectable;
+	}
 	// Отступ между контрол-группами
 	& + .Control-Group {
 		margin-top: $size;
@@ -42,6 +44,7 @@
 			@extend ._Right;
 		}
 	}
+
 	&.Checkbox.Submit {
 		& > label {
 			padding: $size-s 0;

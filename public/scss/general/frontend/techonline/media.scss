@@ -161,14 +161,14 @@
 // 1920 x 1080 Full HD
 @media all and (min-width: $Screen-Size-Large) {
 	.Site-Logo {
-		width: 20%;
+		width: 25%;
 	}
 	.Site-Navigation {
-		width: 60%;
+		width: 70%;
 	}
 	.Page-Auth {
 		margin-top: $size-s;
-		width: 20%;
+		width: 25%;
 		& > .Button {
 			width: 47.5%;
 			padding: $size-s 0;
