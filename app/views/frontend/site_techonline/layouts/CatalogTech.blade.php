@@ -113,7 +113,6 @@
             @endforeach
             </ul>
         </article>
-    </div>
 <!-- Пагинация -->
 {{$content['pagination']}}
 </section>
