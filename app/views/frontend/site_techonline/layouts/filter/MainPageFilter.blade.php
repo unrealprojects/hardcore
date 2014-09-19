@@ -160,7 +160,34 @@ function getAjaxParams($category_alias){
         }
     });
 }
+/* Добавить элемент в избранные */
+function addToFilterSelectedRegion(element){
+    if($('.Filter-Result').text().length){
+        $("#Filter-Selected-Region").remove();
+        $('.Filter-Result').append('<li id="Filter-Selected-Region"><span>'+$(element).text()+'</span><a class="Delete" alias="'+$(element).attr('alias')+'" href="#">Удалить</a></li>');
+    }else{
+        $('.Filter .Heading').after('<ul class="Filter-Result"><li id="Filter-Selected-Region"><span>'+$(element).text()+'</span><a class="Delete" alias="'+$(element).attr('alias')+'" href="#">Удалить</a></li></ul>');
+    }
+}
 
+/* Добавить элемент в избранные */
+function addToFilterSelectedCategory(element){
+    if($('.Filter-Result').text().length){
+        $("#Filter-Selected-Category").remove();
+        $('.Filter-Result').append('<li id="Filter-Selected-Category"><span>'+$(element).text()+'</span><a class="Delete" alias="'+$(element).attr('alias')+'" href="#">Удалить</a></li>');
+    }else{
+        $('.Filter .Heading').after('<ul class="Filter-Result"><li id="Filter-Selected-Category"><span>'+$(element).text()+'</span><a class="Delete" alias="'+$(element).attr('alias')+'" href="#">Удалить</a></li></ul>');
+    }
+}
+
+// Удаление выбранных элементов
+$(document).on('click','#Filter-Selected-Region .Delete,#Filter-Selected-Category .Delete',function(){
+    delete searchArray['region'];
+    $(this).parent().remove();
+    if(!$('.Filter-Result').text().length){
+        $('.Filter-Result').remove();
+    }
+});
 /* Формирование слайдера */
 
 //Фильтр по цене
@@ -195,6 +222,7 @@ $( ".Autocomplete-Regions" ).autocomplete({
         /* Запись параметров */
         searchArray['region']=ui.item.key;
         delete searchArray['region_type'];
+        addToFilterSelectedRegion(this);
 
         /* Смена таба */
         $('.Tab-Regions').removeClass('Active');
@@ -215,8 +243,9 @@ $( ".Autocomplete-Categories" ).autocomplete({
     select: function (event, ui) {
         /* Запись параметров */
         searchArray['category']=ui.item.key;
-
         getAjaxParams(searchArray['category']);
+        addToFilterSelectedCategory(this);
+
         $('.Tab-Categories').removeClass('Active');
         $('.Tab-Params').addClass('Active');
         scrollToTabs();
@@ -229,6 +258,8 @@ $(document).on('click','.Filter a',function(){
 });
 
 /*********************************************************************** Таб :: Региионы */
+
+
 $('dd.Tab-Regions .Filter-Subcategory li>a').click(function(){
     /* Переход на города, если они есть */
     if($('.Filter-Cities',$(this).parent()).length){
@@ -253,12 +284,7 @@ $('dd.Tab-Regions .Filter-Subcategory li>a').click(function(){
         searchArray['region']=$(this).attr('alias');
         delete searchArray['region_type'];
 
-        if($('.Filter-Result').length){
-            $(".Filter-Select-Region").remove();
-            $('.Filter-Result').append('<li id="Filter-Selected-Region"><span>'+$(this).text()+'</span><a class="Delete" alias="'+$(this).attr('alias')+'" href="#">Удалить</a></li>');
-        }else{
-            $('.Filter .Heading').after('<ul class="Filter-Result"><li id="Filter-Selected-Region"><span>'+$(this).text()+'</span><a class="Delete" alias="'+$(this).attr('alias')+'" href="#">Удалить</a></li></ul>');
-        }
+        addToFilterSelectedRegion(this);
 
         /* Смена таба */
         $('.Tab-Regions').removeClass('Active');
@@ -268,15 +294,13 @@ $('dd.Tab-Regions .Filter-Subcategory li>a').click(function(){
     return false;
 });
 
-$(document).on('click','#Filter-Selected-Region .Delete',function(){
-    delete searchArray['region'];
-    $(this).parent().remove();
-});
+
 
 /* Выбор города */
 $(document).on('click','.Filter-Cities a',function(){
     searchArray['region']=$(this).attr('alias');
     delete searchArray['region_type'];
+    addToFilterSelectedRegion(this);
 
     /* Смена таба */
     $('.Tab-Regions').removeClass('Active');
@@ -285,11 +309,13 @@ $(document).on('click','.Filter-Cities a',function(){
     return false;
 });
 
-/* Выбор типа категории (популярные, области...)*/
+/* Выбор типа категории региона (популярные, области...)*/
 $('dd.Tab-Regions .Filter-Subheader a').click(function(){
     /* Запись параметров */
     searchArray['region_type']=$(this).attr('alias');
     delete searchArray['region'];
+    addToFilterSelectedRegion(this);
+
 
     /* Смена таба */
     $('.Tab-Regions').removeClass('Active');
@@ -307,9 +333,8 @@ $('dd.Tab-Regions .Filter-Subheader a').click(function(){
 $('dd.Tab-Categories a').click(function(){
     /* Запись параметров */
     searchArray['category']=$(this).attr('alias');
-
+    addToFilterSelectedCategory(this);
     getAjaxParams(searchArray['category']);
-
     /* Смена таба */
     $('.Tab-Categories').removeClass('Active');
     $('.Tab-Params').addClass('Active');
@@ -394,13 +419,13 @@ $('#native_brands').click(function(){
 });
 
 /* Поиск */
-$('.Search').click(function(){
+$('#Filter-Search').click(function(){
     searchString='?';
     $.each(searchArray,function(key,value){
         searchString+=key+'='+value+'&';
     });
-//            location.href='rent'+searchString;
-    console.log('rent'+searchString);
+            location.href='rent'+searchString;
+  //  console.log('rent'+searchString);
 });
 </script>
 @endsection

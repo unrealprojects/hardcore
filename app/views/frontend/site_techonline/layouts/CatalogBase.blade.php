@@ -94,18 +94,6 @@
         </article>
 <!-- Пагинация -->
 {{$content['pagination']}}
-
-
-
-<!-- Фильтрация :: По параметрам -->
-@if($content['filters'])
-    @foreach($content['filters']['filters'] as $filter)
-        {{$filter['name']}}
-        {{$filter['dimension']}}
-        {{$filter['min_value']}}
-        {{$filter['max_value']}}
-    @endforeach
-@endif
 </section>
 
 @endsection
