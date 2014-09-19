@@ -3,33 +3,10 @@
 @section('main')
 <section class="Node">
 
-    <h3 class="Section-Header">Каталог строительной техники</h3>
-
-    @if(!empty($breadCrumbs))
-    <div class="Breadcrumbs">
-        <ul class="Breadcrumb-List">
-            @foreach($breadCrumbs as $crumb)
-            @if($crumb['link'])
-            <li class="Breadcrumb-Item"itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                <a href="{{$crumb['link']}}" itemprop="url">
-                    <span itemprop="title">{{$crumb['title']}}</span>
-                </a>
-            </li>
-            @else
-            <li class="Breadcrumb-Item">
-                <span>{{$crumb['title']}}</span>
-            </li>
-            @endif
-            @endforeach
-        </ul>
-    </div>
-    @endif
-
-    <div class="Row Split">
-        <!-- Фильтрация :: Общий блок -->
+    <h3 class="Heading Primary">Каталог строительной техники</h3>
+    @include('frontend.site_techonline.parts.breadcrumbs')
+        <!--
         <aside class="Sidebar-Filter Grid XS3">
-
-            <!-- Фильтрация :: По брендам -->
             <h4>Производители</h4>
             <ul class="List-Filter">
                 @foreach($content['brands'] as $brand)
@@ -37,7 +14,7 @@
                 @endforeach
             </ul>
 
-            <!-- Фильтрация :: По категориям -->
+
             <h4>Категории</h4>
             <ul class="List-Filter Accordion">
                 @foreach($content['categories'] as $category)
@@ -67,8 +44,8 @@
                 @endforeach
             </ul>
         </aside>
-
-        <article class="Grid XS-8 End">
+        -->
+        <article>
             <ul class="Snippet-List">
             @foreach($content['list'] as $item_key => $list_elem)
                 <li class="Snippet-Item Row Merge">

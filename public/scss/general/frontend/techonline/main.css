@@ -1296,13 +1296,11 @@ img.Footer-Img {
     margin: 15px;
     font-size: 14px; }
 
-.Snippet-List .Snippet-Item {
-  border: 1px solid #dedede; }
-  .Snippet-List .Snippet-Item header {
-    background-color: #f1f1f1; }
-    .Snippet-List .Snippet-Item header .Item-Category,
-    .Snippet-List .Snippet-Item header .Item-Location {
-      padding: 0; }
+.Snippet-List .Snippet-Item header {
+  background-color: #f1f1f1; }
+  .Snippet-List .Snippet-Item header .Item-Category,
+  .Snippet-List .Snippet-Item header .Item-Location {
+    padding: 0; }
 .Snippet-List .Item-Gallery > img {
   width: 100%; }
 
@@ -1365,7 +1363,7 @@ img.Footer-Img {
   .Snippet-Item .Item-Photo img {
     width: 100%; }
 .Snippet-Item .Item-Content {
-  padding: 0 15px 15px 0;
+  padding: 0 15px 15px;
   font-size: 14px; }
   .Snippet-Item .Item-Content h6 {
     margin: 10px 0 5px;
@@ -1389,14 +1387,16 @@ img.Footer-Img {
     margin: 0 30px 10px 0; }
 
 ul.Tag-List li.Tag-Item {
-  margin-right: 10px; }
+  margin-right: 10px;
+  margin-bottom: 10px; }
   ul.Tag-List li.Tag-Item a {
     display: inline-block;
     padding: 5px 10px;
+    border: 1px solid #999999;
     background-color: #cccccc;
     color: white;
     font-size: 12px;
-    border-radius: 10px 0 0 10px; }
+    border-radius: 5px; }
     ul.Tag-List li.Tag-Item a:hover {
       background-color: #999999; }
 
@@ -1698,6 +1698,9 @@ li.List-Filter-Subcategory ul li {
     font-size: 14px;
     width: 50%; } }
 @media all and (min-width: 1024px) {
+  .Snippet-List .Snippet-Item {
+    border: 1px solid #dedede; }
+
   #Menu-Toggle {
     display: none; }
 

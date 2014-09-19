@@ -11,11 +11,11 @@
             </h4>
         </header>
 
-        <div class="Item-Photo Grid-Node-2-5">
+        <div class="Item-Photo">
             <img class="Photo" src="{{$content['item']['logo']}}" alt="{{$content['item']['logo']}}" itemprop="image">
         </div>
 
-        <div class="Item-Content Grid-Node-3-5">
+        <div class="Item-Content">
             {{$content['item']['text']}}
         </div>
 
@@ -24,10 +24,6 @@
                 Дата публикации: {{$content['item']['created_at']}}
             </div>
             <ul class="Tag-List">
-                <li class="Tag-Item"><a href="#">Long Name Tag 1</a></li>
-                <li class="Tag-Item"><a href="#">Long Name Tag 2</a></li>
-                <li class="Tag-Item"><a href="#">Long Name Tag 3</a></li>
-
                 @foreach($content['item']['tags'] as $tag)
                 <li class="Tag-Item">
                     <a href="/news/?tag={{$tag['alias']}}&{{\Input::getQueryString()}}">

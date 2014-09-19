@@ -565,7 +565,6 @@ img.Footer-Img {
 	@extend ._No-Bullets;
 
 	.Snippet-Item {
-		border: 1px solid $clr-grey-light;
 		@extend .Row;
 		@extend .Merge;
 
@@ -700,7 +699,7 @@ img.Footer-Img {
 	}
 
 	.Item-Content {
-		padding: 0 $size-n $size-n 0;
+		padding: 0 $size-n $size-n;
 		font-size: 14px;
 
 		@extend .XS-7;
@@ -751,14 +750,16 @@ ul.Tag-List {
 
 	li.Tag-Item {
 		margin-right: $size-s;
+		margin-bottom: $size-s;
 		a {
 			display: inline-block;
 			padding: $size-xs $size-s;
+			border: 1px solid $clr-grey-dark;
 			background-color: $clr-grey;
 			color: white;
 			font-size: 12px;
 
-			@include Round(left);
+			@include Round(all, $Control-Border-Radius);
 			&:hover {
 				background-color: $clr-grey-dark;
 			}

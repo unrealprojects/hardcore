@@ -8,7 +8,6 @@
 <div id="wrap">
     @include('frontend.site_techonline.parts.header')
     <main>
-        @include('frontend.site_techonline.parts.breadcrumbs')
         @yield('main')
     </main>
     <div id="wrap-stop"></div>

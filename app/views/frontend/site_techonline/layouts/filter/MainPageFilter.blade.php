@@ -1,7 +1,7 @@
 <section class="Node Filter">
 
     <h3 class="Heading Primary">Поиск стройтехники</h3>
-
+    div.Filter
     <dl class="Tabs">
         <dt class="Active Tab-Regions"><span>Выбор региона</span></dt>
         <dd class="Active Tab-Regions">

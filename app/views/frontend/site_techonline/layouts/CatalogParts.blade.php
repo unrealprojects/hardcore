@@ -4,11 +4,11 @@
 
 <section class="Node">
 
-    <h3 class="Section-Header">Запчасти и сервис</h3>
+    <h3 class="Heading Primary">Запчасти и сервис</h3>
+    @include('frontend.site_techonline.parts.breadcrumbs')
     <div class="Row Merge">
-        <!-- Фильтрация :: Общий блок -->
+        <!--
         <aside class="Sidebar-Filter Grid XS-3">
-            <!-- Фильтрация :: По категориям -->
             <h4>Категории</h4>
             <ul class="List-Filter Accordion">
                 @foreach($content['categories'] as $category)
@@ -31,7 +31,8 @@
                 @endforeach
             </ul>
         </aside>
-        <article class="Grid XS-8 Push-One">
+        -->
+        <article class="">
             <ul class="Snippet-List">
                 @foreach($content['list'] as $item_key => $list_elem)
                 <li class="Snippet-Item Row Merge">
