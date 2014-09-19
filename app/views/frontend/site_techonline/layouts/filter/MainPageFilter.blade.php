@@ -255,7 +255,7 @@ $('dd.Tab-Regions .Filter-Subcategory li>a').click(function(){
 
         if($('.Filter-Result').length){
             $(".Filter-Select-Region").remove();
-            $('.Filter-Result').append('<li class="Filter-Selected-Region"><span>'+$(this).text()+'</span><a class="Delete" alias="'+$(this).attr('alias')+'" href="#">Удалить</a></li>');
+            $('.Filter-Result').append('<li id="Filter-Selected-Region"><span>'+$(this).text()+'</span><a class="Delete" alias="'+$(this).attr('alias')+'" href="#">Удалить</a></li>');
         }else{
             $('.Filter .Heading').after('<ul class="Filter-Result"><li id="Filter-Selected-Region"><span>'+$(this).text()+'</span><a class="Delete" alias="'+$(this).attr('alias')+'" href="#">Удалить</a></li></ul>');
         }
@@ -268,7 +268,7 @@ $('dd.Tab-Regions .Filter-Subcategory li>a').click(function(){
     return false;
 });
 
-$(document).on('click','.Filter-Selected-Region .Delete',function(){
+$(document).on('click','#Filter-Selected-Region .Delete',function(){
     delete searchArray['region'];
     $(this).parent().remove();
 });
