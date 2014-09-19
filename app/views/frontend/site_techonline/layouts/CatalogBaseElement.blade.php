@@ -4,11 +4,11 @@
 <section class="Node">
     <div class="Snippet-Item Row Split" itemscope itemtype="http://data-vocabulary.org/Product">
         <header>
-            <h4 class="Section-Header">
+            <h4 class="Item-Title">
                 <span itemprop="brand">{{$content['item']['brand']['name']}}</span>
                     {{$content['item']['model']}}
             </h4>
-            <span class="Item-Category" itemprop="category">{{$content['item']['category']['name']}}</span>
+            <span class="Item-Subtitle" itemprop="category">{{$content['item']['category']['name']}}</span>
         </header>
 
         <div class="Item-Gallery Grid XS-5">
@@ -30,7 +30,7 @@
             </ul>
         </div>
 
-        <div class="Item-Content XS-7">
+        <div class="Item-Content Grid XS-7">
             <p itemprop="description">{{$content['item']['description']}}</p>
 
         <!-- Параметры товара -->

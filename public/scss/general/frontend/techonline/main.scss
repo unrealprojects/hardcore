@@ -64,6 +64,7 @@ body {
 // Main block with 100% width
 .Site-Header {
 	background: white;
+	margin-bottom: $size-l;
 	@include Animation(FadeIn,1s);
 	@extend ._Clearfix;
 	@extend ._Unselectable;
@@ -221,6 +222,7 @@ ul.Menu-List {
 //
 #Page-Slider {
 	display: none;
+	margin-top: -$size-l;
 	@include Animation(SlideDown,.5s);
 	@extend ._Unselectable;
 }
@@ -393,52 +395,26 @@ ul.Menu-List {
 	.Comment-List {
 		@extend ._No-Bullets;
 		@extend ._Vertical-Spacing;
-		li {
+		.Comment-Item {
 			&:first-child {
 				margin-top: 0;
 			}
-
-			.Comment-List-Element-Rating {
-				float: left;
-				margin-right: $size-l;
-				color: $clr-grey;
-				& > span {
-					display: block;
-					margin: 0 auto;
-					text-align: center;
-				}
+			.Item-Vote {
+				position: relative;
 			}
-			.Arrow {
-				visibility: hidden;
-				cursor: pointer;
-				img {
-					display: block;
-				}
-			}
-			&:hover .Arrow {
-				visibility: visible;
-
-				.Positive {
-					color: $clr-green;
-				}
-				.Negative {
-					color: $clr-red;
-				}
-			}
-
-			.Comment-List-Element-Content {
+			.Item-Content {
 				overflow: hidden;
 
 				header {
 					@extend ._Clearfix;
 
 					h5 {
-						@extend ._Left;
-					}
-
-					small.Date {
-						@extend ._Right;
-						color: $clr-grey;
+						.Date {
+							margin-left: $size-l;
+							display: inline-block;
+							font-size: 80%;
+							color: $clr-grey;
+						}
 					}
 				}
 				p {
@@ -530,8 +506,8 @@ img.Footer-Img {
 			padding-bottom: $size-s;
 			background-color: $clr-grey-lighter;
 			@extend ._Clearfix;
-			h5.Title {
-				margin: $size-n 0 $size-n $size-n;
+			h5.Item-Title {
+				margin: $size-n 100px $size-n $size-n;
 				display: block;
 
 				a {
@@ -569,6 +545,7 @@ img.Footer-Img {
 		@extend .Merge;
 
 		header {
+			position: relative;
 			background-color: $clr-grey-lighter;
 			.Item-Category ,
 			.Item-Location {
@@ -621,7 +598,7 @@ img.Footer-Img {
 
 			a {
 				display: block;
-				color: $clr-main;
+				color: black;
 				&:hover {
 					color: $clr-main;
 				}

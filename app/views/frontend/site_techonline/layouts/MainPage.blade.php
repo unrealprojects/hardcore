@@ -72,11 +72,11 @@
 
     <ul class="List Snippets Row Split">
         @foreach($content['sellers'] as $seller)
-        <li class="List-Item Grid XS-6 LR-4">
+        <li class="List-Item Grid XS-6 HG-4">
             <header>
-                <h5 class="Title">
+                <h5 class="Item-Title">
                     <a href="/sellers/{{$seller['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$seller['name']}}</a>
-                    <span class="Seller-Location">
+                    <span class="Item-Subtitle">
                         {{$seller['region']['name']}}
                     </span>
                 </h5>
@@ -106,9 +106,9 @@
         @foreach($content['news'] as $new)
         <li class="List-Item Grid XS-6">
             <header>
-                <h5 class="Title">
+                <h5 class="Item-Title">
                     <a href="/news/{{$new['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$new['name']}}</a>
-                    <span class="News-Date">
+                    <span class="Item-Subtitle">
                         {{$new['updated_at']}}
                     </span>
                 </h5>

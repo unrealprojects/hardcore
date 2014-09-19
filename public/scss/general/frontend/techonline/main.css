@@ -21,7 +21,7 @@
   @media all and (min-width: 1260px) {
     ._Section-Inner, .Node, .Site-Header-Inner, .Slider-Inner, footer[role='contentinfo'] > div {
       width: 1100px; } }
-  @media all and (min-width: 1900px) {
+  @media all and (min-width: 1880px) {
     ._Section-Inner, .Node, .Site-Header-Inner, .Slider-Inner, footer[role='contentinfo'] > div {
       width: 1150px; } }
   @media all and (min-width: 2560px) {
@@ -31,17 +31,17 @@
 ._Icon-Spacing {
   margin-right: 20px; }
 
-._Left, .Comment .Comment-List li .Comment-List-Element-Content header h5, footer[role='contentinfo'] > div .Copyright, .Snippet-Item header .Item-Title, .Snippet-Item .Item-Info .Date, .Snippet-Item .Item-Info .Tags {
+._Left, footer[role='contentinfo'] > div .Copyright, .Snippet-Item header .Item-Title, .Snippet-Item .Item-Info .Date, .Snippet-Item .Item-Info .Tags {
   float: left; }
 
 ._Right, .Control-Group.Offset input[type='submit'],
-.Control-Group.Offset button.Button, .Comment .Comment-List li .Comment-List-Element-Content header small.Date, footer[role='contentinfo'] > div .Footer-Navigation, .Filter-Result li .Delete {
+.Control-Group.Offset button.Button, footer[role='contentinfo'] > div .Footer-Navigation, .Filter-Result li .Delete {
   float: right; }
 
 ._Dev {
   outline: 1px red solid !important; }
 
-._Clearfix:before, ._Inline:before, .Site-Header-Inner:before, .Breadcrumbs .Breadcrumb-List:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Vote:before, .List-Group-Actions:before, .Row:before, .Snippet-List .Snippet-Item:before, .Snippet-Item:before, .List-Params:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Node:before, .Site-Header:before, ul.Menu-List:before, .Slider-Inner:before, .Pagination:before, .List-Categories:before, .List-Categories li:before, .Comment .Comment-List li .Comment-List-Element-Content header:before, footer[role='contentinfo'] > div:before, .List.Snippets li.List-Item header:before, .Snippet-List .Snippet-Item footer:before, .Snippet-List .Item-Gallery:before, .Snippet-Item header:before, .Snippet-Item header .Item-Title:before, .Snippet-Item .Item-Gallery:before, .Filter-Result li:before, .Vote > li:before, li.List-Filter-Subheader:before, .Filter.Accordion .Filter-Subheader:before,
+._Clearfix:before, ._Inline:before, .Site-Header-Inner:before, .Breadcrumbs .Breadcrumb-List:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Vote:before, .List-Group-Actions:before, .Row:before, .Snippet-List .Snippet-Item:before, .Snippet-Item:before, .List-Params:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Node:before, .Site-Header:before, ul.Menu-List:before, .Slider-Inner:before, .Pagination:before, .List-Categories:before, .List-Categories li:before, .Comment .Comment-List .Comment-Item .Item-Content header:before, footer[role='contentinfo'] > div:before, .List.Snippets li.List-Item header:before, .Snippet-List .Snippet-Item footer:before, .Snippet-List .Item-Gallery:before, .Snippet-Item header:before, .Snippet-Item header .Item-Title:before, .Snippet-Item .Item-Gallery:before, .Filter-Result li:before, .Vote > li:before, li.List-Filter-Subheader:before, .Filter.Accordion .Filter-Subheader:before,
 ._Clearfix:after,
 ._Inline:after,
 .Site-Header-Inner:after,
@@ -67,7 +67,7 @@ ul.Menu-List:after,
 .Pagination:after,
 .List-Categories:after,
 .List-Categories li:after,
-.Comment .Comment-List li .Comment-List-Element-Content header:after,
+.Comment .Comment-List .Comment-Item .Item-Content header:after,
 footer[role='contentinfo'] > div:after,
 .List.Snippets li.List-Item header:after,
 .Snippet-List .Snippet-Item footer:after,
@@ -82,7 +82,7 @@ li.List-Filter-Subheader:after,
   content: " ";
   display: table; }
 
-._Clearfix:after, ._Inline:after, .Site-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Vote:after, .List-Group-Actions:after, .Row:after, .Snippet-List .Snippet-Item:after, .Snippet-Item:after, .List-Params:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Node:after, .Site-Header:after, ul.Menu-List:after, .Slider-Inner:after, .Pagination:after, .List-Categories:after, .List-Categories li:after, .Comment .Comment-List li .Comment-List-Element-Content header:after, footer[role='contentinfo'] > div:after, .List.Snippets li.List-Item header:after, .Snippet-List .Snippet-Item footer:after, .Snippet-List .Item-Gallery:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, .Snippet-Item .Item-Gallery:after, .Filter-Result li:after, .Vote > li:after, li.List-Filter-Subheader:after, .Filter.Accordion .Filter-Subheader:after {
+._Clearfix:after, ._Inline:after, .Site-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Vote:after, .List-Group-Actions:after, .Row:after, .Snippet-List .Snippet-Item:after, .Snippet-Item:after, .List-Params:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Node:after, .Site-Header:after, ul.Menu-List:after, .Slider-Inner:after, .Pagination:after, .List-Categories:after, .List-Categories li:after, .Comment .Comment-List .Comment-Item .Item-Content header:after, footer[role='contentinfo'] > div:after, .List.Snippets li.List-Item header:after, .Snippet-List .Snippet-Item footer:after, .Snippet-List .Item-Gallery:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, .Snippet-Item .Item-Gallery:after, .Filter-Result li:after, .Vote > li:after, li.List-Filter-Subheader:after, .Filter.Accordion .Filter-Subheader:after {
   clear: both; }
 
 ._Inline > *, .Site-Header-Inner > *, .Breadcrumbs .Breadcrumb-List > *, footer[role='contentinfo'] > div .Footer-Navigation ul > *, .Snippet-Item header .Item-Values > *, .Snippet-Item .Item-Gallery ul > *, ul.Tag-List > *, .Vote > *, .List-Group-Actions > * {
@@ -401,7 +401,7 @@ iframe {
 
   .Row.Split > .MD-12, .Split.Snippet-Item > .MD-12, .Snippet-Item header .Split.Item-Values > .MD-12, .Split.List-Group-Actions > .MD-12, .Split.List-Params > .MD-12 {
     width: 98%; } }
-@media all and (min-width: 1900px) {
+@media all and (min-width: 1880px) {
   .Row.Merge > .LR-1, .Snippet-List .Snippet-Item > .LR-1, .Merge.Snippet-Item > .LR-1, .Snippet-Item.List-Group-Actions > .LR-1, .Snippet-Item.List-Params > .LR-1, .Snippet-Item header .Merge.Item-Values > .LR-1, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-1, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-1, .Snippet-Item header .Item-Values.List-Params > .LR-1, .List-Group-Actions > .LR-1, .List-Params > .LR-1 {
     width: 8.33333%; }
 
@@ -970,6 +970,7 @@ body {
 
 .Site-Header {
   background: white;
+  margin-bottom: 30px;
   -webkit-animation: FadeIn 1s;
   -moz-animation: FadeIn 1s;
   animation: FadeIn 1s; }
@@ -1106,6 +1107,7 @@ ul.Menu-List li {
 
 #Page-Slider {
   display: none;
+  margin-top: -30px;
   -webkit-animation: SlideDown 0.5s;
   -moz-animation: SlideDown 0.5s;
   animation: SlideDown 0.5s; }
@@ -1209,32 +1211,18 @@ ul.Menu-List li {
 .List-Categories.Brands img {
   width: 50px; }
 
-.Comment .Comment-List li:first-child {
+.Comment .Comment-List .Comment-Item:first-child {
   margin-top: 0; }
-.Comment .Comment-List li .Comment-List-Element-Rating {
-  float: left;
-  margin-right: 30px;
-  color: #cccccc; }
-  .Comment .Comment-List li .Comment-List-Element-Rating > span {
-    display: block;
-    margin: 0 auto;
-    text-align: center; }
-.Comment .Comment-List li .Arrow {
-  visibility: hidden;
-  cursor: pointer; }
-  .Comment .Comment-List li .Arrow img {
-    display: block; }
-.Comment .Comment-List li:hover .Arrow {
-  visibility: visible; }
-  .Comment .Comment-List li:hover .Arrow .Positive {
-    color: #0da900; }
-  .Comment .Comment-List li:hover .Arrow .Negative {
-    color: #ec0000; }
-.Comment .Comment-List li .Comment-List-Element-Content {
+.Comment .Comment-List .Comment-Item .Item-Vote {
+  position: relative; }
+.Comment .Comment-List .Comment-Item .Item-Content {
   overflow: hidden; }
-  .Comment .Comment-List li .Comment-List-Element-Content header small.Date {
+  .Comment .Comment-List .Comment-Item .Item-Content header h5 .Date {
+    margin-left: 30px;
+    display: inline-block;
+    font-size: 80%;
     color: #cccccc; }
-  .Comment .Comment-List li .Comment-List-Element-Content p {
+  .Comment .Comment-List .Comment-Item .Item-Content p {
     width: 75%; }
 .Comment > form {
   margin-top: 50px; }
@@ -1282,10 +1270,10 @@ img.Footer-Img {
     border-bottom: 1px #cccccc solid;
     padding-bottom: 10px;
     background-color: #f1f1f1; }
-    .List.Snippets li.List-Item header h5.Title {
-      margin: 15px 0 15px 15px;
+    .List.Snippets li.List-Item header h5.Item-Title {
+      margin: 15px 100px 15px 15px;
       display: block; }
-      .List.Snippets li.List-Item header h5.Title a {
+      .List.Snippets li.List-Item header h5.Item-Title a {
         font-size: 1.125em;
         text-transform: uppercase; }
   .List.Snippets li.List-Item img {
@@ -1300,6 +1288,7 @@ img.Footer-Img {
   font-size: 12px; }
 
 .Snippet-List .Snippet-Item header {
+  position: relative;
   background-color: #f1f1f1; }
   .Snippet-List .Snippet-Item header .Item-Category,
   .Snippet-List .Snippet-Item header .Item-Location {
@@ -1324,7 +1313,7 @@ img.Footer-Img {
     font-size: 20px; }
     .Snippet-Item header .Item-Title a {
       display: block;
-      color: #ec6700; }
+      color: black; }
       .Snippet-Item header .Item-Title a:hover {
         color: #ec6700; }
     .Snippet-Item header .Item-Title .Item-Category,
@@ -1819,7 +1808,7 @@ li.List-Filter-Subcategory ul li {
 
   a.Menu-Link {
     font-size: 16px; } }
-@media all and (min-width: 1900px) {
+@media all and (min-width: 1880px) {
   .Site-Logo {
     width: 25%; }
 
