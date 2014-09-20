@@ -13,6 +13,11 @@
 
         window.UP={};
 
+        /* Spoiler */
+        $('.Spoiler-Caption').click(function(){
+            $(this).parent().find('.Spoiler-Content').slideToggle();
+        });
+
         /* Message */
         window.UP.Message = function (event,message,type){
             if(type===undefined){

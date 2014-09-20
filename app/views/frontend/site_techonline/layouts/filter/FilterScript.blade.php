@@ -17,6 +17,7 @@
     }
 
     if(searchArray['category']){
+        getAjaxParams(searchArray['category']);
         addToFilterSelected($('[alias='+searchArray['category']+']'),'Category');
         changeTab('.Tab-Params',false);
     }
@@ -48,7 +49,11 @@
     function addToFilterSelected(element,name){
         if($('.Filter-Result').text().length){
             $("#Filter-Selected-"+name).remove();
-            $('.Filter-Result').append('<li id="Filter-Selected-'+name+'"><span>'+$(element).first().text()+'</span><a class="Delete" alias="'+$(element).attr('alias')+'" href="#">Удалить</a></li>');
+            if(name=='Region'){
+                $('.Filter-Result').prepend('<li id="Filter-Selected-'+name+'"><span>'+$(element).first().text()+'</span><a class="Delete" alias="'+$(element).attr('alias')+'" href="#">Удалить</a></li>');
+            }else{
+                $('.Filter-Result').append('<li id="Filter-Selected-'+name+'"><span>'+$(element).first().text()+'</span><a class="Delete" alias="'+$(element).attr('alias')+'" href="#">Удалить</a></li>');
+            }
         }else{
             $('.Filter .Heading').after('<ul class="Filter-Result"><li id="Filter-Selected-'+name+'"><span>'+$(element).first().text()+'</span><a class="Delete" alias="'+$(element).attr('alias')+'" href="#">Удалить</a></li></ul>');
         }
@@ -191,7 +196,6 @@
             });
 
 /*********************************************************************************************************************** Таб :: Параметры :: Бренды ***/
-
             /*** Перебор всех чекбоксов ***/
             function checkedBrands(){
                 var all_selected=true,
