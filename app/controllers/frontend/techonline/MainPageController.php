@@ -15,6 +15,8 @@ class MainPageController extends TechonlineController{
                 'categories_list'=>\Model\General\Categories::all(),
                 'regions'=>\Model\General\TechOnline\CatalogRegion::toSubRegions(true),
                 'regions_list'=>\Model\General\TechOnline\CatalogRegion::all(),
+                
+                'has_params'=>true,
             ],
             'categories'=>\Model\General\Categories::toSubCategories(),
             'news'=>\Model\General\News::orderBy('rating','desc')->with('tags','metadata')->limit(6)->get()->toArray(),

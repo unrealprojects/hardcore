@@ -31,6 +31,8 @@ class CatalogTechController extends TechonlineController{
                 'categories_list'=>\Model\General\Categories::all(),
                 'regions'=>\Model\General\TechOnline\CatalogRegion::toSubRegions(true),
                 'regions_list'=>\Model\General\TechOnline\CatalogRegion::all(),
+
+                'has_params'=>true,
             ],
             'pagination' => $CatalogTechList->links(),
             'list' => $CatalogTechList->toArray()['data'],

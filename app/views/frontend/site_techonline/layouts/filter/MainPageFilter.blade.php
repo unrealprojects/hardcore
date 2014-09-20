@@ -5,7 +5,7 @@
     <dl class="Tabs">
 
         <!-- ФИЛЬТР :: ТАБ 1 :: РЕГИОНЫ-->
-
+        @if(!empty($content['filter']['regions']))
         <dt class="Active Tab-Regions"><span>Выбор региона</span></dt>
         <dd class="Active Tab-Regions">
             <div>
@@ -54,9 +54,9 @@
                 </ul>
             </div>
         </dd>
-
+        @endif
         <!-- ФИЛЬТР:: ТАБ 2 ::КАТЕГОРИИ -->
-
+        @if(!empty($content['filter']['categories']))
         <dt class="Tab-Categories"><span>Выбор категории</span></dt>
         <dd class="Tab-Categories">
             <div>
@@ -86,9 +86,9 @@
                 </ul>
             </div>
         </dd>
-
+        @endif
         <!-- ФИЛЬТР :: ТАБ 3 :: ПАРАМЕТРЫ -->
-
+        @if($content['filter']['has_params'])
         <dt class="Wide Tab-Params"><span>Дополнительные параметры</span></dt>
         <dd class="Tab-Params">
             <div>
@@ -119,6 +119,7 @@
                             </label>
                         </li>
                     </ul>
+                    @if(!empty($content['filter']['brands']))
                     <div class="Spoiler">
                         <a href="#" class="Spoiler-Caption">Конкретные производители</a>
 
@@ -133,6 +134,7 @@
                             @endforeach
                         </ul>
                     </div>
+                    @endif
                 </form>
             </div>
         </dd>
@@ -140,6 +142,8 @@
     <div class="Control-Group Offset">
         <button id="Filter-Search" class="Button">Выполнить поиск</button>
     </div>
+    @endif
 </section>
+
 
 @include('frontend.site_techonline.layouts/filter/FilterScript')
