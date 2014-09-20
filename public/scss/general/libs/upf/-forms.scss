@@ -38,7 +38,6 @@
 	}
 	&.Offset {
 		padding-top: $size;
-		border-top: 1px dashed $clr-grey;
 
 		input[type='submit']	,
 		button.Button			{
@@ -182,12 +181,13 @@ input[type='submit'] {
 	@extend 			._Button;
 
 	&:hover {
-		background-color: $clr-grey-darker;
+		background-color: 	$clr-main-dark;
 	}
 
 	&[disabled] {
-		background-color: $clr-grey;
-		cursor: not-allowed;
+		color:				$Clr-Asbestos;
+		background-color: 	$Clr-Wet-Asphalt;
+		cursor: 			not-allowed;
 	}
 }
 
@@ -224,13 +224,12 @@ dl.Tabs {
 		margin-left: -1px;
 		position: 		relative;
 		display: 		table;
-		border-top:		1px solid $clr-grey;
-		border-bottom:	1px solid $clr-grey;
 		width: 			30%;
 		float: 			left;
 		min-height: 	48px;
 		padding: 		$size-xs 0;
-		color: 			$clr-grey-darker;
+		background-color: $Clr-Clouds;
+		color:			$Clr-Midnight-Blue;
 		text-align: 	center;
 		cursor: 		pointer;
 
@@ -243,23 +242,15 @@ dl.Tabs {
 		}
 
 		&:hover {
-			background-color: $clr-grey-lighter;
-			border-color: $clr-grey-darker;
+			background-color: $Clr-Silver;
 		}
 
 		&.Active {
-			border-color: $clr-main!important;
-			background-color: $clr-main;
+			background-color: $Clr-Midnight-Blue;
 			color: #fff;
-		}
-		&:first-child {
-			border: 1px solid $clr-grey;
-			@include Round(left, $Control-Border-Radius);
 		}
 		&.Wide {
 			width: 40%;
-			border: 1px solid $clr-grey;
-			@include Round(right, $Control-Border-Radius);
 		}
 	}
 	dd {
