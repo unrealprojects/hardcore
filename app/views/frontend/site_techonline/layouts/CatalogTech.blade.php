@@ -1,50 +1,12 @@
 @extends('frontend.site_techonline.'.$content['template'])
 
 @section('main')
+<!-- ФИЛЬТР -->
+@include('frontend.site_techonline.layouts.filter.MainPageFilter');
 <section class="Node">
-
     <h3 class="Heading Primary">Каталог строительной техники</h3>
     @include('frontend.site_techonline.parts.breadcrumbs')
-        <!--
-        <aside class="Sidebar-Filter Grid XS3">
-            <h4>Производители</h4>
-            <ul class="List-Filter">
-                @foreach($content['brands'] as $brand)
-                <li><a href="/rent/?brand={{$brand['alias']}}&{{\Input::getQueryString()}}">{{$brand['name']}}</a></li>
-                @endforeach
-            </ul>
 
-
-            <h4>Категории</h4>
-            <ul class="List-Filter Accordion">
-                @foreach($content['categories'] as $category)
-                    <li class="List-Filter-Subheader Accordion-Subheader">
-                        @if($category['subCategories'])
-                            <img class='Accordion-Switch' src="/img/techonline/icon-dropdown.png" alt=""/>
-                        @endif
-                        <a href="/catalog/?category={{$category['alias']}}&{{\Input::getQueryString()}}">{{$category['name']}}</a>
-                    </li>
-
-                    @if($category['subCategories'])
-                    <li class="List-Filter-Subcategory Accordion-Subcategory">
-                        <ul>
-                            @foreach($category['subCategories'] as $subCategory)
-                            <li><a href="/catalog/?category={{$subCategory['alias']}}&{{\Input::getQueryString()}}">{{$subCategory['name']}}</a></li>
-                            @endforeach
-                        </ul>
-                    </li>
-                    @endif
-                @endforeach
-            </ul>
-
-            <h4>Регионы</h4>
-            <ul class="List-Filter">
-                @foreach($content['regions'] as $region)
-                <li><a href="/rent/?region={{$region['alias']}}&{{\Input::getQueryString()}}">{{$region['name']}}</a></li>
-                @endforeach
-            </ul>
-        </aside>
-        -->
         <article>
             <ul class="Snippet-List">
             @foreach($content['list'] as $item_key => $list_elem)

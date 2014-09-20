@@ -25,6 +25,13 @@ class CatalogTechController extends TechonlineController{
 
         /* ДАННЫЕ ВИД */
         $this->viewData['content'] = [
+            'filter'=>[
+                'categories'=>\Model\General\Categories::toSubCategories(true),
+                'brands'=>\Model\General\TechOnline\CatalogBrand::orderBy('foreign')->get()->toArray(),
+                'categories_list'=>\Model\General\Categories::all(),
+                'regions'=>\Model\General\TechOnline\CatalogRegion::toSubRegions(true),
+                'regions_list'=>\Model\General\TechOnline\CatalogRegion::all(),
+            ],
             'pagination' => $CatalogTechList->links(),
             'list' => $CatalogTechList->toArray()['data'],
             'template' => 'content',

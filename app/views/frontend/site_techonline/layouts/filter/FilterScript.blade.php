@@ -1,7 +1,26 @@
 @section('scripts')
 @parent
 <script>
+/*********************************************************************************************************************** SEARCH STRING */
     searchArray = {};
+    if(location.search.length>0){
+        var search = location.search.replace('?','').split('&');
+        $.each(search,function(key,value){
+            var item=value.split('=');
+            searchArray[item[0]]=item[1];
+        });
+    }
+
+    if(searchArray['region']){
+        addToFilterSelected($('[alias='+searchArray['region']+']'),'Region');
+        changeTab('.Tab-Categories',false);
+    }
+
+    if(searchArray['category']){
+        addToFilterSelected($('[alias='+searchArray['category']+']'),'Category');
+        changeTab('.Tab-Params',false);
+    }
+
     $(document).on('click','.Filter a',function(){return false;});
 /*********************************************************************************************************************** HELPER ***/
     /*** Анимация при смене табов ***/
@@ -25,23 +44,13 @@
         });
     }
 
-    /*** Добавить регион в SELECTED ***/
-    function addToFilterSelectedRegion(element){
+    /*** Добавить  в SELECTED ***/
+    function addToFilterSelected(element,name){
         if($('.Filter-Result').text().length){
-            $("#Filter-Selected-Region").remove();
-            $('.Filter-Result').append('<li id="Filter-Selected-Region"><span>'+$(element).text()+'</span><a class="Delete" alias="'+$(element).attr('alias')+'" href="#">Удалить</a></li>');
+            $("#Filter-Selected-"+name).remove();
+            $('.Filter-Result').append('<li id="Filter-Selected-'+name+'"><span>'+$(element).first().text()+'</span><a class="Delete" alias="'+$(element).attr('alias')+'" href="#">Удалить</a></li>');
         }else{
-            $('.Filter .Heading').after('<ul class="Filter-Result"><li id="Filter-Selected-Region"><span>'+$(element).text()+'</span><a class="Delete" alias="'+$(element).attr('alias')+'" href="#">Удалить</a></li></ul>');
-        }
-    }
-
-    /*** Добавить категории в SELECTED ***/
-    function addToFilterSelectedCategory(element){
-        if($('.Filter-Result').text().length){
-            $("#Filter-Selected-Category").remove();
-            $('.Filter-Result').append('<li id="Filter-Selected-Category"><span>'+$(element).text()+'</span><a class="Delete" alias="'+$(element).attr('alias')+'" href="#">Удалить</a></li>');
-        }else{
-            $('.Filter .Heading').after('<ul class="Filter-Result"><li id="Filter-Selected-Category"><span>'+$(element).text()+'</span><a class="Delete" alias="'+$(element).attr('alias')+'" href="#">Удалить</a></li></ul>');
+            $('.Filter .Heading').after('<ul class="Filter-Result"><li id="Filter-Selected-'+name+'"><span>'+$(element).first().text()+'</span><a class="Delete" alias="'+$(element).attr('alias')+'" href="#">Удалить</a></li></ul>');
         }
     }
 
@@ -53,7 +62,24 @@
         if(!$('.Filter-Result').text().length){
             $('.Filter-Result').remove();
         }
+        if($(this).parent().is('#Filter-Selected-Region')){
+            changeTab('.Tab-Regions');
+        }
+        if($(this).parent().is('#Filter-Selected-Category')){
+            changeTab('.Tab-Categories');
+        }
     });
+
+    /*** Функция смены таба ***/
+    function changeTab(tabName,scrollToTabs){
+        if(scrollToTabs===undefined){scrollToTabs=true;}
+        $('.Tabs dt,.Tabs dd').removeClass('Active');
+        $(tabName).addClass('Active');
+        if(scrollToTabs){
+            scrollToTabs();
+        }
+    }
+
 
 /*********************************************************************** Таб :: Региионы ***/
 
@@ -70,12 +96,8 @@
                     /*** Запись параметров ***/
                     searchArray['region']=ui.item.key;
                     delete searchArray['region_type'];
-                    addToFilterSelectedRegion(this);
-
-                    /*** Смена Таба ***/
-                    $('.Tab-Regions').removeClass('Active');
-                    $('.Tab-Categories').addClass('Active');
-                    scrollToTabs();
+                    addToFilterSelected(this,'Region');
+                    changeTab('.Tab-Categories');
                 }
             });
 
@@ -102,12 +124,8 @@
                     /*** Параметры ***/
                     searchArray['region']=$(this).attr('alias');
                     delete searchArray['region_type'];
-                    addToFilterSelectedRegion(this);
-
-                    /*** Смена Таба ***/
-                    $('.Tab-Regions').removeClass('Active');
-                    $('.Tab-Categories').addClass('Active');
-                    scrollToTabs();
+                    addToFilterSelected(this,'Region');
+                    changeTab('.Tab-Categories');
                 }
                 return false;
             });
@@ -116,12 +134,8 @@
             $(document).on('click','.Filter-Cities a',function(){
                 searchArray['region']=$(this).attr('alias');
                 delete searchArray['region_type'];
-                addToFilterSelectedRegion(this);
-
-                /*** Смена таба ***/
-                $('.Tab-Regions').removeClass('Active');
-                $('.Tab-Categories').addClass('Active');
-                scrollToTabs();
+                addToFilterSelected(this,'Region');
+                changeTab('.Tab-Categories');
                 return false;
             });
 
@@ -130,14 +144,8 @@
                 /*** Запись параметров ***/
                 searchArray['region_type']=$(this).attr('alias');
                 delete searchArray['region'];
-                addToFilterSelectedRegion(this);
-
-
-                /*** Смена Таба ***/
-                $('.Tab-Regions').removeClass('Active');
-                $('.Tab-Categories').addClass('Active');
-                scrollToTabs();
-                return false;
+                addToFilterSelected(this,'Region');
+                changeTab('.Tab-Categories');
             });
 
 /*********************************************************************************************************************** Таб :: Категории ***/
@@ -148,17 +156,21 @@
                     {key:"{{$category['alias']}}",label:"{{$category['name']}}"},
                 @endforeach
             ];
+
             $( ".Autocomplete-Categories" ).autocomplete({
                 source: categories,
                 select: function (event, ui) {
                     /*** Запись параметров ***/
                     searchArray['category']=ui.item.key;
                     getAjaxParams(searchArray['category']);
-                    addToFilterSelectedCategory(this);
+                    addToFilterSelected(this,'Category');
 
-                    $('.Tab-Categories').removeClass('Active');
-                    $('.Tab-Params').addClass('Active');
-                    scrollToTabs();
+                    /*** Смена Таба Или Перескок на Главную страницу ***/
+                    if(location.pathname!='/'){
+                        changeTab('.Tab-Params');
+                    }else{
+                        filterSearch();
+                    }
                 }
             });
 
@@ -166,13 +178,15 @@
             $('dd.Tab-Categories a').click(function(){
                 /*** Запись Параметров ***/
                 searchArray['category']=$(this).attr('alias');
-                addToFilterSelectedCategory(this);
+                addToFilterSelected(this,'Category');
                 getAjaxParams(searchArray['category']);
 
-                /*** Смена Таба ***/
-                $('.Tab-Categories').removeClass('Active');
-                $('.Tab-Params').addClass('Active');
-                scrollToTabs();
+                /*** Смена Таба Или Перескок на Главную страницу ***/
+                if(location.pathname!='/'){
+                    changeTab('.Tab-Params');
+                }else{
+                    filterSearch();
+                }
                 return false;
             });
 
@@ -280,14 +294,26 @@
             );
 
 /*********************************************************************************************************** Поиск ***/
-        $('#Filter-Search').click(function(){
+        function filterSearch(){
             searchString='?';
             $.each(searchArray,function(key,value){
                 searchString+=key+'='+value+'&';
             });
-                    location.href='rent'+searchString;
-          //  console.log('rent'+searchString);
+            location.href='rent'+searchString;
+              //console.log('rent'+searchString);
+        }
+        $('#Filter-Search').click(function(){
+            filterSearch();
         });
+    /*
+     В дополнительных параметрах Производители (сделать ТАБ - Уточнить производителя и спрятать в сплойлер производителей)
+     Добавить на страницы "аренда, каталог, запчасти и сервис, арендодатели" рейтинг
+     Привести в порядок лайтбокс
+     Не нравится как выглядят Фотки для каталогов
+     На Главной - Аренда стройтехники и производители (причесать)
+     Кнопка меню в мобильной версии
+     Скрыть фильтр в сплойлер на внутренних страницах
+     */
 </script>
 @endsection
 

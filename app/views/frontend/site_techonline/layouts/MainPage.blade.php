@@ -12,7 +12,6 @@
 </section>
 
 <!-- ФИЛЬТР -->
-
 @include('frontend.site_techonline.layouts.filter.MainPageFilter');
 
 <!-- КАТАЛОГ СТРОЙТЕХНИКИ::КАТЕГОРИИ C КАРТИНКАМИ-->
