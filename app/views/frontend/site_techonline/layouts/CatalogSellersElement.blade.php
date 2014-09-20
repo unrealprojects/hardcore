@@ -14,24 +14,11 @@
             </ul>
         </header>
 
-        <div class="Item-Gallery Grid XS-5">
-            @foreach(json_decode($content['item']['photos'],true) as $i=>$photo)
-            @if($i==1)
-            <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
-
-            <ul>
-                @elseif($i>1 && $i<5)
-                <li>
-                    <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
-                </li>
-                @elseif($i>5)
-                <li style="display: none">
-                    <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
-                </li>
-                @endif
-                @endforeach
-            </ul>
-        </div>
+        @include('frontend.site_techonline.layouts.elements.Photos',
+            [
+                'photos'=>$content['item']['photos'],
+                'class_wrap'=>'Item-Gallery Grid XS-5'
+            ])
 
         <div class="Item-Content Grid XS-7">
             <p>{{$content['item']['description']}}</p>
@@ -66,14 +53,20 @@
 
         <!-- Список Техники -->
 
-        <div class="CatalogTech">
+        <div class="Snippet-Item Row Split CatalogTech">
             <header>
                 <h4 class="Section-Header">
                     Аренда стройтехники
                 </h4>
             </header>
+
             @foreach($content['item']['tech_list'] as $tech)
             <div class="Element">
+                @include('frontend.site_techonline.layouts.elements.Photos',
+                    [
+                        'photos'=>$tech['photos'],
+                        'class_wrap'=>'Item-Gallery Grid XS-4'
+                    ])
                 <h4> <a href="/rent/{{$tech['metadata']['alias']}}">{{$tech['name']}}</a></h4>
                 <p>{{$tech['description']}}</p>
                 <p>{{$tech['rate']}}</p>
@@ -82,8 +75,7 @@
         </div>
 
         <!-- Список Запчастей -->
-
-        <div class="CatalogParts">
+        <div class="Snippet-Item Row Split CatalogParts">
             <header>
                 <h4 class="Section-Header">
                     Запчасти и сервис
@@ -91,6 +83,11 @@
             </header>
             @foreach($content['item']['parts_list'] as $part)
             <div class="Element">
+                @include('frontend.site_techonline.layouts.elements.Photos',
+                    [
+                        'photos'=>$tech['photos'],
+                        'class_wrap'=>'Item-Gallery Grid XS-4'
+                    ])
                 <h4> <a href="/parts/{{$part['metadata']['alias']}}">{{$part['name']}}</a></h4>
                 <p>{{$part['description']}}</p>
                 <p>{{$part['price']}}</p>

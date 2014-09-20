@@ -22,13 +22,13 @@
             </header>
             <div class="Item-Gallery Grid Four">
                 @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
-                @if($i==1)
+                @if($i==0)
                 <img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}">
 
                 <ul>
-                    @elseif($i>1 && $i<5)
+                    @elseif($i>0 && $i<4)
                     <li><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></li>
-                    @elseif($i>5)
+                    @elseif($i>=4)
                     <li style="display: none">
                         <img src="{{$photo['src']}}" alt="{{$photo['name']}}">
                     </li>

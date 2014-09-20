@@ -26,15 +26,15 @@
 
                     <div class="Item-Gallery Grid XS-5">
                         @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
-                        @if($i==1)
+                        @if($i==0)
                         <a href="{{$photo['src']}}" rel="Gallery-{{$item_key}}" class="fancybox"><img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
 
                         <ul>
-                            @elseif($i>1 && $i<5)
+                            @elseif($i>0 && $i<4)
                             <li>
                                 <a href="{{$photo['src']}}" rel="Gallery-{{$item_key}}" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
                             </li>
-                            @elseif($i>5)
+                            @elseif($i>=4)
                             <li style="display: none">
                                 <a href="{{$photo['src']}}" rel="Gallery-{{$item_key}}" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
                             </li>

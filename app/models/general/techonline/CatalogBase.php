@@ -7,6 +7,7 @@ namespace Model\General\TechOnline;
 
 class CatalogBase extends TechOnline {
     protected $table = 'catalog_base';
+    public $timestamps = true;
     public $filter;
 
     /* Связи */
@@ -46,6 +47,7 @@ class CatalogBase extends TechOnline {
                    $query->where('alias', $this->filter['brand']);
                }
            })
+           ->orderBy('created_at','desc')
            ->paginate(5);
     }
 

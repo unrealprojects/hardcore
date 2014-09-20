@@ -14,24 +14,11 @@
             </ul>
         </header>
 
-        <div class="Item-Gallery Grid XS-5">
-            @foreach(json_decode($content['item']['photos'],true) as $i=>$photo)
-            @if($i==1)
-            <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
-
-            <ul>
-                @elseif($i>1 && $i<5)
-                <li>
-                    <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
-                </li>
-                @elseif($i>5)
-                <li style="display: none">
-                    <a href="{{$photo['src']}}" rel="Gallery" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
-                </li>
-                @endif
-                @endforeach
-            </ul>
-        </div>
+        @include('frontend.site_techonline.layouts.elements.Photos',
+            [
+                'photos'=>$content['item']['photos'],
+                'class_wrap'=>'Item-Gallery Grid XS-5'
+            ])
 
         <div class="Item-Content Grid XS-7">
             <p>{{$content['item']['description']}}</p>

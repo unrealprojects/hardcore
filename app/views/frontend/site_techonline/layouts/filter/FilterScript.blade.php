@@ -301,7 +301,9 @@
         function filterSearch(){
             searchString='?';
             $.each(searchArray,function(key,value){
-                searchString+=key+'='+value+'&';
+                if(key && value){
+                    searchString+=key+'='+value+'&';
+                }
             });
             location.href='rent'+searchString;
               //console.log('rent'+searchString);

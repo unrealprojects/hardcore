@@ -73,6 +73,7 @@ class CatalogTech extends TechOnline {
                     $query->where('alias', $this->filter['region']);
                 }
             })
+            ->orderBy('created_at','desc')
             ->paginate(5);
     }
 

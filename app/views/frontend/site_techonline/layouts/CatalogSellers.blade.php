@@ -6,16 +6,6 @@
 
     <h3 class="Heading Primary">Каталог строительной техники</h3>
     @include('frontend.site_techonline.parts.breadcrumbs')
-        <!--
-        <aside class="Sidebar-Filter Grid XS-3">
-            <h4>Регионы</h4>
-            <ul class="List-Filter">
-                @foreach($content['regions'] as $region)
-                <li><a href="/sellers/?region={{$region['alias']}}&{{\Input::getQueryString()}}">{{$region['name']}}</a></li>
-                @endforeach
-            </ul>
-        </aside>
-        -->
         <article>
             <ul class="Snippet-List">
                 @foreach($content['list'] as $item_key => $list_elem)
@@ -28,24 +18,11 @@
                             </h4>
                     </header>
 
-                    <div class="Item-Gallery Grid XS-5">
-                        @foreach(json_decode($list_elem['photos'],true) as $i=>$photo)
-                        @if($i==1)
-                        <a href="{{$photo['src']}}" rel="Gallery-{{$item_key}}" class="fancybox"><img class="Item-Main-Photo" src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
-
-                        <ul>
-                            @elseif($i>1 && $i<5)
-                            <li>
-                                <a href="{{$photo['src']}}" rel="Gallery-{{$item_key}}" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
-                            </li>
-                            @elseif($i>5)
-                            <li style="display: none">
-                                <a href="{{$photo['src']}}" rel="Gallery-{{$item_key}}" class="fancybox"><img src="{{$photo['src']}}" alt="{{$photo['name']}}"></a>
-                            </li>
-                            @endif
-                            @endforeach
-                        </ul>
-                    </div>
+                    @include('frontend.site_techonline.layouts.elements.Photos',
+                        [
+                            'photos'=>$list_elem['photos'],
+                            'class_wrap'=>'Item-Gallery Grid XS-5'
+                        ])
 
                     <div class="Item-Content Grid XS-7">
                         {{$list_elem['description']}}

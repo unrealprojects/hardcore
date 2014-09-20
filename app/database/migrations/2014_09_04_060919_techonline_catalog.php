@@ -46,6 +46,9 @@ class TechonlineCatalog extends Migration {
             $table->integer('brand_id')->nullable();
             $table->integer('comments_id')->nullable();
             $table->integer('metadata_id')->nullable();
+
+            $table->dateTime('created_at');
+            $table->dateTime('updated_at');
         });
 
         for($i=1;$i<30;$i++){
@@ -409,16 +412,22 @@ class TechonlineCatalog extends Migration {
             $table->integer('min_value')->nullable();
             $table->integer('max_value')->nullable();
 
-
             $table->string('dimension')->nullable();
         });
 
         $params = [
-            ['name'=>'Скорость','alias'=>'speed','min'=>10,'max'=>100,'dimension'=>'км/ч'],
-            ['name'=>'Мощьность','alias'=>'power','min'=>20,'max'=>200,'dimension'=>'лс'],
-            ['name'=>'Грузоподъемность','alias'=>'load','min'=>10,'max'=>50,'dimension'=>'т'],
-            ['name'=>'Объем двигателя','alias'=>'volume','min'=>10,'max'=>100,'dimension'=>'л'],
-            ['name'=>'Размер ковша','alias'=>'size','min'=>100,'max'=>500,'dimension'=>'дв.кв.']
+            ['name'=>'Эксплуатационная масса','alias'=>'size','min'=>100,'max'=>20000,'dimension'=>'кг.'],
+            ['name'=>'Грузоподъёмность','alias'=>'size2','min'=>10,'max'=>1000,'dimension'=>'кг.'],
+            ['name'=>'Вместимость кузова','alias'=>'size3','min'=>0.5,'max'=>100,'dimension'=>'м3'],
+            ['name'=>'Мощьность двигателя','alias'=>'power4','min'=>10,'max'=>1000,'dimension'=>'лс'],
+            ['name'=>'Ширина гусениц','alias'=>'size5','min'=>100,'max'=>500,'dimension'=>'мм'],
+            ['name'=>'Скорость передвижения','alias'=>'size6','min'=>100,'max'=>500,'dimension'=>'км/ч'],
+            ['name'=>'Топливный бак','alias'=>'size7','min'=>20,'max'=>200,'dimension'=>'л.'],
+
+            ['name'=>'Скорость','alias'=>'speed8','min'=>10,'max'=>100,'dimension'=>'км/ч'],
+            ['name'=>'Грузоподъемность','alias'=>'load9','min'=>10,'max'=>50,'dimension'=>'т'],
+            ['name'=>'Объем двигателя','alias'=>'volume10','min'=>10,'max'=>100,'dimension'=>'л'],
+            ['name'=>'Размер ковша','alias'=>'size11','min'=>100,'max'=>500,'dimension'=>'дв.кв.']
         ];
 
         foreach($params as $param){
@@ -484,7 +493,14 @@ class TechonlineCatalog extends Migration {
             ['param_id'=>3,'category_id'=>1],
             ['param_id'=>3,'category_id'=>2],
             ['param_id'=>4,'category_id'=>3],
-            ['param_id'=>4,'category_id'=>4]
+            ['param_id'=>4,'category_id'=>4],
+            ['param_id'=>1,'category_id'=>9],
+            ['param_id'=>2,'category_id'=>9],
+            ['param_id'=>3,'category_id'=>9],
+            ['param_id'=>4,'category_id'=>9],
+            ['param_id'=>5,'category_id'=>9],
+            ['param_id'=>6,'category_id'=>9],
+            ['param_id'=>7,'category_id'=>9],
 
         ];
 
