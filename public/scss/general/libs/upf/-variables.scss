@@ -23,6 +23,17 @@ $Grid-Split-One-Width:	100%/12;
 
 
 // Color Scheme
+$Clr-Pamegranate:		#c0392b;
+$Clr-Alizarin:			#e74c3c;
+$Clr-Belize-Hole:		#2980b9;
+$Clr-Peter-River:		#3498db;
+$Clr-Midnight-Blue:		#2c3e50;
+$Clr-Wet-Asphalt:		#34495e;
+$Clr-Asbestos:			#7f8c8d;
+$Clr-Concrete:			#95a5a6;
+$Clr-Silver:			#bdc3c7;
+$Clr-Clouds:			#ecf0f1;
+
 $clr-red: #ec0000;
 $clr-red-dark:  darken($clr-red,5%);
 $clr-red-light: lighten($clr-red,50%);
@@ -101,7 +112,6 @@ $block-gap: 					$size-l;		// Отступ между блоками внутр�
 $border-radius: 				10px;
 $border-radius-small:			5px;
 $Page-Footer-Height:			100px;			// Высота футера
-
 $line-height: 					24px;			// Стандартная высота строки
 $selection-color: 				$clr-grey-dark;
 

@@ -296,7 +296,7 @@ a.Button      {
 	&.Search {
 		@extend ._Search;
 	}
-	&._Secondary {
+	&.Ghost {
 		background-color: white;
 		border: $Control-Border-Width solid $clr-grey-light;
 		color: $clr-grey-dark;
@@ -305,5 +305,9 @@ a.Button      {
 			border-color: $clr-grey-darker;
 			color: black
 		}
+	}
+	&.Ghost.Invert {
+		background-color: transparent;
+		border: $Control-Border-Width solid $Clr-Peter-River;
 	}
 }

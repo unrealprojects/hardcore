@@ -4,192 +4,17 @@
 body {
 	min-width: 320px;
 
-	background-color: $clr-grey-lighter;
+	background-color: #ecf0f1;
 	font-family: 	'Exo 2','Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 	1.45;
 
-	@include 		Font-Size(90%,95%,100%, 110%);
+	@include 		Font-Size(90%,100%,100%, 100%);
 	@include 		Animation(FadeIn,0.6s);
 }
 
 
-// Site Header.
-// Main block with 100% width
-.Site-Header {
-	background: white;
-	margin-bottom: $size-l;
-	@include Animation(FadeIn,1s);
-	@extend ._Clearfix;
-	@extend ._Unselectable;
-	@extend ._Soft_Shadow;
-}
-
-// Site Header inner block. Has the same width as content
-.Site-Header-Inner {
-	width:	90%;
-	@extend ._Clearfix;
-	@extend ._Centered;
-	@extend ._Section-Inner;
-	@extend ._Inline;
-}
-#Menu-Toggle {
-	float: right;
-	width: 30px;
-	height: 30px;
-	cursor: pointer;
-	background: url(../../../../img/techonline/icon-menu.png) center center no-repeat;
-	@include Transition(background-image,.3s);
-	&:hover {
-		background: url(../../../../img/techonline/icon-menu-hover.png) center center no-repeat;
-	}
-}
-.Site-Logo {
-	display: block;
-	position: relative;
-	width:	100%;
-	height: 80px;
-	overflow: hidden;
-
-	div {
-		width: 100%;
-		position: absolute;
-		top: 20px;
-		@include Transition(opacity, .5s);
-
-		img.Logo-Img {
-			display: block;
-			float: left;
-			margin-right: $size-s;
-		}
-
-		h2 {
-			padding: $size-xs 0;
-			color: $clr-main;
-			font-weight: 100;
-			text-transform: uppercase;
-			@include 		Font-Size(23px, 26px, 28px, 30px);
-
-			small {
-				display: inline;
-				color: black;
-				@include 		Font-Size(12px, 14px, 16px, 20px);
-			}
-		}
-	}
-	& > a {
-		z-index: 2;
-		position: absolute;
-		display: block;
-		padding: $size-l;
-		@include Transition(opacity, .5s);
-		@include Opacity(0);
-
-		&:hover {
-			color: $clr-main;
-			text-decoration: underline;
-		}
-	}
-	&:hover > div {
-		@include Opacity(0);
-	}
-	&:hover > a {
-		@include Opacity(1);
-	}
-}
-// Блок авторизации
-.Page-Auth {
-	position: relative;
-	width: 100%;
-	margin-bottom: $size;
-
-	& > .Button {
-		float: left;
-		width: 47.5%;
-		font-size: 12px;
-		padding: $size-xs 0;
-		margin-left: 5%;
-		&:first-child {
-			margin-left: 0;
-		}
-	}
-
-	.Sign-In-UI ,
-	.Sign-Up-UI {
-		position: absolute;
-		padding: $size;
-		background-color: white;
-		top: 46px;
-		right: 0;
-		width: 400px;
-		font-size: $Font-Size-Small;
-		border-top: 4px solid $clr-main;
-		z-index: 10;
-		@include Round(all);
-		@extend ._Soft_Shadow;
-		@extend ._Unselectable;
-		form {
-			h4 {
-				padding-bottom: $size-s;
-				margin-bottom: $size;
-				font-size: $Font-Size-Huge;
-				border-bottom: 1px dashed $clr-grey;
-			}
-		}
-	}
-}
-// Меню навигации по сайту
-.Site-Navigation {
-	display: none;
-	width: 100%;
-	text-align: right;
-}
-ul.Menu-List {
-	@extend ._No-Bullets;
-	@extend ._Clearfix;
-	li {
-		display: block;
-		width: 100%;
-		border-top: 1px solid $clr-grey-light;
-
-		&:first-child {
-			border-top: 0;
-			margin-left: 0;
-		}
-	}
-}
-.Menu-Link {
-	display: block;
-	padding: $size-s 0;
-	border-bottom: 3px solid transparent;
-
-	font-size: $Font-Size-Large;
-	color: #000;
-	text-align: left;
-	text-transform: uppercase;
-	&.Link-Active ,
-	&:hover       {
-		background-color: $clr-grey-lighter;
-	}
-
-}
-//
-#Page-Slider {
-	display: none;
-	margin-top: -$size-l;
-	@include Animation(SlideDown,.5s);
-	@extend ._Unselectable;
-}
-	.Slider-Inner {
-		 @extend ._Clearfix;
-		 @extend ._Section-Inner;
-		 @extend ._Centered;
-	}
-		#Truck {
-			@include Animation(SlideUp, 1s);
-		}
-		#Slider-Links {
-			@include Animation(FadeIn,1.5s);
-		}
+// PAGE HEADER
+@import "-header";
 
 .Autocomplete {
 	width: 100%;
@@ -201,8 +26,7 @@ ul.Menu-List {
 .Breadcrumbs {
 	padding: $size-xs;
 	margin-top: $size;
-	background-color: $clr-grey-lighter;
-	border: 1px solid $clr-grey-light;
+	background-color: $Clr-Clouds;
 	@include Round(all, $Control-Border-Radius);
 
 	.Breadcrumb-List {
@@ -210,13 +34,14 @@ ul.Menu-List {
 		@extend ._No-Bullets;
 
 		.Breadcrumb-Item {
-			a    ,
-			span {
+			a {
 				padding: $size-xs;
 				font-size: 16px;
 				line-height: 16px;
+				color: $Clr-Asbestos;
 			}
 			a:hover {
+				color: $Clr-Midnight-Blue;
 			}
 			&:before {
 				padding: 0 $size-s;

@@ -3,7 +3,7 @@
 
     <div class="Site-Header-Inner" role="banner">
 
-        <div href="http://hardcore/catalog" class="Site-Logo">
+        <div href="http://hardcore/catalog" class="Site-Logo SM-3">
             <div>
                 <img class="Logo-Img" src="/img/techonline/logo.png"/>
 
@@ -15,7 +15,7 @@
         </div>
 
         <div id="Menu-Toggle"></div>
-        <nav id="Menu" class="Site-Navigation Primary">
+        <nav id="Menu" class="Site-Navigation Primary SM-7">
             <ul class="Menu-List">
                 <li><a class="Menu-Link" href="/catalog" title="Каталог стройтехники">Каталог</a></li>
                 <li><a class="Menu-Link" href="/rent" title="Взять стройтехнику в аренду">Аренда</a></li>
@@ -24,9 +24,9 @@
             </ul>
         </nav>
 
-        <div class="Page-Auth">
-            <button class="Button _Secondary _Rounded Sign-In">Войти</button>
-            <button class="Button _Secondary _Rounded Sign-Up">Регистрация</button>
+        <div class="Page-Auth SM-2">
+            <button class="Button Sign-In">Войти</button>
+            <button class="Button Sign-Up">Регистрация</button>
 
             <div class="Sign-In-UI" style="display:none;">
                 <form class="Form-Horizontal" action="">

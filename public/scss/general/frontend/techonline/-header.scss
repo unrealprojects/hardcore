@@ -1,0 +1,102 @@
+// Page Header
+
+// Local Variables
+$Page-Header-Height: 					80px;
+$Page-Header-Line-Height:				20px;
+
+$Page-Navigation-Font-Size:				16px;
+$Page-Navigation-Padding:				($Page-Header-Height - $Page-Header-Line-Height) / 2;
+
+$Page-Logo-Height:						44px;
+$Page-Logo-Padding:						($Page-Header-Height - $Page-Logo-Height) / 2;
+
+$Page-Header-Button-Margin:				($Page-Header-Height - ($size-s * 2) - $Page-Header-Line-Height) / 2;
+
+.Site-Header{
+	height: 							$Page-Header-Height;
+
+	background-color: 					$Clr-Midnight-Blue;
+	color:								$Clr-Clouds;
+	@extend 							._Clearfix;
+
+	.Site-Header-Inner {
+		@extend 						.Row;
+		@extend 						.Split;
+
+		.Site-Logo {
+			height: 					$Page-Header-Height;
+
+			div {
+				overflow: 				hidden;
+				height: 				$Page-Header-Height;
+
+				img {
+					margin-top:			$Page-Logo-Padding;
+					margin-right: 		$size;
+					float: 				left;
+				}
+				h2 {
+					padding:			$Page-Navigation-Padding 0;
+					text-transform: 	uppercase;
+					line-height: 		$Page-Header-Line-Height;
+					font-size: 			20px;
+					font-weight: 		100;
+					small {
+						font-size: 		14px;
+					}
+				}
+			}
+			a.Link-Home {
+				position: 				absolute;
+				display: none;
+				padding:				$Page-Navigation-Padding 0;
+				text-transform: 		uppercase;
+				line-height: 			$Page-Header-Line-Height;
+				color:					$Clr-Silver;
+				&:hover {
+					color:				$Clr-Clouds;
+				}
+			}
+			&:hover {
+				div {
+					display: 			none;
+				}
+				a.Link-Home {
+					display: 			block;
+				}
+			}
+		}
+		.Site-Navigation.Primary {
+			ul {
+				@extend ._No-Bullets;
+				@extend ._Inline;
+				li {
+					a {
+						display: 		block;
+						padding: 		$Page-Navigation-Padding $size-n;
+						font-size: 		$Page-Navigation-Font-Size;
+						line-height:	$Page-Header-Line-Height;
+						text-transform: uppercase;
+						color: 			$Clr-Silver;
+						&:hover {
+							background-color: 	$Clr-Wet-Asphalt;
+							color: 				white;
+						}
+					}
+				}
+			}
+		}
+		.Page-Auth {
+			button {
+				margin:					$Page-Header-Button-Margin 0 0;
+				padding: 				$size-s;
+
+				background-color: 		$Clr-Alizarin;
+				border:					0;
+				&:hover {
+					background-color: 	$Clr-Pamegranate;
+				}
+			}
+		}
+	}
+}

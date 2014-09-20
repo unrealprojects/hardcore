@@ -1,8 +1,5 @@
 // 768px +
 @media all and (min-width: $Screen-Size-Tiny) {
-	.Node {
-		@include 			Round(all);
-	}
 
 	.Site-Logo div h2 {
 		font-size: 22px;
@@ -62,70 +59,6 @@
 	#Menu-Toggle {
 		display: none;
 	}
-
-	.Site-Header {
-		height: 80px;
-	}
-	.Site-Header-Inner {
-		width: 100%;
-		padding: 0 $size-l;
-	}
-		.Site-Logo {
-			display: inline-block;
-			width: 35%;
-		}
-		.Site-Navigation.Primary {
-			float: left;
-			width: 50%;
-			display: block!important;
-			.Menu-List {
-				li {
-					border-top: 0;
-
-					.Menu-Link {
-						color: $clr-grey-dark;
-					}
-				}
-			}
-		}
-
-
-		ul.Menu-List {
-			li {
-				width: auto;
-				display: inline-block;
-				float: left;
-				margin-left: $size-n;
-			}
-		}
-
-		a.Menu-Link {
-			padding: $size-l $size-xs $size-s;
-			border-top: 0;
-			font-size: 15px;
-			color: black;
-			&:hover,
-			&.Link-Active {
-				background-color: transparent;
-				border-color: $clr-main;
-				color: $clr-main;
-			}
-		}
-
-
-		.Page-Auth {
-			float: left;
-			width: 15%;
-			padding: 0 $size-s;
-			margin: 1px 0 0 0;
-
-			& > .Button {
-				margin-top: 2px;
-				float: none;
-				width: 100%;
-				margin-left: 0;
-			}
-		}
 	#Page-Slider {
 		display: block;
 		clear: both;
@@ -166,36 +99,12 @@
 	.Node {
 		padding: $size-l;
 	}
-
-	a.Menu-Link {
-		font-size: 16px;
-	}
 }
 
 // 1920 x 1080 Full HD
 @media all and (min-width: $Screen-Size-Large) {
 	.Site-Logo {
 		width: 25%;
-	}
-	.Site-Navigation {
-		width: 70%;
-	}
-	.Page-Auth {
-		margin-top: $size-n;
-		width: 25%;
-		& > .Button {
-			width: 47.5%;
-			padding: $size-s 0;
-		}
-	}
-	.Menu-List {
-		margin-top: $size-s!important;
-		li {
-			.Menu-Link {
-				font-size: 20px;
-				padding: $size-n $size-l;
-			}
-		}
 	}
 	img.Footer-Img {
 			 display: block;
@@ -212,8 +121,5 @@
 @media all and (min-width: $Screen-Size-Huge) {
 	.Node {
 		padding: $size-xl;
-	}
-	.Site-Header-Inner {
-			 width: $Section-Width-Huge;
 	}
 }

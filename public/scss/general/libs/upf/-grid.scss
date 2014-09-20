@@ -17,7 +17,14 @@
 ul.Row > li {
 	@extend ._No-Bullets;
 }
-
+// Makes grid nodes inline
+[class*='XS']		,
+[class*='SM']		,
+[class*='MD']		,
+[class*='LR']		,
+[class*='HG']		{
+	float: left;
+}
 @media all and (min-width: $Screen-Size-Tiny) {
 	// Rows in Splitted grid must have gutter from both sides.
 	.Row.Split > * {
@@ -25,14 +32,7 @@ ul.Row > li {
 		margin-right: $Grid-Gutter/2;
 	}
 
-	// Makes grid nodes inline
-	[class*='XS-']		,
-	[class*='SM-']		,
-	[class*='MD-']		,
-	[class*='LR-']		,
-	[class*='HG-']		{
-		float: left;
-	}
+
 
 	// End of Grid row. Pushing grid node to right
 	[class*='XS-'].End	,
