@@ -42,9 +42,7 @@ class CatalogParts extends TechOnline {
 
         return $this->with('category','status','opacity','admin','admin.metadata','metadata')
             ->whereHas('category', function($query) {
-                if(!empty($this->filter['category'])){
-                    $query->where('alias', $this->filter['category']);
-                }
+
             })
             ->paginate(5);
     }

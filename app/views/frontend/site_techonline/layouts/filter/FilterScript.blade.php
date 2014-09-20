@@ -62,15 +62,17 @@
     /*** Удаление SELECTED Категорий и Регионов ***/
     $(document).on('click','#Filter-Selected-Region .Delete,' +
                            '#Filter-Selected-Category .Delete',function(){
-        delete searchArray['region'];
+
         $(this).parent().remove();
         if(!$('.Filter-Result').text().length){
             $('.Filter-Result').remove();
         }
         if($(this).parent().is('#Filter-Selected-Region')){
+            delete searchArray['region'];
             changeTab('.Tab-Regions');
         }
         if($(this).parent().is('#Filter-Selected-Category')){
+            delete searchArray['category'];
             changeTab('.Tab-Categories');
         }
     });
@@ -100,7 +102,6 @@
                 select: function (event, ui) {
                     /*** Запись параметров ***/
                     searchArray['region']=ui.item.key;
-                    delete searchArray['region_type'];
                     addToFilterSelected(this,'Region');
                     changeTab('.Tab-Categories');
                 }
@@ -115,7 +116,6 @@
 
                     /*** Запись параметров Региона ***/
                     searchArray['region']=$(this).attr('alias');
-                    delete searchArray['region_type'];
                     scrollToTabs();
 
                     /*** Вернуться в Категории ***/
@@ -128,7 +128,6 @@
                 }else{
                     /*** Параметры ***/
                     searchArray['region']=$(this).attr('alias');
-                    delete searchArray['region_type'];
                     addToFilterSelected(this,'Region');
                     changeTab('.Tab-Categories');
                 }
@@ -138,19 +137,9 @@
             /*** Клик :: Выбор города ***/
             $(document).on('click','.Filter-Cities a',function(){
                 searchArray['region']=$(this).attr('alias');
-                delete searchArray['region_type'];
                 addToFilterSelected(this,'Region');
                 changeTab('.Tab-Categories');
                 return false;
-            });
-
-            /*** Выбор типа категории региона (популярные, области...)*/
-            $('dd.Tab-Regions .Filter-Subheader a').click(function(){
-                /*** Запись параметров ***/
-                searchArray['region_type']=$(this).attr('alias');
-                delete searchArray['region'];
-                addToFilterSelected(this,'Region');
-                changeTab('.Tab-Categories');
             });
 
 /*********************************************************************************************************************** Таб :: Категории ***/

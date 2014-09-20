@@ -57,6 +57,16 @@ class CatalogTech extends TechOnline {
             ->whereHas('model', function($query) {
                 if($this->filter['category']){
                     $query->whereHas('category',function($query){
+                        $categories = new \Model\General\Categories();
+                        $category = $categories->where('parent_id',0)->where('alias',$this->filter['category'])->first();
+                        if($category){
+                            $parents = $categories->where('parent_id',$category->id)->get()->toArray();
+                            foreach($parents as $value){
+                                $keys[]=$value['id'];
+                            }
+                            $query->whereIn('id', $keys);
+                        }
+
                         $query->where('alias', $this->filter['category']);
                     });
                 }
@@ -73,7 +83,6 @@ class CatalogTech extends TechOnline {
                     $query->where('alias', $this->filter['region']);
                 }
             })
-            ->orderBy('created_at','desc')
             ->paginate(5);
     }
 

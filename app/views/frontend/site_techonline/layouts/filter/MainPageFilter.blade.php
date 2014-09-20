@@ -18,7 +18,7 @@
                         @if($region['subRegions'])
                         <div class="Accordion-Switch"><span>&or;</span></div>
                         @endif
-                        <a href="/catalog/?region={{$region['alias']}}" alias="{{$region['alias']}}">{{$region['name']}}</a>
+                        <a class="Accordion-Switch" href="/catalog/?region={{$region['alias']}}" alias="{{$region['alias']}}">{{$region['name']}}</a>
                     </li>
 
                     @if($region['subRegions'])
