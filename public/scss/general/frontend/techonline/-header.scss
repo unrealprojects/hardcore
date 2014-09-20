@@ -87,6 +87,7 @@ $Page-Header-Button-Margin:				($Page-Header-Height - ($size-s * 2) - $Page-Head
 			}
 		}
 		.Page-Auth {
+			position: relative;
 			button {
 				margin:					$Page-Header-Button-Margin 0 0;
 				padding: 				$size-s;
@@ -96,6 +97,14 @@ $Page-Header-Button-Margin:				($Page-Header-Height - ($size-s * 2) - $Page-Head
 				&:hover {
 					background-color: 	$Clr-Pamegranate;
 				}
+			}
+			.Sign-In-UI	,
+			.Sign-Up-UI {
+				position: absolute;
+				padding: $size-n;
+				background-color: white;
+				background-color: rgba(255,255,255,.9);
+				color: $Clr-Midnight-Blue;
 			}
 		}
 	}

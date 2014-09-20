@@ -126,6 +126,7 @@ body {
 				background-color: $clr-grey-lighter;
 				&:hover {
 					background-color: $clr-grey;
+					background-color: $clr-grey;
 				}
 			}
 			&:first-child a {
@@ -271,12 +272,11 @@ img.Footer-Img {
 // List of snippets like News, etc.
 .List.Snippets {
 	li.List-Item {
-		border: 1px solid $clr-grey-light;
+		border: 1px solid $Clr-Clouds;
 		margin-bottom: $size;
 		header {
-			border-bottom: 1px $clr-grey solid;
 			padding-bottom: $size-s;
-			background-color: $clr-grey-lighter;
+			background-color: $Clr-Clouds;
 			@extend ._Clearfix;
 			h5.Item-Title {
 				margin: $size-n 100px $size-n $size-n;
@@ -562,21 +562,21 @@ ul.Tag-List {
 			display: block;
 			width: 30px;
 			height: 30px;
-			border: 1px solid $clr-grey-light;
+			border: 1px solid $Clr-Silver;
 			&:hover {
-				background-color: $clr-grey-darker;
-				border-color: black;
+				background-color: $clr-main;
+				border-color: $clr-main-dark;
 			}
 		}
 		& > span {
 			text-align: center;
 			padding-top: 3px;
-			border-top: 1px solid $clr-grey-light;
-			border-bottom: 1px solid $clr-grey-light;
+			border-top: 1px solid $Clr-Silver;
+			border-bottom: 1px solid $Clr-Silver;
 			display: block;
 			width: 30px;
 			height: 30px;
-			color: $clr-grey;
+			color: $Clr-Silver;
 			font-size: 14px;
 		}
 	}
@@ -623,34 +623,38 @@ ul.Tag-List {
 
 	@extend ._No-Bullets;
 	.Filter-Subheader {
-		border-top: 1px solid $clr-grey;
+		margin-top: 1px;
+		background-color: $Clr-Clouds;
         clear:both;
 		@extend ._Clearfix;
+
 		& > div {
 			float: left;
 			width: 10%;
 			text-align: center;
-			background-color: $clr-grey-dark;
+
 			span {
 				color: white;
 				display: block;
 				width: 100%;
 				padding: $size-s 0;
 				line-height: $line-height;
-				background-color: $clr-grey-darker;
+				background-color: $clr-main;
 				font-size: 16px;
 				font-weight: bold;
 				cursor: pointer;
+
 				&:hover {
-					color: $clr-main;
+					color: white;
+					background-color: $clr-main-dark;
 				}
 			}
 		}
 		& > a {
 			float: right;
 			width: 90%;
-			color: black;
-			background-color: $clr-grey-lighter;
+			color: $Clr-Midnight-Blue;
+			background-color: $Clr-Clouds;
 			line-height: $line-height;
 			font-size: 16px;
 			display: block;
@@ -709,7 +713,7 @@ ul.Tag-List {
 		font-size: 80%;
 		color: $clr-grey-darker;
 		&:hover {
-			background-color: $clr-grey-darker;
+			background-color: $Clr-Midnight-Blue;
 			color: white;
 		}
 		&.Icon {

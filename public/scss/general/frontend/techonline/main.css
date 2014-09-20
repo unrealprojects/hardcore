@@ -101,8 +101,8 @@ footer[role='contentinfo'] > div:after,
 input.Button,
 a.Button {
   padding: 15px 20px;
-  border: 1px solid #ec6700;
-  background-color: #ec6700;
+  border: 1px solid #e74c3c;
+  background-color: #e74c3c;
   font-weight: 100;
   color: #fff;
   cursor: pointer;
@@ -115,8 +115,7 @@ a.Button {
   ._Button:hover, input[type='submit']:hover, button.Button:hover,
   input.Button:hover,
   a.Button:hover {
-    border-color: #555555;
-    background-color: #555555; }
+    background-color: #c0392b; }
   ._Button._Rounded, input._Rounded[type='submit'], button._Rounded.Button,
   input._Rounded.Button,
   a._Rounded.Button {
@@ -592,7 +591,7 @@ html {
 
 a:link,
 a:visited {
-  color: #ec6700;
+  color: #e74c3c;
   text-decoration: none;
   -webkit-transition-property: color, background, border;
   -moz-transition-property: color, background, border;
@@ -605,7 +604,7 @@ a:hover {
   color: #555555; }
 
 a:active {
-  color: #ec6700; }
+  color: #e74c3c; }
 
 h1 {
   font-size: 3.00em; }
@@ -713,8 +712,7 @@ body,
   .Control-Group:first-child {
     margin-top: 0; }
   .Control-Group.Offset {
-    padding-top: 20px;
-    border-top: 1px dashed #cccccc; }
+    padding-top: 20px; }
     .Control-Group.Offset input[type='submit'],
     .Control-Group.Offset button.Button {
       display: inline-block;
@@ -796,7 +794,7 @@ input[type='radio'] {
 .Control-Group input,
 .Control-Group select,
 .Control-Group textarea {
-  border: 1px #cccccc solid;
+  border: 2px #cccccc solid;
   -webkit-transition-property: border-color;
   -moz-transition-property: border-color;
   transition-property: border-color;
@@ -808,7 +806,7 @@ input[type='radio'] {
 .Control-Group select:focus,
 .Control-Group textarea:focus {
   outline: 0;
-  border-color: #ec6700; }
+  border-color: #e74c3c; }
 
 input[type='submit'] {
   width: inherit;
@@ -817,9 +815,10 @@ input[type='submit'] {
   font-weight: 100;
   text-align: center; }
   input[type='submit']:hover {
-    background-color: #555555; }
+    background-color: #c0392b; }
   input[type='submit'][disabled] {
-    background-color: #cccccc;
+    color: #7f8c8d;
+    background-color: #34495e;
     cursor: not-allowed; }
 
 #recaptcha_widget_div {
@@ -846,13 +845,12 @@ dl.Tabs {
     margin-left: -1px;
     position: relative;
     display: table;
-    border-top: 1px solid #cccccc;
-    border-bottom: 1px solid #cccccc;
     width: 30%;
     float: left;
     min-height: 48px;
     padding: 5px 0;
-    color: #555555;
+    background-color: #ecf0f1;
+    color: #2c3e50;
     text-align: center;
     cursor: pointer;
     -webkit-transition-property: background-color, color;
@@ -866,19 +864,12 @@ dl.Tabs {
       display: table-cell;
       font-size: 85%; }
     dl.Tabs dt:hover {
-      background-color: #f1f1f1;
-      border-color: #555555; }
+      background-color: #bdc3c7; }
     dl.Tabs dt.Active {
-      border-color: #ec6700 !important;
-      background-color: #ec6700;
+      background-color: #2c3e50;
       color: #fff; }
-    dl.Tabs dt:first-child {
-      border: 1px solid #cccccc;
-      border-radius: 5px 0 0 5px; }
     dl.Tabs dt.Wide {
-      width: 40%;
-      border: 1px solid #cccccc;
-      border-radius: 0 5px 5px 0; }
+      width: 40%; }
   dl.Tabs dd {
     display: none;
     float: right;
@@ -912,7 +903,7 @@ a.Button {
   input.Button.Ghost,
   a.Button.Ghost {
     background-color: white;
-    border: 1px solid #dedede;
+    border: 2px solid #dedede;
     color: #999999; }
     button.Button.Ghost:hover,
     input.Button.Ghost:hover,
@@ -924,7 +915,7 @@ a.Button {
   input.Button.Ghost.Invert,
   a.Button.Ghost.Invert {
     background-color: transparent;
-    border: 1px solid #3498db; }
+    border: 2px solid #3498db; }
 
 .Message {
   border: 1px solid;
@@ -1046,13 +1037,22 @@ body {
     .Site-Header .Site-Header-Inner .Site-Navigation.Primary ul li a:hover {
       background-color: #34495e;
       color: white; }
-  .Site-Header .Site-Header-Inner .Page-Auth button {
-    margin: 20px 0 0;
-    padding: 10px;
-    background-color: #e74c3c;
-    border: 0; }
-    .Site-Header .Site-Header-Inner .Page-Auth button:hover {
-      background-color: #c0392b; }
+  .Site-Header .Site-Header-Inner .Page-Auth {
+    position: relative; }
+    .Site-Header .Site-Header-Inner .Page-Auth button {
+      margin: 20px 0 0;
+      padding: 10px;
+      background-color: #e74c3c;
+      border: 0; }
+      .Site-Header .Site-Header-Inner .Page-Auth button:hover {
+        background-color: #c0392b; }
+    .Site-Header .Site-Header-Inner .Page-Auth .Sign-In-UI,
+    .Site-Header .Site-Header-Inner .Page-Auth .Sign-Up-UI {
+      position: absolute;
+      padding: 15px;
+      background-color: white;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #2c3e50; }
 
 .Autocomplete {
   width: 100%;
@@ -1079,7 +1079,7 @@ body {
     content: ""; }
 
 .Pagination {
-  border-left: 4px solid #ec6700; }
+  border-left: 4px solid #e74c3c; }
   .Pagination > li {
     margin-top: 0 !important;
     margin-right: 1px;
@@ -1096,7 +1096,7 @@ body {
     .Pagination > li.disabled > span {
       color: #999999; }
     .Pagination > li.active > span {
-      background-color: #ec6700; }
+      background-color: #e74c3c; }
 
 .Sidebar-Filter a.Active {
   color: white;
@@ -1122,6 +1122,7 @@ body {
       color: black;
       background-color: #f1f1f1; }
       .Sidebar-Filter > ul > li > a:hover {
+        background-color: #cccccc;
         background-color: #cccccc; }
     .Sidebar-Filter > ul > li:first-child a {
       border: 0; }
@@ -1174,8 +1175,8 @@ footer[role='contentinfo'] {
           padding-bottom: 5px;
           border-bottom: 2px solid transparent; }
           footer[role='contentinfo'] > div .Footer-Navigation ul li a:hover {
-            color: #ec6700;
-            border-color: #ec6700; }
+            color: #e74c3c;
+            border-color: #e74c3c; }
         footer[role='contentinfo'] > div .Footer-Navigation ul li:first-child {
           margin-left: 0; }
 
@@ -1195,12 +1196,11 @@ img.Footer-Img {
   padding: 10px 0; }
 
 .List.Snippets li.List-Item {
-  border: 1px solid #dedede;
+  border: 1px solid #ecf0f1;
   margin-bottom: 20px; }
   .List.Snippets li.List-Item header {
-    border-bottom: 1px #cccccc solid;
     padding-bottom: 10px;
-    background-color: #f1f1f1; }
+    background-color: #ecf0f1; }
     .List.Snippets li.List-Item header h5.Item-Title {
       margin: 15px 100px 15px 15px;
       display: block; }
@@ -1246,7 +1246,7 @@ img.Footer-Img {
       display: block;
       color: black; }
       .Snippet-Item header .Item-Title a:hover {
-        color: #ec6700; }
+        color: #e74c3c; }
     .Snippet-Item header .Item-Title .Item-Category,
     .Snippet-Item header .Item-Title .Item-Location {
       float: left;
@@ -1272,7 +1272,7 @@ img.Footer-Img {
         font-size: 12px;
         font-weight: 100; }
 .Snippet-Item .Item-Gallery img.Item-Main-Photo {
-  border-top: 2px solid #ec6700; }
+  border-top: 2px solid #e74c3c; }
 .Snippet-Item .Item-Gallery ul li {
   margin-top: -6px;
   width: 33.33%; }
@@ -1281,7 +1281,7 @@ img.Footer-Img {
   .Snippet-Item .Item-Gallery ul li img {
     display: block;
     width: 100%;
-    border-top: 2px solid #ec6700; }
+    border-top: 2px solid #e74c3c; }
 .Snippet-Item .Item-Photo {
   margin-bottom: 30px;
   padding-right: 30px; }
@@ -1312,7 +1312,7 @@ img.Footer-Img {
 
 .Filter-Result {
   border: 1px solid #f1f1f1;
-  border-top-color: #ec6700;
+  border-top-color: #e74c3c;
   width: 100%;
   padding: 10px;
   font-size: 80%;
@@ -1327,7 +1327,7 @@ img.Footer-Img {
       display: inline-block;
       margin-left: 10px;
       padding: 5px;
-      background-color: #ec6700;
+      background-color: #e74c3c;
       color: white;
       border-radius: 5px; }
       .Filter-Result li .Delete:hover {
@@ -1358,19 +1358,19 @@ ul.Tag-List li.Tag-Item {
     display: block;
     width: 30px;
     height: 30px;
-    border: 1px solid #dedede; }
+    border: 1px solid #bdc3c7; }
     .Vote > li > a:hover {
-      background-color: #555555;
-      border-color: black; }
+      background-color: #e74c3c;
+      border-color: #c0392b; }
   .Vote > li > span {
     text-align: center;
     padding-top: 3px;
-    border-top: 1px solid #dedede;
-    border-bottom: 1px solid #dedede;
+    border-top: 1px solid #bdc3c7;
+    border-bottom: 1px solid #bdc3c7;
     display: block;
     width: 30px;
     height: 30px;
-    color: #cccccc;
+    color: #bdc3c7;
     font-size: 14px; }
 
 .Vote-Up {
@@ -1403,30 +1403,31 @@ ul.Tag-List li.Tag-Item {
 .Filter.Accordion {
   margin-top: 20px; }
   .Filter.Accordion .Filter-Subheader {
-    border-top: 1px solid #cccccc;
+    margin-top: 1px;
+    background-color: #ecf0f1;
     clear: both; }
     .Filter.Accordion .Filter-Subheader > div {
       float: left;
       width: 10%;
-      text-align: center;
-      background-color: #999999; }
+      text-align: center; }
       .Filter.Accordion .Filter-Subheader > div span {
         color: white;
         display: block;
         width: 100%;
         padding: 10px 0;
         line-height: 24px;
-        background-color: #555555;
+        background-color: #e74c3c;
         font-size: 16px;
         font-weight: bold;
         cursor: pointer; }
         .Filter.Accordion .Filter-Subheader > div span:hover {
-          color: #ec6700; }
+          color: white;
+          background-color: #c0392b; }
     .Filter.Accordion .Filter-Subheader > a {
       float: right;
       width: 90%;
-      color: black;
-      background-color: #f1f1f1;
+      color: #2c3e50;
+      background-color: #ecf0f1;
       line-height: 24px;
       font-size: 16px;
       display: block;
@@ -1452,7 +1453,7 @@ ul.Tag-List li.Tag-Item {
 
 .List-Group-Actions {
   margin-top: 20px;
-  border-top: 2px solid #ec6700;
+  border-top: 2px solid #e74c3c;
   background-color: #f1f1f1; }
 
 .Item-Group-Actions {
@@ -1467,7 +1468,7 @@ ul.Tag-List li.Tag-Item {
     color: #555555; }
     .Item-Group-Actions .Control-Group:hover,
     .Item-Group-Actions a:hover {
-      background-color: #555555;
+      background-color: #2c3e50;
       color: white; }
     .Item-Group-Actions .Control-Group.Icon,
     .Item-Group-Actions a.Icon {
@@ -1512,7 +1513,7 @@ ul.Tag-List li.Tag-Item {
       background-color: #f1f1f1; }
 
 .ui-widget-header {
-  background-color: #ec6700; }
+  background-color: #e74c3c; }
 
 .Accordion-Subcategory {
   display: none; }

@@ -124,9 +124,9 @@
 	color: 					#fff;
 	cursor: 				pointer;
 	@include 				Transition(background, .3s);
+
 	&:hover {
-		border-color:		$clr-grey-darker;
-		background-color: 	$clr-grey-darker;
+		background-color: 	$clr-main-dark;
 	}
 	&._Rounded {
 		@include Round(all, $Control-Border-Radius);
