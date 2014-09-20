@@ -5,12 +5,12 @@
 @endsection
 
 @section('content')
-<div id="wrap">
+<div id="Page-Wrap">
     @include('frontend.site_techonline.parts.header')
     <main>
         @yield('main')
     </main>
-    <div id="wrap-stop"></div>
+    <div id="Page-Wrap-Stop"></div>
 </div>
 
 <div title="Вернуться наверх" id="Scroll-Top"></div>

@@ -1,64 +1,17 @@
 // Подключение библиотеки UPF
 @import "../../../general/libs/upf/upf";
 
-html,
-body,
-#wrap {
-	height: 100%;
-}
-
-body > #wrap {
-	height: auto;
-	min-width: 320px;
-	min-height: 100%;
-	clear: both;
-	& > #wrap-stop {
-		height: $footer-height;
-	}
-}
-
 body {
+	min-width: 320px;
 
+	background-color: $clr-grey-lighter;
 	font-family: 	'Exo 2','Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 	1.45;
 
-	@include 		Font-Size(85%,90%,100%, 110%);
+	@include 		Font-Size(90%,95%,100%, 110%);
 	@include 		Animation(FadeIn,0.6s);
 }
-.Node-Wrap {
-	padding: $size 0;
-	width: 100%;
-	border-left: 0;
-	border-right: 0;
-	background-color: $clr-grey-light;
-}
-.Node {
-	padding: 			$size-n;
-	background-color: 	white;
-	clear: 				both;
 
-	@extend 			._Centered;
-	@extend 			._Standalone;
-	@extend 			._Section-Inner;
-	@extend 			._Clearfix;
-	@extend 			._Soft_Shadow;
-}
-
-// Внутренние элементы нода отступают друг от друга
-.Node + .Node-Wrap {
-	margin-top: $section-gap;
-}
-.Node > * {
-	margin-top: $size;
-}
-.Node.Row > * {
-	margin-top: 0;
-}
-
-// Убирает отступ у первого элемента в ноде
-.Node > *:first-child {
-	margin-top: 0;
-}
 
 // Site Header.
 // Main block with 100% width
@@ -112,14 +65,14 @@ body {
 		h2 {
 			padding: $size-xs 0;
 			color: $clr-main;
-			font-size: 26px;
 			font-weight: 100;
 			text-transform: uppercase;
+			@include 		Font-Size(23px, 26px, 28px, 30px);
 
 			small {
 				display: inline;
-				font-size: 16px;
 				color: black;
+				@include 		Font-Size(12px, 14px, 16px, 20px);
 			}
 		}
 	}
@@ -148,8 +101,8 @@ body {
 	position: relative;
 	width: 100%;
 	margin-bottom: $size;
+
 	& > .Button {
-		margin-top: 4px;
 		float: left;
 		width: 47.5%;
 		font-size: 12px;
@@ -391,49 +344,43 @@ ul.Menu-List {
 }
 
 // Блок комментариев
-.Comment {
-	.Comment-List {
-		@extend ._No-Bullets;
-		@extend ._Vertical-Spacing;
-		.Comment-Item {
-			&:first-child {
-				margin-top: 0;
-			}
-			.Item-Vote {
-				position: relative;
-			}
-			.Item-Content {
-				overflow: hidden;
+.Comment-List {
+	@extend ._No-Bullets;
+	@extend ._Vertical-Spacing;
+	.Comment-Item {
+		&:first-child {
+			margin-top: 0;
+		}
+		.Item-Vote {
+			position: relative;
+		}
+		.Item-Content {
+			overflow: hidden;
 
-				header {
-					@extend ._Clearfix;
+			header {
+				@extend ._Clearfix;
 
-					h5 {
-						.Date {
-							margin-left: $size-l;
-							display: inline-block;
-							font-size: 80%;
-							color: $clr-grey;
-						}
+				h5 {
+					.Date {
+						margin-left: $size-l;
+						display: inline-block;
+						font-size: 80%;
+						color: $clr-grey;
 					}
 				}
-				p {
-					width: 75%;
-				}
+			}
+			p {
+				width: 75%;
 			}
 		}
-
-	}
-	& > form {
-		margin-top: $size-xl;
 	}
 }
+
 
 // Site Footer Block
 footer[role='contentinfo'] {
 	position: relative;
-	height: $footer-height;
-
+	height: $Page-Footer-Height;
 	background: white;
 	border-top: 1px solid #e1e1e1;
 	& > div {
@@ -472,7 +419,7 @@ footer[role='contentinfo'] {
 img.Footer-Img {
 	display: none;
 	position: absolute;
-	bottom: $footer-height/2;
+	bottom: $Page-Footer-Height/2;
 	right: $size;
 	width: 200px;
 }
@@ -560,12 +507,10 @@ img.Footer-Img {
 		}
 	}
 	.Item-Photo {
-		@extend .Grid;
 		@extend .XS-5;
 	}
 	.Item-Gallery {
 		@extend ._Clearfix;
-		@extend .Grid;
 		@extend .XS-5;
 		& > img {
 			width: 100%;
@@ -573,7 +518,6 @@ img.Footer-Img {
 	}
 	.Item-Content {
 		margin-top: $size-n;
-		@extend .Grid;
 		@extend .XS-7;
 	}
 }
@@ -674,7 +618,6 @@ img.Footer-Img {
 	.Item-Photo {
 		margin-bottom: $size-l;
 		padding-right: $size-l;
-		@extend .Grid;
 		@extend .XS-5;
 
 		img {
@@ -822,59 +765,7 @@ ul.Tag-List {
 .List-Filter {
 	@extend ._No-Bullets;
 }
-li.List-Filter-Subheader {
-	background-color: $clr-grey-light;
-	@extend ._Clearfix;
-	div {
-		text-align: center;
-		width: 15%;
-		float: left;
-		span {
-			padding: $size-xs $size-xs 2px;
-			display: block;
-			vertical-align: middle;
-			text-shadow: 1px 1px 1px white;
-			font-weight: bold;
-			color: $clr-grey-darker;
-			font-size: 14px;
-			cursor: pointer;
-		}
-		span:hover {
-			color: $clr-main;
-		}
-	}
 
-	a {
-		font-size: 1em;
-		font-weight: 100;
-		width: 85%;
-		float: right;
-	}
-}
-
-li.List-Filter-Subcategory {
-	ul {
-		@extend ._No-Bullets;
-		li {
-			border-top: 1px white solid;
-			a {
-				color: black;
-				width: 100%;
-				background-color: $clr-grey-lighter;
-				display: block;
-				padding: $size-s;
-				font-size: .9em;
-				&:hover {
-					background-color: $clr-grey-light;
-				}
-			}
-
-			&:first-child {
-				border-top: 0;
-			}
-		}
-	}
-}
 .Menu-List {
 
 	ul {
@@ -942,17 +833,19 @@ li.List-Filter-Subcategory {
 	}
 }
 .Filter-Subcategory {
-	background: $clr-grey-lighter;
+	margin: $size-xs 0;
 	display: none;
 
 	ul {
+		border-top: 0;
+		@extend ._Clearfix;
 		@extend ._No-Bullets;
 		.Filter-Cities {
 			display: none;
 		}
 
 		li {
-			border-top: 1px solid $clr-grey;
+			border-top: 1px solid $clr-grey-lighter;
 			display: inline-block;
 			width: 100%;
 
@@ -981,7 +874,6 @@ li.List-Filter-Subcategory {
 .Item-Group-Actions {
 	border-left: 1px solid white;
 	width: 100%;
-	@extend .Grid;
 	@extend .XS-4;
 
 	.Control-Group,
@@ -1009,18 +901,12 @@ li.List-Filter-Subcategory {
 }
 
 
-
-
-
 .List-Params {
 	margin-top: $size;
 	@extend .Row;
 	@extend .Merge;
 
-	li {
-		@extend .Grid;
-		@extend .XS-6;
-		@extend .LR-4;
+	li.List-Params-Item {
 
 		.Control-Group,
 		a {
@@ -1038,7 +924,7 @@ li.List-Filter-Subcategory {
 .ui-widget-header{
   background-color: $clr-main;
 }
-.Accordion-Subcategory{
+.Accordion-Subcategory {
   display:none;
 }
 

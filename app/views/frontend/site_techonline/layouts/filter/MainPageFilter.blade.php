@@ -39,9 +39,9 @@
                                             <a class="Icon Back" href="/">Вернуться к выбору региона</a>
                                         </li>
                                     </ul>
-                                    <ul class="List-Params">
+                                    <ul class="List-Params Row Merge">
                                         @foreach($subRegions['cities'] as $city)
-                                        <li><a href="/catalog/?region={{$city['alias']}}" alias="{{$city['alias']}}">{{$city['name']}}</a></li>
+                                        <li class="List-Params-Item XS-6 LR-4"><a href="/catalog/?region={{$city['alias']}}" alias="{{$city['alias']}}">{{$city['name']}}</a></li>
                                         @endforeach
                                     </ul>
                                     @endif

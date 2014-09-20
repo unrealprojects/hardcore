@@ -8,13 +8,13 @@
   ._Standalone:first-child, .Node:first-child {
     margin-top: 0; }
 
-._Vertical-Spacing > *, .Comment .Comment-List > *, .Snippet-List > * {
+._Vertical-Spacing > *, .Comment-List > *, .Snippet-List > * {
   margin-top: 30px !important; }
-  ._Vertical-Spacing > *:first-child, .Comment .Comment-List > *:first-child, .Snippet-List > *:first-child {
+  ._Vertical-Spacing > *:first-child, .Comment-List > *:first-child, .Snippet-List > *:first-child {
     margin-top: 0 !important; }
 
 ._Section-Inner, .Node, .Site-Header-Inner, .Slider-Inner, footer[role='contentinfo'] > div {
-  width: 90%; }
+  width: 100%; }
   @media all and (min-width: 1024px) {
     ._Section-Inner, .Node, .Site-Header-Inner, .Slider-Inner, footer[role='contentinfo'] > div {
       width: 970px; } }
@@ -41,7 +41,7 @@
 ._Dev {
   outline: 1px red solid !important; }
 
-._Clearfix:before, ._Inline:before, .Site-Header-Inner:before, .Breadcrumbs .Breadcrumb-List:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Vote:before, .List-Group-Actions:before, .Row:before, .Snippet-List .Snippet-Item:before, .Snippet-Item:before, .List-Params:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Node:before, .Site-Header:before, ul.Menu-List:before, .Slider-Inner:before, .Pagination:before, .List-Categories:before, .List-Categories li:before, .Comment .Comment-List .Comment-Item .Item-Content header:before, footer[role='contentinfo'] > div:before, .List.Snippets li.List-Item header:before, .Snippet-List .Snippet-Item footer:before, .Snippet-List .Item-Gallery:before, .Snippet-Item header:before, .Snippet-Item header .Item-Title:before, .Snippet-Item .Item-Gallery:before, .Filter-Result li:before, .Vote > li:before, li.List-Filter-Subheader:before, .Filter.Accordion .Filter-Subheader:before,
+._Clearfix:before, ._Inline:before, .Site-Header-Inner:before, .Breadcrumbs .Breadcrumb-List:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Vote:before, .List-Group-Actions:before, .Row:before, .Snippet-List .Snippet-Item:before, .Snippet-Item:before, .List-Params:before, .Node:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Site-Header:before, ul.Menu-List:before, .Slider-Inner:before, .Pagination:before, .List-Categories:before, .List-Categories li:before, .Comment-List .Comment-Item .Item-Content header:before, footer[role='contentinfo'] > div:before, .List.Snippets li.List-Item header:before, .Snippet-List .Snippet-Item footer:before, .Snippet-List .Item-Gallery:before, .Snippet-Item header:before, .Snippet-Item header .Item-Title:before, .Snippet-Item .Item-Gallery:before, .Filter-Result li:before, .Vote > li:before, .Filter.Accordion .Filter-Subheader:before, .Filter-Subcategory ul:before,
 ._Clearfix:after,
 ._Inline:after,
 .Site-Header-Inner:after,
@@ -56,18 +56,18 @@ ul.Tag-List:after,
 .Snippet-List .Snippet-Item:after,
 .Snippet-Item:after,
 .List-Params:after,
+.Node:after,
 .Control-Group:after,
 .Control-Group.Smart:after,
 .Control-Group.Smart .Input-Smart:after,
 dl.Tabs:after,
-.Node:after,
 .Site-Header:after,
 ul.Menu-List:after,
 .Slider-Inner:after,
 .Pagination:after,
 .List-Categories:after,
 .List-Categories li:after,
-.Comment .Comment-List .Comment-Item .Item-Content header:after,
+.Comment-List .Comment-Item .Item-Content header:after,
 footer[role='contentinfo'] > div:after,
 .List.Snippets li.List-Item header:after,
 .Snippet-List .Snippet-Item footer:after,
@@ -77,18 +77,18 @@ footer[role='contentinfo'] > div:after,
 .Snippet-Item .Item-Gallery:after,
 .Filter-Result li:after,
 .Vote > li:after,
-li.List-Filter-Subheader:after,
-.Filter.Accordion .Filter-Subheader:after {
+.Filter.Accordion .Filter-Subheader:after,
+.Filter-Subcategory ul:after {
   content: " ";
   display: table; }
 
-._Clearfix:after, ._Inline:after, .Site-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Vote:after, .List-Group-Actions:after, .Row:after, .Snippet-List .Snippet-Item:after, .Snippet-Item:after, .List-Params:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Node:after, .Site-Header:after, ul.Menu-List:after, .Slider-Inner:after, .Pagination:after, .List-Categories:after, .List-Categories li:after, .Comment .Comment-List .Comment-Item .Item-Content header:after, footer[role='contentinfo'] > div:after, .List.Snippets li.List-Item header:after, .Snippet-List .Snippet-Item footer:after, .Snippet-List .Item-Gallery:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, .Snippet-Item .Item-Gallery:after, .Filter-Result li:after, .Vote > li:after, li.List-Filter-Subheader:after, .Filter.Accordion .Filter-Subheader:after {
+._Clearfix:after, ._Inline:after, .Site-Header-Inner:after, .Breadcrumbs .Breadcrumb-List:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Vote:after, .List-Group-Actions:after, .Row:after, .Snippet-List .Snippet-Item:after, .Snippet-Item:after, .List-Params:after, .Node:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Site-Header:after, ul.Menu-List:after, .Slider-Inner:after, .Pagination:after, .List-Categories:after, .List-Categories li:after, .Comment-List .Comment-Item .Item-Content header:after, footer[role='contentinfo'] > div:after, .List.Snippets li.List-Item header:after, .Snippet-List .Snippet-Item footer:after, .Snippet-List .Item-Gallery:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, .Snippet-Item .Item-Gallery:after, .Filter-Result li:after, .Vote > li:after, .Filter.Accordion .Filter-Subheader:after, .Filter-Subcategory ul:after {
   clear: both; }
 
 ._Inline > *, .Site-Header-Inner > *, .Breadcrumbs .Breadcrumb-List > *, footer[role='contentinfo'] > div .Footer-Navigation ul > *, .Snippet-Item header .Item-Values > *, .Snippet-Item .Item-Gallery ul > *, ul.Tag-List > *, .Vote > *, .List-Group-Actions > * {
   float: left; }
 
-._No-Bullets, ul.Row > li, .Snippet-List ul.Snippet-Item > li, ul.Snippet-Item > li, .Snippet-Item header ul.Item-Values > li, ul.List-Group-Actions > li, ul.List-Params > li, ul.Menu-List, .Breadcrumbs .Breadcrumb-List, .Pagination, .Comment .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, .Filter-Result, ul.Tag-List, .Vote, .List-Filter, li.List-Filter-Subcategory ul, .Menu-List ul, .Filter.Accordion, .Filter-Subcategory ul, .List-Group-Actions {
+._No-Bullets, ul.Row > li, .Snippet-List ul.Snippet-Item > li, ul.Snippet-Item > li, .Snippet-Item header ul.Item-Values > li, ul.List-Group-Actions > li, ul.List-Params > li, ul.Menu-List, .Breadcrumbs .Breadcrumb-List, .Pagination, .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, .Filter-Result, ul.Tag-List, .Vote, .List-Filter, .Menu-List ul, .Filter.Accordion, .Filter-Subcategory ul, .List-Group-Actions {
   list-style: none; }
 
 ._Soft_Shadow, .Node, .Site-Header, .Page-Auth .Sign-In-UI,
@@ -180,10 +180,18 @@ iframe {
     margin-left: 1%;
     margin-right: 1%; }
 
-  .Grid, .Snippet-List .Item-Photo, .Snippet-List .Item-Gallery, .Snippet-List .Item-Content, .Snippet-Item .Item-Photo, .Item-Group-Actions, .List-Params li {
+  [class*='XS-'],
+  [class*='SM-'],
+  [class*='MD-'],
+  [class*='LR-'],
+  [class*='HG-'] {
     float: left; }
 
-  .Grid.End, .Snippet-List .End.Item-Photo, .Snippet-List .End.Item-Gallery, .Snippet-List .End.Item-Content, .Snippet-Item .End.Item-Photo, .End.Item-Group-Actions, .List-Params li.End {
+  [class*='XS-'].End,
+  [class*='SM-'].End,
+  [class*='MD-'].End,
+  [class*='LR-'].End,
+  [class*='HG-'].End {
     float: right; }
 
   .Row.Merge > .XS-1, .Snippet-List .Snippet-Item > .XS-1, .Merge.Snippet-Item > .XS-1, .Snippet-Item.List-Group-Actions > .XS-1, .Snippet-Item.List-Params > .XS-1, .Snippet-Item header .Merge.Item-Values > .XS-1, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-1, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-1, .Snippet-Item header .Item-Values.List-Params > .XS-1, .List-Group-Actions > .XS-1, .List-Params > .XS-1 {
@@ -201,7 +209,7 @@ iframe {
   .Row.Merge > .XS-5, .Snippet-List .Snippet-Item > .XS-5, .Merge.Snippet-Item > .XS-5, .Snippet-Item.List-Group-Actions > .XS-5, .Snippet-Item.List-Params > .XS-5, .Snippet-Item header .Merge.Item-Values > .XS-5, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-5, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-5, .Snippet-Item header .Item-Values.List-Params > .XS-5, .List-Group-Actions > .XS-5, .List-Params > .XS-5, .Snippet-List .Row.Merge > .Item-Photo, .Snippet-List .List-Group-Actions > .Item-Photo, .Snippet-List .List-Params > .Item-Photo, .Snippet-List .Row.Merge > .Item-Gallery, .Snippet-List .Snippet-Item > .Item-Gallery, .Snippet-Item header .Snippet-List .Merge.Item-Values > .Item-Gallery, .Snippet-List .Snippet-Item header .Merge.Item-Values > .Item-Gallery, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .Item-Gallery, .Snippet-List .List-Group-Actions > .Item-Gallery, .Snippet-List .List-Params > .Item-Gallery, .Snippet-Item .Row.Merge > .Item-Photo, .Snippet-List .Snippet-Item > .Item-Photo, .Merge.Snippet-Item > .Item-Photo, .Snippet-Item.List-Group-Actions > .Item-Photo, .Snippet-Item.List-Params > .Item-Photo, .Snippet-Item header .Merge.Item-Values > .Item-Photo, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .Item-Photo, .Snippet-Item .List-Group-Actions > .Item-Photo, .Snippet-Item .List-Params > .Item-Photo {
     width: 41.66667%; }
 
-  .Row.Merge > .XS-6, .Snippet-List .Snippet-Item > .XS-6, .Merge.Snippet-Item > .XS-6, .Snippet-Item.List-Group-Actions > .XS-6, .Snippet-Item.List-Params > .XS-6, .Snippet-Item header .Merge.Item-Values > .XS-6, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-6, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-6, .Snippet-Item header .Item-Values.List-Params > .XS-6, .List-Group-Actions > .XS-6, .List-Params > .XS-6, .Control-Group.Checkbox.Submit.Row.Merge > label, .Snippet-List .Control-Group.Checkbox.Submit.Snippet-Item > label, .Control-Group.Checkbox.Submit.Merge.Snippet-Item > label, .Snippet-Item header .Control-Group.Checkbox.Submit.Merge.Item-Values > label, .Control-Group.Checkbox.Submit.List-Group-Actions > label, .Control-Group.Checkbox.Submit.List-Params > label, .Control-Group.Checkbox.Submit.Row.Merge > [type='submit'], .Snippet-List .Control-Group.Checkbox.Submit.Snippet-Item > [type='submit'], .Control-Group.Checkbox.Submit.Merge.Snippet-Item > [type='submit'], .Snippet-Item header .Control-Group.Checkbox.Submit.Merge.Item-Values > [type='submit'], .Control-Group.Checkbox.Submit.List-Group-Actions > [type='submit'], .Control-Group.Checkbox.Submit.List-Params > [type='submit'], .List-Params .Row.Merge > li, .Snippet-List .List-Params .Snippet-Item > li, .List-Params .Snippet-List .Snippet-Item > li, .List-Params .Merge.Snippet-Item > li, .Snippet-Item header .List-Params .Merge.Item-Values > li, .List-Params .Snippet-Item header .Merge.Item-Values > li, .List-Params .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > li, .Snippet-Item header .Item-Values.List-Params > li, .List-Params .List-Group-Actions > li, .List-Params > li {
+  .Row.Merge > .XS-6, .Snippet-List .Snippet-Item > .XS-6, .Merge.Snippet-Item > .XS-6, .Snippet-Item.List-Group-Actions > .XS-6, .Snippet-Item.List-Params > .XS-6, .Snippet-Item header .Merge.Item-Values > .XS-6, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-6, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-6, .Snippet-Item header .Item-Values.List-Params > .XS-6, .List-Group-Actions > .XS-6, .List-Params > .XS-6, .Control-Group.Checkbox.Submit.Row.Merge > label, .Snippet-List .Control-Group.Checkbox.Submit.Snippet-Item > label, .Control-Group.Checkbox.Submit.Merge.Snippet-Item > label, .Snippet-Item header .Control-Group.Checkbox.Submit.Merge.Item-Values > label, .Control-Group.Checkbox.Submit.List-Group-Actions > label, .Control-Group.Checkbox.Submit.List-Params > label, .Control-Group.Checkbox.Submit.Row.Merge > [type='submit'], .Snippet-List .Control-Group.Checkbox.Submit.Snippet-Item > [type='submit'], .Control-Group.Checkbox.Submit.Merge.Snippet-Item > [type='submit'], .Snippet-Item header .Control-Group.Checkbox.Submit.Merge.Item-Values > [type='submit'], .Control-Group.Checkbox.Submit.List-Group-Actions > [type='submit'], .Control-Group.Checkbox.Submit.List-Params > [type='submit'] {
     width: 50%; }
 
   .Row.Merge > .XS-7, .Snippet-List .Snippet-Item > .XS-7, .Merge.Snippet-Item > .XS-7, .Snippet-Item.List-Group-Actions > .XS-7, .Snippet-Item.List-Params > .XS-7, .Snippet-Item header .Merge.Item-Values > .XS-7, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .XS-7, .Snippet-Item header .Item-Values.List-Group-Actions > .XS-7, .Snippet-Item header .Item-Values.List-Params > .XS-7, .List-Group-Actions > .XS-7, .List-Params > .XS-7, .Snippet-List .Row.Merge > .Item-Content, .Snippet-List .List-Group-Actions > .Item-Content, .Snippet-List .List-Params > .Item-Content, .Snippet-Item .Row.Merge > .Item-Content, .Snippet-List .Snippet-Item > .Item-Content, .Merge.Snippet-Item > .Item-Content, .Snippet-Item.List-Group-Actions > .Item-Content, .Snippet-Item.List-Params > .Item-Content, .Snippet-Item header .Merge.Item-Values > .Item-Content, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .Item-Content, .Snippet-Item .List-Group-Actions > .Item-Content, .Snippet-Item .List-Params > .Item-Content {
@@ -237,7 +245,7 @@ iframe {
   .Row.Split > .XS-5, .Split.Snippet-Item > .XS-5, .Snippet-Item header .Split.Item-Values > .XS-5, .Split.List-Group-Actions > .XS-5, .Split.List-Params > .XS-5, .Snippet-List .Row.Split > .Item-Photo, .Snippet-List .Split.List-Group-Actions > .Item-Photo, .Snippet-List .Split.List-Params > .Item-Photo, .Snippet-List .Row.Split > .Item-Gallery, .Snippet-List .Split.Snippet-Item > .Item-Gallery, .Snippet-Item header .Snippet-List .Split.Item-Values > .Item-Gallery, .Snippet-List .Snippet-Item header .Split.Item-Values > .Item-Gallery, .Snippet-List .Split.List-Group-Actions > .Item-Gallery, .Snippet-List .Split.List-Params > .Item-Gallery, .Snippet-Item .Row.Split > .Item-Photo, .Split.Snippet-Item > .Item-Photo, .Snippet-Item header .Split.Item-Values > .Item-Photo, .Snippet-Item .Split.List-Group-Actions > .Item-Photo, .Snippet-Item .Split.List-Params > .Item-Photo {
     width: 39.66667%; }
 
-  .Row.Split > .XS-6, .Split.Snippet-Item > .XS-6, .Snippet-Item header .Split.Item-Values > .XS-6, .Split.List-Group-Actions > .XS-6, .Split.List-Params > .XS-6, .Control-Group.Checkbox.Submit.Row.Split > label, .Control-Group.Checkbox.Submit.Split.Snippet-Item > label, .Snippet-Item header .Control-Group.Checkbox.Submit.Split.Item-Values > label, .Control-Group.Checkbox.Submit.Split.List-Group-Actions > label, .Control-Group.Checkbox.Submit.Split.List-Params > label, .Control-Group.Checkbox.Submit.Row.Split > [type='submit'], .Control-Group.Checkbox.Submit.Split.Snippet-Item > [type='submit'], .Snippet-Item header .Control-Group.Checkbox.Submit.Split.Item-Values > [type='submit'], .Control-Group.Checkbox.Submit.Split.List-Group-Actions > [type='submit'], .Control-Group.Checkbox.Submit.Split.List-Params > [type='submit'], .List-Params .Row.Split > li, .List-Params .Split.Snippet-Item > li, .Snippet-Item header .List-Params .Split.Item-Values > li, .List-Params .Snippet-Item header .Split.Item-Values > li, .List-Params .Split.List-Group-Actions > li, .Split.List-Params > li {
+  .Row.Split > .XS-6, .Split.Snippet-Item > .XS-6, .Snippet-Item header .Split.Item-Values > .XS-6, .Split.List-Group-Actions > .XS-6, .Split.List-Params > .XS-6, .Control-Group.Checkbox.Submit.Row.Split > label, .Control-Group.Checkbox.Submit.Split.Snippet-Item > label, .Snippet-Item header .Control-Group.Checkbox.Submit.Split.Item-Values > label, .Control-Group.Checkbox.Submit.Split.List-Group-Actions > label, .Control-Group.Checkbox.Submit.Split.List-Params > label, .Control-Group.Checkbox.Submit.Row.Split > [type='submit'], .Control-Group.Checkbox.Submit.Split.Snippet-Item > [type='submit'], .Snippet-Item header .Control-Group.Checkbox.Submit.Split.Item-Values > [type='submit'], .Control-Group.Checkbox.Submit.Split.List-Group-Actions > [type='submit'], .Control-Group.Checkbox.Submit.Split.List-Params > [type='submit'] {
     width: 48%; }
 
   .Row.Split > .XS-7, .Split.Snippet-Item > .XS-7, .Snippet-Item header .Split.Item-Values > .XS-7, .Split.List-Group-Actions > .XS-7, .Split.List-Params > .XS-7, .Snippet-List .Row.Split > .Item-Content, .Snippet-List .Split.List-Group-Actions > .Item-Content, .Snippet-List .Split.List-Params > .Item-Content, .Snippet-Item .Row.Split > .Item-Content, .Split.Snippet-Item > .Item-Content, .Snippet-Item header .Split.Item-Values > .Item-Content, .Snippet-Item .Split.List-Group-Actions > .Item-Content, .Snippet-Item .Split.List-Params > .Item-Content {
@@ -411,7 +419,7 @@ iframe {
   .Row.Merge > .LR-3, .Snippet-List .Snippet-Item > .LR-3, .Merge.Snippet-Item > .LR-3, .Snippet-Item.List-Group-Actions > .LR-3, .Snippet-Item.List-Params > .LR-3, .Snippet-Item header .Merge.Item-Values > .LR-3, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-3, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-3, .Snippet-Item header .Item-Values.List-Params > .LR-3, .List-Group-Actions > .LR-3, .List-Params > .LR-3 {
     width: 25%; }
 
-  .Row.Merge > .LR-4, .Snippet-List .Snippet-Item > .LR-4, .Merge.Snippet-Item > .LR-4, .Snippet-Item.List-Group-Actions > .LR-4, .Snippet-Item.List-Params > .LR-4, .Snippet-Item header .Merge.Item-Values > .LR-4, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-4, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-4, .Snippet-Item header .Item-Values.List-Params > .LR-4, .List-Group-Actions > .LR-4, .List-Params > .LR-4, .List-Params .Row.Merge > li, .Snippet-List .List-Params .Snippet-Item > li, .List-Params .Snippet-List .Snippet-Item > li, .List-Params .Merge.Snippet-Item > li, .Snippet-Item header .List-Params .Merge.Item-Values > li, .List-Params .Snippet-Item header .Merge.Item-Values > li, .List-Params .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > li, .Snippet-Item header .Item-Values.List-Params > li, .List-Params .List-Group-Actions > li, .List-Params > li {
+  .Row.Merge > .LR-4, .Snippet-List .Snippet-Item > .LR-4, .Merge.Snippet-Item > .LR-4, .Snippet-Item.List-Group-Actions > .LR-4, .Snippet-Item.List-Params > .LR-4, .Snippet-Item header .Merge.Item-Values > .LR-4, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-4, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-4, .Snippet-Item header .Item-Values.List-Params > .LR-4, .List-Group-Actions > .LR-4, .List-Params > .LR-4 {
     width: 33.33333%; }
 
   .Row.Merge > .LR-5, .Snippet-List .Snippet-Item > .LR-5, .Merge.Snippet-Item > .LR-5, .Snippet-Item.List-Group-Actions > .LR-5, .Snippet-Item.List-Params > .LR-5, .Snippet-Item header .Merge.Item-Values > .LR-5, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .LR-5, .Snippet-Item header .Item-Values.List-Group-Actions > .LR-5, .Snippet-Item header .Item-Values.List-Params > .LR-5, .List-Group-Actions > .LR-5, .List-Params > .LR-5 {
@@ -447,7 +455,7 @@ iframe {
   .Row.Split > .LR-3, .Split.Snippet-Item > .LR-3, .Snippet-Item header .Split.Item-Values > .LR-3, .Split.List-Group-Actions > .LR-3, .Split.List-Params > .LR-3 {
     width: 23%; }
 
-  .Row.Split > .LR-4, .Split.Snippet-Item > .LR-4, .Snippet-Item header .Split.Item-Values > .LR-4, .Split.List-Group-Actions > .LR-4, .Split.List-Params > .LR-4, .List-Params .Row.Split > li, .List-Params .Split.Snippet-Item > li, .Snippet-Item header .List-Params .Split.Item-Values > li, .List-Params .Snippet-Item header .Split.Item-Values > li, .List-Params .Split.List-Group-Actions > li, .Split.List-Params > li {
+  .Row.Split > .LR-4, .Split.Snippet-Item > .LR-4, .Snippet-Item header .Split.Item-Values > .LR-4, .Split.List-Group-Actions > .LR-4, .Split.List-Params > .LR-4 {
     width: 31.33333%; }
 
   .Row.Split > .LR-5, .Split.Snippet-Item > .LR-5, .Snippet-Item header .Split.Item-Values > .LR-5, .Split.List-Group-Actions > .LR-5, .Split.List-Params > .LR-5 {
@@ -604,13 +612,13 @@ a:active {
   color: #ec6700; }
 
 h1 {
-  font-size: 2.00em; }
+  font-size: 3.00em; }
 
 h2 {
-  font-size: 1.50em; }
+  font-size: 2.50em; }
 
 h3 {
-  font-size: 1.25em; }
+  font-size: 1.50em; }
 
 h4 {
   font-size: 1.10em; }
@@ -644,13 +652,48 @@ code {
   cursor: default; }
 
 .Heading.Primary {
-  color: black; }
+  color: #999999;
+  font-weight: bold; }
 
 .Heading.Underlined {
   display: block;
   padding-bottom: 10px;
   border-bottom: 1px solid #cccccc;
   font-weight: 100; }
+
+html,
+body,
+#Page-Wrap {
+  height: 100%; }
+
+#Page-Wrap {
+  height: auto;
+  min-height: 100%;
+  clear: both; }
+
+#Page-Wrap-Stop {
+  height: 100px; }
+
+.Node-Wrap {
+  padding: 15px 0;
+  width: 100%; }
+
+.Node {
+  padding: 15px;
+  background-color: white;
+  clear: both; }
+
+.Node + .Node-Wrap {
+  margin-top: 50px; }
+
+.Node > * {
+  margin-top: 20px; }
+
+.Node > *:first-child {
+  margin-top: 0; }
+
+.Node.Row > *, .Node.Snippet-Item > *, .Snippet-Item header .Node.Item-Values > *, .Node.List-Group-Actions > *, .Node.List-Params > * {
+  margin-top: 0; }
 
 .Control-Group {
   margin-top: 10px;
@@ -660,10 +703,13 @@ code {
   .Control-Group input,
   .Control-Group select {
     font-weight: 900;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
     border-radius: 5px; }
   .Control-Group textarea {
     font-family: Helvetica, Verdana, sans-serif !important;
-    resize: vertical; }
+    resize: vertical;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    border-radius: 5px; }
   .Control-Group input[type='submit'] + input[type='submit'] {
     margin-left: 15px; }
   .Control-Group + .Control-Group {
@@ -754,7 +800,7 @@ input[type='radio'] {
 .Control-Group input,
 .Control-Group select,
 .Control-Group textarea {
-  border-color: #cccccc;
+  border: 1px #cccccc solid;
   -webkit-transition-property: border-color;
   -moz-transition-property: border-color;
   transition-property: border-color;
@@ -798,20 +844,19 @@ input[type='submit'] {
   margin: 0px;
   border: none !important; }
 
-dl.Tabs dt.Wide {
-  width: 40%; }
 dl.Tabs dt {
+  margin-left: -1px;
+  position: relative;
   display: table;
-  border-top: 2px solid #ec6700;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
   width: 30%;
   float: left;
-  min-height: 65px;
-  position: relative;
-  padding: 10px 0;
-  cursor: pointer;
-  background: #f1f1f1;
-  color: black;
+  min-height: 48px;
+  padding: 5px 0;
+  color: #555555;
   text-align: center;
+  cursor: pointer;
   -webkit-transition-property: background-color, color;
   -moz-transition-property: background-color, color;
   transition-property: background-color, color;
@@ -823,16 +868,19 @@ dl.Tabs dt {
     display: table-cell;
     font-size: 85%; }
   dl.Tabs dt:hover {
-    color: white;
-    background-color: #555555; }
+    background-color: #f1f1f1;
+    border-color: #555555; }
   dl.Tabs dt.Active {
-    color: white;
-    background: #ec6700 !important; }
-  dl.Tabs dt.Disabled {
-    color: #999999;
-    cursor: not-allowed; }
-    dl.Tabs dt.Disabled:hover {
-      background: #555555; }
+    border-color: #ec6700 !important;
+    background-color: #ec6700;
+    color: #fff; }
+  dl.Tabs dt:first-child {
+    border: 1px solid #cccccc;
+    border-radius: 5px 0 0 5px; }
+  dl.Tabs dt.Wide {
+    width: 40%;
+    border: 1px solid #cccccc;
+    border-radius: 0 5px 5px 0; }
 dl.Tabs dd {
   display: none;
   float: right;
@@ -849,13 +897,31 @@ button.Button,
 input.Button,
 a.Button {
   line-height: 24px;
-  color: white; }
+  color: white;
+  -webkit-transition-property: border, background-color, color;
+  -moz-transition-property: border, background-color, color;
+  transition-property: border, background-color, color;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
   button.Button[disabled],
   input.Button[disabled],
   a.Button[disabled] {
     cursor: not-allowed;
     background-color: #999999;
     color: #dedede; }
+  button.Button._Secondary,
+  input.Button._Secondary,
+  a.Button._Secondary {
+    background-color: white;
+    border: 1px solid #dedede;
+    color: #999999; }
+    button.Button._Secondary:hover,
+    input.Button._Secondary:hover,
+    a.Button._Secondary:hover {
+      background-color: #f1f1f1;
+      border-color: #555555;
+      color: black; }
 
 .Message {
   border: 1px solid;
@@ -911,20 +977,9 @@ a.Button {
   .Message.Icon.Info {
     background-image: url(/img/techonline/icon-info.png); }
 
-html,
-body,
-#wrap {
-  height: 100%; }
-
-body > #wrap {
-  height: auto;
-  min-width: 320px;
-  min-height: 100%;
-  clear: both; }
-  body > #wrap > #wrap-stop {
-    height: 100px; }
-
 body {
+  min-width: 320px;
+  background-color: #f1f1f1;
   font-family: 'Exo 2','Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.45;
   font-size: 100%;
@@ -933,40 +988,16 @@ body {
   animation: FadeIn 0.6s; }
   @media all and (max-width: 640px) {
     body {
-      font-size: 85%; } }
+      font-size: 90%; } }
   @media all and (max-width: 1024px) and (min-width: 641px) {
     body {
-      font-size: 90%; } }
+      font-size: 95%; } }
   @media all and (max-width: 1280px) and (min-width: 1025px) {
     body {
       font-size: 100%; } }
   @media all and (max-width: 1920px) and (min-width: 1281px) {
     body {
       font-size: 110%; } }
-
-.Node-Wrap {
-  padding: 20px 0;
-  width: 100%;
-  border-left: 0;
-  border-right: 0;
-  background-color: #dedede; }
-
-.Node {
-  padding: 15px;
-  background-color: white;
-  clear: both; }
-
-.Node + .Node-Wrap {
-  margin-top: 50px; }
-
-.Node > * {
-  margin-top: 20px; }
-
-.Node.Row > *, .Node.Snippet-Item > *, .Snippet-Item header .Node.Item-Values > *, .Node.List-Group-Actions > *, .Node.List-Params > * {
-  margin-top: 0; }
-
-.Node > *:first-child {
-  margin-top: 0; }
 
 .Site-Header {
   background: white;
@@ -1016,13 +1047,37 @@ body {
     .Site-Logo div h2 {
       padding: 5px 0;
       color: #ec6700;
-      font-size: 26px;
       font-weight: 100;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      font-size: 28px; }
+      @media all and (max-width: 640px) {
+        .Site-Logo div h2 {
+          font-size: 23px; } }
+      @media all and (max-width: 1024px) and (min-width: 641px) {
+        .Site-Logo div h2 {
+          font-size: 26px; } }
+      @media all and (max-width: 1280px) and (min-width: 1025px) {
+        .Site-Logo div h2 {
+          font-size: 28px; } }
+      @media all and (max-width: 1920px) and (min-width: 1281px) {
+        .Site-Logo div h2 {
+          font-size: 30px; } }
       .Site-Logo div h2 small {
         display: inline;
-        font-size: 16px;
-        color: black; }
+        color: black;
+        font-size: 16px; }
+        @media all and (max-width: 640px) {
+          .Site-Logo div h2 small {
+            font-size: 12px; } }
+        @media all and (max-width: 1024px) and (min-width: 641px) {
+          .Site-Logo div h2 small {
+            font-size: 14px; } }
+        @media all and (max-width: 1280px) and (min-width: 1025px) {
+          .Site-Logo div h2 small {
+            font-size: 16px; } }
+        @media all and (max-width: 1920px) and (min-width: 1281px) {
+          .Site-Logo div h2 small {
+            font-size: 20px; } }
   .Site-Logo > a {
     z-index: 2;
     position: absolute;
@@ -1054,7 +1109,6 @@ body {
   width: 100%;
   margin-bottom: 20px; }
   .Page-Auth > .Button {
-    margin-top: 4px;
     float: left;
     width: 47.5%;
     font-size: 12px;
@@ -1211,21 +1265,19 @@ ul.Menu-List li {
 .List-Categories.Brands img {
   width: 50px; }
 
-.Comment .Comment-List .Comment-Item:first-child {
+.Comment-List .Comment-Item:first-child {
   margin-top: 0; }
-.Comment .Comment-List .Comment-Item .Item-Vote {
+.Comment-List .Comment-Item .Item-Vote {
   position: relative; }
-.Comment .Comment-List .Comment-Item .Item-Content {
+.Comment-List .Comment-Item .Item-Content {
   overflow: hidden; }
-  .Comment .Comment-List .Comment-Item .Item-Content header h5 .Date {
+  .Comment-List .Comment-Item .Item-Content header h5 .Date {
     margin-left: 30px;
     display: inline-block;
     font-size: 80%;
     color: #cccccc; }
-  .Comment .Comment-List .Comment-Item .Item-Content p {
+  .Comment-List .Comment-Item .Item-Content p {
     width: 75%; }
-.Comment > form {
-  margin-top: 50px; }
 
 footer[role='contentinfo'] {
   position: relative;
@@ -1448,43 +1500,6 @@ ul.Tag-List li.Tag-Item {
 .Vote-Down {
   background: url(../../../../img/techonline/icon-vote-down.png) center center no-repeat; }
 
-li.List-Filter-Subheader {
-  background-color: #dedede; }
-  li.List-Filter-Subheader div {
-    text-align: center;
-    width: 15%;
-    float: left; }
-    li.List-Filter-Subheader div span {
-      padding: 5px 5px 2px;
-      display: block;
-      vertical-align: middle;
-      text-shadow: 1px 1px 1px white;
-      font-weight: bold;
-      color: #555555;
-      font-size: 14px;
-      cursor: pointer; }
-    li.List-Filter-Subheader div span:hover {
-      color: #ec6700; }
-  li.List-Filter-Subheader a {
-    font-size: 1em;
-    font-weight: 100;
-    width: 85%;
-    float: right; }
-
-li.List-Filter-Subcategory ul li {
-  border-top: 1px white solid; }
-  li.List-Filter-Subcategory ul li a {
-    color: black;
-    width: 100%;
-    background-color: #f1f1f1;
-    display: block;
-    padding: 10px;
-    font-size: .9em; }
-    li.List-Filter-Subcategory ul li a:hover {
-      background-color: #dedede; }
-  li.List-Filter-Subcategory ul li:first-child {
-    border-top: 0; }
-
 .Menu-List ul li {
   padding: 10px 0; }
 
@@ -1539,20 +1554,22 @@ li.List-Filter-Subcategory ul li {
       padding: 10px 30px; }
 
 .Filter-Subcategory {
-  background: #f1f1f1;
+  margin: 5px 0;
   display: none; }
-  .Filter-Subcategory ul .Filter-Cities {
-    display: none; }
-  .Filter-Subcategory ul li {
-    border-top: 1px solid #cccccc;
-    display: inline-block;
-    width: 100%; }
-    .Filter-Subcategory ul li a {
-      display: block;
-      padding: 5px 30px;
-      color: black; }
-      .Filter-Subcategory ul li a:hover {
-        background-color: #dedede; }
+  .Filter-Subcategory ul {
+    border-top: 0; }
+    .Filter-Subcategory ul .Filter-Cities {
+      display: none; }
+    .Filter-Subcategory ul li {
+      border-top: 1px solid #f1f1f1;
+      display: inline-block;
+      width: 100%; }
+      .Filter-Subcategory ul li a {
+        display: block;
+        padding: 5px 30px;
+        color: black; }
+        .Filter-Subcategory ul li a:hover {
+          background-color: #dedede; }
 
 .List-Group-Actions {
   margin-top: 20px;
@@ -1585,13 +1602,13 @@ li.List-Filter-Subcategory ul li {
 
 .List-Params {
   margin-top: 20px; }
-  .List-Params li .Control-Group,
-  .List-Params li a {
+  .List-Params li.List-Params-Item .Control-Group,
+  .List-Params li.List-Params-Item a {
     display: block;
     padding: 10px 30px;
     color: black !important; }
-    .List-Params li .Control-Group:hover,
-    .List-Params li a:hover {
+    .List-Params li.List-Params-Item .Control-Group:hover,
+    .List-Params li.List-Params-Item a:hover {
       background-color: #f1f1f1; }
 
 .ui-widget-header {
@@ -1770,7 +1787,7 @@ li.List-Filter-Subcategory ul li {
     float: left;
     width: 15%;
     padding: 0 10px;
-    margin: 0; }
+    margin: 1px 0 0 0; }
     .Page-Auth > .Button {
       margin-top: 2px;
       float: none;
@@ -1816,7 +1833,7 @@ li.List-Filter-Subcategory ul li {
     width: 70%; }
 
   .Page-Auth {
-    margin-top: 10px;
+    margin-top: 15px;
     width: 25%; }
     .Page-Auth > .Button {
       width: 47.5%;
@@ -1832,7 +1849,7 @@ li.List-Filter-Subcategory ul li {
     display: block; }
 
   .Filter-Subcategory ul li {
-    width: 33%; }
+    width: 33.33%; }
     .Filter-Subcategory ul li a {
       font-size: 13px; } }
 @media all and (min-width: 2560px) {

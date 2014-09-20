@@ -11,11 +11,14 @@
 	input ,
 	select {
 		font-weight: 	900;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.15) inset;
 		@include Round('all', $Control-Border-Radius);
 	}
 	textarea {
 		font-family: $Font-Family-Verdana;
 		resize: vertical;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.15) inset;
+		@include Round('all', $Control-Border-Radius);
 	}
 
 	// Отступ между двумя кнопками в ряд
@@ -158,7 +161,7 @@ input[type='radio']     {
 .Control-Group input        ,
 .Control-Group select       ,
 .Control-Group textarea     {
-  border-color: $Control-Border-Color;
+  border: $Control-Border-Width $Control-Border-Color solid;
 	@include Transition(border-color, .5s);
 }
 .Control-Group input:focus   ,
@@ -214,41 +217,47 @@ input[type='submit'] {
 
 dl.Tabs {
 	@extend ._Clearfix;
-	dt.Wide {
-		width: 40%;
-	}
+
 	dt {
-		display: table;
-		border-top: 2px solid $clr-main;
-		width: 30%;
-		float: left;
-		min-height: 65px;
-		position: relative;
-		padding: $size-s 0;
-		cursor: pointer;
-		background: $clr-grey-lighter;
-		color: black;
-		text-align: center;
+		margin-left: -1px;
+		position: 		relative;
+		display: 		table;
+		border-top:		1px solid $clr-grey;
+		border-bottom:	1px solid $clr-grey;
+		width: 			30%;
+		float: 			left;
+		min-height: 	48px;
+		padding: 		$size-xs 0;
+		color: 			$clr-grey-darker;
+		text-align: 	center;
+		cursor: 		pointer;
+
 		@include Transition(#{background-color, color}, 0.5s);
+
 		& > span {
-			vertical-align: middle;
-			display: table-cell;
-			font-size: 85%;
+			vertical-align: 	middle;
+			display: 			table-cell;
+			font-size: 			85%;
 		}
+
 		&:hover {
-			color: white;
-			background-color: $clr-grey-darker;
+			background-color: $clr-grey-lighter;
+			border-color: $clr-grey-darker;
 		}
+
 		&.Active {
-			color: white;
-			background: $clr-main!important;
+			border-color: $clr-main!important;
+			background-color: $clr-main;
+			color: #fff;
 		}
-		&.Disabled {
-			color: $clr-grey-dark;
-			cursor: not-allowed;
-			&:hover {
-				background: $clr-grey-darker;
-			}
+		&:first-child {
+			border: 1px solid $clr-grey;
+			@include Round(left, $Control-Border-Radius);
+		}
+		&.Wide {
+			width: 40%;
+			border: 1px solid $clr-grey;
+			@include Round(right, $Control-Border-Radius);
 		}
 	}
 	dd {
@@ -275,7 +284,7 @@ a.Button      {
 	line-height: $line-height;
 	color: white;
 	@extend ._Button;
-
+	@include Transition(#{border,background-color,color}, .3s);
 	&[disabled] {
 		cursor: not-allowed;
 		background-color: $clr-grey-dark;
@@ -284,5 +293,15 @@ a.Button      {
 
 	&.Search {
 		@extend ._Search;
+	}
+	&._Secondary {
+		background-color: white;
+		border: $Control-Border-Width solid $clr-grey-light;
+		color: $clr-grey-dark;
+		&:hover {
+			background-color: $clr-grey-lighter;
+			border-color: $clr-grey-darker;
+			color: black
+		}
 	}
 }

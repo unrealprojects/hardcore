@@ -13,7 +13,6 @@
 
 <!-- ФИЛЬТР -->
 @include('frontend.site_techonline.layouts.filter.MainPageFilter');
-
 <!-- КАТАЛОГ СТРОЙТЕХНИКИ::КАТЕГОРИИ C КАРТИНКАМИ-->
 <section class="Node Row">
 
@@ -21,7 +20,7 @@
 
     <ul class="Row Merge List-Categories Icons">
         @foreach($content['categories'] as $category)
-            <li class="Grid XS-6 SM-3"><img src="{{$category['logo']}}"><a href="/catalog/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
+            <li class="XS-6 SM-3"><img src="{{$category['logo']}}"><a href="/catalog/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
         @endforeach
     </ul>
 
@@ -32,26 +31,26 @@
 <!-- АРЕНДА СТРОЙТЕХНИКИ::КАТЕГОРИИ -->
     <div class="Node Row Merge">
 
-        <div class="Grid XS-7">
+        <div class="XS-7">
 
             <h3 class="Heading Underlined">Аренда стройтехники</h3>
 
             <ul class="List-Categories Row Merge">
                 @foreach($content['categories'] as $category)
-                <li class="Grid XS-6"><a href="/rent/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
+                <li class="XS-6"><a href="/rent/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
                 @endforeach
             </ul>
 
         </div>
 
         <!-- АРЕНДА СТРОЙТЕХНИКИ::БРЕНДЫ -->
-        <div class="Grid XS-5">
+        <div class="XS-5">
 
             <h3 class="Heading Underlined">Производители</h3>
 
             <ul class="List-Categories Row Merge">
                 @foreach($content['filter']['brands'] as $brand)
-                <li class="Row Merge Grid XS-6">
+                <li class="XS-6">
                     <a href="/rent/?brand=$brand['alias']" alt="{{$brand['name']}}">
                         {{$brand['name']}}
                     </a>
@@ -71,7 +70,7 @@
 
     <ul class="List Snippets Row Split">
         @foreach($content['sellers'] as $seller)
-        <li class="List-Item Grid XS-6 HG-4">
+        <li class="XS-6 HG-4 List-Item">
             <header>
                 <h5 class="Item-Title">
                     <a href="/sellers/{{$seller['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$seller['name']}}</a>
@@ -103,7 +102,7 @@
 
     <ul class="List Snippets Row Split">
         @foreach($content['news'] as $new)
-        <li class="List-Item Grid XS-6">
+        <li class="List-Item XS-6">
             <header>
                 <h5 class="Item-Title">
                     <a href="/news/{{$new['metadata']['alias']}}" alt=" {{$seller['name']}}">{{$new['name']}}</a>

@@ -1,0 +1,62 @@
+// PAGE WRAP
+// Makes Page-Footer stick to end of the page
+html		,
+body		,
+#Page-Wrap  {
+	height: 		100%;
+}
+
+// This block must wrap all content, excluding Page-Footer
+#Page-Wrap  {
+	height: 		auto;
+	min-height:		100%;
+	clear: 			both;
+}
+// This block must be the last in #Page-Wrap block before footer
+#Page-Wrap-Stop {
+	height: 		$Page-Footer-Height;
+}
+
+
+
+// *********************************************************************************************************************
+// NODES
+// *********************************************************************************************************************
+// Nodes are designed to contain sections of content separately.
+
+// Node Wrap is designed to divide page into horizontally oriented sections
+.Node-Wrap {
+	padding: $Node-Wrap-Padding 0;
+	width: 100%;
+}
+.Node {
+	padding: 			$Node-Padding;
+	background-color: 	white;
+	clear: 				both;
+
+	@extend 			._Centered;
+	@extend 			._Standalone;
+	@extend 			._Section-Inner;
+	@extend 			._Clearfix;
+	@extend 			._Soft_Shadow;
+}
+
+// Внутренние элементы нода отступают друг от друга
+.Node + .Node-Wrap {
+	margin-top: $section-gap;
+}
+
+// Margin between NODES
+.Node > * {
+	margin-top: $size;
+}
+
+// Убирает отступ у первого элемента в ноде
+.Node > *:first-child {
+	margin-top: 0;
+}
+
+// NODES don't need inner margins if children are GRID-positioned
+.Node.Row > * {
+	margin-top: 0;
+}

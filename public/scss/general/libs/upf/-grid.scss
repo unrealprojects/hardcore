@@ -1,10 +1,11 @@
-// UPF Grid Module v.4
+// UPF Grid Module v.4.1
 
 // CHANGELOG:
-// v.1	Base features
-// v.2	Split/Merge
-// v.3 	Media Queries
-// v.4  Advanced Media Queries: XS, SM, MD, LR, HG classes.
+// v.1		Base features
+// v.2		Split/Merge
+// v.3 		Media Queries
+// v.4      Advanced Media Queries: XS, SM, MD, LR, HG classes.
+// v.4.1 	.Grid is deprecated
 
 // Grid row. Nothing to see here
 .Row {
@@ -12,11 +13,10 @@
 	@extend ._Clearfix;
 
 }
+
 ul.Row > li {
 	@extend ._No-Bullets;
 }
-
-
 
 @media all and (min-width: $Screen-Size-Tiny) {
 	// Rows in Splitted grid must have gutter from both sides.
@@ -26,12 +26,20 @@ ul.Row > li {
 	}
 
 	// Makes grid nodes inline
-	.Grid {
+	[class*='XS-']		,
+	[class*='SM-']		,
+	[class*='MD-']		,
+	[class*='LR-']		,
+	[class*='HG-']		{
 		float: left;
 	}
 
 	// End of Grid row. Pushing grid node to right
-	.Grid.End {
+	[class*='XS-'].End	,
+	[class*='SM-'].End	,
+	[class*='MD-'].End	,
+	[class*='LR-'].End	,
+	[class*='HG-'].End	{
 		float: right;
 	}
 

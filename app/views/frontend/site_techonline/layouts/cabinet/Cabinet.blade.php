@@ -3,7 +3,7 @@
 @section('main')
 <!-- Личный Кабинет -->
 <div class="Node Row Split" xmlns="http://www.w3.org/1999/html">
-    <aside class="Grid Three">
+    <aside class="XS-3">
         <h4 class="Section-Header">Личный Кабинет</h4>
 
         <nav class="Menu-List">
@@ -15,7 +15,7 @@
         </nav>
     </aside>
 
-    <form class="Form-Horizontal Grid Nine">
+    <form class="Form-Horizontal XS-9">
         <h4 class="Header-Column">Редактировать данные</h4>
 
         <div class="Control-Group">
@@ -51,8 +51,8 @@
         <div class="Control-Group Smart">
             <label for="Cabinet-Website">Вебсайт организации</label>
             <div class="Input-Smart Row Merge">
-                <span class="Two Prefix">http://</span>
-                <input class="Six" id="Cabinet-Website" name="website" type="text" value="{{$content['item']['website']}}"/>
+                <span class="XS-2 Prefix">http://</span>
+                <input class="XS-10" id="Cabinet-Website" name="website" type="text" value="{{$content['item']['website']}}"/>
             </div>
         </div>
 

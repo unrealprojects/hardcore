@@ -25,8 +25,8 @@
         </nav>
 
         <div class="Page-Auth">
-            <button class="Button _Rounded Sign-In">Войти</button>
-            <button class="Button _Rounded Sign-Up">Регистрация</button>
+            <button class="Button _Secondary _Rounded Sign-In">Войти</button>
+            <button class="Button _Secondary _Rounded Sign-Up">Регистрация</button>
 
             <div class="Sign-In-UI" style="display:none;">
                 <form class="Form-Horizontal" action="">
