@@ -3,6 +3,7 @@
 	margin-top: 		$size-s;
 	width: 100%;
 	@extend 			._Clearfix;
+	@extend 			._Unselectable;
 
 	&:first-child {
 		margin-top: 	0;
@@ -216,6 +217,7 @@ input[type='submit'] {
 }
 
 dl.Tabs {
+	clear: both;
 	@extend ._Clearfix;
 
 	dt {

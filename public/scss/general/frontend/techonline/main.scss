@@ -674,6 +674,7 @@ img.Footer-Img {
 	width: 100%;
 	padding: $size-s;
 	font-size: 80%;
+	@extend ._Right;
 	@extend ._No-Bullets;
 	@include Animation(FadeIn,1s);
 	li {
@@ -875,7 +876,6 @@ ul.Tag-List {
 	border-left: 1px solid white;
 	width: 100%;
 	@extend .XS-4;
-
 	.Control-Group,
 	a {
 		display: block;
@@ -897,6 +897,28 @@ ul.Tag-List {
 	}
 	&:first-child {
 		border: 0;
+	}
+}
+.Spoiler {
+	margin-top: $size-n;
+	border: 1px solid $clr-grey;
+	@include Round(all, $Control-Border-Radius);
+	&:hover {
+		border-color: $clr-grey-dark;
+	}
+
+	.Spoiler-Caption {
+		display: block;
+		color: $clr-grey-darker;
+		padding: $size-s $size-s $size-s $size-l;
+		background: url(../../../../img/techonline/icon-vote-down.png) 15px center no-repeat;
+	}
+	.Spoiler-Content {
+		display: none;
+		@include Animation(SlideDown,.8s);
+		li {
+			@include Animation(FadeIn,.5s);
+		}
 	}
 }
 

@@ -35,7 +35,7 @@
   float: left; }
 
 ._Right, .Control-Group.Offset input[type='submit'],
-.Control-Group.Offset button.Button, footer[role='contentinfo'] > div .Footer-Navigation, .Filter-Result li .Delete {
+.Control-Group.Offset button.Button, footer[role='contentinfo'] > div .Footer-Navigation, .Filter-Result, .Filter-Result li .Delete {
   float: right; }
 
 ._Dev {
@@ -140,7 +140,7 @@ input.Button.Search,
 a.Button.Search {
   border-radius: 30px; }
 
-._Unselectable, .Heading, .Control-Group span, .Site-Header, .Page-Auth .Sign-In-UI,
+._Unselectable, .Heading, .Control-Group, .Control-Group span, .Site-Header, .Page-Auth .Sign-In-UI,
 .Page-Auth .Sign-Up-UI, #Page-Slider, .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item:before {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -844,54 +844,56 @@ input[type='submit'] {
   margin: 0px;
   border: none !important; }
 
-dl.Tabs dt {
-  margin-left: -1px;
-  position: relative;
-  display: table;
-  border-top: 1px solid #cccccc;
-  border-bottom: 1px solid #cccccc;
-  width: 30%;
-  float: left;
-  min-height: 48px;
-  padding: 5px 0;
-  color: #555555;
-  text-align: center;
-  cursor: pointer;
-  -webkit-transition-property: background-color, color;
-  -moz-transition-property: background-color, color;
-  transition-property: background-color, color;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  transition-duration: 0.5s; }
-  dl.Tabs dt > span {
-    vertical-align: middle;
-    display: table-cell;
-    font-size: 85%; }
-  dl.Tabs dt:hover {
-    background-color: #f1f1f1;
-    border-color: #555555; }
-  dl.Tabs dt.Active {
-    border-color: #ec6700 !important;
-    background-color: #ec6700;
-    color: #fff; }
-  dl.Tabs dt:first-child {
-    border: 1px solid #cccccc;
-    border-radius: 5px 0 0 5px; }
-  dl.Tabs dt.Wide {
-    width: 40%;
-    border: 1px solid #cccccc;
-    border-radius: 0 5px 5px 0; }
-dl.Tabs dd {
-  display: none;
-  float: right;
-  margin: 60px 0 0 -100%;
-  position: relative;
-  width: 100%;
-  z-index: 2; }
-  dl.Tabs dd.Active {
-    display: block; }
-  dl.Tabs dd > div {
-    padding: 20px 0; }
+dl.Tabs {
+  clear: both; }
+  dl.Tabs dt {
+    margin-left: -1px;
+    position: relative;
+    display: table;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    width: 30%;
+    float: left;
+    min-height: 48px;
+    padding: 5px 0;
+    color: #555555;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition-property: background-color, color;
+    -moz-transition-property: background-color, color;
+    transition-property: background-color, color;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-duration: 0.5s; }
+    dl.Tabs dt > span {
+      vertical-align: middle;
+      display: table-cell;
+      font-size: 85%; }
+    dl.Tabs dt:hover {
+      background-color: #f1f1f1;
+      border-color: #555555; }
+    dl.Tabs dt.Active {
+      border-color: #ec6700 !important;
+      background-color: #ec6700;
+      color: #fff; }
+    dl.Tabs dt:first-child {
+      border: 1px solid #cccccc;
+      border-radius: 5px 0 0 5px; }
+    dl.Tabs dt.Wide {
+      width: 40%;
+      border: 1px solid #cccccc;
+      border-radius: 0 5px 5px 0; }
+  dl.Tabs dd {
+    display: none;
+    float: right;
+    margin: 60px 0 0 -100%;
+    position: relative;
+    width: 100%;
+    z-index: 2; }
+    dl.Tabs dd.Active {
+      display: block; }
+    dl.Tabs dd > div {
+      padding: 20px 0; }
 
 button.Button,
 input.Button,
@@ -1599,6 +1601,27 @@ ul.Tag-List li.Tag-Item {
         background-image: url(../../../../img/techonline/icon-backward.png); }
   .Item-Group-Actions:first-child {
     border: 0; }
+
+.Spoiler {
+  margin-top: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 5px; }
+  .Spoiler:hover {
+    border-color: #999999; }
+  .Spoiler .Spoiler-Caption {
+    display: block;
+    color: #555555;
+    padding: 10px 10px 10px 30px;
+    background: url(../../../../img/techonline/icon-vote-down.png) 15px center no-repeat; }
+  .Spoiler .Spoiler-Content {
+    display: none;
+    -webkit-animation: SlideDown 0.8s;
+    -moz-animation: SlideDown 0.8s;
+    animation: SlideDown 0.8s; }
+    .Spoiler .Spoiler-Content li {
+      -webkit-animation: FadeIn 0.5s;
+      -moz-animation: FadeIn 0.5s;
+      animation: FadeIn 0.5s; }
 
 .List-Params {
   margin-top: 20px; }

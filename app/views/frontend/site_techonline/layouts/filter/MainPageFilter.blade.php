@@ -119,16 +119,20 @@
                             </label>
                         </li>
                     </ul>
-                    <ul class="List-Params  Accordion-Brands">
-                        @foreach($content['filter']['brands'] as $brand)
-                        <li class="Item-Group-Actions">
-                            <label class="Control-Group">
-                                <input type="checkbox" checked="checked" foreign="{{$brand['foreign']}}" name="{{$brand['alias']}}" id="brand_{{$brand['alias']}}"/>
-                                <span for="brand_{{$brand['alias']}}" >{{$brand['name']}}</span>
-                            </label>
-                        </li>
-                        @endforeach
-                    </ul>
+                    <div class="Spoiler">
+                        <a href="#" class="Spoiler-Caption">Конкретные производители</a>
+
+                        <ul class="List-Params  Accordion-Brands Spoiler-Content">
+                            @foreach($content['filter']['brands'] as $brand)
+                            <li class="Item-Group-Actions XS-6 LR-4">
+                                <label class="Control-Group">
+                                    <input type="checkbox" checked="checked" foreign="{{$brand['foreign']}}" name="{{$brand['alias']}}" id="brand_{{$brand['alias']}}"/>
+                                    <span for="brand_{{$brand['alias']}}" >{{$brand['name']}}</span>
+                                </label>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </form>
             </div>
         </dd>
