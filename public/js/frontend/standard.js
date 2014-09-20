@@ -1,17 +1,19 @@
 (function($){
     $(document).ready(function(){
 
-        /* fancybox */
-        $(".fancybox").fancybox({
-                 type: "image",
-                 helpers: {
-                     overlay: {
-                         locked: false
-                     }
-                 }
-            });
-
         window.UP={};
+
+        /* Fancybox */
+        $(".fancybox").fancybox({
+             type: "image",
+             helpers: {
+                 overlay: {
+                     locked: false
+                 }
+             }
+        });
+
+
 
         /* Spoiler */
         $('.Spoiler-Caption').click(function(){
@@ -34,9 +36,8 @@
 
         /* Табы */
         $("dl.Tabs dt").click(function(){
-            $(this)
-                .siblings().removeClass("Active").end()
-                .next("dd").andSelf().addClass("Active");
+            $(this).siblings().removeClass("Active").end()
+                   .next("dd").andSelf().addClass("Active");
         });
 
     });
