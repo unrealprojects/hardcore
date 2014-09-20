@@ -196,10 +196,6 @@
             });
 
 /*********************************************************************************************************************** Таб :: Параметры :: Бренды ***/
-            $('.Spoiler-Caption').click(function(){
-                $(this).parent().find('.Spoiler-Content').slideToggle();
-            });
-
             /*** Перебор всех чекбоксов ***/
             function checkedBrands(){
                 var all_selected=true,

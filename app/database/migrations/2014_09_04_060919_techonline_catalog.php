@@ -334,7 +334,8 @@ class TechonlineCatalog extends Migration {
                 'Putzmeister',
                 'Brinkmann',
                 'Zettelmeyer',
-                'Vicon'
+                'Vicon',
+                'IHI'
             ];
 
         foreach($brands as $brand){
