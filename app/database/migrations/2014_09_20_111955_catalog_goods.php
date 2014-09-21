@@ -82,7 +82,7 @@ class CatalogGoods extends Migration {
         $catalog_rent = new \Model\General\TechOnline\CatalogTech();
 
         $catalog_rent->name = 'Сдам в аренду Мини самосвал EG110R';
-        $catalog_rent->rate = '4000 руб/ч';
+        $catalog_rent->price = '4000';
 
         /* update metadata */
         $meta_data = new \Model\General\MetaData();
@@ -117,7 +117,7 @@ class CatalogGoods extends Migration {
 
         $catalog_rent = new \Model\General\TechOnline\CatalogTech();
         $catalog_rent->name = 'Сдам EG110R';
-        $catalog_rent->rate = '1000 руб/ч';
+        $catalog_rent->price = '1000';
 
         /* update metadata */
         $meta_data = new \Model\General\MetaData();
@@ -152,6 +152,7 @@ class CatalogGoods extends Migration {
         $catalog_rent->opacity_id=2;
         $catalog_rent->active=true;
         $catalog_rent->save();
+
         /*************************************************************************************************************** модель 2*/
         $catalog_base = new \Model\General\TechOnline\CatalogBase();
         $catalog_base->model = 'EG40R';
@@ -222,7 +223,7 @@ class CatalogGoods extends Migration {
 
         $catalog_rent = new \Model\General\TechOnline\CatalogTech();
         $catalog_rent->name = 'Сдам EG40R';
-        $catalog_rent->rate = '1000 руб/ч';
+        $catalog_rent->price = '1000';
 
         /* update metadata */
         $meta_data = new \Model\General\MetaData();
@@ -263,7 +264,7 @@ class CatalogGoods extends Migration {
 
         $catalog_rent = new \Model\General\TechOnline\CatalogTech();
         $catalog_rent->name = 'EG40R';
-        $catalog_rent->rate = '1240 руб/ч';
+        $catalog_rent->price = '1240';
 
         /* update metadata */
         $meta_data = new \Model\General\MetaData();
@@ -374,7 +375,7 @@ class CatalogGoods extends Migration {
 
         $catalog_rent = new \Model\General\TechOnline\CatalogTech();
         $catalog_rent->name = 'Сдаю думпер EG70R';
-        $catalog_rent->rate = '1240 руб/ч';
+        $catalog_rent->price = '1240';
 
         /* update metadata */
         $meta_data = new \Model\General\MetaData();
@@ -413,7 +414,7 @@ class CatalogGoods extends Migration {
 
         $catalog_rent = new \Model\General\TechOnline\CatalogTech();
         $catalog_rent->name = 'Думпер EG40R';
-        $catalog_rent->rate = '2300 руб/ч';
+        $catalog_rent->price = '2300';
 
         /* update metadata */
         $meta_data = new \Model\General\MetaData();

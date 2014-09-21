@@ -42,7 +42,7 @@ class CatalogTech extends TechOnline {
     public function getList($filter){
         $this->filter = $filter;
 
-        return $this::with('model',
+      $query = $this::with('model',
                            'model.category',
                            'model.brand',
                            'model.metadata',
@@ -54,36 +54,47 @@ class CatalogTech extends TechOnline {
                            'admin',
                            'admin.metadata',
                            'metadata')
+            /*** Фильтр в Категориях ***/
             ->whereHas('model', function($query) {
                 if($this->filter['category']){
                     $query->whereHas('category',function($query){
-                        $categories = new \Model\General\Categories();
-                        $category = $categories->where('parent_id',0)->where('alias',$this->filter['category'])->first();
-                        if($category){
-                            $parents = $categories->where('parent_id',$category->id)->get()->toArray();
-                            foreach($parents as $value){
-                                $keys[]=$value['id'];
-                            }
-                            $query->whereIn('id', $keys);
-                        }
-
-                        $query->where('alias', $this->filter['category']);
+                       \Model\General\Categories::filterSubCategories($query,$this->filter['category']);
                     });
                 }
             })
-            ->whereHas('model', function($query) {
-                if($this->filter['brand']){
-                    $query->whereHas('brand',function($query){
-                        $query->where('alias', $this->filter['brand']);
-                    });
-                }
-            })
+            /*** Фильтр в Регионах ***/
             ->whereHas('region', function($query) {
                 if($this->filter['region']){
-                    $query->where('alias', $this->filter['region']);
+                    \Model\General\TechOnline\CatalogRegion::filterSubRegions($query,$this->filter['region']);
                 }
             })
-            ->paginate(5);
+            /*** Фильтр по Поизводителям ***/
+            ->whereHas('model', function($query) {
+                if($this->filter['brands']){
+                    $query->whereHas('brand',function($query){
+                        $query->whereIn('alias', $this->filter['brands']);
+                    });
+                }
+            })
+            /*** Фильтр по Параметрам ***/
+            ->whereHas('model', function($query) {
+                if($this->filter['params']){
+                    $query->whereHas('params_values',function($query){
+                        foreach($this->filter['params'] as $ket => $param){
+                                $query->where('param_id',$param['id'])
+                                      ->where('value','>=',$param['min-value'])
+                                      ->where('value','<=',$param['max-value']);
+                        }
+                    });
+                }
+            })
+            ->orderBy('created_at','desk');
+    if($this->filter['price-max'] && $this->filter['price-min']){
+        $query = $query->where('price','>=',$this->filter['price-min'])
+                 ->where('price','<=',$this->filter['price-max']);
+    }
+
+        return $query->paginate(5);
     }
 
     public function getElement($alias){
