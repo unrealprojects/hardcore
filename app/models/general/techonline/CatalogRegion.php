@@ -39,7 +39,6 @@ class CatalogRegion extends TechOnline {
             }
         }
 
-
         /* Формирование регионов и городов */
         for($region_id=1;$region_id<=4;$region_id++){
             $sorted[$region_id]['name']=$regions[$region_id]['name'];
@@ -58,8 +57,22 @@ class CatalogRegion extends TechOnline {
                 }
             }
         }
-//        print_r($sorted);
-//        exit;
         return $sorted;
+    }
+
+    /*** Фильтр :: Получение вложенных категорий при поиске ***/
+    public static function filterSubRegions($query,$alias){
+        $regions = new \Model\General\TechOnline\CatalogRegion();
+        $region = $regions->where('parent_id',0)->where('alias',$alias)->first();
+
+        if($region){
+            $parents = $regions->where('parent_id',$region->id)->get()->toArray();
+            foreach($parents as $value){
+                $keys[]=$value['id'];
+            }
+            $query->whereIn('id', $keys)->whereOr('alias', $alias);
+        }else{
+            $query->where('alias', $alias);
+        }
     }
 }

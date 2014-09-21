@@ -20,6 +20,8 @@ class Categories extends General{
             ->first();
     }
 
+
+
     /* Создание двухуровневых вложений */
     static public function toSubCategories($withPopular=false){
        $instance = new static;
@@ -37,9 +39,7 @@ class Categories extends General{
             $i++;
         }
 
-
         /* Формирование подкатегорий */
-
        foreach($categories as $key=>&$category){
            if($category['parent_id']==0){
                $sorted[]=$category;
@@ -54,5 +54,21 @@ class Categories extends General{
            }
        }
        return $sorted;
+    }
+
+    /*** Получение вложенных категорий при поиске ***/
+    public static function filterSubCategories($query,$alias){
+
+        $categories = new \Model\General\Categories();
+        $category = $categories->where('parent_id',0)->where('alias',$alias)->first();
+        if($category){
+            $parents = $categories->where('parent_id',$category->id)->get()->toArray();
+            foreach($parents as $value){
+                $keys[]=$value['id'];
+            }
+            $query->whereIn('id', $keys)->whereOr('alias', $alias);
+        }else{
+            $query->where('alias', $alias);
+        }
     }
 }

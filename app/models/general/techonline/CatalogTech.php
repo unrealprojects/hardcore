@@ -54,35 +54,30 @@ class CatalogTech extends TechOnline {
                            'admin',
                            'admin.metadata',
                            'metadata')
+            /*** Фильтр в Категориях ***/
             ->whereHas('model', function($query) {
                 if($this->filter['category']){
                     $query->whereHas('category',function($query){
-                        $categories = new \Model\General\Categories();
-                        $category = $categories->where('parent_id',0)->where('alias',$this->filter['category'])->first();
-                        if($category){
-                            $parents = $categories->where('parent_id',$category->id)->get()->toArray();
-                            foreach($parents as $value){
-                                $keys[]=$value['id'];
-                            }
-                            $query->whereIn('id', $keys);
-                        }
-
-                        $query->where('alias', $this->filter['category']);
+                       \Model\General\Categories::filterSubCategories($query,$this->filter['category']);
                     });
                 }
             })
-            ->whereHas('model', function($query) {
-                if($this->filter['brand']){
-                    $query->whereHas('brand',function($query){
-                        $query->where('alias', $this->filter['brand']);
-                    });
-                }
-            })
+            /*** Фильтр в Регионах ***/
             ->whereHas('region', function($query) {
                 if($this->filter['region']){
-                    $query->where('alias', $this->filter['region']);
+                    \Model\General\TechOnline\CatalogRegion::filterSubRegions($query,$this->filter['region']);
                 }
             })
+            /*** Фильтр по Поизводителям ***/
+            ->whereHas('model', function($query) {
+                if($this->filter['brands']){
+                    $query->whereHas('brand',function($query){
+//                        print_r($this->filter['brands']);
+                        $query->whereIn('alias', $this->filter['brands']);
+                    });
+                }
+            })
+            ->orderBy('created_at','desk')
             ->paginate(5);
     }
 

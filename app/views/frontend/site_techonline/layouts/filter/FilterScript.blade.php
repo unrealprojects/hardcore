@@ -9,6 +9,7 @@
             var item=value.split('=');
             searchArray[item[0]]=item[1];
         });
+        delete searchArray['page'];
     }
 
     if(searchArray['region']){
@@ -21,6 +22,19 @@
         addToFilterSelected($('[alias='+searchArray['category']+']'),'Category');
         changeTab('.Tab-Params',false);
     }
+
+
+    /* Проверка Checkbox*/
+    var findBrands = false;
+    for(var i=0;i<100;i++){
+         if(!findBrands && searchArray["brands["+i+"]"]){
+             $('input[type=checkbox]').prop('checked',false);
+             findBrands=true;
+         }
+         $('input[name='+searchArray["brands["+i+"]"]).prop('checked',true);
+         $('input[name='+searchArray["brands%5B"+i+"%5D"]).prop('checked',true);
+    }
+    checkedBrands();
 
     $(document).on('click','.Filter a',function(){return false;});
 /*********************************************************************************************************************** HELPER ***/
@@ -86,7 +100,6 @@
             scrollToTabs();
         }
     }
-
 
 /*********************************************************************** Таб :: Региионы ***/
 
@@ -206,6 +219,7 @@
                             foreign_all_selected=false;
                         }
                         delete searchArray['brands['+key+']'];
+                        delete searchArray[["brands%5B"+key+"%5D"]];
                     }
                 });
 
@@ -276,9 +290,9 @@
                 values: [ 100, 50000 ],
                 slide: function( event, ui ) {
                     $("#Slider-Range-Value-1").text(ui.values[ 0 ] + "руб. - " + ui.values[ 1 ] +"руб.");
-                    searchArray['[params][price][min-value]']=ui.values[ 0 ];
-                    searchArray['[params][price][max-value]']= ui.values[ 1 ];
-                    searchArray['[params][price][alias]В']='price';
+                    searchArray['params[price][min-value]']=ui.values[ 0 ];
+                    searchArray['params[price][max-value]']= ui.values[ 1 ];
+                    searchArray['params[price][alias]']='price';
                 }
             });
 
@@ -295,7 +309,7 @@
                 }
             });
             location.href='rent'+searchString;
-              //console.log('rent'+searchString);
+              console.log('rent'+searchString);
         }
         $('#Filter-Search').click(function(){
             filterSearch();

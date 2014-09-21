@@ -7,8 +7,9 @@ class CatalogTechController extends TechonlineController{
         /* ФИЛЬТРАЦИЯ */
         $filter = [
             'category' => \Input::get('category')?:false,
-            'brand' => \Input::get('brand')?:false,
-            'region' => \Input::get('region')?:false
+            'brands' => \Input::get('brands')?:false,
+            'region' => \Input::get('region')?:false,
+            'params' => \Input::get('params')?:false,
         ];
 
         /* МОДЕЛЬ */
@@ -22,6 +23,7 @@ class CatalogTechController extends TechonlineController{
 
 //        print_r($CatalogTechList->toArray()['data']);
 //        exit;
+        $paramFilters = new \Model\General\Categories();
 
         /* ДАННЫЕ ВИД */
         $this->viewData['content'] = [
@@ -31,10 +33,10 @@ class CatalogTechController extends TechonlineController{
                 'categories_list'=>\Model\General\Categories::all(),
                 'regions'=>\Model\General\TechOnline\CatalogRegion::toSubRegions(true),
                 'regions_list'=>\Model\General\TechOnline\CatalogRegion::all(),
-
                 'has_params'=>true,
+                'params'=>$paramFilters
             ],
-            'pagination' => $CatalogTechList->links(),
+            'pagination' => $CatalogTechList->appends(\Input::except('page'))->links(),
             'list' => $CatalogTechList->toArray()['data'],
             'template' => 'content',
             'categories' => \Model\General\Categories::toSubCategories(),
