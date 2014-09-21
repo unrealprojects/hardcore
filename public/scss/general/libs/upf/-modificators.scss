@@ -118,15 +118,15 @@
 }
 ._Button {
 	padding: 				$size-n $size;
-	border: 				1px solid $clr-main;
-	background-color: 		$clr-main;
+	border: 				1px solid $Clr-Main;
+	background-color: 		$Clr-Main;
 	font-weight: 			100;
 	color: 					#fff;
 	cursor: 				pointer;
 	@include 				Transition(background, .3s);
 
 	&:hover {
-		background-color: 	$clr-main-dark;
+		background-color: 	$Clr-Main-Dark;
 	}
 	&._Rounded {
 		@include Round(all, $Control-Border-Radius);
@@ -155,4 +155,7 @@
 	-ms-user-select: 		none;
 	-o-user-select: 		none;
 	user-select: 			none;
+}
+%_Clickable {
+	cursor:					pointer;
 }

@@ -8,16 +8,16 @@ html {
 }
 a:link	  ,
 a:visited {
-	color: $clr-main;
+	color: $Clr-Main;
 	text-decoration: none;
 	@include Transition(#{color, background, border} , .3s);
 }
 
 a:hover {
-	color: $clr-grey-darker;
+	color: $Clr-Grey-Darker;
 }
 a:active {
-	color: $clr-main;
+	color: $Clr-Main;
 }
 
 h1 {	font-size: 3.00em;		}
@@ -30,12 +30,12 @@ h6 {	font-size: 0.90em;		}
 hr {
 	height: 1px;
 	border: 0;
-	border-bottom: 1px solid $clr-grey-light;
-	color: $clr-grey-light;
+	border-bottom: 1px solid $Clr-Grey-Light;
+	color: $Clr-Grey-Light;
 }
 code {
-  background-color: $clr-grey-light;
-  border-left: $size solid $clr-grey;
+  background-color: $Clr-Grey-Light;
+  border-left: $size solid $Clr-Grey;
   font-family: "Courier New", monospace;
   display: block;
   padding: $size-s $size;
@@ -66,6 +66,6 @@ code {
 .Heading.Underlined {
 	display: block;
 	padding-bottom: $size-s;
-	border-bottom: 1px solid $clr-grey;
+	border-bottom: 1px solid $Clr-Grey;
 	font-weight: 100;
 }

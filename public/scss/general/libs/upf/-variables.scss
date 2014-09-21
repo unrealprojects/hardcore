@@ -5,24 +5,15 @@ $Screen-Size-Small:		1024px;
 $Screen-Size-Tiny:		768px;
 
 $Grid-Gutter:			2%;
-$Grid-One-Width:		(100% - (12 * $Grid-Gutter)) / 12;
-$Grid-Two-Width:		($Grid-One-Width * 2) + (1 * $Grid-Gutter);
-$Grid-Three-Width:		($Grid-One-Width * 3) + (2 * $Grid-Gutter);
-$Grid-Four-Width:		($Grid-One-Width * 4) + (3 * $Grid-Gutter);
-$Grid-Five-Width:		($Grid-One-Width * 5) + (4 * $Grid-Gutter);
-$Grid-Six-Width:		($Grid-One-Width * 6) + (5 * $Grid-Gutter);
-$Grid-Seven-Width:		($Grid-One-Width * 7) + (6 * $Grid-Gutter);
-$Grid-Eight-Width:		($Grid-One-Width * 8) + (7 * $Grid-Gutter);
-$Grid-Nine-Width:		($Grid-One-Width * 9) + (8 * $Grid-Gutter);
-$Grid-Ten-Width:		($Grid-One-Width * 10) + (9 * $Grid-Gutter);
-$Grid-Eleven-Width:		($Grid-One-Width * 11) + (10 * $Grid-Gutter);
-$Grid-Twelve-Width:		($Grid-One-Width * 12) + (11 * $Grid-Gutter);
 
-$Grid-Split-One-Width:	100%/12;
 
 
 
 // Color Scheme
+$Clr-Turquoise:			#1abc9c;
+$Clr-Green-Sea:			#16a085;
+$Clr-Emerald:			#2ecc71;
+$Clr-Nephritis:			#27ae60;
 $Clr-Pamegranate:		#c0392b;
 $Clr-Alizarin:			#e74c3c;
 $Clr-Belize-Hole:		#2980b9;
@@ -34,47 +25,16 @@ $Clr-Concrete:			#95a5a6;
 $Clr-Silver:			#bdc3c7;
 $Clr-Clouds:			#ecf0f1;
 
-$clr-red: #ec0000;
-$clr-red-dark:  darken($clr-red,5%);
-$clr-red-light: lighten($clr-red,50%);
+$Clr-Grey-Lighter: 		#f1f1f1;
+$Clr-Grey-Light: 		#dedede;
+$Clr-Grey:				#cccccc;
+$Clr-Grey-Dark: 		#999999;
+$Clr-Grey-Darker: 		#555555;
 
-
-$clr-orange-lighter: #ffdbaf;
-$clr-orange-light: #ffb474;
-$clr-orange: #ec6700;
-$clr-orange-dark: #c15600;
-$clr-orange-darker: #a34b00;
-
-$clr-yellow: #d1a300;
-$clr-yellow-dark:  darken($clr-yellow,5%);
-$clr-yellow-light: lighten($clr-yellow,55%);
-
-$clr-green-lighter: 	#11db00;
-$clr-green-light:	 	#0fb800;
-$clr-green:			 	#0da900;
-$clr-green-dark: 		#0c8d00;
-$clr-green-darker:		#075d00;
-
-$clr-blue-lighter: #31e2ff;
-$clr-blue-light:  #0dd0ff;
-$clr-blue: 		  #00bff3;
-$clr-blue-dark:   #00a1d4;
-$clr-blue-darker: #0088b6;
-
-
-
-
-$clr-grey-lighter: 		#f1f1f1;
-$clr-grey-light: 		#dedede;
-$clr-grey:				#cccccc;
-$clr-grey-dark: 		#999999;
-$clr-grey-darker: 		#555555;
-
-$clr-main:  $Clr-Alizarin;
-$clr-main-dark: $Clr-Pamegranate;
-$clr-main-darker: $clr-orange-darker;
-$clr-main-light: $clr-orange-light;
-$clr-main-lighter: $clr-orange-lighter;
+$Clr-Main:  			$Clr-Alizarin;
+$Clr-Main-Dark: 		$Clr-Pamegranate;
+$Clr-Secondary:			$Clr-Clouds;
+$Clr-Secondary-Dark:	$Clr-Silver;
 // Color Scheme
 
 
@@ -113,7 +73,7 @@ $border-radius: 				10px;
 $border-radius-small:			5px;
 $Page-Footer-Height:			100px;			// Высота футера
 $line-height: 					24px;			// Стандартная высота строки
-$selection-color: 				$clr-grey-dark;
+$selection-color: 				$Clr-Grey-Dark;
 
 // Таблица размеров нод
 $Section-Width-Tiny: 			100%;
@@ -132,11 +92,11 @@ $Enable-Grid:					tiny;
 $grid-spacing: 5%;
 $message-br-width: 300px;
 
-$Control-Border-Color:					$clr-grey;
+$Control-Border-Color:					$Clr-Grey;
 $Control-Border-Width:					2px;
 $Control-Background-Color:				white;
-$Control-Focus-Border-Color:			$clr-main;
-$Control-Sublabel-Background-Color:		$clr-grey-lighter;
+$Control-Focus-Border-Color:			$Clr-Main;
+$Control-Sublabel-Background-Color:		$Clr-Grey-Lighter;
 $Control-Padding:						$size-xs $size-s;
 $Control-Line-Height:					$line-height;
 $Control-Border-Radius:					5px;

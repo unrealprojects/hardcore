@@ -1,9 +1,65 @@
-// 768px +
-@media all and (min-width: $Screen-Size-Tiny) {
-
-	.Site-Logo div h2 {
-		font-size: 22px;
+[class*='Hidden-'] {
+	display: block;
+}
+.Hidden-XS {
+	@include Adaptive($Screen-Size-Tiny) {
+		display: none;
 	}
+}
+.Hidden-SM {
+	@include Adaptive($Screen-Size-Small) {
+		display: none;
+	}
+}
+.Hidden-MD {
+	@include Adaptive($Screen-Size-Default) {
+		display: none;
+	}
+}
+.Hidden-LR {
+	@include Adaptive($Screen-Size-Large) {
+		display: none;
+	}
+}
+.Hidden-HR {
+	@include Adaptive($Screen-Size-Huge) {
+		display: block;
+	}
+}
+
+*[class*='Visible-'] {
+	display: none;
+}
+.Visible-XS {
+	@include Adaptive($Screen-Size-Tiny) {
+		display: inline-block;
+	}
+}
+.Visible-SM {
+	display: none;
+	@include Adaptive($Screen-Size-Small) {
+		display: inline-block;
+	}
+}
+.Visible-MD {
+	@include Adaptive($Screen-Size-Default) {
+		display: inline-block;
+	}
+}
+.Visible-LR {
+	@include Adaptive($Screen-Size-Large) {
+		display: inline-block;
+	}
+}
+.Visible-HR {
+	@include Adaptive($Screen-Size-Huge) {
+		display: inline-block;
+	}
+}
+
+
+// 768px +
+@include Adaptive($Screen-Size-Tiny) {
 	.List.Snippets header {
 		position: relative;
 	}
@@ -53,11 +109,8 @@
 	}
 	.Snippet-List {
 		.Snippet-Item {
-			border: 1px solid $clr-grey-light;
+			border: 1px solid $Clr-Grey-Light;
 		}
-	}
-	#Menu-Toggle {
-		display: none;
 	}
 	#Page-Slider {
 		display: block;
@@ -73,6 +126,8 @@
 
 		.Slider-Inner {
 			position: relative;
+			width: $Section-Width-Small;
+			margin: 0 auto;
 
 			#Truck {
 				width: 360px;
@@ -103,9 +158,6 @@
 
 // 1920 x 1080 Full HD
 @media all and (min-width: $Screen-Size-Large) {
-	.Site-Logo {
-		width: 25%;
-	}
 	img.Footer-Img {
 			 display: block;
 	}

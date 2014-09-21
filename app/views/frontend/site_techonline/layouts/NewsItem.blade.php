@@ -6,9 +6,9 @@
     <div class="Snippet-Item News">
 
         <header>
-            <h4 class="Heading Primary">
+            <h3 class="Heading Primary">
                 {{$content['item']['name']}}
-            </h4>
+            </h3>
         </header>
 
         <div class="Item-Photo">
