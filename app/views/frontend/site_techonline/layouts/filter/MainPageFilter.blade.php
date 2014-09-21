@@ -16,7 +16,7 @@
                     @foreach($content['filter']['regions'] as $region)
                     <li class="Filter-Subheader Accordion-Subheader">
                         @if($region['subRegions'])
-                        <div class="Accordion-Switch"><span>&or;</span></div>
+                        <div class="Accordion-Switch"><span class="fa fa-angle-down"></span></div>
                         @endif
                         <a class="Accordion-Switch" href="/catalog/?region={{$region['alias']}}" alias="{{$region['alias']}}">{{$region['name']}}</a>
                     </li>
@@ -68,7 +68,7 @@
                     @foreach($content['filter']['categories'] as $category)
                     <li class="Filter-Subheader Accordion-Subheader">
                         @if($category['subCategories'])
-                        <div class="Accordion-Switch"><span>&or;</span></div>
+                        <div class="Accordion-Switch"><span class="fa fa-angle-down"></span></div>
                         @endif
                         <a href="/catalog/?category={{$category['alias']}}" alias="{{$category['alias']}}">{{$category['name']}}</a>
                     </li>

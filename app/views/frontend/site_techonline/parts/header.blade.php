@@ -25,8 +25,8 @@
         </nav>
 
         <div class="Page-Auth SM-2">
-            <button class="Button Sign-In">Войти</button>
-            <button class="Button Sign-Up">Регистрация</button>
+            <button class="Button Sign-In"><i class="fa fa-sign-in"></i> Войти</button>
+            <button class="Button Sign-Up"><i class="fa fa-user"></i> Регистрация</button>
 
             <div class="Sign-In-UI" style="display:none;">
                 <form class="Form-Horizontal" action="">

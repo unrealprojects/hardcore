@@ -7,8 +7,9 @@
             <h4 class="Item-Title">
                 <span itemprop="brand">{{$content['item']['brand']['name']}}</span>
                     {{$content['item']['model']}}
+                <span class="Item-Subtitle" itemprop="category">{{$content['item']['category']['name']}}</span>
             </h4>
-            <span class="Item-Subtitle" itemprop="category">{{$content['item']['category']['name']}}</span>
+
         </header>
 
             @include('frontend.site_techonline.layouts.elements.Photos',

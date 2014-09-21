@@ -5,9 +5,9 @@
 <section class="Node">
     <div class="Snippet-Item Row Split" itemscope itemtype="http://data-vocabulary.org/Product">
         <header>
-            <h4 class="Heading Primary">
+            <h4 class="Item-Title">
                 {{$content['item']['name']}}
-                <p>{{$content['item']['model']['category']['name']}}</p>
+                <p class="Item-Subtitle">{{$content['item']['model']['category']['name']}}</p>
             </h4>
             <h5 class="Item-Price">
                 {{$content['item']['rate']}}
