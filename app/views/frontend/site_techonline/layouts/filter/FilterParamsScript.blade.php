@@ -12,7 +12,7 @@
                         $("#Slider-Range-Value-{{$filter["alias"]}}").text(ui.values[ 0 ] + "{{$filter['dimension']}} - " + ui.values[ 1 ] +"{{$filter['dimension']}}");
                         searchArray['params[{{$filter["alias"]}}][min-value]']=ui.values[ 0 ];
                         searchArray['params[{{$filter["alias"]}}][max-value]']= ui.values[ 1 ];
-                        searchArray['params[{{$filter["alias"]}}][alias]']='{{$filter["alias"]}}';
+                        searchArray['params[{{$filter["alias"]}}][id]']='{{$filter["id"]}}';
                     }
                 });
                 $("#Slider-Range-Value-{{$filter["alias"]}}").text(

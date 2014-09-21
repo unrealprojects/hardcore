@@ -24,7 +24,7 @@
                         <ul class="Item-Values Six">
                             <li><h6>Статус:</h6>{{$list_elem['status']['name']}}</li>
                             <li><h6>Состояние:</h6>{{$list_elem['opacity']['name']}}</li>
-                            <li><h6>Цена:</h6>{{$list_elem['rate']}}</li>
+                            <li><h6>Цена:</h6>{{$list_elem['price']}} <span>руб/час</span></li>
                         </ul>
                     </header>
 

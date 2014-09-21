@@ -69,7 +69,7 @@
                     ])
                 <h4> <a href="/rent/{{$tech['metadata']['alias']}}">{{$tech['name']}}</a></h4>
                 <p>{{$tech['description']}}</p>
-                <p>{{$tech['rate']}}</p>
+                <p>{{$tech['price']}} <span>руб/час</span></p>
             </div>
             @endforeach
         </div>

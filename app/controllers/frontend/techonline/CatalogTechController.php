@@ -10,9 +10,12 @@ class CatalogTechController extends TechonlineController{
             'brands' => \Input::get('brands')?:false,
             'region' => \Input::get('region')?:false,
             'params' => \Input::get('params')?:false,
+            'price-min' => \Input::get('price-min')?:false,
+            'price-max' => \Input::get('price-max')?:false,
         ];
 
         /* МОДЕЛЬ */
+        $modelCategories = new \Model\General\Categories();
         $CatalogTech = new \Model\General\TechOnline\CatalogTech();
         $CatalogTechList=$CatalogTech->getList($filter);
         $filters=false;
@@ -21,9 +24,8 @@ class CatalogTechController extends TechonlineController{
             $filters = $paramFilters->getFilters($filter['category']);
         }
 
-//        print_r($CatalogTechList->toArray()['data']);
-//        exit;
-        $paramFilters = new \Model\General\Categories();
+
+
 
         /* ДАННЫЕ ВИД */
         $this->viewData['content'] = [
@@ -34,7 +36,7 @@ class CatalogTechController extends TechonlineController{
                 'regions'=>\Model\General\TechOnline\CatalogRegion::toSubRegions(true),
                 'regions_list'=>\Model\General\TechOnline\CatalogRegion::all(),
                 'has_params'=>true,
-                'params'=>$paramFilters
+                'params'=>$modelCategories->getFilters(\Input::get('category'))
             ],
             'pagination' => $CatalogTechList->appends(\Input::except('page'))->links(),
             'list' => $CatalogTechList->toArray()['data'],
@@ -44,7 +46,7 @@ class CatalogTechController extends TechonlineController{
             'regions' => \Model\General\TechOnline\CatalogRegion::all()->toArray(),
             'filters' => $filters?:false
         ];
-//        print_r($filters->toArray());exit;
+//       print_r( $this->viewData['content']['list']);exit;
         return \View::make($this->siteViewPath.'/layouts/CatalogTech',$this->viewData);
     }
 

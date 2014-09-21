@@ -66,22 +66,22 @@
 
                 <ul class="Filter Accordion">
                     @foreach($content['filter']['categories'] as $category)
-                    <li class="Filter-Subheader Accordion-Subheader">
-                        @if($category['subCategories'])
-                        <div class="Accordion-Switch"><span class="fa fa-angle-down"></span></div>
-                        @endif
-                        <a href="/catalog/?category={{$category['alias']}}" alias="{{$category['alias']}}">{{$category['name']}}</a>
-                    </li>
+                        <li class="Filter-Subheader Accordion-Subheader">
+                            @if($category['subCategories'])
+                            <div class="Accordion-Switch"><span class="fa fa-angle-down"></span></div>
+                            @endif
+                            <a href="/catalog/?category={{$category['alias']}}" alias="{{$category['alias']}}">{{$category['name']}}</a>
+                        </li>
 
-                    @if($category['subCategories'])
-                    <li class="Filter-Subcategory Accordion-Subcategory">
-                        <ul>
-                            @foreach($category['subCategories'] as $subCategory)
-                                <li><a href="/catalog/?category={{$subCategory['alias']}}" alias="{{$subCategory['alias']}}">{{$subCategory['name']}}</a></li>
-                            @endforeach
-                        </ul>
-                    </li>
-                    @endif
+                        @if($category['subCategories'])
+                        <li class="Filter-Subcategory Accordion-Subcategory">
+                            <ul>
+                                @foreach($category['subCategories'] as $subCategory)
+                                    <li><a href="/catalog/?category={{$subCategory['alias']}}" alias="{{$subCategory['alias']}}">{{$subCategory['name']}}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        @endif
                     @endforeach
                 </ul>
             </div>
@@ -95,9 +95,17 @@
                 <form class="Form-Vertical" action="">
                     <div class="Control-Group">
                         <label for="Slider-Range-1">Цена: <span id="Slider-Range-Value-1"></span></label>
-
                         <div class="Slider-Range" id="Slider-Range-1"></div>
                     </div>
+                    @if(!empty($content['filter']['params']))
+                        @foreach($content['filter']['params']['filters'] as $key => $param)
+                        <div class="Control-Group">
+                            <label for="Slider-Range-">{{$param['name']}}: <span id="Slider-Range-Value-{{$param["alias"]}}"></span></label>
+                            <div class="Slider-Range" id="Slider-Range-{{$param['alias']}}"></div>
+                        </div>
+                        @endforeach
+                    @endif
+
                     <!-- Бренды -->
                     <ul class="List-Group-Actions">
                         <li class="Item-Group-Actions">

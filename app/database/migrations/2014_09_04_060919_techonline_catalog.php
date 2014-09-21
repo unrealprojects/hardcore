@@ -109,7 +109,7 @@ class TechonlineCatalog extends Migration {
             $table->string('name')->nullable();
             $table->string('logo')->nullable();
             $table->text('description')->nullable();
-            $table->string('rate')->nullable();
+            $table->integer('price')->nullable();
 
             $table->text('photos')->nullable();
 
@@ -136,7 +136,7 @@ class TechonlineCatalog extends Migration {
             $catalog_base = new \Model\General\TechOnline\CatalogTech();
 
             $catalog_base->name = 'Сдам в аренду кран '.$i;
-            $catalog_base->rate = $i*98 . ' руб/ч';
+            $catalog_base->price = $i*98;
 
             /* update metadata */
             $meta_data = new \Model\General\MetaData();

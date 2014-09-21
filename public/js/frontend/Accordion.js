@@ -18,11 +18,9 @@
                    .next('.Accordion-Subcategory')
                    .stop(true, true)
                    .slideToggle(function(){
-                    $('.Accordion-Switch span').addClass('fa-angle-down');
-                    $('.Filter-Subcategory:visible').prev().find('span').removeClass('fa-angle-down').addClass('fa-angle-up');
-                });
-
-
+                        $('.Accordion-Switch span').addClass('fa-angle-down');
+                        $('.Filter-Subcategory:visible').prev().find('span').removeClass('fa-angle-down').addClass('fa-angle-up');
+                    });
 
         });
     });

@@ -42,7 +42,7 @@ class CatalogTech extends TechOnline {
     public function getList($filter){
         $this->filter = $filter;
 
-        return $this::with('model',
+      $query = $this::with('model',
                            'model.category',
                            'model.brand',
                            'model.metadata',
@@ -72,13 +72,29 @@ class CatalogTech extends TechOnline {
             ->whereHas('model', function($query) {
                 if($this->filter['brands']){
                     $query->whereHas('brand',function($query){
-//                        print_r($this->filter['brands']);
                         $query->whereIn('alias', $this->filter['brands']);
                     });
                 }
             })
-            ->orderBy('created_at','desk')
-            ->paginate(5);
+            /*** Фильтр по Параметрам ***/
+            ->whereHas('model', function($query) {
+                if($this->filter['params']){
+                    $query->whereHas('params_values',function($query){
+                        foreach($this->filter['params'] as $ket => $param){
+                                $query->where('param_id',$param['id'])
+                                      ->where('value','>=',$param['min-value'])
+                                      ->where('value','<=',$param['max-value']);
+                        }
+                    });
+                }
+            })
+            ->orderBy('created_at','desk');
+    if($this->filter['price-max'] && $this->filter['price-min']){
+        $query = $query->where('price','>=',$this->filter['price-min'])
+                 ->where('price','<=',$this->filter['price-max']);
+    }
+
+        return $query->paginate(5);
     }
 
     public function getElement($alias){

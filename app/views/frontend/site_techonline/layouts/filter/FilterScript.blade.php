@@ -18,7 +18,6 @@
     }
 
     if(searchArray['category']){
-        getAjaxParams(searchArray['category']);
         addToFilterSelected($('[alias='+searchArray['category']+']'),'Category');
         changeTab('.Tab-Params',false);
     }
@@ -34,7 +33,9 @@
          $('input[name='+searchArray["brands["+i+"]"]).prop('checked',true);
          $('input[name='+searchArray["brands%5B"+i+"%5D"]).prop('checked',true);
     }
-    checkedBrands();
+    if(findBrands){
+        checkedBrands();
+    }
 
     $(document).on('click','.Filter a',function(){return false;});
 /*********************************************************************************************************************** HELPER ***/
@@ -287,18 +288,38 @@
                 range: true,
                 min: 100,
                 max: 50000,
-                values: [ 100, 50000 ],
+                values: [ searchArray['price-min']?searchArray['price-min']:100, searchArray['price-max']?searchArray['price-max']:50000 ],
                 slide: function( event, ui ) {
-                    $("#Slider-Range-Value-1").text(ui.values[ 0 ] + "руб. - " + ui.values[ 1 ] +"руб.");
-                    searchArray['params[price][min-value]']=ui.values[ 0 ];
-                    searchArray['params[price][max-value]']= ui.values[ 1 ];
-                    searchArray['params[price][alias]']='price';
+                    $("#Slider-Range-Value-1").text(ui.values[ 0 ] + " руб. - " + ui.values[ 1 ] +" руб.");
+                    searchArray['price-min']=ui.values[ 0 ];
+                    searchArray['price-max']= ui.values[ 1 ];
                 }
             });
 
             $("#Slider-Range-Value-1").text(
-                $( "#Slider-Range-1").slider( "values", 0 ) + " - руб." + $( "#Slider-Range-1" ).slider( "values", 1 ) +"руб."
+                $( "#Slider-Range-1").slider( "values", 0 ) + " руб. - " + $( "#Slider-Range-1" ).slider( "values", 1 ) +" руб."
             );
+
+            @if(!empty($content['filter']['params']))
+                @foreach($content['filter']['params']['filters'] as $key => $param)
+                    $("#Slider-Range-{{$param['alias']}}").slider({
+                        range: true,
+                        min: {{$param['min_value']}},
+                        max: {{$param['max_value']}},
+                        values: [ searchArray['params[{{$param["alias"]}}][min-value]']?searchArray['params[{{$param["alias"]}}][min-value]']:{{$param['min_value']}},
+                                  searchArray['params[{{$param["alias"]}}][max-value]']?searchArray['params[{{$param["alias"]}}][max-value]']:{{$param['max_value']}} ],
+                        slide: function( event, ui ) {
+                            $("#Slider-Range-Value-{{$param["alias"]}}").text(ui.values[ 0 ] + "{{$param['dimension']}} - " + ui.values[ 1 ] +"{{$param['dimension']}}");
+                            searchArray['params[{{$param["alias"]}}][min-value]']=ui.values[ 0 ];
+                            searchArray['params[{{$param["alias"]}}][max-value]']= ui.values[ 1 ];
+                            searchArray['params[{{$param["alias"]}}][id]']='{{$param["id"]}}';
+                        }
+                    });
+                    $("#Slider-Range-Value-{{$param["alias"]}}").text(
+                        $( "#Slider-Range-{{$param["alias"]}}").slider( "values", 0 ) + " {{$param['dimension']}} - " + $( "#Slider-Range-{{$param["alias"]}}" ).slider( "values", 1 ) + ' {{$param['dimension']}}'
+                    );
+                @endforeach
+            @endif
 
 /*********************************************************************************************************** Поиск ***/
         function filterSearch(){
@@ -314,8 +335,9 @@
         $('#Filter-Search').click(function(){
             filterSearch();
         });
+
+
     /*
-     В дополнительных параметрах Производители (сделать ТАБ - Уточнить производителя и спрятать в сплойлер производителей)
      Добавить на страницы "аренда, каталог, запчасти и сервис, арендодатели" рейтинг
      Привести в порядок лайтбокс
      Не нравится как выглядят Фотки для каталогов
