@@ -57,5 +57,12 @@
             }
         });
 
+        /*** window resize ***/
+        $(window).resize(function(){
+            if($(window).width()>1024){
+                $('#Menu').show();
+            }
+        });
+
     });
 })(jQuery);
