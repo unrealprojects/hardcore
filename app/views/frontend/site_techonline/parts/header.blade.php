@@ -3,19 +3,20 @@
 
     <div class="Site-Header-Inner" role="banner">
 
-        <div href="http://hardcore/catalog" class="Site-Logo SM-3">
+        <div href="http://hardcore/catalog" class="Site-Logo Grid-SM-3">
             <div>
                 <img class="Logo-Img" src="/img/techonline/logo.png"/>
-
                 <h2>Стройтехника
-                    <small>.Онлайн</small>
+                    <small><span class="Visible-MD">.</span>Онлайн</small>
                 </h2>
             </div>
             <a class="Link-Home" href="/">Вернуться на главную страницу</a>
         </div>
 
-        <div id="Menu-Toggle"></div>
-        <nav id="Menu" class="Site-Navigation Primary SM-7">
+        <div id="Menu-Toggle">
+            <span class="fa fa-2x fa-bars"></span>
+        </div>
+        <nav id="Menu" class="Site-Navigation Primary Row Split Grid-SM-6">
             <ul class="Menu-List">
                 <li><a class="Menu-Link" href="/catalog" title="Каталог стройтехники">Каталог</a></li>
                 <li><a class="Menu-Link" href="/rent" title="Взять стройтехнику в аренду">Аренда</a></li>
@@ -24,9 +25,9 @@
             </ul>
         </nav>
 
-        <div class="Page-Auth SM-2">
-            <button class="Button Sign-In"><i class="fa fa-sign-in"></i> Войти</button>
-            <button class="Button Sign-Up"><i class="fa fa-user"></i> Регистрация</button>
+        <div class="Page-Auth Grid-SM-3 Row Split">
+            <button class="Button Sign-In Grid-XS-6"><span class="fa fa-sign-in"></span> Войти</button>
+            <button class="Button Sign-Up Grid-XS-6"><span class="fa fa-user"></span> Регистрация</button>
 
             <div class="Sign-In-UI" style="display:none;">
                 <form class="Form-Horizontal" action="">

@@ -51,10 +51,10 @@
 	&.Checkbox.Submit {
 		& > label {
 			padding: $size-s 0;
-			@extend .XS-6;
+			@extend .Grid-XS-6;
 		}
 		& > [type='submit'] {
-			@extend .XS-6;
+			@extend .Grid-XS-6;
 		}
 	}
 
@@ -181,7 +181,7 @@ input[type='submit'] {
 	@extend 			._Button;
 
 	&:hover {
-		background-color: 	$clr-main-dark;
+		background-color: 	$Clr-Main-Dark;
 	}
 
 	&[disabled] {
@@ -280,8 +280,8 @@ a.Button      {
 	@include Transition(#{border,background-color,color}, .3s);
 	&[disabled] {
 		cursor: not-allowed;
-		background-color: $clr-grey-dark;
-		color: $clr-grey-light;
+		background-color: $Clr-Grey-Dark;
+		color: $Clr-Grey-Light;
 	}
 
 	&.Search {
@@ -289,11 +289,11 @@ a.Button      {
 	}
 	&.Ghost {
 		background-color: white;
-		border: $Control-Border-Width solid $clr-grey-light;
-		color: $clr-grey-dark;
+		border: $Control-Border-Width solid $Clr-Grey-Light;
+		color: $Clr-Grey-Dark;
 		&:hover {
-			background-color: $clr-grey-lighter;
-			border-color: $clr-grey-darker;
+			background-color: $Clr-Grey-Lighter;
+			border-color: $Clr-Grey-Darker;
 			color: black
 		}
 	}

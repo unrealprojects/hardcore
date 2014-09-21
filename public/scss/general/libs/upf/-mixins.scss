@@ -98,3 +98,15 @@
 	background:         linear-gradient($Gradient-Orientation, $Color-Start, $Color-End);
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$Color-Start}', EndColorStr='#{$Color-End}');
 }
+
+@mixin Adaptive($Resolution-Min, $Mode: min-width)
+{
+	@media screen and ($Mode: $Resolution-Min) {
+		@content;
+	}
+}
+@mixin Adaptive-Mobile() {
+	@media screen and (max-width: $Screen-Size-Tiny) {
+		@content;
+	}
+}

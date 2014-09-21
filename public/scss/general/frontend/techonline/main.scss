@@ -4,11 +4,10 @@
 body {
 	min-width: 320px;
 
-	background-color: #ecf0f1;
+	background-color: $Clr-Secondary;
 	font-family: 	'Exo 2','Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 	1.45;
 
-	@include 		Font-Size(90%,100%,100%, 100%);
 	@include 		Animation(FadeIn,0.6s);
 }
 
@@ -19,94 +18,23 @@ body {
 .Autocomplete {
 	width: 100%;
 	padding: $size-s $size;
-	border: 1px solid;
 }
-
-// Хлебные крошки
-.Breadcrumbs {
-	padding: $size-xs;
-	margin-top: $size;
-	background-color: $Clr-Clouds;
-	@include Round(all, $Control-Border-Radius);
-
-	.Breadcrumb-List {
-		@extend ._Inline;
-		@extend ._No-Bullets;
-
-		.Breadcrumb-Item {
-			a {
-				padding: $size-xs;
-				font-size: 16px;
-				line-height: 16px;
-				color: $Clr-Asbestos;
-			}
-			a:hover {
-				color: $Clr-Midnight-Blue;
-			}
-			&:before {
-				padding: 0 $size-s;
-				content: "/";
-				@extend ._Unselectable;
-			}
-		}
-
-		.Breadcrumb-Item:first-child {
-			&:before {
-				padding: 0;
-				content: "";
-			}
-		}
-	}
+#Page-Slider {
+	@include Transition(SlideDown, .5s);
+	height: 0;
 }
-
-// Блок Пагинации
-.Pagination {
-	border-left: 4px solid $clr-main;
-	@extend ._Fly-Out;
-	@extend ._No-Bullets;
-	@extend .Inline;
-	@extend ._Clearfix;
-	& > li {
-		margin-top: 0 !important; // Наследование .Node подразумевает margin-top каждого вложенного элемента. Убираем
-		margin-right: 1px; // Разлипаем прямоугольники страниц
-        float:left;
-		& > span,
-		& > a {
-			color: #fff;
-			display: block;
-			padding: $size-s $size;
-			background-color: $clr-grey-darker;
-		}
-		&:hover > span {
-			cursor: default;
-		}
-		&:hover > a {
-			background-color: $clr-grey-dark;
-		}
-		&.disabled > span {
-			color: $clr-grey-dark;
-		}
-		&.active > span {
-			background-color: $clr-main;
-		}
-		li.Pagination-Caption {
-
-		}
-	}
-}
-
 .Sidebar-Filter {
 	a.Active {
 
 		color: white;
-		background-color: $clr-grey-darker;
+		background-color: $Clr-Grey-Darker;
 	}
 	& > h4 {
 		font-size: 20px;
 		font-weight: 100;
 		margin-top: $size;
 		padding: $size-xs $size-s;
-		background: $clr-grey-darker;
+		background: $Clr-Grey-Darker;
 		color: white;
 
 		&:first-child {
@@ -123,10 +51,10 @@ body {
 				font-size: 13px;
 				font-weight: 900;
 				color: black;
-				background-color: $clr-grey-lighter;
+				background-color: $Clr-Grey-Lighter;
 				&:hover {
-					background-color: $clr-grey;
-					background-color: $clr-grey;
+					background-color: $Clr-Grey;
+					background-color: $Clr-Grey;
 				}
 			}
 			&:first-child a {
@@ -191,7 +119,7 @@ body {
 						margin-left: $size-l;
 						display: inline-block;
 						font-size: 80%;
-						color: $clr-grey;
+						color: $Clr-Grey;
 					}
 				}
 			}
@@ -230,8 +158,8 @@ footer[role='contentinfo'] {
 						padding-bottom: $size-xs;
 						border-bottom: 2px solid transparent;
 						&:hover {
-							color: $clr-main;
-							border-color: $clr-main;
+							color: $Clr-Main;
+							border-color: $Clr-Main;
 						}
 					}
 					&:first-child {
@@ -318,7 +246,7 @@ img.Footer-Img {
 
 		header {
 			position: relative;
-			background-color: $clr-grey-lighter;
+			background-color: $Clr-Grey-Lighter;
 			.Item-Category ,
 			.Item-Location {
 				padding: 0;
@@ -332,18 +260,18 @@ img.Footer-Img {
 		}
 	}
 	.Item-Photo {
-		@extend .XS-5;
+		@extend .Grid-XS-5;
 	}
 	.Item-Gallery {
 		@extend ._Clearfix;
-		@extend .XS-5;
+		@extend .Grid-XS-5;
 		& > img {
 			width: 100%;
 		}
 	}
 	.Item-Content {
 		margin-top: $size-n;
-		@extend .XS-7;
+		@extend .Grid-XS-7;
 	}
 }
 
@@ -369,7 +297,7 @@ img.Footer-Img {
 				display: block;
 				color: black;
 				&:hover {
-					color: $clr-main;
+					color: $Clr-Main;
 				}
 			}
 			.Item-Category ,
@@ -378,7 +306,7 @@ img.Footer-Img {
 				text-transform: none;
 				font-size: 12px;
 				font-weight: 100;
-				color: $clr-grey-dark;
+				color: $Clr-Grey-Dark;
 			}
 		}
 		h4 				,
@@ -413,7 +341,7 @@ img.Footer-Img {
 		@extend ._Clearfix;
 
 		img.Item-Main-Photo {
-			border-top: 2px solid $clr-main;
+			border-top: 2px solid $Clr-Main;
 			@extend ._Fit-Row;
 			@extend ._Highlight;
 		}
@@ -433,7 +361,7 @@ img.Footer-Img {
 				img {
 					display: block;
 					width: 100%;
-					border-top: 2px solid $clr-main;
+					border-top: 2px solid $Clr-Main;
 					@extend ._Highlight;
 				}
 			}
@@ -443,7 +371,7 @@ img.Footer-Img {
 	.Item-Photo {
 		margin-bottom: $size-l;
 		padding-right: $size-l;
-		@extend .XS-5;
+		@extend .Grid-XS-5;
 
 		img {
 			width: 100%;
@@ -453,7 +381,7 @@ img.Footer-Img {
 	.Item-Content {
 		font-size: 14px;
 
-		@extend .XS-7;
+		@extend .Grid-XS-7;
 
 		h6 {
 			margin: $size-s 0 $size-xs;
@@ -467,7 +395,7 @@ img.Footer-Img {
 		}
 		table {
 			font-size: 14px;
-			border-top: 1px solid $clr-grey-light;
+			border-top: 1px solid $Clr-Grey-Light;
 			width: 100%;
 			tr {
 				td {
@@ -480,8 +408,8 @@ img.Footer-Img {
 	.Item-Info {
 		clear: both;
 		padding: $size-s 0;
-		border-top: 1px dashed $clr-grey-dark;
-		color: $clr-grey-dark;
+		border-top: 1px dashed $Clr-Grey-Dark;
+		color: $Clr-Grey-Dark;
 		font-size: $Font-Size-Micro;
 		.Date {
 			padding: $size-xs 0;
@@ -494,8 +422,8 @@ img.Footer-Img {
 	}
 }
 .Filter-Result {
-	border: 1px solid $clr-grey-lighter;
-	border-top-color: $clr-main;
+	border: 1px solid $Clr-Grey-Lighter;
+	border-top-color: $Clr-Main;
 	width: 100%;
 	padding: $size-s;
 	font-size: 80%;
@@ -512,12 +440,12 @@ img.Footer-Img {
 			display: inline-block;
 			margin-left: $size-s;
 			padding: $size-xs;
-			background-color: $clr-main;
+			background-color: $Clr-Main;
 			color: white;
 			@include Round(all, $Control-Border-Radius);
 			@extend ._Right;
 			&:hover {
-				background-color: $clr-grey-darker;
+				background-color: $Clr-Grey-Darker;
 			}
 		}
 	}
@@ -535,15 +463,15 @@ ul.Tag-List {
 		a {
 			display: inline-block;
 			padding: $size-xs;
-			background-color: $clr-grey;
-			color: $clr-grey-darker;
+			background-color: $Clr-Grey;
+			color: $Clr-Grey-Darker;
 			font-family: $Font-Family-Calibri;
 			font-size: 12px;
 
 			@include Round(all, $Control-Border-Radius);
 			&:hover {
 				color: white;
-				background-color: $clr-grey-dark;
+				background-color: $Clr-Grey-Dark;
 			}
 		}
 	}
@@ -564,8 +492,8 @@ ul.Tag-List {
 			height: 30px;
 			border: 1px solid $Clr-Silver;
 			&:hover {
-				background-color: $clr-main;
-				border-color: $clr-main-dark;
+				background-color: $Clr-Main;
+				border-color: $Clr-Main-Dark;
 			}
 		}
 		& > span {
@@ -639,12 +567,12 @@ ul.Tag-List {
 				width: 100%;
 				padding: $size-s 0;
 				line-height: $line-height;
-				background-color: $clr-main;
+				background-color: $Clr-Main;
 				cursor: pointer;
 
 				&:hover {
 					color: white;
-					background-color: $clr-main-dark;
+					background-color: $Clr-Main-Dark;
 				}
 			}
 		}
@@ -673,7 +601,7 @@ ul.Tag-List {
 		}
 
 		li {
-			border-top: 1px solid $clr-grey-lighter;
+			border-top: 1px solid $Clr-Grey-Lighter;
 			display: inline-block;
 			width: 100%;
 
@@ -682,7 +610,7 @@ ul.Tag-List {
 				padding: $size-xs $size-l;
 				color: black;
 				&:hover {
-					background-color: $clr-grey-light;
+					background-color: $Clr-Grey-Light;
 				}
 			}
 		}
@@ -691,8 +619,8 @@ ul.Tag-List {
 
 .List-Group-Actions {
 	margin-top: $size;
-	border-top: 2px solid $clr-main;
-	background-color: $clr-grey-lighter;
+	border-top: 2px solid $Clr-Main;
+	background-color: $Clr-Grey-Lighter;
 
 	@extend ._No-Bullets;
 	@extend ._Inline;
@@ -702,14 +630,14 @@ ul.Tag-List {
 .Item-Group-Actions {
 	border-left: 1px solid white;
 	width: 100%;
-	@extend .XS-4;
+	@extend .Grid-XS-4;
 	.Control-Group,
 	a {
 		display: block;
 		padding: $size-s $size-l;
 		font-weight: bold;
 		font-size: 80%;
-		color: $clr-grey-darker;
+		color: $Clr-Grey-Darker;
 		&:hover {
 			background-color: $Clr-Midnight-Blue;
 			color: white;
@@ -728,15 +656,15 @@ ul.Tag-List {
 }
 .Spoiler {
 	margin-top: $size-n;
-	border: 1px solid $clr-grey;
+	border: 1px solid $Clr-Grey;
 	@include Round(all, $Control-Border-Radius);
 	&:hover {
-		border-color: $clr-grey-dark;
+		border-color: $Clr-Grey-Dark;
 	}
 
 	.Spoiler-Caption {
 		display: block;
-		color: $clr-grey-darker;
+		color: $Clr-Grey-Darker;
 		padding: $size-s $size-s $size-s $size-l;
 		background: url(../../../../img/techonline/icon-vote-down.png) 15px center no-repeat;
 	}
@@ -764,14 +692,17 @@ ul.Tag-List {
 			color: black!important;
 
 			&:hover {
-				background-color: $clr-grey-lighter;
+				background-color: $Clr-Grey-Lighter;
 			}
 		}
 	}
 }
+
+
+
 // todo: разнести по местам
 .ui-widget-header{
-  background-color: $clr-main;
+  background-color: $Clr-Main;
 }
 .Accordion-Subcategory {
   display:none;

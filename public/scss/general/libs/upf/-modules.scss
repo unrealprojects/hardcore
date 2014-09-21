@@ -59,3 +59,96 @@ body		,
 .Node.Row > * {
 	margin-top: 0;
 }
+
+
+
+// Блок Пагинации
+.pagination,
+.Pagination {
+	border-left: 4px solid $Clr-Main;
+	@extend ._No-Bullets;
+	@extend .Inline;
+	@extend ._Clearfix;
+	& > li {
+		margin-top: 0 !important; // Наследование .Node подразумевает margin-top каждого вложенного элемента. Убираем
+		margin-right: 1px; // Разлипаем прямоугольники страниц
+		float:left;
+		& > span,
+		& > a {
+			color: #fff;
+			display: block;
+			padding: $size-s $size;
+			background-color: $Clr-Grey-Darker;
+		}
+		&:hover > span {
+			cursor: default;
+		}
+		&:hover > a {
+			background-color: $Clr-Grey-Dark;
+		}
+		&.disabled > span {
+			color: $Clr-Grey-Dark;
+		}
+		&.active > span {
+			background-color: $Clr-Main;
+		}
+		li.Pagination-Caption {
+
+		}
+	}
+}
+
+
+
+// Хлебные крошки
+.Breadcrumbs {
+	padding: $size-xs;
+	margin-top: $size;
+	background-color: $Clr-Secondary;
+	@include Round(all, $Control-Border-Radius);
+
+	.Breadcrumb-List {
+		@extend ._Inline;
+		@extend ._No-Bullets;
+
+		.Breadcrumb-Item {
+			a {
+				padding: $size-xs;
+				font-size: 16px;
+				line-height: 16px;
+				color: $Clr-Asbestos;
+			}
+			a:hover {
+				color: $Clr-Midnight-Blue;
+			}
+			&:before {
+				padding: 0 $size-s;
+				content: "/";
+				@extend ._Unselectable;
+			}
+		}
+
+		.Breadcrumb-Item:first-child {
+			&:before {
+				padding: 0;
+				content: "";
+			}
+		}
+	}
+}
+
+
+
+.Panel {
+	display: inline-block;
+	padding: $size-xs;
+	clear: both;
+	&.Info {
+		color: white;
+		background-color: $Clr-Nephritis;
+	}
+	&.Warning {
+		color: white;
+		background-color: $Clr-Alizarin;
+	}
+}

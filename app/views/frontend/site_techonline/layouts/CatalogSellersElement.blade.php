@@ -4,9 +4,9 @@
 <section class="Node">
     <div class="Snippet-Item Row Split" itemscope itemtype="http://data-vocabulary.org/Product">
         <header>
-            <h4 class="Item-Title">
+            <h3 class="Heading Primary">
                 {{$content['item']['name']}}
-            </h4>
+            </h3>
             <ul class="Vote">
                 <li><a class="Vote-Down" href="#"></a></li>
                 <li><span> 0 </span></li>
@@ -51,21 +51,22 @@
             </table>
         </div>
 
-        <!-- Список Техники -->
 
+
+        <!-- Список Техники -->
         <div class="Snippet-Item Row Split CatalogTech">
             <header>
-                <h4 class="Section-Header">
+                <h3 class="Heading Primary">
                     Аренда стройтехники
-                </h4>
+                </h3>
             </header>
 
             @foreach($content['item']['tech_list'] as $tech)
-            <div class="Element">
+            <div class="Element Row Merge">
                 @include('frontend.site_techonline.layouts.elements.Photos',
                     [
                         'photos'=>$tech['photos'],
-                        'class_wrap'=>'Item-Gallery Grid XS-4'
+                        'class_wrap'=>'Item-Gallery Grid XS-3'
                     ])
                 <h4> <a href="/rent/{{$tech['metadata']['alias']}}">{{$tech['name']}}</a></h4>
                 <p>{{$tech['description']}}</p>
@@ -77,9 +78,9 @@
         <!-- Список Запчастей -->
         <div class="Snippet-Item Row Split CatalogParts">
             <header>
-                <h4 class="Section-Header">
+                <h3 class="Heading Primary">
                     Запчасти и сервис
-                </h4>
+                </h3>
             </header>
             @foreach($content['item']['parts_list'] as $part)
             <div class="Element">

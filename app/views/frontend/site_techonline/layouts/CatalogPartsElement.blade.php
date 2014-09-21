@@ -4,9 +4,10 @@
 <section class="Node">
     <div class="Snippet-Item Row Split" itemscope itemtype="http://data-vocabulary.org/Product">
         <header>
-            <h4 class="Item-Title">
+            <h3 class="Heading Primary">
                 {{$content['item']['name']}}
-            </h4>
+                <span class="Item-Subtitle Panel Info">Цена: {{$content['item']['price']}}</span>
+            </h3>
             <ul class="Vote">
                 <li><a class="Vote-Down" href="#"></a></li>
                 <li><span> 0 </span></li>
@@ -44,7 +45,7 @@
                 </tr>
                 <tr>
                     <td>Цена:</td>
-                    <td>{{$content['item']['price']}}</td>
+                    <td></td>
                 </tr>
             </table>
         </div>
