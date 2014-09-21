@@ -178,7 +178,6 @@ input[type='submit'] {
 	font-size: 			110%;
 	font-weight: 		100;
 	text-align: 		center;
-	@extend 			._Button;
 
 	&:hover {
 		background-color: 	$Clr-Main-Dark;
@@ -271,12 +270,9 @@ dl.Tabs {
 	}
 }
 
-button.Button ,
-input.Button  ,
-a.Button      {
+.Button  {
 	line-height: $line-height;
 	color: white;
-	@extend ._Button;
 	@include Transition(#{border,background-color,color}, .3s);
 	&[disabled] {
 		cursor: not-allowed;
@@ -287,18 +283,117 @@ a.Button      {
 	&.Search {
 		@extend ._Search;
 	}
-	&.Ghost {
-		background-color: white;
-		border: $Control-Border-Width solid $Clr-Grey-Light;
-		color: $Clr-Grey-Dark;
-		&:hover {
-			background-color: $Clr-Grey-Lighter;
-			border-color: $Clr-Grey-Darker;
-			color: black
+}
+
+.Button {
+	padding: $size-xs $size-s;
+	border: 0;
+	background-color: $Clr-Main;
+	font-size: 14px;
+	@extend %_Clickable;
+	&:hover {
+		background-color: $Clr-Main-Dark;
+	}
+	&.Small {
+		font-size: 10px;
+		padding: $size-xxs $size-xs;
+	}
+	&.Large {
+		padding: $size-s $size-n;
+	}
+	&.Huge {
+		font-size: 19px;
+		padding: $size-n $size;
+	}
+	&.Round {
+		@include Round(all,$Control-Border-Radius);
+	}
+	&.Search {
+		@include Round(all, (($line-height)/2) + $size-xs);
+		&.Large {
+			@include Round(all, (($line-height)/2) + $size-s);
+		}
+		&.Huge {
+			@include Round(all, (($line-height)/2) + $size-n);
 		}
 	}
-	&.Ghost.Invert {
+	&.Icon {
+		& > span.fa {
+			margin-right: $size-s;
+		}
+	}
+	&.Ghost {
+		color: $Clr-Midnight-Blue;
 		background-color: transparent;
-		border: $Control-Border-Width solid $Clr-Peter-River;
+		border: 1px solid $Clr-Secondary-Dark;
+		@extend .Round;
+		&:hover {
+			color: black;
+			border-color: $Clr-Secondary-Darker;
+			background-color: $Clr-Clouds;
+		}
+		&.Invert {
+			color: white;
+			border-color: white;
+			&:hover {
+				color: $Clr-Main;
+				border-color: $Clr-Main;
+			}
+		}
+	}
+	&.Dropdown {
+		position: relative;
+		padding-right: 30px + $size-s;
+		&:hover {
+			background-color: $Clr-Main-Dark;
+		}
+		&.Round > span {
+			@include Round(right, $Control-Border-Radius);
+		}
+		& > span {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			display: block;
+			width: 30px;
+			padding: $size-s 0;
+			border-left: 1px white solid;
+			background-color: $Clr-Main;
+			&:hover {
+				background-color: $Clr-Main-Dark;
+			}
+		}
+		& > .Dropdown-Content {
+			background-color: white;
+			border: 1px solid $Clr-Secondary-Dark;
+			position: absolute;
+			top: $line-height + ($size-xs * 2) + 3px;
+			left: 0;
+			width: 100%;
+			z-index: 100;
+			@extend ._Soft-Shadow;
+			& li {
+				& > a {
+					display: block;
+					padding: $size-xs $size-s;
+					text-align: left;
+					color: $Clr-Midnight-Blue;
+					&:hover {
+						background-color: $Clr-Secondary-Dark;
+					}
+				}
+				&.Divider {
+					padding: 0;
+					display: block;
+					border-top: 1px solid $Clr-Secondary-Darker;
+				}
+			}
+		}
+		&.Round {
+			& > .Dropdown-Content {
+				@include Round(all, $Control-Border-Radius);
+			}
+		}
 	}
 }

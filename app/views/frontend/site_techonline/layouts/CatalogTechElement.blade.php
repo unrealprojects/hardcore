@@ -5,10 +5,10 @@
 <section class="Node">
     <div class="Snippet-Item Row Split" itemscope itemtype="http://data-vocabulary.org/Product">
         <header>
-            <h4 class="Item-Title">
+            <h3 class="Heading Primary">
                 {{$content['item']['name']}}
                 <p class="Item-Subtitle">{{$content['item']['model']['category']['name']}}</p>
-            </h4>
+            </h3>
             <h5 class="Item-Price">
                 {{$content['item']['price']}} <span>руб/час</span>
             </h5>
@@ -17,13 +17,13 @@
         @include('frontend.site_techonline.layouts.elements.Photos',
             [
                 'photos'=>$content['item']['photos'],
-                'class_wrap'=>'Item-Gallery Grid XS-5'
+                'class_wrap'=>'Item-Gallery Grid-XS-5'
             ])
         <div class="Item-Additional-Info">
             Арендатор
             <a href="/admin/{{$content['item']['admin']['metadata']['alias']}}">{{$content['item']['admin']['name']}}</a>
         </div>
-        <div class="Item-Content Grid XS-7">
+        <div class="Item-Content Grid-XS-7">
             <p itemprop="description">{{$content['item']['description']}}</p>
 
             <!-- Параметры товара -->

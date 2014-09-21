@@ -13,7 +13,7 @@
                 <li class="Snippet-Item Row Merge">
 
                     <header class="Row Merge">
-                        <h4 class="Item-Title Six">
+                        <h4 class="Item-Title Grid-XS-6">
                             <a href="/rent/{{$list_elem['metadata']['alias']}}">
                                 {{$list_elem['name']}}
                             </a>
@@ -21,7 +21,7 @@
                                 {{$list_elem['model']['category']['name']}}
                             </span>
                         </h4>
-                        <ul class="Item-Values Six">
+                        <ul class="Item-Values Grid-XS-6">
                             <li><h6>Статус:</h6>{{$list_elem['status']['name']}}</li>
                             <li><h6>Состояние:</h6>{{$list_elem['opacity']['name']}}</li>
                             <li><h6>Цена:</h6>{{$list_elem['price']}} <span>руб/час</span></li>
@@ -34,7 +34,7 @@
                             'class_wrap'=>'Item-Gallery Grid XS-5'
                         ])
 
-                    <div class="Item-Content XS-7">
+                    <div class="Item-Content Grid-XS-7">
                         {{$list_elem['description']}}
 
                         <!-- Параметры товара -->

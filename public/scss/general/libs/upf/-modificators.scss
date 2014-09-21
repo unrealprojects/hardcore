@@ -86,7 +86,8 @@
 	list-style: 			none;
 }
 // Добавляет едва заметную тень вокруг блока
-._Soft_Shadow {
+._Soft_Shadow ,
+._Soft-Shadow {
 	box-shadow: 			0 0 50px rgba(0,0,0,0.15);
 }
 ._Fly-Out {
@@ -116,22 +117,7 @@
 		}
 	}
 }
-._Button {
-	padding: 				$size-n $size;
-	border: 				1px solid $Clr-Main;
-	background-color: 		$Clr-Main;
-	font-weight: 			100;
-	color: 					#fff;
-	cursor: 				pointer;
-	@include 				Transition(background, .3s);
 
-	&:hover {
-		background-color: 	$Clr-Main-Dark;
-	}
-	&._Rounded {
-		@include Round(all, $Control-Border-Radius);
-	}
-}
 ._Fit-Row {
 	width: 					100%;
 }

@@ -140,15 +140,19 @@ body		,
 
 
 .Panel {
+	padding: $size-s;
 	display: inline-block;
-	padding: $size-xs;
-	clear: both;
-	&.Info {
-		color: white;
-		background-color: $Clr-Nephritis;
-	}
-	&.Warning {
-		color: white;
-		background-color: $Clr-Alizarin;
-	}
 }
+.Info {
+	color: #fff!important;
+	background-color: $Clr-Peter-River!important;
+}
+.Warning {
+	color: white;
+	background-color: $Clr-Alizarin;
+}
+.Success {
+	color: white;
+	background-color: $Clr-Emerald;
+}
+

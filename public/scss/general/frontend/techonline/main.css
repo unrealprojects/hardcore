@@ -93,36 +93,14 @@ footer[role='contentinfo'] > div:after,
 .Pagination, .Breadcrumbs .Breadcrumb-List, .Site-Navigation.Primary ul, .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, .Filter-Result, ul.Tag-List, .Vote, .List-Filter, .Menu-List ul, .Filter.Accordion, .Filter-Subcategory ul, .List-Group-Actions {
   list-style: none; }
 
-._Soft_Shadow {
+._Soft_Shadow,
+._Soft-Shadow,
+.Button.Dropdown > .Dropdown-Content {
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.15); }
 
 @media all and (min-width: 1024px) {
   ._Fly-Out {
     margin-left: -50px; } }
-
-._Button, input[type='submit'], button.Button,
-input.Button,
-a.Button {
-  padding: 15px 20px;
-  border: 1px solid #e74c3c;
-  background-color: #e74c3c;
-  font-weight: 100;
-  color: #fff;
-  cursor: pointer;
-  -webkit-transition-property: background;
-  -moz-transition-property: background;
-  transition-property: background;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  transition-duration: 0.3s; }
-  ._Button:hover, input[type='submit']:hover, button.Button:hover,
-  input.Button:hover,
-  a.Button:hover {
-    background-color: #c0392b; }
-  ._Button._Rounded, input._Rounded[type='submit'], button._Rounded.Button,
-  input._Rounded.Button,
-  a._Rounded.Button {
-    border-radius: 5px; }
 
 ._Fit-Row, .Snippet-Item .Item-Gallery img.Item-Main-Photo {
   width: 100%; }
@@ -134,9 +112,7 @@ a.Button {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
     filter: alpha(opacity=90); }
 
-._Search, button.Button.Search,
-input.Button.Search,
-a.Button.Search {
+._Search, .Button.Search {
   border-radius: 30px; }
 
 ._Unselectable, .Heading, .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item:before, .Control-Group, .Control-Group span {
@@ -146,7 +122,7 @@ a.Button.Search {
   -o-user-select: none;
   user-select: none; }
 
-#Menu-Toggle span:hover {
+.Button, #Menu-Toggle span:hover {
   cursor: pointer; }
 
 * {
@@ -745,15 +721,20 @@ body,
     content: ""; }
 
 .Panel {
-  display: inline-block;
-  padding: 5px;
-  clear: both; }
-  .Panel.Info {
-    color: white;
-    background-color: #27ae60; }
-  .Panel.Warning {
-    color: white;
-    background-color: #e74c3c; }
+  padding: 10px;
+  display: inline-block; }
+
+.Info {
+  color: #fff !important;
+  background-color: #3498db !important; }
+
+.Warning {
+  color: white;
+  background-color: #e74c3c; }
+
+.Success {
+  color: white;
+  background-color: #2ecc71; }
 
 .Control-Group {
   margin-top: 10px;
@@ -947,9 +928,7 @@ dl.Tabs {
     dl.Tabs dd > div {
       padding: 20px 0; }
 
-button.Button,
-input.Button,
-a.Button {
+.Button {
   line-height: 24px;
   color: white;
   -webkit-transition-property: border, background-color, color;
@@ -958,29 +937,90 @@ a.Button {
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   transition-duration: 0.3s; }
-  button.Button[disabled],
-  input.Button[disabled],
-  a.Button[disabled] {
+  .Button[disabled] {
     cursor: not-allowed;
     background-color: #999999;
     color: #dedede; }
-  button.Button.Ghost,
-  input.Button.Ghost,
-  a.Button.Ghost {
-    background-color: white;
-    border: 2px solid #dedede;
-    color: #999999; }
-    button.Button.Ghost:hover,
-    input.Button.Ghost:hover,
-    a.Button.Ghost:hover {
-      background-color: #f1f1f1;
-      border-color: #555555;
-      color: black; }
-  button.Button.Ghost.Invert,
-  input.Button.Ghost.Invert,
-  a.Button.Ghost.Invert {
+
+.Button {
+  padding: 5px 10px;
+  border: 0;
+  background-color: #e74c3c;
+  font-size: 14px; }
+  .Button:hover {
+    background-color: #c0392b; }
+  .Button.Small {
+    font-size: 10px;
+    padding: 2px 5px; }
+  .Button.Large {
+    padding: 10px 15px; }
+  .Button.Huge {
+    font-size: 19px;
+    padding: 15px 20px; }
+  .Button.Round, .Button.Ghost {
+    border-radius: 5px; }
+  .Button.Search {
+    border-radius: 17px; }
+    .Button.Search.Large {
+      border-radius: 22px; }
+    .Button.Search.Huge {
+      border-radius: 27px; }
+  .Button.Icon > span.fa {
+    margin-right: 10px; }
+  .Button.Ghost {
+    color: #2c3e50;
     background-color: transparent;
-    border: 2px solid #3498db; }
+    border: 1px solid #bdc3c7; }
+    .Button.Ghost:hover {
+      color: black;
+      border-color: #95a5a6;
+      background-color: #ecf0f1; }
+    .Button.Ghost.Invert {
+      color: white;
+      border-color: white; }
+      .Button.Ghost.Invert:hover {
+        color: #e74c3c;
+        border-color: #e74c3c; }
+  .Button.Dropdown {
+    position: relative;
+    padding-right: 40px; }
+    .Button.Dropdown:hover {
+      background-color: #c0392b; }
+    .Button.Dropdown.Round > span, .Button.Dropdown.Ghost > span {
+      border-radius: 0 5px 5px 0; }
+    .Button.Dropdown > span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      width: 30px;
+      padding: 10px 0;
+      border-left: 1px white solid;
+      background-color: #e74c3c; }
+      .Button.Dropdown > span:hover {
+        background-color: #c0392b; }
+    .Button.Dropdown > .Dropdown-Content {
+      background-color: white;
+      border: 1px solid #bdc3c7;
+      position: absolute;
+      top: 37px;
+      left: 0;
+      width: 100%;
+      z-index: 100; }
+      .Button.Dropdown > .Dropdown-Content li > a {
+        display: block;
+        padding: 5px 10px;
+        text-align: left;
+        color: #2c3e50; }
+        .Button.Dropdown > .Dropdown-Content li > a:hover {
+          background-color: #bdc3c7; }
+      .Button.Dropdown > .Dropdown-Content li.Divider {
+        padding: 0;
+        display: block;
+        border-top: 1px solid #95a5a6; }
+    .Button.Dropdown.Round > .Dropdown-Content, .Button.Dropdown.Ghost > .Dropdown-Content {
+      border-radius: 5px; }
 
 body {
   min-width: 320px;
@@ -1264,7 +1304,7 @@ img.Footer-Img {
 
 .Snippet-List .Snippet-Item header {
   position: relative;
-  background-color: #f1f1f1; }
+  background-color: #ecf0f1; }
   .Snippet-List .Snippet-Item header .Item-Category,
   .Snippet-List .Snippet-Item header .Item-Location {
     padding: 0; }

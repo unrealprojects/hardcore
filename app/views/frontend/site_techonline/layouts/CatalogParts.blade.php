@@ -54,7 +54,7 @@
                     @include('frontend.site_techonline.layouts.elements.Photos',
                         [
                             'photos'=>$list_elem['photos'],
-                            'class_wrap'=>'Item-Gallery Grid XS-5'
+                            'class_wrap'=>'Item-Gallery Grid-XS-5'
                         ])
 
                     <div class="Item-Content Grid XS-7">

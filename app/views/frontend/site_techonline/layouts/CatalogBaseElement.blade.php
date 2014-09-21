@@ -2,20 +2,20 @@
 
 @section('main')
 <section class="Node">
-    <div class="Snippet-Item Row Split" itemscope itemtype="http://data-vocabulary.org/Product">
+    <div class="Snippet-Item Row Merge" itemscope itemtype="http://data-vocabulary.org/Product">
         <header>
-            <h4 class="Item-Title">
+            <h3 class="Heading Primary">
                 <span itemprop="brand">{{$content['item']['brand']['name']}}</span>
                     {{$content['item']['model']}}
                 <span class="Item-Subtitle" itemprop="category">{{$content['item']['category']['name']}}</span>
-            </h4>
+            </h3>
 
         </header>
 
             @include('frontend.site_techonline.layouts.elements.Photos',
                       [
                          'photos'=>$content['item']['photos'],
-                         'class_wrap'=>'Item-Gallery Grid XS-5'
+                         'class_wrap'=>'Item-Gallery Grid-XS-5'
                     ])
 
         <div class="Item-Content Grid XS-7">
