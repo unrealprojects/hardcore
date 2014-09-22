@@ -25,8 +25,6 @@ class CatalogTechController extends TechonlineController{
         }
 
 
-
-
         /* ДАННЫЕ ВИД */
         $this->viewData['content'] = [
             'filter'=>[
@@ -35,8 +33,9 @@ class CatalogTechController extends TechonlineController{
                 'categories_list'=>\Model\General\Categories::all(),
                 'regions'=>\Model\General\TechOnline\CatalogRegion::toSubRegions(true),
                 'regions_list'=>\Model\General\TechOnline\CatalogRegion::all(),
+                'params'=>$modelCategories->getFilters(\Input::get('category')),
                 'has_params'=>true,
-                'params'=>$modelCategories->getFilters(\Input::get('category'))
+                'has_price'=>true,
             ],
             'pagination' => $CatalogTechList->appends(\Input::except('page'))->links(),
             'list' => $CatalogTechList->toArray()['data'],

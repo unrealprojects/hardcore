@@ -11,6 +11,7 @@ class CatalogBaseController extends TechonlineController{
         ];
 
         /* МОДЕЛЬ */
+        $modelCategories = new \Model\General\Categories();
         $CatalogBase = new \Model\General\TechOnline\CatalogBase();
         $CatalogBaseList=$CatalogBase->getList($filter);
         $filters=false;
@@ -23,6 +24,14 @@ class CatalogBaseController extends TechonlineController{
 
         /* ДАННЫЕ ВИД */
         $this->viewData['content'] = [
+            'filter'=>[
+                'categories'=>\Model\General\Categories::toSubCategories(true),
+                'brands'=>\Model\General\TechOnline\CatalogBrand::orderBy('foreign')->get()->toArray(),
+                'categories_list'=>\Model\General\Categories::all(),
+                'params'=>$modelCategories->getFilters(\Input::get('category')),
+                'has_params'=>true,
+                'has_price'=>true,
+            ],
             'pagination' => $CatalogBaseList->links(),
             'list' => $CatalogBaseList->toArray()['data'],
             'template' => 'content',

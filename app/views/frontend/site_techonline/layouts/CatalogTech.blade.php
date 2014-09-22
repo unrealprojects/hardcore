@@ -38,7 +38,7 @@
                         {{$list_elem['description']}}
 
                         <!-- Параметры товара -->
-                        <h6>Характеристики</h6>
+                        <h6>Информация</h6>
                         <table>
                             <tr>
                                 <td>Арендодатель:</td>
@@ -60,6 +60,17 @@
                                 <td>Регион:</td>
                                 <td>{{$list_elem['region']['name']}}</td>
                             </tr>
+                        </table>
+
+
+                        <h6>Характеристики</h6>
+                        <table>
+                        @foreach($list_elem['model']['params_values'] as $param)
+                            <tr>
+                                <td>{{$param['param_data']['name']}}</td>
+                                <td>{{$param['value']}} {{$param['param_data']['dimension']}}</td>
+                            </tr>
+                        @endforeach
                         </table>
                     </div>
 

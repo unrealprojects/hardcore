@@ -43,7 +43,6 @@
                     </span>
                 </h5>
 
-
                 <ul class="Vote">
                     <li><a class="Vote-Down" href="#"></a></li>
                     <li><span>{{$seller['rating']}}</span></li>
