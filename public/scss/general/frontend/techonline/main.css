@@ -1833,5 +1833,7 @@ ul.Tag-List li.Tag-Item {
 @media all and (min-width: 2560px) {
   .Node {
     padding: 50px; } }
+#Page-Slider .Slider-Inner #Slider-Links a {
+  color: white !important; }
 
 /*# sourceMappingURL=main.css.map */

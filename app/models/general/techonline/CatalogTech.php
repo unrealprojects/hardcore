@@ -80,10 +80,14 @@ class CatalogTech extends TechOnline {
             ->whereHas('model', function($query) {
                 if($this->filter['params']){
                     $query->whereHas('params_values',function($query){
-                        foreach($this->filter['params'] as $key => $param){
-                            $query->where('param_id',$param['id'])
-                                ->where('value','>=',$param['min-value'])
-                                ->where('value','<=',$param['max-value']);
+                        foreach($this->filter['params'] as $key => $this->filter['param']){
+                                $query->whereExists(function($where_query){
+                                    $where_query->select('*')
+                                                ->from('params_values')
+                                                ->where('param_id',$this->filter['param']['id'])
+                                                ->where('value','>=',$this->filter['param']['min-value'])
+                                                ->where('value','<=',$this->filter['param']['max-value']);
+                                });
                         }
                     });
                 }
