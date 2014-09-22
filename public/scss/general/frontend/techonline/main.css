@@ -1842,4 +1842,7 @@ ul.Tag-List li.Tag-Item {
 .Snippet-List .Item-Gallery.Grid-XS-9 {
   width: 85% !important; }
 
+.Page-Auth .Sign-In-UI, .Page-Auth .Sign-Up-UI {
+  z-index: 1000; }
+
 /*# sourceMappingURL=main.css.map */
