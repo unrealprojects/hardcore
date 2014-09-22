@@ -105,11 +105,12 @@
 /*********************************************************************** Таб :: Региионы ***/
 
             /*** Autocomplite :: Регионы ***/
-            var regions = [
-                @foreach($content['filter']['regions_list'] as $region)
-                    {key:"{{$region['alias']}}",label:"{{$region['name']}}"},
-                @endforeach
-            ];
+            @if(!empty($content['filter']['regions_list']))
+                var regions = [
+                    @foreach($content['filter']['regions_list'] as $region)
+                        {key:"{{$region['alias']}}",label:"{{$region['name']}}"},
+                    @endforeach
+                ];
 
             $( ".Autocomplete-Regions" ).autocomplete({
                 source: regions,
@@ -120,6 +121,7 @@
                     changeTab('.Tab-Categories');
                 }
             });
+            @endif
 
             /*** Клик :: Регионы ***/
             $('dd.Tab-Regions .Filter-Subcategory li>a').click(function(){
@@ -330,7 +332,7 @@
                     searchString+=key+'='+value+'&';
                 }
             });
-            location.href='rent'+searchString;
+            location.href='{{$content["filter"]["type"]}}'+searchString;
               console.log('rent'+searchString);
         }
         $('#Filter-Search').click(function(){

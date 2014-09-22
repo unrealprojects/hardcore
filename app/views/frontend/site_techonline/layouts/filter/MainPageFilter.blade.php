@@ -1,238 +1,10 @@
-<section class="Node-Wrap Row Split">
-    <div class="Box Grid-LR-4">
-        <header>
-            <h4>.Box</h4>
-        </header>
-        <div class="Box-Content">
-            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
-        </div>
-    </div>
-    <div class="Box Outlined Grid-LR-4">
-        <header>
-            <h4>.Box .Outlined</h4>
-        </header>
-        <div class="Box-Content">
-            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
-        </div>
-    </div>
-    <div class="Box Underlined Grid-LR-4">
-        <header>
-            <h4 class="Box-Title">.Box .Underlined</h4>
-            <ul class="Box-Tools">
-                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
-                <li><a href="#"><span class="fa fa-times"></span></a></li>
-            </ul>
-        </header>
-        <div class="Box-Content">
-            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
-        </div>
-    </div>
-</section>
-<section class="Node-Wrap Row Split">
-    <div class="Box Solid Grid-LR-4">
-        <header>
-            <h4 class="Box-Title">.Box .Solid</h4>
-            <ul class="Box-Tools">
-                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
-                <li><a href="#"><span class="fa fa-times"></span></a></li>
-            </ul>
-        </header>
-        <div class="Box-Content">
-            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
-        </div>
-    </div>
-
-    <div class="Box Outlined Solid Grid-LR-4">
-        <header>
-            <h4 class="Box-Title">.Box .Solid</h4>
-            <ul class="Box-Tools">
-                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
-                <li><a href="#"><span class="fa fa-times"></span></a></li>
-            </ul>
-        </header>
-        <div class="Box-Content">
-            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
-        </div>
-    </div>
-    <div class="Box Success Grid-LR-4">
-        <header>
-            <h4 class="Box-Title">.Box .Success</h4>
-            <ul class="Box-Tools">
-                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
-                <li><a href="#"><span class="fa fa-times"></span></a></li>
-            </ul>
-        </header>
-        <div class="Box-Content">
-            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
-        </div>
-    </div>
-</section>
-<section class="Node-Wrap Row Split">
-    <div class="Box Info Gradient Grid-LR-3">
-        <header>
-            <h4 class="Box-Title">.Box .Info .Gradient</h4>
-            <ul class="Box-Tools">
-                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
-                <li><a href="#"><span class="fa fa-times"></span></a></li>
-            </ul>
-        </header>
-        <div class="Box-Content">
-            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
-        </div>
-    </div>
-
-    <div class="Box Success Gradient Grid-LR-3 Dev">
-        <header>
-            <h4 class="Box-Title">.Box .Success</h4>
-            <ul class="Box-Tools">
-                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
-                <li><a href="#"><span class="fa fa-times"></span></a></li>
-            </ul>
-        </header>
-        <div class="Box-Content">
-            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
-        </div>
-    </div>
-    <div class="Box Warning Gradient Grid-LR-3 Dev">
-        <header>
-            <h4 class="Box-Title">.Box .Warning .Gradient .Round</h4>
-            <ul class="Box-Tools">
-                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
-                <li><a href="#"><span class="fa fa-times"></span></a></li>
-            </ul>
-        </header>
-        <div class="Box-Content">
-            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
-        </div>
-    </div>
-    <div class="Box Error Gradient Grid-LR-3 Dev">
-        <header>
-            <h4 class="Box-Title">.Box .Error .Gradient .Round</h4>
-            <ul class="Box-Tools">
-                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
-                <li><a href="#"><span class="fa fa-times"></span></a></li>
-            </ul>
-        </header>
-        <div class="Box-Content">
-            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
-        </div>
-    </div>
-</section>
-<section class="Node-Wrap Row Split">
-    <div class="Box Error Gradient Underlined Grid-LR-3 Dev">
-        <header>
-            <h4 class="Box-Title">.Box .Error .Gradient .Round</h4>
-            <ul class="Box-Tools">
-                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
-                <li><a href="#"><span class="fa fa-times"></span></a></li>
-            </ul>
-        </header>
-        <div class="Box-Content">
-            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
-        </div>
-    </div>
-    <div class="Box Error Gradient Outlined Grid-LR-3 Dev">
-        <header>
-            <h4 class="Box-Title">.Box .Error .Gradient .Round</h4>
-            <ul class="Box-Tools">
-                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
-                <li><a href="#"><span class="fa fa-times"></span></a></li>
-            </ul>
-        </header>
-        <div class="Box-Content">
-            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
-        </div>
-    </div>
-
-    <div class="Box Success Gradient Outlined Underlined Solid Grid-LR-3">
-        <header>
-            <h4 class="Box-Title">Box Success Gradient Outlined Underlined Solid</h4>
-            <ul class="Box-Tools">
-                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
-                <li><a href="#"><span class="fa fa-times"></span></a></li>
-            </ul>
-        </header>
-        <div class="Box-Content">
-            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
-        </div>
-    </div>
-</section>
-<section class="Node-Wrap Row Split">
-    <div class="Box">
-        <header>
-            <h4 class="Box-Title">
-                Размеры кнопок
-            </h4>
-        </header>
-        <div class="Box-Content">
-            <button class="Button Small Dev">Маленькая</button>
-            <button class="Button">Обычная</button>
-            <button class="Button Large">Большая</button>
-            <button class="Button Huge">Гигантская</button>
-        </div>
-    </div>
-</section>
 <section class="Node Filter">
 
     <h3 class="Heading Primary"><span class="fa fa-search"></span> Поиск стройтехники</h3>
-    <h5>Цвета</h5>
-    <button class="Button Success Icon"><span class="fa fa-check"></span>Success</button>
-    <button class="Button Info Icon"><span class="fa fa-info"></span>Info</button>
-    <button class="Button Warning Icon"><span class="fa fa-exclamation-triangle"></span>Warning</button>
-    <h5>Форма</h5>
-    <button class="Button Round">Скругленные края</button>
-    <button class="Button Search">Овальная</button>
-    <button class="Button Large Search">Большая Овальная</button>
-    <button class="Button Huge Search">Огромная Овальная</button>
-    <h5>Тип</h5>
-    <button class="Button Ghost">Кнопка с рамкой</button>
-    <button class="Button Ghost Icon"><span class="fa fa-outdent"></span>Кнопка с рамкой и иконкой</button>
-    <button class="Button Large Ghost Icon"><span class="fa fa-outdent"></span>Большая кнопка с рамкой и иконкой</button>
-    <button class="Button Huge Ghost Icon"><span class="fa fa-outdent"></span>Огромная кнопка с рамкой и иконкой</button>
-    <button class="Button Dropdown Round">
-        Нажми на кнопку <span class="Dropdown-Toggle fa fa-caret-down"></span>
-        <div class="Dropdown-Content">
-            <ul>
-                <li><a href="#">Открыть</a></li>
-                <li><a href="#">Сохранить как ...</a></li>
-                <li class="Divider"></li>
-                <li><a href="#">Выйти</a></li>
-            </ul>
-        </div>
-    </button>
-    <button class="Button Dropdown Icon Info">
-        <span class="fa fa-bars"></span><span>Нажми на кнопку</span>
-        <span class="Dropdown-Toggle fa fa-caret-down"></span>
-        <ul class="Dropdown-Content Icon">
-            <li><a href="#"><span class="fa fa-share"></span>Открыть</a></li>
-            <li><a href="#"><span class="fa fa-floppy-o"></span>Сохранить как ...</a></li>
-            <li class="Divider"></li>
-            <li><a href="#"><span class="fa fa-close"></span>Выйти</a></li>
-        </ul>
-    </button>
-    <button class="Button Dropdown Icon Success">
-        <span class="fa fa-bars"></span><span>Нажми на кнопку</span>
-        <span class="Dropdown-Toggle fa fa-caret-down"></span>
-        <ul class="Dropdown-Content">
-            <li><a href="#">Сохранить как ...</a></li>
-            <li class="Divider"></li>
-            <li><a href="#">Выйти</a></li>
-        </ul>
-    </button>
-    <button class="Button Dropdown Search Icon Warning">
-        <span class="fa fa-bars"></span><span>Нажми на кнопку</span>
-        <span class="Dropdown-Toggle fa fa-caret-down"></span>
-        <ul class="Dropdown-Content">
-            <li><a href="#">Открыть</a></li>
-            <li><a href="#">Сохранить как ...</a></li>
-            <li class="Divider"></li>
-            <li><a href="#">Выйти</a></li>
-        </ul>
-    </button>
     <dl class="Tabs">
 
-        <!-- ФИЛЬТР :: ТАБ 1 :: РЕГИОНЫ-->
         @if(!empty($content['filter']['regions']))
+        <!-- ФИЛЬТР :: ТАБ 1 :: РЕГИОНЫ-->
         <dt class="Active Tab-Regions"><span>Выбор региона</span></dt>
         <dd class="Active Tab-Regions">
             <div>
@@ -245,7 +17,7 @@
                         @if($region['subRegions'])
                         <div class="Accordion-Switch"><span class="fa fa-angle-down"></span></div>
                         @endif
-                        <a class="Accordion-Switch" href="/catalog/?region={{$region['alias']}}" alias="{{$region['alias']}}">{{$region['name']}}</a>
+                        <a class="Accordion-Switch" href="#" alias="{{$region['alias']}}">{{$region['name']}}</a>
                     </li>
 
                     @if($region['subRegions'])
@@ -253,22 +25,22 @@
                         <ul>
                             @foreach($region['subRegions'] as $subRegions)
                             <li>
-                                <a href="/catalog/?region={{$subRegions['alias']}}" alias="{{$subRegions['alias']}}">{{$subRegions['name']}}</a>
+                                <a href="#" alias="{{$subRegions['alias']}}">{{$subRegions['name']}}</a>
                                 <!-- Вложенные города -->
 
                                 @if(!empty($subRegions['cities']))
                                 <div class="Filter-Cities">
                                     <ul class="List-Group-Actions">
                                         <li class="Item-Group-Actions">
-                                            <a class="All-Cities" href="/catalog/?region={{$subRegions['alias']}}" alias="{{$subRegions['alias']}}">Все города</a>
+                                            <a class="All-Cities" href="#" alias="{{$subRegions['alias']}}">Все города</a>
                                         </li>
                                         <li class="Item-Group-Actions">
-                                            <a class="Icon Back" href="/">Вернуться к выбору региона</a>
+                                            <a class="Icon Back" href="#">Вернуться к выбору региона</a>
                                         </li>
                                     </ul>
                                     <ul class="List-Params Row Merge">
                                         @foreach($subRegions['cities'] as $city)
-                                        <li class="List-Params-Item XS-6 LR-4"><a href="/catalog/?region={{$city['alias']}}" alias="{{$city['alias']}}">{{$city['name']}}</a></li>
+                                        <li class="List-Params-Item XS-6 LR-4"><a href="#" alias="{{$city['alias']}}">{{$city['name']}}</a></li>
                                         @endforeach
                                     </ul>
                                     @endif
@@ -284,8 +56,11 @@
         @endif
         <!-- ФИЛЬТР:: ТАБ 2 ::КАТЕГОРИИ -->
         @if(!empty($content['filter']['categories']))
-        <dt class="Tab-Categories"><span>Выбор категории</span></dt>
-        <dd class="Tab-Categories">
+        <dt class="Tab-Categories
+        {{(!empty($content['filter']['type']) && $content['filter']['type']=='catalog')?'inTwo Active':''}}
+        "><span>Выбор категории</span></dt>
+        <dd class="Tab-Categories
+        {{(!empty($content['filter']['type']) && $content['filter']['type']=='catalog')?'Active':''}}">
             <div>
                 <div class="Control-Group">
                     <input class="Autocomplete Autocomplete-Categories" placeholder="Поиск техники ..."/>
@@ -297,14 +72,14 @@
                             @if($category['subCategories'])
                             <div class="Accordion-Switch"><span class="fa fa-angle-down"></span></div>
                             @endif
-                            <a href="/catalog/?category={{$category['alias']}}" alias="{{$category['alias']}}">{{$category['name']}}</a>
+                            <a href="#" alias="{{$category['alias']}}">{{$category['name']}}</a>
                         </li>
 
                         @if($category['subCategories'])
                         <li class="Filter-Subcategory Accordion-Subcategory">
                             <ul>
                                 @foreach($category['subCategories'] as $subCategory)
-                                    <li><a href="/catalog/?category={{$subCategory['alias']}}" alias="{{$subCategory['alias']}}">{{$subCategory['name']}}</a></li>
+                                    <li><a href="#" alias="{{$subCategory['alias']}}">{{$subCategory['name']}}</a></li>
                                 @endforeach
                             </ul>
                         </li>
@@ -316,14 +91,19 @@
         @endif
         <!-- ФИЛЬТР :: ТАБ 3 :: ПАРАМЕТРЫ -->
         @if($content['filter']['has_params'])
-        <dt class="Wide Tab-Params"><span>Дополнительные параметры</span></dt>
+        <dt class="Wide Tab-Params
+        {{(!empty($content['filter']['type']) && $content['filter']['type']=='catalog')?'inTwo':''}}
+        "><span>Дополнительные параметры</span></dt>
         <dd class="Tab-Params">
             <div>
                 <form class="Form-Vertical" action="">
-                    <div class="Control-Group">
-                        <label for="Slider-Range-1">Цена: <span id="Slider-Range-Value-1"></span></label>
-                        <div class="Slider-Range" id="Slider-Range-1"></div>
-                    </div>
+
+                        <div class="Control-Group">
+                            @if(!empty($content['filter']['has_price']))
+                            <label for="Slider-Range-1">Цена: <span id="Slider-Range-Value-1"></span></label>
+                            <div class="Slider-Range" id="Slider-Range-1"></div>
+                            @endif
+                        </div>
                     @if(!empty($content['filter']['params']))
                         @foreach($content['filter']['params']['filters'] as $key => $param)
                         <div class="Control-Group">

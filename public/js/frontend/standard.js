@@ -40,5 +40,16 @@
                    .next("dd").andSelf().addClass("Active");
         });
 
+        /* Tootle-Next-Item */
+        $('.Toggled-Next-Item').hide();
+//        $('.Toggle-Next-Item a').click(function(){
+//            $.preventDefault();
+//        });
+        $('.Toggle-Next-Item a').click(function(){
+            $(this).parent().next().slideToggle();
+            return false;
+        });
+
+
     });
 })(jQuery);

@@ -19,12 +19,12 @@ class CatalogRegion extends TechOnline {
         $regions['2']['subRegions']=$instance::where('type','Республики')->get()->toArray();
         $regions['2']['name']='Республики';
         $regions['2']['alias']='republic';
-        $regions['3']['subRegions']=$instance::where('type','Автономные округа')->get()->toArray();
-        $regions['3']['name']='Автономные округа';
-        $regions['3']['alias']='okrug';
-        $regions['4']['subRegions']=$instance::where('type','Края')->get()->toArray();
-        $regions['4']['name']='Края';
-        $regions['4']['alias']='cray';
+      //  $regions['3']['subRegions']=$instance::where('type','Автономные округа')->get()->toArray();
+      //  $regions['3']['name']='Автономные округа';
+       // $regions['3']['alias']='okrug';
+     //   $regions['4']['subRegions']=$instance::where('type','Края')->get()->toArray();
+     //   $regions['4']['name']='Края';
+     //   $regions['4']['alias']='cray';
 
         $sorted=[];
         $i=0;
@@ -40,7 +40,7 @@ class CatalogRegion extends TechOnline {
         }
 
         /* Формирование регионов и городов */
-        for($region_id=1;$region_id<=4;$region_id++){
+        for($region_id=1;$region_id<=2;$region_id++){
             $sorted[$region_id]['name']=$regions[$region_id]['name'];
             $sorted[$region_id]['alias']=$regions[$region_id]['alias'];
             foreach($regions[$region_id]['subRegions'] as $key=>$region){

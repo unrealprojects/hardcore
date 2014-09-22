@@ -54,18 +54,18 @@ class CatalogTech extends TechOnline {
                            'admin',
                            'admin.metadata',
                            'metadata')
+          /*** Фильтр в Регионах ***/
+          ->whereHas('region', function($query) {
+              if($this->filter['region']){
+                  \Model\General\TechOnline\CatalogRegion::filterSubRegions($query,$this->filter['region']);
+              }
+          })
             /*** Фильтр в Категориях ***/
             ->whereHas('model', function($query) {
                 if($this->filter['category']){
                     $query->whereHas('category',function($query){
                        \Model\General\Categories::filterSubCategories($query,$this->filter['category']);
                     });
-                }
-            })
-            /*** Фильтр в Регионах ***/
-            ->whereHas('region', function($query) {
-                if($this->filter['region']){
-                    \Model\General\TechOnline\CatalogRegion::filterSubRegions($query,$this->filter['region']);
                 }
             })
             /*** Фильтр по Поизводителям ***/
@@ -88,7 +88,9 @@ class CatalogTech extends TechOnline {
                     });
                 }
             })
+            ->orderBy('status_id','desc')
             ->orderBy('created_at','desk');
+
     if($this->filter['price-max'] && $this->filter['price-min']){
         $query = $query->where('price','>=',$this->filter['price-min'])
                  ->where('price','<=',$this->filter['price-max']);

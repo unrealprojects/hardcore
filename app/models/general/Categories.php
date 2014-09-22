@@ -62,7 +62,8 @@ class Categories extends General{
         $categories = new \Model\General\Categories();
         $category = $categories->where('parent_id',0)->where('alias',$alias)->first();
         if($category){
-            $parents = $categories->where('parent_id',$category->id)->get()->toArray();
+            $parents = $categories->where('parent_id',$category->id)
+                                  ->where('app_section', 'catalog')->get()->toArray();
             foreach($parents as $value){
                 $keys[]=$value['id'];
             }
