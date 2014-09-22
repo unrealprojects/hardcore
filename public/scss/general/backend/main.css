@@ -38,12 +38,13 @@
 ._Dev {
   outline: 1px red solid !important; }
 
-._Clearfix:before, ._Inline:before, .Breadcrumbs .Breadcrumb-List:before, .Box > header ul.Box-Tools:before, .Row:before, .Node:before, .pagination:before,
+._Clearfix:before, ._Inline:before, .Breadcrumbs .Breadcrumb-List:before, .Box > header ul.Box-Tools:before, nav.Userbar ul:before, .Row:before, .Node:before, .pagination:before,
 .Pagination:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Box:before, .Box > header:before, li.Menu-Category-Item:before, li.Menu-Subcategory-Item:before,
 ._Clearfix:after,
 ._Inline:after,
 .Breadcrumbs .Breadcrumb-List:after,
 .Box > header ul.Box-Tools:after,
+nav.Userbar ul:after,
 .Row:after,
 .Node:after,
 .pagination:after,
@@ -59,15 +60,15 @@ li.Menu-Subcategory-Item:after {
   content: " ";
   display: table; }
 
-._Clearfix:after, ._Inline:after, .Breadcrumbs .Breadcrumb-List:after, .Box > header ul.Box-Tools:after, .Row:after, .Node:after, .pagination:after,
+._Clearfix:after, ._Inline:after, .Breadcrumbs .Breadcrumb-List:after, .Box > header ul.Box-Tools:after, nav.Userbar ul:after, .Row:after, .Node:after, .pagination:after,
 .Pagination:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Box:after, .Box > header:after, li.Menu-Category-Item:after, li.Menu-Subcategory-Item:after {
   clear: both; }
 
-._Inline > *, .Breadcrumbs .Breadcrumb-List > *, .Box > header ul.Box-Tools > * {
+._Inline > *, .Breadcrumbs .Breadcrumb-List > *, .Box > header ul.Box-Tools > *, nav.Userbar ul > * {
   float: left; }
 
 ._No-Bullets, ul.Row > li, .pagination,
-.Pagination, .Breadcrumbs .Breadcrumb-List, .Box > header ul.Box-Tools, .Button.Dropdown > .Dropdown-Content, .Button.Dropdown > .Dropdown-Content ul, aside.Menu > ul.Menu-Category, li.Menu-Category-Item, ul.Menu-Subcategory {
+.Pagination, .Breadcrumbs .Breadcrumb-List, .Box > header ul.Box-Tools, .Button.Dropdown > .Dropdown-Content, .Button.Dropdown > .Dropdown-Content ul, aside.Menu > ul.Menu-Category, li.Menu-Category-Item, ul.Menu-Subcategory, nav.Userbar ul {
   list-style: none; }
 
 ._Soft_Shadow,
@@ -609,6 +610,10 @@ code {
   color: #7f8c8d;
   font-weight: 100; }
 
+.Heading.Secondary {
+  text-transform: none;
+  color: #7f8c8d; }
+
 .Heading.Underlined {
   display: block;
   padding-bottom: 10px;
@@ -682,15 +687,17 @@ body,
   margin-top: 20px;
   background-color: #ecf0f1;
   border-radius: 5px; }
-  .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item a {
+  .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item > span, .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item > a {
     padding: 5px;
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 13px;
+    line-height: 13px; }
+  .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item a {
     color: #7f8c8d; }
   .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item a:hover {
     color: #2c3e50; }
   .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item:before {
     font-family: FontAwesome;
+    vertical-align: middle;
     padding: 0 10px;
     content: "\f105"; }
   .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item:first-child:before {
@@ -1165,7 +1172,6 @@ dl.Tabs {
 
 body {
   font-family: 'Open Sans';
-  line-height: 13px;
   background-color: #ecf0f1; }
 
 aside.Menu {
@@ -1179,7 +1185,7 @@ aside.Menu {
 
 .Menu-Shadow {
   position: absolute;
-  width: 4px;
+  width: 3px;
   top: 0;
   bottom: 0;
   left: 300px;
@@ -1205,7 +1211,7 @@ a.Menu-Category-Link {
   font-size: 13px;
   padding: 15px 15px;
   color: #bdc3c7; }
-  a.Menu-Category-Link:hover {
+  a.Menu-Category-Link.Active, a.Menu-Category-Link:hover {
     background-color: #07b3d2;
     color: #ecf0f1; }
   a.Menu-Category-Link span.fa {
@@ -1223,11 +1229,27 @@ a.Menu-Subcategory-Link {
   font-size: 13px;
   color: #bdc3c7;
   border-left: 0 solid transparent; }
-  a.Menu-Subcategory-Link:hover {
-    border-left: 10px solid transparent;
+  a.Menu-Subcategory-Link.Active, a.Menu-Subcategory-Link:hover {
     background-color: #283032;
     color: #ecf0f1; }
+  a.Menu-Subcategory-Link:hover {
+    border-left: 10px solid transparent; }
   a.Menu-Subcategory-Link span.fa {
     margin-right: 10px; }
+
+main {
+  margin-left: 300px; }
+  main .Content {
+    margin: 15px; }
+
+nav.Userbar {
+  background-color: white;
+  border-bottom: 1px solid #ecf0f1; }
+  nav.Userbar ul li a {
+    display: block;
+    padding: 15px;
+    color: black; }
+    nav.Userbar ul li a:hover {
+      color: #07b3d2; }
 
 /*# sourceMappingURL=main.css.map */

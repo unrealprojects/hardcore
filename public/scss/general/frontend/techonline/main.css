@@ -635,6 +635,10 @@ code {
   color: #7f8c8d;
   font-weight: 100; }
 
+.Heading.Secondary {
+  text-transform: none;
+  color: #7f8c8d; }
+
 .Heading.Underlined {
   display: block;
   padding-bottom: 10px;
@@ -708,15 +712,17 @@ body,
   margin-top: 20px;
   background-color: #ecf0f1;
   border-radius: 5px; }
-  .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item a {
+  .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item > span, .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item > a {
     padding: 5px;
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 13px;
+    line-height: 13px; }
+  .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item a {
     color: #7f8c8d; }
   .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item a:hover {
     color: #2c3e50; }
   .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item:before {
     font-family: FontAwesome;
+    vertical-align: middle;
     padding: 0 10px;
     content: "\f105"; }
   .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item:first-child:before {

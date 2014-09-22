@@ -110,12 +110,16 @@ body		,
 	.Breadcrumb-List {
 		@extend ._Inline;
 		@extend ._No-Bullets;
+		@extend ._Clearfix;
 
 		.Breadcrumb-Item {
-			a {
+			& > span ,
+			& > a    {
 				padding: $size-xs;
-				font-size: 16px;
-				line-height: 16px;
+				font-size: 13px;
+				line-height: 13px;
+			}
+			a {
 				color: $Clr-Asbestos;
 			}
 			a:hover {
@@ -123,6 +127,7 @@ body		,
 			}
 			&:before {
 				font-family: FontAwesome;
+				vertical-align: middle;
 				padding: 0 $size-s;
 				content: "\f105";
 				@extend ._Unselectable;

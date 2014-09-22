@@ -13,7 +13,6 @@ $Clr-Cyan-Dark:			#0599b4;
 
 body {
 	font-family: 'Open Sans';
-	line-height: 13px;
 	background-color: $Clr-Secondary;
 
 }
@@ -29,7 +28,7 @@ aside.Menu {
 }
 .Menu-Shadow {
 	position: absolute;
-	width: 4px;
+	width: 3px;
 	top: 0;
 	bottom: 0;
 	left: $Menu-Width;
@@ -64,6 +63,7 @@ a.Menu-Category-Link {
 	font-size: 13px;
 	padding: $size-n $size-n;
 	color: $Clr-Secondary-Dark;
+	&.Active ,
 	&:hover {
 		background-color: $Clr-Cyan;
 		color: $Clr-Secondary;
@@ -89,12 +89,44 @@ a.Menu-Subcategory-Link {
 	font-size: 13px;
 	color: $Clr-Secondary-Dark;
 	border-left: 0 solid transparent;
+	&.Active ,
 	&:hover {
-		border-left: 10px solid transparent;
 		background-color: $Clr-Slate-Dark;
 		color: $Clr-Secondary;
+	}
+	&:hover {
+		border-left: 10px solid transparent;
 	}
 	span.fa {
 		margin-right: $size-s;
 	}
+}
+
+// MAIN BLOCK
+main {
+	margin-left: $Menu-Width;
+	.Content {
+		margin: $size-n;
+	}
+}
+nav.Userbar {
+	background-color: white;
+	border-bottom: 1px solid $Clr-Secondary;
+	ul {
+		@extend ._Inline;
+		@extend ._No-Bullets;
+		li {
+			a {
+				display: block;
+				padding: $size-n;
+				color: $Clr-Text-Main;
+				&:hover {
+					color: $Clr-Cyan;
+				}
+			}
+			span.fa {
+			}
+		}
+	}
+
 }

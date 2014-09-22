@@ -61,7 +61,10 @@ code {
 	color: $Clr-Asbestos;
 	font-weight: 100;
 }
-
+.Heading.Secondary {
+	text-transform: none;
+	color: $Clr-Asbestos;
+}
 // Heading width underline (border-bottom)
 .Heading.Underlined {
 	display: block;
