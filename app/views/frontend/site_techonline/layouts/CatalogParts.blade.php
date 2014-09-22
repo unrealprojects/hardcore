@@ -57,7 +57,7 @@
                             'class_wrap'=>'Item-Gallery Grid-XS-5'
                         ])
 
-                    <div class="Item-Content Grid XS-7">
+                    <div class="Item-Content Grid-XS-7">
                         {{$list_elem['description']}}
 
                         <!-- Параметры товара -->
