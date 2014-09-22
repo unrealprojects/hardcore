@@ -87,3 +87,5 @@
     @parent
     <script src="/js/frontend/Accordion.js" type="text/javascript"></script>
 @endsection
+
+Вот с проектами только чуть с проектами разгреблись ищием сново работу.
