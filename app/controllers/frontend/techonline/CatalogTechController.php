@@ -36,6 +36,7 @@ class CatalogTechController extends TechonlineController{
                 'params'=>$modelCategories->getFilters(\Input::get('category')),
                 'has_params'=>true,
                 'has_price'=>true,
+                'type'=>'rent'
             ],
             'pagination' => $CatalogTechList->appends(\Input::except('page'))->links(),
             'list' => $CatalogTechList->toArray()['data'],

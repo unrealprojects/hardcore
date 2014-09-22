@@ -15,7 +15,7 @@ class MainPageController extends TechonlineController{
                 'categories_list'=>\Model\General\Categories::all(),
                 'regions'=>\Model\General\TechOnline\CatalogRegion::toSubRegions(true),
                 'regions_list'=>\Model\General\TechOnline\CatalogRegion::all(),
-                
+                'type'=>'rent',
                 'has_params'=>true,
             ],
             'categories'=>\Model\General\Categories::toSubCategories(),

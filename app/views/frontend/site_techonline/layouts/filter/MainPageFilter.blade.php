@@ -3,8 +3,8 @@
     <h3 class="Heading Primary"><span class="fa fa-search"></span> Поиск стройтехники</h3>
     <dl class="Tabs">
 
-        <!-- ФИЛЬТР :: ТАБ 1 :: РЕГИОНЫ-->
         @if(!empty($content['filter']['regions']))
+        <!-- ФИЛЬТР :: ТАБ 1 :: РЕГИОНЫ-->
         <dt class="Active Tab-Regions"><span>Выбор региона</span></dt>
         <dd class="Active Tab-Regions">
             <div>
@@ -17,7 +17,7 @@
                         @if($region['subRegions'])
                         <div class="Accordion-Switch"><span class="fa fa-angle-down"></span></div>
                         @endif
-                        <a class="Accordion-Switch" href="/catalog/?region={{$region['alias']}}" alias="{{$region['alias']}}">{{$region['name']}}</a>
+                        <a class="Accordion-Switch" href="#" alias="{{$region['alias']}}">{{$region['name']}}</a>
                     </li>
 
                     @if($region['subRegions'])
@@ -25,22 +25,22 @@
                         <ul>
                             @foreach($region['subRegions'] as $subRegions)
                             <li>
-                                <a href="/catalog/?region={{$subRegions['alias']}}" alias="{{$subRegions['alias']}}">{{$subRegions['name']}}</a>
+                                <a href="#" alias="{{$subRegions['alias']}}">{{$subRegions['name']}}</a>
                                 <!-- Вложенные города -->
 
                                 @if(!empty($subRegions['cities']))
                                 <div class="Filter-Cities">
                                     <ul class="List-Group-Actions">
                                         <li class="Item-Group-Actions">
-                                            <a class="All-Cities" href="/catalog/?region={{$subRegions['alias']}}" alias="{{$subRegions['alias']}}">Все города</a>
+                                            <a class="All-Cities" href="#" alias="{{$subRegions['alias']}}">Все города</a>
                                         </li>
                                         <li class="Item-Group-Actions">
-                                            <a class="Icon Back" href="/">Вернуться к выбору региона</a>
+                                            <a class="Icon Back" href="#">Вернуться к выбору региона</a>
                                         </li>
                                     </ul>
                                     <ul class="List-Params Row Merge">
                                         @foreach($subRegions['cities'] as $city)
-                                        <li class="List-Params-Item XS-6 LR-4"><a href="/catalog/?region={{$city['alias']}}" alias="{{$city['alias']}}">{{$city['name']}}</a></li>
+                                        <li class="List-Params-Item XS-6 LR-4"><a href="#" alias="{{$city['alias']}}">{{$city['name']}}</a></li>
                                         @endforeach
                                     </ul>
                                     @endif
@@ -56,8 +56,11 @@
         @endif
         <!-- ФИЛЬТР:: ТАБ 2 ::КАТЕГОРИИ -->
         @if(!empty($content['filter']['categories']))
-        <dt class="Tab-Categories"><span>Выбор категории</span></dt>
-        <dd class="Tab-Categories">
+        <dt class="Tab-Categories
+        {{(!empty($content['filter']['type']) && $content['filter']['type']=='catalog')?'inTwo Active':''}}
+        "><span>Выбор категории</span></dt>
+        <dd class="Tab-Categories
+        {{(!empty($content['filter']['type']) && $content['filter']['type']=='catalog')?'Active':''}}">
             <div>
                 <div class="Control-Group">
                     <input class="Autocomplete Autocomplete-Categories" placeholder="Поиск техники ..."/>
@@ -69,14 +72,14 @@
                             @if($category['subCategories'])
                             <div class="Accordion-Switch"><span class="fa fa-angle-down"></span></div>
                             @endif
-                            <a href="/catalog/?category={{$category['alias']}}" alias="{{$category['alias']}}">{{$category['name']}}</a>
+                            <a href="#" alias="{{$category['alias']}}">{{$category['name']}}</a>
                         </li>
 
                         @if($category['subCategories'])
                         <li class="Filter-Subcategory Accordion-Subcategory">
                             <ul>
                                 @foreach($category['subCategories'] as $subCategory)
-                                    <li><a href="/catalog/?category={{$subCategory['alias']}}" alias="{{$subCategory['alias']}}">{{$subCategory['name']}}</a></li>
+                                    <li><a href="#" alias="{{$subCategory['alias']}}">{{$subCategory['name']}}</a></li>
                                 @endforeach
                             </ul>
                         </li>
@@ -88,14 +91,19 @@
         @endif
         <!-- ФИЛЬТР :: ТАБ 3 :: ПАРАМЕТРЫ -->
         @if($content['filter']['has_params'])
-        <dt class="Wide Tab-Params"><span>Дополнительные параметры</span></dt>
+        <dt class="Wide Tab-Params
+        {{(!empty($content['filter']['type']) && $content['filter']['type']=='catalog')?'inTwo':''}}
+        "><span>Дополнительные параметры</span></dt>
         <dd class="Tab-Params">
             <div>
                 <form class="Form-Vertical" action="">
-                    <div class="Control-Group">
-                        <label for="Slider-Range-1">Цена: <span id="Slider-Range-Value-1"></span></label>
-                        <div class="Slider-Range" id="Slider-Range-1"></div>
-                    </div>
+
+                        <div class="Control-Group">
+                            @if(!empty($content['filter']['has_price']))
+                            <label for="Slider-Range-1">Цена: <span id="Slider-Range-Value-1"></span></label>
+                            <div class="Slider-Range" id="Slider-Range-1"></div>
+                            @endif
+                        </div>
                     @if(!empty($content['filter']['params']))
                         @foreach($content['filter']['params']['filters'] as $key => $param)
                         <div class="Control-Group">

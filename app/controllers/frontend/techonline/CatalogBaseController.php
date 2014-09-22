@@ -7,7 +7,10 @@ class CatalogBaseController extends TechonlineController{
         /* ФИЛЬТРАЦИЯ */
         $filter = [
             'category' => \Input::get('category')?:false,
-            'brand' => \Input::get('brand')?:false
+            'brands' => \Input::get('brands')?:false,
+            'params' => \Input::get('params')?:false,
+            'price-min' => \Input::get('price-min')?:false,
+            'price-max' => \Input::get('price-max')?:false,
         ];
 
         /* МОДЕЛЬ */
@@ -30,7 +33,7 @@ class CatalogBaseController extends TechonlineController{
                 'categories_list'=>\Model\General\Categories::all(),
                 'params'=>$modelCategories->getFilters(\Input::get('category')),
                 'has_params'=>true,
-                'has_price'=>true,
+                'has_price'=>false,
                 'type'=>'catalog'
             ],
             'pagination' => $CatalogBaseList->links(),

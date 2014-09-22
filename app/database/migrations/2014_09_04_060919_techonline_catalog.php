@@ -417,17 +417,17 @@ class TechonlineCatalog extends Migration {
 
         $params = [
             ['name'=>'Эксплуатационная масса','alias'=>'size','min'=>100,'max'=>20000,'dimension'=>'кг.'],
-            ['name'=>'Грузоподъёмность','alias'=>'size2','min'=>10,'max'=>20000,'dimension'=>'кг.'],
-            ['name'=>'Вместимость кузова','alias'=>'size3','min'=>0.5,'max'=>100,'dimension'=>'м3'],
-            ['name'=>'Мощьность двигателя','alias'=>'power4','min'=>10,'max'=>1000,'dimension'=>'лс'],
-            ['name'=>'Ширина гусениц','alias'=>'size5','min'=>100,'max'=>500,'dimension'=>'мм'],
-            ['name'=>'Скорость передвижения','alias'=>'size6','min'=>100,'max'=>500,'dimension'=>'км/ч'],
-            ['name'=>'Топливный бак','alias'=>'size7','min'=>20,'max'=>1000,'dimension'=>'л.'],
+            ['name'=>'Грузоподъёмность','alias'=>'sizer','min'=>10,'max'=>20000,'dimension'=>'кг.'],
+            ['name'=>'Вместимость кузова','alias'=>'sizet','min'=>0.5,'max'=>100,'dimension'=>'м3'],
+            ['name'=>'Мощьность двигателя','alias'=>'powery','min'=>10,'max'=>1000,'dimension'=>'лс'],
+            ['name'=>'Ширина гусениц','alias'=>'sizefgh','min'=>100,'max'=>500,'dimension'=>'мм'],
+            ['name'=>'Скорость передвижения','alias'=>'sizedf','min'=>100,'max'=>500,'dimension'=>'км/ч'],
+            ['name'=>'Топливный бак','alias'=>'sizergg','min'=>20,'max'=>1000,'dimension'=>'л.'],
 
-            ['name'=>'Скорость','alias'=>'speed8','min'=>10,'max'=>100,'dimension'=>'км/ч'],
-            ['name'=>'Грузоподъемность','alias'=>'load9','min'=>10,'max'=>50,'dimension'=>'т'],
-            ['name'=>'Объем двигателя','alias'=>'volume10','min'=>10,'max'=>100,'dimension'=>'л'],
-            ['name'=>'Размер ковша','alias'=>'size11','min'=>100,'max'=>500,'dimension'=>'дв.кв.']
+            ['name'=>'Скорость1','alias'=>'speedrr','min'=>10,'max'=>100,'dimension'=>'км/ч'],
+            ['name'=>'Грузоподъемность1','alias'=>'loadee','min'=>10,'max'=>50,'dimension'=>'т'],
+            ['name'=>'Объем двигателя1','alias'=>'volumewer','min'=>10,'max'=>200,'dimension'=>'л'],
+            ['name'=>'Размер ковша1','alias'=>'sizedrg','min'=>100,'max'=>500,'dimension'=>'дв.кв.']
         ];
 
         foreach($params as $param){
