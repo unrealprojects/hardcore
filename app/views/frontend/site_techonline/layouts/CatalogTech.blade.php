@@ -24,6 +24,8 @@
                         <ul class="Item-Values Grid-XS-6">
                             <li><h6>Статус:</h6>{{$list_elem['status']['name']}}</li>
                             <li><h6>Состояние:</h6>{{$list_elem['opacity']['name']}}</li>
+                            <li><h6>Регион:</h6>{{$list_elem['region']['name']}} </li>
+                            <li><h6>Телефоны:</h6>{{$list_elem['admin']['phone']}}</li>
                             <li><h6>Цена:</h6>{{$list_elem['price']}} <span>руб/час</span></li>
                         </ul>
                     </header>
@@ -31,15 +33,15 @@
                     @include('frontend.site_techonline.layouts.elements.Photos',
                         [
                             'photos'=>$list_elem['photos'],
-                            'class_wrap'=>'Item-Gallery Grid XS-5'
+                            'class_wrap'=>'Item-Gallery Grid-XS-3'
                         ])
 
-                    <div class="Item-Content Grid-XS-7">
+                    <div class="Item-Content Grid-XS-9">
                         {{$list_elem['description']}}
 
                         <!-- Параметры товара -->
-                        <h6>Информация</h6>
-                        <table>
+                        <h6 class="Toggle-Next-Item"><a href="#">Подробная информация</a></h6>
+                        <table class="Toggled-Next-Item">
                             <tr>
                                 <td>Арендодатель:</td>
                                 <td><a href="/sellers/{{$list_elem['admin']['metadata']['alias']}}">{{$list_elem['admin']['name']}}</a></td>
@@ -60,11 +62,6 @@
                                 <td>Регион:</td>
                                 <td>{{$list_elem['region']['name']}}</td>
                             </tr>
-                        </table>
-
-
-                        <h6>Характеристики</h6>
-                        <table>
                         @foreach($list_elem['model']['params_values'] as $param)
                             <tr>
                                 <td>{{$param['param_data']['name']}}</td>

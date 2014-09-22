@@ -740,5 +740,16 @@ ul.Tag-List {
 
 #Page-Slider .Slider-Inner #Slider-Links a{
   color:white !important;
+}
 
+.Snippet-List .Item-Gallery.Grid-XS-3{
+   width:15% !important;
+ }
+
+.Snippet-List .Item-Gallery.Grid-XS-9{
+  width:85% !important;
+}
+
+.Page-Auth .Sign-In-UI, .Page-Auth .Sign-Up-UI{
+  z-index:1000;
 }
