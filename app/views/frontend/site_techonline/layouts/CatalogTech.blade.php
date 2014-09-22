@@ -24,7 +24,6 @@
                         <ul class="Item-Values Grid-XS-6">
                             <li><h6>Статус:</h6>{{$list_elem['status']['name']}}</li>
                             <li><h6>Состояние:</h6>{{$list_elem['opacity']['name']}}</li>
-                            <li><h6>Регион:</h6>{{$list_elem['region']['name']}} </li>
                             <li><h6>Телефоны:</h6>{{$list_elem['admin']['phone']}}</li>
                             <li><h6>Цена:</h6>{{$list_elem['price']}} <span>руб/час</span></li>
                         </ul>
