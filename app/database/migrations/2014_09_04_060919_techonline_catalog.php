@@ -417,12 +417,12 @@ class TechonlineCatalog extends Migration {
 
         $params = [
             ['name'=>'Эксплуатационная масса','alias'=>'size','min'=>100,'max'=>20000,'dimension'=>'кг.'],
-            ['name'=>'Грузоподъёмность','alias'=>'size2','min'=>10,'max'=>1000,'dimension'=>'кг.'],
+            ['name'=>'Грузоподъёмность','alias'=>'size2','min'=>10,'max'=>20000,'dimension'=>'кг.'],
             ['name'=>'Вместимость кузова','alias'=>'size3','min'=>0.5,'max'=>100,'dimension'=>'м3'],
             ['name'=>'Мощьность двигателя','alias'=>'power4','min'=>10,'max'=>1000,'dimension'=>'лс'],
             ['name'=>'Ширина гусениц','alias'=>'size5','min'=>100,'max'=>500,'dimension'=>'мм'],
             ['name'=>'Скорость передвижения','alias'=>'size6','min'=>100,'max'=>500,'dimension'=>'км/ч'],
-            ['name'=>'Топливный бак','alias'=>'size7','min'=>20,'max'=>200,'dimension'=>'л.'],
+            ['name'=>'Топливный бак','alias'=>'size7','min'=>20,'max'=>1000,'dimension'=>'л.'],
 
             ['name'=>'Скорость','alias'=>'speed8','min'=>10,'max'=>100,'dimension'=>'км/ч'],
             ['name'=>'Грузоподъемность','alias'=>'load9','min'=>10,'max'=>50,'dimension'=>'т'],
