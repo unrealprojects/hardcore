@@ -1,6 +1,199 @@
+<section class="Node-Wrap Row Split">
+    <div class="Box Grid-LR-4">
+        <header>
+            <h4>.Box</h4>
+        </header>
+        <div class="Box-Content">
+            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
+        </div>
+    </div>
+    <div class="Box Outlined Grid-LR-4">
+        <header>
+            <h4>.Box .Outlined</h4>
+        </header>
+        <div class="Box-Content">
+            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
+        </div>
+    </div>
+    <div class="Box Underlined Grid-LR-4">
+        <header>
+            <h4 class="Box-Title">.Box .Underlined</h4>
+            <ul class="Box-Tools">
+                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
+                <li><a href="#"><span class="fa fa-times"></span></a></li>
+            </ul>
+        </header>
+        <div class="Box-Content">
+            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
+        </div>
+    </div>
+</section>
+<section class="Node-Wrap Row Split">
+    <div class="Box Solid Grid-LR-4">
+        <header>
+            <h4 class="Box-Title">.Box .Solid</h4>
+            <ul class="Box-Tools">
+                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
+                <li><a href="#"><span class="fa fa-times"></span></a></li>
+            </ul>
+        </header>
+        <div class="Box-Content">
+            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
+        </div>
+    </div>
+
+    <div class="Box Outlined Solid Grid-LR-4">
+        <header>
+            <h4 class="Box-Title">.Box .Solid</h4>
+            <ul class="Box-Tools">
+                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
+                <li><a href="#"><span class="fa fa-times"></span></a></li>
+            </ul>
+        </header>
+        <div class="Box-Content">
+            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
+        </div>
+    </div>
+    <div class="Box Success Grid-LR-4">
+        <header>
+            <h4 class="Box-Title">.Box .Success</h4>
+            <ul class="Box-Tools">
+                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
+                <li><a href="#"><span class="fa fa-times"></span></a></li>
+            </ul>
+        </header>
+        <div class="Box-Content">
+            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
+        </div>
+    </div>
+</section>
+<section class="Node-Wrap Row Split">
+    <div class="Box Info Gradient Grid-LR-3">
+        <header>
+            <h4 class="Box-Title">.Box .Info .Gradient</h4>
+            <ul class="Box-Tools">
+                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
+                <li><a href="#"><span class="fa fa-times"></span></a></li>
+            </ul>
+        </header>
+        <div class="Box-Content">
+            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
+        </div>
+    </div>
+
+    <div class="Box Success Gradient Grid-LR-3 Dev">
+        <header>
+            <h4 class="Box-Title">.Box .Success</h4>
+            <ul class="Box-Tools">
+                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
+                <li><a href="#"><span class="fa fa-times"></span></a></li>
+            </ul>
+        </header>
+        <div class="Box-Content">
+            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
+        </div>
+    </div>
+    <div class="Box Warning Gradient Grid-LR-3 Dev">
+        <header>
+            <h4 class="Box-Title">.Box .Warning .Gradient .Round</h4>
+            <ul class="Box-Tools">
+                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
+                <li><a href="#"><span class="fa fa-times"></span></a></li>
+            </ul>
+        </header>
+        <div class="Box-Content">
+            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
+        </div>
+    </div>
+    <div class="Box Error Gradient Grid-LR-3 Dev">
+        <header>
+            <h4 class="Box-Title">.Box .Error .Gradient .Round</h4>
+            <ul class="Box-Tools">
+                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
+                <li><a href="#"><span class="fa fa-times"></span></a></li>
+            </ul>
+        </header>
+        <div class="Box-Content">
+            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
+        </div>
+    </div>
+</section>
+<section class="Node-Wrap Row Split">
+    <div class="Box Error Gradient Underlined Grid-LR-3 Dev">
+        <header>
+            <h4 class="Box-Title">.Box .Error .Gradient .Round</h4>
+            <ul class="Box-Tools">
+                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
+                <li><a href="#"><span class="fa fa-times"></span></a></li>
+            </ul>
+        </header>
+        <div class="Box-Content">
+            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
+        </div>
+    </div>
+    <div class="Box Error Gradient Outlined Grid-LR-3 Dev">
+        <header>
+            <h4 class="Box-Title">.Box .Error .Gradient .Round</h4>
+            <ul class="Box-Tools">
+                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
+                <li><a href="#"><span class="fa fa-times"></span></a></li>
+            </ul>
+        </header>
+        <div class="Box-Content">
+            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
+        </div>
+    </div>
+
+    <div class="Box">
+        <header>
+            <h4 class="Box-Title">Box Success Gradient Outlined Underlined Solid</h4>
+            <ul class="Box-Tools">
+                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
+                <li><a href="#"><span class="fa fa-times"></span></a></li>
+            </ul>
+        </header>
+        <div class="Box-Content">
+            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
+        </div>
+    </div>
+</section>
+<section class="Node-Wrap Row Split">
+    <div class="Box">
+        <header>
+            <h4 class="Box-Title">
+                Размеры кнопок
+            </h4>
+        </header>
+        <div class="Box-Content">
+            <button class="Button Small Dev">Маленькая</button>
+            <button class="Button">Обычная</button>
+            <button class="Button Large">Большая</button>
+            <button class="Button Huge">Гигантская</button>
+        </div>
+    </div>
+</section>
 <section class="Node Filter">
 
     <h3 class="Heading Primary"><span class="fa fa-search"></span> Поиск стройтехники</h3>
+    <h5>Цвета</h5>
+    <button class="Button Success Icon"><span class="fa fa-check"></span>Success</button>
+    <button class="Button Info Icon"><span class="fa fa-info"></span>Info</button>
+    <button class="Button Warning Icon"><span class="fa fa-exclamation-triangle"></span>Warning</button>
+    <h5>Форма</h5>
+
+    <div class="Box Outlined Solid Grid-LR-4">
+        <header>
+            <h4 class="Box-Title">.Box .Solid</h4>
+            <ul class="Box-Tools">
+                <li><a href="#"><span class="fa fa-chevron-down"></span></a></li>
+                <li><a href="#"><span class="fa fa-times"></span></a></li>
+            </ul>
+        </header>
+        <div class="Box-Content">
+            <p>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров. Грейдер предоставляет возможность эффективно и в кратчайшие сроки провести профилирование, разравнивание, перемещение грунта и других строительных материалов.</p>
+        </div>
+    </div>
+
     <dl class="Tabs">
 
         @if(!empty($content['filter']['regions']))

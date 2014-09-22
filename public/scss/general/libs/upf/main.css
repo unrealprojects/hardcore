@@ -38,11 +38,12 @@
 ._Dev {
   outline: 1px red solid !important; }
 
-._Clearfix:before, ._Inline:before, .Breadcrumbs .Breadcrumb-List:before, .Row:before, .Node:before, .pagination:before,
-.Pagination:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before,
+._Clearfix:before, ._Inline:before, .Breadcrumbs .Breadcrumb-List:before, .Box > header ul.Box-Tools:before, .Row:before, .Node:before, .pagination:before,
+.Pagination:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Box:before, .Box > header:before,
 ._Clearfix:after,
 ._Inline:after,
 .Breadcrumbs .Breadcrumb-List:after,
+.Box > header ul.Box-Tools:after,
 .Row:after,
 .Node:after,
 .pagination:after,
@@ -50,19 +51,21 @@
 .Control-Group:after,
 .Control-Group.Smart:after,
 .Control-Group.Smart .Input-Smart:after,
-dl.Tabs:after {
+dl.Tabs:after,
+.Box:after,
+.Box > header:after {
   content: " ";
   display: table; }
 
-._Clearfix:after, ._Inline:after, .Breadcrumbs .Breadcrumb-List:after, .Row:after, .Node:after, .pagination:after,
-.Pagination:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after {
+._Clearfix:after, ._Inline:after, .Breadcrumbs .Breadcrumb-List:after, .Box > header ul.Box-Tools:after, .Row:after, .Node:after, .pagination:after,
+.Pagination:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Box:after, .Box > header:after {
   clear: both; }
 
-._Inline > *, .Breadcrumbs .Breadcrumb-List > * {
+._Inline > *, .Breadcrumbs .Breadcrumb-List > *, .Box > header ul.Box-Tools > * {
   float: left; }
 
 ._No-Bullets, ul.Row > li, .pagination,
-.Pagination, .Breadcrumbs .Breadcrumb-List, .Button.Dropdown > .Dropdown-Content, .Button.Dropdown > .Dropdown-Content ul {
+.Pagination, .Breadcrumbs .Breadcrumb-List, .Box > header ul.Box-Tools, .Button.Dropdown > .Dropdown-Content, .Button.Dropdown > .Dropdown-Content ul {
   list-style: none; }
 
 ._Soft_Shadow,
@@ -685,11 +688,25 @@ body,
   .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item a:hover {
     color: #2c3e50; }
   .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item:before {
+    font-family: FontAwesome;
     padding: 0 10px;
-    content: "/"; }
+    content: "\f105"; }
   .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item:first-child:before {
     padding: 0;
     content: ""; }
+
+.Dev {
+  position: relative; }
+  .Dev:hover:before {
+    position: absolute;
+    top: -20px;
+    background-color: red;
+    border: 1px dashed white;
+    display: inline-block;
+    padding: 5px;
+    font-size: 12px;
+    line-height: 14px;
+    content: attr(class); }
 
 .Panel {
   padding: 10px;
@@ -889,6 +906,133 @@ dl.Tabs {
     dl.Tabs dd > div {
       padding: 20px 0; }
 
+.Box {
+  background-color: white; }
+  .Box > header {
+    padding: 10px 15px; }
+    .Box > header .Box-Title {
+      float: left; }
+    .Box > header .Box-Tools {
+      display: inline-block;
+      float: right; }
+      .Box > header .Box-Tools a {
+        display: inline-block;
+        padding: 0 5px;
+        color: #95a5a6; }
+        .Box > header .Box-Tools a:hover {
+          color: #e74c3c; }
+  .Box > .Box-Content {
+    padding: 10px 15px 15px; }
+  .Box.Round, .Box.Button.Ghost {
+    border-radius: 10px; }
+  .Box.Outlined {
+    border: 2px solid #95a5a6; }
+  .Box.Underlined > header {
+    border-bottom: 1px solid #95a5a6; }
+  .Box.Solid {
+    border-color: #e74c3c; }
+    .Box.Solid > header {
+      color: white;
+      background-color: #e74c3c; }
+  .Box.Success, .Box.Info, .Box.Warning, .Box.Error {
+    color: white; }
+    .Box.Success .Box-Tools a, .Box.Info .Box-Tools a, .Box.Warning .Box-Tools a, .Box.Error .Box-Tools a {
+      color: white; }
+      .Box.Success .Box-Tools a:hover, .Box.Info .Box-Tools a:hover, .Box.Warning .Box-Tools a:hover, .Box.Error .Box-Tools a:hover {
+        background-color: white; }
+  .Box.Solid.Success .Box-Content, .Box.Solid.Info .Box-Content, .Box.Solid.Warning .Box-Content, .Box.Solid.Error .Box-Content {
+    color: black;
+    background-color: white; }
+  .Box.Solid.Gradient.Success header, .Box.Solid.Gradient.Info header, .Box.Solid.Gradient.Warning header, .Box.Solid.Gradient.Error header {
+    color: white; }
+  .Box.Underlined.Success header, .Box.Underlined.Info header, .Box.Underlined.Warning header, .Box.Underlined.Error header {
+    border-bottom-color: white; }
+  .Box.Outlined.Success, .Box.Outlined.Info, .Box.Outlined.Warning, .Box.Outlined.Error {
+    border: 2px solid white; }
+  .Box.Success {
+    background-color: #2ecc71; }
+    .Box.Success.Gradient {
+      background-color: #27ae60;
+      /* Fallback */
+      background: -webkit-linear-gradient(to right, #2ecc71, #27ae60);
+      /* Chrome 10+, Saf5.1+, iOS 5+ */
+      background: -moz-linear-gradient(to right, #2ecc71, #27ae60);
+      /* FF3.6 */
+      background: -ms-linear-gradient(to right, #2ecc71, #27ae60);
+      /* IE10 */
+      background: -o-linear-gradient(to right, #2ecc71, #27ae60);
+      /* Opera 11.10+ */
+      background: linear-gradient(to right, #2ecc71, #27ae60);
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#2ecc71', EndColorStr='#27ae60'); }
+    .Box.Success.Solid.Gradient header {
+      background-color: #27ae60;
+      /* Fallback */
+      background: -webkit-linear-gradient(to right, #2ecc71, #27ae60);
+      /* Chrome 10+, Saf5.1+, iOS 5+ */
+      background: -moz-linear-gradient(to right, #2ecc71, #27ae60);
+      /* FF3.6 */
+      background: -ms-linear-gradient(to right, #2ecc71, #27ae60);
+      /* IE10 */
+      background: -o-linear-gradient(to right, #2ecc71, #27ae60);
+      /* Opera 11.10+ */
+      background: linear-gradient(to right, #2ecc71, #27ae60);
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#2ecc71', EndColorStr='#27ae60'); }
+    .Box.Success .Box-Tools a:hover {
+      color: #27ae60; }
+    .Box.Success.Solid.Outlined {
+      border-color: #2ecc71; }
+  .Box.Info {
+    background-color: #3498db; }
+    .Box.Info.Gradient {
+      background-color: #2980b9;
+      /* Fallback */
+      background: -webkit-linear-gradient(to right, #3498db, #2980b9);
+      /* Chrome 10+, Saf5.1+, iOS 5+ */
+      background: -moz-linear-gradient(to right, #3498db, #2980b9);
+      /* FF3.6 */
+      background: -ms-linear-gradient(to right, #3498db, #2980b9);
+      /* IE10 */
+      background: -o-linear-gradient(to right, #3498db, #2980b9);
+      /* Opera 11.10+ */
+      background: linear-gradient(to right, #3498db, #2980b9);
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#3498db', EndColorStr='#2980b9'); }
+    .Box.Info .Box-Tools a:hover {
+      color: #2980b9; }
+  .Box.Warning {
+    background-color: #e67e22; }
+    .Box.Warning.Gradient {
+      background-color: #d35400;
+      /* Fallback */
+      background: -webkit-linear-gradient(to right, #e67e22, #d35400);
+      /* Chrome 10+, Saf5.1+, iOS 5+ */
+      background: -moz-linear-gradient(to right, #e67e22, #d35400);
+      /* FF3.6 */
+      background: -ms-linear-gradient(to right, #e67e22, #d35400);
+      /* IE10 */
+      background: -o-linear-gradient(to right, #e67e22, #d35400);
+      /* Opera 11.10+ */
+      background: linear-gradient(to right, #e67e22, #d35400);
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#e67e22', EndColorStr='#d35400'); }
+    .Box.Warning .Box-Tools a:hover {
+      color: #d35400; }
+  .Box.Error {
+    background-color: #f2070b; }
+    .Box.Error.Gradient {
+      background-color: #d1060a;
+      /* Fallback */
+      background: -webkit-linear-gradient(to right, #f2070b, #d1060a);
+      /* Chrome 10+, Saf5.1+, iOS 5+ */
+      background: -moz-linear-gradient(to right, #f2070b, #d1060a);
+      /* FF3.6 */
+      background: -ms-linear-gradient(to right, #f2070b, #d1060a);
+      /* IE10 */
+      background: -o-linear-gradient(to right, #f2070b, #d1060a);
+      /* Opera 11.10+ */
+      background: linear-gradient(to right, #f2070b, #d1060a);
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f2070b', EndColorStr='#d1060a'); }
+    .Box.Error .Box-Tools a:hover {
+      color: #d1060a; }
+
 .Button {
   padding: 5px 10px;
   border: 0;
@@ -982,7 +1126,7 @@ dl.Tabs {
       background-color: #2980b9; }
     .Button.Info.Dropdown,
     .Button.Info .Dropdown-Toggle {
-      background-color: #3498db; }
+      background-color: #2980b9; }
       .Button.Info.Dropdown:hover,
       .Button.Info .Dropdown-Toggle:hover {
         background-color: #2980b9; }
@@ -1007,14 +1151,14 @@ dl.Tabs {
       .Button.Success .Dropdown-Toggle:hover {
         background-color: #27ae60; }
   .Button.Warning {
-    background-color: #222222; }
+    background-color: #e67e22; }
     .Button.Warning:hover {
-      background-color: #111111; }
+      background-color: #d35400; }
     .Button.Warning.Dropdown,
     .Button.Warning .Dropdown-Toggle {
-      background-color: #222222; }
+      background-color: #e67e22; }
       .Button.Warning.Dropdown:hover,
       .Button.Warning .Dropdown-Toggle:hover {
-        background-color: #111111; }
+        background-color: #e67e22; }
 
 /*# sourceMappingURL=main.css.map */

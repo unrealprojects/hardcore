@@ -122,8 +122,9 @@ body		,
 				color: $Clr-Midnight-Blue;
 			}
 			&:before {
+				font-family: FontAwesome;
 				padding: 0 $size-s;
-				content: "/";
+				content: "\f105";
 				@extend ._Unselectable;
 			}
 		}
