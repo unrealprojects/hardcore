@@ -105,11 +105,13 @@
 /*********************************************************************** Таб :: Региионы ***/
 
             /*** Autocomplite :: Регионы ***/
-            var regions = [
-                @foreach($content['filter']['regions_list'] as $region)
-                    {key:"{{$region['alias']}}",label:"{{$region['name']}}"},
-                @endforeach
-            ];
+            @if(!empty($content['filter']['regions_list']))
+                var regions = [
+                    @foreach($content['filter']['regions_list'] as $region)
+                        {key:"{{$region['alias']}}",label:"{{$region['name']}}"},
+                    @endforeach
+                ];
+            @endif
 
             $( ".Autocomplete-Regions" ).autocomplete({
                 source: regions,

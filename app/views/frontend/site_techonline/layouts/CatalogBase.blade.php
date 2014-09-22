@@ -1,6 +1,9 @@
 @extends('frontend.site_techonline.'.$content['template'])
 
 @section('main')
+<!-- ФИЛЬТР -->
+@include('frontend.site_techonline.layouts.filter.MainPageFilter');
+
 <section class="Node">
 
     <h3 class="Heading Primary">Каталог строительной техники</h3>

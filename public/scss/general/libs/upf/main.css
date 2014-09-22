@@ -4,18 +4,6 @@ Error: Undefined variable: "$Clr-Sunflower".
         from line 11 of ..\..\..\general\libs\upf\upf.scss
         from line 2 of main.scss
 
-435: 		@extend ._Clearfix;
-436: 		span {
-437: 			font-weight: bold;
-438: 		}
-439: 		.Delete {
-440: 			display: inline-block;
-441: 			margin-left: $size-s;
-442: 			padding: $size-xs;
-443: 			background-color: $Clr-Main;
-444: 			color: white;
-445: 			@include Round(all, $Control-Border-Radius);
-
 Backtrace:
 ..\..\..\general\libs\upf\-forms.scss:440
 ..\..\..\general\libs\upf\upf.scss:11
@@ -108,4 +96,4 @@ C:/Ruby200-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$Clr-Sunflower\".\A         on line 440 of ..\..\..\general\libs\upf\-forms.scss\A         from line 11 of ..\..\..\general\libs\upf\upf.scss\A         from line 2 of main.scss\A \A 435: 		@extend ._Clearfix;\A 436: 		span {\A 437: 			font-weight: bold;\A 438: 		}\A 439: 		.Delete {\A 440: 			display: inline-block;\A 441: 			margin-left: $size-s;\A 442: 			padding: $size-xs;\A 443: 			background-color: $Clr-Main;\A 444: 			color: white;\A 445: 			@include Round(all, $Control-Border-Radius);"; }
+  content: "Error: Undefined variable: \"$Clr-Sunflower\".\A         on line 440 of ..\..\..\general\libs\upf\-forms.scss\A         from line 11 of ..\..\..\general\libs\upf\upf.scss\A         from line 2 of main.scss"; }

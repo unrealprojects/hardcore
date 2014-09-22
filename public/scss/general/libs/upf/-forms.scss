@@ -251,6 +251,10 @@ dl.Tabs {
 		&.Wide {
 			width: 40%;
 		}
+
+        &.inTwo{
+            width:50%;
+        }
 	}
 	dd {
 		display: none;

@@ -31,6 +31,7 @@ class CatalogBaseController extends TechonlineController{
                 'params'=>$modelCategories->getFilters(\Input::get('category')),
                 'has_params'=>true,
                 'has_price'=>true,
+                'type'=>'catalog'
             ],
             'pagination' => $CatalogBaseList->links(),
             'list' => $CatalogBaseList->toArray()['data'],
@@ -54,6 +55,7 @@ class CatalogBaseController extends TechonlineController{
             'template' => 'content',
         ];
 
+        exit;
         return \View::make($this->siteViewPath.'/layouts/CatalogBaseElement',$this->viewData);
     }
 

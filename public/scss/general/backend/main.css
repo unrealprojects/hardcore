@@ -1,25 +1,13 @@
 /*
 Error: Undefined variable: "$Clr-Sunflower".
-        on line 440 of ..\..\..\general\libs\upf\-forms.scss
-        from line 11 of ..\..\..\general\libs\upf\upf.scss
-        from line 2 of main.scss
-
-435: 		@extend ._Clearfix;
-436: 		span {
-437: 			font-weight: bold;
-438: 		}
-439: 		.Delete {
-440: 			display: inline-block;
-441: 			margin-left: $size-s;
-442: 			padding: $size-xs;
-443: 			background-color: $Clr-Main;
-444: 			color: white;
-445: 			@include Round(all, $Control-Border-Radius);
+        on line 440 of ..\..\general\libs\upf\-forms.scss
+        from line 11 of ..\..\general\libs\upf\upf.scss
+        from line 1 of main.scss
 
 Backtrace:
-..\..\..\general\libs\upf\-forms.scss:440
-..\..\..\general\libs\upf\upf.scss:11
-main.scss:2
+..\..\general\libs\upf\-forms.scss:440
+..\..\general\libs\upf\upf.scss:11
+main.scss:1
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.2/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.2/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.2/lib/sass/tree/visitors/perform.rb:378:in `visit_prop'
@@ -108,4 +96,4 @@ C:/Ruby200-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$Clr-Sunflower\".\A         on line 440 of ..\..\..\general\libs\upf\-forms.scss\A         from line 11 of ..\..\..\general\libs\upf\upf.scss\A         from line 2 of main.scss\A \A 435: 		@extend ._Clearfix;\A 436: 		span {\A 437: 			font-weight: bold;\A 438: 		}\A 439: 		.Delete {\A 440: 			display: inline-block;\A 441: 			margin-left: $size-s;\A 442: 			padding: $size-xs;\A 443: 			background-color: $Clr-Main;\A 444: 			color: white;\A 445: 			@include Round(all, $Control-Border-Radius);"; }
+  content: "Error: Undefined variable: \"$Clr-Sunflower\".\A         on line 440 of ..\..\general\libs\upf\-forms.scss\A         from line 11 of ..\..\general\libs\upf\upf.scss\A         from line 1 of main.scss"; }
