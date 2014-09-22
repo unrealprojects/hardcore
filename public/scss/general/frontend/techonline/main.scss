@@ -143,10 +143,10 @@ footer[role='contentinfo'] {
 		@extend ._Centered;
 		@extend ._Section-Inner;
 		.Copyright {
-			@extend ._Left;
+			@extend %_Left;
 		}
 		.Footer-Navigation {
-			@extend ._Right;
+			@extend %_Right;
 			width: 37%;
 			ul {
 				@extend ._No-Bullets;
@@ -291,7 +291,7 @@ img.Footer-Img {
 			text-transform: uppercase;
 			font-size: 20px;
 			@extend ._Clearfix;
-			@extend ._Left;
+			@extend %_Left;
 
 			a {
 				display: block;
@@ -414,10 +414,10 @@ img.Footer-Img {
 		.Date {
 			padding: $size-xs 0;
 			margin: 0 $size-l $size-s 0;
-			@extend ._Left;
+			@extend %_Left;
 		}
 		.Tags {
-			@extend ._Left;
+			@extend %_Left;
 		}
 	}
 }
@@ -427,7 +427,7 @@ img.Footer-Img {
 	width: 100%;
 	padding: $size-s;
 	font-size: 80%;
-	@extend ._Right;
+	@extend %_Right;
 	@extend ._No-Bullets;
 	@include Animation(FadeIn,1s);
 	li {
@@ -443,7 +443,7 @@ img.Footer-Img {
 			background-color: $Clr-Main;
 			color: white;
 			@include Round(all, $Control-Border-Radius);
-			@extend ._Right;
+			@extend %_Right;
 			&:hover {
 				background-color: $Clr-Grey-Darker;
 			}

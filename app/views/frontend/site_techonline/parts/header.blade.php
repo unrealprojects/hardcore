@@ -43,10 +43,10 @@
                     </div>
 
                     <div class="Control-Group Checkbox Submit Row Merge" for="Sign-In-Remember-Me">
-                        <label class="Six">
+                        <label class="Grid-XS-6">
                             <input id="Sign-In-Remember-Me" type="checkbox"/>Запомнить меня
                         </label>
-                        <input class="class="Six" type="submit" value="Войти на сайт"/>
+                        <input class="Button Grid-XS-6" type="submit" value="Войти на сайт"/>
                     </div>
 
                 </form>
@@ -67,10 +67,10 @@
                     </div>
 
                     <div class="Control-Group Checkbox Submit Row Merge" for="Sign-In-Remember-Me">
-                        <label class="Six">
+                        <label class="Grid-XS-6">
                             <input id="Sign-Up-Remember-Me" type="checkbox"/>Запомнить меня
                         </label>
-                        <input class="class="Six" type="submit" value="Зарегистриваться"/>
+                        <input class="Button Grid-XS-6" type="submit" value="Зарегистриваться"/>
                     </div>
 
                 </form>

@@ -44,7 +44,7 @@
 			display: inline-block;
 			width: auto;
 			padding: $size-s $size;
-			@extend ._Right;
+			@extend %_Right;
 		}
 	}
 
@@ -270,27 +270,18 @@ dl.Tabs {
 	}
 }
 
-.Button  {
-	line-height: $line-height;
-	color: white;
-	@include Transition(#{border,background-color,color}, .3s);
-	&[disabled] {
-		cursor: not-allowed;
-		background-color: $Clr-Grey-Dark;
-		color: $Clr-Grey-Light;
-	}
 
-	&.Search {
-		@extend ._Search;
-	}
-}
-
+// MAGIC!
 .Button {
 	padding: $size-xs $size-s;
 	border: 0;
+	line-height: $line-height;
 	background-color: $Clr-Main;
+	color: white;
 	font-size: 14px;
 	@extend %_Clickable;
+	@include Transition(#{border,background-color,color}, .3s);
+
 	&:hover {
 		background-color: $Clr-Main-Dark;
 	}
@@ -318,7 +309,7 @@ dl.Tabs {
 		}
 	}
 	&.Icon {
-		& > span.fa {
+		& > span.fa:first-child	 {
 			margin-right: $size-s;
 		}
 	}
@@ -344,13 +335,10 @@ dl.Tabs {
 	&.Dropdown {
 		position: relative;
 		padding-right: 30px + $size-s;
-		&:hover {
-			background-color: $Clr-Main-Dark;
-		}
-		&.Round > span {
+		&.Round > .Dropdown-Toggle {
 			@include Round(right, $Control-Border-Radius);
 		}
-		& > span {
+		& > .Dropdown-Toggle {
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -372,7 +360,11 @@ dl.Tabs {
 			left: 0;
 			width: 100%;
 			z-index: 100;
-			@extend ._Soft-Shadow;
+
+			@extend ._No-Bullets;
+			ul {
+				@extend ._No-Bullets;
+			}
 			& li {
 				& > a {
 					display: block;
@@ -386,7 +378,12 @@ dl.Tabs {
 				&.Divider {
 					padding: 0;
 					display: block;
-					border-top: 1px solid $Clr-Secondary-Darker;
+					border-top: 1px solid $Clr-Secondary-Dark;
+				}
+			}
+			&.Icon {
+				li a span.fa {
+					margin-right: $size-s;
 				}
 			}
 		}
@@ -396,4 +393,57 @@ dl.Tabs {
 			}
 		}
 	}
+	&.Info {
+		background-color: $Clr-Peter-River;
+		&:hover {
+			background-color: $Clr-Belize-Hole;
+		}
+		&.Dropdown ,
+		.Dropdown-Toggle {
+			background-color: $Clr-Peter-River;
+			&:hover {
+				background-color: $Clr-Belize-Hole;
+			}
+		}
+	}
+	&.Success {
+		background-color: $Clr-Emerald;
+		&:hover {
+			background-color: $Clr-Nephritis;
+		}
+		&.Dropdown ,
+		.Dropdown-Toggle {
+			background-color: $Clr-Emerald;
+			&:hover {
+				background-color: $Clr-Nephritis;
+			}
+		}
+	}
+	&.Success {
+		background-color: $Clr-Emerald;
+		&:hover {
+			background-color: $Clr-Nephritis;
+		}
+		&.Dropdown ,
+		.Dropdown-Toggle {
+			background-color: $Clr-Emerald;
+			&:hover {
+				background-color: $Clr-Nephritis;
+			}
+		}
+	}
+	&.Warning {
+		background-color: $Clr-Sunflower;
+		&:hover {
+			background-color: $Clr-Orange;
+		}
+		&.Dropdown ,
+		.Dropdown-Toggle {
+			background-color: $Clr-Sunflower;
+			&:hover {
+				background-color: $Clr-Orange;
+			}
+		}
+	}
+
 }

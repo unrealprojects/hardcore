@@ -49,12 +49,12 @@
 	margin-right: 	$size;
 }
 // Позиционирует блок слева
-._Left {
+%_Left {
 	float: 			left;
 }
 
 // Позиционирует блок справа
-._Right {
+%_Right {
 	float: 			right;
 }
 
