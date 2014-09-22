@@ -136,7 +136,20 @@ body		,
 		}
 	}
 }
-
+.Dev {
+	position: relative;
+	&:hover:before {
+		position: absolute;
+		top: -20px;
+		background-color: red;
+		border: 1px dashed white;
+		display: inline-block;
+		padding: $size-xs;
+		font-size: 12px;
+		line-height: 14px;
+		content: attr(class);
+	}
+}
 
 
 .Panel {
