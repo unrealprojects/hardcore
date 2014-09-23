@@ -681,6 +681,7 @@ body,
   margin-top: 0; }
 
 table {
+  width: 100%;
   border-collapse: collapse; }
   table td {
     padding: 10px 15px; }
@@ -697,12 +698,38 @@ table {
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
     transition-duration: 0.3s; }
-    table td.Action ul li {
-      margin-right: 1px; }
+    table td.Action ul {
+      float: right;
+      display: inline-block; }
+      table td.Action ul li {
+        margin-right: 1px; }
   table tr:hover td.Action {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: alpha(opacity=100); }
+  table td.Main {
+    width: 40%; }
+  table td[contenteditable]:focus {
+    outline: 0; }
+  table.Edit input[type='text'],
+  table.Edit input[type='password'],
+  table.Edit input[type='tel'],
+  table.Edit input[type='time'],
+  table.Edit textarea {
+    display: inline-block;
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    font-family: "Exo 2", "Open Sans", Helvetica, Verdana, sans-serif;
+    font-size: 16px; }
+    table.Edit input[type='text']:focus,
+    table.Edit input[type='password']:focus,
+    table.Edit input[type='tel']:focus,
+    table.Edit input[type='time']:focus,
+    table.Edit textarea:focus {
+      outline: 0; }
+  table.Edit textarea {
+    resize: none; }
   table.Lines tbody tr {
     border-top: 1px solid #bdc3c7; }
   table.Lines tbody tr:first-child {

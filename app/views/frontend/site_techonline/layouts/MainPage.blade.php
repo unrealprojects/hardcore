@@ -11,13 +11,14 @@
     </div>
 </section>
 <section class="Node">
-    <table class="Solid Lines Stripped">
+    <table class="Solid Lines Stripped Edit">
         <thead>
         <tr>
             <td><input type="checkbox"/></td>
             <td>№</td>
             <td>Заголовок</td>
             <td>Содержание</td>
+            <td>Опубликовано</td>
             <td>Действия</td>
         </tr>
         </thead>
@@ -25,60 +26,39 @@
         <tr>
             <td><input type="checkbox"/></td>
             <td class="Number">01</td>
-            <td>Заголовок статьи или страницы</td>
-            <td>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров.</td>
+            <td contenteditable="true">Заголовок статьи или страницы</td>
+            <td contenteditable="true" class="Main">Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров.</td>
+            <td contenteditable="true">16 августа 2014</td>
             <td class="Action">
                 <ul>
-                    <li><a href="#"><span class="fa fa-close"></span></a></li>
-                    <li><a href="#"><span class="fa fa-pencil"></span></a></li>
+                    <li><a title="Принять изменения" href="#"><span class="fa fa-check"></span></a></li>
+                    <li><a title="Удалить ..." href="#"><span class="fa fa-remove"></span></a></li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td><input type="checkbox"/></td>
             <td class="Number">02</td>
-            <td>Заголовок статьи или страницы</td>
-            <td>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров.</td>
+            <td contenteditable="true">Заголовок статьи или страницы</td>
+            <td contenteditable="true" class="Main">Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров.</td>
+            <td contenteditable="true">26 августа 2014</td>
             <td class="Action">
                 <ul>
-                    <li><a href="#"><span class="fa fa-close"></span></a></li>
-                    <li><a href="#"><span class="fa fa-pencil"></span></a></li>
+                    <li><a title="Принять изменения" href="#"><span class="fa fa-check"></span></a></li>
+                    <li><a title="Удалить ..." href="#"><span class="fa fa-remove"></span></a></li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td><input type="checkbox"/></td>
             <td class="Number">03</td>
-            <td>Заголовок статьи или страницы</td>
-            <td>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров.</td>
+            <td contenteditable="true">Другой заголовок статьи или страницы</td>
+            <td contenteditable="true" class="Main">Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров.</td>
+            <td contenteditable="true">30 августа 2014</td>
             <td class="Action">
                 <ul>
-                    <li><a href="#"><span class="fa fa-close"></span></a></li>
-                    <li><a href="#"><span class="fa fa-pencil"></span></a></li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="checkbox"/></td>
-            <td class="Number">04</td>
-            <td>Заголовок статьи или страницы</td>
-            <td>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров.</td>
-            <td class="Action">
-                <ul>
-                    <li><a href="#"><span class="fa fa-close"></span></a></li>
-                    <li><a href="#"><span class="fa fa-pencil"></span></a></li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="checkbox"/></td>
-            <td class="Number">05</td>
-            <td>Заголовок статьи или страницы</td>
-            <td>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров.</td>
-            <td class="Action">
-                <ul>
-                    <li><a href="#"><span class="fa fa-close"></span></a></li>
-                    <li><a href="#"><span class="fa fa-pencil"></span></a></li>
+                    <li><a title="Принять изменения" href="#"><span class="fa fa-check"></span></a></li>
+                    <li><a title="Удалить ..." href="#"><span class="fa fa-remove"></span></a></li>
                 </ul>
             </td>
         </tr>
