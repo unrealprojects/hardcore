@@ -16,9 +16,20 @@ body {
 	background-color: $Clr-Secondary;
 
 }
-
+.Icon-Link {
+	font-size: 13px;
+	span.fa {
+		line-height: 16px;
+		font-size: 16px;
+	}
+	&.Right {
+		span.fa {
+			margin-left: $size-s;
+		}
+	}
+}
 aside.Menu {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -27,7 +38,7 @@ aside.Menu {
 	z-index: 1;
 }
 .Menu-Shadow {
-	position: absolute;
+	position: fixed;
 	width: 3px;
 	top: 0;
 	bottom: 0;
@@ -107,15 +118,23 @@ main {
 	margin-left: $Menu-Width;
 	.Content {
 		margin: $size-n;
+		.Content-Inner {
+			margin-top: $size-n;
+			padding: $size-n;
+			background-color: white;
+		}
 	}
 }
 nav.Userbar {
+	height: auto;
 	background-color: white;
-	border-bottom: 1px solid $Clr-Secondary;
+	@extend ._Clearfix;
 	ul {
+		display: inline-block;
 		@extend ._Inline;
 		@extend ._No-Bullets;
 		li {
+			line-height: 16px;
 			a {
 				display: block;
 				padding: $size-n;
@@ -124,8 +143,22 @@ nav.Userbar {
 					color: $Clr-Cyan;
 				}
 			}
+			&.Icon {
+				a {
+				}
+				span.fa {
+					display: inline-block;
+					margin-right: $size-n;
+				}
+			}
 			span.fa {
 			}
+		}
+		&.Left {
+			float: left;
+		}
+		&.Right {
+			float: right;
 		}
 	}
 

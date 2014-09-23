@@ -282,7 +282,7 @@ dl.Tabs {
 		padding: $size-s $size-n;
 
 		// Pushing Box-Title to the left.
-		& .Box-Title {
+		& > .Box-Title {
 			float: left;
 		}
 

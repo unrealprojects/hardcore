@@ -10,7 +10,81 @@
         </div>
     </div>
 </section>
-
+<section class="Node">
+    <table class="Solid Lines Stripped">
+        <thead>
+        <tr>
+            <td><input type="checkbox"/></td>
+            <td>№</td>
+            <td>Заголовок</td>
+            <td>Содержание</td>
+            <td>Действия</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input type="checkbox"/></td>
+            <td class="Number">01</td>
+            <td>Заголовок статьи или страницы</td>
+            <td>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров.</td>
+            <td class="Action">
+                <ul>
+                    <li><a href="#"><span class="fa fa-close"></span></a></li>
+                    <li><a href="#"><span class="fa fa-pencil"></span></a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"/></td>
+            <td class="Number">02</td>
+            <td>Заголовок статьи или страницы</td>
+            <td>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров.</td>
+            <td class="Action">
+                <ul>
+                    <li><a href="#"><span class="fa fa-close"></span></a></li>
+                    <li><a href="#"><span class="fa fa-pencil"></span></a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"/></td>
+            <td class="Number">03</td>
+            <td>Заголовок статьи или страницы</td>
+            <td>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров.</td>
+            <td class="Action">
+                <ul>
+                    <li><a href="#"><span class="fa fa-close"></span></a></li>
+                    <li><a href="#"><span class="fa fa-pencil"></span></a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"/></td>
+            <td class="Number">04</td>
+            <td>Заголовок статьи или страницы</td>
+            <td>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров.</td>
+            <td class="Action">
+                <ul>
+                    <li><a href="#"><span class="fa fa-close"></span></a></li>
+                    <li><a href="#"><span class="fa fa-pencil"></span></a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"/></td>
+            <td class="Number">05</td>
+            <td>Заголовок статьи или страницы</td>
+            <td>Строительство качественных автомагистралей, областных и городских дорог не может выполняться без использования грейдеров.</td>
+            <td class="Action">
+                <ul>
+                    <li><a href="#"><span class="fa fa-close"></span></a></li>
+                    <li><a href="#"><span class="fa fa-pencil"></span></a></li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
 <!-- ФИЛЬТР -->
 @include('frontend.site_techonline.layouts.filter.MainPageFilter');
 <!-- КАТАЛОГ СТРОЙТЕХНИКИ::КАТЕГОРИИ C КАРТИНКАМИ-->

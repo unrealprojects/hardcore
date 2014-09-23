@@ -32,11 +32,6 @@
                         <li class="Menu-Subcategory-Item"><a class="Menu-Subcategory-Link" href="#"><span class="fa fa-puzzle-piece"></span>Плагины</a></li>
                     </ul>
         </li>
-        <li class="Menu-Category-Item">
-            <a class="Menu-Category-Link" href="#">
-                <span class="fa fa-close"></span>Выход
-            </a>
-        </li>
     </ul>
 </aside>
 <div class="Menu-Shadow"></div>
@@ -45,6 +40,13 @@
         <ul>
             <li><a href="#"><span class="fa fa-bars fa-lg"></span></a></li>
             <li><a href="#"><span class="fa fa-home fa-lg"></span></a></li>
+            <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+        </ul>
+
+        <ul class="Right">
+            <li><a href="#"><span class="fa fa-bars fa-lg"></span></a></li>
+            <li><a href="#"><span class="fa fa-home fa-lg"></span></a></li>
+            <li class="Icon-Link Right"><a href="#">alexmayhem<span class="fa fa-angle-down"></span></a></li>
         </ul>
     </nav>
     <nav class="Breadcrumbs">
@@ -66,6 +68,18 @@
     </nav>
     <section class="Content">
         <h3 class="Heading Secondary">Создание новой публикации</h3>
+        <section class="Content-Inner">
+            <form class="Form-Horizontal" action="">
+                <div class="Control-Group">
+                    <label for="Post-Title">Заголовок страницы</label>
+                    <input type="text"/>
+                </div>
+                <div class="Control-Group">
+                    <label for="Post-Content">Содержание страницы</label>
+                    <textarea name="" id="Post-Content"></textarea>
+                </div>
+            </form>
+        </section>
     </section>
 </main>
 @endsection

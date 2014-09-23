@@ -32,11 +32,8 @@ $Page-Header-Button-Margin:				($Page-Header-Height - ($size-s * 2) - $Page-Head
 	height: 				$Page-Header-Height;
 	position: 				relative;
 	width: 					100%;
-	padding: 0 $size-n;
+	padding: 				0 $size-n;
 
-	@include 				Adaptive($Screen-Size-Small) {
-		width: 				auto;
-	}
 	div {
 		height: 				$Page-Header-Height;
 		width: 					100%;

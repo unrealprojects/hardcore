@@ -6,6 +6,7 @@
 	-moz-transition-duration: 		$Transition-Time;
 	transition-duration: 			$Transition-Time;
 }
+
 @mixin Animation($animation-name, $animation-time, $animation-delay: 0) {
 	-webkit-animation: $animation-name $animation-time;
 	-moz-animation: $animation-name $animation-time;
@@ -105,6 +106,7 @@
 		@content;
 	}
 }
+
 @mixin Adaptive-Mobile() {
 	@media screen and (max-width: $Screen-Size-Tiny) {
 		@content;

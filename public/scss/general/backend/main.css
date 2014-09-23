@@ -38,10 +38,11 @@
 ._Dev {
   outline: 1px red solid !important; }
 
-._Clearfix:before, ._Inline:before, .Breadcrumbs .Breadcrumb-List:before, .Box > header ul.Box-Tools:before, nav.Userbar ul:before, .Row:before, .Node:before, .pagination:before,
-.Pagination:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Box:before, .Box > header:before, li.Menu-Category-Item:before, li.Menu-Subcategory-Item:before,
+._Clearfix:before, ._Inline:before, table td.Action ul:before, .Breadcrumbs .Breadcrumb-List:before, .Box > header ul.Box-Tools:before, nav.Userbar ul:before, .Row:before, .Node:before, .pagination:before,
+.Pagination:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Box:before, .Box > header:before, li.Menu-Category-Item:before, li.Menu-Subcategory-Item:before, nav.Userbar:before,
 ._Clearfix:after,
 ._Inline:after,
+table td.Action ul:after,
 .Breadcrumbs .Breadcrumb-List:after,
 .Box > header ul.Box-Tools:after,
 nav.Userbar ul:after,
@@ -56,19 +57,20 @@ dl.Tabs:after,
 .Box:after,
 .Box > header:after,
 li.Menu-Category-Item:after,
-li.Menu-Subcategory-Item:after {
+li.Menu-Subcategory-Item:after,
+nav.Userbar:after {
   content: " ";
   display: table; }
 
-._Clearfix:after, ._Inline:after, .Breadcrumbs .Breadcrumb-List:after, .Box > header ul.Box-Tools:after, nav.Userbar ul:after, .Row:after, .Node:after, .pagination:after,
-.Pagination:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Box:after, .Box > header:after, li.Menu-Category-Item:after, li.Menu-Subcategory-Item:after {
+._Clearfix:after, ._Inline:after, table td.Action ul:after, .Breadcrumbs .Breadcrumb-List:after, .Box > header ul.Box-Tools:after, nav.Userbar ul:after, .Row:after, .Node:after, .pagination:after,
+.Pagination:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Box:after, .Box > header:after, li.Menu-Category-Item:after, li.Menu-Subcategory-Item:after, nav.Userbar:after {
   clear: both; }
 
-._Inline > *, .Breadcrumbs .Breadcrumb-List > *, .Box > header ul.Box-Tools > *, nav.Userbar ul > * {
+._Inline > *, table td.Action ul > *, .Breadcrumbs .Breadcrumb-List > *, .Box > header ul.Box-Tools > *, nav.Userbar ul > * {
   float: left; }
 
-._No-Bullets, ul.Row > li, .pagination,
-.Pagination, .Breadcrumbs .Breadcrumb-List, .Box > header ul.Box-Tools, .Button.Dropdown > .Dropdown-Content, .Button.Dropdown > .Dropdown-Content ul, aside.Menu > ul.Menu-Category, li.Menu-Category-Item, ul.Menu-Subcategory, nav.Userbar ul {
+._No-Bullets, ul.Row > li, table td.Action ul, .pagination,
+.Pagination, .Breadcrumbs .Breadcrumb-List, .Box > header ul.Box-Tools, .Button.Dropdown > .Dropdown-Content, table td.Action ul li a.Dropdown > .Dropdown-Content, .Button.Dropdown > .Dropdown-Content ul, table td.Action ul li a.Dropdown > .Dropdown-Content ul, aside.Menu > ul.Menu-Category, li.Menu-Category-Item, ul.Menu-Subcategory, nav.Userbar ul {
   list-style: none; }
 
 ._Soft_Shadow,
@@ -99,7 +101,7 @@ li.Menu-Subcategory-Item:after {
   -o-user-select: none;
   user-select: none; }
 
-.Button {
+.Button, table td.Action ul li a {
   cursor: pointer; }
 
 * {
@@ -654,6 +656,39 @@ body,
 .Node.Row > * {
   margin-top: 0; }
 
+table {
+  border-collapse: collapse; }
+  table td {
+    padding: 10px 15px; }
+  table td.Number {
+    font-size: 13px;
+    color: #bdc3c7; }
+  table td.Action {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-duration: 0.3s; }
+    table td.Action ul li {
+      margin-right: 1px; }
+  table tr:hover td.Action {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100); }
+  table.Lines tbody tr {
+    border-top: 1px solid #bdc3c7; }
+  table.Lines tbody tr:first-child {
+    border-top: 0; }
+  table.Solid thead tr td {
+    color: white;
+    background-color: #2c3e50; }
+  table.Stripped tbody tr:nth-child(even) {
+    background-color: #ecf0f1; }
+
 .pagination,
 .Pagination {
   border-left: 4px solid #e74c3c; }
@@ -825,7 +860,7 @@ input[type='radio'] {
 .Control-Group input,
 .Control-Group select,
 .Control-Group textarea {
-  border: 2px #cccccc solid;
+  border: 1px #cccccc solid;
   -webkit-transition-property: border-color;
   -moz-transition-property: border-color;
   transition-property: border-color;
@@ -919,7 +954,7 @@ dl.Tabs {
   background-color: white; }
   .Box > header {
     padding: 10px 15px; }
-    .Box > header .Box-Title {
+    .Box > header > .Box-Title {
       float: left; }
     .Box > header .Box-Tools {
       display: inline-block;
@@ -932,7 +967,7 @@ dl.Tabs {
           color: #e74c3c; }
   .Box > .Box-Content {
     padding: 10px 15px 15px; }
-  .Box.Round, .Box.Button.Ghost {
+  .Box.Round, .Box.Button.Ghost, table td.Action ul li a.Box {
     border-radius: 10px; }
   .Box.Outlined {
     border: 2px solid #95a5a6; }
@@ -1042,7 +1077,7 @@ dl.Tabs {
     .Box.Error .Box-Tools a:hover {
       color: #d1060a; }
 
-.Button {
+.Button, table td.Action ul li a {
   padding: 5px 10px;
   border: 0;
   line-height: 24px;
@@ -1055,46 +1090,46 @@ dl.Tabs {
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   transition-duration: 0.3s; }
-  .Button:hover {
+  .Button:hover, table td.Action ul li a:hover {
     background-color: #c0392b; }
-  .Button.Small {
+  .Button.Small, table td.Action ul li a.Small {
     font-size: 10px;
     padding: 2px 5px; }
-  .Button.Large {
+  .Button.Large, table td.Action ul li a.Large {
     padding: 10px 15px; }
-  .Button.Huge {
+  .Button.Huge, table td.Action ul li a.Huge {
     font-size: 19px;
     padding: 15px 20px; }
-  .Button.Round, .Button.Ghost {
+  .Button.Round, table td.Action ul li a, .Button.Ghost {
     border-radius: 5px; }
-  .Button.Search {
+  .Button.Search, table td.Action ul li a.Search {
     border-radius: 17px; }
-    .Button.Search.Large {
+    .Button.Search.Large, table td.Action ul li a.Search.Large {
       border-radius: 22px; }
-    .Button.Search.Huge {
+    .Button.Search.Huge, table td.Action ul li a.Search.Huge {
       border-radius: 27px; }
-  .Button.Icon > span.fa:first-child {
+  .Button.Icon > span.fa:first-child, table td.Action ul li a.Icon > span.fa:first-child {
     margin-right: 10px; }
-  .Button.Ghost {
+  .Button.Ghost, table td.Action ul li a {
     color: #2c3e50;
     background-color: transparent;
     border: 1px solid #bdc3c7; }
-    .Button.Ghost:hover {
+    .Button.Ghost:hover, table td.Action ul li a:hover {
       color: black;
       border-color: #95a5a6;
       background-color: #ecf0f1; }
-    .Button.Ghost.Invert {
+    .Button.Ghost.Invert, table td.Action ul li a.Invert {
       color: white;
       border-color: white; }
-      .Button.Ghost.Invert:hover {
+      .Button.Ghost.Invert:hover, table td.Action ul li a.Invert:hover {
         color: #e74c3c;
         border-color: #e74c3c; }
-  .Button.Dropdown {
+  .Button.Dropdown, table td.Action ul li a.Dropdown {
     position: relative;
     padding-right: 40px; }
-    .Button.Dropdown.Round > .Dropdown-Toggle, .Button.Dropdown.Ghost > .Dropdown-Toggle {
+    .Button.Dropdown.Round > .Dropdown-Toggle, table td.Action ul li a.Dropdown > .Dropdown-Toggle, .Button.Dropdown.Ghost > .Dropdown-Toggle {
       border-radius: 0 5px 5px 0; }
-    .Button.Dropdown > .Dropdown-Toggle {
+    .Button.Dropdown > .Dropdown-Toggle, table td.Action ul li a.Dropdown > .Dropdown-Toggle {
       position: absolute;
       top: 0;
       right: 0;
@@ -1104,9 +1139,9 @@ dl.Tabs {
       padding: 10px 0;
       border-left: 1px white solid;
       background-color: #e74c3c; }
-      .Button.Dropdown > .Dropdown-Toggle:hover {
+      .Button.Dropdown > .Dropdown-Toggle:hover, table td.Action ul li a.Dropdown > .Dropdown-Toggle:hover {
         background-color: #c0392b; }
-    .Button.Dropdown > .Dropdown-Content {
+    .Button.Dropdown > .Dropdown-Content, table td.Action ul li a.Dropdown > .Dropdown-Content {
       background-color: white;
       border: 1px solid #bdc3c7;
       position: absolute;
@@ -1114,68 +1149,84 @@ dl.Tabs {
       left: 0;
       width: 100%;
       z-index: 100; }
-      .Button.Dropdown > .Dropdown-Content li > a {
+      .Button.Dropdown > .Dropdown-Content li > a, table td.Action ul li a.Dropdown > .Dropdown-Content li > a {
         display: block;
         padding: 5px 10px;
         text-align: left;
         color: #2c3e50; }
-        .Button.Dropdown > .Dropdown-Content li > a:hover {
+        .Button.Dropdown > .Dropdown-Content li > a:hover, table td.Action ul li a.Dropdown > .Dropdown-Content li > a:hover {
           background-color: #bdc3c7; }
-      .Button.Dropdown > .Dropdown-Content li.Divider {
+      .Button.Dropdown > .Dropdown-Content li.Divider, table td.Action ul li a.Dropdown > .Dropdown-Content li.Divider {
         padding: 0;
         display: block;
         border-top: 1px solid #bdc3c7; }
-      .Button.Dropdown > .Dropdown-Content.Icon li a span.fa {
+      .Button.Dropdown > .Dropdown-Content.Icon li a span.fa, table td.Action ul li a.Dropdown > .Dropdown-Content.Icon li a span.fa {
         margin-right: 10px; }
-    .Button.Dropdown.Round > .Dropdown-Content, .Button.Dropdown.Ghost > .Dropdown-Content {
+    .Button.Dropdown.Round > .Dropdown-Content, table td.Action ul li a.Dropdown > .Dropdown-Content, .Button.Dropdown.Ghost > .Dropdown-Content {
       border-radius: 5px; }
-  .Button.Info {
+  .Button.Info, table td.Action ul li a.Info {
     background-color: #3498db; }
-    .Button.Info:hover {
+    .Button.Info:hover, table td.Action ul li a.Info:hover {
       background-color: #2980b9; }
-    .Button.Info.Dropdown,
-    .Button.Info .Dropdown-Toggle {
+    .Button.Info.Dropdown, table td.Action ul li a.Info.Dropdown,
+    .Button.Info .Dropdown-Toggle,
+    table td.Action ul li a.Info .Dropdown-Toggle {
       background-color: #2980b9; }
-      .Button.Info.Dropdown:hover,
-      .Button.Info .Dropdown-Toggle:hover {
+      .Button.Info.Dropdown:hover, table td.Action ul li a.Info.Dropdown:hover,
+      .Button.Info .Dropdown-Toggle:hover,
+      table td.Action ul li a.Info .Dropdown-Toggle:hover {
         background-color: #2980b9; }
-  .Button.Success {
+  .Button.Success, table td.Action ul li a.Success {
     background-color: #2ecc71; }
-    .Button.Success:hover {
+    .Button.Success:hover, table td.Action ul li a.Success:hover {
       background-color: #27ae60; }
-    .Button.Success.Dropdown,
-    .Button.Success .Dropdown-Toggle {
+    .Button.Success.Dropdown, table td.Action ul li a.Success.Dropdown,
+    .Button.Success .Dropdown-Toggle,
+    table td.Action ul li a.Success .Dropdown-Toggle {
       background-color: #2ecc71; }
-      .Button.Success.Dropdown:hover,
-      .Button.Success .Dropdown-Toggle:hover {
+      .Button.Success.Dropdown:hover, table td.Action ul li a.Success.Dropdown:hover,
+      .Button.Success .Dropdown-Toggle:hover,
+      table td.Action ul li a.Success .Dropdown-Toggle:hover {
         background-color: #27ae60; }
-  .Button.Success {
+  .Button.Success, table td.Action ul li a.Success {
     background-color: #2ecc71; }
-    .Button.Success:hover {
+    .Button.Success:hover, table td.Action ul li a.Success:hover {
       background-color: #27ae60; }
-    .Button.Success.Dropdown,
-    .Button.Success .Dropdown-Toggle {
+    .Button.Success.Dropdown, table td.Action ul li a.Success.Dropdown,
+    .Button.Success .Dropdown-Toggle,
+    table td.Action ul li a.Success .Dropdown-Toggle {
       background-color: #2ecc71; }
-      .Button.Success.Dropdown:hover,
-      .Button.Success .Dropdown-Toggle:hover {
+      .Button.Success.Dropdown:hover, table td.Action ul li a.Success.Dropdown:hover,
+      .Button.Success .Dropdown-Toggle:hover,
+      table td.Action ul li a.Success .Dropdown-Toggle:hover {
         background-color: #27ae60; }
-  .Button.Warning {
+  .Button.Warning, table td.Action ul li a.Warning {
     background-color: #e67e22; }
-    .Button.Warning:hover {
+    .Button.Warning:hover, table td.Action ul li a.Warning:hover {
       background-color: #d35400; }
-    .Button.Warning.Dropdown,
-    .Button.Warning .Dropdown-Toggle {
+    .Button.Warning.Dropdown, table td.Action ul li a.Warning.Dropdown,
+    .Button.Warning .Dropdown-Toggle,
+    table td.Action ul li a.Warning .Dropdown-Toggle {
       background-color: #e67e22; }
-      .Button.Warning.Dropdown:hover,
-      .Button.Warning .Dropdown-Toggle:hover {
+      .Button.Warning.Dropdown:hover, table td.Action ul li a.Warning.Dropdown:hover,
+      .Button.Warning .Dropdown-Toggle:hover,
+      table td.Action ul li a.Warning .Dropdown-Toggle:hover {
         background-color: #e67e22; }
 
 body {
   font-family: 'Open Sans';
   background-color: #ecf0f1; }
 
+.Icon-Link {
+  font-size: 13px; }
+  .Icon-Link span.fa {
+    line-height: 16px;
+    font-size: 16px; }
+  .Icon-Link.Right span.fa {
+    margin-left: 10px; }
+
 aside.Menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -1184,7 +1235,7 @@ aside.Menu {
   z-index: 1; }
 
 .Menu-Shadow {
-  position: absolute;
+  position: fixed;
   width: 3px;
   top: 0;
   bottom: 0;
@@ -1241,15 +1292,30 @@ main {
   margin-left: 300px; }
   main .Content {
     margin: 15px; }
+    main .Content .Content-Inner {
+      margin-top: 15px;
+      padding: 15px;
+      background-color: white; }
 
 nav.Userbar {
-  background-color: white;
-  border-bottom: 1px solid #ecf0f1; }
-  nav.Userbar ul li a {
-    display: block;
-    padding: 15px;
-    color: black; }
-    nav.Userbar ul li a:hover {
-      color: #07b3d2; }
+  height: auto;
+  background-color: white; }
+  nav.Userbar ul {
+    display: inline-block; }
+    nav.Userbar ul li {
+      line-height: 16px; }
+      nav.Userbar ul li a {
+        display: block;
+        padding: 15px;
+        color: black; }
+        nav.Userbar ul li a:hover {
+          color: #07b3d2; }
+      nav.Userbar ul li.Icon span.fa {
+        display: inline-block;
+        margin-right: 15px; }
+    nav.Userbar ul.Left {
+      float: left; }
+    nav.Userbar ul.Right {
+      float: right; }
 
 /*# sourceMappingURL=main.css.map */

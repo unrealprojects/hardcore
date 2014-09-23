@@ -60,7 +60,54 @@ body		,
 	margin-top: 0;
 }
 
+table {
+	border-collapse: collapse;
+	td {
+		padding: $size-s $size-n;
+	}
+	td.Number {
+		font-size: 13px;
+		color: $Clr-Secondary-Dark;
+	}
+	td.Action {
+		@include Opacity(0);
+		@include Transition(opacity,.3s);
 
+		ul {
+			@extend ._Inline;
+			@extend ._No-Bullets;
+			li { margin-right: 1px;
+				a {
+
+					@extend .Button;
+					@extend .Ghost;
+				}
+			}
+		}
+	}
+	tr:hover td.Action {
+		@include Opacity(1);
+	}
+	&.Lines {
+		tbody tr {
+			border-top: 1px solid $Clr-Secondary-Dark;
+		}
+		tbody tr:first-child {
+			border-top: 0;
+		}
+	}
+	&.Solid {
+		thead tr td {
+			color: white;
+			background-color: $Clr-Midnight-Blue;
+		}
+	}
+	&.Stripped {
+		tbody tr:nth-child(even) {
+			background-color: $Clr-Secondary;
+		}
+	}
+}
 
 // Блок Пагинации
 .pagination,
