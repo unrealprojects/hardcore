@@ -59,93 +59,111 @@ body		,
 .Node.Row > * {
 	margin-top: 0;
 }
-
-table {
-	width: 100%;
-	border-collapse: collapse;
-	td {
-		padding: $size-s $size-n;
-	}
-	// .Number contains numerals, such as 01, 02, etc.
-	td.Number {
-		font-size: 13px;
+.Table-Adaptive {
+	.Checkbox {
 		color: $Clr-Secondary-Dark;
 	}
-	// .Action contains buttons
-	td.Action {
-		@include Opacity(0);
-		@include Transition(opacity,.3s);
+}
+table {
+	min-width: 320px;
+	width: 100%;
+	border-collapse: collapse;
 
+	th {
+		background: #333;
+		color: white;
+		text-align: left;
+	}
+	td, th {
+		padding: $size-xs;
+		@include Adaptive($Screen-Size-Small) {
+			padding: $size-s;
+		}
+		@include Adaptive($Screen-Size-Large) {
+			padding: $size-s $size-n;
+		}
+	}
+	tr:hover td.Actions {
+		@include Adaptive($Screen-Size-Tiny) {
+			opacity: 1;
+		}
+	}
+	td.Actions {
+		min-width: 120px;
+		@include Adaptive($Screen-Size-Tiny) {
+			opacity: 0;
+		}
 		ul {
-			float: right;
-			display: inline-block;
-			@extend ._Inline;
 			@extend ._No-Bullets;
-			li { margin-right: 1px;
-				a {
 
+			li {
+				float: left;
+				margin-right: $size-xs;
+
+				a {
 					@extend .Button;
-					@extend .Ghost;
+					@extend .Small;
 				}
 			}
 		}
 	}
-	// FadeIn
-	tr:hover td.Action {
-		@include Opacity(1);
+	// Divides rows by border-top: 1px
+	&.Lines {
+		tbody tr {
+			border-top: 1px solid $Clr-Secondary;
+			&:first-child {
+				border-top: 0
+			}
+		}
 	}
-	// Making an accent on the main row
-	td.Main {
-		width: 40%;
+	&.Solid {
+		th {
+			color: white;
+			background-color: $Clr-Wet-Asphalt;
+		}
 	}
-	// Disabling blue outline on focus in WebKit
-	td[contenteditable] {
-		&:focus {
+	&.Stripped {
+		tr:nth-of-type(even) {
+			background: $Clr-Secondary;
+		}
+	}
+	&.Adaptive {
+		td {
+			@extend ._Clearfix;
+			@include Adaptive-Mobile {
+				border-top: 1px solid $Clr-Secondary;
+			}
+			&:first-child {
+				border-top: 0;
+			}
+		}
+		td.Number {
+			@include Adaptive-Mobile {
+				display: none;
+			}
+		}
+	}
+	&.Edit {
+		div[contenteditable] {
+			cursor: pointer;
+		}
+		div[contenteditable]:focus {
+			color: $Clr-Wet-Asphalt;
 			outline: 0;
 		}
 	}
-	// Fallback, when you don't want to use "contenteditable"
-	&.Edit {
-		input[type='text']    ,
-		input[type='password'],
-		input[type='tel']     ,
-		input[type='time']    ,
-		textarea {
-			display: inline-block;
-			width: 100%;
-			border: 0;
-			background-color: transparent;
-			font-family: $Font-Family-Exo2;
-			font-size: 16px;
-			&:focus {
-				outline: 0;
-			}
-		}
-		textarea {
-			resize: none;
-		}
+}
+
+
+@include Adaptive-Mobile {
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr {
+		display: block;
 	}
-	// Lines between rows
-	&.Lines {
-		tbody tr {
-			border-top: 1px solid $Clr-Secondary-Dark;
-		}
-		tbody tr:first-child {
-			border-top: 0;
-		}
-	}
-	// Accented captions
-	&.Solid {
-		thead tr td {
-			color: white;
-			background-color: $Clr-Midnight-Blue;
-		}
-	}
-	// Every even row will have another background. Improves usability
-	&.Stripped {
-		tbody tr:nth-child(even) {
-			background-color: $Clr-Secondary;
-		}
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
 	}
 }
 

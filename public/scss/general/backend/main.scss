@@ -1,21 +1,13 @@
 @import "../../general/libs/upf/upf";
-
 $Menu-Width: 300px;
 
-$Clr-Slate-Light:		#3e494b;
-$Clr-Slate:				#374144;
-$Clr-Slate-Dark:		#283032;
-$Clr-Slate-Darker: 		#161a1b;
 
-$Clr-Cyan-Light:		#25d4f3;
-$Clr-Cyan:				#07b3d2;
-$Clr-Cyan-Dark:			#0599b4;
 
 body {
 	font-family: 'Open Sans';
 	background-color: $Clr-Secondary;
-
 }
+
 .Icon-Link {
 	font-size: 13px;
 	span.fa {
@@ -116,7 +108,7 @@ a.Menu-Subcategory-Link {
 // MAIN BLOCK
 main {
 	margin-left: $Menu-Width;
-	.Content {
+	& > .Content {
 		margin: $size-n;
 		.Content-Inner {
 			margin-top: $size-n;

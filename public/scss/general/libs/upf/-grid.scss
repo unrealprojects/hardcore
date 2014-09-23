@@ -31,6 +31,28 @@ ul.Row > li {
 	@extend ._No-Bullets;
 }
 
+@include Adaptive-Mobile {
+
+	table.Adaptive td.Title   > * ,
+	table.Adaptive td.Main    > * ,
+	table.Adaptive td.Date    > * ,
+	table.Adaptive td.Actions > * ,
+	[class*='Grid-XXS-'] 			{
+		float: left;
+	}
+	.Row.Merge > .Grid-XXS-4   		{width:	$Grid-Split-One-Width * 4;	}
+
+	table.Adaptive td.Title   > * ,
+	table.Adaptive td.Main    > * ,
+	table.Adaptive td.Date    > * ,
+	table.Adaptive td.Actions > * ,
+	.Row.Merge > .Grid-XXS-6      {
+		width:	$Grid-Split-One-Width * 6
+	}
+
+}
+
+
 @media all and (min-width: $Screen-Size-Tiny) {
 	// Rows in Splitted grid must have gutter from both sides.
 	.Row.Split > * {
@@ -227,4 +249,73 @@ ul.Row > li {
 }
 .Push-Eleven {
 	margin-left: $Grid-Eleven-Width + $Grid-Gutter;
+}
+[class*='Hidden-'] {
+	display: block;
+}
+.Hidden-XXS {
+	@include Adaptive-Mobile {
+		display: none;
+	}
+}
+.Hidden-XS {
+	@include Adaptive($Screen-Size-Tiny) {
+		display: none;
+	}
+}
+.Hidden-SM {
+	@include Adaptive($Screen-Size-Small) {
+		display: none;
+	}
+}
+.Hidden-MD {
+	@include Adaptive($Screen-Size-Default) {
+		display: none;
+	}
+}
+.Hidden-LR {
+	@include Adaptive($Screen-Size-Large) {
+		display: none;
+	}
+}
+.Hidden-HR {
+	@include Adaptive($Screen-Size-Huge) {
+		display: block;
+	}
+}
+table.Adaptive .Caption ,
+*[class*='Visible-']    {
+	display: none;
+}
+table.Adaptive .Caption ,
+.Visible-XXS            {
+	@include Adaptive-Mobile {
+		display: inline-block;
+	}
+}
+.Visible-XS {
+	@include Adaptive($Screen-Size-Tiny) {
+		display: inline-block;
+	}
+}
+.Visible-SM {
+	display: none;
+	@include Adaptive($Screen-Size-Small) {
+		display: inline-block;
+	}
+}
+.Visible-MD {
+	@include Adaptive($Screen-Size-Default) {
+		display: inline-block;
+	}
+}
+.Visible-LR {
+	@include Adaptive($Screen-Size-Large) {
+		display: inline-block;
+	}
+}
+.Visible-HR {
+	@include Adaptive($Screen-Size-Huge) {
+		display: inline-block;
+	}
 }

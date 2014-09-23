@@ -41,11 +41,10 @@ footer[role='contentinfo'] > div .Copyright, .Snippet-Item header .Item-Title, .
 ._Dev {
   outline: 1px red solid !important; }
 
-._Clearfix:before, ._Inline:before, table td.Action ul:before, .Breadcrumbs .Breadcrumb-List:before, .Box > header ul.Box-Tools:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Vote:before, .List-Group-Actions:before, .Row:before, .Site-Header .Site-Header-Inner:before, .Snippet-List .Snippet-Item:before, .Snippet-Item:before, .List-Params:before, .Node:before, .pagination:before,
+._Clearfix:before, ._Inline:before, .Breadcrumbs .Breadcrumb-List:before, .Box > header ul.Box-Tools:before, footer[role='contentinfo'] > div .Footer-Navigation ul:before, .Snippet-Item header .Item-Values:before, .Snippet-Item .Item-Gallery ul:before, ul.Tag-List:before, .Vote:before, .List-Group-Actions:before, .Row:before, .Site-Header .Site-Header-Inner:before, .Snippet-List .Snippet-Item:before, .Snippet-Item:before, .List-Params:before, .Node:before, table.Adaptive td:before, .pagination:before,
 .Pagination:before, .Control-Group:before, .Control-Group.Smart:before, .Control-Group.Smart .Input-Smart:before, dl.Tabs:before, .Box:before, .Box > header:before, .Site-Header:before, .List-Categories:before, .List-Categories li:before, .Comment-List .Comment-Item .Item-Content header:before, footer[role='contentinfo'] > div:before, .List.Snippets li.List-Item header:before, .Snippet-List .Snippet-Item footer:before, .Snippet-List .Item-Gallery:before, .Snippet-Item header:before, .Snippet-Item header .Item-Title:before, .Snippet-Item .Item-Gallery:before, .Filter-Result li:before, .Vote > li:before, .Filter.Accordion .Filter-Subheader:before, .Filter-Subcategory ul:before,
 ._Clearfix:after,
 ._Inline:after,
-table td.Action ul:after,
 .Breadcrumbs .Breadcrumb-List:after,
 .Box > header ul.Box-Tools:after,
 footer[role='contentinfo'] > div .Footer-Navigation ul:after,
@@ -60,6 +59,7 @@ ul.Tag-List:after,
 .Snippet-Item:after,
 .List-Params:after,
 .Node:after,
+table.Adaptive td:after,
 .pagination:after,
 .Pagination:after,
 .Control-Group:after,
@@ -86,15 +86,15 @@ footer[role='contentinfo'] > div:after,
   content: " ";
   display: table; }
 
-._Clearfix:after, ._Inline:after, table td.Action ul:after, .Breadcrumbs .Breadcrumb-List:after, .Box > header ul.Box-Tools:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Vote:after, .List-Group-Actions:after, .Row:after, .Site-Header .Site-Header-Inner:after, .Snippet-List .Snippet-Item:after, .Snippet-Item:after, .List-Params:after, .Node:after, .pagination:after,
+._Clearfix:after, ._Inline:after, .Breadcrumbs .Breadcrumb-List:after, .Box > header ul.Box-Tools:after, footer[role='contentinfo'] > div .Footer-Navigation ul:after, .Snippet-Item header .Item-Values:after, .Snippet-Item .Item-Gallery ul:after, ul.Tag-List:after, .Vote:after, .List-Group-Actions:after, .Row:after, .Site-Header .Site-Header-Inner:after, .Snippet-List .Snippet-Item:after, .Snippet-Item:after, .List-Params:after, .Node:after, table.Adaptive td:after, .pagination:after,
 .Pagination:after, .Control-Group:after, .Control-Group.Smart:after, .Control-Group.Smart .Input-Smart:after, dl.Tabs:after, .Box:after, .Box > header:after, .Site-Header:after, .List-Categories:after, .List-Categories li:after, .Comment-List .Comment-Item .Item-Content header:after, footer[role='contentinfo'] > div:after, .List.Snippets li.List-Item header:after, .Snippet-List .Snippet-Item footer:after, .Snippet-List .Item-Gallery:after, .Snippet-Item header:after, .Snippet-Item header .Item-Title:after, .Snippet-Item .Item-Gallery:after, .Filter-Result li:after, .Vote > li:after, .Filter.Accordion .Filter-Subheader:after, .Filter-Subcategory ul:after {
   clear: both; }
 
-._Inline > *, table td.Action ul > *, .Breadcrumbs .Breadcrumb-List > *, .Box > header ul.Box-Tools > *, footer[role='contentinfo'] > div .Footer-Navigation ul > *, .Snippet-Item header .Item-Values > *, .Snippet-Item .Item-Gallery ul > *, ul.Tag-List > *, .Vote > *, .List-Group-Actions > * {
+._Inline > *, .Breadcrumbs .Breadcrumb-List > *, .Box > header ul.Box-Tools > *, footer[role='contentinfo'] > div .Footer-Navigation ul > *, .Snippet-Item header .Item-Values > *, .Snippet-Item .Item-Gallery ul > *, ul.Tag-List > *, .Vote > *, .List-Group-Actions > * {
   float: left; }
 
-._No-Bullets, ul.Row > li, .Site-Header ul.Site-Header-Inner > li, .Snippet-List ul.Snippet-Item > li, ul.Snippet-Item > li, .Snippet-Item header ul.Item-Values > li, ul.List-Group-Actions > li, ul.List-Params > li, table td.Action ul, .pagination,
-.Pagination, .Breadcrumbs .Breadcrumb-List, .Box > header ul.Box-Tools, .Button.Dropdown > .Dropdown-Content, table td.Action ul li a.Dropdown > .Dropdown-Content, .Button.Dropdown > .Dropdown-Content ul, table td.Action ul li a.Dropdown > .Dropdown-Content ul, .Site-Navigation.Primary ul, .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, .Filter-Result, ul.Tag-List, .Vote, .List-Filter, .Menu-List ul, .Filter.Accordion, .Filter-Subcategory ul, .List-Group-Actions {
+._No-Bullets, ul.Row > li, .Site-Header ul.Site-Header-Inner > li, .Snippet-List ul.Snippet-Item > li, ul.Snippet-Item > li, .Snippet-Item header ul.Item-Values > li, ul.List-Group-Actions > li, ul.List-Params > li, table td.Actions ul, .pagination,
+.Pagination, .Breadcrumbs .Breadcrumb-List, .Box > header ul.Box-Tools, .Button.Dropdown > .Dropdown-Content, table td.Actions ul li a.Dropdown > .Dropdown-Content, .Button.Dropdown > .Dropdown-Content ul, table td.Actions ul li a.Dropdown > .Dropdown-Content ul, .Site-Navigation.Primary ul, .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, .Filter-Result, ul.Tag-List, .Vote, .List-Filter, .Menu-List ul, .Filter.Accordion, .Filter-Subcategory ul, .List-Group-Actions {
   list-style: none; }
 
 ._Soft_Shadow,
@@ -125,7 +125,7 @@ footer[role='contentinfo'] > div:after,
   -o-user-select: none;
   user-select: none; }
 
-.Button, table td.Action ul li a, #Menu-Toggle span:hover {
+.Button, table td.Actions ul li a, #Menu-Toggle span:hover {
   cursor: pointer; }
 
 * {
@@ -155,6 +155,34 @@ iframe {
 .Row, .Site-Header .Site-Header-Inner, .Snippet-List .Snippet-Item, .Snippet-Item, .Snippet-Item header .Item-Values, .List-Group-Actions, .List-Params {
   display: block; }
 
+@media screen and (max-width: 768px) {
+  table.Adaptive td.Title > *,
+  table.Adaptive td.Main > *,
+  table.Adaptive td.Date > *,
+  table.Adaptive td.Actions > *,
+  [class*='Grid-XXS-'] {
+    float: left; }
+
+  .Row.Merge > .Grid-XXS-4, .Site-Header .Site-Header-Inner > .Grid-XXS-4, .Snippet-List .Snippet-Item > .Grid-XXS-4, .Merge.Snippet-Item > .Grid-XXS-4, .Snippet-Item.List-Group-Actions > .Grid-XXS-4, .Snippet-Item.List-Params > .Grid-XXS-4, .Snippet-Item header .Merge.Item-Values > .Grid-XXS-4, .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .Grid-XXS-4, .Snippet-Item header .Item-Values.List-Group-Actions > .Grid-XXS-4, .Snippet-Item header .Item-Values.List-Params > .Grid-XXS-4, .List-Group-Actions > .Grid-XXS-4, .List-Params > .Grid-XXS-4 {
+    width: 33.33333%; }
+
+  table.Adaptive td.Title > *,
+  table.Adaptive td.Main > *,
+  table.Adaptive td.Date > *,
+  table.Adaptive td.Actions > *,
+  .Row.Merge > .Grid-XXS-6,
+  .Site-Header .Site-Header-Inner > .Grid-XXS-6,
+  .Snippet-List .Snippet-Item > .Grid-XXS-6,
+  .Merge.Snippet-Item > .Grid-XXS-6,
+  .Snippet-Item.List-Group-Actions > .Grid-XXS-6,
+  .Snippet-Item.List-Params > .Grid-XXS-6,
+  .Snippet-Item header .Merge.Item-Values > .Grid-XXS-6,
+  .Snippet-List .Snippet-Item header .Item-Values.Snippet-Item > .Grid-XXS-6,
+  .Snippet-Item header .Item-Values.List-Group-Actions > .Grid-XXS-6,
+  .Snippet-Item header .Item-Values.List-Params > .Grid-XXS-6,
+  .List-Group-Actions > .Grid-XXS-6,
+  .List-Params > .Grid-XXS-6 {
+    width: 50%; } }
 @media all and (min-width: 768px) {
   .Row.Split > *, .Site-Header .Split.Site-Header-Inner > *, .Split.Snippet-Item > *, .Snippet-Item header .Split.Item-Values > *, .Split.List-Group-Actions > *, .Split.List-Params > * {
     margin-left: 1%;
@@ -566,6 +594,64 @@ iframe {
 .Push-Eleven {
   margin-left: 91.66667%; }
 
+[class*='Hidden-'] {
+  display: block; }
+
+@media screen and (max-width: 768px) {
+  .Hidden-XXS {
+    display: none; } }
+
+@media screen and (min-width: 768px) {
+  .Hidden-XS {
+    display: none; } }
+
+@media screen and (min-width: 1024px) {
+  .Hidden-SM, #Menu-Toggle {
+    display: none; } }
+
+@media screen and (min-width: 1260px) {
+  .Hidden-MD {
+    display: none; } }
+
+@media screen and (min-width: 1880px) {
+  .Hidden-LR {
+    display: none; } }
+
+@media screen and (min-width: 2560px) {
+  .Hidden-HR {
+    display: block; } }
+
+table.Adaptive .Caption,
+*[class*='Visible-'] {
+  display: none; }
+
+@media screen and (max-width: 768px) {
+  table.Adaptive .Caption,
+  .Visible-XXS {
+    display: inline-block; } }
+
+@media screen and (min-width: 768px) {
+  .Visible-XS {
+    display: inline-block; } }
+
+.Visible-SM, .Site-Navigation.Primary {
+  display: none; }
+  @media screen and (min-width: 1024px) {
+    .Visible-SM, .Site-Navigation.Primary {
+      display: inline-block; } }
+
+@media screen and (min-width: 1260px) {
+  .Visible-MD {
+    display: inline-block; } }
+
+@media screen and (min-width: 1880px) {
+  .Visible-LR {
+    display: inline-block; } }
+
+@media screen and (min-width: 2560px) {
+  .Visible-HR {
+    display: inline-block; } }
+
 html {
   font-size: 1em;
   line-height: 1.45; }
@@ -680,66 +766,68 @@ body,
 .Node.Row > *, .Site-Header .Node.Site-Header-Inner > *, .Node.Snippet-Item > *, .Snippet-Item header .Node.Item-Values > *, .Node.List-Group-Actions > *, .Node.List-Params > * {
   margin-top: 0; }
 
+.Table-Adaptive .Checkbox {
+  color: #bdc3c7; }
+
 table {
+  min-width: 320px;
   width: 100%;
   border-collapse: collapse; }
-  table td {
-    padding: 10px 15px; }
-  table td.Number {
-    font-size: 13px;
-    color: #bdc3c7; }
-  table td.Action {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    -webkit-transition-property: opacity;
-    -moz-transition-property: opacity;
-    transition-property: opacity;
-    -webkit-transition-duration: 0.3s;
-    -moz-transition-duration: 0.3s;
-    transition-duration: 0.3s; }
-    table td.Action ul {
-      float: right;
-      display: inline-block; }
-      table td.Action ul li {
-        margin-right: 1px; }
-  table tr:hover td.Action {
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    filter: alpha(opacity=100); }
-  table td.Main {
-    width: 40%; }
-  table td[contenteditable]:focus {
-    outline: 0; }
-  table.Edit input[type='text'],
-  table.Edit input[type='password'],
-  table.Edit input[type='tel'],
-  table.Edit input[type='time'],
-  table.Edit textarea {
-    display: inline-block;
-    width: 100%;
-    border: 0;
-    background-color: transparent;
-    font-family: "Exo 2", "Open Sans", Helvetica, Verdana, sans-serif;
-    font-size: 16px; }
-    table.Edit input[type='text']:focus,
-    table.Edit input[type='password']:focus,
-    table.Edit input[type='tel']:focus,
-    table.Edit input[type='time']:focus,
-    table.Edit textarea:focus {
-      outline: 0; }
-  table.Edit textarea {
-    resize: none; }
-  table.Lines tbody tr {
-    border-top: 1px solid #bdc3c7; }
-  table.Lines tbody tr:first-child {
-    border-top: 0; }
-  table.Solid thead tr td {
+  table th {
+    background: #333;
     color: white;
-    background-color: #2c3e50; }
-  table.Stripped tbody tr:nth-child(even) {
-    background-color: #ecf0f1; }
+    text-align: left; }
+  table td, table th {
+    padding: 5px; }
+    @media screen and (min-width: 1024px) {
+      table td, table th {
+        padding: 10px; } }
+    @media screen and (min-width: 1880px) {
+      table td, table th {
+        padding: 10px 15px; } }
+  @media screen and (min-width: 768px) {
+    table tr:hover td.Actions {
+      opacity: 1; } }
+  table td.Actions {
+    min-width: 120px; }
+    @media screen and (min-width: 768px) {
+      table td.Actions {
+        opacity: 0; } }
+    table td.Actions ul li {
+      float: left;
+      margin-right: 5px; }
+  table.Lines tbody tr {
+    border-top: 1px solid #ecf0f1; }
+    table.Lines tbody tr:first-child {
+      border-top: 0; }
+  table.Solid th {
+    color: white;
+    background-color: #34495e; }
+  table.Stripped tr:nth-of-type(even) {
+    background: #ecf0f1; }
+  @media screen and (max-width: 768px) {
+    table.Adaptive td {
+      border-top: 1px solid #ecf0f1; } }
+  table.Adaptive td:first-child {
+    border-top: 0; }
+  @media screen and (max-width: 768px) {
+    table.Adaptive td.Number {
+      display: none; } }
+  table.Edit div[contenteditable] {
+    cursor: pointer; }
+  table.Edit div[contenteditable]:focus {
+    color: #34495e;
+    outline: 0; }
 
+@media screen and (max-width: 768px) {
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block; }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px; } }
 .pagination,
 .Pagination {
   border-left: 4px solid #e74c3c; }
@@ -1018,7 +1106,7 @@ dl.Tabs {
           color: #e74c3c; }
   .Box > .Box-Content {
     padding: 10px 15px 15px; }
-  .Box.Round, .Box.Button.Ghost, table td.Action ul li a.Box {
+  .Box.Round, .Box.Button.Ghost, table td.Actions ul li a.Box.Ghost {
     border-radius: 10px; }
   .Box.Outlined {
     border: 2px solid #95a5a6; }
@@ -1128,7 +1216,7 @@ dl.Tabs {
     .Box.Error .Box-Tools a:hover {
       color: #d1060a; }
 
-.Button, table td.Action ul li a {
+.Button, table td.Actions ul li a {
   padding: 5px 10px;
   border: 0;
   line-height: 24px;
@@ -1141,46 +1229,46 @@ dl.Tabs {
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   transition-duration: 0.3s; }
-  .Button:hover, table td.Action ul li a:hover {
+  .Button:hover, table td.Actions ul li a:hover {
     background-color: #c0392b; }
-  .Button.Small, table td.Action ul li a.Small {
+  .Button.Small, table td.Actions ul li a {
     font-size: 10px;
     padding: 2px 5px; }
-  .Button.Large, table td.Action ul li a.Large {
+  .Button.Large, table td.Actions ul li a.Large {
     padding: 10px 15px; }
-  .Button.Huge, table td.Action ul li a.Huge {
+  .Button.Huge, table td.Actions ul li a.Huge {
     font-size: 19px;
     padding: 15px 20px; }
-  .Button.Round, table td.Action ul li a, .Button.Ghost {
+  .Button.Round, table td.Actions ul li a.Round, .Button.Ghost, table td.Actions ul li a.Ghost {
     border-radius: 5px; }
-  .Button.Search, table td.Action ul li a.Search {
+  .Button.Search, table td.Actions ul li a.Search {
     border-radius: 17px; }
-    .Button.Search.Large, table td.Action ul li a.Search.Large {
+    .Button.Search.Large, table td.Actions ul li a.Search.Large {
       border-radius: 22px; }
-    .Button.Search.Huge, table td.Action ul li a.Search.Huge {
+    .Button.Search.Huge, table td.Actions ul li a.Search.Huge {
       border-radius: 27px; }
-  .Button.Icon > span.fa:first-child, table td.Action ul li a.Icon > span.fa:first-child {
+  .Button.Icon > span.fa:first-child, table td.Actions ul li a.Icon > span.fa:first-child {
     margin-right: 10px; }
-  .Button.Ghost, table td.Action ul li a {
+  .Button.Ghost, table td.Actions ul li a.Ghost {
     color: #2c3e50;
     background-color: transparent;
     border: 1px solid #bdc3c7; }
-    .Button.Ghost:hover, table td.Action ul li a:hover {
+    .Button.Ghost:hover, table td.Actions ul li a.Ghost:hover {
       color: black;
       border-color: #95a5a6;
       background-color: #ecf0f1; }
-    .Button.Ghost.Invert, table td.Action ul li a.Invert {
+    .Button.Ghost.Invert, table td.Actions ul li a.Ghost.Invert {
       color: white;
       border-color: white; }
-      .Button.Ghost.Invert:hover, table td.Action ul li a.Invert:hover {
+      .Button.Ghost.Invert:hover, table td.Actions ul li a.Ghost.Invert:hover {
         color: #e74c3c;
         border-color: #e74c3c; }
-  .Button.Dropdown, table td.Action ul li a.Dropdown {
+  .Button.Dropdown, table td.Actions ul li a.Dropdown {
     position: relative;
     padding-right: 40px; }
-    .Button.Dropdown.Round > .Dropdown-Toggle, table td.Action ul li a.Dropdown > .Dropdown-Toggle, .Button.Dropdown.Ghost > .Dropdown-Toggle {
+    .Button.Dropdown.Round > .Dropdown-Toggle, table td.Actions ul li a.Dropdown.Round > .Dropdown-Toggle, .Button.Dropdown.Ghost > .Dropdown-Toggle, table td.Actions ul li a.Dropdown.Ghost > .Dropdown-Toggle {
       border-radius: 0 5px 5px 0; }
-    .Button.Dropdown > .Dropdown-Toggle, table td.Action ul li a.Dropdown > .Dropdown-Toggle {
+    .Button.Dropdown > .Dropdown-Toggle, table td.Actions ul li a.Dropdown > .Dropdown-Toggle {
       position: absolute;
       top: 0;
       right: 0;
@@ -1190,9 +1278,9 @@ dl.Tabs {
       padding: 10px 0;
       border-left: 1px white solid;
       background-color: #e74c3c; }
-      .Button.Dropdown > .Dropdown-Toggle:hover, table td.Action ul li a.Dropdown > .Dropdown-Toggle:hover {
+      .Button.Dropdown > .Dropdown-Toggle:hover, table td.Actions ul li a.Dropdown > .Dropdown-Toggle:hover {
         background-color: #c0392b; }
-    .Button.Dropdown > .Dropdown-Content, table td.Action ul li a.Dropdown > .Dropdown-Content {
+    .Button.Dropdown > .Dropdown-Content, table td.Actions ul li a.Dropdown > .Dropdown-Content {
       background-color: white;
       border: 1px solid #bdc3c7;
       position: absolute;
@@ -1200,68 +1288,68 @@ dl.Tabs {
       left: 0;
       width: 100%;
       z-index: 100; }
-      .Button.Dropdown > .Dropdown-Content li > a, table td.Action ul li a.Dropdown > .Dropdown-Content li > a {
+      .Button.Dropdown > .Dropdown-Content li > a, table td.Actions ul li a.Dropdown > .Dropdown-Content li > a {
         display: block;
         padding: 5px 10px;
         text-align: left;
         color: #2c3e50; }
-        .Button.Dropdown > .Dropdown-Content li > a:hover, table td.Action ul li a.Dropdown > .Dropdown-Content li > a:hover {
+        .Button.Dropdown > .Dropdown-Content li > a:hover, table td.Actions ul li a.Dropdown > .Dropdown-Content li > a:hover {
           background-color: #bdc3c7; }
-      .Button.Dropdown > .Dropdown-Content li.Divider, table td.Action ul li a.Dropdown > .Dropdown-Content li.Divider {
+      .Button.Dropdown > .Dropdown-Content li.Divider, table td.Actions ul li a.Dropdown > .Dropdown-Content li.Divider {
         padding: 0;
         display: block;
         border-top: 1px solid #bdc3c7; }
-      .Button.Dropdown > .Dropdown-Content.Icon li a span.fa, table td.Action ul li a.Dropdown > .Dropdown-Content.Icon li a span.fa {
+      .Button.Dropdown > .Dropdown-Content.Icon li a span.fa, table td.Actions ul li a.Dropdown > .Dropdown-Content.Icon li a span.fa {
         margin-right: 10px; }
-    .Button.Dropdown.Round > .Dropdown-Content, table td.Action ul li a.Dropdown > .Dropdown-Content, .Button.Dropdown.Ghost > .Dropdown-Content {
+    .Button.Dropdown.Round > .Dropdown-Content, table td.Actions ul li a.Dropdown.Round > .Dropdown-Content, .Button.Dropdown.Ghost > .Dropdown-Content, table td.Actions ul li a.Dropdown.Ghost > .Dropdown-Content {
       border-radius: 5px; }
-  .Button.Info, table td.Action ul li a.Info {
+  .Button.Info, table td.Actions ul li a.Info {
     background-color: #3498db; }
-    .Button.Info:hover, table td.Action ul li a.Info:hover {
+    .Button.Info:hover, table td.Actions ul li a.Info:hover {
       background-color: #2980b9; }
-    .Button.Info.Dropdown, table td.Action ul li a.Info.Dropdown,
+    .Button.Info.Dropdown, table td.Actions ul li a.Info.Dropdown,
     .Button.Info .Dropdown-Toggle,
-    table td.Action ul li a.Info .Dropdown-Toggle {
+    table td.Actions ul li a.Info .Dropdown-Toggle {
       background-color: #2980b9; }
-      .Button.Info.Dropdown:hover, table td.Action ul li a.Info.Dropdown:hover,
+      .Button.Info.Dropdown:hover, table td.Actions ul li a.Info.Dropdown:hover,
       .Button.Info .Dropdown-Toggle:hover,
-      table td.Action ul li a.Info .Dropdown-Toggle:hover {
+      table td.Actions ul li a.Info .Dropdown-Toggle:hover {
         background-color: #2980b9; }
-  .Button.Success, table td.Action ul li a.Success {
+  .Button.Success, table td.Actions ul li a.Success {
     background-color: #2ecc71; }
-    .Button.Success:hover, table td.Action ul li a.Success:hover {
+    .Button.Success:hover, table td.Actions ul li a.Success:hover {
       background-color: #27ae60; }
-    .Button.Success.Dropdown, table td.Action ul li a.Success.Dropdown,
+    .Button.Success.Dropdown, table td.Actions ul li a.Success.Dropdown,
     .Button.Success .Dropdown-Toggle,
-    table td.Action ul li a.Success .Dropdown-Toggle {
+    table td.Actions ul li a.Success .Dropdown-Toggle {
       background-color: #2ecc71; }
-      .Button.Success.Dropdown:hover, table td.Action ul li a.Success.Dropdown:hover,
+      .Button.Success.Dropdown:hover, table td.Actions ul li a.Success.Dropdown:hover,
       .Button.Success .Dropdown-Toggle:hover,
-      table td.Action ul li a.Success .Dropdown-Toggle:hover {
+      table td.Actions ul li a.Success .Dropdown-Toggle:hover {
         background-color: #27ae60; }
-  .Button.Success, table td.Action ul li a.Success {
+  .Button.Success, table td.Actions ul li a.Success {
     background-color: #2ecc71; }
-    .Button.Success:hover, table td.Action ul li a.Success:hover {
+    .Button.Success:hover, table td.Actions ul li a.Success:hover {
       background-color: #27ae60; }
-    .Button.Success.Dropdown, table td.Action ul li a.Success.Dropdown,
+    .Button.Success.Dropdown, table td.Actions ul li a.Success.Dropdown,
     .Button.Success .Dropdown-Toggle,
-    table td.Action ul li a.Success .Dropdown-Toggle {
+    table td.Actions ul li a.Success .Dropdown-Toggle {
       background-color: #2ecc71; }
-      .Button.Success.Dropdown:hover, table td.Action ul li a.Success.Dropdown:hover,
+      .Button.Success.Dropdown:hover, table td.Actions ul li a.Success.Dropdown:hover,
       .Button.Success .Dropdown-Toggle:hover,
-      table td.Action ul li a.Success .Dropdown-Toggle:hover {
+      table td.Actions ul li a.Success .Dropdown-Toggle:hover {
         background-color: #27ae60; }
-  .Button.Warning, table td.Action ul li a.Warning {
+  .Button.Warning, table td.Actions ul li a.Warning {
     background-color: #e67e22; }
-    .Button.Warning:hover, table td.Action ul li a.Warning:hover {
+    .Button.Warning:hover, table td.Actions ul li a.Warning:hover {
       background-color: #d35400; }
-    .Button.Warning.Dropdown, table td.Action ul li a.Warning.Dropdown,
+    .Button.Warning.Dropdown, table td.Actions ul li a.Warning.Dropdown,
     .Button.Warning .Dropdown-Toggle,
-    table td.Action ul li a.Warning .Dropdown-Toggle {
+    table td.Actions ul li a.Warning .Dropdown-Toggle {
       background-color: #e67e22; }
-      .Button.Warning.Dropdown:hover, table td.Action ul li a.Warning.Dropdown:hover,
+      .Button.Warning.Dropdown:hover, table td.Actions ul li a.Warning.Dropdown:hover,
       .Button.Warning .Dropdown-Toggle:hover,
-      table td.Action ul li a.Warning .Dropdown-Toggle:hover {
+      table td.Actions ul li a.Warning .Dropdown-Toggle:hover {
         background-color: #e67e22; }
 
 body {
@@ -1913,54 +2001,6 @@ ul.Tag-List li.Tag-Item {
     max-height: 1px; }
   to {
     max-height: 350px; } }
-[class*='Hidden-'] {
-  display: block; }
-
-@media screen and (min-width: 768px) {
-  .Hidden-XS {
-    display: none; } }
-
-@media screen and (min-width: 1024px) {
-  .Hidden-SM, #Menu-Toggle {
-    display: none; } }
-
-@media screen and (min-width: 1260px) {
-  .Hidden-MD {
-    display: none; } }
-
-@media screen and (min-width: 1880px) {
-  .Hidden-LR {
-    display: none; } }
-
-@media screen and (min-width: 2560px) {
-  .Hidden-HR {
-    display: block; } }
-
-*[class*='Visible-'] {
-  display: none; }
-
-@media screen and (min-width: 768px) {
-  .Visible-XS {
-    display: inline-block; } }
-
-.Visible-SM, .Site-Navigation.Primary {
-  display: none; }
-  @media screen and (min-width: 1024px) {
-    .Visible-SM, .Site-Navigation.Primary {
-      display: inline-block; } }
-
-@media screen and (min-width: 1260px) {
-  .Visible-MD {
-    display: inline-block; } }
-
-@media screen and (min-width: 1880px) {
-  .Visible-LR {
-    display: inline-block; } }
-
-@media screen and (min-width: 2560px) {
-  .Visible-HR {
-    display: inline-block; } }
-
 @media screen and (min-width: 768px) {
   .List.Snippets header {
     position: relative; }
