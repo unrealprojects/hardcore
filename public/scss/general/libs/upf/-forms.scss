@@ -1,31 +1,33 @@
 
+// Control-Group is a wrap to form elements. Can contain label + input/select/textarea
+// TAGS ALLOWED: ALL
 .Control-Group {
-	margin-top: 		$size-s;
-	width: 100%;
-	@extend 			._Clearfix;
-	@extend 			._Unselectable;
+	width: 					100%;					// Block must be full-width
+	@extend 				._Clearfix;				// Child elements are floated. Return them to flow
+	@extend 				._Unselectable;			// Disabling text selecting
 
 	&:first-child {
-		margin-top: 	0;
+		margin-top: 		0;
 	}
 
 	input ,
 	select {
-		font-weight: 	900;
-		box-shadow: 0 1px 3px rgba(0,0,0,0.15) inset;
-		@include Round('all', $Control-Border-Radius);
+		font-weight: 		900;
+		box-shadow: 		0 1px 3px rgba(0,0,0,0.15) inset;
+		@include 			Round('all', $Control-Border-Radius);
 	}
 	textarea {
-		font-family: $Font-Family-Verdana;
-		resize: vertical;
-		box-shadow: 0 1px 3px rgba(0,0,0,0.15) inset;
+		font-family: 		$Font-Family-Verdana;
+		resize: 			vertical;				// To prevent destroying the grid, textarea must not be resizable horizontally
+		box-shadow: 		0 1px 3px rgba(0,0,0,0.15) inset;
 		@include Round('all', $Control-Border-Radius);
 	}
 
-	// Отступ между двумя кнопками в ряд
+	// Margin between two inline buttons
 	input[type='submit'] + input[type='submit'] {
 		margin-left: 	$size-n;
 	}
+
 	span {
 		@extend ._Unselectable;
 	}
@@ -36,6 +38,8 @@
 	&:first-child {
 		margin-top: 0;
 	}
+
+	// Offset is the last Control-Group in form
 	&.Offset {
 		padding-top: $size;
 
@@ -434,6 +438,7 @@ dl.Tabs {
 	}
 }
 // MAGIC!
+a.Button ,
 .Button {
 	padding: $size-xs $size-s;
 	border: 0;

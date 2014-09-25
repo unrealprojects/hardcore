@@ -35,7 +35,9 @@ footer[role='contentinfo'] > div .Copyright, .Snippet-Item header .Item-Title, .
   float: left; }
 
 .Control-Group.Offset input[type='submit'],
-.Control-Group.Offset button.Button, footer[role='contentinfo'] > div .Footer-Navigation, .Filter-Result, .Filter-Result li .Delete {
+.Control-Group.Offset button.Button,
+.Control-Group.Offset .Filter-Result li button.Delete,
+.Filter-Result li .Control-Group.Offset button.Delete, footer[role='contentinfo'] > div .Footer-Navigation, .Filter-Result, .Filter-Result li .Delete {
   float: right; }
 
 ._Dev {
@@ -93,17 +95,24 @@ footer[role='contentinfo'] > div:after,
 ._Inline > *, .Breadcrumbs .Breadcrumb-List > *, .Box > header ul.Box-Tools > *, footer[role='contentinfo'] > div .Footer-Navigation ul > *, .Snippet-Item header .Item-Values > *, .Snippet-Item .Item-Gallery ul > *, ul.Tag-List > *, .Vote > *, .List-Group-Actions > * {
   float: left; }
 
-._No-Bullets, ul.Row > li, .Site-Header ul.Site-Header-Inner > li, .Snippet-List ul.Snippet-Item > li, ul.Snippet-Item > li, .Snippet-Item header ul.Item-Values > li, ul.List-Group-Actions > li, ul.List-Params > li, table td.Actions ul, .pagination,
-.Pagination, .Breadcrumbs .Breadcrumb-List, .Box > header ul.Box-Tools, .Button.Dropdown > .Dropdown-Content, table td.Actions ul li a.Dropdown > .Dropdown-Content, .Button.Dropdown > .Dropdown-Content ul, table td.Actions ul li a.Dropdown > .Dropdown-Content ul, .Site-Navigation.Primary ul, .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, .Filter-Result, ul.Tag-List, .Vote, .List-Filter, .Menu-List ul, .Filter.Accordion, .Filter-Subcategory ul, .List-Group-Actions {
+._No-Bullets, ol.Row > li, .Site-Header ol.Site-Header-Inner > li, .Snippet-List ol.Snippet-Item > li, ol.Snippet-Item > li, .Snippet-Item header ol.Item-Values > li, ol.List-Group-Actions > li, ol.List-Params > li,
+ul.Row > li,
+.Site-Header ul.Site-Header-Inner > li,
+.Snippet-List ul.Snippet-Item > li,
+ul.Snippet-Item > li,
+.Snippet-Item header ul.Item-Values > li,
+ul.List-Group-Actions > li,
+ul.List-Params > li, table td.Actions ul, .pagination,
+.Pagination, .Breadcrumbs .Breadcrumb-List, .Box > header ul.Box-Tools, a.Button.Dropdown > .Dropdown-Content, table td.Actions ul li a.Dropdown > .Dropdown-Content,
+.Button.Dropdown > .Dropdown-Content,
+.Filter-Result li .Dropdown.Delete > .Dropdown-Content, a.Button.Dropdown > .Dropdown-Content ul, table td.Actions ul li a.Dropdown > .Dropdown-Content ul,
+.Button.Dropdown > .Dropdown-Content ul,
+.Filter-Result li .Dropdown.Delete > .Dropdown-Content ul, .Site-Navigation.Primary ul, .Comment-List, footer[role='contentinfo'] > div .Footer-Navigation ul, .Snippet-List, .Snippet-Item header .Item-Values, .Snippet-Item .Item-Gallery ul, .Filter-Result, ul.Tag-List, .Vote, .List-Filter, .Menu-List ul, .Filter.Accordion, .Filter-Subcategory ul, .List-Group-Actions {
   list-style: none; }
 
 ._Soft_Shadow,
 ._Soft-Shadow {
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.15); }
-
-@media all and (min-width: 1024px) {
-  ._Fly-Out {
-    margin-left: -50px; } }
 
 ._Fit-Row, .Snippet-Item .Item-Gallery img.Item-Main-Photo {
   width: 100%; }
@@ -125,8 +134,13 @@ footer[role='contentinfo'] > div:after,
   -o-user-select: none;
   user-select: none; }
 
-.Button, table td.Actions ul li a, #Menu-Toggle span:hover {
+a.Button, table td.Actions ul li a,
+.Button,
+.Filter-Result li .Delete, #Menu-Toggle span:hover {
   cursor: pointer; }
+
+.Error-404 h2, .Error-404 p {
+  text-shadow: 1px 1px 1px white; }
 
 * {
   margin: 0;
@@ -160,6 +174,7 @@ iframe {
   table.Adaptive td.Main > *,
   table.Adaptive td.Date > *,
   table.Adaptive td.Actions > *,
+  table.Adaptive td.Data > *,
   [class*='Grid-XXS-'] {
     float: left; }
 
@@ -170,6 +185,7 @@ iframe {
   table.Adaptive td.Main > *,
   table.Adaptive td.Date > *,
   table.Adaptive td.Actions > *,
+  table.Adaptive td.Data > *,
   .Row.Merge > .Grid-XXS-6,
   .Site-Header .Site-Header-Inner > .Grid-XXS-6,
   .Snippet-List .Snippet-Item > .Grid-XXS-6,
@@ -774,7 +790,6 @@ table {
   width: 100%;
   border-collapse: collapse; }
   table th {
-    background: #333;
     color: white;
     text-align: left; }
   table td, table th {
@@ -801,9 +816,10 @@ table {
     table.Lines tbody tr:first-child {
       border-top: 0; }
   table.Solid th {
+    font-weight: 100;
     color: white;
     background-color: #34495e; }
-  table.Stripped tr:nth-of-type(even) {
+  table.Stripped tbody tr:nth-of-type(even) {
     background: #ecf0f1; }
   @media screen and (max-width: 768px) {
     table.Adaptive td {
@@ -842,13 +858,13 @@ table {
       color: #fff;
       display: block;
       padding: 10px 20px;
-      background-color: #555555; }
+      background-color: #2c3e50; }
     .pagination > li:hover > span,
     .Pagination > li:hover > span {
       cursor: default; }
     .pagination > li:hover > a,
     .Pagination > li:hover > a {
-      background-color: #999999; }
+      background-color: #34495e; }
     .pagination > li.disabled > span,
     .Pagination > li.disabled > span {
       color: #999999; }
@@ -896,7 +912,6 @@ table {
   display: inline-block; }
 
 .Control-Group {
-  margin-top: 10px;
   width: 100%; }
   .Control-Group:first-child {
     margin-top: 0; }
@@ -919,7 +934,9 @@ table {
   .Control-Group.Offset {
     padding-top: 20px; }
     .Control-Group.Offset input[type='submit'],
-    .Control-Group.Offset button.Button {
+    .Control-Group.Offset button.Button,
+    .Control-Group.Offset .Filter-Result li button.Delete,
+    .Filter-Result li .Control-Group.Offset button.Delete {
       display: inline-block;
       width: auto;
       padding: 10px 20px; }
@@ -1106,7 +1123,9 @@ dl.Tabs {
           color: #e74c3c; }
   .Box > .Box-Content {
     padding: 10px 15px 15px; }
-  .Box.Round, .Box.Button.Ghost, table td.Actions ul li a.Box.Ghost {
+  .Box.Round, table td.Actions ul li a.Box.Ghost,
+  .Box.Button.Ghost,
+  .Filter-Result li .Box.Ghost.Delete {
     border-radius: 10px; }
   .Box.Outlined {
     border: 2px solid #95a5a6; }
@@ -1216,7 +1235,10 @@ dl.Tabs {
     .Box.Error .Box-Tools a:hover {
       color: #d1060a; }
 
-.Button, table td.Actions ul li a {
+a.Button, table td.Actions ul li a, .Filter-Result li a.Delete,
+.Button,
+table td.Actions ul li a,
+.Filter-Result li .Delete {
   padding: 5px 10px;
   border: 0;
   line-height: 24px;
@@ -1229,46 +1251,101 @@ dl.Tabs {
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   transition-duration: 0.3s; }
-  .Button:hover, table td.Actions ul li a:hover {
+  a.Button:hover, table td.Actions ul li a:hover, .Filter-Result li a.Delete:hover,
+  .Button:hover,
+  table td.Actions ul li a:hover,
+  .Filter-Result li .Delete:hover {
     background-color: #c0392b; }
-  .Button.Small, table td.Actions ul li a {
+  a.Button.Small, table td.Actions ul li a, .Filter-Result li a.Delete,
+  .Button.Small,
+  table td.Actions ul li a,
+  .Filter-Result li .Delete {
     font-size: 10px;
     padding: 2px 5px; }
-  .Button.Large, table td.Actions ul li a.Large {
+  a.Button.Large, table td.Actions ul li a.Large, .Filter-Result li a.Large.Delete,
+  .Button.Large,
+  table td.Actions ul li a.Large,
+  .Filter-Result li .Large.Delete {
     padding: 10px 15px; }
-  .Button.Huge, table td.Actions ul li a.Huge {
+  a.Button.Huge, table td.Actions ul li a.Huge, .Filter-Result li a.Huge.Delete,
+  .Button.Huge,
+  table td.Actions ul li a.Huge,
+  .Filter-Result li .Huge.Delete {
     font-size: 19px;
     padding: 15px 20px; }
-  .Button.Round, table td.Actions ul li a.Round, .Button.Ghost, table td.Actions ul li a.Ghost {
+  a.Button.Round, table td.Actions ul li a.Round, a.Button.Ghost, table td.Actions ul li a.Ghost, .Filter-Result li a.Ghost.Delete, .Filter-Result li a.Round.Delete,
+  .Button.Round,
+  table td.Actions ul li a.Round,
+  a.Button.Ghost,
+  table td.Actions ul li a.Ghost,
+  .Button.Ghost,
+  .Filter-Result li .Ghost.Delete,
+  .Filter-Result li .Round.Delete {
     border-radius: 5px; }
-  .Button.Search, table td.Actions ul li a.Search {
+  a.Button.Search, table td.Actions ul li a.Search, .Filter-Result li a.Search.Delete,
+  .Button.Search,
+  table td.Actions ul li a.Search,
+  .Filter-Result li .Search.Delete {
     border-radius: 17px; }
-    .Button.Search.Large, table td.Actions ul li a.Search.Large {
+    a.Button.Search.Large, table td.Actions ul li a.Search.Large, .Filter-Result li a.Search.Large.Delete,
+    .Button.Search.Large,
+    table td.Actions ul li a.Search.Large,
+    .Filter-Result li .Search.Large.Delete {
       border-radius: 22px; }
-    .Button.Search.Huge, table td.Actions ul li a.Search.Huge {
+    a.Button.Search.Huge, table td.Actions ul li a.Search.Huge, .Filter-Result li a.Search.Huge.Delete,
+    .Button.Search.Huge,
+    table td.Actions ul li a.Search.Huge,
+    .Filter-Result li .Search.Huge.Delete {
       border-radius: 27px; }
-  .Button.Icon > span.fa:first-child, table td.Actions ul li a.Icon > span.fa:first-child {
+  a.Button.Icon > span.fa:first-child, table td.Actions ul li a.Icon > span.fa:first-child, .Filter-Result li a.Icon.Delete > span.fa:first-child,
+  .Button.Icon > span.fa:first-child,
+  table td.Actions ul li a.Icon > span.fa:first-child,
+  .Filter-Result li .Icon.Delete > span.fa:first-child {
     margin-right: 10px; }
-  .Button.Ghost, table td.Actions ul li a.Ghost {
+  a.Button.Ghost, table td.Actions ul li a.Ghost, .Filter-Result li a.Ghost.Delete,
+  .Button.Ghost,
+  table td.Actions ul li a.Ghost,
+  .Filter-Result li .Ghost.Delete {
     color: #2c3e50;
     background-color: transparent;
     border: 1px solid #bdc3c7; }
-    .Button.Ghost:hover, table td.Actions ul li a.Ghost:hover {
+    a.Button.Ghost:hover, table td.Actions ul li a.Ghost:hover, .Filter-Result li a.Ghost.Delete:hover,
+    .Button.Ghost:hover,
+    table td.Actions ul li a.Ghost:hover,
+    .Filter-Result li .Ghost.Delete:hover {
       color: black;
       border-color: #95a5a6;
       background-color: #ecf0f1; }
-    .Button.Ghost.Invert, table td.Actions ul li a.Ghost.Invert {
+    a.Button.Ghost.Invert, table td.Actions ul li a.Ghost.Invert, .Filter-Result li a.Ghost.Invert.Delete,
+    .Button.Ghost.Invert,
+    table td.Actions ul li a.Ghost.Invert,
+    .Filter-Result li .Ghost.Invert.Delete {
       color: white;
       border-color: white; }
-      .Button.Ghost.Invert:hover, table td.Actions ul li a.Ghost.Invert:hover {
+      a.Button.Ghost.Invert:hover, table td.Actions ul li a.Ghost.Invert:hover, .Filter-Result li a.Ghost.Invert.Delete:hover,
+      .Button.Ghost.Invert:hover,
+      table td.Actions ul li a.Ghost.Invert:hover,
+      .Filter-Result li .Ghost.Invert.Delete:hover {
         color: #e74c3c;
         border-color: #e74c3c; }
-  .Button.Dropdown, table td.Actions ul li a.Dropdown {
+  a.Button.Dropdown, table td.Actions ul li a.Dropdown, .Filter-Result li a.Dropdown.Delete,
+  .Button.Dropdown,
+  table td.Actions ul li a.Dropdown,
+  .Filter-Result li .Dropdown.Delete {
     position: relative;
     padding-right: 40px; }
-    .Button.Dropdown.Round > .Dropdown-Toggle, table td.Actions ul li a.Dropdown.Round > .Dropdown-Toggle, .Button.Dropdown.Ghost > .Dropdown-Toggle, table td.Actions ul li a.Dropdown.Ghost > .Dropdown-Toggle {
+    a.Button.Dropdown.Round > .Dropdown-Toggle, table td.Actions ul li a.Dropdown.Round > .Dropdown-Toggle, a.Button.Dropdown.Ghost > .Dropdown-Toggle, table td.Actions ul li a.Dropdown.Ghost > .Dropdown-Toggle, .Filter-Result li a.Dropdown.Ghost.Delete > .Dropdown-Toggle, .Filter-Result li a.Dropdown.Round.Delete > .Dropdown-Toggle,
+    .Button.Dropdown.Round > .Dropdown-Toggle,
+    table td.Actions ul li a.Dropdown.Round > .Dropdown-Toggle,
+    table td.Actions ul li a.Dropdown.Ghost > .Dropdown-Toggle,
+    .Button.Dropdown.Ghost > .Dropdown-Toggle,
+    .Filter-Result li .Dropdown.Ghost.Delete > .Dropdown-Toggle,
+    .Filter-Result li .Dropdown.Round.Delete > .Dropdown-Toggle {
       border-radius: 0 5px 5px 0; }
-    .Button.Dropdown > .Dropdown-Toggle, table td.Actions ul li a.Dropdown > .Dropdown-Toggle {
+    a.Button.Dropdown > .Dropdown-Toggle, table td.Actions ul li a.Dropdown > .Dropdown-Toggle, .Filter-Result li a.Dropdown.Delete > .Dropdown-Toggle,
+    .Button.Dropdown > .Dropdown-Toggle,
+    table td.Actions ul li a.Dropdown > .Dropdown-Toggle,
+    .Filter-Result li .Dropdown.Delete > .Dropdown-Toggle {
       position: absolute;
       top: 0;
       right: 0;
@@ -1278,9 +1355,15 @@ dl.Tabs {
       padding: 10px 0;
       border-left: 1px white solid;
       background-color: #e74c3c; }
-      .Button.Dropdown > .Dropdown-Toggle:hover, table td.Actions ul li a.Dropdown > .Dropdown-Toggle:hover {
+      a.Button.Dropdown > .Dropdown-Toggle:hover, table td.Actions ul li a.Dropdown > .Dropdown-Toggle:hover, .Filter-Result li a.Dropdown.Delete > .Dropdown-Toggle:hover,
+      .Button.Dropdown > .Dropdown-Toggle:hover,
+      table td.Actions ul li a.Dropdown > .Dropdown-Toggle:hover,
+      .Filter-Result li .Dropdown.Delete > .Dropdown-Toggle:hover {
         background-color: #c0392b; }
-    .Button.Dropdown > .Dropdown-Content, table td.Actions ul li a.Dropdown > .Dropdown-Content {
+    a.Button.Dropdown > .Dropdown-Content, table td.Actions ul li a.Dropdown > .Dropdown-Content, .Filter-Result li a.Dropdown.Delete > .Dropdown-Content,
+    .Button.Dropdown > .Dropdown-Content,
+    table td.Actions ul li a.Dropdown > .Dropdown-Content,
+    .Filter-Result li .Dropdown.Delete > .Dropdown-Content {
       background-color: white;
       border: 1px solid #bdc3c7;
       position: absolute;
@@ -1288,68 +1371,166 @@ dl.Tabs {
       left: 0;
       width: 100%;
       z-index: 100; }
-      .Button.Dropdown > .Dropdown-Content li > a, table td.Actions ul li a.Dropdown > .Dropdown-Content li > a {
+      a.Button.Dropdown > .Dropdown-Content li > a, table td.Actions ul li a.Dropdown > .Dropdown-Content li > a, .Filter-Result li a.Dropdown.Delete > .Dropdown-Content li > a,
+      .Button.Dropdown > .Dropdown-Content li > a,
+      table td.Actions ul li a.Dropdown > .Dropdown-Content li > a,
+      .Filter-Result li .Dropdown.Delete > .Dropdown-Content li > a {
         display: block;
         padding: 5px 10px;
         text-align: left;
         color: #2c3e50; }
-        .Button.Dropdown > .Dropdown-Content li > a:hover, table td.Actions ul li a.Dropdown > .Dropdown-Content li > a:hover {
+        a.Button.Dropdown > .Dropdown-Content li > a:hover, table td.Actions ul li a.Dropdown > .Dropdown-Content li > a:hover, .Filter-Result li a.Dropdown.Delete > .Dropdown-Content li > a:hover,
+        .Button.Dropdown > .Dropdown-Content li > a:hover,
+        table td.Actions ul li a.Dropdown > .Dropdown-Content li > a:hover,
+        .Filter-Result li .Dropdown.Delete > .Dropdown-Content li > a:hover {
           background-color: #bdc3c7; }
-      .Button.Dropdown > .Dropdown-Content li.Divider, table td.Actions ul li a.Dropdown > .Dropdown-Content li.Divider {
+      a.Button.Dropdown > .Dropdown-Content li.Divider, table td.Actions ul li a.Dropdown > .Dropdown-Content li.Divider, .Filter-Result li a.Dropdown.Delete > .Dropdown-Content li.Divider,
+      .Button.Dropdown > .Dropdown-Content li.Divider,
+      table td.Actions ul li a.Dropdown > .Dropdown-Content li.Divider,
+      .Filter-Result li .Dropdown.Delete > .Dropdown-Content li.Divider {
         padding: 0;
         display: block;
         border-top: 1px solid #bdc3c7; }
-      .Button.Dropdown > .Dropdown-Content.Icon li a span.fa, table td.Actions ul li a.Dropdown > .Dropdown-Content.Icon li a span.fa {
+      a.Button.Dropdown > .Dropdown-Content.Icon li a span.fa, table td.Actions ul li a.Dropdown > .Dropdown-Content.Icon li a span.fa, .Filter-Result li a.Dropdown.Delete > .Dropdown-Content.Icon li a span.fa,
+      .Button.Dropdown > .Dropdown-Content.Icon li a span.fa,
+      table td.Actions ul li a.Dropdown > .Dropdown-Content.Icon li a span.fa,
+      .Filter-Result li .Dropdown.Delete > .Dropdown-Content.Icon li a span.fa {
         margin-right: 10px; }
-    .Button.Dropdown.Round > .Dropdown-Content, table td.Actions ul li a.Dropdown.Round > .Dropdown-Content, .Button.Dropdown.Ghost > .Dropdown-Content, table td.Actions ul li a.Dropdown.Ghost > .Dropdown-Content {
+    a.Button.Dropdown.Round > .Dropdown-Content, table td.Actions ul li a.Dropdown.Round > .Dropdown-Content, a.Button.Dropdown.Ghost > .Dropdown-Content, table td.Actions ul li a.Dropdown.Ghost > .Dropdown-Content, .Filter-Result li a.Dropdown.Ghost.Delete > .Dropdown-Content, .Filter-Result li a.Dropdown.Round.Delete > .Dropdown-Content,
+    .Button.Dropdown.Round > .Dropdown-Content,
+    table td.Actions ul li a.Dropdown.Round > .Dropdown-Content,
+    table td.Actions ul li a.Dropdown.Ghost > .Dropdown-Content,
+    .Button.Dropdown.Ghost > .Dropdown-Content,
+    .Filter-Result li .Dropdown.Ghost.Delete > .Dropdown-Content,
+    .Filter-Result li .Dropdown.Round.Delete > .Dropdown-Content {
       border-radius: 5px; }
-  .Button.Info, table td.Actions ul li a.Info {
+  a.Button.Info, table td.Actions ul li a.Info, .Filter-Result li a.Info.Delete,
+  .Button.Info,
+  table td.Actions ul li a.Info,
+  .Filter-Result li .Info.Delete {
     background-color: #3498db; }
-    .Button.Info:hover, table td.Actions ul li a.Info:hover {
+    a.Button.Info:hover, table td.Actions ul li a.Info:hover, .Filter-Result li a.Info.Delete:hover,
+    .Button.Info:hover,
+    table td.Actions ul li a.Info:hover,
+    .Filter-Result li .Info.Delete:hover {
       background-color: #2980b9; }
-    .Button.Info.Dropdown, table td.Actions ul li a.Info.Dropdown,
+    a.Button.Info.Dropdown, table td.Actions ul li a.Info.Dropdown, .Filter-Result li a.Info.Dropdown.Delete,
+    a.Button.Info .Dropdown-Toggle,
+    table td.Actions ul li a.Info .Dropdown-Toggle,
+    .Filter-Result li a.Info.Delete .Dropdown-Toggle,
+    .Button.Info.Dropdown,
+    table td.Actions ul li a.Info.Dropdown,
+    .Filter-Result li .Info.Dropdown.Delete,
     .Button.Info .Dropdown-Toggle,
-    table td.Actions ul li a.Info .Dropdown-Toggle {
+    table td.Actions ul li a.Info .Dropdown-Toggle,
+    .Filter-Result li .Info.Delete .Dropdown-Toggle {
       background-color: #2980b9; }
-      .Button.Info.Dropdown:hover, table td.Actions ul li a.Info.Dropdown:hover,
+      a.Button.Info.Dropdown:hover, table td.Actions ul li a.Info.Dropdown:hover, .Filter-Result li a.Info.Dropdown.Delete:hover,
+      a.Button.Info .Dropdown-Toggle:hover,
+      table td.Actions ul li a.Info .Dropdown-Toggle:hover,
+      .Filter-Result li a.Info.Delete .Dropdown-Toggle:hover,
+      .Button.Info.Dropdown:hover,
+      table td.Actions ul li a.Info.Dropdown:hover,
+      .Filter-Result li .Info.Dropdown.Delete:hover,
       .Button.Info .Dropdown-Toggle:hover,
-      table td.Actions ul li a.Info .Dropdown-Toggle:hover {
+      table td.Actions ul li a.Info .Dropdown-Toggle:hover,
+      .Filter-Result li .Info.Delete .Dropdown-Toggle:hover {
         background-color: #2980b9; }
-  .Button.Success, table td.Actions ul li a.Success {
+  a.Button.Success, table td.Actions ul li a.Success, .Filter-Result li a.Success.Delete,
+  .Button.Success,
+  table td.Actions ul li a.Success,
+  .Filter-Result li .Success.Delete {
     background-color: #2ecc71; }
-    .Button.Success:hover, table td.Actions ul li a.Success:hover {
+    a.Button.Success:hover, table td.Actions ul li a.Success:hover, .Filter-Result li a.Success.Delete:hover,
+    .Button.Success:hover,
+    table td.Actions ul li a.Success:hover,
+    .Filter-Result li .Success.Delete:hover {
       background-color: #27ae60; }
-    .Button.Success.Dropdown, table td.Actions ul li a.Success.Dropdown,
+    a.Button.Success.Dropdown, table td.Actions ul li a.Success.Dropdown, .Filter-Result li a.Success.Dropdown.Delete,
+    a.Button.Success .Dropdown-Toggle,
+    table td.Actions ul li a.Success .Dropdown-Toggle,
+    .Filter-Result li a.Success.Delete .Dropdown-Toggle,
+    .Button.Success.Dropdown,
+    table td.Actions ul li a.Success.Dropdown,
+    .Filter-Result li .Success.Dropdown.Delete,
     .Button.Success .Dropdown-Toggle,
-    table td.Actions ul li a.Success .Dropdown-Toggle {
+    table td.Actions ul li a.Success .Dropdown-Toggle,
+    .Filter-Result li .Success.Delete .Dropdown-Toggle {
       background-color: #2ecc71; }
-      .Button.Success.Dropdown:hover, table td.Actions ul li a.Success.Dropdown:hover,
+      a.Button.Success.Dropdown:hover, table td.Actions ul li a.Success.Dropdown:hover, .Filter-Result li a.Success.Dropdown.Delete:hover,
+      a.Button.Success .Dropdown-Toggle:hover,
+      table td.Actions ul li a.Success .Dropdown-Toggle:hover,
+      .Filter-Result li a.Success.Delete .Dropdown-Toggle:hover,
+      .Button.Success.Dropdown:hover,
+      table td.Actions ul li a.Success.Dropdown:hover,
+      .Filter-Result li .Success.Dropdown.Delete:hover,
       .Button.Success .Dropdown-Toggle:hover,
-      table td.Actions ul li a.Success .Dropdown-Toggle:hover {
+      table td.Actions ul li a.Success .Dropdown-Toggle:hover,
+      .Filter-Result li .Success.Delete .Dropdown-Toggle:hover {
         background-color: #27ae60; }
-  .Button.Success, table td.Actions ul li a.Success {
+  a.Button.Success, table td.Actions ul li a.Success, .Filter-Result li a.Success.Delete,
+  .Button.Success,
+  table td.Actions ul li a.Success,
+  .Filter-Result li .Success.Delete {
     background-color: #2ecc71; }
-    .Button.Success:hover, table td.Actions ul li a.Success:hover {
+    a.Button.Success:hover, table td.Actions ul li a.Success:hover, .Filter-Result li a.Success.Delete:hover,
+    .Button.Success:hover,
+    table td.Actions ul li a.Success:hover,
+    .Filter-Result li .Success.Delete:hover {
       background-color: #27ae60; }
-    .Button.Success.Dropdown, table td.Actions ul li a.Success.Dropdown,
+    a.Button.Success.Dropdown, table td.Actions ul li a.Success.Dropdown, .Filter-Result li a.Success.Dropdown.Delete,
+    a.Button.Success .Dropdown-Toggle,
+    table td.Actions ul li a.Success .Dropdown-Toggle,
+    .Filter-Result li a.Success.Delete .Dropdown-Toggle,
+    .Button.Success.Dropdown,
+    table td.Actions ul li a.Success.Dropdown,
+    .Filter-Result li .Success.Dropdown.Delete,
     .Button.Success .Dropdown-Toggle,
-    table td.Actions ul li a.Success .Dropdown-Toggle {
+    table td.Actions ul li a.Success .Dropdown-Toggle,
+    .Filter-Result li .Success.Delete .Dropdown-Toggle {
       background-color: #2ecc71; }
-      .Button.Success.Dropdown:hover, table td.Actions ul li a.Success.Dropdown:hover,
+      a.Button.Success.Dropdown:hover, table td.Actions ul li a.Success.Dropdown:hover, .Filter-Result li a.Success.Dropdown.Delete:hover,
+      a.Button.Success .Dropdown-Toggle:hover,
+      table td.Actions ul li a.Success .Dropdown-Toggle:hover,
+      .Filter-Result li a.Success.Delete .Dropdown-Toggle:hover,
+      .Button.Success.Dropdown:hover,
+      table td.Actions ul li a.Success.Dropdown:hover,
+      .Filter-Result li .Success.Dropdown.Delete:hover,
       .Button.Success .Dropdown-Toggle:hover,
-      table td.Actions ul li a.Success .Dropdown-Toggle:hover {
+      table td.Actions ul li a.Success .Dropdown-Toggle:hover,
+      .Filter-Result li .Success.Delete .Dropdown-Toggle:hover {
         background-color: #27ae60; }
-  .Button.Warning, table td.Actions ul li a.Warning {
+  a.Button.Warning, table td.Actions ul li a.Warning, .Filter-Result li a.Warning.Delete,
+  .Button.Warning,
+  table td.Actions ul li a.Warning,
+  .Filter-Result li .Warning.Delete {
     background-color: #e67e22; }
-    .Button.Warning:hover, table td.Actions ul li a.Warning:hover {
+    a.Button.Warning:hover, table td.Actions ul li a.Warning:hover, .Filter-Result li a.Warning.Delete:hover,
+    .Button.Warning:hover,
+    table td.Actions ul li a.Warning:hover,
+    .Filter-Result li .Warning.Delete:hover {
       background-color: #d35400; }
-    .Button.Warning.Dropdown, table td.Actions ul li a.Warning.Dropdown,
+    a.Button.Warning.Dropdown, table td.Actions ul li a.Warning.Dropdown, .Filter-Result li a.Warning.Dropdown.Delete,
+    a.Button.Warning .Dropdown-Toggle,
+    table td.Actions ul li a.Warning .Dropdown-Toggle,
+    .Filter-Result li a.Warning.Delete .Dropdown-Toggle,
+    .Button.Warning.Dropdown,
+    table td.Actions ul li a.Warning.Dropdown,
+    .Filter-Result li .Warning.Dropdown.Delete,
     .Button.Warning .Dropdown-Toggle,
-    table td.Actions ul li a.Warning .Dropdown-Toggle {
+    table td.Actions ul li a.Warning .Dropdown-Toggle,
+    .Filter-Result li .Warning.Delete .Dropdown-Toggle {
       background-color: #e67e22; }
-      .Button.Warning.Dropdown:hover, table td.Actions ul li a.Warning.Dropdown:hover,
+      a.Button.Warning.Dropdown:hover, table td.Actions ul li a.Warning.Dropdown:hover, .Filter-Result li a.Warning.Dropdown.Delete:hover,
+      a.Button.Warning .Dropdown-Toggle:hover,
+      table td.Actions ul li a.Warning .Dropdown-Toggle:hover,
+      .Filter-Result li a.Warning.Delete .Dropdown-Toggle:hover,
+      .Button.Warning.Dropdown:hover,
+      table td.Actions ul li a.Warning.Dropdown:hover,
+      .Filter-Result li .Warning.Dropdown.Delete:hover,
       .Button.Warning .Dropdown-Toggle:hover,
-      table td.Actions ul li a.Warning .Dropdown-Toggle:hover {
+      table td.Actions ul li a.Warning .Dropdown-Toggle:hover,
+      .Filter-Result li .Warning.Delete .Dropdown-Toggle:hover {
         background-color: #e67e22; }
 
 body {
@@ -1364,7 +1545,8 @@ body {
 .Site-Header {
   height: auto;
   background-color: #2c3e50;
-  color: #ecf0f1; }
+  color: #ecf0f1;
+  box-shadow: 0 4px 0 rgba(44, 62, 80, 0.25); }
   @media screen and (min-width: 1024px) {
     .Site-Header {
       height: 80px; } }
@@ -1543,15 +1725,23 @@ body {
     font-size: 0.875em;
     display: inline-block; }
 .List-Categories.Icons a {
-  padding: 10px 0;
-  font-size: 1em;
+  padding: 10px;
   width: 100%;
-  text-align: center; }
+  border: 1px solid transparent; }
+  @media screen and (min-width: 768px) {
+    .List-Categories.Icons a {
+      text-align: center; } }
+  .List-Categories.Icons a:hover {
+    border-color: #e74c3c; }
 .List-Categories.Icons img {
+  border: 1px solid transparent;
   vertical-align: middle;
-  display: block;
+  display: none;
   height: 100px;
   margin: 0 auto; }
+  @media screen and (min-width: 768px) {
+    .List-Categories.Icons img {
+      display: block; } }
 .List-Categories.Brands img {
   width: 50px; }
 
@@ -1672,8 +1862,7 @@ img.Footer-Img {
     right: 0;
     top: 0;
     bottom: 0;
-    display: table;
-    width: 45%;
+    display: inline-block;
     float: right; }
     .Snippet-Item header .Item-Values li {
       padding: 15px 10px; }
@@ -1721,10 +1910,9 @@ img.Footer-Img {
     margin: 0 30px 10px 0; }
 
 .Filter-Result {
-  border: 1px solid #f1f1f1;
-  border-top-color: #e74c3c;
   width: 100%;
   padding: 10px;
+  background-color: #ecf0f1;
   font-size: 80%;
   -webkit-animation: FadeIn 1s;
   -moz-animation: FadeIn 1s;
@@ -1732,14 +1920,14 @@ img.Footer-Img {
   .Filter-Result li {
     padding: 5px 0; }
     .Filter-Result li span {
-      font-weight: bold; }
+      display: inline-block;
+      padding: 5px; }
     .Filter-Result li .Delete {
       display: inline-block;
       margin-left: 10px;
       padding: 5px;
       background-color: #e74c3c;
-      color: white;
-      border-radius: 5px; }
+      color: white; }
       .Filter-Result li .Delete:hover {
         background-color: #555555; }
 
@@ -1889,25 +2077,33 @@ ul.Tag-List li.Tag-Item {
     border: 0; }
 
 .Spoiler {
-  margin-top: 15px;
-  border: 1px solid #cccccc;
-  border-radius: 5px; }
+  margin-top: 15px; }
   .Spoiler:hover {
-    border-color: #999999; }
+    border-color: #34495e; }
   .Spoiler .Spoiler-Caption {
     display: block;
-    color: #555555;
-    padding: 10px 10px 10px 30px;
-    background: url(../../../../img/techonline/icon-vote-down.png) 15px center no-repeat; }
+    color: white;
+    background-color: #34495e;
+    padding: 10px 30px;
+    -webkit-transition-property: background-color;
+    -moz-transition-property: background-color;
+    transition-property: background-color;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-duration: 0.5s; }
+    .Spoiler .Spoiler-Caption:hover {
+      background-color: #2c3e50; }
+    .Spoiler .Spoiler-Caption span.fa {
+      margin-right: 10px; }
   .Spoiler .Spoiler-Content {
+    margin-top: 0;
     display: none;
-    -webkit-animation: SlideDown 0.8s;
-    -moz-animation: SlideDown 0.8s;
-    animation: SlideDown 0.8s; }
+    border: 1px solid #cccccc;
+    border-top: 0; }
     .Spoiler .Spoiler-Content li {
-      -webkit-animation: FadeIn 0.5s;
-      -moz-animation: FadeIn 0.5s;
-      animation: FadeIn 0.5s; }
+      -webkit-animation: FadeIn 1s;
+      -moz-animation: FadeIn 1s;
+      animation: FadeIn 1s; }
 
 .List-Params {
   margin-top: 20px; }
@@ -1920,11 +2116,28 @@ ul.Tag-List li.Tag-Item {
     .List-Params li.List-Params-Item a:hover {
       background-color: #f1f1f1; }
 
+.Error-404 h2 {
+  margin-top: 15px;
+  font-weight: 100;
+  font-size: 72px;
+  color: #2c3e50; }
+.Error-404 p {
+  font-size: 36px;
+  color: black; }
+.Error-404 h2, .Error-404 p {
+  line-height: 1;
+  text-align: right; }
+.Error-404 img {
+  margin-left: 15px; }
+
 .ui-widget-header {
   background-color: #e74c3c; }
 
 .Accordion-Subcategory {
   display: none; }
+
+.Page-Auth .Sign-In-UI, .Page-Auth .Sign-Up-UI {
+  z-index: 1000 !important; }
 
 @-webkit-keyframes FadeIn {
   from {
@@ -2053,11 +2266,11 @@ ul.Tag-List li.Tag-Item {
     overflow: hidden;
     margin-bottom: 50px;
     height: 250px;
-    background-image: url(../../../../img/techonline/banner-background.jpg);
+    background-color: #34495e;
     background-position: center 0;
     background-repeat: repeat;
     background-attachment: fixed;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4) inset; }
+    border-bottom: 1px solid white; }
     #Page-Slider .Slider-Inner {
       position: relative;
       width: 970px;
@@ -2088,16 +2301,5 @@ ul.Tag-List li.Tag-Item {
 @media all and (min-width: 2560px) {
   .Node {
     padding: 50px; } }
-#Page-Slider .Slider-Inner #Slider-Links a {
-  color: white !important; }
-
-.Snippet-List .Item-Gallery.Grid-XS-3 {
-  width: 15% !important; }
-
-.Snippet-List .Item-Gallery.Grid-XS-9 {
-  width: 85% !important; }
-
-.Page-Auth .Sign-In-UI, .Page-Auth .Sign-Up-UI {
-  z-index: 1000 !important; }
 
 /*# sourceMappingURL=main.css.map */

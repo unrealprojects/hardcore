@@ -3,7 +3,6 @@
 
 body {
 	min-width: 320px;
-
 	background-color: $Clr-Secondary;
 	font-family: 	'Exo 2','Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 	1.45;
@@ -76,14 +75,23 @@ body {
 	}
 	&.Icons {
 		a {
-			padding: $size-s 0;
-			font-size: $Font-Size-Default;
+			padding: $size-s;
 			width: 100%;
-			text-align: center;
+			@include Adaptive($Viewport-XS) {
+				text-align: center;
+			}
+			border: 1px solid transparent;
+			&:hover {
+				border-color: $Clr-Main;
+			}
 		}
 		img {
+			border: 1px solid transparent;
 			vertical-align: middle;
-			display: block;
+			display: none;
+			@include Adaptive($Viewport-XS) {
+				display: block;
+			}
 			height: 100px;
 			margin: 0 auto;
 		}
@@ -318,8 +326,7 @@ img.Footer-Img {
 			right: 0;
 			top: 0;
 			bottom: 0;
-			display: table;
-			width: 45%;
+			display: inline-block;
 			float: right;
 
 			@extend ._No-Bullets;
@@ -421,10 +428,9 @@ img.Footer-Img {
 	}
 }
 .Filter-Result {
-	border: 1px solid $Clr-Grey-Lighter;
-	border-top-color: $Clr-Main;
 	width: 100%;
 	padding: $size-s;
+	background-color: $Clr-Secondary;
 	font-size: 80%;
 	@extend %_Right;
 	@extend ._No-Bullets;
@@ -433,7 +439,8 @@ img.Footer-Img {
 		padding: $size-xs 0;
 		@extend ._Clearfix;
 		span {
-			font-weight: bold;
+			display: inline-block;
+			padding: $size-xs;
 		}
 		.Delete {
 			display: inline-block;
@@ -441,7 +448,8 @@ img.Footer-Img {
 			padding: $size-xs;
 			background-color: $Clr-Main;
 			color: white;
-			@include Round(all, $Control-Border-Radius);
+			@extend .Button;
+			@extend .Small;
 			@extend %_Right;
 			&:hover {
 				background-color: $Clr-Grey-Darker;
@@ -655,23 +663,30 @@ ul.Tag-List {
 }
 .Spoiler {
 	margin-top: $size-n;
-	border: 1px solid $Clr-Grey;
-	@include Round(all, $Control-Border-Radius);
 	&:hover {
-		border-color: $Clr-Grey-Dark;
+		border-color: $Clr-Wet-Asphalt;
 	}
 
 	.Spoiler-Caption {
 		display: block;
-		color: $Clr-Grey-Darker;
-		padding: $size-s $size-s $size-s $size-l;
-		background: url(../../../../img/techonline/icon-vote-down.png) 15px center no-repeat;
+		color: white;
+		background-color: $Clr-Wet-Asphalt;
+		padding: $size-s $size-l;
+		@include Transition(background-color,.5s);
+		&:hover {
+			background-color: $Clr-Midnight-Blue;
+		}
+		span.fa {
+			margin-right: $size-s;
+		}
 	}
 	.Spoiler-Content {
+		margin-top:0;
 		display: none;
-		@include Animation(SlideDown,.8s);
+		border: 1px solid $Clr-Grey;
+		border-top: 0;
 		li {
-			@include Animation(FadeIn,.5s);
+			@include Animation(FadeIn,1s);
 		}
 	}
 }
@@ -697,14 +712,39 @@ ul.Tag-List {
 	}
 }
 
+.Error-404 {
+	header {
+	}
+	h2 {
+		margin-top: $size-n;
+		font-weight: 100;
+		font-size: 72px;
+		color: $Clr-Midnight-Blue;
+	}
+	p {
+		font-size: 36px;
+		color: $Clr-Text-Main;
+	}
+	h2, p {
+		@extend %_Letterpress;
+		line-height: 1;
+		text-align: right;
+	}
+	img {
+		margin-left: $size-n;
+	}
+}
 
 
-// todo: разнести по местам
 .ui-widget-header{
   background-color: $Clr-Main;
 }
 .Accordion-Subcategory {
   display:none;
+}
+
+.Page-Auth .Sign-In-UI, .Page-Auth .Sign-Up-UI{
+	z-index:1000 !important;
 }
 
 @include Keyframes(FadeIn) {
@@ -737,18 +777,3 @@ ul.Tag-List {
 // Подключение файла Media Queries
 @import 'media';
 
-#Page-Slider .Slider-Inner #Slider-Links a{
-  color:white !important;
-}
-
-.Snippet-List .Item-Gallery.Grid-XS-3{
-   width:15% !important;
- }
-
-.Snippet-List .Item-Gallery.Grid-XS-9{
-  width:85% !important;
-}
-
-.Page-Auth .Sign-In-UI, .Page-Auth .Sign-Up-UI{
-  z-index:1000 !important;
-}

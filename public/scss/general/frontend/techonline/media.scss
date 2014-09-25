@@ -1,5 +1,5 @@
 // 768px +
-@include Adaptive($Screen-Size-Tiny) {
+@include Adaptive($Viewport-XS) {
 	.List.Snippets header {
 		position: relative;
 	}
@@ -42,7 +42,7 @@
 	}
 
 }
-@media all and (min-width: $Screen-Size-Small) {
+@media all and (min-width: $Viewport-SM) {
 	.Filter-Result {
 		display: inline-block;
 		width: auto;
@@ -58,12 +58,11 @@
 		overflow: hidden;
 		margin-bottom: 50px;
 		height: 250px;
-		background-image: url(../../../../img/techonline/banner-background.jpg);
+		background-color: $Clr-Wet-Asphalt;
 		background-position: center 0;
 		background-repeat: repeat;
 		background-attachment: fixed;
-		box-shadow: 0 0 20px rgba(0, 0, 0, .4) inset;
-
+		border-bottom: 1px solid white;
 		.Slider-Inner {
 			position: relative;
 			width: $Section-Width-Small;
@@ -90,14 +89,14 @@
 }
 
 // 1280 x 720 HD
-@media all and (min-width: $Screen-Size-Default) {
+@media all and (min-width: $Viewport-MD) {
 	.Node {
 		padding: $size-l;
 	}
 }
 
 // 1920 x 1080 Full HD
-@media all and (min-width: $Screen-Size-Large) {
+@media all and (min-width: $Viewport-LR) {
 	img.Footer-Img {
 			 display: block;
 	}
@@ -110,7 +109,7 @@
 }
 
 // 2560 x 1440 Ultra HD
-@media all and (min-width: $Screen-Size-Huge) {
+@media all and (min-width: $Viewport-HG) {
 	.Node {
 		padding: $size-xl;
 	}

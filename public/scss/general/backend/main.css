@@ -69,17 +69,16 @@ nav.Userbar:after {
 ._Inline > *, .Breadcrumbs .Breadcrumb-List > *, .Box > header ul.Box-Tools > *, nav.Userbar ul > * {
   float: left; }
 
-._No-Bullets, ul.Row > li, table td.Actions ul, .pagination,
-.Pagination, .Breadcrumbs .Breadcrumb-List, .Box > header ul.Box-Tools, .Button.Dropdown > .Dropdown-Content, table td.Actions ul li a.Dropdown > .Dropdown-Content, .Button.Dropdown > .Dropdown-Content ul, table td.Actions ul li a.Dropdown > .Dropdown-Content ul, aside.Menu > ul.Menu-Category, li.Menu-Category-Item, ul.Menu-Subcategory, nav.Userbar ul {
+._No-Bullets, ol.Row > li,
+ul.Row > li, table td.Actions ul, .pagination,
+.Pagination, .Breadcrumbs .Breadcrumb-List, .Box > header ul.Box-Tools, a.Button.Dropdown > .Dropdown-Content, table td.Actions ul li a.Dropdown > .Dropdown-Content,
+.Button.Dropdown > .Dropdown-Content, a.Button.Dropdown > .Dropdown-Content ul, table td.Actions ul li a.Dropdown > .Dropdown-Content ul,
+.Button.Dropdown > .Dropdown-Content ul, aside.Menu > ul.Menu-Category, li.Menu-Category-Item, ul.Menu-Subcategory, nav.Userbar ul {
   list-style: none; }
 
 ._Soft_Shadow,
 ._Soft-Shadow {
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.15); }
-
-@media all and (min-width: 1024px) {
-  ._Fly-Out {
-    margin-left: -50px; } }
 
 ._Fit-Row {
   width: 100%; }
@@ -101,7 +100,8 @@ nav.Userbar:after {
   -o-user-select: none;
   user-select: none; }
 
-.Button, table td.Actions ul li a {
+a.Button, table td.Actions ul li a,
+.Button {
   cursor: pointer; }
 
 * {
@@ -136,6 +136,7 @@ iframe {
   table.Adaptive td.Main > *,
   table.Adaptive td.Date > *,
   table.Adaptive td.Actions > *,
+  table.Adaptive td.Data > *,
   [class*='Grid-XXS-'] {
     float: left; }
 
@@ -146,6 +147,7 @@ iframe {
   table.Adaptive td.Main > *,
   table.Adaptive td.Date > *,
   table.Adaptive td.Actions > *,
+  table.Adaptive td.Data > *,
   .Row.Merge > .Grid-XXS-6 {
     width: 50%; } }
 @media all and (min-width: 768px) {
@@ -739,7 +741,6 @@ table {
   width: 100%;
   border-collapse: collapse; }
   table th {
-    background: #333;
     color: white;
     text-align: left; }
   table td, table th {
@@ -766,9 +767,10 @@ table {
     table.Lines tbody tr:first-child {
       border-top: 0; }
   table.Solid th {
+    font-weight: 100;
     color: white;
     background-color: #34495e; }
-  table.Stripped tr:nth-of-type(even) {
+  table.Stripped tbody tr:nth-of-type(even) {
     background: #ecf0f1; }
   @media screen and (max-width: 768px) {
     table.Adaptive td {
@@ -807,13 +809,13 @@ table {
       color: #fff;
       display: block;
       padding: 10px 20px;
-      background-color: #555555; }
+      background-color: #2c3e50; }
     .pagination > li:hover > span,
     .Pagination > li:hover > span {
       cursor: default; }
     .pagination > li:hover > a,
     .Pagination > li:hover > a {
-      background-color: #999999; }
+      background-color: #34495e; }
     .pagination > li.disabled > span,
     .Pagination > li.disabled > span {
       color: #999999; }
@@ -861,7 +863,6 @@ table {
   display: inline-block; }
 
 .Control-Group {
-  margin-top: 10px;
   width: 100%; }
   .Control-Group:first-child {
     margin-top: 0; }
@@ -1071,7 +1072,8 @@ dl.Tabs {
           color: #e74c3c; }
   .Box > .Box-Content {
     padding: 10px 15px 15px; }
-  .Box.Round, .Box.Button.Ghost, table td.Actions ul li a.Box.Ghost {
+  .Box.Round, table td.Actions ul li a.Box.Ghost,
+  .Box.Button.Ghost {
     border-radius: 10px; }
   .Box.Outlined {
     border: 2px solid #95a5a6; }
@@ -1181,7 +1183,9 @@ dl.Tabs {
     .Box.Error .Box-Tools a:hover {
       color: #d1060a; }
 
-.Button, table td.Actions ul li a {
+a.Button, table td.Actions ul li a,
+.Button,
+table td.Actions ul li a {
   padding: 5px 10px;
   border: 0;
   line-height: 24px;
@@ -1194,46 +1198,83 @@ dl.Tabs {
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   transition-duration: 0.3s; }
-  .Button:hover, table td.Actions ul li a:hover {
+  a.Button:hover, table td.Actions ul li a:hover,
+  .Button:hover,
+  table td.Actions ul li a:hover {
     background-color: #c0392b; }
-  .Button.Small, table td.Actions ul li a {
+  a.Button.Small, table td.Actions ul li a,
+  .Button.Small,
+  table td.Actions ul li a {
     font-size: 10px;
     padding: 2px 5px; }
-  .Button.Large, table td.Actions ul li a.Large {
+  a.Button.Large, table td.Actions ul li a.Large,
+  .Button.Large,
+  table td.Actions ul li a.Large {
     padding: 10px 15px; }
-  .Button.Huge, table td.Actions ul li a.Huge {
+  a.Button.Huge, table td.Actions ul li a.Huge,
+  .Button.Huge,
+  table td.Actions ul li a.Huge {
     font-size: 19px;
     padding: 15px 20px; }
-  .Button.Round, table td.Actions ul li a.Round, .Button.Ghost, table td.Actions ul li a.Ghost {
+  a.Button.Round, table td.Actions ul li a.Round, a.Button.Ghost, table td.Actions ul li a.Ghost,
+  .Button.Round,
+  table td.Actions ul li a.Round,
+  a.Button.Ghost,
+  table td.Actions ul li a.Ghost,
+  .Button.Ghost {
     border-radius: 5px; }
-  .Button.Search, table td.Actions ul li a.Search {
+  a.Button.Search, table td.Actions ul li a.Search,
+  .Button.Search,
+  table td.Actions ul li a.Search {
     border-radius: 17px; }
-    .Button.Search.Large, table td.Actions ul li a.Search.Large {
+    a.Button.Search.Large, table td.Actions ul li a.Search.Large,
+    .Button.Search.Large,
+    table td.Actions ul li a.Search.Large {
       border-radius: 22px; }
-    .Button.Search.Huge, table td.Actions ul li a.Search.Huge {
+    a.Button.Search.Huge, table td.Actions ul li a.Search.Huge,
+    .Button.Search.Huge,
+    table td.Actions ul li a.Search.Huge {
       border-radius: 27px; }
-  .Button.Icon > span.fa:first-child, table td.Actions ul li a.Icon > span.fa:first-child {
+  a.Button.Icon > span.fa:first-child, table td.Actions ul li a.Icon > span.fa:first-child,
+  .Button.Icon > span.fa:first-child,
+  table td.Actions ul li a.Icon > span.fa:first-child {
     margin-right: 10px; }
-  .Button.Ghost, table td.Actions ul li a.Ghost {
+  a.Button.Ghost, table td.Actions ul li a.Ghost,
+  .Button.Ghost,
+  table td.Actions ul li a.Ghost {
     color: #2c3e50;
     background-color: transparent;
     border: 1px solid #bdc3c7; }
-    .Button.Ghost:hover, table td.Actions ul li a.Ghost:hover {
+    a.Button.Ghost:hover, table td.Actions ul li a.Ghost:hover,
+    .Button.Ghost:hover,
+    table td.Actions ul li a.Ghost:hover {
       color: black;
       border-color: #95a5a6;
       background-color: #ecf0f1; }
-    .Button.Ghost.Invert, table td.Actions ul li a.Ghost.Invert {
+    a.Button.Ghost.Invert, table td.Actions ul li a.Ghost.Invert,
+    .Button.Ghost.Invert,
+    table td.Actions ul li a.Ghost.Invert {
       color: white;
       border-color: white; }
-      .Button.Ghost.Invert:hover, table td.Actions ul li a.Ghost.Invert:hover {
+      a.Button.Ghost.Invert:hover, table td.Actions ul li a.Ghost.Invert:hover,
+      .Button.Ghost.Invert:hover,
+      table td.Actions ul li a.Ghost.Invert:hover {
         color: #e74c3c;
         border-color: #e74c3c; }
-  .Button.Dropdown, table td.Actions ul li a.Dropdown {
+  a.Button.Dropdown, table td.Actions ul li a.Dropdown,
+  .Button.Dropdown,
+  table td.Actions ul li a.Dropdown {
     position: relative;
     padding-right: 40px; }
-    .Button.Dropdown.Round > .Dropdown-Toggle, table td.Actions ul li a.Dropdown.Round > .Dropdown-Toggle, .Button.Dropdown.Ghost > .Dropdown-Toggle, table td.Actions ul li a.Dropdown.Ghost > .Dropdown-Toggle {
+    a.Button.Dropdown.Round > .Dropdown-Toggle, table td.Actions ul li a.Dropdown.Round > .Dropdown-Toggle, a.Button.Dropdown.Ghost > .Dropdown-Toggle, table td.Actions ul li a.Dropdown.Ghost > .Dropdown-Toggle,
+    .Button.Dropdown.Round > .Dropdown-Toggle,
+    table td.Actions ul li a.Dropdown.Round > .Dropdown-Toggle,
+    table td.Actions ul li a.Dropdown.Ghost > .Dropdown-Toggle,
+    .Button.Dropdown.Ghost > .Dropdown-Toggle {
       border-radius: 0 5px 5px 0; }
-    .Button.Dropdown > .Dropdown-Toggle, table td.Actions ul li a.Dropdown > .Dropdown-Toggle {
+    a.Button.Dropdown > .Dropdown-Toggle, table td.Actions ul li a.Dropdown > .Dropdown-Toggle,
+    .Button.Dropdown > .Dropdown-Toggle,
+    table td.Actions ul li a.Dropdown > .Dropdown-Toggle {
       position: absolute;
       top: 0;
       right: 0;
@@ -1243,9 +1284,13 @@ dl.Tabs {
       padding: 10px 0;
       border-left: 1px white solid;
       background-color: #e74c3c; }
-      .Button.Dropdown > .Dropdown-Toggle:hover, table td.Actions ul li a.Dropdown > .Dropdown-Toggle:hover {
+      a.Button.Dropdown > .Dropdown-Toggle:hover, table td.Actions ul li a.Dropdown > .Dropdown-Toggle:hover,
+      .Button.Dropdown > .Dropdown-Toggle:hover,
+      table td.Actions ul li a.Dropdown > .Dropdown-Toggle:hover {
         background-color: #c0392b; }
-    .Button.Dropdown > .Dropdown-Content, table td.Actions ul li a.Dropdown > .Dropdown-Content {
+    a.Button.Dropdown > .Dropdown-Content, table td.Actions ul li a.Dropdown > .Dropdown-Content,
+    .Button.Dropdown > .Dropdown-Content,
+    table td.Actions ul li a.Dropdown > .Dropdown-Content {
       background-color: white;
       border: 1px solid #bdc3c7;
       position: absolute;
@@ -1253,66 +1298,126 @@ dl.Tabs {
       left: 0;
       width: 100%;
       z-index: 100; }
-      .Button.Dropdown > .Dropdown-Content li > a, table td.Actions ul li a.Dropdown > .Dropdown-Content li > a {
+      a.Button.Dropdown > .Dropdown-Content li > a, table td.Actions ul li a.Dropdown > .Dropdown-Content li > a,
+      .Button.Dropdown > .Dropdown-Content li > a,
+      table td.Actions ul li a.Dropdown > .Dropdown-Content li > a {
         display: block;
         padding: 5px 10px;
         text-align: left;
         color: #2c3e50; }
-        .Button.Dropdown > .Dropdown-Content li > a:hover, table td.Actions ul li a.Dropdown > .Dropdown-Content li > a:hover {
+        a.Button.Dropdown > .Dropdown-Content li > a:hover, table td.Actions ul li a.Dropdown > .Dropdown-Content li > a:hover,
+        .Button.Dropdown > .Dropdown-Content li > a:hover,
+        table td.Actions ul li a.Dropdown > .Dropdown-Content li > a:hover {
           background-color: #bdc3c7; }
-      .Button.Dropdown > .Dropdown-Content li.Divider, table td.Actions ul li a.Dropdown > .Dropdown-Content li.Divider {
+      a.Button.Dropdown > .Dropdown-Content li.Divider, table td.Actions ul li a.Dropdown > .Dropdown-Content li.Divider,
+      .Button.Dropdown > .Dropdown-Content li.Divider,
+      table td.Actions ul li a.Dropdown > .Dropdown-Content li.Divider {
         padding: 0;
         display: block;
         border-top: 1px solid #bdc3c7; }
-      .Button.Dropdown > .Dropdown-Content.Icon li a span.fa, table td.Actions ul li a.Dropdown > .Dropdown-Content.Icon li a span.fa {
+      a.Button.Dropdown > .Dropdown-Content.Icon li a span.fa, table td.Actions ul li a.Dropdown > .Dropdown-Content.Icon li a span.fa,
+      .Button.Dropdown > .Dropdown-Content.Icon li a span.fa,
+      table td.Actions ul li a.Dropdown > .Dropdown-Content.Icon li a span.fa {
         margin-right: 10px; }
-    .Button.Dropdown.Round > .Dropdown-Content, table td.Actions ul li a.Dropdown.Round > .Dropdown-Content, .Button.Dropdown.Ghost > .Dropdown-Content, table td.Actions ul li a.Dropdown.Ghost > .Dropdown-Content {
+    a.Button.Dropdown.Round > .Dropdown-Content, table td.Actions ul li a.Dropdown.Round > .Dropdown-Content, a.Button.Dropdown.Ghost > .Dropdown-Content, table td.Actions ul li a.Dropdown.Ghost > .Dropdown-Content,
+    .Button.Dropdown.Round > .Dropdown-Content,
+    table td.Actions ul li a.Dropdown.Round > .Dropdown-Content,
+    table td.Actions ul li a.Dropdown.Ghost > .Dropdown-Content,
+    .Button.Dropdown.Ghost > .Dropdown-Content {
       border-radius: 5px; }
-  .Button.Info, table td.Actions ul li a.Info {
+  a.Button.Info, table td.Actions ul li a.Info,
+  .Button.Info,
+  table td.Actions ul li a.Info {
     background-color: #3498db; }
-    .Button.Info:hover, table td.Actions ul li a.Info:hover {
+    a.Button.Info:hover, table td.Actions ul li a.Info:hover,
+    .Button.Info:hover,
+    table td.Actions ul li a.Info:hover {
       background-color: #2980b9; }
-    .Button.Info.Dropdown, table td.Actions ul li a.Info.Dropdown,
+    a.Button.Info.Dropdown, table td.Actions ul li a.Info.Dropdown,
+    a.Button.Info .Dropdown-Toggle,
+    table td.Actions ul li a.Info .Dropdown-Toggle,
+    .Button.Info.Dropdown,
+    table td.Actions ul li a.Info.Dropdown,
     .Button.Info .Dropdown-Toggle,
     table td.Actions ul li a.Info .Dropdown-Toggle {
       background-color: #2980b9; }
-      .Button.Info.Dropdown:hover, table td.Actions ul li a.Info.Dropdown:hover,
+      a.Button.Info.Dropdown:hover, table td.Actions ul li a.Info.Dropdown:hover,
+      a.Button.Info .Dropdown-Toggle:hover,
+      table td.Actions ul li a.Info .Dropdown-Toggle:hover,
+      .Button.Info.Dropdown:hover,
+      table td.Actions ul li a.Info.Dropdown:hover,
       .Button.Info .Dropdown-Toggle:hover,
       table td.Actions ul li a.Info .Dropdown-Toggle:hover {
         background-color: #2980b9; }
-  .Button.Success, table td.Actions ul li a.Success {
+  a.Button.Success, table td.Actions ul li a.Success,
+  .Button.Success,
+  table td.Actions ul li a.Success {
     background-color: #2ecc71; }
-    .Button.Success:hover, table td.Actions ul li a.Success:hover {
+    a.Button.Success:hover, table td.Actions ul li a.Success:hover,
+    .Button.Success:hover,
+    table td.Actions ul li a.Success:hover {
       background-color: #27ae60; }
-    .Button.Success.Dropdown, table td.Actions ul li a.Success.Dropdown,
+    a.Button.Success.Dropdown, table td.Actions ul li a.Success.Dropdown,
+    a.Button.Success .Dropdown-Toggle,
+    table td.Actions ul li a.Success .Dropdown-Toggle,
+    .Button.Success.Dropdown,
+    table td.Actions ul li a.Success.Dropdown,
     .Button.Success .Dropdown-Toggle,
     table td.Actions ul li a.Success .Dropdown-Toggle {
       background-color: #2ecc71; }
-      .Button.Success.Dropdown:hover, table td.Actions ul li a.Success.Dropdown:hover,
+      a.Button.Success.Dropdown:hover, table td.Actions ul li a.Success.Dropdown:hover,
+      a.Button.Success .Dropdown-Toggle:hover,
+      table td.Actions ul li a.Success .Dropdown-Toggle:hover,
+      .Button.Success.Dropdown:hover,
+      table td.Actions ul li a.Success.Dropdown:hover,
       .Button.Success .Dropdown-Toggle:hover,
       table td.Actions ul li a.Success .Dropdown-Toggle:hover {
         background-color: #27ae60; }
-  .Button.Success, table td.Actions ul li a.Success {
+  a.Button.Success, table td.Actions ul li a.Success,
+  .Button.Success,
+  table td.Actions ul li a.Success {
     background-color: #2ecc71; }
-    .Button.Success:hover, table td.Actions ul li a.Success:hover {
+    a.Button.Success:hover, table td.Actions ul li a.Success:hover,
+    .Button.Success:hover,
+    table td.Actions ul li a.Success:hover {
       background-color: #27ae60; }
-    .Button.Success.Dropdown, table td.Actions ul li a.Success.Dropdown,
+    a.Button.Success.Dropdown, table td.Actions ul li a.Success.Dropdown,
+    a.Button.Success .Dropdown-Toggle,
+    table td.Actions ul li a.Success .Dropdown-Toggle,
+    .Button.Success.Dropdown,
+    table td.Actions ul li a.Success.Dropdown,
     .Button.Success .Dropdown-Toggle,
     table td.Actions ul li a.Success .Dropdown-Toggle {
       background-color: #2ecc71; }
-      .Button.Success.Dropdown:hover, table td.Actions ul li a.Success.Dropdown:hover,
+      a.Button.Success.Dropdown:hover, table td.Actions ul li a.Success.Dropdown:hover,
+      a.Button.Success .Dropdown-Toggle:hover,
+      table td.Actions ul li a.Success .Dropdown-Toggle:hover,
+      .Button.Success.Dropdown:hover,
+      table td.Actions ul li a.Success.Dropdown:hover,
       .Button.Success .Dropdown-Toggle:hover,
       table td.Actions ul li a.Success .Dropdown-Toggle:hover {
         background-color: #27ae60; }
-  .Button.Warning, table td.Actions ul li a.Warning {
+  a.Button.Warning, table td.Actions ul li a.Warning,
+  .Button.Warning,
+  table td.Actions ul li a.Warning {
     background-color: #e67e22; }
-    .Button.Warning:hover, table td.Actions ul li a.Warning:hover {
+    a.Button.Warning:hover, table td.Actions ul li a.Warning:hover,
+    .Button.Warning:hover,
+    table td.Actions ul li a.Warning:hover {
       background-color: #d35400; }
-    .Button.Warning.Dropdown, table td.Actions ul li a.Warning.Dropdown,
+    a.Button.Warning.Dropdown, table td.Actions ul li a.Warning.Dropdown,
+    a.Button.Warning .Dropdown-Toggle,
+    table td.Actions ul li a.Warning .Dropdown-Toggle,
+    .Button.Warning.Dropdown,
+    table td.Actions ul li a.Warning.Dropdown,
     .Button.Warning .Dropdown-Toggle,
     table td.Actions ul li a.Warning .Dropdown-Toggle {
       background-color: #e67e22; }
-      .Button.Warning.Dropdown:hover, table td.Actions ul li a.Warning.Dropdown:hover,
+      a.Button.Warning.Dropdown:hover, table td.Actions ul li a.Warning.Dropdown:hover,
+      a.Button.Warning .Dropdown-Toggle:hover,
+      table td.Actions ul li a.Warning .Dropdown-Toggle:hover,
+      .Button.Warning.Dropdown:hover,
+      table td.Actions ul li a.Warning.Dropdown:hover,
       .Button.Warning .Dropdown-Toggle:hover,
       table td.Actions ul li a.Warning .Dropdown-Toggle:hover {
         background-color: #e67e22; }

@@ -17,10 +17,10 @@
         @include('frontend.site_techonline.layouts.elements.Photos',
             [
                 'photos'=>$content['item']['photos'],
-                'class_wrap'=>'Item-Gallery Grid XS-5'
+                'class_wrap'=>'Item-Gallery Grid-XS-5'
             ])
 
-        <div class="Item-Content Grid XS-7">
+        <div class="Item-Content Grid-XS-7">
             <p>{{$content['item']['description']}}</p>
             <h6>Контактная информация</h6>
             <table>
@@ -66,7 +66,7 @@
                 @include('frontend.site_techonline.layouts.elements.Photos',
                     [
                         'photos'=>$tech['photos'],
-                        'class_wrap'=>'Item-Gallery Grid XS-3'
+                        'class_wrap'=>'Item-Gallery Grid-XS-3'
                     ])
                 <h4> <a href="/rent/{{$tech['metadata']['alias']}}">{{$tech['name']}}</a></h4>
                 <p>{{$tech['description']}}</p>
@@ -87,7 +87,7 @@
                 @include('frontend.site_techonline.layouts.elements.Photos',
                     [
                         'photos'=>$tech['photos'],
-                        'class_wrap'=>'Item-Gallery Grid XS-4'
+                        'class_wrap'=>'Item-Gallery Grid-XS-4'
                     ])
                 <h4> <a href="/parts/{{$part['metadata']['alias']}}">{{$part['name']}}</a></h4>
                 <p>{{$part['description']}}</p>

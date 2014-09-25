@@ -30,16 +30,16 @@
 // Устанавливает секции фиксированную ширину, согласно файлу настроек
 ._Section-Inner {
 	width: 			$Section-Width-Tiny;
-	@media all and (min-width: $Screen-Size-Small) {
+	@media all and (min-width: $Viewport-SM) {
 		width:		$Section-Width-Small;
 	}
-	@media all and (min-width: $Screen-Size-Default) {
+	@media all and (min-width: $Viewport-MD) {
 		width:		$Section-Width-Default;
 	}
-	@media all and (min-width: $Screen-Size-Large) {
+	@media all and (min-width: $Viewport-LR) {
 		width:		$Section-Width-Large;
 	}
-	@media all and (min-width: $Screen-Size-Huge) {
+	@media all and (min-width: $Viewport-HG) {
 		width:		$Section-Width-Huge;
 	}
 }
@@ -90,33 +90,6 @@
 ._Soft-Shadow {
 	box-shadow: 			0 0 50px rgba(0,0,0,0.15);
 }
-._Fly-Out {
-	@if ( $Enable-Fly-Out == tiny ) {
-		@media all and (min-width: $Screen-Size-Tiny) {
-			margin-left: 		-($size-xl);
-		}
-	}
-	@else if ( $Enable-Fly-Out == small ) {
-		@media all and (min-width: $Screen-Size-Small) {
-			margin-left: 		-($size-xl);
-		}
-	}
-	@else if ( $Enable-Fly-Out == default ) {
-		@media all and (min-width: $Screen-Size-Default) {
-			margin-left: 		-($size-xl);
-		}
-	}
-	@else if ( $Enable-Fly-Out == large ) {
-		@media all and (min-width: $Screen-Size-Large) {
-			margin-left: 		-($size-xl);
-		}
-	}
-	@else if ( $Enable-Fly-Out == huge ) {
-		@media all and (min-width: $Screen-Size-Huge) {
-			margin-left: 		-($size-xl);
-		}
-	}
-}
 
 ._Fit-Row {
 	width: 					100%;
@@ -144,4 +117,7 @@
 }
 %_Clickable {
 	cursor:					pointer;
+}
+%_Letterpress {
+	text-shadow: 1px 1px 1px white;
 }

@@ -1,4 +1,4 @@
-<section class="Node Filter">
+<section class="Node Filter Row Merge">
 
     <h3 class="Heading Primary"><span class="fa fa-search"></span> Поиск стройтехники</h3>
 
@@ -41,7 +41,7 @@
                                     </ul>
                                     <ul class="List-Params Row Merge">
                                         @foreach($subRegions['cities'] as $city)
-                                        <li class="List-Params-Item XS-6 LR-4"><a href="#" alias="{{$city['alias']}}">{{$city['name']}}</a></li>
+                                        <li class="List-Params-Item Grid-XS-6 Grid-LR-4"><a href="#" alias="{{$city['alias']}}">{{$city['name']}}</a></li>
                                         @endforeach
                                     </ul>
                                     @endif
@@ -137,11 +137,11 @@
                     </ul>
                     @if(!empty($content['filter']['brands']))
                     <div class="Spoiler">
-                        <a href="#" class="Spoiler-Caption">Конкретные производители</a>
+                        <a href="#" class="Spoiler-Caption"><span class="fa fa-angle-down"></span>Конкретные производители</a>
 
                         <ul class="List-Params  Accordion-Brands Spoiler-Content">
                             @foreach($content['filter']['brands'] as $brand)
-                            <li class="Item-Group-Actions XS-6 LR-4">
+                            <li class="Item-Group-Actions Grid-XS-6 Grid-LR-4">
                                 <label class="Control-Group">
                                     <input type="checkbox" checked="checked" foreign="{{$brand['foreign']}}" name="{{$brand['alias']}}" id="brand_{{$brand['alias']}}"/>
                                     <span for="brand_{{$brand['alias']}}" >{{$brand['name']}}</span>

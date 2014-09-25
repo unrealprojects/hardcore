@@ -5,14 +5,20 @@
     <div class="Slider-Inner">
         <img id="Truck" src="/img/techonline/belaz.png" alt=""/>
         <div id="Slider-Links">
-            <a class="Button _Rounded" href="#">Арендовать стройтехнику</a>
-            <a class="Button _Rounded" href="#">Разместить стройтехнику</a>
+            <a class="Button Large" href="#">Арендовать стройтехнику</a>
+            <a class="Button Large" href="#">Разместить стройтехнику</a>
         </div>
     </div>
 </section>
-<section class="Node">
 
+<section class="Error-404 Row Merge">
+    <header class="Grid-XXS-6 Grid-XS-6">
+        <h2>Упс!</h2>
+        <p>Такой страницы нет</p>
+    </header>
+    <img src="/img/techonline/404-truck.png" alt=""/>
 </section>
+
 <!-- ФИЛЬТР -->
 @include('frontend.site_techonline.layouts.filter.MainPageFilter');
 <!-- КАТАЛОГ СТРОЙТЕХНИКИ::КАТЕГОРИИ C КАРТИНКАМИ-->
@@ -20,9 +26,9 @@
 
     <h3 class="Heading Primary">Каталог стройтехники</h3>
 
-    <ul class="Row Merge List-Categories Icons">
+    <ul class="Row Split List-Categories Icons">
         @foreach($content['categories'] as $category)
-            <li class="Grid-XS-6 Grid-SM-3"><img src="{{$category['logo']}}"><a href="/catalog/?category={{$category['alias']}}" alt="{{$category['name']}}">{{$category['name']}}</a></li>
+            <li class="Grid-XS-6 Grid-SM-3"><a href="/catalog/?category={{$category['alias']}}" alt="{{$category['name']}}"><img src="{{$category['logo']}}">{{$category['name']}}</a></li>
         @endforeach
     </ul>
 

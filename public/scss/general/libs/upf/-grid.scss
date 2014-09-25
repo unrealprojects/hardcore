@@ -1,5 +1,4 @@
-// UPF Grid Module v.4.1
-
+// UPF Grid Module v.4.2
 
 // GRID VARIABLES: MERGED GRID
 $Grid-One-Width:		(100% - (12 * $Grid-Gutter)) / 12;
@@ -16,7 +15,7 @@ $Grid-Eleven-Width:		($Grid-One-Width * 11) + (10 * $Grid-Gutter);
 $Grid-Twelve-Width:		($Grid-One-Width * 12) + (11 * $Grid-Gutter);
 
 // GRID VARIABLES: SPLITTED GRID
-$Grid-Split-One-Width:	100%/12;
+$Grid-Split-One-Width:	100% / 12;
 
 
 
@@ -24,9 +23,10 @@ $Grid-Split-One-Width:	100%/12;
 .Row {
 	display: block;
 	@extend ._Clearfix;
-
 }
 
+// Disabling bullets in grid based on lists
+ol.Row > li ,
 ul.Row > li {
 	@extend ._No-Bullets;
 }
@@ -37,6 +37,7 @@ ul.Row > li {
 	table.Adaptive td.Main    > * ,
 	table.Adaptive td.Date    > * ,
 	table.Adaptive td.Actions > * ,
+	table.Adaptive td.Data    > * ,
 	[class*='Grid-XXS-'] 			{
 		float: left;
 	}
@@ -46,6 +47,7 @@ ul.Row > li {
 	table.Adaptive td.Main    > * ,
 	table.Adaptive td.Date    > * ,
 	table.Adaptive td.Actions > * ,
+	table.Adaptive td.Data    > * ,
 	.Row.Merge > .Grid-XXS-6      {
 		width:	$Grid-Split-One-Width * 6
 	}
@@ -53,7 +55,7 @@ ul.Row > li {
 }
 
 
-@media all and (min-width: $Screen-Size-Tiny) {
+@media all and (min-width: $Viewport-XS) {
 	// Rows in Splitted grid must have gutter from both sides.
 	.Row.Split > * {
 		margin-left: $Grid-Gutter/2;
@@ -105,7 +107,7 @@ ul.Row > li {
 	.Row.Split > .Grid-XS-12  {	width: $Grid-Twelve-Width;	}
 }
 
-@media all and (min-width: $Screen-Size-Small) {
+@media all and (min-width: $Viewport-SM) {
 	.Row.Merge > .Grid-SM-1 	 	{width:	$Grid-Split-One-Width;		}
 	.Row.Merge > .Grid-SM-2 	 	{width:	$Grid-Split-One-Width * 2;	}
 	.Row.Merge > .Grid-SM-3  	{width:	$Grid-Split-One-Width * 3;	}
@@ -133,7 +135,7 @@ ul.Row > li {
 	.Row.Split > .Grid-SM-12  {	width: $Grid-Twelve-Width;	}
 }
 
-@media all and (min-width: $Screen-Size-Default) {
+@media all and (min-width: $Viewport-MD) {
 	.Row.Merge > .Grid-MD-1 	 	{width:	$Grid-Split-One-Width;		}
 	.Row.Merge > .Grid-MD-2 	 	{width:	$Grid-Split-One-Width * 2;	}
 	.Row.Merge > .Grid-MD-3  	{width:	$Grid-Split-One-Width * 3;	}
@@ -161,7 +163,7 @@ ul.Row > li {
 	.Row.Split > .Grid-MD-12  {	width: $Grid-Twelve-Width;	}
 }
 
-@media all and (min-width: $Screen-Size-Large) {
+@media all and (min-width: $Viewport-LR) {
 	.Row.Merge > .Grid-LR-1 	 	{width:	$Grid-Split-One-Width;		}
 	.Row.Merge > .Grid-LR-2 	 	{width:	$Grid-Split-One-Width * 2;	}
 	.Row.Merge > .Grid-LR-3  	{width:	$Grid-Split-One-Width * 3;	}
@@ -189,7 +191,7 @@ ul.Row > li {
 	.Row.Split > .Grid-LR-12  {	width: $Grid-Twelve-Width;	}
 }
 
-@media all and (min-width: $Screen-Size-Huge) {
+@media all and (min-width: $Viewport-HG) {
 	.Row.Merge > .Grid-HG-1 		{width:	$Grid-Split-One-Width;		}
 	.Row.Merge > .Grid-HG-2 	 	{width:	$Grid-Split-One-Width * 2;	}
 	.Row.Merge > .Grid-HG-3  	{width:	$Grid-Split-One-Width * 3;	}
@@ -259,27 +261,27 @@ ul.Row > li {
 	}
 }
 .Hidden-XS {
-	@include Adaptive($Screen-Size-Tiny) {
+	@include Adaptive($Viewport-XS) {
 		display: none;
 	}
 }
 .Hidden-SM {
-	@include Adaptive($Screen-Size-Small) {
+	@include Adaptive($Viewport-SM) {
 		display: none;
 	}
 }
 .Hidden-MD {
-	@include Adaptive($Screen-Size-Default) {
+	@include Adaptive($Viewport-MD) {
 		display: none;
 	}
 }
 .Hidden-LR {
-	@include Adaptive($Screen-Size-Large) {
+	@include Adaptive($Viewport-LR) {
 		display: none;
 	}
 }
 .Hidden-HR {
-	@include Adaptive($Screen-Size-Huge) {
+	@include Adaptive($Viewport-HG) {
 		display: block;
 	}
 }
@@ -294,28 +296,28 @@ table.Adaptive .Caption ,
 	}
 }
 .Visible-XS {
-	@include Adaptive($Screen-Size-Tiny) {
+	@include Adaptive($Viewport-XS) {
 		display: inline-block;
 	}
 }
 .Visible-SM {
 	display: none;
-	@include Adaptive($Screen-Size-Small) {
+	@include Adaptive($Viewport-SM) {
 		display: inline-block;
 	}
 }
 .Visible-MD {
-	@include Adaptive($Screen-Size-Default) {
+	@include Adaptive($Viewport-MD) {
 		display: inline-block;
 	}
 }
 .Visible-LR {
-	@include Adaptive($Screen-Size-Large) {
+	@include Adaptive($Viewport-LR) {
 		display: inline-block;
 	}
 }
 .Visible-HR {
-	@include Adaptive($Screen-Size-Huge) {
+	@include Adaptive($Viewport-HG) {
 		display: inline-block;
 	}
 }

@@ -17,12 +17,16 @@
             /*** Paralax Top Menu ***/
             if($(window).scrollTop()>=0 && $(window).scrollTop()<350){
                 scrollPos = $(this).scrollTop();
+                /*** Parallax общий ***/
+                $('#Page-Slider').css({
+                    'height': 250 - (scrollPos * 2) + "px"
+                });
                 /*** Paralax кнопок ***/
                 $('#Slider-Links').css({
                     'left': 400 + (scrollPos)+"px",
                     'opacity' : 1-(scrollPos/200)
                 });
-                /*** Paralax бклаза ***/
+                /*** Paralax БелАЗа ***/
                 $('#Truck').css({
                     'top' : (scrollPos * 1.2)+"px",
                     'opacity' : 1-(scrollPos/100)

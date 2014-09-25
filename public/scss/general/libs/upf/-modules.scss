@@ -70,27 +70,26 @@ table {
 	border-collapse: collapse;
 
 	th {
-		background: #333;
 		color: white;
 		text-align: left;
 	}
 	td, th {
 		padding: $size-xs;
-		@include Adaptive($Screen-Size-Small) {
+		@include Adaptive($Viewport-SM) {
 			padding: $size-s;
 		}
-		@include Adaptive($Screen-Size-Large) {
+		@include Adaptive($Viewport-LR) {
 			padding: $size-s $size-n;
 		}
 	}
 	tr:hover td.Actions {
-		@include Adaptive($Screen-Size-Tiny) {
+		@include Adaptive($Viewport-XS) {
 			opacity: 1;
 		}
 	}
 	td.Actions {
 		min-width: 120px;
-		@include Adaptive($Screen-Size-Tiny) {
+		@include Adaptive($Viewport-XS) {
 			opacity: 0;
 		}
 		ul {
@@ -118,12 +117,13 @@ table {
 	}
 	&.Solid {
 		th {
+			font-weight: 100;
 			color: white;
 			background-color: $Clr-Wet-Asphalt;
 		}
 	}
 	&.Stripped {
-		tr:nth-of-type(even) {
+		tbody tr:nth-of-type(even) {
 			background: $Clr-Secondary;
 		}
 	}
@@ -183,13 +183,13 @@ table {
 			color: #fff;
 			display: block;
 			padding: $size-s $size;
-			background-color: $Clr-Grey-Darker;
+			background-color: $Clr-Midnight-Blue;
 		}
 		&:hover > span {
 			cursor: default;
 		}
 		&:hover > a {
-			background-color: $Clr-Grey-Dark;
+			background-color: $Clr-Wet-Asphalt;
 		}
 		&.disabled > span {
 			color: $Clr-Grey-Dark;

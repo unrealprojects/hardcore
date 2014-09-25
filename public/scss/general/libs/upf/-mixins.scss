@@ -108,7 +108,7 @@
 }
 
 @mixin Adaptive-Mobile() {
-	@media screen and (max-width: $Screen-Size-Tiny) {
+	@media screen and (max-width: $Viewport-XS) {
 		@content;
 	}
 }

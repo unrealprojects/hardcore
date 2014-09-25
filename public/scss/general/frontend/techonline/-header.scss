@@ -14,11 +14,13 @@ $Page-Header-Button-Margin:				($Page-Header-Height - ($size-s * 2) - $Page-Head
 
 .Site-Header{
 	height: 							auto;
-	@include Adaptive($Screen-Size-Small) {
+	@include Adaptive($Viewport-SM) {
 		height: $Page-Header-Height;
 	}
 	background-color: 					$Clr-Midnight-Blue;
 	color:								$Clr-Clouds;
+
+	box-shadow: 0 4px 0 rgba(44, 62, 80,.25);
 	@extend 							._Clearfix;
 
 	.Site-Header-Inner {
@@ -46,10 +48,10 @@ $Page-Header-Button-Margin:				($Page-Header-Height - ($size-s * 2) - $Page-Head
 		}
 		h2 {
 			padding:			$Page-Navigation-Padding 0;
-			@include Adaptive($Screen-Size-Small) {
+			@include 			Adaptive($Viewport-SM) {
 				padding:			($Page-Navigation-Padding - 10px) 0;
 			}
-			@include Adaptive($Screen-Size-Default) {
+			@include 			Adaptive($Viewport-MD) {
 				padding:			$Page-Navigation-Padding 0;
 			}
 			text-transform: 	uppercase;
@@ -97,7 +99,7 @@ $Page-Header-Button-Margin:				($Page-Header-Height - ($size-s * 2) - $Page-Head
 			width: 100%;
 			display: block;
 			float: none;
-			@include Adaptive($Screen-Size-Small) {
+			@include Adaptive($Viewport-SM) {
 				width: auto;
 				display: inline-block;
 				float: left;
@@ -105,13 +107,13 @@ $Page-Header-Button-Margin:				($Page-Header-Height - ($size-s * 2) - $Page-Head
 			a {
 				display: 		block;
 				padding: 		$Page-Navigation-Padding $size-n;
-				@include Adaptive($Screen-Size-Small) {
+				@include Adaptive($Viewport-SM) {
 					padding: 		$Page-Navigation-Padding $size-xs;
 				}
-				@include Adaptive($Screen-Size-Default) {
+				@include Adaptive($Viewport-MD) {
 					padding: 		$Page-Navigation-Padding $size-s;
 				}
-				@include Adaptive($Screen-Size-Large) {
+				@include Adaptive($Viewport-LR) {
 					padding: 		$Page-Navigation-Padding $size;
 				}
 				font-size: 		$Page-Navigation-Font-Size;
@@ -131,21 +133,21 @@ $Page-Header-Button-Margin:				($Page-Header-Height - ($size-s * 2) - $Page-Head
 .Page-Auth {
 	display: block;
 	position: relative;
-	@include Adaptive($Screen-Size-Small - 1px, max-width) {
+	@include Adaptive($Viewport-SM - 1px, max-width) {
 		width: 100%;
 		padding: $size-n;
 	}
 	button {
 		display: block;
 		width: 100%;
-		@include 				Adaptive($Screen-Size-Small) {
+		@include 				Adaptive($Viewport-SM) {
 			margin-top:					$Page-Header-Button-Margin;
 		}
 		padding: 				$size-s 0;
 		border:					0;
 	}
 	button + button {
-		@include Adaptive($Screen-Size-Tiny, max-width) {
+		@include Adaptive($Viewport-XS, max-width) {
 			margin-top: $size-n;
 		}
 	}
