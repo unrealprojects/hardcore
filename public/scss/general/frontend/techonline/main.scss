@@ -347,7 +347,7 @@ img.Footer-Img {
 		@extend ._Clearfix;
 
 		img.Item-Main-Photo {
-			border-top: 2px solid $Clr-Main;
+			border: 5px solid $Clr-Secondary;
 			@extend ._Fit-Row;
 			@extend ._Highlight;
 		}
@@ -367,7 +367,7 @@ img.Footer-Img {
 				img {
 					display: block;
 					width: 100%;
-					border-top: 2px solid $Clr-Main;
+					border: 5px solid $Clr-Secondary;
 					@extend ._Highlight;
 				}
 			}

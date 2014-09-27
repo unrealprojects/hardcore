@@ -6,7 +6,7 @@
         <header>
             <h3 class="Heading Primary">
                 {{$content['item']['name']}}
-                <span class="Item-Subtitle Panel Info">Цена: {{$content['item']['price']}}</span>
+                <span class="Item-Subtitle">Цена: {{$content['item']['price']}}</span>
             </h3>
             <ul class="Vote">
                 <li><a class="Vote-Down" href="#"></a></li>

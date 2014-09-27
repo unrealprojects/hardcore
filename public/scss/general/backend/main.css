@@ -1102,33 +1102,33 @@ dl.Tabs {
   .Box.Success {
     background-color: #2ecc71; }
     .Box.Success.Gradient {
-      background-color: #27ae60;
+      background-color: #5ec67d;
       /* Fallback */
-      background: -webkit-linear-gradient(to right, #2ecc71, #27ae60);
+      background: -webkit-linear-gradient(to right, #2ecc71, #5ec67d);
       /* Chrome 10+, Saf5.1+, iOS 5+ */
-      background: -moz-linear-gradient(to right, #2ecc71, #27ae60);
+      background: -moz-linear-gradient(to right, #2ecc71, #5ec67d);
       /* FF3.6 */
-      background: -ms-linear-gradient(to right, #2ecc71, #27ae60);
+      background: -ms-linear-gradient(to right, #2ecc71, #5ec67d);
       /* IE10 */
-      background: -o-linear-gradient(to right, #2ecc71, #27ae60);
+      background: -o-linear-gradient(to right, #2ecc71, #5ec67d);
       /* Opera 11.10+ */
-      background: linear-gradient(to right, #2ecc71, #27ae60);
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#2ecc71', EndColorStr='#27ae60'); }
+      background: linear-gradient(to right, #2ecc71, #5ec67d);
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#2ecc71', EndColorStr='#5ec67d'); }
     .Box.Success.Solid.Gradient header {
-      background-color: #27ae60;
+      background-color: #5ec67d;
       /* Fallback */
-      background: -webkit-linear-gradient(to right, #2ecc71, #27ae60);
+      background: -webkit-linear-gradient(to right, #2ecc71, #5ec67d);
       /* Chrome 10+, Saf5.1+, iOS 5+ */
-      background: -moz-linear-gradient(to right, #2ecc71, #27ae60);
+      background: -moz-linear-gradient(to right, #2ecc71, #5ec67d);
       /* FF3.6 */
-      background: -ms-linear-gradient(to right, #2ecc71, #27ae60);
+      background: -ms-linear-gradient(to right, #2ecc71, #5ec67d);
       /* IE10 */
-      background: -o-linear-gradient(to right, #2ecc71, #27ae60);
+      background: -o-linear-gradient(to right, #2ecc71, #5ec67d);
       /* Opera 11.10+ */
-      background: linear-gradient(to right, #2ecc71, #27ae60);
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#2ecc71', EndColorStr='#27ae60'); }
+      background: linear-gradient(to right, #2ecc71, #5ec67d);
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#2ecc71', EndColorStr='#5ec67d'); }
     .Box.Success .Box-Tools a:hover {
-      color: #27ae60; }
+      color: #5ec67d; }
     .Box.Success.Solid.Outlined {
       border-color: #2ecc71; }
   .Box.Info {
@@ -1356,7 +1356,7 @@ table td.Actions ul li a {
     a.Button.Success:hover, table td.Actions ul li a.Success:hover,
     .Button.Success:hover,
     table td.Actions ul li a.Success:hover {
-      background-color: #27ae60; }
+      background-color: #5ec67d; }
     a.Button.Success.Dropdown, table td.Actions ul li a.Success.Dropdown,
     a.Button.Success .Dropdown-Toggle,
     table td.Actions ul li a.Success .Dropdown-Toggle,
@@ -1372,7 +1372,7 @@ table td.Actions ul li a {
       table td.Actions ul li a.Success.Dropdown:hover,
       .Button.Success .Dropdown-Toggle:hover,
       table td.Actions ul li a.Success .Dropdown-Toggle:hover {
-        background-color: #27ae60; }
+        background-color: #5ec67d; }
   a.Button.Success, table td.Actions ul li a.Success,
   .Button.Success,
   table td.Actions ul li a.Success {
@@ -1380,7 +1380,7 @@ table td.Actions ul li a {
     a.Button.Success:hover, table td.Actions ul li a.Success:hover,
     .Button.Success:hover,
     table td.Actions ul li a.Success:hover {
-      background-color: #27ae60; }
+      background-color: #5ec67d; }
     a.Button.Success.Dropdown, table td.Actions ul li a.Success.Dropdown,
     a.Button.Success .Dropdown-Toggle,
     table td.Actions ul li a.Success .Dropdown-Toggle,
@@ -1396,7 +1396,7 @@ table td.Actions ul li a {
       table td.Actions ul li a.Success.Dropdown:hover,
       .Button.Success .Dropdown-Toggle:hover,
       table td.Actions ul li a.Success .Dropdown-Toggle:hover {
-        background-color: #27ae60; }
+        background-color: #5ec67d; }
   a.Button.Warning, table td.Actions ul li a.Warning,
   .Button.Warning,
   table td.Actions ul li a.Warning {
