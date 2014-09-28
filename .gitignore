@@ -7,4 +7,4 @@ composer.lock
 Thumbs.db
 /public/scss/general/frontend/techonline/main.css
 /public/scss/general/frontend/techonline/main.css.map
-/app/config/database.php
+/Upf/config/database.php
